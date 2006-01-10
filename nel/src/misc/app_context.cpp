@@ -2,7 +2,7 @@
  * Classes for managing NeL context in order to support multi module NeL 
  * application.
  *
- * $Id: app_context.cpp,v 1.2 2005/08/29 16:12:47 boucher Exp $
+ * $Id: app_context.cpp,v 1.5 2006/01/10 17:38:47 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -77,11 +77,14 @@ void	INelContext::contextReady()
 	// register local instance counter in the global instance counter manager
 	CInstanceCounterLocalManager::getInstance().registerLocalManager();
 
-	// register local command into the global command registry
-	ICommand::TCommand::iterator first(ICommand::LocalCommands->begin()), last(ICommand::LocalCommands->end());
-	for (; first != last; ++first)
+	// register local commands into the global command registry (except it there is no command at all)
+	if (ICommand::LocalCommands != NULL)
 	{
-		CCommandRegistry::getInstance().registerCommand(first->second);
+		ICommand::TCommand::iterator first(ICommand::LocalCommands->begin()), last(ICommand::LocalCommands->end());
+		for (; first != last; ++first)
+		{
+			CCommandRegistry::getInstance().registerCommand(first->second);
+		}
 	}
 }
 
@@ -97,6 +100,7 @@ CApplicationContext::CApplicationContext()
 	DefaultMsgBoxDisplayer = NULL;
 	DebugNeedAssert = false;
 	NoAssert = false;
+	AlreadyCreateSharedAmongThreads = false;
 
 	contextReady();
 }
@@ -215,6 +219,15 @@ void CApplicationContext::setNoAssert(bool noAssert)
 	NoAssert = noAssert;
 }
 
+bool CApplicationContext::getAlreadyCreateSharedAmongThreads()
+{
+	return AlreadyCreateSharedAmongThreads;
+}
+
+void CApplicationContext::setAlreadyCreateSharedAmongThreads(bool b)
+{
+	AlreadyCreateSharedAmongThreads = b;
+}
 
 CLibraryContext::CLibraryContext(INelContext &applicationContext)
 : _ApplicationContext(applicationContext)
@@ -384,12 +397,24 @@ bool CLibraryContext::getNoAssert()
 	return _ApplicationContext.getNoAssert();
 }
 
+
+
 void CLibraryContext::setNoAssert(bool noAssert)
 {
 //	nlassert(_ApplicationContext != NULL); 
 
 	// just forward the call
 	_ApplicationContext.setNoAssert(noAssert);
+}
+
+bool CLibraryContext::getAlreadyCreateSharedAmongThreads()
+{
+	return _ApplicationContext.getAlreadyCreateSharedAmongThreads();
+}
+
+void CLibraryContext::setAlreadyCreateSharedAmongThreads(bool b)
+{
+	_ApplicationContext.setAlreadyCreateSharedAmongThreads(b);
 }
 
 void initNelLibrary(NLMISC::CLibrary &lib)

@@ -1,7 +1,7 @@
 /** \file admin_service.cpp
  * Admin Service (AS)
  *
- * $Id: admin_service.cpp,v 1.39 2005/03/03 15:06:25 legros Exp $
+ * $Id: admin_service.cpp,v 1.41 2006/01/10 17:38:48 boucher Exp $
  *
  */
 
@@ -41,6 +41,9 @@
 #include <string>
 #include <list>
 
+#if defined (NL_OS_WINDOWS)
+#include <winsock.h>
+#endif
 #include <mysql.h>
 
 #include "nel/misc/debug.h"
@@ -51,6 +54,8 @@
 #include "nel/net/service.h"
 #include "nel/net/varpath.h"
 #include "nel/net/email.h"
+
+#include <mysql.h>
 
 #include "connection_web.h"
 
