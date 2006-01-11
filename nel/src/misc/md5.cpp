@@ -1,6 +1,6 @@
 /** \file md5.cpp
  * MD5 Implementation in c++ derived from RSA Data Security work
- * $Id: md5.cpp,v 1.2 2006/01/10 17:38:47 boucher Exp $
+ * $Id: md5.cpp,v 1.1.40.2 2006/01/11 15:02:11 boucher Exp $
  */
 
 /* Copyright, 2000, 2001, 2002,2003,2004 Nevrax Ltd.

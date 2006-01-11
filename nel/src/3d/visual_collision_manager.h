@@ -1,7 +1,7 @@
 /** \file visual_collision_manager.h
  * TODO: File description
  *
- * $Id: visual_collision_manager.h,v 1.12 2006/01/09 10:59:24 berenguier Exp $
+ * $Id: visual_collision_manager.h,v 1.11.16.1 2006/01/11 15:02:10 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

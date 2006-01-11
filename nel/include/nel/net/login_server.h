@@ -1,7 +1,7 @@
 /** \file login_server.h
  * CLoginServer is the interface used by the front end to accepts authenticate users.
  *
- * $Id: login_server.h,v 1.20 2006/01/10 17:38:46 boucher Exp $
+ * $Id: login_server.h,v 1.19.4.2 2006/01/11 15:02:09 boucher Exp $
  * 
  */
 

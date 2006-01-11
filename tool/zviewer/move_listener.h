@@ -1,7 +1,7 @@
 /** \file move_listener.h
  * <File description>
  *
- * $Id: move_listener.h,v 1.5 2006/01/10 17:39:05 boucher Exp $
+ * $Id: move_listener.h,v 1.4.40.1 2006/01/11 15:05:12 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

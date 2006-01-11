@@ -1,7 +1,7 @@
 /** \file camera_col.h
  * TODO: File description
  *
- * $Id: camera_col.h,v 1.4 2006/01/09 10:56:28 berenguier Exp $
+ * $Id: camera_col.h,v 1.3.32.1 2006/01/11 15:02:10 boucher Exp $
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

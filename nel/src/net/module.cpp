@@ -1,7 +1,7 @@
 /** \file module.cpp
  * module base implementation
  *
- * $Id: module.cpp,v 1.11 2006/01/10 17:38:47 boucher Exp $
+ * $Id: module.cpp,v 1.10.4.4 2006/01/11 15:02:11 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

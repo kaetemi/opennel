@@ -1,7 +1,7 @@
 /** \file singleton.h
  * This class is used to create singleton class following the singleton design pattern
  *
- * $Id: singleton.h,v 1.4 2006/01/10 17:38:46 boucher Exp $
+ * $Id: singleton.h,v 1.3.6.2 2006/01/11 15:02:09 boucher Exp $
  */
 
 /* Copyright, 2004 Nevrax Ltd.

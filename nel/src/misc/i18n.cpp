@@ -1,7 +1,7 @@
 /** \file i18n.cpp
  * Internationalisation
  *
- * $Id: i18n.cpp,v 1.59 2006/01/10 17:38:47 boucher Exp $
+ * $Id: i18n.cpp,v 1.58.4.2 2006/01/11 15:02:11 boucher Exp $
  *
  * \todo ace: manage unicode format
  */

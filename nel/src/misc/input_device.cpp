@@ -1,7 +1,7 @@
 /** \file input_device.cpp
  * TODO: File description
  *
- * $Id: input_device.cpp,v 1.3 2006/01/10 17:38:47 boucher Exp $
+ * $Id: input_device.cpp,v 1.2.32.1 2006/01/11 15:02:11 boucher Exp $
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.
