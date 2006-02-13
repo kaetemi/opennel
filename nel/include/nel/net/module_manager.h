@@ -1,7 +1,7 @@
 /** \file module_manager.h
  * module manager inteface
  *
- * $Id: module_manager.h,v 1.4.4.4 2006/01/11 15:02:09 boucher Exp $
+ * $Id: module_manager.h,v 1.4.4.6 2006/02/11 18:47:42 mitchell Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -56,7 +56,7 @@ namespace NLNET
 		virtual void applicationExit() =0;
 
 		/// Release the singleton instance
-		virtual void releaseInstance() =0;
+		static void releaseInstance();
 
 		virtual ~IModuleManager() {}
 
@@ -180,6 +180,9 @@ namespace NLNET
 													TModuleId foreignModuleId) =0;
 
 		virtual void releaseModuleProxy(TModuleId moduleProxyId) =0;
+
+		virtual uint32 getNbModule() =0;
+		virtual uint32 getNbModuleProxy() =0;
 
 	};
 
