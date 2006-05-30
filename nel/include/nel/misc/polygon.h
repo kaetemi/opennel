@@ -1,7 +1,7 @@
 /** \file polygon.h
  * 3D and 2D Polygons classes
  *
- * $Id: polygon.h,v 1.18.6.3 2006/01/18 18:58:17 vizerie Exp $
+ * $Id: polygon.h,v 1.18.6.6 2006/05/03 17:05:42 vizerie Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -141,6 +141,11 @@ public:
 	  */
 	CPolygon2D(const CPolygon &src, const CMatrix &projMat = CMatrix::Identity);
 
+	/** Reinit a 2D polygon from this 3D polygon, by using the given projection matrix
+	  * The x and y components of projected vertices are used to create the 2D polygon
+	  */
+	void fromPolygon(const CPolygon &src, const CMatrix &projMat = CMatrix::Identity);	
+
 	/** Build a 2D polygon from the given triangle, by using the given projection matrix
 	  * The x and y components of projected vertices are used to create the 2D polygon
 	  */
@@ -170,16 +175,19 @@ public:
 	  * The output is in a vector of sint pairs. minimumY is filled with the minimum y value of the poly.
 	  * Each pairs gives [xmin, xmax] for the current segment. if xmin > xmax, then no point is valid for this segment.
 	  * Otherwise, all points from x = xmin (included)  to x = xmax (included) are valid.
+	  * IMPORTANT: coordinates must be in the -32000, 32000 range. This is checked in debug
 	  */
-	void		computeBorders(TRasterVect &borders, sint &minimumY);
+	void		computeBorders(TRasterVect &borders, sint &minimumY) const;
 	/** The same as compute borders, but pixel are seen as surfaces and not as points.
 	   * Any pixel that is touched by the poly will be selected
+	   * IMPORTANT: coordinates must be in the -32000, 32000 range. This is checked in debug	   
 	   */
-	void		computeOuterBorders(TRasterVect &borders, sint &minimumY);
+	void		computeOuterBorders(TRasterVect &borders, sint &minimumY) const;
 	/** The same as compute borders, but pixel are seen as surfaces and not as points
 	  * In this version, only pixels that are entirely INSIDE the poly are kept
+	  * IMPORTANT: coordinates must be in the -32000, 32000 range. This is checked in debug	   
 	  */
-	void		computeInnerBorders(TRasterVect &borders, sint &minimumY);
+	void		computeInnerBorders(TRasterVect &borders, sint &minimumY) const;
 	/// Test wether this polygon intersect another convex polygon. Currently not optimized.
 	bool        intersect(const CPolygon2D &other) const;
 
@@ -197,6 +205,9 @@ public:
 	// Test if current poly is CCW oriented (in a right handed coord. system)
 	bool  isCCWOriented() const;
 
+	// get bounding rect (poly must not be empty)
+	void getBoundingRect(CVector2f &minCorner, CVector2f &maxCorner) const;
+
 private:
 	/// Sum the dot product of this poly vertices against a line equation a*x + b*y + c
 	float sumDPAgainstLine(float a, float b, float c) const;
@@ -213,6 +224,7 @@ private:
 			   Vertices[0]                 :
 		       Vertices[index + 1];
 	}	
+	void checkValidBorders() const;
 };
 
 // comparison of 2D polygon 

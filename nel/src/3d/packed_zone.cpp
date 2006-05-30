@@ -559,6 +559,13 @@ static void addQuadToSilhouette(const CVector &v0, const CVector &v1, const CVec
 
 
 //***************************************************************************************
+CPackedZone16::CPackedZone16()
+{
+	CellSize = 0.f;
+	_Origin = CVector::Null;
+}
+
+//***************************************************************************************
 void CPackedZone32::unpackTri(const CPackedTri &src, CVector dest[3]) const
 {	
 	// TODO: add 'multiply-add' operator
@@ -579,6 +586,7 @@ void CPackedZone32::unpackTri(const CPackedTri &src, CVector dest[3]) const
 CPackedZone32::CPackedZone32()
 {
 	CellSize = 0;	
+	_Origin = CVector::Null;
 }
 
 //***************************************************************************************
@@ -624,7 +632,7 @@ void CPackedZone32::build(std::vector<const CTessFace*> &leaves,
 	Verts.clear();
 	Tris.clear();
 	TriLists.clear();
-	Grid.clear();
+	Grid.clear();	
 	if (leaves.empty()) return;
 	for(uint k = 0; k < leaves.size(); ++k)
 	{
@@ -944,6 +952,7 @@ uint32 CPackedZone32::allocVertex(const CVector &src, TVertexGrid &vertexGrid)
 //***************************************************************************************
 void CPackedZone32::render(CVertexBuffer &vb, IDriver &drv, CMaterial &material, CMaterial &wiredMaterial, const CMatrix &camMat, uint batchSize, const CVector localFrustCorners[8])
 {
+	if (Tris.empty()) return;
 	IDriver::TPolygonMode oldPolygonMode = drv.getPolygonMode();
 	//	
 	CVector frustCorners[8];
@@ -1150,7 +1159,7 @@ void CPackedZone16::serial(NLMISC::IStream &f) throw (NLMISC::EStream)
 		//nlwarning("serial grid");
 		serialPackedVector16(datas, f);		
 	}			
-	f.serial(CellSize);
+	f.serial(CellSize);	
 	f.serial(_Origin);
 	f.serial(_WorldToLocal);
 	f.serial(ZoneX);
@@ -1167,6 +1176,7 @@ void CPackedZone16::serial(NLMISC::IStream &f) throw (NLMISC::EStream)
 //***************************************************************************************
 void CPackedZone16::render(CVertexBuffer &vb, IDriver &drv, CMaterial &material, CMaterial &wiredMaterial, const CMatrix &camMat, uint batchSize, const CVector localFrustCorners[8])
 {
+	if (Tris.empty()) return;
 	IDriver::TPolygonMode oldPolygonMode = drv.getPolygonMode();		
 	CVector frustCorners[8];
 	for(uint k = 0; k < sizeofarray(frustCorners); ++k)
@@ -1323,6 +1333,94 @@ bool CPackedZone32::raytrace(const NLMISC::CVector &start, const NLMISC::CVector
 bool CPackedZone16::raytrace(const NLMISC::CVector &start, const NLMISC::CVector &end, NLMISC::CVector &inter, std::vector<CTriangle> *testedTriangles /*= NULL*/) const
 {	
 	return NL3D::raytrace(*this, start, end, inter, testedTriangles);
+}
+
+//***************************************************************************************
+void CPackedZone16::appendSelection(const NLMISC::CPolygon2D &poly, std::vector<NLMISC::CTriangle> &selectedTriangles) const
+{	
+	// compute covered zones
+	NLMISC::CPolygon2D localPoly = poly;
+	for (uint k = 0; k < localPoly.Vertices.size(); ++k)
+	{
+		localPoly.Vertices[k].x = (localPoly.Vertices[k].x - Box.getMin().x) / CellSize;
+		localPoly.Vertices[k].y = (localPoly.Vertices[k].y - Box.getMin().y) / CellSize;		
+	}
+	NLMISC::CPolygon2D::TRasterVect borders;
+	sint minY;
+	localPoly.computeOuterBorders(borders, minY);
+	CTriangle newTri;
+	// 
+	std::vector<bool> done(Tris.size(), false); // avoid double insertion
+	//
+	for (sint y = minY; y < (sint) (minY + borders.size()); ++y)
+	{
+		if (y < 0 || y >= (sint) Grid.getHeight()) continue;
+		for (sint x = borders[y - minY].first; x <= borders[y - minY].second; ++x)
+		{
+			if (x < 0 || x >= (sint) Grid.getWidth()) continue;
+			{
+				if (Grid(x, y) != (uint16) ~0)
+				{
+					uint16 currTriIndex = Grid(x, y);
+					while (TriLists[currTriIndex] != (uint16) ~0)
+					{
+						if (!done[TriLists[currTriIndex]])
+						{
+							unpackTri(Tris[TriLists[currTriIndex]], &newTri.V0);
+							selectedTriangles.push_back(newTri);
+							done[TriLists[currTriIndex]] = true;
+						}
+						++ currTriIndex;
+					}
+				}				
+			}
+		}
+	}
+}
+
+//***************************************************************************************
+void CPackedZone32::appendSelection(const NLMISC::CPolygon2D &poly, std::vector<NLMISC::CTriangle> &selectedTriangles) const
+{
+	// TODO nico : factorize with CPackedZone16::appendSelection
+	selectedTriangles.clear();
+	// compute covered zones
+	NLMISC::CPolygon2D localPoly = poly;
+	for (uint k = 0; k < localPoly.Vertices.size(); ++k)
+	{
+		localPoly.Vertices[k].x = (localPoly.Vertices[k].x - Box.getMin().x) / CellSize;
+		localPoly.Vertices[k].y = (localPoly.Vertices[k].y - Box.getMin().y) / CellSize;
+	}
+	NLMISC::CPolygon2D::TRasterVect borders;
+	sint minY;
+	localPoly.computeOuterBorders(borders, minY);
+	CTriangle newTri;
+	// 
+	std::vector<bool> done(Tris.size(), false); // avoid double insertion
+	//
+	for (sint y = minY; y < (sint) (minY + borders.size()); ++y)
+	{
+		if (y < 0 || y >= (sint) Grid.getHeight()) continue;
+		for (sint x = borders[y - minY].first; x <= borders[y - minY].second; ++x)
+		{
+			if (x < 0 || x >= (sint) Grid.getWidth()) continue;
+			{
+				if (Grid(x, y) != (uint32) ~0)
+				{
+					uint32 currTriIndex = Grid(x, y);
+					while (TriLists[currTriIndex] != (uint32) ~0)
+					{
+						if (!done[TriLists[currTriIndex]])
+						{
+							unpackTri(Tris[TriLists[currTriIndex]], &newTri.V0);
+							selectedTriangles.push_back(newTri);
+							done[TriLists[currTriIndex]] = true;
+						}
+						++ currTriIndex;
+					}
+				}				
+			}
+		}
+	}
 }
 
 } // NL3D

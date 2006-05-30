@@ -1,7 +1,7 @@
 /** \file config_file.cpp
  * CConfigFile class
  *
- * $Id: config_file.cpp,v 1.67.4.1 2006/01/16 13:27:49 mitchell Exp $
+ * $Id: config_file.cpp,v 1.67.4.4 2006/03/30 10:06:37 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -289,7 +289,7 @@ void CConfigFile::CVar::add (const CVar &var)
 	}
 }
 
-int CConfigFile::CVar::size () const
+uint CConfigFile::CVar::size () const
 {
 	switch (Type)
 	{
@@ -317,7 +317,7 @@ CConfigFile::~CConfigFile ()
 	}
 }
 
-void CConfigFile::load (const string &fileName)
+void CConfigFile::load (const string &fileName, bool lookupPaths )
 {
 	if(fileName.empty())
 	{
@@ -333,7 +333,7 @@ void CConfigFile::load (const string &fileName)
 		_ConfigFiles = new std::vector<CConfigFile *>;
 	}
 	(*CConfigFile::_ConfigFiles).push_back (this);
-	reparse ();
+	reparse (lookupPaths);
 
 /* 	_FileName.clear ();
 	_FileName.push_back (fileName);
@@ -370,7 +370,7 @@ bool CConfigFile::loaded()
 	return !CConfigFile::FileNames.empty();
 }
 
-void CConfigFile::reparse (/*const char *filename, bool callingCallback*/)
+void CConfigFile::reparse (bool lookupPaths)
 {
 	if (FileNames.empty())
 	{
@@ -387,7 +387,14 @@ void CConfigFile::reparse (/*const char *filename, bool callingCallback*/)
 
 	while (!fn.empty())
 	{
-		fn = NLMISC::CPath::getFullPath(fn, false);
+		if (lookupPaths)
+		{
+			fn = CPath::lookup(fn, true);
+		}
+		else
+		{
+			fn = NLMISC::CPath::getFullPath(fn, false);
+		}
 		nldebug ("CF: Adding config file '%s' in the config file", fn.c_str());
 		FileNames.push_back (fn);
 		LastModified.push_back (CFile::getFileModificationDate(fn));
@@ -415,7 +422,13 @@ void CConfigFile::reparse (/*const char *filename, bool callingCallback*/)
 //			cf_ifile.close();
 			if (!parsingOK)
 			{
-				nlwarning ("CF: Parsing error in file %s line %d", fn.c_str(), cf_CurrentLine);
+				// write the result of preprocessing in a temp file
+				string debugFileName;
+				debugFileName += "debug_";
+				debugFileName += CFile::getFilename(fn);
+
+				CI18N::writeTextFile(debugFileName, content, true);
+				nlwarning ("CF: Parsing error in file %s line %d, look in '%s' for a preprocessed version of the config file", fn.c_str(), cf_CurrentLine, debugFileName.c_str());
 				throw EParseError (fn, cf_CurrentLine);
 			}
 

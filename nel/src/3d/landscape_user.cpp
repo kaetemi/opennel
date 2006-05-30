@@ -1,7 +1,7 @@
 /** \file landscape_user.cpp
  * TODO: File description
  *
- * $Id: landscape_user.cpp,v 1.49.16.1 2006/01/19 16:52:47 legallo Exp $
+ * $Id: landscape_user.cpp,v 1.49.16.4 2006/04/19 17:14:55 vizerie Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -205,7 +205,7 @@ void	CLandscapeUser::loadAllZonesAround(const CVector &pos, float radius, std::v
 
 //****************************************************************************
 void	CLandscapeUser::refreshAllZonesAround(const CVector &pos, float radius, std::vector<std::string> &zonesAdded, std::vector<std::string> &zonesRemoved, 
-											  NLMISC::IProgressCallback &progress)
+											  NLMISC::IProgressCallback &progress, const std::vector<uint16> *validZoneIds)
 {
 	NL3D_MEM_LANDSCAPE
 	NL3D_HAUTO_LOAD_LANDSCAPE;
@@ -214,7 +214,7 @@ void	CLandscapeUser::refreshAllZonesAround(const CVector &pos, float radius, std
 	zonesRemoved.clear();
 	std::string		za, zr;
 
-	_ZoneManager.checkZonesAround ((uint)pos.x, (uint)(-pos.y), (uint)radius);
+	_ZoneManager.checkZonesAround ((uint)pos.x, (uint)(-pos.y), (uint)radius, validZoneIds);
 	refreshZonesAround (pos, radius, za, zr);
 
 	// Zone to load
@@ -276,7 +276,7 @@ void	CLandscapeUser::refreshZonesAround(const CVector &pos, float radius)
 	refreshZonesAround(pos, radius, dummy1, dummy2);
 }
 //****************************************************************************
-void	CLandscapeUser::refreshZonesAround(const CVector &pos, float radius, std::string &zoneAdded, std::string &zoneRemoved)
+void	CLandscapeUser::refreshZonesAround(const CVector &pos, float radius, std::string &zoneAdded, std::string &zoneRemoved, const std::vector<uint16> *validZoneIds)
 {
 	NL3D_MEM_LANDSCAPE
 	NL3D_HAUTO_LOAD_LANDSCAPE;
@@ -323,7 +323,7 @@ void	CLandscapeUser::refreshZonesAround(const CVector &pos, float radius, std::s
 		}
 	}
 
-	_ZoneManager.checkZonesAround((uint)pos.x, (uint)(-pos.y), (uint)radius);
+	_ZoneManager.checkZonesAround((uint)pos.x, (uint)(-pos.y), (uint)radius, validZoneIds);
 }
 
 //****************************************************************************
@@ -635,6 +635,14 @@ void CLandscapeUser::setZFunc(UMaterial::ZFunc val)
 }
 
 // ***************************************************************************
+const CZone*	CLandscapeUser::getZone (sint zoneId) const
+{
+	NL3D_MEM_LANDSCAPE
+	NL3D_HAUTO_UI_LANDSCAPE;
+	return _Landscape->Landscape.getZone(zoneId);
+}
+
+// ***************************************************************************
 void		CLandscapeUser::setVegetableDensity(float density)
 {
 	NL3D_MEM_LANDSCAPE
@@ -650,5 +658,12 @@ float		CLandscapeUser::getVegetableDensity() const
 	return _Landscape->Landscape.getVegetableDensity();
 }
 
+// ***************************************************************************
+float CLandscapeUser::getRayCollision(const NLMISC::CVector &start, const NLMISC::CVector &end)
+{
+	NL3D_MEM_LANDSCAPE
+	NL3D_HAUTO_UI_LANDSCAPE;
+	return _Landscape->Landscape.getRayCollision(start, end);
+}
 
 } // NL3D

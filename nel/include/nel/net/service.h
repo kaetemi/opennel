@@ -1,7 +1,7 @@
 /** \file service.h
  * Base class for all network services
  *
- * $Id: service.h,v 1.89.4.6 2006/01/26 17:35:55 boucher Exp $
+ * $Id: service.h,v 1.89.4.8 2006/03/30 10:09:44 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -234,6 +234,9 @@ public:
 	/// Returns the service identifier
 	TServiceId						getServiceId () const { return _SId; }
 
+	/// Return the host name of the host machine
+	const std::string				&getHostName() const		{ return _HostName; }
+
 	/// Returns the status
 	sint							getExitStatus () const { return _ExitStatus; }
 
@@ -315,6 +318,8 @@ public:
 	void					addStatusTag(const std::string &statusTag);
 	/// Remove a tag from the status string
 	void					removeStatusTag(const std::string &statusTag);
+	/// Get the current status with attached tags
+	std::string				getFullStatus() const;
 	//@}
 
 	/// \name variables. These variables can be read/modified by the user.
@@ -436,6 +441,8 @@ private:
 	/// Array of arguments pass from the command line
 	NLMISC::CVectorSString				_Args;
 
+	/// Host name of the host machine that run the service
+	std::string							_HostName;
 	/// Listening port of this service
 	NLMISC::CVariable<uint16>			ListeningPort;
 

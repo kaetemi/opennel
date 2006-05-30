@@ -1,7 +1,7 @@
 /** \file module_manager.cpp
  * module manager implementation
  *
- * $Id: module_manager.cpp,v 1.8.4.7 2006/02/11 18:47:15 mitchell Exp $
+ * $Id: module_manager.cpp,v 1.8.4.10 2006/04/20 14:33:11 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -33,6 +33,7 @@
 #include "nel/misc/sstring.h"
 #include "nel/net/module_manager.h"
 
+#include "nel/net/service.h"
 #include "nel/net/module_gateway.h"
 #include "nel/net/module.h"
 #include "nel/net/module_socket.h"
@@ -184,7 +185,11 @@ namespace NLNET
 		{
 			if (_UniqueNameRoot.empty())
 			{
-				string hostName = ::NLNET::CInetAddress::localHost().hostName();
+				string hostName;
+				if (IService::isServiceInitialized())
+					hostName = IService::getInstance()->getHostName();
+				else
+					hostName = ::NLNET::CInetAddress::localHost().hostName();
 				int pid = ::getpid();
 
 				_UniqueNameRoot = hostName+":"+toString(pid);
@@ -238,7 +243,7 @@ namespace NLNET
 			}
 
 			// now, load the library
-			string fullName = path+"/"+CLibrary::makeLibName(shortName);
+			string fullName = NLMISC::CPath::standardizePath(path)+CLibrary::makeLibName(shortName);
 			auto_ptr<TModuleLibraryInfo>	mli = auto_ptr<TModuleLibraryInfo>(new TModuleLibraryInfo);
 			if (!mli->LibraryHandler.loadLibrary(fullName, false, true, true))
 			{
@@ -410,14 +415,27 @@ namespace NLNET
 			// init the module with parameter string
 			TParsedCommandLine	mii;
 			mii.parseParamList(paramString);
-			module->initModule(mii);
+			bool initResult = module->initModule(mii);
 
 			// store the module in the manager
 			_ModuleInstances.add(moduleName, module.get());
 			_ModuleIds.add(modBase->_ModuleId, module.get());
 
-			// ok, all is fine, return the module
-			return module.release();
+			if (initResult)
+			{
+				// ok, all is fine, return the module
+				return module.release();
+			}
+			else
+			{
+				// error during initialization, delete the module
+				nlwarning("Create module : the new module '%s' of class '%s' has failed to initilize properly.",\
+					moduleName.c_str(),
+					className.c_str());
+
+				deleteModule(module.release());
+				return NULL;
+			}
 		}
 
 		void deleteModule(IModule *module)
@@ -477,6 +495,7 @@ namespace NLNET
 						// check for finished task
 						if (task->isFinished())
 						{
+							nldebug("NLNETL6: updateModule : task %p is finished, delete and remove from task list", task);
 							// delete the task and resume the next one if any
 							delete task;
 							modBase->_ModuleTasks.erase(modBase->_ModuleTasks.begin());

@@ -1,7 +1,7 @@
 /** \file build_surf.h
  * 
  *
- * $Id: build_surf.h,v 1.15 2004/06/29 17:16:00 legros Exp $
+ * $Id: build_surf.h,v 1.15.40.2 2006/04/25 16:49:27 berenguier Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -511,6 +511,8 @@ public:
 	NLMISC::CAABBox							BBox;
 	NLMISC::CAABBox							OriginalBBox;
 	NLMISC::CAABBox							BestFittingBBox;
+	// Yoyo: if zone is empty, we must not apply the Translation delta to zone
+	bool									BestFittingBBoxSetuped;
 
 	///
 	NLMISC::CVector							Translation;
@@ -614,6 +616,9 @@ public:
 	 * Load tessellation
 	 */
 	void	loadTessellation(NLMISC::CIFile &input);
+
+private:
+	void	checkSameLandscapeHmBinds(const NL3D::CLandscape &landscape, const NL3D::CLandscape &landscapeNoHm);
 };
 
 
