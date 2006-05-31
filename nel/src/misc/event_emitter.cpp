@@ -1,7 +1,7 @@
 /** \file event_emitter.cpp
  * TODO: File description
  *
- * $Id: event_emitter.cpp,v 1.18.32.1 2006/01/11 15:02:11 boucher Exp $
+ * $Id: event_emitter.cpp,v 1.19 2006/01/10 17:38:47 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

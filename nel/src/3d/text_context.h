@@ -1,7 +1,7 @@
 /** \file text_context.h
  * TODO: File description
  *
- * $Id: text_context.h,v 1.16 2005/02/22 10:19:12 besson Exp $
+ * $Id: text_context.h,v 1.18 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -92,6 +92,7 @@ public:
 
 	void setShadeExtent (float shext) { _ShadeExtent = shext; }
 
+	/// The alpha of the shade is multiplied at each draw with the alpha of the color. Default: (0,0,0,255)
 	void setShadeColor (NLMISC::CRGBA color) { _ShadeColor = color; }
 
 	/// If true the CFontManager look at Driver window size, and resize fontSize to keep the same
@@ -149,7 +150,7 @@ public:
 		{
 			CRGBA	bkup = rCS.Color;
 			rCS.Color = _ShadeColor;
-			rCS.Color.A = bkup.A;
+			rCS.Color.A = (uint8)((uint(bkup.A) * uint(_ShadeColor.A)+1)>>8);
 			rCS.render2D (*_Driver, x+_ShadeExtent, z-_ShadeExtent, _HotSpot, _ScaleX, _ScaleZ);
 			rCS.Color= bkup;
 		}
@@ -167,7 +168,7 @@ public:
 		{
 			CRGBA	bkup = rCS.Color;
 			rCS.Color= _ShadeColor;
-			rCS.Color.A = bkup.A;
+			rCS.Color.A = (uint8)((uint(bkup.A) * uint(_ShadeColor.A)+1)>>8);
 			rCS.render2DClip(*_Driver, rdrBuffer, x+_ShadeExtent, z-_ShadeExtent, xmin, ymin, xmax, ymax);
 			rCS.Color= bkup;
 		}
@@ -185,7 +186,7 @@ public:
 		{
 			CRGBA	bkup = rCS.Color;
 			rCS.Color= _ShadeColor;
-			rCS.Color.A = bkup.A;
+			rCS.Color.A = (uint8)((uint(bkup.A) * uint(_ShadeColor.A)+1)>>8);
 			rCS.render2DUnProjected (*_Driver, renderBuffer, frustum, scaleMatrix, x+_ShadeExtent, y-_ShadeExtent, depth, xmin, ymin, xmax, ymax);
 			rCS.Color= bkup;
 		}
@@ -205,7 +206,7 @@ public:
 		{
 			CRGBA	bkup = _TempString.Color;
 			_TempString.Color= _ShadeColor;
-			_TempString.Color.A = bkup.A;
+			_TempString.Color.A = (uint8)((uint(bkup.A) * uint(_ShadeColor.A)+1)>>8);
 			_TempString.render2D (*_Driver,x+_ShadeExtent,z-_ShadeExtent,_HotSpot,_ScaleX,_ScaleZ);
 			_TempString.Color= bkup;
 		}
@@ -229,7 +230,7 @@ public:
 		{
 			CRGBA	bkup = _TempString.Color;
 			_TempString.Color = _ShadeColor;
-			_TempString.Color.A = bkup.A;
+			_TempString.Color.A = (uint8)((uint(bkup.A) * uint(_ShadeColor.A)+1)>>8);
 			_TempString.render2D (*_Driver,x+_ShadeExtent,z-_ShadeExtent,_HotSpot,_ScaleX,_ScaleZ);
 			_TempString.Color= bkup;
 		}
@@ -287,6 +288,10 @@ public:
 		_FontManager->dumpCache (filename);
 	}
 
+	/// In single line mode you can assign several color to letters
+	void setLetterColors(CLetterColors * letterColors, uint index);
+	bool isSameLetterColors(CLetterColors * letterColors, uint index);
+	
 private:
 
   	/// Driver
@@ -342,7 +347,6 @@ private:
 	/// Cache for for printAt() and printfAt().
 	/// This prevents from creating VBdrvinfos each time they are called (N*each frame!!).
 	CComputedString		_TempString;
-
 };
 
 

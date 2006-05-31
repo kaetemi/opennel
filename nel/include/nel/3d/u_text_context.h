@@ -1,7 +1,7 @@
 /** \file u_text_context.h
  * TODO: File description
  *
- * $Id: u_text_context.h,v 1.18 2004/11/15 10:24:19 lecroart Exp $
+ * $Id: u_text_context.h,v 1.20 2006/05/31 12:03:13 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -49,6 +49,18 @@ public:
 };
 
 
+class ULetterColors
+{
+public:
+	
+	ULetterColors() {}
+	virtual ~ULetterColors() {}
+
+	virtual bool isSameLetterColors(ULetterColors * letterColors) = 0;
+	virtual void pushLetterColor(uint index, const NLMISC::CRGBA & color) = 0;
+};
+
+
 // ***************************************************************************
 /**
  * A game interface to render string.
@@ -67,6 +79,7 @@ protected:
 
 
 public:
+
 	enum THotSpot 
 	{
 		BottomLeft=0,
@@ -177,6 +190,7 @@ public:
 	virtual	void			setShadeExtent (float shext) = 0;
 	/**
 	 * set the shadow's color
+	 * The alpha of the shade is multiplied at each draw with the alpha of the color. Default: (0,0,0,255)
 	 * \param the shadow color
 	 */
 	virtual	void			setShadeColor (NLMISC::CRGBA sc) = 0;
@@ -302,6 +316,12 @@ public:
 	
 	/// Flush the rendered string buffer. This method doesn't change the current matrices nor the material properties.
 	virtual void					flushRenderBufferUnProjected(URenderStringBuffer *buffer, bool zwrite) = 0;
+
+	/// In single line mode you can assign several color to letters
+	virtual void setLetterColors(ULetterColors * letterColors, uint index) = 0;
+	virtual bool isSameLetterColors(ULetterColors * letterColors, uint index) = 0;
+	virtual ULetterColors * createLetterColors() = 0;
+	
 };
 
 

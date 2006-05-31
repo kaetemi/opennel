@@ -1,7 +1,7 @@
 /** \file camera_col.h
  * TODO: File description
  *
- * $Id: camera_col.h,v 1.3.32.1 2006/01/11 15:02:10 boucher Exp $
+ * $Id: camera_col.h,v 1.5 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.
@@ -71,6 +71,8 @@ public:
 	/** Get the length of the ray built
 	 */
 	float			getRayLen() const {return _RayLen;}
+
+	bool			isSimpleRay() const { return _SimpleRay; }
 
 private:
 	enum	{MaxNPlanes=6};

@@ -1,7 +1,7 @@
 /** \file triangle.h
  * TODO: File description
  *
- * $Id: triangle.h,v 1.6.16.2 2006/01/11 15:02:09 boucher Exp $
+ * $Id: triangle.h,v 1.7 2006/01/10 17:38:46 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
