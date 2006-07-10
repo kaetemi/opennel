@@ -5,7 +5,7 @@
  *
  * The coding style is not CPU efficient - the routines are not designed for performance
  *
- * $Id: sstring.h,v 1.34.4.6 2006/05/10 12:27:55 miller Exp $
+ * $Id: sstring.h,v 1.34.4.8 2006/07/10 16:23:56 miller Exp $
  */
 
 
@@ -356,6 +356,9 @@ public:
 	int atoi() const;
 	signed atosi() const;
 	unsigned atoui() const;
+	sint64 atoi64() const;
+	sint64 atosi64() const;
+	uint64 atoui64() const;
 
 	/// A handy atof routine...
 	double atof() const;
@@ -453,7 +456,13 @@ public:
 	bool readFromFile(const CSString& fileName);
 
 	/// Write a string to a text file
+	// returns true on success, false on failure
 	bool writeToFile(const CSString& fileName) const;
+
+	/// Write a string to a text file
+	// if the file already exists and its content is identicall to our own then it is not overwritten
+	// returns true on success (including the case where the file exists and is not overwritten), false on failure
+	bool writeToFileIfDifferent(const CSString& fileName) const;
 };
 
 
