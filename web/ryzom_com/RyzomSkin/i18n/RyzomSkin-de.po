@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RyzomSkin\n"
 "POT-Creation-Date: 2006-03-21 12:13+0000\n"
-"PO-Revision-Date: 2006-05-05 14:56+0100\n"
+"PO-Revision-Date: 2006-06-29 18:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: zope nevrax team\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,100 @@ msgstr ""
 "Domain: RyzomSkin\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
+msgid "bug_report"
+msgstr "fehlerbericht"
+
+msgid "link"
+msgstr "Fehlerbericht Formular"
+
+msgid "describe"
+msgstr "zur beschreiben des Fehlers. Vielleicht möchtest du auch noch einen Blick auf die"
+
+msgid "link_bug"
+msgstr "Liste der bereits gemeldeten Fehler werfen?"
+
+msgid "convert_in_document"
+msgstr "Convert QnA in Page Document"
+
+#: message in portlet_draft.pt
+msgid "portlet_draft_title"
+msgstr "Meine Entwürfe"
+
+#: message in weblog_macro.cpt
+msgid "this_is_an"
+msgstr "Dies ist eine"
+
+#: message in weblog_macro.cpt
+msgid "unofficial"
+msgstr "inoffizielle"
+
+#: message in weblog_macro.cpt
+msgid "players_news"
+msgstr "Spielernews"
+
+#: message in weblog_macro.cpt
+msgid "contributor"
+msgstr "Mitwirkender: "
+
+#. Default: "author_not_have_mail"
+#: message in author.cpt
+msgid "author_not_have_mail"
+msgstr "Entschuldige, dieser Benutzer hat sein E-Mailadressfeld nicht ausgefüllt; du kannst ihm keine E-Mail über dieses Formular zusenden. Wenn du ihn irgendwie anders erreichen kannst, könntest du ihn fragen, ob der sein E-Mailadressfeld ausfüllt, dann kannst du ihm das nächste mal hierrüber eine Mail zukommen lassen."
+
+#. Default: "sender_not_have_mail"
+#: message in author.cpt
+msgid "sender_not_have_mail"
+msgstr "Du hast keine Emailadresse in deinen Accounteinstellungen angegeben."
+
+#. Default: "Undo"
+#: action defined in portal_undo
+msgid "Undo"
+msgstr "Rückgängig"
+
+#. Default: "Log in"
+#: action defined in portal_membership
+msgid "Log in"
+msgstr "Einloggen"
+
+#. Default: "Log out"
+#: action defined in portal_membership
+msgid "Log out"
+msgstr "Ausloggen"
+
+#. Default: "Manage members"
+#: action defined in portal_membership
+msgid "Manage members"
+msgstr "Benutzereinstellungen"
+
+#. Default: "My Folder"
+#: action defined in portal_membership
+msgid "My Folder"
+msgstr "Mein Ordner"
+
+#. Default: "Preferences"
+#: action defined in portal_membership
+msgid "Preferences"
+msgstr "Meine Einstellungen"
+
+msgid "action_my_subscriptions"
+msgstr "Mein Abonnement"
+
+#. Default: "Log in to add comments"
+#: ./plone_templates/viewThreadsAtBottom.pt
+msgid "label_login_to_add_comments"
+msgstr "Einloggen zum Kommentieren"
+
 msgid "tun"
 msgstr "tun"
+
+msgid "comments"
+msgstr "Kommentare"
+
+msgid "by"
+msgstr "von"
+
+msgid "edit"
+msgstr "bearbeiten"
 
 msgid "here"
 msgstr "hier"
@@ -26,7 +118,7 @@ msgid "label_submit"
 msgstr "Bestätigen"
 
 msgid "unsubcribed_newsletter"
-msgstr "Solltest du mal dein Abonnement via E-Mail beenden oder ändern wollen, kannst du dies hier tun."
+msgstr "Solltest du dein Abonnement via E-Mail beenden oder ändern wollen, kannst du dies hier tun."
 
 msgid "receive_confirmed1"
 msgstr "Du solltest in Kürze eine Bestätigungsmail erhalten, welche an folgende E-Mailadresse geschickt wird:"

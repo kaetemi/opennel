@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RyzomSkin\n"
 "POT-Creation-Date: 2006-03-21 12:13+0000\n"
-"PO-Revision-Date: 2006-05-04 17:31+0100\n"
+"PO-Revision-Date: 2006-07-06 13:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: zope nevrax team\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,100 @@ msgstr ""
 "Domain: RyzomSkin\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 
+msgid "bug_report"
+msgstr "<b>Si vous souhaitez reporter un bug</b> : utilisez "
+
+msgid "link"
+msgstr "le formulaire de report de bug "
+
+msgid "describe"
+msgstr "pour le décrire. Vous pouvez aussi consulter la "
+
+msgid "link_bug"
+msgstr "liste de bugs déjà reportés."
+
+msgid "convert_in_document"
+msgstr "Convert QnA in Page Document"
+
+#: message in portlet_draft.pt
+msgid "portlet_draft_title"
+msgstr "Mes Brouillons"
+
+#: message in weblog_macro.pt
+msgid "this_is_an"
+msgstr "Ceci est une"
+
+#: message in weblog_macro.pt
+msgid "unofficial"
+msgstr "non officielle"
+
+#: message in weblog_macro.pt
+msgid "players_news"
+msgstr "nouvelle de joueur"
+
+#: message in weblog_macro.pt
+msgid "contributor"
+msgstr "Contributeur(s) : "
+
+#. Default: "author_not_have_mail"
+#: message in author.cpt
+msgid "author_not_have_mail"
+msgstr "Désolé, cet utilisateur n'a pas entré d'adresse email dans ses préférences de site; vous ne pouvez pas lui envoyer d'email par ce formulaire. Si vous avez un autre moyen de le contacter, vous pouvez lui demander d'ajouter son adresse email pour pouvoir utiliser le formulaire une prochaine fois."
+
+#. Default: "sender_not_have_mail"
+#: message in author.cpt
+msgid "sender_not_have_mail"
+msgstr "Vous n'avez pas entré d'adresse email dans vos préférences du site."
+
+#. Default: "Undo"
+#: action defined in portal_undo
+msgid "Undo"
+msgstr "Annuler"
+
+#. Default: "Log in"
+#: action defined in portal_membership
+msgid "Log in"
+msgstr "Connexion"
+
+#. Default: "Log out"
+#: action defined in portal_membership
+msgid "Log out"
+msgstr "Quitter"
+
+#. Default: "Manage members"
+#: action defined in portal_membership
+msgid "Manage members"
+msgstr "Gérer les membres"
+
+#. Default: "My Folder"
+#: action defined in portal_membership
+msgid "My Folder"
+msgstr "Mes documents"
+
+#. Default: "Preferences"
+#: action defined in portal_membership
+msgid "Preferences"
+msgstr "Préférences"
+
+msgid "action_my_subscriptions"
+msgstr "Mes abonnements"
+
+#. Default: "Log in to add comments"
+#: ./plone_templates/viewThreadsAtBottom.pt
+msgid "label_login_to_add_comments"
+msgstr "Pour commenter, identifiez-vous"
+
 msgid "tun"
 msgstr ""
+
+msgid "comments"
+msgstr "commentaires"
+
+msgid "edit"
+msgstr "modifier"
+
+msgid "by"
+msgstr "par"
 
 msgid "here"
 msgstr "ici"
