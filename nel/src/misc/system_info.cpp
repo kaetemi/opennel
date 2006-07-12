@@ -1190,6 +1190,3 @@ uint32 CSystemInfo::virtualMemory ()
 }
 
 } // NLMISC
-
-/* Merge of all changed made in the RING_ALPHA branch into HEAD
- */

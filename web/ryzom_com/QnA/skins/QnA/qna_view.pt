@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US"
+      lang="en-US"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="QnA">
+<body>
+    <div metal:fill-slot="main">      
+        <div metal:use-macro="here/document_actions/macros/document_actions"></div>
+        <div tal:define="text here/auto_correction;                         
+                         id here/getId;
+                         choice here/toto;">           
+           <p tal:content="structure text"></p>
+           <br />
+           <a href="" tal:attributes="href string:TransformQnaToDocument?qna=${id}">
+              <span i18n:domain="RyzomSkin" i18n:translate="convert_in_document"></span>
+           </a>
+        </div>
+    </div>    
+</body>
+</html>

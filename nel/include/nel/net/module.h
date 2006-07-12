@@ -921,6 +921,3 @@ namespace NLNET
 } // namespace NLNET
 
 #endif // NL_FILE_MODULE_H
-
-/* Merge of all changed made in the RING_ALPHA branch into HEAD
- */

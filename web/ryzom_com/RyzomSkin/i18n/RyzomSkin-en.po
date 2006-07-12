@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RyzomSkin\n"
 "POT-Creation-Date: 2006-03-21 12:13+0000\n"
-"PO-Revision-Date: 2006-05-05 14:56+0100\n"
+"PO-Revision-Date: 2006-07-06 13:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: zope nevrax team\n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,100 @@ msgstr ""
 "Domain: RyzomSkin\n"
 "X-Is-Fallback-For: en-au en-bz en-ca en-ie en-jm en-nz en-ph en-za en-tt en-gb en-us en-zw\n"
 
+msgid "bug_report"
+msgstr "<b>If you wish to report a bug</b>: please use the "
+
+msgid "link"
+msgstr "bug report form"
+
+msgid "describe"
+msgstr "to describe it. You may also want to have a look at the"
+
+msgid "link_bug"
+msgstr "list of already reported bugs."
+
+msgid "convert_in_document"
+msgstr "Convert QnA in Page Document"
+
+#: message in portlet_draft.pt
+msgid "portlet_draft_title"
+msgstr "My Draft"
+
+#: message in weblog_macro.pt
+msgid "this_is_an"
+msgstr "This is an"
+
+#: message in weblog_macro.pt
+msgid "unofficial"
+msgstr "unofficial"
+
+#: message in weblog_macro.pt
+msgid "players_news"
+msgstr "players news"
+
+#: message in weblog_macro.pt
+msgid "contributor"
+msgstr "Contributor(s) : "
+
+#. Default: "author_not_have_mail"
+#: message in author.cpt
+msgid "author_not_have_mail"
+msgstr "Sorry, this user hasn't filled in his email address in his website preferences; you can't send him an email using this form. If you have any other mean to contact him, you can ask him to fill his email address to be able to use this form the next time."
+
+#. Default: "sender_not_have_mail"
+#: message in author.cpt
+msgid "sender_not_have_mail"
+msgstr "You haven't entered an email address in your website preferences."
+
+#. Default: "Undo"
+#: action defined in portal_undo
+msgid "Undo"
+msgstr "Undo"
+
+#. Default: "Log in"
+#: action defined in portal_membership
+msgid "Log in"
+msgstr "Log in"
+
+#. Default: "Log out"
+#: action defined in portal_membership
+msgid "Log out"
+msgstr "Log out"
+
+#. Default: "Manage members"
+#: action defined in portal_membership
+msgid "Manage members"
+msgstr "Manage members"
+
+#. Default: "My Folder"
+#: action defined in portal_membership
+msgid "My Folder"
+msgstr "My Folder"
+
+#. Default: "Preferences"
+#: action defined in portal_membership
+msgid "Preferences"
+msgstr "Preferences"
+
+msgid "action_my_subscriptions"
+msgstr "My subscriptions"
+
+#. Default: "Log in to add comments"
+#: ./plone_templates/viewThreadsAtBottom.pt
+msgid "label_login_to_add_comments"
+msgstr "Log in to add comments"
+
 msgid "tun"
 msgstr ""
+
+msgid "comments"
+msgstr "comments"
+
+msgid "edit"
+msgstr "edit"
+
+msgid "by"
+msgstr "by"
 
 msgid "here"
 msgstr "here"
