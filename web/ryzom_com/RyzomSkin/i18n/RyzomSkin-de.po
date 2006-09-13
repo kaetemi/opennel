@@ -16,6 +16,21 @@ msgstr ""
 "Domain: RyzomSkin\n"
 "X-Is-Fallback-For: de-at de-li de-lu de-ch de-de\n"
 
+msgid "all_news_topic"
+msgstr "All topics"
+
+msgid "trier_par_rubrique"
+msgstr "Nach rubriken geordnet"
+
+msgid "box_last_modified"
+msgstr "Zuletzt verändert :"
+
+msgid "box_effective"
+msgstr "Schaffungsdatum :"
+
+msgid "box_created"
+msgstr "Schaffungsdatum :"
+
 msgid "bug_report"
 msgstr "fehlerbericht"
 
@@ -118,7 +133,7 @@ msgid "label_submit"
 msgstr "Bestätigen"
 
 msgid "unsubcribed_newsletter"
-msgstr "Solltest du dein Abonnement via E-Mail beenden oder ändern wollen, kannst du dies hier tun."
+msgstr "Solltest du dein Abonnement via E-Mail beenden oder ändern wollen, kannst du dies "
 
 msgid "receive_confirmed1"
 msgstr "Du solltest in Kürze eine Bestätigungsmail erhalten, welche an folgende E-Mailadresse geschickt wird:"

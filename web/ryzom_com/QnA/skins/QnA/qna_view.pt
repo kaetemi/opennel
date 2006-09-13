@@ -2,12 +2,16 @@
       lang="en-US"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="QnA">
+  <metal:block fill-slot="css_slot">
+    <style type="text/css" media="all"
+      tal:content="string:@import url(${portal_url}/qna.css);">
+    </style>
+  </metal:block>
 <body>
     <div metal:fill-slot="main">      
         <div metal:use-macro="here/document_actions/macros/document_actions"></div>
-        <div tal:define="text here/auto_correction;                         
-                         id here/getId;
-                         choice here/toto;">           
+        <div tal:define="text here/getText;                         
+                         id here/getId;">           
            <p tal:content="structure text"></p>
            <br />
            <a href="" tal:attributes="href string:TransformQnaToDocument?qna=${id}">
