@@ -51,7 +51,8 @@
                                        item_type item/portal_type;
                                        item_type_title item/Type;
                                        item_modified item/ModificationDate;
-                                       item_created item/CreationDate;
+                                       item_effective item/EffectiveDate;
+                                       item_created item/CreationDate;                                       
                                        item_type_class python: 'contenttype-' + normalizeString(item_type);
                                        item_wf_state        item/review_state|python: wtool.getInfoFor(item, 'review_state', '');
                                        item_wf_state_class python:'state-' + normalizeString(item_wf_state);
@@ -109,9 +110,18 @@
 
                             </tal:name>
 
-                            <tal:modified condition="python: item_type != 'Event'">
-                                &mdash;
-                                <tal:mod i18n:translate="box_last_modified">
+                            <tal:created_or_effective define="date python:test(item_effective != '',item_effective,item_created)"
+                                                      condition="python: item_type != 'Event'">                              
+                                  &mdash;
+                                  <tal:mod i18n:domain="RyzomSkin" i18n:translate="box_created"></tal:mod>
+                                  <span tal:replace="python:toLocalizedTime(date,long_format=0)">
+                                    August 16, 2001 at 23:35:59
+                                  </span>
+                            </tal:created_or_effective>
+
+                            <tal:modified condition="python: item_type != 'Event'">     
+                                <span> - </span>                           
+                                <tal:mod i18n:domain="RyzomSkin" i18n:translate="box_last_modified">
                                   last modified
                                 </tal:mod>
                                 <span tal:replace="python:toLocalizedTime(item_modified,long_format=0)">
@@ -125,7 +135,6 @@
                                 </tal:comment>
                             </metal:description>
                         </span>
-
                     </dt>
 
                     <dd>

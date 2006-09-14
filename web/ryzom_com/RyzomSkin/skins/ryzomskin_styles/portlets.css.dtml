@@ -101,6 +101,53 @@
 
 /* New navtree styles */
 
+/*css pour les icones du menu de navigation*/
+
+.menulevel0 {background: url('puce_kami_2_final.gif') no-repeat 0% 0%;}
+
+.menulevel1 {background: url('icon_puce.gif') no-repeat 0% 0%;}
+
+.news {background: url('puce_kara_2_final.gif') no-repeat 0% 0%;}
+
+.chronicles {background: url('puce_drop_final.gif') no-repeat 0% 0%;}
+
+.ryzom-ring {background: url('puce_R2_final.gif') no-repeat 0% 0%;}
+.ryzom-ring-de {background: url('puce_R2_final.gif') no-repeat 0% 0%;}
+.ryzom-ring-fr {background: url('puce_R2_final.gif') no-repeat 0% 0%;}
+
+.newcomer {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+.neuling-s-inn {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+.nouveaux-venus {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+
+.multimedia {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+
+.game-lore {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+.die-schriften {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+.lore {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+
+.documentation {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+.dokumentation {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+.documentation-fr {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+
+.development {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+.Entwicklung {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+.developpement {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+
+.support {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+.support-de {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+.support-1 {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+
+.community {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+.community-de {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+.communaute {background: url('puce_kami_final.gif') no-repeat 0% 0%;}
+
+.forum-en {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+.forum-de {background: url('puce_kara_final.gif') no-repeat 0% 0%;}
+.forum-fr {background: url('puce_kara_final.gif') no-repeat 0% 0%;
+}
+/**/
+
+
 .portletNavigationTree {
     margin: 0; 
     list-style: none; 
@@ -112,7 +159,7 @@
     list-style-image: none; 
     margin-top: 0px;
     font-size: 11px;
-    text-transform: Capitalize;
+    /*text-transform: Capitalize;*/
 }
 
 .navTree li {
@@ -128,7 +175,7 @@
     margin: 0;
     font-size: 90%;
     color:#9ae033;
-    text-transform: Capitalize;
+    /*text-transform: Capitalize;*/
 }
 
 .navTreeItem a {
@@ -176,7 +223,7 @@ li.navTreeCurrentItem a:hover {
 
 .navTreeLevel0 {
     font-weight : bold;
-    font-size : 130%
+    font-size : 130%;
 }
 
 .navTreeLevel1 {
