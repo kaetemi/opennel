@@ -54,10 +54,40 @@ WeblogSchema = BaseFolderSchema + Schema((
             description_msgid="help_description",
             i18n_domain="plone"),
         ),
+        
+   	TextField('menuDescription',
+        searchable=0,
+        default="all news topic",
+		widget=TextAreaWidget(
+			label='Menu',
+			description="""The string that will be display to present the menu""",),
+		),
+		
+	TextField('menuFirstItem',
+        searchable=0,
+        default="trier par rubrique",
+		widget=TextAreaWidget(
+			label='Menu',
+			description="""The string that will be display in the fast topic changing menu""",),
+		),
 
     ### 
     ## Configuration Options
-    ### 
+    ###
+    BooleanField('commentsEnabled',
+        default = True,
+        widget=BooleanWidget(label='Enable comments of weblog entries',
+                        description="When disabled, the comments are disabled",
+            ),
+        schemata='configuration'
+        ),
+    BooleanField('addNewsButton',
+        default = False,
+        widget=BooleanWidget(label='Add a Button --Submit a News-- ?',
+            description="""When enabled, a Button --Submit a News appear--.""",
+            ),
+        schemata='configuration'
+        ), 
     BooleanField('onlyExcerptInWeblogView',
         default = False,
         widget=BooleanWidget(label='Only Show Excerpts in Weblog?',
@@ -94,7 +124,6 @@ WeblogSchema = BaseFolderSchema + Schema((
         schemata='configuration'
         ),
     ),
-
     marshall=PrimaryFieldMarshaller(),
     )
 

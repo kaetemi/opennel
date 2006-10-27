@@ -21,7 +21,7 @@ UrlPatchNoteSchema = BaseSchema.copy() + Schema((
 #		default='en',
 #		required=True,
 #		widget=StringWidget(description="PatchNote Langage",)
-#	),	
+#	),
 	TextField('description',
 		searchable=1,
 		widget=TextAreaWidget(description="Enter a little description of the content link",)
@@ -29,7 +29,7 @@ UrlPatchNoteSchema = BaseSchema.copy() + Schema((
 	TextField('text',
 		searchable=1,
 		default_output_type='text/restructured',
-		widget=TextAreaWidget(		
+		widget=RichWidget(		
 #		description="not visible in the final version" ,
 #		visible={'edit':'hidden', 'view':'visible'},
 		)
