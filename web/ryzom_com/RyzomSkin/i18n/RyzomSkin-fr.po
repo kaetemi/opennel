@@ -16,11 +16,36 @@ msgstr ""
 "Domain: RyzomSkin\n"
 "X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
 
-msgid "all_news_topic"
+msgid "you_entered_an_invalid_email_address"
+msgstr "Vous avez entrer une adress e-mail invalide."
+
+msgid "please_correct_the_errors_shown"
+msgstr ""
+
+#translation for portlet flash freetrial
+msgid "portlet_flash_freetrial_moresvideo"
+msgstr "Plus de Videos"
+
+msgid "portlet_flash_freetrial_morescreenshots"
+msgstr "Plus de Screenshots"
+
+#translation for the weblog
+msgid "weblog_archive_link"
+msgstr "Anciennes News"
+
+msgid "all pays"
+msgstr "Tous"
+
+msgid "pays"
+msgstr "Pays"
+
+msgid "all news topic"
 msgstr "Toutes les rubriques"
 
-msgid "trier_par_rubrique"
+msgid "trier par rubrique"
 msgstr "Trier par rubrique"
+
+#######################################
 
 msgid "box_last_modified"
 msgstr "Dernière modification : "
@@ -417,4 +442,3 @@ msgstr "Septembre"
 #: datetime name of a month, format %b
 msgid "month_sep_abbr"
 msgstr "Sep"
-

@@ -921,3 +921,6 @@ namespace NLNET
 } // namespace NLNET
 
 #endif // NL_FILE_MODULE_H
+
+/* Little additions and modifications merged from BRANCH_RING_ALPHA into head branch
+ */

@@ -1190,3 +1190,6 @@ uint32 CSystemInfo::virtualMemory ()
 }
 
 } // NLMISC
+
+/* Little additions and modifications merged from BRANCH_RING_ALPHA into head branch
+ */

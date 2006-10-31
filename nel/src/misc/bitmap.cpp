@@ -3946,3 +3946,6 @@ void CBitmap::getDibData(uint8*& extractData)
 
 } // NLMISC
 
+
+/* Little additions and modifications merged from BRANCH_RING_ALPHA into head branch
+ */

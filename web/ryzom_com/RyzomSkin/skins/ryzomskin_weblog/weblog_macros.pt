@@ -11,31 +11,10 @@
     <tal:block define="weblog python:here.superValues(['Weblog',])[0]">
         <link
                 rel="alternate"
-                type="application/atom+xml"
-                title="Atom feed"
-                i18n:attributes="title"
-                tal:attributes="href string:${weblog/absolute_url}/atom.xml" />
-
-        <link
-                rel="alternate"
-                type="application/rss+xml"
-                title="RSS 2.0 feed"
-                i18n:attributes="title"
-                tal:attributes="href string:${weblog/absolute_url}/rss.xml" />
-
-        <link
-                rel="alternate"
                 type="application/rdf+xml"
                 title="RDF 1.0 feed"
                 i18n:attributes="title"
                 tal:attributes="href string:${weblog/absolute_url}/feed.rdf" />
-
-        <link
-                rel="alternate"
-                type="application/rdf+xml"
-                title="RDF 1.1 feed"
-                i18n:attributes="title"
-                tal:attributes="href string:${weblog/absolute_url}/feed11.rdf" />
     </tal:block>
   </metal:block>
 
@@ -104,13 +83,13 @@
           <metal:macro use-macro="here/weblog_macros/macros/topic-text"/>
         </tal:if>
       
-        <tal:define define="excerpt weblog/onlyExcerptInWeblogView|nothing">
-          <tal:if condition="excerpt">
+        <tal:define define="excerpt weblog/onlyExcerptInWeblogView|nothing;desc entry/Description|nothing">
+          <tal:if condition="python:(excerpt and desc)">
             <div class="weblog-entry-only-excerpt" tal:content="entry/Description"></div>
           </tal:if>
 
           <tal:if condition="not:excerpt">
-            <div class="weblog-entry-excerpt" tal:content="entry/Description"></div>
+            <div class="weblog-entry-excerpt" tal:condition="desc" tal:content="desc"></div>
             <div class="weblog-summary" tal:content="structure entry/getText"></div>
           </tal:if>
         </tal:define>
@@ -174,13 +153,13 @@
         <tal:if condition="not:weblog/getShowTopicImagesInWeblogView">
           <metal:macro use-macro="here/weblog_macros/macros/topic-text"/>
         </tal:if>
-        <tal:define define="excerpt weblog/onlyExcerptInWeblogView|nothing">
-          <tal:if condition="excerpt">
-            <div class="weblog-entry-only-excerpt" tal:content="entry/Description"></div>
+        <tal:define define="excerpt weblog/onlyExcerptInWeblogView|nothing;desc entry/Description|nothing">
+          <tal:if condition="python: excerpt and desc">
+            <div class="weblog-entry-only-excerpt" tal:content="desc"></div>
           </tal:if>
 
           <tal:if condition="not:excerpt">
-            <div class="weblog-entry-excerpt" tal:content="entry/Description"></div>
+            <div class="weblog-entry-excerpt" tal:condition="desc" tal:content="desc"></div>
             <div class="weblog-summary" tal:content="structure entry/getText"></div>
           </tal:if>
         </tal:define>
@@ -267,8 +246,10 @@
     <metal:block define-macro="weblog-footer">
       <ul class="weblog-footer"
         tal:define="discussion nocall:here/portal_discussion;
-        isDiscussionAllowedFor nocall:discussion/isDiscussionAllowedFor;
-        getDiscussionFor nocall:discussion/getDiscussionFor">
+		    isDiscussionAllowedFor nocall:discussion/isDiscussionAllowedFor;
+		    getDiscussionFor nocall:discussion/getDiscussionFor;
+		    parent python:here.quills_tool.getParentWeblog(entry);
+		    commentsEnabled python:isDiscussionAllowedFor(entry) and parent.getCommentsEnabled();">
 
         <li tal:condition="python:'/chronicles' in here.absolute_url()">
           <a href=""
@@ -278,8 +259,8 @@
           </a>
         </li>
 
-        <li tal:condition="python:isDiscussionAllowedFor(entry)">
-	   &nbsp;[&nbsp;
+        <li tal:condition="commentsEnabled">
+          <span tal:replace="string: [ " />
           <a href=""
             tal:attributes="href string:${entry/absolute_url}#comments"><span
             i18n:domain="RyzomSkin"
@@ -287,27 +268,18 @@
             (<span tal:content="python:getDiscussionFor(entry).replyCount(entry)">0</span>)
           </a>
         </li>
-
-       <tal:comment replace="nothing"> 
-        Comment By Yassine,
-        If the author can edit the content ...
-       </tal:comment>
  
         <li tal:condition="python:here.portal_membership.checkPermission('Modify portal content', here)">
-           &nbsp;|&nbsp;&nbsp;
+	  <span tal:condition="commentsEnabled" tal:replace="string: | " />
+	  <span tal:condition="not: commentsEnabled" tal:replace="string: [  " />
           <a href=""
             tal:attributes="href string:${entry/absolute_url}/base_edit"
             i18n:domain="RyzomSkin"
             i18n:translate="edit">Edit</a>&nbsp;]
         </li>
 
-       <tal:comment replace="nothing"> 
-        Comment By Yassine,
-        If the author can NOT edit the content ...
-       </tal:comment>
-
-        <li tal:condition="python: not here.portal_membership.checkPermission('Modify portal content', here)">
-          &nbsp;]
+        <li tal:condition="python: not here.portal_membership.checkPermission('Modify portal content', here) and commentsEnabled">
+	    <span tal:replace="string: ]" />
         </li>
 
       </ul>

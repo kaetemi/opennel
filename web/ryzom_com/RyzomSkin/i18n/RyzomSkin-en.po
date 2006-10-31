@@ -16,11 +16,36 @@ msgstr ""
 "Domain: RyzomSkin\n"
 "X-Is-Fallback-For: en-au en-bz en-ca en-ie en-jm en-nz en-ph en-za en-tt en-gb en-us en-zw\n"
 
-msgid "all_news_topic"
+msgid "you_entered_an_invalid_email_address"
+msgstr "You entered an invalid email address."
+
+msgid "please_correct_the_errors_shown"
+msgstr "please correct the errors shown"
+
+#translation for portlet flash freetrial
+msgid "portlet_flash_freetrial_moresvideo"
+msgstr "Watch the Videos"
+
+msgid "portlet_flash_freetrial_morescreenshots"
+msgstr "More Screenshots"
+
+#translation for the weblog
+msgid "weblog_archive_link"
+msgstr "Older News"
+
+msgid "all pays"
+msgstr "All"
+
+msgid "pays"
+msgstr "Countries"
+
+msgid "all news topic"
 msgstr "All topics"
 
-msgid "trier_par_rubrique"
+msgid "trier par rubrique"
 msgstr "Choose a topic"
+
+########################################
 
 msgid "box_last_modified"
 msgstr "Last Modified : "
@@ -455,4 +480,3 @@ msgstr "Wed"
 #: datetime
 msgid "weekday_wed_short"
 msgstr "We"
-

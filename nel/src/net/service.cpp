@@ -2053,3 +2053,6 @@ NLMISC_CATEGORISED_DYNVARIABLE(cpu, float, PeakProcessSystemLoad, "Get instant C
 
 
 } //NLNET
+
+/* Little additions and modifications merged from BRANCH_RING_ALPHA into head branch
+ */

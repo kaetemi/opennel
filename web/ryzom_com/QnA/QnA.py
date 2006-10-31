@@ -3,12 +3,12 @@
 from calendar import timegm
 from DateTime import DateTime
 from string import join
-import DateTime
 import time
 import re
-from Products.CMFCore.utils import getToolByName
 
 #import zope/archetype
+from AccessControl import ClassSecurityInfo
+from Products.CMFCore.utils import getToolByName
 from Products.CMFCore import CMFCorePermissions
 from Products.ATContentTypes.permission import ChangeEvents
 try:
@@ -22,11 +22,13 @@ from config import *
 
 QnASchema=BaseSchema.copy()+ Schema((
 	DateTimeField('dateStart',
+		default=DateTime(),
 		required=True,
 		searchable=False,
 		widget=CalendarWidget(description="date de dÃ©part",label="Date",)
 	),
 	DateTimeField('dateEnd',
+		default=DateTime(),
 		required=True,
 		searchable=False,
 		widget=CalendarWidget(description="date d'arrivÃ©e",label="Date",)
@@ -57,10 +59,10 @@ QnASchema=BaseSchema.copy()+ Schema((
  
    
 class QnA(BaseContent):
-
 	"""Add an QnA Document"""
-	schema = QnASchema
 
+	security = ClassSecurityInfo()
+	schema = QnASchema
 	archetype_name = "QnA"
 	meta_type = 'QnA'
 	default_view  = 'qna_view'
@@ -78,19 +80,52 @@ class QnA(BaseContent):
 		'action': 'string:${object_url}/qna_edit_request_form',
 		'permissions': (CMFCorePermissions.ModifyPortalContent,)
 		},
+		{ 'id': 'choice',
+		'name': 'choice',
+		'action': 'string:${object_url}/qna_edit_choice_form',
+		'permissions': (CMFCorePermissions.ModifyPortalContent,)
+		},
 	)
+
+#	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'renameId')
+#	def renameId(self, title):
+#		"""Renames an object like its normalized title."""
+#		plone_tool = getToolByName(self, 'plone_utils', None)
+#		old_id = self.getId()
+#		new_id = plone_tool.normalizeString(title)
+#		invalid_id = True
+#		check_id = getattr(self, 'check_id', None)
+#		if check_id is not None:
+#			invalid_id = check_id(new_id, required=1)
+#       
+#		if invalid_id:
+#			unique_id = self._findUniqueId(new_id)
+#		if unique_id is not None:
+#			if check_id is None or check_id(new_id, required=1):
+#				new_id = unique_id
+#				invalid_id = False
+#
+#		if not invalid_id:
+#			transaction.savepoint(optimistic=True)
+#			self.setId(new_id)
+#			return new_id
+#		return False
 
 
 	#PostList and accessor & mutator
 	PostList={}
+
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'getPostList')
 	def getPostList(self):
 		"""return the postlist"""
 		return self.PostList
+
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'setPostList')
 	def setPostList(self,dico):
 		"""set the PostList"""
 		self.PostList=dico
 
-	
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'setFilter')
 	def setFilter(self, value, **kwargs):
 		"""set filter fields"""
 		if not value:
@@ -98,7 +133,7 @@ class QnA(BaseContent):
 		else:
 			self.getField('filter').set(self, value, **kwargs)
 
-
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'generate_text')
 	def generate_text(self,post):
 		"""write text from post"""
 		newtext=''
@@ -106,17 +141,15 @@ class QnA(BaseContent):
 		newtext+='<p id="qna_author_link">-- %s <a href="http://ryzom.com/forum/showthread.php?p=%s#post%s">[ Link ]</a></p><hr />' % (post[1], post[3], post[3])
 		return newtext
 		
-
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'parseTime')
 	def parseTime(self,date):
-		"""convert date to timestamp"""		
-		try:
-			result = timegm(time.strptime(date.split('GMT')[0], "%Y/%m/%d %H:%M:%S %Z"))
-		#if the date is xx/xx/xxxx 00:00:00
-   		except:
-			result = timegm(time.strptime(date.split('GMT')[0], "%Y/%m/%d 00:00:00 %Z"))
+		"""convert date to timestamp"""
+		tab = date.split(' ')
+		cleandate = tab[0]+' '+tab[1].split('.')[0]
+		result = timegm(time.strptime(cleandate, "%Y/%m/%d %H:%M:%S"))
 		return result
 
-
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'getGroupUsers')
 	def getGroupUsers(self,groupid):
 		"""return users in group"""
 		acl_users = getToolByName(self,'acl_users')
@@ -129,24 +162,37 @@ class QnA(BaseContent):
               				 avail.append(str(user))
    		return avail
 
-	
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'getUsersOfficials')
 	def getUsersOfficials(self):
 		"""return Official's users"""
-		return join(self.getGroupUsers('Officials'),' ')
+		return join(self.getGroupUsers('Officials'),';')
 
-
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'getSQLPostList')
 	def getSQLPostList(self):
 		"""return a the results of the sql request"""
 		#on convertie les dates en timestamp
 		date1=self.parseTime(str(self.getDateStart()))       	 	
 		date2=self.parseTime(str(self.getDateEnd()))
 		#la liste des utilisateur a rechercher par defaut
-		OfficialsNames = self.getFilter().split()
+		OfficialsNames = self.getFilter().split(';')
 		#execute la requete sql
 		results=self.qna(username = OfficialsNames, start = date1, end = date2)
 		return results
 
+	security.declareProtected(CMFCorePermissions.View, 'TryToUTF8')
+	def TryToUTF8(self,text):
+		"""try to clean cp1252 charset, and convert to utf8"""
+		try:
+			text=text.replace('\xc2','').decode('cp1252').encode('utf')
+		except:
+			try:
+				text=text.decode('utf').encode('latin')
+			except:
+				text=text.decode('latin')
+		return text
+	
 
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'createPostList')
 	def createPostList(self):
 		"""return the PostList in a dictionnary"""
 		SQLPostList=self.getSQLPostList()
@@ -157,22 +203,16 @@ class QnA(BaseContent):
 			post_id  = str(row[0])
 			post_date = str(row[1])
 			post_author = str(row[2])
-			post_text   = str(row[3])
-			#conversion du texte
-			try:
-				post_text=post_text.replace('\xc2','').decode('cp1252').encode('utf')
-			except:
-				try:
-					post_text=post_text.decode('utf').encode('latin')
-				except:
-					post_text=post_text.decode('latin')
+			post_text   = self.TryToUTF8(str(row[3]))
+			post_title  = self.TryToUTF8(str(row[4]))
+			
 			#ajout des donnÃ©es dans le dictionnaire
 			newtext = self.generate_text([post_date,post_author,post_text,post_id])
-			PostList.update({i:[post_date,post_author,newtext,post_id]})
+			PostList.update({i:[post_date,post_author,newtext,post_id,post_title]})
 		#return PostList
 		self.setPostList(PostList)
 
-
+	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'filtertext')
 	def filtertext(self,text):		
 		"""(poorly) translate bbcode to html code"""
 		newstr=text
