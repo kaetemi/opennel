@@ -1,7 +1,7 @@
 /** \file module_message.h
  * module message definition
  *
- * $Id: module_message.h,v 1.4 2006/01/10 17:38:47 boucher Exp $
+ * $Id: module_message.h,v 1.3.6.2 2006/01/11 15:02:09 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

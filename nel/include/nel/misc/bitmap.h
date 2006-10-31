@@ -1,7 +1,7 @@
 /** \file bitmap.h
  * Class managing bitmaps
  *
- * $Id: bitmap.h,v 1.34 2006/09/14 16:56:08 cado Exp $
+ * $Id: bitmap.h,v 1.31.4.3 2006/09/07 15:28:26 cado Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -728,3 +728,6 @@ inline bool CBitmap::writeJPG( NLMISC::IStream &f, uint8 quality)
 #endif // NL_BITMAP_H
 
 /* End of bitmap.h */
+
+/* Merge from HEAD
+ */

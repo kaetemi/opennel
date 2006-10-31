@@ -1,7 +1,7 @@
 /** \file zviewer.cpp
  *
  *
- * $Id: zviewer.cpp,v 1.20 2006/01/10 17:39:05 boucher Exp $
+ * $Id: zviewer.cpp,v 1.19.32.1 2006/01/11 15:05:12 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

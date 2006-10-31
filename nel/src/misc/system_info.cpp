@@ -1,7 +1,7 @@
 /** \file system_info.cpp
  * TODO: File description
  *
- * $Id: system_info.cpp,v 1.35 2006/01/11 13:32:45 distrib Exp $
+ * $Id: system_info.cpp,v 1.33.4.4 2006/01/12 09:37:17 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -1190,6 +1190,3 @@ uint32 CSystemInfo::virtualMemory ()
 }
 
 } // NLMISC
-
-/* Little additions and modifications merged from BRANCH_RING_ALPHA into head branch
- */

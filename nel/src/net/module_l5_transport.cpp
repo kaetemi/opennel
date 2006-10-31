@@ -1,7 +1,7 @@
 /** \file module_l5_transport.h
  * transport for layer 5
  *
- * $Id: module_l5_transport.cpp,v 1.5 2006/10/31 16:10:51 blanchard Exp $
+ * $Id: module_l5_transport.cpp,v 1.2.4.5 2006/10/04 09:24:56 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

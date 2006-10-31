@@ -5,7 +5,7 @@
  * changed (eg: only one texture in the whole world), those parameters are not bound!!! 
  * OPTIM: like the TexEnvMode style, a PackedParameter format should be done, to limit tests...
  *
- * $Id: driver_opengl_texture.cpp,v 1.81 2006/05/31 12:03:14 boucher Exp $
+ * $Id: driver_opengl_texture.cpp,v 1.80.4.1 2006/01/23 17:25:25 vizerie Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

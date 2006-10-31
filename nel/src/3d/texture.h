@@ -1,7 +1,7 @@
 /** \file texture.h
  * Interface ITexture
  *
- * $Id: texture.h,v 1.21 2006/05/31 12:03:14 boucher Exp $
+ * $Id: texture.h,v 1.20.22.1 2006/01/23 17:24:10 vizerie Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

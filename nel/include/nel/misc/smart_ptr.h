@@ -1,7 +1,7 @@
 /** \file smart_ptr.h
  * CSmartPtr and CRefPtr class.
  *
- * $Id: smart_ptr.h,v 1.35 2006/10/31 16:10:51 blanchard Exp $
+ * $Id: smart_ptr.h,v 1.33.6.3 2006/10/18 10:09:19 vizerie Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

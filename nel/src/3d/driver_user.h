@@ -1,7 +1,7 @@
 /** \file driver_user.h
  * TODO: File description
  *
- * $Id: driver_user.h,v 1.53 2006/05/31 12:03:14 boucher Exp $
+ * $Id: driver_user.h,v 1.51.6.3 2006/01/18 18:57:25 vizerie Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

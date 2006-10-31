@@ -1,7 +1,7 @@
 /** \file file.h
  * From file serialization implementation of IStream using binary format (look at stream.h)
  *
- * $Id: file.h,v 1.30 2006/05/31 12:03:13 boucher Exp $
+ * $Id: file.h,v 1.28.16.3 2006/05/05 08:43:25 berenguier Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

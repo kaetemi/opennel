@@ -1,7 +1,7 @@
 /** \file config_file.cpp
  * CConfigFile class
  *
- * $Id: config_file.cpp,v 1.68 2006/05/31 12:03:17 boucher Exp $
+ * $Id: config_file.cpp,v 1.67.4.4 2006/03/30 10:06:37 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

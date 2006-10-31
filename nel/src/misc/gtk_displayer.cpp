@@ -1,7 +1,7 @@
 /** \file gtk_displayer.cpp
  * Gtk Implementation of the CWindowDisplayer (look at window_displayer.h)
  *
- * $Id: gtk_displayer.cpp,v 1.8 2006/01/10 17:38:47 boucher Exp $
+ * $Id: gtk_displayer.cpp,v 1.7.18.1 2006/01/11 15:02:11 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

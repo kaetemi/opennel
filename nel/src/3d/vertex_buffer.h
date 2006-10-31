@@ -1,7 +1,7 @@
 /** \file vertex_buffer.h
  * TODO: File description
  *
- * $Id: vertex_buffer.h,v 1.21 2006/07/12 14:37:22 boucher Exp $
+ * $Id: vertex_buffer.h,v 1.19.32.2 2006/05/31 09:45:13 vizerie Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

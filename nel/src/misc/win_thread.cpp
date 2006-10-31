@@ -1,7 +1,7 @@
 /** \file win_thread.cpp
  * class CWinThread
  *
- * $Id: win_thread.cpp,v 1.15 2006/09/14 16:56:08 cado Exp $
+ * $Id: win_thread.cpp,v 1.14.4.2 2006/09/07 13:05:00 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file path.cpp
  * Utility class for searching files in differents paths.
  *
- * $Id: path.cpp,v 1.121 2006/09/14 16:56:08 cado Exp $
+ * $Id: path.cpp,v 1.119.4.3 2006/07/21 10:54:09 boucher Exp $
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

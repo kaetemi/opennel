@@ -1,7 +1,7 @@
 /** \file welcome_service.cpp
  * Welcome Service (WS)
  *
- * $Id: welcome_service.h,v 1.4 2006/07/12 14:37:22 boucher Exp $
+ * $Id: welcome_service.h,v 1.1.4.9 2006/06/23 17:11:51 boucher Exp $
  *
  */
 

@@ -1,7 +1,7 @@
 /** \file driver_opengl.cpp
  * OpenGL driver implementation
  *
- * $Id: driver_opengl.cpp,v 1.238 2006/05/31 12:03:14 boucher Exp $
+ * $Id: driver_opengl.cpp,v 1.234.6.3 2006/03/10 14:21:40 berenguier Exp $
  *
  * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */

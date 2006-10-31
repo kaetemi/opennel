@@ -1,7 +1,7 @@
 /** \file eid_translator.cpp
  * convert eid into entity name or user name and so on
  *
- * $Id: eid_translator.cpp,v 1.35 2006/07/12 14:37:22 boucher Exp $
+ * $Id: eid_translator.cpp,v 1.33.6.5 2006/06/12 09:42:54 boucher Exp $
  */
 
 /* Copyright, 2003 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file buf_client.cpp
  * Network engine, layer 1, client
  *
- * $Id: buf_client.cpp,v 1.36 2006/09/14 16:56:08 cado Exp $
+ * $Id: buf_client.cpp,v 1.34.4.3 2006/07/21 10:54:09 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

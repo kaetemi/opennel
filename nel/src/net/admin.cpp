@@ -1,7 +1,7 @@
 /** \file admin.cpp
  * manage services admin
  *
- * $Id: admin.cpp,v 1.23 2006/05/31 12:03:17 boucher Exp $
+ * $Id: admin.cpp,v 1.22.4.3 2006/03/30 10:06:37 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

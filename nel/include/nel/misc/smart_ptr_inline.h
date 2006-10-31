@@ -1,7 +1,7 @@
 /** \file smart_ptr_inline.h
  * SmartPtr class inline definitions.
  *
- * $Id: smart_ptr_inline.h,v 1.9 2006/02/24 17:29:27 guignot Exp $
+ * $Id: smart_ptr_inline.h,v 1.8.32.1 2006/02/24 16:59:47 guignot Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

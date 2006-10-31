@@ -1,7 +1,7 @@
 /** \file global_retriever.h
  * 
  *
- * $Id: global_retriever.h,v 1.38 2006/05/31 12:03:21 boucher Exp $
+ * $Id: global_retriever.h,v 1.37.16.1 2006/04/13 13:38:11 berenguier Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

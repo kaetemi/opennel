@@ -1,6 +1,6 @@
 /** \file mutable_container.h
  *
- * $Id: mutable_container.h,v 1.2 2006/05/31 12:03:13 boucher Exp $
+ * $Id: mutable_container.h,v 1.1.2.2 2006/03/30 10:48:03 boucher Exp $
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

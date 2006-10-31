@@ -5,7 +5,7 @@
  *
  * The coding style is not CPU efficient - the routines are not designed for performance
  *
- * $Id: sstring.h,v 1.38 2006/09/14 16:56:08 cado Exp $
+ * $Id: sstring.h,v 1.34.4.9 2006/07/21 10:54:08 boucher Exp $
  */
 
 

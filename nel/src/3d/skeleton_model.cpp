@@ -1,7 +1,7 @@
 /** \file skeleton_model.cpp
  * TODO: File description
  *
- * $Id: skeleton_model.cpp,v 1.70 2006/07/12 14:37:22 boucher Exp $
+ * $Id: skeleton_model.cpp,v 1.68.4.3 2006/05/30 11:01:49 legallo Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

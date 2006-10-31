@@ -1,7 +1,7 @@
 /** \file driver_opengl.h
  * OpenGL driver implementation
  *
- * $Id: driver_opengl.h,v 1.189 2006/05/31 12:03:14 boucher Exp $
+ * $Id: driver_opengl.h,v 1.188.6.1 2006/01/23 17:25:25 vizerie Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -5,7 +5,7 @@
  * The class can also (but not in an optimized manner) return the
  * string associated with an id.
  *
- * $Id: string_mapper.cpp,v 1.12 2006/05/31 12:03:17 boucher Exp $
+ * $Id: string_mapper.cpp,v 1.11.32.1 2006/04/24 10:16:31 vizerie Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

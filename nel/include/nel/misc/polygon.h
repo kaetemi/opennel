@@ -1,7 +1,7 @@
 /** \file polygon.h
  * 3D and 2D Polygons classes
  *
- * $Id: polygon.h,v 1.21 2006/07/12 14:37:21 boucher Exp $
+ * $Id: polygon.h,v 1.18.6.7 2006/06/12 09:06:43 vizerie Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

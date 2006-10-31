@@ -1,7 +1,7 @@
 /** \file speaker_listener.h
  * 
  *
- * $Id: speaker_listener.h,v 1.3 2006/05/31 12:03:13 boucher Exp $
+ * $Id: speaker_listener.h,v 1.1.2.2 2006/05/11 13:43:27 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

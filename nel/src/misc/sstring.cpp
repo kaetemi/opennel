@@ -5,7 +5,7 @@
  *
  * The coding style is not CPU efficient - the routines are not designed for performance
  *
- * $Id: sstring.cpp,v 1.4 2006/07/12 14:37:22 boucher Exp $
+ * $Id: sstring.cpp,v 1.2.4.4 2006/07/10 16:23:56 miller Exp $
  */
 
 #include "stdmisc.h"

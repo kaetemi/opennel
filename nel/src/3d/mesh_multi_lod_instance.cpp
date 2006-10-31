@@ -1,7 +1,7 @@
 /** \file mesh_multi_lod_instance.cpp
  * An instance of CMeshMulitLod
  *
- * $Id: mesh_multi_lod_instance.cpp,v 1.19 2006/05/31 12:03:14 boucher Exp $
+ * $Id: mesh_multi_lod_instance.cpp,v 1.18.16.1 2006/03/21 17:02:21 vizerie Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

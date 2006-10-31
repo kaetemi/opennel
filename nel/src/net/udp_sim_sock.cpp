@@ -2,7 +2,7 @@
  * This class provides the same function as CUdpSock but can simulate
  * lag and other parameter like packet lost.
  *
- * $Id: udp_sim_sock.cpp,v 1.5 2006/05/31 12:03:18 boucher Exp $
+ * $Id: udp_sim_sock.cpp,v 1.4.4.1 2006/01/16 13:28:57 mitchell Exp $
  */
 
 /* Copyright, 2002 Nevrax Ltd.

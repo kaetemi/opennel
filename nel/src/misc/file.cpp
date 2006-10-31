@@ -1,7 +1,7 @@
 /** \file file.cpp
  * Standard File Input/Output
  *
- * $Id: file.cpp,v 1.45 2006/07/12 14:37:22 boucher Exp $
+ * $Id: file.cpp,v 1.42.18.4 2006/06/23 17:11:51 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

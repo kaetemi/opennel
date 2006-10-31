@@ -1,7 +1,7 @@
 /** \file text_context_user.h
  * TODO: File description
  *
- * $Id: text_context_user.h,v 1.21 2006/05/31 12:03:14 boucher Exp $
+ * $Id: text_context_user.h,v 1.20.16.1 2006/02/10 16:00:51 legallo Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

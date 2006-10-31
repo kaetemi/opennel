@@ -1,7 +1,7 @@
 /** \file service.cpp
  * Base class for all network services
  *
- * $Id: service.cpp,v 1.243 2006/09/14 16:56:08 cado Exp $
+ * $Id: service.cpp,v 1.238.4.20 2006/08/02 16:05:17 cado Exp $
  *
  * \todo ace: test the signal redirection on Unix
  */
@@ -2053,6 +2053,3 @@ NLMISC_CATEGORISED_DYNVARIABLE(cpu, float, PeakProcessSystemLoad, "Get instant C
 
 
 } //NLNET
-
-/* Little additions and modifications merged from BRANCH_RING_ALPHA into head branch
- */

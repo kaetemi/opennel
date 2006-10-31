@@ -1,7 +1,7 @@
 /** \file u_camera.h
  * User interface for camera.
  *
- * $Id: u_camera.h,v 1.5 2006/05/31 12:03:13 boucher Exp $
+ * $Id: u_camera.h,v 1.4.16.1 2006/03/16 10:46:06 vizerie Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file module_manager.cpp
  * module manager implementation
  *
- * $Id: module_manager.cpp,v 1.11 2006/07/12 14:37:22 boucher Exp $
+ * $Id: module_manager.cpp,v 1.8.4.12 2006/06/23 17:11:51 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

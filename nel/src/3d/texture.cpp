@@ -1,7 +1,7 @@
 /** \file texture.cpp
  * ITexture & CTextureFile
  *
- * $Id: texture.cpp,v 1.26 2006/05/31 12:03:14 boucher Exp $
+ * $Id: texture.cpp,v 1.25.16.1 2006/01/23 17:24:10 vizerie Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

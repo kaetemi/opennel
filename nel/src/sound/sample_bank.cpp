@@ -1,7 +1,7 @@
 /** \file sample_bank.cpp
  * CSampleBank: a set of sound samples
  *
- * $Id: sample_bank.cpp,v 1.18 2006/05/31 12:03:21 boucher Exp $
+ * $Id: sample_bank.cpp,v 1.17.42.1 2006/01/16 13:30:04 mitchell Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

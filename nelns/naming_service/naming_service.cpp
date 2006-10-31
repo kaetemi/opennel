@@ -1,7 +1,7 @@
 /** \file naming_service.cpp
  * Naming Service (NS)
  *
- * $Id: naming_service.cpp,v 1.34 2006/10/31 16:10:51 blanchard Exp $
+ * $Id: naming_service.cpp,v 1.32.4.2 2006/10/16 18:09:09 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
