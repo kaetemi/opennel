@@ -1,6 +1,6 @@
 /** \file ps_light.h
  *
- * $Id: ps_light.h,v 1.3.16.1 2006/06/19 13:12:49 vizerie Exp $
+ * $Id: ps_light.h,v 1.4 2006/07/12 14:37:22 boucher Exp $
  */
 
 /* Copyright, 2000, 2001, 2002, 2003 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file module_local_gateway.h
  * module gateway interface
  *
- * $Id: module_local_gateway.cpp,v 1.3.4.4 2006/03/09 18:20:09 boucher Exp $
+ * $Id: module_local_gateway.cpp,v 1.5 2006/05/31 12:03:17 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

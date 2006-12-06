@@ -1,7 +1,7 @@
 /** \file driver_direct3d_material.cpp
  * Direct 3d driver implementation
  *
- * $Id: driver_direct3d_material.cpp,v 1.24.4.1 2006/05/02 08:27:19 vizerie Exp $
+ * $Id: driver_direct3d_material.cpp,v 1.25 2006/05/31 12:03:14 boucher Exp $
  *
  * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */

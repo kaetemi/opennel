@@ -1,7 +1,7 @@
 /** \file big_file.h
  * Big file management
  *
- * $Id: big_file.h,v 1.8.6.2 2006/10/27 12:57:06 vizerie Exp $
+ * $Id: big_file.h,v 1.10 2006/10/31 16:10:51 blanchard Exp $
  */
 
 /* Copyright, 2000, 2002 Nevrax Ltd.

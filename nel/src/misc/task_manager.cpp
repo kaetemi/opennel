@@ -1,7 +1,7 @@
 /** \file task_manager.cpp
  * TODO: File description
  *
- * $Id: task_manager.cpp,v 1.13.32.2 2006/10/27 12:56:37 vizerie Exp $
+ * $Id: task_manager.cpp,v 1.15 2006/10/31 16:10:51 blanchard Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

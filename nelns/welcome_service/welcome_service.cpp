@@ -1,7 +1,7 @@
 /** \file welcome_service.cpp
  * Welcome Service (WS)
  *
- * $Id: welcome_service.cpp,v 1.47.4.12 2006/10/16 18:09:09 boucher Exp $
+ * $Id: welcome_service.cpp,v 1.52 2006/10/31 16:10:51 blanchard Exp $
  *
  */
 
@@ -1568,3 +1568,6 @@ NLMISC_COMMAND( displayOnlineServices, "Display the online service instances", "
 NLMISC_VARIABLE( bool, OnlineStatus, "Main online status of the shard" );
 
 
+
+/* Result of merge 6 from RING_ALPHA
+ */

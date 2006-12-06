@@ -1,7 +1,7 @@
 /** \file landscape.h
  * TODO: File description
  *
- * $Id: landscape.h,v 1.62.6.2 2006/01/19 16:52:35 legallo Exp $
+ * $Id: landscape.h,v 1.64 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -1041,6 +1041,3 @@ private:
 #endif // NL_LANDSCAPE_H
 
 /* End of landscape.h */
-
-/* Merge from HEAD
- */

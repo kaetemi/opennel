@@ -1,7 +1,7 @@
 /** \file p_thread.cpp
  * class CPThread (POSIX threads)
  *
- * $Id: p_thread.cpp,v 1.15.4.4 2006/07/21 13:09:23 distrib Exp $
+ * $Id: p_thread.cpp,v 1.18 2006/09/14 16:56:08 cado Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -215,6 +215,3 @@ bool CPProcess::setCPUMask(uint64 mask)
 void foo_p_thread_cpp() {}
 
 #endif // NL_OS_UNIX
-
-/* Merge from HEAD
- */

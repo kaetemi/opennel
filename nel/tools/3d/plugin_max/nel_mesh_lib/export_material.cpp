@@ -1,7 +1,7 @@
 /** \file export_material.cpp
  * Export from 3dsmax to NeL
  *
- * $Id: export_material.cpp,v 1.42.40.1 2006/01/11 15:02:11 boucher Exp $
+ * $Id: export_material.cpp,v 1.43 2006/01/05 11:42:05 berenguier Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

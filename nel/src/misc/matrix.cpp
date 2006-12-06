@@ -1,7 +1,7 @@
 /** \file matrix.cpp
  * <description>
  *
- * $Id: matrix.cpp,v 1.36.16.1 2006/05/12 13:26:14 saffray Exp $
+ * $Id: matrix.cpp,v 1.37 2006/05/31 12:03:17 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

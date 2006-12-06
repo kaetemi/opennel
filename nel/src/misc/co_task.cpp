@@ -1,7 +1,7 @@
 /** \file co_task.cpp
  * Coroutine based task.
  *
- * $Id: co_task.cpp,v 1.3.4.8 2006/07/21 10:54:09 boucher Exp $
+ * $Id: co_task.cpp,v 1.9 2006/09/14 16:56:08 cado Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -536,3 +536,6 @@ namespace NLMISC
 
 } // namespace NLMISC
 
+
+/* Result of merge 6 from RING_ALPHA
+ */

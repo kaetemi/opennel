@@ -1,7 +1,7 @@
 /** \file local_retriever.cpp
  *
  *
- * $Id: local_retriever.cpp,v 1.73.16.1 2006/04/13 13:38:11 berenguier Exp $
+ * $Id: local_retriever.cpp,v 1.74 2006/05/31 12:03:21 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

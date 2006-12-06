@@ -1,7 +1,7 @@
 /** \file shadow_poly_receiver.cpp
  * TODO: File description
  *
- * $Id: shadow_poly_receiver.cpp,v 1.14.16.4 2006/04/28 09:33:02 vizerie Exp $
+ * $Id: shadow_poly_receiver.cpp,v 1.16 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.
@@ -599,6 +599,3 @@ float			CShadowPolyReceiver::getCameraCollision(const CVector &start, const CVec
 
 
 } // NL3D
-
-/* Merge from HEAD
- */

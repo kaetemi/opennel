@@ -1,7 +1,7 @@
 /** \file zone_manager.cpp
  * CZoneManager class
  *
- * $Id: zone_manager.cpp,v 1.22.16.1 2006/04/19 17:14:55 vizerie Exp $
+ * $Id: zone_manager.cpp,v 1.23 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

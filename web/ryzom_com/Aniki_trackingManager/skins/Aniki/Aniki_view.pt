@@ -1,0 +1,105 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"
+	i18n:domain="RingRanking"
+	metal:use-macro="here/main_template/macros/master">
+
+<metal:block fill-slot="css_slot">
+	<style type="text/css" media="screen"
+		tal:content="string:@import url(${portal_url}/css/aniki.css);">
+   </style>
+
+</metal:block>
+
+<metal:block fill-slot="javascript_head_slot">
+	<script src="" type="text/javascript"
+		tal:attributes="src string:${portal_url}/ajax.js"></script>
+
+	<script type="text/javascript">
+		// <![CDATA[
+		
+function filter(url){
+	// fonction qui met a jour le tableau des scores
+	var res="";
+	var formulaire = document.getElementById("selectFilter");
+	if( formulaire.lang[0].checked == true) res = "?filter=all";
+	if( formulaire.lang[1].checked == true) res = "?filter=en";
+	if( formulaire.lang[2].checked == true) res = "?filter=fr";
+	if( formulaire.lang[3].checked == true) res = "?filter=de";
+	if( formulaire.format[0].checked == true) res += "&format=all";
+	if( formulaire.format[1].checked == true) res += "&format=160x600";
+	if( formulaire.format[2].checked == true) res += "&format=728x90";
+	if( formulaire.format[3].checked == true) res += "&format=300x250";
+	if( formulaire.find.value != '') res += "&text=" + formulaire.find.value ;  
+	res = url+"/Aniki_UpdateView"+res;
+	sendRequestAndChangeContent("score", res);
+}
+		// ]]>
+	</script>
+</metal:block>
+
+<body>
+
+<div metal:fill-slot="main" 
+tal:condition="python:'Reviewer' in container.portal_membership.getCandidateLocalRoles(here)"
+tal:define="url python:here.absolute_url();">
+
+<h1 tal:content="here/title"></h1>
+<p>liste des pubs pour cette campagne:</p>
+
+<form action="" id="selectFilter">
+	<input type="radio" name="lang" id="all" checked="checked">Tous
+	<input type="radio" name="lang" id="en" >Anglais
+	<input type="radio" name="lang" id="fr" >Francais
+	<input type="radio" name="lang" id="de" >Allemand
+<br />
+	<input type="radio" name="format" id="all2" checked="checked">Tous
+	<input type="radio" name="format" id="160x600" >160x600
+	<input type="radio" name="format" id="728x90" >728x90
+	<input type="radio" name="format" id="300x250" >300x250
+<br />
+	<input type="text" name="find" id="find" value="">
+<br />
+	<input type="button" value="valider" name="valider" onclick=""
+		tal:attributes="onclick string:filter('${url}')" />
+</form>
+
+<div tal:define="capoZ here/getSurveillants;global s python:int(0)">
+<table id="score" border="0" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr>
+			<th>Nom</th>
+			<th>Nombre de clicks</th>
+			<th>Description</th>
+		</tr>
+		<div tal:omit-tag="" tal:repeat="capo capoZ" >
+			<tr onclick=""
+				tal:define="nieme repeat/capo/index"
+				tal:attributes='onclick string:sendRequestAndChangeContent("${capo/Title}", "${capo/Title}/getDescription");
+								class python:"parite"+str(nieme%2);'>
+				<td tal:content="python:capo.Title">rank</td>
+				<td tal:content="python:capo.getObject().getIterateur()">Nom</td>
+				<td tal:content="python:capo.getObject().getDescription()">desc</td>
+			</tr>
+<!--
+			<tr onclick=""
+				tal:attributes='onclick string:hide("${capo/Title}")' 
+				style="height:0px; padding:0px; margin:0px;">	
+				<td colspan="3" class="folded">
+					<div class="hidden" 
+						id="" tal:attributes="id string:${capo/Title}">
+					</div>
+				</td>
+			</tr>
+-->
+			<div tal:omit-tag="" tal:define="global s python:s + int(capo.getObject().getIterateur())" />
+		</div>
+		<tr>
+			<td colspan="3" tal:content="python: 'Nombres total de clicks: '+str(s)" />
+		</tr>
+	</tbody>
+
+</table>
+</div>
+</div>
+
+</body>
+</html>

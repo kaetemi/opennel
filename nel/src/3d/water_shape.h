@@ -1,7 +1,7 @@
 /** \file water_shape.h
  * TODO: File description
  *
- * $Id: water_shape.h,v 1.20.16.1 2006/01/19 13:08:44 vizerie Exp $
+ * $Id: water_shape.h,v 1.21 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

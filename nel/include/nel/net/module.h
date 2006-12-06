@@ -1,7 +1,7 @@
 /** \file module.h
  * module interface
  *
- * $Id: module.h,v 1.10.4.11 2006/04/20 14:33:11 boucher Exp $
+ * $Id: module.h,v 1.13 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -921,3 +921,6 @@ namespace NLNET
 } // namespace NLNET
 
 #endif // NL_FILE_MODULE_H
+
+/* Result of merge 6 from RING_ALPHA
+ */

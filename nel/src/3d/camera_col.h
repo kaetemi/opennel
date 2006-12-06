@@ -1,7 +1,7 @@
 /** \file camera_col.h
  * TODO: File description
  *
- * $Id: camera_col.h,v 1.3.32.2 2006/03/20 08:59:54 vizerie Exp $
+ * $Id: camera_col.h,v 1.5 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.
@@ -120,6 +120,3 @@ private:
 #endif // NL_CAMERA_COL_H
 
 /* End of camera_col.h */
-
-/* Merge from HEAD
- */

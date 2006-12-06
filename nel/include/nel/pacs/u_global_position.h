@@ -1,7 +1,7 @@
 /** \file u_global_position.h
  * TODO: File description
  *
- * $Id: u_global_position.h,v 1.5.32.1 2006/03/08 17:22:42 coutelas Exp $
+ * $Id: u_global_position.h,v 1.6 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file types_nl.h
  * Basic types, define and class
  *
- * $Id: types_nl.h,v 1.54.4.1 2006/07/21 10:54:08 boucher Exp $
+ * $Id: types_nl.h,v 1.55 2006/09/14 16:56:08 cado Exp $
  *
  * Available constantes:
  * - NL_OS_WINDOWS		: windows operating system (32bits only)

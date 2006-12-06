@@ -1,7 +1,7 @@
 /** \file module_socket.h
  * module socket interface
  *
- * $Id: module_socket.h,v 1.4.4.2 2006/01/11 15:02:09 boucher Exp $
+ * $Id: module_socket.h,v 1.5 2006/01/10 17:38:47 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

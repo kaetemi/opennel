@@ -1,7 +1,7 @@
 /** \file stream.h
  * serialization interface class
  *
- * $Id: stream.h,v 1.75.4.3 2006/10/18 10:08:48 vizerie Exp $
+ * $Id: stream.h,v 1.77 2006/10/31 16:10:51 blanchard Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

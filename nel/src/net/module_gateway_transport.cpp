@@ -1,7 +1,7 @@
 /** \file module_gateway_transport.h
  * module transport over layer 3
  *
- * $Id: module_gateway_transport.cpp,v 1.5.4.9 2006/10/04 09:24:56 boucher Exp $
+ * $Id: module_gateway_transport.cpp,v 1.9 2006/10/31 16:10:51 blanchard Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

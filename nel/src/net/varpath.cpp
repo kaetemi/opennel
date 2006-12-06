@@ -1,7 +1,7 @@
 /** \file varpath.cpp
  * use to manage variable path (ie: [serv1,serv2].*.*.var)
  *
- * $Id: varpath.cpp,v 1.9.18.1 2006/03/17 20:58:49 miller Exp $
+ * $Id: varpath.cpp,v 1.10 2006/05/31 12:03:18 boucher Exp $
  *
  */
 

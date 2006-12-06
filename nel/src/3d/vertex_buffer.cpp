@@ -1,7 +1,7 @@
 /** \file vertex_buffer.cpp
  * Vertex Buffer implementation
  *
- * $Id: vertex_buffer.cpp,v 1.48.16.1 2006/05/31 09:45:13 vizerie Exp $
+ * $Id: vertex_buffer.cpp,v 1.49 2006/07/12 14:37:22 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,6 +1,6 @@
 /** \file dup_ps.cpp
  *
- * $Id: dup_ps.cpp,v 1.5.40.1 2006/02/06 13:47:36 vizerie Exp $
+ * $Id: dup_ps.cpp,v 1.6 2006/02/06 13:54:09 vizerie Exp $
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

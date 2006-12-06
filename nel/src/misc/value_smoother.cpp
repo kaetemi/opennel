@@ -1,7 +1,7 @@
 /** \file value_smoother.cpp
  * TODO: File description
  *
- * $Id: value_smoother.cpp,v 1.6.32.1 2006/01/11 15:02:11 boucher Exp $
+ * $Id: value_smoother.cpp,v 1.7 2006/01/10 17:38:47 boucher Exp $
  */
 
 /* Copyright, 2001 Nevrax Ltd.

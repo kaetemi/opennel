@@ -1,7 +1,7 @@
 /** \file md5.h
  * Displayer class interface and classic standard displayers
  *
- * $Id: md5.h,v 1.2.16.4 2006/02/14 12:07:00 miller Exp $
+ * $Id: md5.h,v 1.4 2006/05/31 12:03:13 boucher Exp $
  */
 
 /* Copyright, 2000, 2001, 2002,2003,2004 Nevrax Ltd.

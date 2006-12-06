@@ -1,7 +1,7 @@
 /** \file ucstring.h
  * Unicode stringclass using 16bits per character
  *
- * $Id: ucstring.h,v 1.16.4.3 2006/05/11 13:43:27 boucher Exp $
+ * $Id: ucstring.h,v 1.17 2006/05/31 12:03:13 boucher Exp $
  *
  */
 

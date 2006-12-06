@@ -1,7 +1,7 @@
 /** \file type.h
  * Georges type class
  *
- * $Id: type.h,v 1.12.16.1 2006/01/11 15:02:10 boucher Exp $
+ * $Id: type.h,v 1.13 2005/11/08 10:02:14 houlmann Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

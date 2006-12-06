@@ -1,7 +1,7 @@
 /** \file build_surf.h
  * 
  *
- * $Id: build_surf.h,v 1.15.40.2 2006/04/25 16:49:27 berenguier Exp $
+ * $Id: build_surf.h,v 1.17 2006/04/25 16:52:06 berenguier Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.

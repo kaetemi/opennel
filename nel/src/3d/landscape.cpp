@@ -1,7 +1,7 @@
 /** \file landscape.cpp
  * TODO: File description
  *
- * $Id: landscape.cpp,v 1.156.6.3 2006/02/11 18:45:40 mitchell Exp $
+ * $Id: landscape.cpp,v 1.158 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -3961,6 +3961,3 @@ void CLandscape::removeTileCallback(ULandscapeTileCallback *cb)
 
 
 
-
-/* Merge from HEAD
- */

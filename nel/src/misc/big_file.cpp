@@ -1,7 +1,7 @@
 /** \file big_file.cpp
  * Big file management
  *
- * $Id: big_file.cpp,v 1.19.6.2 2006/10/27 12:56:37 vizerie Exp $
+ * $Id: big_file.cpp,v 1.21 2006/10/31 16:10:51 blanchard Exp $
  */
 
 /* Copyright, 2000, 2002 Nevrax Ltd.

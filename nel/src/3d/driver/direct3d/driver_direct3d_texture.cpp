@@ -1,7 +1,7 @@
 /** \file driver_direct3d_texture.cpp
  * Direct 3d driver implementation
  *
- * $Id: driver_direct3d_texture.cpp,v 1.20.4.3 2006/05/31 14:05:20 vizerie Exp $
+ * $Id: driver_direct3d_texture.cpp,v 1.23 2006/07/12 14:37:22 boucher Exp $
  *
  * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
@@ -1192,6 +1192,3 @@ bool CDriverD3D::getRenderTargetSize (uint32 &width, uint32 &height)
 
 
 } // NL3D
-
-/* Merge from HEAD
- */

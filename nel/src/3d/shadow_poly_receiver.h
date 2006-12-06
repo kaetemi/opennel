@@ -1,7 +1,7 @@
 /** \file shadow_poly_receiver.h
  * TODO: File description
  *
- * $Id: shadow_poly_receiver.h,v 1.6.16.3 2006/04/28 09:33:02 vizerie Exp $
+ * $Id: shadow_poly_receiver.h,v 1.8 2006/05/31 12:03:14 boucher Exp $
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.
@@ -170,6 +170,3 @@ private:
 #endif // NL_SHADOW_POLY_RECEIVER_H
 
 /* End of shadow_poly_receiver.h */
-
-/* Merge from HEAD
- */

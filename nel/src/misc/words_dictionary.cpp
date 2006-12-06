@@ -1,7 +1,7 @@
 /** \file words_dictionary.cpp
  * Words dictionary
  *
- * $Id: words_dictionary.cpp,v 1.13.6.1 2006/04/20 14:33:11 boucher Exp $
+ * $Id: words_dictionary.cpp,v 1.14 2006/05/31 12:03:17 boucher Exp $
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

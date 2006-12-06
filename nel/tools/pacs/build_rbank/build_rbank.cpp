@@ -1,7 +1,7 @@
 /** \file moulinette.cpp
  *
  *
- * $Id: build_rbank.cpp,v 1.19.40.1 2006/01/11 15:02:11 boucher Exp $
+ * $Id: build_rbank.cpp,v 1.20 2006/01/10 17:38:48 boucher Exp $
  */
 
 /* Copyright, 2000 Nevrax Ltd.
