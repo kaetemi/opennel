@@ -1,7 +1,7 @@
 /** \file log_report.h
  * <File description>
  *
- * $Id: log_report.h,v 1.5 2005/02/16 14:05:37 lancon Exp $
+ * $Id: log_report.h,v 1.7 2006/12/13 15:15:48 cado Exp $
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.
@@ -34,6 +34,8 @@
 #include <map>
 
 
+class CLogReport;
+
 /*
  *
  */
@@ -42,42 +44,16 @@ class CMakeLogTask : public NLMISC::IRunnable
 public:
 
 	/// Constructor
-	CMakeLogTask() : _Stopping(false), _Complete(false) {}
+	CMakeLogTask() : _Stopping(false), _Complete(false), _Thread(NULL), _OutputLogReport(NULL) {}
 
 	/// Destructor
-	~CMakeLogTask()
-	{
-		if ( _Thread )
-		{
-			if ( ! _Complete )
-			{
-				pleaseStop();
-				_Thread->wait();
-			}
-			delete _Thread;
-			_Thread = NULL;
-		}
-	}
+	~CMakeLogTask();
 
 	/// Start (called in main thread)
-	void	start()
-	{
-		if ( _Thread && (!_Complete) )
-			return;
-		_Stopping = false;
-		_Complete = false;
-		_Thread = NLMISC::IThread::create( this );
-		_Thread->start();
-	}
+	void	start();
 
 	/// Ask for stop and wait until terminated (called in main thread)
-	void	terminateTask()
-	{
-		pleaseStop();
-		_Thread->wait();
-		delete _Thread;
-		_Thread = NULL;
-	}
+	void	terminateTask();
 
 	///
 	bool	isRunning() const { return (_Thread != NULL) && (!_Complete); }
@@ -90,25 +66,44 @@ public:
 
 	virtual void run();
 
-
 	/// Set the path of logfile directory. 
 	void setLogPath(const std::string & logPath);
+
+	/// Set one or more paths of logfile directory. They will be processed when running the background thread.
+	void setLogPaths(const std::vector<std::string>& logPaths);
 
 	/// Set the path of logfile directory to default value
 	void setLogPathToDefault();
 
+	/// Return the log paths
+	const std::vector<std::string> getLogPaths() const { return _LogPaths; }
 
+	/** Set which files are to be browsed:
+	 * v       --> log*.log (default if setLogTarget() not called or called with an empty string)
+	 * v*      --> log*.log + v*_log*.log
+	 * v<n>    --> v<n>_log*.log
+	 * v<n>+   --> v<n>_log*.log + all matching greater <n> + log*.log
+	 * v<n>-   --> v<n>_log*.log + all matching lower <n>
+	 * *       --> *.log
+	 */
+	void setLogTarget(const std::string & logTarget) { _LogTarget = logTarget; }
 
+	/// Return the log report (NULL if task not started yet)
+	CLogReport*		getLogReport() { return _OutputLogReport; }
 
 private:
 
 	void	pleaseStop() { _Stopping = true; }
+	void	clear();
 
 	volatile bool	_Stopping;
 	volatile bool	_Complete;
-	std::string _DefaultLogPath;
+	std::string		_LogTarget;
+	std::vector<std::string>	_LogPaths;
 
 	NLMISC::IThread	*_Thread;
+
+	CLogReport		*_OutputLogReport;
 };
 
 
@@ -298,9 +293,6 @@ private:
 	uint	_CurrentFile;
 	uint	_TotalFiles;
 };
-
-
-extern CLogReport MainLogReport;
 
 
 #endif // NL_LOG_REPORT_H
