@@ -3947,5 +3947,5 @@ void CBitmap::getDibData(uint8*& extractData)
 } // NLMISC
 
 
-/* Result of merge 6 from RING_ALPHA
+/* Result of merge 7 from RING_ALPHA into HEAD
  */

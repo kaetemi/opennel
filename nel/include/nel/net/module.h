@@ -922,5 +922,5 @@ namespace NLNET
 
 #endif // NL_FILE_MODULE_H
 
-/* Result of merge 6 from RING_ALPHA
+/* Result of merge 7 from RING_ALPHA into HEAD
  */

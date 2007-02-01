@@ -2054,5 +2054,5 @@ NLMISC_CATEGORISED_DYNVARIABLE(cpu, float, PeakProcessSystemLoad, "Get instant C
 
 } //NLNET
 
-/* Result of merge 6 from RING_ALPHA
+/* Result of merge 7 from RING_ALPHA into HEAD
  */

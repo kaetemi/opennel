@@ -537,5 +537,5 @@ namespace NLMISC
 } // namespace NLMISC
 
 
-/* Result of merge 6 from RING_ALPHA
+/* Result of merge 7 from RING_ALPHA into HEAD
  */
