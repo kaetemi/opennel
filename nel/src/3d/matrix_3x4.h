@@ -1,7 +1,7 @@
 /** \file matrix_3x4.h
  *	For fast vector/point multiplication.
  *
- * $Id: matrix_3x4.h,v 1.3 2003/11/28 15:07:48 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

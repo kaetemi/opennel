@@ -1,7 +1,7 @@
 /** \file factory.h
  * class for factory
  *
- * $Id: factory.h,v 1.6 2005/09/19 09:47:04 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

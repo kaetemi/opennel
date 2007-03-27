@@ -1,7 +1,7 @@
 /** \file stop_watch.cpp
  * Performance stopwatch
  *
- * $Id: stop_watch.cpp,v 1.3 2001/12/28 10:17:20 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file move_cell.cpp
  * TODO: File description
  *
- * $Id: move_cell.cpp,v 1.7 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file vector_2d.h
  * A 2D vector of double.
  *
- * $Id: vector_2d.h,v 1.4 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file zone_dump.cpp
  * zone_dump.cpp : Very simple zone dumper
  *
- * $Id: zone_dump.cpp,v 1.3 2005/02/08 15:31:34 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

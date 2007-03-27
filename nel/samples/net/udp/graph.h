@@ -1,7 +1,7 @@
 /** \file graph.h
  * display graph
  *
- * $Id: graph.h,v 1.1 2003/01/24 13:54:06 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

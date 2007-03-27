@@ -1,7 +1,7 @@
 /** \file source.cpp
  * TODO: File description
  *
- * $Id: source.cpp,v 1.4 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

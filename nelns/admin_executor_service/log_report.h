@@ -1,7 +1,7 @@
 /** \file log_report.h
  * <File description>
  *
- * $Id: log_report.h,v 1.7 2006/12/13 15:15:48 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

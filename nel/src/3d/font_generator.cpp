@@ -1,7 +1,7 @@
 /** \file font_generator.cpp
  * CFontGenerator class
  *
- * $Id: font_generator.cpp,v 1.23 2005/05/09 11:53:03 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

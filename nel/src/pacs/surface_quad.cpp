@@ -1,7 +1,7 @@
 /** \file surface_quad.cpp
  *
  *
- * $Id: surface_quad.cpp,v 1.12 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

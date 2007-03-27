@@ -1,6 +1,6 @@
 /** \file patch.cpp
  *
- * $Id: patch.cpp,v 1.7 2004/05/05 17:18:54 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2004 Nevrax Ltd.

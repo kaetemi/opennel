@@ -1,7 +1,7 @@
 /** \file service.h
  * Base class for all network services
  *
- * $Id: service.h,v 1.91 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -63,7 +63,6 @@ namespace NLNET
 
 class CCallbackServer;
 class IServiceUpdatable;
-
 
 
 //
@@ -155,7 +154,7 @@ int main(int argc, const char **argv) \
 // Typedefs
 //
 
-typedef uint8 TServiceId;
+//typedef uint16 TServiceId;
 
 /// Callback where you can return true for direct clearance, or false for later clearance.
 typedef bool (*TRequestClosureClearanceCallback) ();
@@ -396,6 +395,9 @@ public:
 	
 	const NLMISC::CCPUTimeStat&			getCPUUsageStats() const	{ return _CPUUsageStats; }
 
+	/// Allow the service to return a status string with important value
+	virtual std::string					getServiceStatusString() const;
+
 	/**
 	 * If your service needs a delay when it is asked to quit, provide a callback here (optional).
 	 * Then, when the service will be asked to quit, this callback will be called. Then you can
@@ -520,11 +522,11 @@ private:
 	NLMISC::IVariableChangedCallback*	_DirectoryChangedCBI;
 
 	friend void serviceGetView (uint32 rid, const std::string &rawvarpath, std::vector<std::string> &vara, std::vector<std::string> &vala);
-	friend void cbAESConnection (const std::string &serviceName, uint16 sid, void *arg);
+	friend void cbAESConnection (const std::string &serviceName, TServiceId sid, void *arg);
 	friend struct nel_serviceInfoClass;
 	friend struct nel_getWinDisplayerInfoClass;
 	friend void cbDirectoryChanged (NLMISC::IVariable &var);
-	friend void cbReceiveShardId (NLNET::CMessage& msgin, const std::string &serviceName, uint16 serviceId);
+	friend void cbReceiveShardId (NLNET::CMessage& msgin, const std::string &serviceName, TServiceId serviceId);
 
 	NLMISC_CATEGORISED_DYNVARIABLE_FRIEND(nel, State);
 };
@@ -580,3 +582,6 @@ inline IService *IService::getInstance()
 #endif // NL_SERVICE_H
 
 /* End of service.h */
+
+/* Merge NeL CVS (RING into HEAD)
+ */

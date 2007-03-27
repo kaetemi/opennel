@@ -1,7 +1,7 @@
 /** \file fast_ptr_list.cpp
  * TODO: File description
  *
- * $Id: fast_ptr_list.cpp,v 1.3 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

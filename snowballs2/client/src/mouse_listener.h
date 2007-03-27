@@ -1,7 +1,7 @@
 /** \file mouse_listener.h
  * Snowballs 2 specific code for managing the mouse listener.
  *
- * $Id: mouse_listener.h,v 1.9 2004/07/29 09:06:07 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

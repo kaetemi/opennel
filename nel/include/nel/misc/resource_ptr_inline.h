@@ -1,7 +1,7 @@
 /** \file resource_ptr.h
  * CResourcePtr class inline definitions.
  *
- * $Id: resource_ptr_inline.h,v 1.1 2004/11/17 16:12:01 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

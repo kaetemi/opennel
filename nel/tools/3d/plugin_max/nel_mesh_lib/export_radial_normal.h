@@ -1,7 +1,7 @@
 /** \file export_radial_normal.h
  * Compute radial normales
  *
- * $Id: export_radial_normal.h,v 1.2 2002/08/27 12:40:45 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

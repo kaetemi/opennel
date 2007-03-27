@@ -1,7 +1,7 @@
 /** \file source_fmod.cpp
  * DirectSound sound source
  *
- * $Id: source_fmod.cpp,v 1.4 2005/01/31 13:52:41 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

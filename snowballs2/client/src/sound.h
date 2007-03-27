@@ -1,7 +1,7 @@
 /** \file sound.h
  * Sound interface between the game and NeL
  *
- * $Id: sound.h,v 1.4 2003/02/24 13:04:53 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

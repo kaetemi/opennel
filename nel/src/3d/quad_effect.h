@@ -1,7 +1,7 @@
 /** \file quad_effect.h
  * TODO: File description
  *
- * $Id: quad_effect.h,v 1.3 2004/11/15 10:24:47 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file calc_lm.h
  * LightMap Calculation settings
  *
- * $Id: calc_lm.h,v 1.8 2004/05/14 15:00:14 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

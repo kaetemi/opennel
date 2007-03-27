@@ -1,7 +1,7 @@
 /** \file i18n.cpp
  * Internationalisation
  *
- * $Id: i18n.cpp,v 1.60 2006/05/31 12:03:17 boucher Exp $
+ * $Id$
  *
  * \todo ace: manage unicode format
  */
@@ -713,9 +713,9 @@ void CI18N::readTextBuffer(uint8 *buffer, uint size, ucstring &result, bool forc
 	else
 	{
 		// hum.. ascii read ?
-		// so, just to a direct conversion
-		std::string text((char*)buffer, size);
-		result = text;
+		// so, just do a direct conversion				
+		std::string text((char*)buffer, size);				
+		result = text;		
 	}
 }
 

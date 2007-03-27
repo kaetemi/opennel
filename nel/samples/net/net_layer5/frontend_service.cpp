@@ -1,7 +1,7 @@
 /** \file net_layer5/frontend_service.cpp
  * Layer 5 and IService5 example
  *
- * $Id: frontend_service.cpp,v 1.6 2002/11/29 10:15:50 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

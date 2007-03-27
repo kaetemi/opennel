@@ -1,7 +1,7 @@
 /** \file buf_net_base.cpp
  * Network engine, layer 1, base
  *
- * $Id: buf_net_base.cpp,v 1.18 2004/09/22 18:22:41 distrib Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

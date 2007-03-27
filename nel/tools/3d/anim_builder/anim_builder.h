@@ -1,7 +1,7 @@
 /** \file anim_builder.h
  * Parse a directory and build optimized animations to an other directory
  *
- * $Id: anim_builder.h,v 1.1 2002/05/30 16:26:37 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

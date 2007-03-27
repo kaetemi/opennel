@@ -1,7 +1,7 @@
 /** \file async_file_manager_3d.h
  * TODO: File description
  *
- * $Id: async_file_manager_3d.h,v 1.7 2005/06/23 16:35:39 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

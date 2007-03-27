@@ -5,7 +5,7 @@
  * The class can also (but not in an optimized manner) return the
  * string associated with an id.
  *
- * $Id: string_mapper.cpp,v 1.12 2006/05/31 12:03:17 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -131,6 +131,13 @@ TSStringId CStaticStringMapper::add(const std::string &str)
 	{
 		return it->second;
 	}
+}
+
+// ****************************************************************************
+bool CStaticStringMapper::isAdded(const std::string &str) const
+{
+	nlassert(!_MemoryCompressed);
+	return _TempStringTable.count(str) != 0;
 }
 
 // ****************************************************************************

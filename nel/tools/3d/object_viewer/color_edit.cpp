@@ -1,7 +1,7 @@
 /** \file color_edit.cpp
  * a dialog to edit a color (or call the windows color dialog)
  *
- * $Id: color_edit.cpp,v 1.8 2004/06/17 08:15:27 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

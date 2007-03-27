@@ -2,7 +2,7 @@
  * This function display a custom message box to report something.
  * It is used in the debug system
  *
- * $Id: report.h,v 1.3 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

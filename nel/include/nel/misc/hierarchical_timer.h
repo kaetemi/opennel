@@ -1,7 +1,7 @@
 /** \file hierarchical_timer.h
  * Hierarchical timer
  *
- * $Id: hierarchical_timer.h,v 1.32 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

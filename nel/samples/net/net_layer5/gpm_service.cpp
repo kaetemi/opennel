@@ -1,7 +1,7 @@
 /** \file net_layer5/gpm_service.cpp
  * Layer 5 and IService example
  *
- * $Id: gpm_service.cpp,v 1.3 2002/11/29 10:15:50 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

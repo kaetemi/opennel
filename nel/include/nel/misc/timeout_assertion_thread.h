@@ -1,7 +1,7 @@
 /** \file timeout_assertion_thread.h
  * This class generates assert in a thread if the main thread is not fast enough
  *
- * $Id: timeout_assertion_thread.h,v 1.5 2005/11/23 10:05:28 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2004 Nevrax Ltd.

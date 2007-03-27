@@ -1,7 +1,7 @@
 /** \file color_modifier.h
  * A class describing color modifications
  *
- * $Id: color_modifier.h,v 1.3 2002/10/25 16:20:37 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.
@@ -27,7 +27,7 @@
 #ifndef _COLOR_MODIFIER_H
 #define _COLOR_MODIFIER_H
 
-#include <nel/misc/types_nl.h>
+#include "nel/misc/types_nl.h"
 #include <vector>
 #include <string>
 

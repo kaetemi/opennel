@@ -1,7 +1,7 @@
 /** \file u_transformable.cpp
  * Interface for transformable objects.
  *
- * $Id: u_transformable.cpp,v 1.2 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file particle_system_edit.h
  * Dialog used to edit global parameters of a particle system.
  *
- * $Id: particle_system_edit.h,v 1.15 2004/06/17 08:08:16 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

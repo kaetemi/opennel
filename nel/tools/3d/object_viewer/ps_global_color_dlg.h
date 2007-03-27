@@ -1,6 +1,6 @@
 /** \file ps_global_color_dlg.h
  * This dialog helps to tune the global color of the system depending on its distance.
- * $Id: ps_global_color_dlg.h,v 1.3 2004/06/17 08:05:06 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

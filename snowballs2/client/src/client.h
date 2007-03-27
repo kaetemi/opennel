@@ -1,7 +1,7 @@
 /** \file client.h
  * Snowballs 2 main file
  *
- * $Id: client.h,v 1.10 2001/07/18 16:06:20 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

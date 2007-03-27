@@ -1,7 +1,7 @@
 /** \file stdgeorges.cpp
  * Georges system files
  *
- * $Id: stdgeorges.cpp,v 1.2 2004/10/29 18:08:48 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file direction_edit.h
  * a dialog to choose a direction (normalized vector).
  *
- * $Id: direction_edit.h,v 1.2 2001/09/17 14:02:00 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

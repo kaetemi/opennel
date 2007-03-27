@@ -1,7 +1,7 @@
 /** \file plane.cpp
  * class CPlane
  *
- * $Id: plane.cpp,v 1.8 2006/01/10 17:38:47 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

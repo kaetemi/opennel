@@ -1,7 +1,7 @@
 /** \file env_effect.h
  * CEnvEffect: environmental effects and where they are applied
  *
- * $Id: env_effect.h,v 1.5 2002/11/04 15:40:44 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

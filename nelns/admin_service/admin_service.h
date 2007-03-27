@@ -1,7 +1,7 @@
 /** \file admin_service.h
  * <File description>
  *
- * $Id: admin_service.h,v 1.1 2002/10/25 09:13:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

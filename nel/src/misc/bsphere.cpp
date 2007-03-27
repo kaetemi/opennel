@@ -1,7 +1,7 @@
 /** \file bsphere.cpp
  * TODO: File description
  *
- * $Id: bsphere.cpp,v 1.6 2004/11/15 10:25:03 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

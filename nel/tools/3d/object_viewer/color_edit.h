@@ -1,7 +1,7 @@
 /** \file color_edit.h
  * a dialog to edit a color (or call the windows color dialog)
  *
- * $Id: color_edit.h,v 1.8 2001/12/19 17:51:32 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

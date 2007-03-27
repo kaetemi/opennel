@@ -1,7 +1,7 @@
 /** \file driver_opengl_extension.cpp
  * OpenGL driver extension registry
  *
- * $Id: driver_opengl_extension.cpp,v 1.53 2006/12/06 17:21:23 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -1173,8 +1173,7 @@ static bool	setupNVOcclusionQuery(const char	*glext)
 static bool	setupNVTextureRectangle(const char	*glext)
 {
 	H_AUTO_OGL(setupNVTextureRectangle)
-	if(strstr(glext, "GL_NV_texture_rectangle")==NULL)
-		return false;	
+	return strstr(glext, "GL_NV_texture_rectangle")!=NULL;
 }
 
 // ***************************************************************************
@@ -1204,8 +1203,7 @@ static bool	setupFrameBufferObject(const char	*glext)
 static bool	setupPackedDepthStencil(const char	*glext)
 {
 	H_AUTO_OGL(setupPackedDepthStencil)
-	if(strstr(glext, "GL_EXT_packed_depth_stencil")==NULL)
-		return false;	
+	return strstr(glext, "GL_EXT_packed_depth_stencil")!=NULL;
 }
 
 // ***************************************************************************
@@ -1460,3 +1458,6 @@ void	registerWGlExtensions(CGlExtensions &ext, HDC hDC)
 
 
 
+
+/* Merge NeL CVS (RING into HEAD)
+ */

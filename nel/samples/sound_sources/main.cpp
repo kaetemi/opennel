@@ -1,7 +1,7 @@
 /** \file sound_sources/main.cpp
  * Simple example of NeL sound engine usage
  *
- * $Id: main.cpp,v 1.11 2005/04/04 09:49:45 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2003 Nevrax Ltd.

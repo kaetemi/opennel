@@ -1,7 +1,7 @@
 /** \file class_id.h
  * CClassId class
  *
- * $Id: class_id.h,v 1.5 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

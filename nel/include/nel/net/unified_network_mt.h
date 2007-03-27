@@ -1,7 +1,7 @@
 /** \file unified_network_mt.h
  * Network engine, layer 5
  *
- * $Id: unified_network_mt.h,v 1.5 2005/06/23 16:33:16 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

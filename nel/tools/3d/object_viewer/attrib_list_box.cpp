@@ -1,7 +1,7 @@
 /** \file attrib_list_box.cpp
  * A list box that can be filled with owner drawn items. Just provide a interface for drawing
  *
- * $Id: attrib_list_box.cpp,v 1.4 2002/11/04 15:40:44 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file music_channel_fmod.cpp
  * <File description>
  *
- * $Id: music_channel_fmod.cpp,v 1.1 2004/12/13 17:52:58 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

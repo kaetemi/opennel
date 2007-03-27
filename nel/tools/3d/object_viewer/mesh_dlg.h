@@ -1,6 +1,6 @@
 /** \file mesh_dlg.h
  * A dialog that allows to choose a mesh (for mesh particles), and display the current mesh name 
- * $Id: mesh_dlg.h,v 1.4 2005/02/16 17:05:33 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

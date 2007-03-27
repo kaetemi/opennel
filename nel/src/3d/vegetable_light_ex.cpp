@@ -1,7 +1,7 @@
 /** \file vegetable_light_ex.cpp
  * TODO: File description
  *
- * $Id: vegetable_light_ex.cpp,v 1.5 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

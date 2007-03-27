@@ -2,7 +2,7 @@
  * This service just listen the port set in the .cfg and display and reply
  * when an UDP datagram is received.
  *
- * $Id: udp_service.cpp,v 1.1 2003/01/21 17:38:08 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2003 Nevrax Ltd.

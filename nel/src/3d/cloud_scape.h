@@ -1,7 +1,7 @@
 /** \file cloud_scape.h
  * Cloud definition to work with the cloudscape
  *
- * $Id: cloud_scape.h,v 1.8 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

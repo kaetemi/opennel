@@ -1,7 +1,7 @@
 /*
  * This file contain the Snowballs Position Service.
  *
- * $Id: main.cpp,v 1.12 2002/10/10 17:51:46 lecroart Exp $
+ * $Id$
  */
 
 /*

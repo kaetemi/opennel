@@ -1,7 +1,7 @@
 /** \file ambiant_source.h
  * CAmbiantSource: Stereo mix of a envsound, seen as a source
  *
- * $Id: ambiant_source.h,v 1.6 2002/11/25 14:11:40 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

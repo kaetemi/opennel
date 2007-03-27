@@ -1,7 +1,7 @@
 /** \file texture_cube.cpp
  * Implementation of a texture cube
  *
- * $Id: texture_cube.cpp,v 1.14 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file event_mouse_listener.cpp
  * TODO: File description
  *
- * $Id: event_mouse_listener.cpp,v 1.17 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

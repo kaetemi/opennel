@@ -1,7 +1,7 @@
 /** \file texture_file.h
  * TODO: File description
  *
- * $Id: texture_file.h,v 1.17 2005/03/31 13:39:22 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

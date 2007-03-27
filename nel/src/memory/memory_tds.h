@@ -1,7 +1,7 @@
 /** \file memory_tds.h
  * Thread dependant storage class
  *
- * $Id: memory_tds.h,v 1.1 2002/11/05 16:48:25 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

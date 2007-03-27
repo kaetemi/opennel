@@ -1,7 +1,7 @@
 /** \file vegetable_manager.cpp
  * TODO: File description
  *
- * $Id: vegetable_manager.cpp,v 1.49 2006/07/12 14:37:22 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

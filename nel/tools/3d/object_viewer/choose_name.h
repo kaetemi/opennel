@@ -1,7 +1,7 @@
 /** \file choose_name.h
  * A dialog that allow to choose a name
  *
- * $Id: choose_name.h,v 1.1 2001/09/12 13:25:55 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

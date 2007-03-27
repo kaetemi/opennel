@@ -1,7 +1,7 @@
 /** \file primitive_profile.h
  * Primitive counter.
  *
- * $Id: primitive_profile.h,v 1.2 2002/10/28 17:32:12 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

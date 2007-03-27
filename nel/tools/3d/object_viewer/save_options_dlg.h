@@ -1,6 +1,6 @@
 /** \file save_options_dlg.h
  *
- * $Id: save_options_dlg.h,v 1.1 2004/06/17 08:02:06 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

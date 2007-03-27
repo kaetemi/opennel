@@ -1,7 +1,7 @@
 /** \file lb_extern_id_dlg.cpp
  * A dialog for assigning ID to objects in a particle system
  *
- * $Id: lb_extern_id_dlg.cpp,v 1.5 2002/11/04 15:40:44 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

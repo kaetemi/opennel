@@ -1,7 +1,7 @@
 /** \file tile_bank.cpp
  * Management of tile texture.
  *
- * $Id: tile_bank.cpp,v 1.50 2005/07/20 18:04:22 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

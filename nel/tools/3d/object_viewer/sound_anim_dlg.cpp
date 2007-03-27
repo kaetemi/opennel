@@ -1,7 +1,7 @@
 /** \file sound_anim_dlg.cpp
  * The main dialog to edit animation sound tracks
  *
- * $Id: sound_anim_dlg.cpp,v 1.4 2003/03/03 13:05:37 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

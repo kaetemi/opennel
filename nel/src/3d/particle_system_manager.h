@@ -1,7 +1,7 @@
 /** \file particle_system_manager.h
  * TODO: File description
  *
- * $Id: particle_system_manager.h,v 1.11 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 - 2002 Nevrax Ltd.

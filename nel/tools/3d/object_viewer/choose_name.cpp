@@ -1,7 +1,7 @@
 /** \file choose_name.cpp
  * A dialog that allow to choose a name
  *
- * $Id: choose_name.cpp,v 1.2 2002/11/04 15:40:44 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

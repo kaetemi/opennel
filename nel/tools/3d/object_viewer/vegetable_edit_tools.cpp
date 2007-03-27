@@ -1,7 +1,7 @@
 /** \file vegetable_edit_tools.cpp
  * TODO: File description
  *
- * $Id: vegetable_edit_tools.cpp,v 1.3 2004/11/15 10:25:09 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

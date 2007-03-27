@@ -1,7 +1,7 @@
 /** \file mesh_geom.h
  * TODO: File description
  *
- * $Id: mesh_geom.h,v 1.16 2004/11/15 10:24:43 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

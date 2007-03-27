@@ -1,7 +1,7 @@
 /** \file sound_document_plugin.h
  * Georges plugin for sound documents
  *
- * $Id: sound_anim_view.h,v 1.1 2002/06/18 16:04:59 hanappe Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

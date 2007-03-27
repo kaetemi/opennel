@@ -1,7 +1,7 @@
 /** \file scene_user.h
  * TODO: File description
  *
- * $Id: scene_user.h,v 1.62 2005/07/22 12:41:40 legallo Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

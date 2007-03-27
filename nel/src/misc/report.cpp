@@ -2,7 +2,7 @@
  * This function display a custom message box to report something.
  * It is used in the debug system
  *
- * $Id: report.cpp,v 1.16 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file export_vegetable.cpp
  * Export from 3dsmax a NeL vegetable mesh
  *
- * $Id: export_vegetable.cpp,v 1.6 2003/11/03 17:31:21 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -30,7 +30,7 @@
 #include "../nel_export/std_afx.h"
 #include "../nel_export/nel_export.h"
 
-#include <3d/vegetable_shape.h>
+#include "nel/../../src/3d/vegetable_shape.h"
 
 using namespace NLMISC;
 using namespace NL3D;

@@ -1,7 +1,7 @@
 /** \file vegetable_edit_tools.h
  * Some tools and define for vegetable edition.
  *
- * $Id: vegetable_edit_tools.h,v 1.2 2001/12/12 13:29:55 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

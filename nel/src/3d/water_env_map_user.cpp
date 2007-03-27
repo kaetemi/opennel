@@ -1,6 +1,6 @@
 /** \file water_env_map_user.cpp
  *
- * $Id: water_env_map_user.cpp,v 1.3 2005/08/19 15:32:13 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

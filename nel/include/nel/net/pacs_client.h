@@ -1,7 +1,7 @@
 /** \file pacs_client.h
  * Client part of the PACS Service
  *
- * $Id: pacs_client.h,v 1.4 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

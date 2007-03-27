@@ -1,7 +1,7 @@
 /** \file FilterDialog.h
  * header file
  *
- * $Id: FilterDialog.h,v 1.1 2002/10/18 12:04:56 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

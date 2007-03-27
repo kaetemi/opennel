@@ -2,7 +2,7 @@
 /** \file path.h
  * Utility class for searching files in differents paths.
  *
- * $Id: new_path.h,v 1.7 2005/06/23 16:27:15 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file lighting_manager.cpp
  * TODO: File description
  *
- * $Id: lighting_manager.cpp,v 1.17 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

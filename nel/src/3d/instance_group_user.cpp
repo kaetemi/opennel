@@ -1,7 +1,7 @@
 /** \file instance_group_user.cpp
  * Implementation of the user interface managing instance groups.
  *
- * $Id: instance_group_user.cpp,v 1.42 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

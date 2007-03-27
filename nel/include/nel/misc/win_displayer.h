@@ -1,7 +1,7 @@
 /** \file win_displayer.h
  * Win32 Implementation of the CWindowDisplayer (look at window_displayer.h)
  *
- * $Id: win_displayer.h,v 1.16 2005/04/04 14:51:47 miller Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

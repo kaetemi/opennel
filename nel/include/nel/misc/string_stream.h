@@ -1,7 +1,7 @@
 /** \file string_stream.h
  * From memory serialization implementation of IStream using ASCII format (look at stream.h)
  *
- * $Id: string_stream.h,v 1.8 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

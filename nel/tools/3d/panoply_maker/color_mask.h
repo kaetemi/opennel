@@ -1,7 +1,7 @@
 /** \file color_mask.h
  * A class for describing colors masks (file extension, and what colors they support)
  *
- * $Id: color_mask.h,v 1.1 2002/02/06 10:12:55 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

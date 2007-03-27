@@ -1,7 +1,7 @@
 /** \file module.h
  * module interface
  *
- * $Id: module.h,v 1.13 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -33,6 +33,7 @@
 #include "nel/misc/co_task.h"
 #include "nel/misc/algo.h"
 #include "nel/net/message.h"
+#include "nel/net/unified_network.h"
 #include "module_common.h"
 
 namespace NLNET
@@ -196,9 +197,9 @@ namespace NLNET
 		//@name Callback from the module manager
 		//@{
 		/// A Nel layer 5 service has started.
-		virtual void				onServiceUp(const std::string &serviceName, uint16 serviceId) =0;
+		virtual void				onServiceUp(const std::string &serviceName, NLNET::TServiceId serviceId) =0;
 		/// A Nel layer 5 service has stopped.
-		virtual void				onServiceDown(const std::string &serviceName, uint16 serviceId) = 0;
+		virtual void				onServiceDown(const std::string &serviceName, NLNET::TServiceId serviceId) = 0;
 		/** Regular update from application.
 		 *	If the application is a service, then it call CModuleManager::updateModules at each 
 		 *	service loop.
@@ -922,5 +923,5 @@ namespace NLNET
 
 #endif // NL_FILE_MODULE_H
 
-/* Result of merge 7 from RING_ALPHA into HEAD
+/* Merge NeL CVS (RING into HEAD)
  */

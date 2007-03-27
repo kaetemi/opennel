@@ -1,7 +1,7 @@
 /** \file FilterDialog.cpp
  * implementation file
  *
- * $Id: FilterDialog.cpp,v 1.1 2002/10/18 12:04:56 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

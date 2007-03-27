@@ -1,7 +1,7 @@
 /** \file scheme_bank_dlg.cpp
  * Dialog used to manage a bank of attributes makers in a particle system
  *
- * $Id: scheme_bank_dlg.cpp,v 1.4 2002/11/04 15:40:45 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

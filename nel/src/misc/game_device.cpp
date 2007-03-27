@@ -1,7 +1,7 @@
 /** \file game_device.cpp
  * TODO: File description
  *
- * $Id: game_device.cpp,v 1.4 2005/01/17 16:39:43 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

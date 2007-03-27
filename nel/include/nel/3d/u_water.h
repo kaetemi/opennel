@@ -1,7 +1,7 @@
 /** \file u_water.h
  * User interface for water manipulation
  *
- * $Id: u_water.h,v 1.5 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

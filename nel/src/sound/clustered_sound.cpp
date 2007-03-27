@@ -1,7 +1,7 @@
 /** \file clustered_sound.cpp
  * 
  *
- * $Id: clustered_sound.cpp,v 1.25 2005/03/25 09:52:20 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

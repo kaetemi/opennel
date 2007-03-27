@@ -1,7 +1,7 @@
 /** \file camera.cpp
  * TODO: File description
  *
- * $Id: camera.cpp,v 1.21 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

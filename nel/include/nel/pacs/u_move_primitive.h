@@ -1,7 +1,7 @@
 /** \file u_move_primitive.h
  * Description of movables primitives.
  *
- * $Id: u_move_primitive.h,v 1.12 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file basicia.h
  * Sevral class for the ia objects fonctionality.
  *
- * $Id: baseia.h,v 1.8 2003/01/21 11:24:25 chafik Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

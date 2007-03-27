@@ -1,7 +1,7 @@
 /** \file graph.cpp
  * Graph class for network statistics
  *
- * $Id: graph.cpp,v 1.1 2004/03/04 14:46:24 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

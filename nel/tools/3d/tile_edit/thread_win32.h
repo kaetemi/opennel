@@ -1,5 +1,5 @@
 /*
-	$Id: thread_win32.h,v 1.1 2000/10/19 07:53:33 corvazier Exp $
+	$Id$
 
 	------------------------------------------------------------------------
 	ClanLib, the platform independent game SDK.

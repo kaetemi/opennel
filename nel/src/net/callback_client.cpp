@@ -1,7 +1,7 @@
 /** \file callback_client.cpp
  * Network engine, layer 3, client
  *
- * $Id: callback_client.cpp,v 1.34 2006/09/14 16:56:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -25,6 +25,7 @@
 
 #include "stdnet.h"
 
+#include "nel/misc/types_nl.h"
 #include "nel/net/callback_net_base.h"
 #include "nel/net/callback_client.h"
 
@@ -451,3 +452,6 @@ bool CCallbackClient::replaySystemCallbacks()
 
 
 } // NLNET
+
+/* Merge NeL CVS (RING into HEAD)
+ */

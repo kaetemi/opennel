@@ -1,7 +1,7 @@
 /** \file sock.h
  * Network engine, layer 0, base class
  *
- * $Id: sock.h,v 1.18 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -26,9 +26,9 @@
 #ifndef NL_SOCK_H
 #define NL_SOCK_H
 
-#include "inet_address.h"
 #include "nel/misc/common.h"
 #include "nel/misc/mutex.h"
+#include "inet_address.h"
 //#include <sstream>
 
 /// This namespace contains all network class
@@ -318,6 +318,9 @@ private:
 	// Test: send & receive duration (ms)
 	uint32			_MaxReceiveTime;
 	uint32			_MaxSendTime;
+
+	/// Flag used to determine the moments at which sends atrta an stop blocking
+	bool			_Blocking;
 
 };
 

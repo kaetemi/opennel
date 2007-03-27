@@ -1,7 +1,7 @@
 /** \file transform_shape.cpp
  * TODO: File description
  *
- * $Id: transform_shape.cpp,v 1.44 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

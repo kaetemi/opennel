@@ -1,7 +1,7 @@
 /** \file tess_block.h
  * TODO: File description
  *
- * $Id: tess_block.h,v 1.12 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

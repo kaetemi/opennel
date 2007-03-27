@@ -1,7 +1,7 @@
 /** \file ps_shockwave.cpp
  * Shockwaves particles.
  *
- * $Id: ps_shockwave.cpp,v 1.17 2005/04/04 13:38:56 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

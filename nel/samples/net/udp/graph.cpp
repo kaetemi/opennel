@@ -1,7 +1,7 @@
 /** \file graph.cpp
  * display graph
  *
- * $Id: graph.cpp,v 1.2 2005/04/14 15:50:50 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

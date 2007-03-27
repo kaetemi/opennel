@@ -1,7 +1,7 @@
 /** \file 3d/material.h
  * TODO: File description
  *
- * $Id: material.h,v 1.32 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

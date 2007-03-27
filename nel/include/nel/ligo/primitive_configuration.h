@@ -1,7 +1,7 @@
 /** \file primitive_configuration.h
  * Ligo primitive configuration description.
  *
- * $Id: primitive_configuration.h,v 1.1 2003/11/07 15:50:19 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file u_skeleton.cpp
  * TODO: File description
  *
- * $Id: u_skeleton.cpp,v 1.10 2006/07/12 14:37:22 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file i18n/main.cpp
  * example of the NeL internationalisation features
  *
- * $Id: main.cpp,v 1.2 2004/12/28 15:07:03 lecroart Exp $
+ * $Id$
  */
 
 

@@ -1,7 +1,7 @@
 /** \file tcp_sock.cpp
  * Network engine, layer 0, tcp socket
  *
- * $Id: tcp_sock.cpp,v 1.10 2006/09/14 16:56:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -28,9 +28,12 @@
 #include "nel/net/tcp_sock.h"
 
 #ifdef NL_OS_WINDOWS
-#include <windows.h>
-#define socklen_t int
-#define ERROR_NUM WSAGetLastError()
+# ifdef NL_COMP_VC8
+#   include <WinSock2.h>
+# endif
+# include <windows.h>
+# define socklen_t int
+# define ERROR_NUM WSAGetLastError()
 
 #elif defined NL_OS_UNIX
 #include <unistd.h>
@@ -214,3 +217,6 @@ uint32 CTcpSock::getWindowSize()
 
 
 } // NLNET
+
+/* Merge NeL CVS (RING into HEAD)
+ */

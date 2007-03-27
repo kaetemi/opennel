@@ -5,6 +5,10 @@
 
 #ifndef WELCOME_SERVICE_ITF
 #define WELCOME_SERVICE_ITF
+#include "nel/misc/types_nl.h"
+#ifdef NL_COMP_VC8
+  #include <memory>
+#endif
 #include "nel/misc/hierarchical_timer.h"
 #include "nel/misc/string_conversion.h"
 #include "nel/net/message.h"
@@ -531,3 +535,6 @@ namespace WS
 }
 	
 #endif
+
+/* Merge NeL CVS (RING into HEAD)
+ */

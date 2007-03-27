@@ -1,7 +1,7 @@
 /** \file login_system/client.cpp
  * Login system example
  *
- * $Id: client.cpp,v 1.2 2005/04/13 12:37:16 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

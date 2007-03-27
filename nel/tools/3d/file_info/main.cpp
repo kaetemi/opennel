@@ -1,7 +1,7 @@
 /** \file main.cpp
  * Display info on many NEL files. ig, zone etc...
  *
- * $Id: main.cpp,v 1.19 2004/12/06 12:54:19 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -26,16 +26,16 @@
 
 
 #include <conio.h>
-#include "3d/scene_group.h"
-#include "3d/zone.h"
-#include "3d/skeleton_shape.h"
-#include "3d/register_3d.h"
 #include "nel/misc/file.h"
 #include "nel/misc/path.h"
-#include "3d/mesh.h"
-#include "3d/mesh_mrm.h"
-#include "3d/mesh_mrm_skinned.h"
-#include "3d/mesh_multi_lod.h"
+#include "nel/../../src/3d/scene_group.h"
+#include "nel/../../src/3d/zone.h"
+#include "nel/../../src/3d/skeleton_shape.h"
+#include "nel/../../src/3d/register_3d.h"
+#include "nel/../../src/3d/mesh.h"
+#include "nel/../../src/3d/mesh_mrm.h"
+#include "nel/../../src/3d/mesh_mrm_skinned.h"
+#include "nel/../../src/3d/mesh_multi_lod.h"
 
 
 using	namespace std;

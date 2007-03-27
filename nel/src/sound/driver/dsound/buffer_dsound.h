@@ -1,7 +1,7 @@
 /** \file buffer_dsound.h
  * DSound buffer
  *
- * $Id: buffer_dsound.h,v 1.11 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

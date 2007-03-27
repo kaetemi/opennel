@@ -1,7 +1,7 @@
 /** \file sample_bank.h
  * CSampleBank: a set of samples
  *
- * $Id: sample_bank.h,v 1.10 2004/06/09 14:54:35 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

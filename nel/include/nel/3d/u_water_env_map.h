@@ -1,6 +1,6 @@
 /** \file u_water_env_map.h
  *
- * $Id: u_water_env_map.h,v 1.3 2005/04/04 10:12:56 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file multi_shards/frontend_service.cpp
  * multi shard example
  *
- * $Id: frontend_service.cpp,v 1.1 2002/04/17 08:08:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

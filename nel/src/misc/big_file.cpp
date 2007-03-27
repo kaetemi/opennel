@@ -1,7 +1,7 @@
 /** \file big_file.cpp
  * Big file management
  *
- * $Id: big_file.cpp,v 1.21 2006/10/31 16:10:51 blanchard Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2002 Nevrax Ltd.
@@ -273,6 +273,7 @@ bool CBigFile::add (const std::string &sBigFileName, uint32 nOptions)
 		bnpTmp.AlwaysOpened = true;
 	}
 
+	nldebug("BigFile : adding bnp '%s' to the collection", bigfilenamealone.c_str());
 	_BNPs.insert (make_pair(toLower(bigfilenamealone), bnpTmp));
 
 	return true;
@@ -366,7 +367,16 @@ bool CBigFile::getFileInternal (const std::string &sFileName, BNP *&zeBnp, BNPFi
 	}
 	
 	vector<BNPFile>::iterator itNBPFile;
-	itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), zeFileName.c_str(), CBNPFileComp());
+
+	// Debug : Sept 01 2006
+	#if _STLPORT_VERSION >= 0x510
+		BNPFile temp_bnp_file;
+		temp_bnp_file.Name = (char*)zeFileName.c_str();
+		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
+	#else
+		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), zeFileName.c_str(), CBNPFileComp());
+	#endif //_STLPORT_VERSION
+	
 	if (itNBPFile != rbnp.Files.end())
 	{
 		if (strcmp(itNBPFile->Name, zeFileName.c_str()) != 0)
@@ -449,7 +459,15 @@ char *CBigFile::getFileNamePtr(const std::string &sFileName, const std::string &
 		if (rbnp.Files.size() == 0)
 			return NULL;
 		string lwrFileName = toLower(sFileName);
-		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), lwrFileName.c_str(), CBNPFileComp());
+		// Debug : Sept 01 2006
+		#if _STLPORT_VERSION >= 0x510
+			BNPFile temp_bnp_file;
+			temp_bnp_file.Name = (char*)lwrFileName.c_str();
+			itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
+		#else
+			itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), lwrFileName.c_str(), CBNPFileComp());
+		#endif //_STLPORT_VERSION
+	
 		if (itNBPFile != rbnp.Files.end())
 		{
 			if (strcmp(itNBPFile->Name, lwrFileName.c_str()) == 0)
@@ -474,3 +492,6 @@ void CBigFile::getBigFilePaths(std::vector<std::string> &bigFilePaths)
 
 
 } // namespace NLMISC
+
+/* Merge NeL CVS (RING into HEAD)
+ */

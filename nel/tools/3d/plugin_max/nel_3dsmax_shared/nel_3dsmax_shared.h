@@ -6,7 +6,7 @@
  * NEL_3DSMAX_SHARED_API functions as being imported from a DLL, wheras this DLL sees symbols
  * defined with this macro as being exported.
  *
- * $Id: nel_3dsmax_shared.h,v 1.1 2001/04/26 16:37:31 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

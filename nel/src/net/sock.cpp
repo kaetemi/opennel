@@ -1,7 +1,7 @@
 /** \file sock.cpp
  * Network engine, layer 0, base class
  *
- * $Id: sock.cpp,v 1.43 2006/09/14 16:56:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -31,6 +31,9 @@
 
 #ifdef NL_OS_WINDOWS
 
+# ifdef NL_COMP_VC8
+#	include <WinSock2.h>
+# endif
 #	include <windows.h>
 #	define socklen_t int
 #	define ERROR_NUM WSAGetLastError()
@@ -205,7 +208,8 @@ CSock::CSock( bool logging ) :
 	_TimeoutS( 0 ),
 	_TimeoutUs( 0 ),
 	_MaxReceiveTime( 0 ),
-	_MaxSendTime( 0 )
+	_MaxSendTime( 0 ),
+	_Blocking( false )
 	{
 	nlassert( CSock::_Initialized );
 	/*{
@@ -456,7 +460,14 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 	{
 		if ( ERROR_NUM == ERROR_WOULDBLOCK )
 		{
+			H_AUTO(L0SendWouldBlock);
 			len = 0;
+			nlSleep(10);
+			if (!_Blocking)
+			{
+				nlwarning("SendWouldBlock - %s / %s Entering snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
+				_Blocking= true;
+			}
 			return Ok;
 		}
 		if ( throw_exception )
@@ -471,6 +482,11 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 	}
 	_BytesSent += len;
 	
+	if (_Blocking)
+	{
+		nlwarning("SendWouldBlock - %s / %s Leaving snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
+		_Blocking= false;
+	}
 	return Ok;
 }
 
@@ -636,3 +652,6 @@ sint32 CSock::getSendBufferSize()
 }
 
 } // NLNET
+
+/* Merge NeL CVS (RING into HEAD)
+ */

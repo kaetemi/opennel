@@ -1,7 +1,7 @@
 /** \file scene.cpp
  * A 3d scene, manage model instantiation, tranversals etc..
  *
- * $Id: scene.cpp,v 1.138 2005/07/22 12:40:36 legallo Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

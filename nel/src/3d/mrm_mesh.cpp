@@ -1,7 +1,7 @@
 /** \file mrm_mesh.cpp
  * Internal mesh for CMRMBuilder.
  *
- * $Id: mrm_mesh.cpp,v 1.8 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

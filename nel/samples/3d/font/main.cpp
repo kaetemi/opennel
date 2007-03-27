@@ -2,7 +2,7 @@
  * Example of font management *without* using the user interface.
  * This example is deprecated because the new way to use font is to pass though the user interface.
  *
- * $Id: main.cpp,v 1.1 2002/04/17 08:08:31 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

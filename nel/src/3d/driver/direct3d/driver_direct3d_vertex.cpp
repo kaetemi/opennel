@@ -1,7 +1,7 @@
 /** \file driver_direct3d_vertex.cpp
  * Direct 3d driver implementation
  *
- * $Id: driver_direct3d_vertex.cpp,v 1.13 2005/02/22 10:19:22 besson Exp $
+ * $Id$
  *
  * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */

@@ -1,7 +1,7 @@
 /** \file driver_direct3d.h
  * Direct 3d driver implementation
  *
- * $Id: driver_direct3d.h,v 1.45 2006/12/06 17:21:23 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -42,16 +42,16 @@
 #include "nel/misc/win_event_emitter.h"
 #include "nel/3d/viewport.h"
 #include "nel/3d/scissor.h"
-#include "driver.h"
-#include "material.h"
-#include "shader.h"
-#include "vertex_buffer.h"
-#include "index_buffer.h"
-#include "ptr_set.h"
-#include "texture_cube.h"
-#include "occlusion_query.h"
-#include "vertex_program_parse.h"
-#include "light.h"
+#include "../../driver.h"
+#include "../../material.h"
+#include "../../shader.h"
+#include "../../vertex_buffer.h"
+#include "../../index_buffer.h"
+#include "../../ptr_set.h"
+#include "../../texture_cube.h"
+#include "../../occlusion_query.h"
+#include "../../vertex_program_parse.h"
+#include "../../light.h"
 //
 #include <algorithm>
 
@@ -138,11 +138,11 @@ private:
 
 
 
-inline operator==(const D3DCOLORVALUE &lhs, const D3DCOLORVALUE &rhs)
+inline bool operator==(const D3DCOLORVALUE &lhs, const D3DCOLORVALUE &rhs)
 {
 	return lhs.r == rhs.r && lhs.g == rhs.g && lhs.b == rhs.b && lhs.a == rhs.a;
 }
-inline operator!=(const D3DCOLORVALUE &lhs, const D3DCOLORVALUE &rhs)
+inline bool operator!=(const D3DCOLORVALUE &lhs, const D3DCOLORVALUE &rhs)
 {
 	return !(lhs == rhs);
 }
@@ -2520,3 +2520,6 @@ void fillQuadIndexes (uint16 *indexes, uint first, uint last);
 extern HINSTANCE HInstDLL;
 
 #endif // NL_DRIVER_DIRECT3D_H
+
+/* Merge NeL CVS (RING into HEAD)
+ */

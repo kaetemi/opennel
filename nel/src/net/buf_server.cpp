@@ -1,7 +1,7 @@
 /** \file buf_server.cpp
  * Network engine, layer 1, server
  *
- * $Id: buf_server.cpp,v 1.53 2006/09/14 16:56:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

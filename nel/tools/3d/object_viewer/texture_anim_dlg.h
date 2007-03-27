@@ -1,7 +1,7 @@
 /** \file texture_anim_dlg.h
  * Dialog used to tune animation of texture on particles
  *
- * $Id: texture_anim_dlg.h,v 1.6 2004/06/17 08:00:45 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -31,7 +31,7 @@
 #endif 
 
 #include "ps_wrapper.h"
-#include "3d/ps_particle.h"
+#include "nel/../../src/3d/ps_particle.h"
 #include "value_gradient_dlg.h"
 #include "popup_notify.h"
 #include "particle_workspace.h"

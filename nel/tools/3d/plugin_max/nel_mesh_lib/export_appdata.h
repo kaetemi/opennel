@@ -1,7 +1,7 @@
 /** \file export_appdata.h
  * Define NeL appdata for 3dsmax
  *
- * $Id: export_appdata.h,v 1.9 2004/07/20 16:25:22 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

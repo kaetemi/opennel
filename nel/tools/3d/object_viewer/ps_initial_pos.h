@@ -1,6 +1,6 @@
 /** \file ps_initial_pos.h
  *
- * $Id: ps_initial_pos.h,v 1.2 2004/06/18 09:51:50 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

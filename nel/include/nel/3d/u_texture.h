@@ -1,7 +1,7 @@
 /** \file u_texture.h
  * TODO: File description
  *
- * $Id: u_texture.h,v 1.12 2006/05/31 12:03:13 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

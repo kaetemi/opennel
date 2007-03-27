@@ -1,7 +1,7 @@
 /** \file network.cpp
  * Animation interface between the game and NeL
  *
- * $Id: network.cpp,v 1.22 2004/07/12 09:03:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

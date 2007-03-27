@@ -1,7 +1,7 @@
 /** \file pick_sound.h
  * Dialog used to select a sound in the sound bank.
  *
- * $Id: pick_sound.h,v 1.7 2003/07/30 17:37:57 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

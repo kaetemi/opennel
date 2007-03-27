@@ -1,7 +1,7 @@
 /** \file login_service.cpp
  * Login Service (LS)
  *
- * $Id: connection_ws.cpp,v 1.24 2005/01/04 13:40:11 legros Exp $
+ * $Id$
  *
  */
 

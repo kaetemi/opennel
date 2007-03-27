@@ -1,7 +1,7 @@
 /** \file ps_force.cpp
  * TODO: File description
  *
- * $Id: ps_force.cpp,v 1.40 2005/02/22 10:19:11 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file Log_analyserDlg.h
  * header file
  *
- * $Id: log_analyserDlg.h,v 1.5 2004/01/13 18:36:04 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

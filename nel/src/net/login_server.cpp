@@ -1,7 +1,7 @@
 /** \file login_server.cpp
  * CLoginServer is the interface used by the front end to *s authenticate users.
  *
- * $Id: login_server.cpp,v 1.42 2006/07/12 14:37:22 boucher Exp $
+ * $Id$
  *
  */
 
@@ -78,6 +78,8 @@ map<uint32, TSockId> UserIdSockAssociations;
 
 TNewClientCallback NewClientCallback = NULL;
 
+TNewCookieCallback NewCookieCallback = NULL;
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////// CONNECTION TO THE WELCOME SERVICE //////////////////////////////////////////////////
@@ -113,7 +115,7 @@ void CLoginServer::refreshPendingList ()
 }
 
 
-void cbWSChooseShard (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbWSChooseShard (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	// the WS call me that a new client want to come in my shard
 	string reason, userName, userPriv, userExtended;
@@ -166,6 +168,12 @@ void cbWSChooseShard (CMessage &msgin, const std::string &serviceName, uint16 si
 		nlinfo ("LS: New cookie %s (name '%s' priv '%s' extended '%s' instance %u slot %u) inserted in the pending user list (awaiting new client)", cookie.toString().c_str(), userName.c_str(), userPriv.c_str(), userExtended.c_str(), instanceId, charSlot);
 		PendingUsers.push_back (CPendingUser (cookie, userName, userPriv, userExtended, instanceId, charSlot));
 		reason = "";
+
+		// callback if needed
+		if (NewCookieCallback != NULL)
+		{
+			NewCookieCallback(cookie);
+		}
 	}
 
 	CMessage msgout ("SCS");
@@ -175,7 +183,7 @@ void cbWSChooseShard (CMessage &msgin, const std::string &serviceName, uint16 si
 	CUnifiedNetwork::getInstance()->send ("WS", msgout);
 }
 
-void cbWSDisconnectClient (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbWSDisconnectClient (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	// the WS tells me that i have to disconnect a client
 
@@ -417,6 +425,12 @@ void CLoginServer::init (const std::string &listenAddr, TDisconnectClientCallbac
 	ModeTcp = false;
 }
 
+void CLoginServer::addNewCookieCallback(TNewCookieCallback newCookieCb)
+{
+	NewCookieCallback = newCookieCb;
+}
+
+
 string CLoginServer::isValidCookie (const CLoginCookie &lc, string &userName, string &userPriv, string &userExtended, uint32 &instanceId, uint32 &charSlot)
 {
 	userName = userPriv = "";
@@ -567,3 +581,6 @@ NLMISC_CATEGORISED_DYNVARIABLE(nel, string, LSListenAddress, "the listen address
 NLMISC_CATEGORISED_VARIABLE(nel, string, DefaultUserPriv, "Default User priv for people who don't use the login system");
 
 } // NLNET
+
+/* Merge NeL CVS (RING into HEAD)
+ */

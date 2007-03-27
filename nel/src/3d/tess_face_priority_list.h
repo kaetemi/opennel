@@ -1,7 +1,7 @@
 /** \file tess_face_priority_list.h
  * TODO: File description
  *
- * $Id: tess_face_priority_list.h,v 1.6 2004/11/15 10:24:49 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

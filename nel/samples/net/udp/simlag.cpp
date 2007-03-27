@@ -1,7 +1,7 @@
 /** \file simlag.cpp
  * Thie file create manage the UDP connection and lag/packet lost simulation
  *
- * $Id: simlag.cpp,v 1.1 2002/04/17 08:08:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

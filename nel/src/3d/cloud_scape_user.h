@@ -1,7 +1,7 @@
 /** \file cloud_scape_user.h
  * 
  *
- * $Id: cloud_scape_user.h,v 1.2 2002/12/06 14:32:59 coutelas Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

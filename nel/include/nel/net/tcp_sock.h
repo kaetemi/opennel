@@ -1,7 +1,7 @@
 /** \file tcp_sock.h
  * Network engine, layer 0, tcp socket
  *
- * $Id: tcp_sock.h,v 1.6 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

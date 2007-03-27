@@ -1,7 +1,7 @@
 /** \file patchuv_locator.h
  * TODO: File description
  *
- * $Id: patchuv_locator.h,v 1.6 2005/02/22 10:19:11 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

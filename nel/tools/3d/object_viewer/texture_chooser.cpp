@@ -1,6 +1,6 @@
 /** \file texture_chooser.cpp
  * A dailog that helps to choose particles texture
- * $Id: texture_chooser.cpp,v 1.12 2004/06/17 08:00:32 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -27,9 +27,9 @@
 #include "texture_chooser.h"
 #include "multi_tex_dlg.h"
 
-#include "3d/texture_file.h"
-#include "3d/texture_bump.h"
-#include "3d/ps_particle_basic.h"
+#include "nel/../../src/3d/texture_file.h"
+#include "nel/../../src/3d/texture_bump.h"
+#include "nel/../../src/3d/ps_particle_basic.h"
 
 #include "nel/misc/path.h"
 

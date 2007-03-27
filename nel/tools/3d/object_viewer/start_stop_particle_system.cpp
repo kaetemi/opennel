@@ -1,7 +1,7 @@
 /** \file start_stop_particle_system.cpp
  * a pop-up dialog that allow to start and stop a particle system
  *
- * $Id: start_stop_particle_system.cpp,v 1.28 2005/02/16 17:07:02 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -33,11 +33,11 @@
 #include "located_properties.h"
 #include "select_string.h"
 //
-#include "3d/particle_system.h"
-#include "3d/ps_located.h"
-#include "3d/ps_sound.h"
-#include "3d/ps_emitter.h"
-#include "3d/particle_system_model.h"
+#include "nel/../../src/3d/particle_system.h"
+#include "nel/../../src/3d/ps_located.h"
+#include "nel/../../src/3d/ps_sound.h"
+#include "nel/../../src/3d/ps_emitter.h"
+#include "nel/../../src/3d/particle_system_model.h"
 #include "particle_dlg.h"
 
 

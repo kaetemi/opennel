@@ -1,7 +1,7 @@
 /** \file range_selector.cpp
  * Helps to select a range for numeric values in a CEditableRange dialog
  *
- * $Id: range_selector.cpp,v 1.3 2002/11/04 15:40:45 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

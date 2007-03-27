@@ -1,7 +1,7 @@
 /** \file connection_web.cpp
  * 
  *
- * $Id: connection_web.cpp,v 1.4 2003/10/20 14:34:57 lecroart Exp $
+ * $Id$
  *
  */
 

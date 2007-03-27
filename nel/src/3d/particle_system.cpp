@@ -1,7 +1,7 @@
  /** \file particle_system.cpp
  * TODO: File description
  *
- * $Id: particle_system.cpp,v 1.93 2006/07/12 14:37:22 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -2314,13 +2314,13 @@ void CParticleSystem::dumpHierarchy()
 		CPSLocated *loc = dynamic_cast<CPSLocated *>(_ProcessVect[k]);
 		if (loc)
 		{ 
-			nlinfo("Located k : %s @%x", loc->getName().c_str(), (int) loc);
+			nlinfo("Located k : %s @%x", loc->getName().c_str(), (ptrdiff_t) loc);
 			for(uint l = 0; l < loc->getNbBoundObjects(); ++l)
 			{
 				CPSEmitter *emitter = dynamic_cast<CPSEmitter *>(loc->getBoundObject(l));
 				if (emitter)
 				{
-					nlinfo("    emitter %s : emit %s @%x", emitter->getName().c_str(), emitter->getEmittedType() ? emitter->getEmittedType()->getName().c_str() : "none", (int) emitter->getEmittedType());
+					nlinfo("    emitter %s : emit %s @%x", emitter->getName().c_str(), emitter->getEmittedType() ? emitter->getEmittedType()->getName().c_str() : "none", (ptrdiff_t) emitter->getEmittedType());
 				}
 			}
 		}	
@@ -2339,3 +2339,6 @@ void CParticleSystem::onShow(bool shown)
 
 
 } // NL3D
+
+/* Merge NeL CVS (RING into HEAD)
+ */

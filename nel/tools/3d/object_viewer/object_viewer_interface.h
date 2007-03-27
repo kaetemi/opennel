@@ -1,6 +1,6 @@
 /** \file object_viewer_interface.cpp
  *
- * $Id: object_viewer_interface.h,v 1.20 2004/03/19 10:11:37 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

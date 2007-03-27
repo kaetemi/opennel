@@ -1,7 +1,7 @@
 /** \file background_sound_manager.h
  * CBackgroundSoundManager
  *
- * $Id: background_sound_manager.h,v 1.13 2005/04/18 09:27:28 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

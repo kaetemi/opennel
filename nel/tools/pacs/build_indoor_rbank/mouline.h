@@ -1,7 +1,7 @@
 /** \file mouline.h
  * 
  *
- * $Id: mouline.h,v 1.1 2002/01/07 11:17:03 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

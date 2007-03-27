@@ -1,7 +1,7 @@
 /** \file lod_texture_builder.h
  * TODO: File description
  *
- * $Id: main.cpp,v 1.8 2004/11/15 10:25:08 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.
@@ -28,9 +28,9 @@
 #include "nel/misc/file.h"
 #include <math.h>
 #include "lod_texture_builder.h"
-#include "3d/mesh.h"
-#include "3d/mesh_mrm.h"
-#include "3d/register_3d.h"
+#include "nel/../../src/3d/mesh.h"
+#include "nel/../../src/3d/mesh_mrm.h"
+#include "nel/../../src/3d/register_3d.h"
 #include "nel/misc/config_file.h"
 #include "nel/misc/algo.h"
 

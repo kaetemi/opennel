@@ -1,7 +1,7 @@
 /** \file memory_tds.cpp
  * Thread dependant storage class
  *
- * $Id: memory_tds.cpp,v 1.3 2005/04/05 10:25:06 legros Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

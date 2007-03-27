@@ -1,7 +1,7 @@
 /** \file logic_state.cpp
  * 
  *
- * $Id: logic_state.cpp,v 1.4 2002/08/28 09:27:12 coutelas Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

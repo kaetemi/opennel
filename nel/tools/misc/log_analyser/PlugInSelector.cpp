@@ -1,7 +1,7 @@
 /** \file PlugInSelector.cpp
  * implementation file
  *
- * $Id: PlugInSelector.cpp,v 1.1 2003/08/06 14:05:57 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

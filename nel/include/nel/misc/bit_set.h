@@ -1,7 +1,7 @@
 /** \file bit_set.h
  * CBitSet class
  *
- * $Id: bit_set.h,v 1.9 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

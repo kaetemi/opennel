@@ -1,7 +1,7 @@
 /** \file u_shape.h
  * Game interface for managing shape.
  *
- * $Id: u_shape.h,v 1.5 2005/06/27 15:58:22 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

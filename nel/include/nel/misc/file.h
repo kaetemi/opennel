@@ -1,7 +1,7 @@
 /** \file file.h
  * From file serialization implementation of IStream using binary format (look at stream.h)
  *
- * $Id: file.h,v 1.30 2006/05/31 12:03:13 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -61,6 +61,11 @@ struct EReadError : public EFile
 struct EWriteError : public EFile
 {
 	EWriteError( const std::string& filename ) : EFile( "Write Error in file '" +filename+"'", true ) {}
+};
+
+struct EDiskFullError : public EWriteError
+{
+	EDiskFullError( const std::string& filename ) : EWriteError(filename) {}
 };
 
 struct ERenameError : public EFile

@@ -1,6 +1,6 @@
 /** \file main.cpp
  *
- * $Id: main.cpp,v 1.9 2003/12/10 15:12:39 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.
@@ -38,9 +38,9 @@
 #include "nel/misc/block_memory.h"
 #include "nel/misc/i_xml.h"
 
-#include "ligo/zone_region.h"
+#include "nel/../../src/ligo/zone_region.h"
 
-#include "3d/scene_group.h"
+#include "nel/../../src/3d/scene_group.h"
 
 #include <windows.h>
 

@@ -1,7 +1,7 @@
 /** \file types_check/main.cpp
  * Example and stress test for standard NeL types (using streaming and size)
  *
- * $Id: main.cpp,v 1.1 2002/04/17 08:08:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

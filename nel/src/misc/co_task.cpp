@@ -1,7 +1,7 @@
 /** \file co_task.cpp
  * Coroutine based task.
  *
- * $Id: co_task.cpp,v 1.9 2006/09/14 16:56:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -26,6 +26,7 @@
 #include "stdmisc.h"
 #include "nel/misc/co_task.h"
 #include "nel/misc/tds.h"
+#include "nel/misc/time_nl.h"
 // Flag to use thread instead of coroutine primitives (i.e windows fibers or gcc context)
 #ifndef NL_OS_WINDOWS
 #define NL_USE_THREAD_COTASK
@@ -45,6 +46,7 @@
 #else //NL_USE_THREAD_COTASK
 // some platform specifics
 #if defined (NL_OS_WINDOWS)
+# define _WIN32_WINNT 0x0500
 # define NL_WIN_CALLBACK CALLBACK
 // Visual .NET won't allow Fibers for a Windows version older than 2000. However the basic features are sufficient for us, we want to compile them for all Windows >= 95
 # if !defined(_WIN32_WINNT) || (_WIN32_WINNT < 0x0400)
@@ -534,8 +536,25 @@ namespace NLMISC
 	}
 #endif //NL_USE_THREAD_COTASK
 
+	void CCoTask::requestTerminate()
+	{
+		_TerminationRequested = true;
+	}
+
+	void CCoTask::sleep(uint milliseconds)
+	{
+		nlassert(getCurrentTask() == this); // called outside run() !
+		TTime startTime = CTime::getLocalTime();
+		while(!isTerminationRequested())
+		{
+			TTime currTime = CTime::getLocalTime();
+			if (currTime - startTime >= milliseconds) break;
+			yield();
+		}
+	}
+
 } // namespace NLMISC
 
 
-/* Result of merge 7 from RING_ALPHA into HEAD
+/* Merge NeL CVS (RING into HEAD)
  */

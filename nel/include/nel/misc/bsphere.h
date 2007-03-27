@@ -1,7 +1,7 @@
 /** \file bsphere.h
  * TODO: File description
  *
- * $Id: bsphere.h,v 1.6 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file camera.h
  * Animation interface between the game and NeL
  *
- * $Id: camera.h,v 1.10 2004/07/29 09:06:07 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

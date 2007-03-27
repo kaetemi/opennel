@@ -1,7 +1,7 @@
 /** \file s3tc_compressor.cpp
  * TODO: File description
  *
- * $Id: s3tc_compressor.cpp,v 1.6 2005/06/23 18:18:11 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.
@@ -26,7 +26,7 @@
 #include "s3tc_compressor.h"
 #include "s3_intrf.h"
 #include "ddraw.h"
-#include "3d/hls_color_texture.h"
+#include "nel/../../src/3d/hls_color_texture.h"
 
 
 using namespace std;

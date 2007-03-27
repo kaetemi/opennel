@@ -1,7 +1,7 @@
 /** \file logic_variable.cpp
  * 
  *
- * $Id: logic_variable.cpp,v 1.2 2002/06/20 12:17:56 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

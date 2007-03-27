@@ -1,7 +1,7 @@
 /** \file memory/heap_allocator_inline.h
  * A Heap allocator, inline functions
  *
- * $Id: heap_allocator_inline.h,v 1.6 2005/04/07 16:59:10 legros Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

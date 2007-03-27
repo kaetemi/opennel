@@ -1,7 +1,7 @@
 /** \file chain_quad.h
  * a quadgrid of list of edge chain.
  *
- * $Id: chain_quad.h,v 1.5 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

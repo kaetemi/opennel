@@ -1,7 +1,7 @@
 /** \file landscapevb_info.h
  * TODO: File description
  *
- * $Id: landscapevb_info.h,v 1.6 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

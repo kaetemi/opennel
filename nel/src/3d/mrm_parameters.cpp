@@ -1,7 +1,7 @@
 /** \file mrm_parameters.cpp
  * parameters of MRM build process.
  *
- * $Id: mrm_parameters.cpp,v 1.5 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

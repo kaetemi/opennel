@@ -1,7 +1,7 @@
 /** \file memory/heap_allocator.h
  * A Heap allocator
  *
- * $Id: heap_allocator.h,v 1.7 2005/02/21 17:02:46 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

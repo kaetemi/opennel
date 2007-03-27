@@ -1,7 +1,7 @@
 /** \file 3d/zone.h
  * TODO: File description
  *
- * $Id: zone.h,v 1.26 2005/02/22 10:19:09 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

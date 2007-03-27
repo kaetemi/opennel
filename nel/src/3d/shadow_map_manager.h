@@ -1,7 +1,7 @@
 /** \file shadow_map_manager.h
  * TODO: File description
  *
- * $Id: shadow_map_manager.h,v 1.12 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

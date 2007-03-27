@@ -1,6 +1,6 @@
 /** \file dup_ps.h
  *
- * $Id: dup_ps.h,v 1.2 2006/02/06 13:54:09 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

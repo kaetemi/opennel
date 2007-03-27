@@ -1,6 +1,6 @@
 /** \file connexion.h
  *
- * $Id: connection.h,v 1.1 2004/01/06 15:54:58 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2004 Nevrax Ltd.

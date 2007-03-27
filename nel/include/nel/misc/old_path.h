@@ -2,7 +2,7 @@
 /** \file path.h
  * Abstract system directory architecture and file management
  *
- * $Id: old_path.h,v 1.3 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

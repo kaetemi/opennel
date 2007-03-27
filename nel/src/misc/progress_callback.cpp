@@ -1,7 +1,7 @@
 /** \file progress_callback.cpp
  * TODO: File description
  *
- * $Id: progress_callback.cpp,v 1.5 2004/11/15 10:25:05 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

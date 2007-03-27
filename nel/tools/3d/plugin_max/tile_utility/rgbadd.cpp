@@ -1,7 +1,7 @@
 /** \file rgbadd.cpp
  * TODO: File description
  *
- * $Id: rgbadd.cpp,v 1.4 2004/11/15 10:25:11 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

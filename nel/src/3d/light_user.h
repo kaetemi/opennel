@@ -1,7 +1,7 @@
 /** \file light_user.h
  * TODO: File description
  *
- * $Id: light_user.h,v 1.4 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

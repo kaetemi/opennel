@@ -1,7 +1,7 @@
 /** \file class_registry.h
  * This File handles CClassRegistry.
  *
- * $Id: class_registry.h,v 1.15 2006/05/31 12:03:13 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -89,6 +89,9 @@ public:
 class CClassRegistry
 {
 public:
+	/// Inits the ClassRegistry (especially RegistredClasses)
+	static void			init();
+
 	/// release memory
 	static void			release();
 	
@@ -111,8 +114,6 @@ private:
 	typedef std::hash_map<std::string, CClassNode> TClassMap;
 	static	TClassMap	*RegistredClasses;
 
-	/// Inits the ClassRegistry (especially RegistredClasses)
-	static void			init();
 };
 
 
@@ -130,3 +131,6 @@ private:
 #endif // NL_STREAM_H
 
 /* End of stream.h */
+
+/* Merge NeL CVS (RING into HEAD)
+ */

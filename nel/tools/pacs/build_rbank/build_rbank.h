@@ -1,7 +1,7 @@
 /** \file moulinette.h
  * 
  *
- * $Id: build_rbank.h,v 1.4 2004/01/13 16:36:59 legros Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

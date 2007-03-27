@@ -1,7 +1,7 @@
 /** \file export_script.cpp
  * Export script utility from 3dsmax
  *
- * $Id: export_script.cpp,v 1.13 2005/01/31 13:53:37 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -24,8 +24,8 @@
  */
 
 #include "stdafx.h"
-#include "parser.h"
-#include "strings.h"
+#include <MaxScrpt/parser.h>
+#include <MaxScrpt/strings.h>
 #include "export_nel.h"
 #include "export_appdata.h"
 

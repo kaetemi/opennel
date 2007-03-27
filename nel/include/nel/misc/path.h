@@ -1,7 +1,7 @@
 /** \file path.h
  * Utility class for searching files in differents paths.
  *
- * $Id: path.h,v 1.54 2006/05/31 12:03:13 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.
@@ -89,6 +89,9 @@ public:
 
 	/** Remove all search path contains in the alternative directories */
 	static void			removeAllAlternativeSearchPath ();
+
+	// Remove a set of big file from the search paths (and also from CBigFile)
+	static void			removeBigFiles(const std::vector<std::string> &bnpFilenames);
 
 	/** Returns the long name (path + filename) for the specified file.
 	 * The directory separator is always '/'.
@@ -276,6 +279,8 @@ private:
 
 	std::map<std::string, CFileEntry> _Files; // first is the filename in lowercase (can be with a remapped extension)
 
+
+
 	// If memory compressed use this
 	// -----------------------------
 
@@ -296,16 +301,16 @@ private:
 	class CMCFileComp
 	{
 	public:
-		// rhs MUST BE LOWERED
 		sint specialCompare(const CMCFileEntry &fe, const char *rhs)
 		{
 			char *lhs = fe.Name;
+
 			uint8 lchar, rchar;
 			while (*lhs != '\0' && *rhs != '\0')
 			{
 				// lower case compare because name is in normal case
 				lchar = ::tolower(*lhs);
-				rchar = *rhs;
+				rchar = ::tolower(*rhs);
 				if (lchar != rchar) return ((sint)lchar) - ((sint)rchar);
 				++lhs;
 				++rhs;
@@ -315,10 +320,20 @@ private:
 			return 0;
 		}
 
-		bool operator()(const CMCFileEntry &fe, const char *rhs)
-		{
-			return specialCompare(fe, rhs) < 0;
-		}
+
+		// Debug : Sept 01 2006
+		#if _STLPORT_VERSION >= 0x510
+			bool operator()( const CMCFileEntry &fe, const CMCFileEntry &rhs )
+			{
+				return specialCompare( fe, rhs.Name ) < 0;
+			}
+		#else
+			bool operator()( const CMCFileEntry &fe, const char *rhs )
+			{
+				return specialCompare( fe, rhs ) < 0;
+			}
+		#endif //_STLPORT_VERSION
+
 	};
 
 	/// first ext1, second ext2 (ext1 could remplace ext2)
@@ -445,7 +460,7 @@ struct CFile
 	  * \param failIfExists If the destination file exists, nothing is done, and it returns false.
 	  * \return true if the copy succeeded
 	  */
-	static bool copyFile(const char *dest, const char *src, bool failIfExists = false);
+	static bool copyFile(const char *dest, const char *src, bool failIfExists = false, class IProgressCallback *progress = NULL);
 
 	/** Compare 2 files
 	  * \return true if both files exist and the files have same timestamp and size
@@ -485,6 +500,14 @@ struct CFile
 	*/
 	static bool deleteFile(const std::string &filename);
 
+
+	/** Delete a directory if possible (change the write access if possible)
+	* \return true if the delete occurs.
+	*/
+	static bool deleteDirectory(const std::string &filename);
+
+
+	
 	/** Get temporary output filename.
 	*	Call this method to get a temporary output filename. If you have successfuly saved your data, delete the old filename and move the new one.
 	*/
@@ -497,3 +520,6 @@ struct CFile
 #endif // NL_PATH_H
 
 /* End of path.h */
+
+/* Merge NeL CVS (RING into HEAD)
+ */

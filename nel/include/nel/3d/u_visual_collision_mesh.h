@@ -1,7 +1,7 @@
 /** \file u_visual_collision_mesh.h
  * TODO: File description
  *
- * $Id: u_visual_collision_mesh.h,v 1.3 2004/11/15 10:24:19 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

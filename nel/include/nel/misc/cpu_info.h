@@ -1,7 +1,7 @@
 /** \file cpu_info.h
  * TODO: File description
  *
- * $Id: cpu_info.h,v 1.6 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

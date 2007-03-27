@@ -1,7 +1,7 @@
 /** \file sound_animation.h
  * A sound event marer on a sound track
  *
- * $Id: sound_animation.h,v 1.8 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

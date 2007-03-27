@@ -1,7 +1,7 @@
 /** \file udp/frontend_service.cpp
  * <todo> a mettre
  *
- * $Id: bench_service.cpp,v 1.6 2005/04/14 15:48:25 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

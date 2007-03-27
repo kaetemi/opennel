@@ -2,7 +2,7 @@
  * This program just connect to an ip/port provided in the command line
  * and send an UDP datagram every second and display recevied answer
  *
- * $Id: client.cpp,v 1.1 2003/01/21 17:38:08 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2003 Nevrax Ltd.

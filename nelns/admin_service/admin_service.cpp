@@ -1,7 +1,7 @@
 /** \file admin_service.cpp
  * Admin Service (AS)
  *
- * $Id: admin_service.cpp,v 1.42 2006/05/31 12:10:20 boucher Exp $
+ * $Id$
  *
  */
 

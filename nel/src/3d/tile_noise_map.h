@@ -1,7 +1,7 @@
 /** \file tile_noise_map.h
  * A Noise Map for landscape.
  *
- * $Id: tile_noise_map.h,v 1.1 2001/07/23 14:40:21 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

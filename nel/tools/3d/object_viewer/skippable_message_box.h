@@ -1,6 +1,6 @@
 /** \file skippable_message_box.h
  *
- * $Id: skippable_message_box.h,v 1.1 2004/06/17 08:20:48 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

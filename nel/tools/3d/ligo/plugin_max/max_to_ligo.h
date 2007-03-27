@@ -1,7 +1,7 @@
 /** \file max_to_ligo.h
  * Convert a 3dsmax nel patch mesh in ligo data
  *
- * $Id: max_to_ligo.h,v 1.3 2003/07/03 09:35:08 distrib Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file bin_op_dlg.cpp
  * A dialog that helps editing binary opeartors ofr particle systems attributes.
  *
- * $Id: bin_op_dlg.cpp,v 1.4 2002/11/04 15:40:44 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

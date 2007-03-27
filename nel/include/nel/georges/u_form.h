@@ -1,7 +1,7 @@
 /** \file u_form.h
  * Georges form interface class
  *
- * $Id: u_form.h,v 1.10 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

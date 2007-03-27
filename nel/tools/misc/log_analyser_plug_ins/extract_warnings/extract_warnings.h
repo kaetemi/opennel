@@ -1,7 +1,7 @@
 /** \file extract_warnings.h
  * Interface of the DLL application
  *
- * $Id: extract_warnings.h,v 1.1 2003/08/06 14:07:21 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2003 Nevrax Ltd.

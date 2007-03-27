@@ -1,6 +1,6 @@
 /** \file seg_remanence.cpp
  *
- * $Id: seg_remanence.cpp,v 1.19 2005/03/15 18:05:44 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

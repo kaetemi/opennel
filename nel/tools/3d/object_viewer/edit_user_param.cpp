@@ -1,7 +1,7 @@
 /** \file edit_user_param.cpp
  * A dialog for editing one of the global user params in a particle system
  *
- * $Id: edit_user_param.cpp,v 1.3 2002/11/04 15:40:44 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

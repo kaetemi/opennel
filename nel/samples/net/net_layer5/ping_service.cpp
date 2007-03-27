@@ -1,7 +1,7 @@
 /** \file net_layer5/ping_service.cpp
  * Layer 5 and IService5 example
  *
- * $Id: ping_service.cpp,v 1.1 2002/04/17 08:08:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

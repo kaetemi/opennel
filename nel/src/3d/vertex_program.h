@@ -1,7 +1,7 @@
 /** \file vertex_program.h
  * Vertex program definition
  *
- * $Id: vertex_program.h,v 1.3 2002/09/24 15:03:31 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file command/main.cpp
  * example of the NeL command system (misc/command.h)
  *
- * $Id: main.cpp,v 1.3 2003/09/05 08:59:33 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2003 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file move_listener.cpp
  * <File description>
  *
- * $Id: move_listener.cpp,v 1.4 2006/01/10 17:39:05 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

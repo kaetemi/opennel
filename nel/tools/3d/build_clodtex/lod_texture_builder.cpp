@@ -1,7 +1,7 @@
 /** \file lod_texture_builder.cpp
  * TODO: File description
  *
- * $Id: lod_texture_builder.cpp,v 1.6 2004/11/15 10:25:08 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.
