@@ -395,6 +395,9 @@ public:
 	
 	const NLMISC::CCPUTimeStat&			getCPUUsageStats() const	{ return _CPUUsageStats; }
 
+	/// Allow the service to return a status string with important value
+	virtual std::string					getServiceStatusString() const;
+
 	/**
 	 * If your service needs a delay when it is asked to quit, provide a callback here (optional).
 	 * Then, when the service will be asked to quit, this callback will be called. Then you can

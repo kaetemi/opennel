@@ -90,6 +90,9 @@ public:
 	/** Remove all search path contains in the alternative directories */
 	static void			removeAllAlternativeSearchPath ();
 
+	// Remove a set of big file from the search paths (and also from CBigFile)
+	static void			removeBigFiles(const std::vector<std::string> &bnpFilenames);
+
 	/** Returns the long name (path + filename) for the specified file.
 	 * The directory separator is always '/'.
 	 * First, the lookup() lookups in standard directories (Alternative=false).
@@ -276,6 +279,8 @@ private:
 
 	std::map<std::string, CFileEntry> _Files; // first is the filename in lowercase (can be with a remapped extension)
 
+
+
 	// If memory compressed use this
 	// -----------------------------
 
@@ -455,7 +460,7 @@ struct CFile
 	  * \param failIfExists If the destination file exists, nothing is done, and it returns false.
 	  * \return true if the copy succeeded
 	  */
-	static bool copyFile(const char *dest, const char *src, bool failIfExists = false);
+	static bool copyFile(const char *dest, const char *src, bool failIfExists = false, class IProgressCallback *progress = NULL);
 
 	/** Compare 2 files
 	  * \return true if both files exist and the files have same timestamp and size
@@ -495,6 +500,14 @@ struct CFile
 	*/
 	static bool deleteFile(const std::string &filename);
 
+
+	/** Delete a directory if possible (change the write access if possible)
+	* \return true if the delete occurs.
+	*/
+	static bool deleteDirectory(const std::string &filename);
+
+
+	
 	/** Get temporary output filename.
 	*	Call this method to get a temporary output filename. If you have successfuly saved your data, delete the old filename and move the new one.
 	*/

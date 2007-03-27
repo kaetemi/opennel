@@ -26,6 +26,7 @@
 #include "stdmisc.h"
 #include "nel/misc/co_task.h"
 #include "nel/misc/tds.h"
+#include "nel/misc/time_nl.h"
 // Flag to use thread instead of coroutine primitives (i.e windows fibers or gcc context)
 #ifndef NL_OS_WINDOWS
 #define NL_USE_THREAD_COTASK
@@ -534,6 +535,23 @@ namespace NLMISC
 
 	}
 #endif //NL_USE_THREAD_COTASK
+
+	void CCoTask::requestTerminate()
+	{
+		_TerminationRequested = true;
+	}
+
+	void CCoTask::sleep(uint milliseconds)
+	{
+		nlassert(getCurrentTask() == this); // called outside run() !
+		TTime startTime = CTime::getLocalTime();
+		while(!isTerminationRequested())
+		{
+			TTime currTime = CTime::getLocalTime();
+			if (currTime - startTime >= milliseconds) break;
+			yield();
+		}
+	}
 
 } // namespace NLMISC
 

@@ -139,7 +139,14 @@ using namespace std;
 
 #endif // NL_OS_WINDOWS
 
-namespace NLMISC
+#ifdef NL_COMP_VC6
+// only for MSDEV 6.0
+extern "C" long _ftol2( double dblSource ) { return _ftol( dblSource ); }
+#endif
+
+
+
+namespace	NLMISC
 {
 
 /*

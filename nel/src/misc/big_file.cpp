@@ -273,6 +273,7 @@ bool CBigFile::add (const std::string &sBigFileName, uint32 nOptions)
 		bnpTmp.AlwaysOpened = true;
 	}
 
+	nldebug("BigFile : adding bnp '%s' to the collection", bigfilenamealone.c_str());
 	_BNPs.insert (make_pair(toLower(bigfilenamealone), bnpTmp));
 
 	return true;

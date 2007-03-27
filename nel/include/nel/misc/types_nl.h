@@ -311,13 +311,10 @@ typedef	uint16	ucchar;
 #  define for if(false) {} else for
 #endif
 
-// Define a macro to write template function according to compiler weaknes
-#ifdef NL_COMP_NEED_PARAM_ON_METHOD
- #define NL_TMPL_PARAM_ON_METHOD_1(p1)	<p1>
- #define NL_TMPL_PARAM_ON_METHOD_2(p1, p2)	<p1, p2>
-#else
- #define NL_TMPL_PARAM_ON_METHOD_1(p1)
- #define NL_TMPL_PARAM_ON_METHOD_2(p1, p2)	
+#ifdef NL_COMP_VC6
+// only for MSDEV 6.0
+extern "C" long _ftol( double ); //defined by VC6 C libs
+extern "C" long _ftol2( double dblSource );
 #endif
 
 

@@ -208,7 +208,8 @@ CSock::CSock( bool logging ) :
 	_TimeoutS( 0 ),
 	_TimeoutUs( 0 ),
 	_MaxReceiveTime( 0 ),
-	_MaxSendTime( 0 )
+	_MaxSendTime( 0 ),
+	_Blocking( false )
 	{
 	nlassert( CSock::_Initialized );
 	/*{
@@ -459,7 +460,14 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 	{
 		if ( ERROR_NUM == ERROR_WOULDBLOCK )
 		{
+			H_AUTO(L0SendWouldBlock);
 			len = 0;
+			nlSleep(10);
+			if (!_Blocking)
+			{
+				nlwarning("SendWouldBlock - %s / %s Entering snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
+				_Blocking= true;
+			}
 			return Ok;
 		}
 		if ( throw_exception )
@@ -474,6 +482,11 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 	}
 	_BytesSent += len;
 	
+	if (_Blocking)
+	{
+		nlwarning("SendWouldBlock - %s / %s Leaving snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
+		_Blocking= false;
+	}
 	return Ok;
 }
 

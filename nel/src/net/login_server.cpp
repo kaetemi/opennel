@@ -78,6 +78,8 @@ map<uint32, TSockId> UserIdSockAssociations;
 
 TNewClientCallback NewClientCallback = NULL;
 
+TNewCookieCallback NewCookieCallback = NULL;
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////// CONNECTION TO THE WELCOME SERVICE //////////////////////////////////////////////////
@@ -166,6 +168,12 @@ void cbWSChooseShard (CMessage &msgin, const std::string &serviceName, TServiceI
 		nlinfo ("LS: New cookie %s (name '%s' priv '%s' extended '%s' instance %u slot %u) inserted in the pending user list (awaiting new client)", cookie.toString().c_str(), userName.c_str(), userPriv.c_str(), userExtended.c_str(), instanceId, charSlot);
 		PendingUsers.push_back (CPendingUser (cookie, userName, userPriv, userExtended, instanceId, charSlot));
 		reason = "";
+
+		// callback if needed
+		if (NewCookieCallback != NULL)
+		{
+			NewCookieCallback(cookie);
+		}
 	}
 
 	CMessage msgout ("SCS");
@@ -416,6 +424,12 @@ void CLoginServer::init (const std::string &listenAddr, TDisconnectClientCallbac
 
 	ModeTcp = false;
 }
+
+void CLoginServer::addNewCookieCallback(TNewCookieCallback newCookieCb)
+{
+	NewCookieCallback = newCookieCb;
+}
+
 
 string CLoginServer::isValidCookie (const CLoginCookie &lc, string &userName, string &userPriv, string &userExtended, uint32 &instanceId, uint32 &charSlot)
 {

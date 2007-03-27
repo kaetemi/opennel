@@ -319,6 +319,9 @@ private:
 	uint32			_MaxReceiveTime;
 	uint32			_MaxSendTime;
 
+	/// Flag used to determine the moments at which sends atrta an stop blocking
+	bool			_Blocking;
+
 };
 
 

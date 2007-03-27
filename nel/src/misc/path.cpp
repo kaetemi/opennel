@@ -27,6 +27,7 @@
 #include "stdmisc.h"
 
 #include <fstream>
+#include <hash_set>
 
 #include "nel/misc/big_file.h"
 #include "nel/misc/path.h"
@@ -1366,6 +1367,60 @@ void CPath::display ()
 	nlinfo ("PATH: End of display");
 }
 
+void CPath::removeBigFiles(const std::vector<std::string> &bnpFilenames)
+{
+	NL_ALLOC_CONTEXT (MiPath);
+	nlassert(!isMemoryCompressed());
+	CPath *inst = CPath::getInstance();
+	std::hash_set<TSStringId> bnpStrIds;
+	std::map<std::string, CFileEntry>::iterator fileIt, fileCurrIt;
+	for (uint k = 0; k < bnpFilenames.size(); ++k)
+	{
+		std::string completeBNPName = strlwr(bnpFilenames[k]) + "@";
+		if (inst->SSMpath.isAdded(completeBNPName))
+		{
+			bnpStrIds.insert(inst->SSMpath.add(completeBNPName));
+		}
+		CBigFile::getInstance().remove(bnpFilenames[k]);
+		fileIt = inst->_Files.find(strlwr(bnpFilenames[k]));
+		if (fileIt != inst->_Files.end())
+		{
+			inst->_Files.erase(fileIt);
+		}
+	}				
+	if (bnpStrIds.empty()) return;
+	//	remove reampped files	
+	std::map<std::string, std::string>::iterator remapIt, remapCurrIt;
+	for(remapIt = inst->_RemappedFiles.begin(); remapIt != inst->_RemappedFiles.end();)
+	{
+		remapCurrIt = remapIt;
+		++ remapIt;		
+		const std::string &filename = remapCurrIt->second;
+		fileIt = inst->_Files.find(filename);
+		if (fileIt != inst->_Files.end())
+		{
+			if (bnpStrIds.count(fileIt->second.idPath))
+			{			
+				inst->_Files.erase(fileIt);
+				inst->_RemappedFiles.erase(remapCurrIt);			
+			}
+		}
+	}
+	//	remove file entries
+	for(fileIt = inst->_Files.begin(); fileIt != inst->_Files.end();)
+	{
+		fileCurrIt = fileIt;
+		++ fileIt;		
+		if (bnpStrIds.count(fileCurrIt->second.idPath))
+		{			
+			inst->_Files.erase(fileCurrIt);			
+		}		
+	}	
+	
+
+}
+
+
 void CPath::memoryCompress()
 { 
 	NL_ALLOC_CONTEXT (MiPath);
@@ -1414,7 +1469,10 @@ void CPath::memoryCompress()
 			// This is a file included in a bigfile (so the name is in the bigfile manager)
 			sTmp = sTmp.substr(0, sTmp.size()-1);
 			inst->_MCFiles[nNb].Name = CBigFile::getInstance().getFileNamePtr(rFE.Name, sTmp);
-			nlassert(inst->_MCFiles[nNb].Name != NULL);
+			if (inst->_MCFiles[nNb].Name == NULL)
+			{
+				nlerror("memoryCompress: failed to find named file in big file: %s",inst->SSMpath.get(rFE.idPath));
+			}
 		}
 		else
 		{
@@ -1439,7 +1497,18 @@ void CPath::memoryUncompress()
 {
 	CPath *inst = CPath::getInstance ();
 	inst->SSMext.memoryUncompress(); 
-	inst->SSMpath.memoryUncompress(); 	
+	inst->SSMpath.memoryUncompress(); 		
+	for(std::vector<CMCFileEntry>::iterator it = inst->_MCFiles.begin(); it != inst->_MCFiles.end(); ++it)
+	{
+		CFileEntry fe;
+		fe.Name = it->Name;
+		fe.idExt = it->idExt;
+		fe.idPath = it->idPath;
+		fe.Remapped = it->Remapped;
+
+		inst->_Files[toLower(CFile::getFilename(fe.Name))] = fe;
+	}
+	contReset(inst->_MCFiles);
 	inst->_MemoryCompressed = false;
 }
 
@@ -1747,7 +1816,7 @@ void CFile::checkFileChange (TTime frequency)
 	}
 }
 
-static bool CopyMoveFile(const char *dest, const char *src, bool copyFile, bool failIfExists = false)
+static bool CopyMoveFile(const char *dest, const char *src, bool copyFile, bool failIfExists = false, IProgressCallback *progress = NULL)
 {
 	if (!dest || !src) return false;
 	if (!strlen(dest) || !strlen(src)) return false;	
@@ -1757,8 +1826,15 @@ static bool CopyMoveFile(const char *dest, const char *src, bool copyFile, bool 
 //	return copyFile  ? CopyFile(dossrc.c_str(), dosdest.c_str(), failIfExists) != FALSE
 //					 : MoveFile(dossrc.c_str(), dosdest.c_str()) != FALSE;
 
+	if (progress) progress->progress(0.f);
 	if(copyFile)
 	{
+		uint32 totalSize = 0;
+		uint32 readSize = 0;
+		if (progress)
+		{
+			totalSize = CFile::getFileSize(ssrc);
+		}
 		FILE *fp1 = fopen(ssrc.c_str(), "rb");
 		if (fp1 == NULL)
 		{
@@ -1774,9 +1850,14 @@ static bool CopyMoveFile(const char *dest, const char *src, bool copyFile, bool 
 		static char buffer [1000];
 		size_t s;
 
-		s = fread(buffer, 1, sizeof(buffer), fp1);
+		s = fread(buffer, 1, sizeof(buffer), fp1);		
 		while (s != 0)
-		{
+		{			
+			if (progress)
+			{
+				readSize += s;
+				progress->progress((float) readSize / totalSize);
+			}
 			size_t ws = fwrite(buffer, 1, s, fp2);
 			if (ws != s)
 			{
@@ -1784,13 +1865,18 @@ static bool CopyMoveFile(const char *dest, const char *src, bool copyFile, bool 
 					ssrc.c_str(),
 					sdest.c_str(),
 					s,
-					ws);
+					ws);				
+				fclose(fp1);
+				fclose(fp2);
+				nlwarning("Errno = %d", errno);				
+				return false;
 			}
 			s = fread(buffer, 1, sizeof(buffer), fp1);
 		}
 
 		fclose(fp1);
 		fclose(fp2);
+		if (progress) progress->progress(1.f);
 	}
 	else
 	{
@@ -1834,12 +1920,13 @@ static bool CopyMoveFile(const char *dest, const char *src, bool copyFile, bool 
 		}
 #endif
 	}
+	if (progress) progress->progress(1.f);
 	return true;
 }
 
-bool CFile::copyFile(const char *dest, const char *src, bool failIfExists /*=false*/)
+bool CFile::copyFile(const char *dest, const char *src, bool failIfExists /*=false*/, IProgressCallback *progress)
 {
-	return CopyMoveFile(dest, src, true, failIfExists);
+	return CopyMoveFile(dest, src, true, failIfExists, progress);
 }
 
 bool CFile::quickFileCompare(const std::string &fileName0, const std::string &fileName1)
@@ -2045,6 +2132,22 @@ bool CFile::deleteFile(const std::string &filename)
 	if (res == -1)
 	{
 		nlwarning ("PATH: Can't delete file '%s': (errno %d) %s", filename.c_str(), errno, strerror(errno));
+		return false;
+	}
+	return true;
+}
+
+#ifdef NL_OS_WINDOWS
+#define rmdir _rmdir
+#endif
+
+bool CFile::deleteDirectory(const std::string &filename)
+{
+	setRWAccess(filename);
+	int res = rmdir (filename.c_str());
+	if (res == -1)
+	{
+		nlwarning ("PATH: Can't delete directory '%s': (errno %d) %s", filename.c_str(), errno, strerror(errno));
 		return false;
 	}
 	return true;
