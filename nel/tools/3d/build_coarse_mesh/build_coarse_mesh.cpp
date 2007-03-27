@@ -1,7 +1,7 @@
 /** \file build_coarse_mesh.cpp
  * Precalc coarse mesh objets to build a single texture
  *
- * $Id: build_coarse_mesh.cpp,v 1.8 2007/03/19 09:55:25 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

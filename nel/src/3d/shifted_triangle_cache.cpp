@@ -1,7 +1,7 @@
 /** \file shifted_triangle_cache.cpp
  * TODO: File description
  *
- * $Id: shifted_triangle_cache.cpp,v 1.4 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

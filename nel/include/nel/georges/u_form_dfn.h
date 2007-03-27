@@ -1,7 +1,7 @@
 /** \file u_form_dfn.h
  * Georges form element interface
  *
- * $Id: u_form_dfn.h,v 1.10 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

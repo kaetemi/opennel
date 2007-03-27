@@ -1,7 +1,7 @@
 /** \file u_listener.h
  * UListener: game interface for listener control
  *
- * $Id: u_listener.h,v 1.6 2002/11/04 15:40:43 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

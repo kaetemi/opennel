@@ -2,7 +2,7 @@
  * Snowballs 2 specific code for managing the radar.
  * This code was taken from Snowballs 1.
  *
- * $Id: radar.cpp,v 1.5 2001/07/19 13:45:53 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

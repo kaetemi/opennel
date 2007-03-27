@@ -1,7 +1,7 @@
 /** \file tile_lumel.h
  * TODO: File description
  *
- * $Id: tile_lumel.h,v 1.2 2004/11/15 10:24:50 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

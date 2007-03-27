@@ -1,7 +1,7 @@
 /** \file blend_wnd.cpp
  * Window class for the dlg slot blend window
  *
- * $Id: blend_wnd.cpp,v 1.4 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

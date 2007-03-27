@@ -1,7 +1,7 @@
 /** \file admin.h
  * manage services admin
  *
- * $Id: admin.h,v 1.3 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2003 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file vegetable_refresh.h
  * TODO: File description
  *
- * $Id: vegetable_refresh.h,v 1.2 2004/11/15 10:25:09 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

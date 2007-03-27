@@ -1,7 +1,7 @@
 /** \file fasthls_modifier.h
  * TODO: File description
  *
- * $Id: fasthls_modifier.h,v 1.3 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file collision_zone_dlg.cpp
  * a dialog to edit collision zone properties in a particle system
  *
- * $Id: collision_zone_dlg.cpp,v 1.5 2004/06/18 13:16:43 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

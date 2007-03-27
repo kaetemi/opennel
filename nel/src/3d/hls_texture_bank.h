@@ -1,7 +1,7 @@
 /** \file hls_texture_bank.h
  * TODO: File description
  *
- * $Id: hls_texture_bank.h,v 1.3 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

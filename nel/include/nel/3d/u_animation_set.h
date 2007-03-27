@@ -1,7 +1,7 @@
 /** \file u_animation_set.h
  * TODO: File description
  *
- * $Id: u_animation_set.h,v 1.9 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

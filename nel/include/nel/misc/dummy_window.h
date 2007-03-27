@@ -1,6 +1,6 @@
 /** \file dummy_window.h
  *
- * $Id: dummy_window.h,v 1.1.2.1 2007/03/19 16:19:41 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2007 Nevrax Ltd.

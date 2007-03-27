@@ -1,7 +1,7 @@
 /** \file slot_dlg.cpp
  * TODO: File description
  *
- * $Id: slot_dlg.cpp,v 1.9 2004/11/15 10:25:09 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

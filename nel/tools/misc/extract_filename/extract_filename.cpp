@@ -1,7 +1,7 @@
 /** \file extract_filename.cpp
  * This utility extract filename from any files.
  *
- * $Id: extract_filename.cpp,v 1.4 2004/10/04 10:07:07 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

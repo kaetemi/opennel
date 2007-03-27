@@ -1,6 +1,6 @@
 /** \file tail_particle_dlg.cpp
  * A dailog that helps to tune propertie of particle that owns a tail 
- * $Id: tail_particle_dlg.cpp,v 1.7 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

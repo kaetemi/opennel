@@ -1,7 +1,7 @@
 /** \file mini_col.cpp
  * TODO: File description
  *
- * $Id: mini_col.cpp,v 1.20 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

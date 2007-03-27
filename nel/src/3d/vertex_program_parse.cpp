@@ -1,6 +1,6 @@
 /** \file vertex_program_parse.cpp
  *
- * $Id: vertex_program_parse.cpp,v 1.5 2005/01/17 16:39:42 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

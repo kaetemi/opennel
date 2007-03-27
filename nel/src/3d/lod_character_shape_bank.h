@@ -1,7 +1,7 @@
 /** \file lod_character_shape_bank.h
  * TODO: File description
  *
- * $Id: lod_character_shape_bank.h,v 1.3 2007/03/09 09:49:30 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

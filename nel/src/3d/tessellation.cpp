@@ -1,7 +1,7 @@
 /** \file tessellation.cpp
  * TODO: File description
  *
- * $Id: tessellation.cpp,v 1.70 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  *
  */
 

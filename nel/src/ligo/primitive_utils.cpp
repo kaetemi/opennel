@@ -28,7 +28,7 @@
  *
  *	Boris.
  *
- * $Id: primitive_utils.cpp,v 1.8 2005/02/22 10:19:22 besson Exp $
+ * $Id$
  */
 
 #include "nel/ligo/primitive_utils.h"

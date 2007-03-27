@@ -1,6 +1,6 @@
 /** \file load_form.cpp
  * 
- * $Id: load_form.cpp,v 1.1 2002/06/03 10:00:00 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

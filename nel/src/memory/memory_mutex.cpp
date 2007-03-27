@@ -1,7 +1,7 @@
 /** \file memory_mutex.cpp
  * Mutex used by the memory manager
  *
- * $Id: memory_mutex.cpp,v 1.4 2005/04/05 10:25:06 legros Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

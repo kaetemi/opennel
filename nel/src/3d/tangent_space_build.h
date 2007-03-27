@@ -1,7 +1,7 @@
 /** \file tangent_space_build.h
  * A function that add tangent space information to a vertex buffer
  *
- * $Id: tangent_space_build.h,v 1.3 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

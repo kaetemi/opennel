@@ -3,7 +3,7 @@
  *
  * \todo yoyo: readDDS and decompressDXTC* must work in BigEndifan and LittleEndian.
  *
- * $Id: bitmap.cpp,v 1.66 2006/09/14 16:56:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

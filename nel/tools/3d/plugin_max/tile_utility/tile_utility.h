@@ -1,7 +1,7 @@
 /** \file tile_utility.h
  * TODO: File description
  *
- * $Id: tile_utility.h,v 1.3 2004/11/15 10:25:11 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

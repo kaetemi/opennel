@@ -1,7 +1,7 @@
 /** \file nel_patch_mesh.h
  * TODO: File description
  *
- * $Id: nel_patch_mesh.h,v 1.15 2007/03/19 16:54:47 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

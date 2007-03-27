@@ -1,7 +1,7 @@
 /** \file slot_dlg.h
  * TODO: File description
  *
- * $Id: slot_dlg.h,v 1.9 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file event_emitter_multi.h
  * TODO: File description
  *
- * $Id: event_emitter_multi.h,v 1.5 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

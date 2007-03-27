@@ -1,7 +1,7 @@
 /** \file clip_trav.cpp
  * TODO: File description
  *
- * $Id: clip_trav.cpp,v 1.48 2005/03/24 18:54:10 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

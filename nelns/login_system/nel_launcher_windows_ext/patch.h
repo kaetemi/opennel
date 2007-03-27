@@ -1,6 +1,6 @@
 /** \file patch.h
  *
- * $Id: patch.h,v 1.3 2003/07/24 15:48:13 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

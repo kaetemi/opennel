@@ -1,7 +1,7 @@
 /** \file u_point_light.h
  * User interface for point lights.
  *
- * $Id: u_point_light.h,v 1.5 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

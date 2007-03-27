@@ -2,7 +2,7 @@
  * LightMap Calculation settings
  * Plane of faces in the same smooth group
  *
- * $Id: calc_lm_plane.h,v 1.5 2004/05/14 15:00:14 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

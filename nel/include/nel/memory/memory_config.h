@@ -1,7 +1,7 @@
 /** \file memory_config.h
  * Memory manager configuraition
  *
- * $Id: memory_config.h,v 1.8 2005/02/21 17:02:23 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

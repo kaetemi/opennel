@@ -2,7 +2,7 @@
  * 
  * \todo yoyo: Optimize.
  *
- * $Id: matrix.h,v 1.26 2005/07/22 12:37:57 legallo Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

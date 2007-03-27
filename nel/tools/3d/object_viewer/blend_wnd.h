@@ -1,7 +1,7 @@
 /** \file blend_wnd.h
  * Window class for the dlg slot blend window
  *
- * $Id: blend_wnd.h,v 1.2 2001/10/29 16:07:33 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

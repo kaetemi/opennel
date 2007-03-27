@@ -1,7 +1,7 @@
 /** \file main.cpp
  * Display info on sheetid.bin
  *
- * $Id: main.cpp,v 1.1 2003/09/26 15:04:30 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

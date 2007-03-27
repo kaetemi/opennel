@@ -1,7 +1,7 @@
 /** \file class_registry.h
  * This File handles CClassRegistry.
  *
- * $Id: class_registry.h,v 1.16 2007/03/09 09:49:29 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

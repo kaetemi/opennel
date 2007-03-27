@@ -1,7 +1,7 @@
 /** \file unified_network.h
  * Network engine, layer 5 with no multithread support
  *
- * $Id: unified_network.h,v 1.56 2007/03/09 09:49:29 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

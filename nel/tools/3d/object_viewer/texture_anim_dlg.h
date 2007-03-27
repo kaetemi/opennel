@@ -1,7 +1,7 @@
 /** \file texture_anim_dlg.h
  * Dialog used to tune animation of texture on particles
  *
- * $Id: texture_anim_dlg.h,v 1.7 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

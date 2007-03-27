@@ -1,7 +1,7 @@
 /** \file calc_lm.cpp
  * This is the core source for calculating ligtmaps
  *
- * $Id: progress.cpp,v 1.2 2002/03/29 14:58:33 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

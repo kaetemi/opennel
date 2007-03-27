@@ -1,7 +1,7 @@
 /** \file buf_sock.cpp
  * Network engine, layer 1, base
  *
- * $Id: buf_sock.cpp,v 1.43.4.2 2007/02/28 12:23:52 dailyserver Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

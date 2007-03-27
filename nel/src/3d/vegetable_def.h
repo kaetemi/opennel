@@ -1,7 +1,7 @@
 /** \file vegetable_def.h
  * Some global definitions for CVegetable*
  *
- * $Id: vegetable_def.h,v 1.6 2001/12/12 13:29:15 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

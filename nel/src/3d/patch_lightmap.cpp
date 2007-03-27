@@ -1,7 +1,7 @@
 /** \file patch_lightmap.cpp
  * Patch implementation related to lightmaping (texture Near/Far)
  *
- * $Id: patch_lightmap.cpp,v 1.14 2005/02/22 10:19:11 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

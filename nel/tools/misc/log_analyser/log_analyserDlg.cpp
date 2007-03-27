@@ -1,7 +1,7 @@
 /** \file log_analyserDlg.cpp
  * implementation file
  *
- * $Id: log_analyserDlg.cpp,v 1.7 2004/01/13 18:36:04 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002-2003 Nevrax Ltd.

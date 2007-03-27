@@ -1,7 +1,7 @@
 /** \file rpo2nel.cpp
  * TODO: File description
  *
- * $Id: rpo2nel.cpp,v 1.28 2007/03/19 09:55:27 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

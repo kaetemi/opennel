@@ -1,7 +1,7 @@
 /** \file value_gradient_dlg.h
  * a dialog that allows to edit a gradient of value, used in a particle system
  *
- * $Id: value_gradient_dlg.h,v 1.8 2004/06/17 07:58:20 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

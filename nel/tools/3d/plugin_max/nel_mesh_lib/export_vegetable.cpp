@@ -1,7 +1,7 @@
 /** \file export_vegetable.cpp
  * Export from 3dsmax a NeL vegetable mesh
  *
- * $Id: export_vegetable.cpp,v 1.7 2007/03/19 09:55:27 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

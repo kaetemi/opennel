@@ -1,7 +1,7 @@
 /** \file zone_utility.h
  * Tool for welding zones exported from 3dsMax
  *
- * $Id: zone_utility.h,v 1.1 2002/05/13 15:44:57 valignat Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

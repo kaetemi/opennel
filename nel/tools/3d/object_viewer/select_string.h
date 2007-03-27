@@ -1,7 +1,7 @@
 /** \file select_string.cpp
  * TODO: File description
  *
- * $Id: select_string.h,v 1.4 2004/11/15 10:25:09 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 
 /** \file ps_initial_pos.cpp
  *
- * $Id: ps_initial_pos.cpp,v 1.4 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

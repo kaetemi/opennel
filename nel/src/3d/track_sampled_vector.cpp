@@ -1,7 +1,7 @@
 /** \file track_sampled_vector.cpp
  * TODO: File description
  *
- * $Id: track_sampled_vector.cpp,v 1.5 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

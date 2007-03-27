@@ -1,7 +1,7 @@
 /** \file class_transport/gd_service.cpp
  * Transport class example
  *
- * $Id: gd_service.cpp,v 1.1 2002/04/17 08:08:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

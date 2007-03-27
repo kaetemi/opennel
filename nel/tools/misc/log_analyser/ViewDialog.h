@@ -1,7 +1,7 @@
 /** \file ViewDialog.h
  * header file
  *
- * $Id: ViewDialog.h,v 1.6 2004/01/13 18:36:04 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

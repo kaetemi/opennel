@@ -1,7 +1,7 @@
 /** \file udp/client.cpp
  * todo
  *
- * $Id: client.cpp,v 1.5 2005/04/14 15:49:28 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

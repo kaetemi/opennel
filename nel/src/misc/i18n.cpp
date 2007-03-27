@@ -1,7 +1,7 @@
 /** \file i18n.cpp
  * Internationalisation
  *
- * $Id: i18n.cpp,v 1.58.4.5 2007/03/19 16:18:48 vizerie Exp $
+ * $Id$
  *
  * \todo ace: manage unicode format
  */

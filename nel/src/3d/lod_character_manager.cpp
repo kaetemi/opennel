@@ -1,7 +1,7 @@
 /** \file lod_character_manager.cpp
  * TODO: File description
  *
- * $Id: lod_character_manager.cpp,v 1.23 2005/03/10 17:27:04 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

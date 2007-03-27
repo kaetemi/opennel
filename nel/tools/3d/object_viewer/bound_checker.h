@@ -1,7 +1,7 @@
 /** \file bound_checker.h
  * class that helps to check bounds
  *
- * $Id: bound_checker.h,v 1.1 2001/09/12 13:25:35 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

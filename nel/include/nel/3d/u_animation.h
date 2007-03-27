@@ -1,7 +1,7 @@
 /** \file u_animation.h
  * User interface to access animations fonctionnalities
  *
- * $Id: u_animation.h,v 1.5 2002/05/07 08:16:36 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

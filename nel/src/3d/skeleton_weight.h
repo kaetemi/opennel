@@ -1,7 +1,7 @@
 /** \file skeleton_weight.h
  * TODO: File description
  *
- * $Id: skeleton_weight.h,v 1.2 2004/11/15 10:24:48 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

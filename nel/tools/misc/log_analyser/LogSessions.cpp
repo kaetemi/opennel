@@ -1,7 +1,7 @@
 /** \file LogSessions.cpp
  * implementation file
  *
- * $Id: LogSessions.cpp,v 1.3 2003/08/06 14:05:57 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

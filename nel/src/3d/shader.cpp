@@ -1,7 +1,7 @@
 /** \file shader.cpp
  * TODO: File description
  *
- * $Id: shader.cpp,v 1.7 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

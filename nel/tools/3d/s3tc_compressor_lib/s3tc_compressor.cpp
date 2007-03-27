@@ -1,7 +1,7 @@
 /** \file s3tc_compressor.cpp
  * TODO: File description
  *
- * $Id: s3tc_compressor.cpp,v 1.7 2007/03/19 09:55:27 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

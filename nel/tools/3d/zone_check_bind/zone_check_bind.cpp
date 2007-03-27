@@ -1,7 +1,7 @@
 /** \file zone_check_bind.cpp
  * This tool check that each patch of a zone to see wether they are bound correctly.
  *
- * $Id: zone_check_bind.cpp,v 1.8 2007/03/19 09:55:27 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

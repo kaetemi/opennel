@@ -1,7 +1,7 @@
 /** \file vector_2f.h
  * TODO: File description
  *
- * $Id: vector_2f.h,v 1.8 2005/02/22 10:14:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file variable.cpp
  * TODO: File description
  *
- * $Id: variable.cpp,v 1.6 2006/05/31 12:03:17 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file pacs/main.cpp
  * Pacs sample using user interface.
  *
- * $Id: main.cpp,v 1.7 2007/03/09 09:49:29 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

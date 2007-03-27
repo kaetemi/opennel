@@ -1,7 +1,7 @@
 /** \file vegetable_quadrant.cpp
  * TODO: File description
  *
- * $Id: vegetable_quadrant.cpp,v 1.4 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

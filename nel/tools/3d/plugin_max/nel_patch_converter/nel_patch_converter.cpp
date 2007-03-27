@@ -1,7 +1,7 @@
 /** \file nel_patch_converter.cpp
  * TODO: File description
  *
- * $Id: nel_patch_converter.cpp,v 1.5 2005/08/19 15:34:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file skeleton_spawn_script.cpp
  * TODO: File description
  *
- * $Id: skeleton_spawn_script.cpp,v 1.4 2005/02/22 10:19:09 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

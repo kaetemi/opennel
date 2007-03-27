@@ -1,7 +1,7 @@
 /** \file sound_driver_al.h
  * OpenAL sound driver
  *
- * $Id: sound_driver_al.h,v 1.12 2004/05/10 14:43:09 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

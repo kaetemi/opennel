@@ -1,7 +1,7 @@
 /** \file class_id.cpp
  * CClassId class
  *
- * $Id: class_id.cpp,v 1.6 2001/12/28 10:17:20 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

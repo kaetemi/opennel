@@ -1,7 +1,7 @@
 /** \file naming_client.cpp
  * CNamingClient
  *
- * $Id: naming_client.cpp,v 1.62 2007/03/09 09:49:30 boucher Exp $
+ * $Id$
  *
  */
 

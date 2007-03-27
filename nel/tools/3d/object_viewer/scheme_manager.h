@@ -1,7 +1,7 @@
 /** \file scheme_manager.h
  * a collection of scheme (to set particle atributes)
  *
- * $Id: scheme_manager.h,v 1.2 2001/09/13 14:29:25 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

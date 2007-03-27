@@ -1,7 +1,7 @@
 /** \file sound_system.h
  * This initilize the sound system
  *
- * $Id: sound_system.h,v 1.10 2003/07/30 17:37:57 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

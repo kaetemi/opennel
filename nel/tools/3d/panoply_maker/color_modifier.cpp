@@ -1,7 +1,7 @@
 /** \file color_modifier.cpp
  * A class describing color modifications
  *
- * $Id: color_modifier.cpp,v 1.9 2003/11/04 18:14:14 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

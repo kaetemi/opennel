@@ -1,6 +1,6 @@
 /** \file object_arena_allocator.cpp
  *
- * $Id: object_arena_allocator.cpp,v 1.3 2004/05/18 14:35:01 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002, 2003 Nevrax Ltd.

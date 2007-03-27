@@ -1,7 +1,7 @@
 /** \file ps_emitter.cpp
  * TODO: File description
  *
- * $Id: ps_emitter.cpp,v 1.65 2005/08/19 15:32:13 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

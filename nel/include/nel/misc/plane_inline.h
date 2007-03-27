@@ -1,7 +1,7 @@
 /** \file plane_inline.h
  * class CPlane
  *
- * $Id: plane_inline.h,v 1.6 2004/01/15 17:29:10 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

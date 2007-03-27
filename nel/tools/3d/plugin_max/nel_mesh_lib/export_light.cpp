@@ -1,7 +1,7 @@
 /** \file export_light.cpp
  * Export from 3dsmax to NeL
  *
- * $Id: export_light.cpp,v 1.6 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

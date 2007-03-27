@@ -1,7 +1,7 @@
 /** \file stdafx.cpp
  * TODO: File description
  *
- * $Id: StdAfx.cpp,v 1.2 2004/11/15 10:25:10 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

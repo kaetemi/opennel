@@ -1,7 +1,7 @@
 /** \file source_fmod.h
  * DirectSound sound source
  *
- * $Id: source_fmod.h,v 1.3 2005/04/07 14:30:40 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file ps_zone.cpp
  * TODO: File description
  *
- * $Id: ps_zone.cpp,v 1.32 2005/02/22 10:19:11 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

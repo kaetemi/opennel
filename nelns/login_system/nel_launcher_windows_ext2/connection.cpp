@@ -1,6 +1,6 @@
 /** \file connexion.cpp
  *
- * $Id: connection.cpp,v 1.7 2004/05/05 10:18:46 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2004 Nevrax Ltd.

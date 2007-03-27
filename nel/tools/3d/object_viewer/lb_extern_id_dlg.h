@@ -1,7 +1,7 @@
 /** \file lb_extern_id_dlg.h
  * A dialog for assigning ID to objects in a particle system
  *
- * $Id: lb_extern_id_dlg.h,v 1.3 2001/12/18 18:38:00 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file s3tc_compressor.h
  * TODO: File description
  *
- * $Id: s3tc_compressor.h,v 1.2 2004/11/15 10:25:11 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

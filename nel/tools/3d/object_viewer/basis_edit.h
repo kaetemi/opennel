@@ -1,7 +1,7 @@
 /** \file basis_edit.h
  * a dialog to edit the orientation of a basis
  *
- * $Id: basis_edit.h,v 1.4 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

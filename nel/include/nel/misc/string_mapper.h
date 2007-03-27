@@ -1,6 +1,6 @@
 /** \file string_mapper.h
  *
- * $Id: string_mapper.h,v 1.18.8.1 2007/02/02 18:06:11 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

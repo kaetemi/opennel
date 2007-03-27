@@ -1,7 +1,7 @@
 /** \file auto_lod_dlg.h
  * A dialog to tune auto-lod options of particle systems.
  *
- * $Id: auto_lod_dlg.h,v 1.4 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 - 2002 Nevrax Ltd.

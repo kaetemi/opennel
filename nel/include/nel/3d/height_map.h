@@ -1,7 +1,7 @@
 /** \file height_map.h
  * TODO: File description
  *
- * $Id: height_map.h,v 1.5 2004/11/15 10:24:16 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

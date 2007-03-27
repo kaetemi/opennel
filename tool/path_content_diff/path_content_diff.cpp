@@ -1,7 +1,7 @@
 /** \file path_content.cpp
  *	list the path content with details on each files
  *
- * $Id: path_content_diff.cpp,v 1.6 2003/03/06 15:27:37 coutelas Exp $
+ * $Id$
  */
 
 /* Copyright, 2003 Nevrax Ltd.

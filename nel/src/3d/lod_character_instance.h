@@ -1,7 +1,7 @@
 /** \file lod_character_instance.h
  * TODO: File description
  *
- * $Id: lod_character_instance.h,v 1.3 2004/11/15 10:24:41 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

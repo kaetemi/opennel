@@ -1,7 +1,7 @@
 /** \file music_sound.h
  * TODO: File description
  *
- * $Id: music_sound.h,v 1.2 2004/11/15 10:25:06 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

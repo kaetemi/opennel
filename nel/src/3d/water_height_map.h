@@ -1,7 +1,7 @@
 /** \file water_height_map.h
  * TODO: File description
  *
- * $Id: water_height_map.h,v 1.9 2004/11/15 10:24:54 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

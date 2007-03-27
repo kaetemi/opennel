@@ -1,7 +1,7 @@
 /** \file animation_set_dlg.cpp
  * TODO: File description
  *
- * $Id: animation_set_dlg.h,v 1.10 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file constraint_mesh_global_tex_anim_dlg.cpp
  * A dialog for editing constraint meshs texture global animation
  *
- * $Id: constraint_mesh_global_tex_anim_dlg.cpp,v 1.4 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

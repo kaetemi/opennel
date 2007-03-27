@@ -1,7 +1,7 @@
 /** \file inet_address.h
  * Class CInetAddress (IP address + port)
  *
- * $Id: inet_address.h,v 1.27 2002/08/28 15:15:44 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

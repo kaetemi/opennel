@@ -1,7 +1,7 @@
 /** \file log_report.cpp
  * <File description>
  *
- * $Id: log_report.cpp,v 1.8 2007/03/09 09:50:54 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

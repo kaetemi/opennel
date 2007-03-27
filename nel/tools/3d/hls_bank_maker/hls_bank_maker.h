@@ -1,7 +1,7 @@
 /** \file hls_bank_maker.h
  * TODO: File description
  *
- * $Id: hls_bank_maker.h,v 1.2 2004/11/15 10:25:08 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

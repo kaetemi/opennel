@@ -1,6 +1,6 @@
 /** \file historic.h
  *
- * $Id: historic.h,v 1.2 2006/05/31 12:03:13 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

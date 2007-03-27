@@ -1,7 +1,7 @@
 /** \file po2rpo.h
  * TODO: File description
  *
- * $Id: PO2RPO.h,v 1.4 2004/11/15 10:25:10 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

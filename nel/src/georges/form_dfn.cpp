@@ -1,7 +1,7 @@
 /** \file form_dfn.cpp
  * Georges form definition class
  *
- * $Id: form_dfn.cpp,v 1.25 2007/03/09 09:49:30 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

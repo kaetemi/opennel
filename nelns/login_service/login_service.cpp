@@ -1,7 +1,7 @@
 /** \file login_service.cpp
  * Login Service (LS)
  *
- * $Id: login_service.cpp,v 1.34 2004/09/16 10:10:30 lecroart Exp $
+ * $Id$
  *
  */
 

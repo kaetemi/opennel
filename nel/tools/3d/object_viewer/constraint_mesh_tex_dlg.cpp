@@ -1,7 +1,7 @@
 /** \file constraint_mesh_tex_dlg.cpp
  * A dialog for editing constraint meshs texture animation
  *
- * $Id: constraint_mesh_tex_dlg.cpp,v 1.3 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

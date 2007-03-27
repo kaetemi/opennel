@@ -2,7 +2,7 @@
  * for dialog that create multiple sub-dialog, this helps to record them,
  * and to properly destroy them
  *
- * $Id: dialog_stack.h,v 1.1 2001/06/25 13:19:27 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

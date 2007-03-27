@@ -1,7 +1,7 @@
 /** \file net_log.h
  * Implementation of the CLog (look at log.h) that display on a network connection (deprecated)
  *
- * $Id: net_log.h,v 1.7 2002/10/24 08:44:31 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

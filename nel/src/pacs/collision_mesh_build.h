@@ -1,7 +1,7 @@
 /** \file collision_mesh_build.h
  * 
  *
- * $Id: collision_mesh_build.h,v 1.10 2002/12/31 11:13:51 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

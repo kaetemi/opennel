@@ -1,7 +1,7 @@
 /** \file edit_spinner.h
  * a dialog to edit a spinner
  *
- * $Id: edit_spinner.h,v 1.5 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

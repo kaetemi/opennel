@@ -1,7 +1,7 @@
 /** \file scene_group.h
  * TODO: File description
  *
- * $Id: scene_group.h,v 1.35 2007/03/09 09:49:30 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

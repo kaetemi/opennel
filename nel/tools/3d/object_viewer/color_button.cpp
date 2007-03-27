@@ -1,7 +1,7 @@
 /** \file color_button.cpp
  * display a color box...
  *
- * $Id: color_button.cpp,v 1.4 2002/11/04 15:40:44 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

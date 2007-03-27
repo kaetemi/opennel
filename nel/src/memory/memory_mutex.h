@@ -1,7 +1,7 @@
 /** \file memory_mutex.h
  * Mutex used by the memory manager
  *
- * $Id: memory_mutex.h,v 1.4 2004/06/07 16:52:00 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

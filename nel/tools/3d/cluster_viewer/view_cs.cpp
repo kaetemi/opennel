@@ -1,7 +1,7 @@
 /** \file view_cs.cpp
  * viewer of cluster system
  *
- * $Id: view_cs.cpp,v 1.7 2007/03/19 09:55:25 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

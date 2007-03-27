@@ -1,7 +1,7 @@
 /** \file extract_warnings.cpp
  * Defines the entry point for the DLL application
  *
- * $Id: extract_warnings.cpp,v 1.3 2005/06/23 18:18:10 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2003 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file collision_ot.cpp
  * TODO: File description
  *
- * $Id: collision_ot.cpp,v 1.6 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

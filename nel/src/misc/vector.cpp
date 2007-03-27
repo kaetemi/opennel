@@ -1,7 +1,7 @@
 /** \file vector.cpp
  * CVector class
  *
- * $Id: vector.cpp,v 1.7 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

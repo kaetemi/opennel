@@ -4,7 +4,7 @@
  * be selected randomly from a set, or have a composed sequence.
  * The intervals can be determined or selected randomly. 
  *
- * $Id: sound_pattern.h,v 1.2 2003/03/03 12:58:09 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

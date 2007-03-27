@@ -1,7 +1,7 @@
 /** \file connection_web.h
  * <File description>
  *
- * $Id: connection_web.h,v 1.1 2002/10/24 08:18:22 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

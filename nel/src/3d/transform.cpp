@@ -1,7 +1,7 @@
 /** \file transform.cpp
  * TODO: File description
  *
- * $Id: transform.cpp,v 1.81 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

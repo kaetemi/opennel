@@ -1,7 +1,7 @@
 /** \file sound_anim_dlg.h
  * The main dialog to edit animation sound tracks
  *
- * $Id: sound_anim_dlg.h,v 1.1 2002/06/18 16:04:59 hanappe Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

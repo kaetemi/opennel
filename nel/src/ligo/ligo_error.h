@@ -1,7 +1,7 @@
 /** \file ligo_error.h
  * Error handling interface
  *
- * $Id: ligo_error.h,v 1.5 2002/04/10 12:45:30 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

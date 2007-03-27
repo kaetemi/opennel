@@ -1,7 +1,7 @@
 /** \file anim_builder.cpp
  * Parse a directory and build optimized animations to an other directory
  *
- * $Id: anim_builder.cpp,v 1.2 2007/03/19 09:55:25 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

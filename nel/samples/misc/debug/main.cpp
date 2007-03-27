@@ -1,7 +1,7 @@
 /** \file debug/main.cpp
  * example of the NeL debug features
  *
- * $Id: main.cpp,v 1.1 2002/04/17 08:08:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

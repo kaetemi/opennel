@@ -1,7 +1,7 @@
 /** \file coarse_mesh_build.cpp
  * TODO: File description
  *
- * $Id: coarse_mesh_build.cpp,v 1.14 2007/03/09 09:49:29 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

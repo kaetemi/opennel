@@ -1,7 +1,7 @@
 /** \file ps_color.h
  * TODO: File description
  *
- * $Id: ps_color.h,v 1.13 2007/03/09 09:49:30 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

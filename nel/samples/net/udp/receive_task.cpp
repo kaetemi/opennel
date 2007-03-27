@@ -1,7 +1,7 @@
 /** \file fe_receive_task.cpp
  * TODO: File description
  *
- * $Id: receive_task.cpp,v 1.3 2004/11/15 10:24:31 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

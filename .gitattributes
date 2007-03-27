@@ -1,0 +1,63 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Explicitly declare text files you want to always be normalized and converted
+# to native line endings on checkout.
+*.cpp ident text
+*.c ident text
+*.h ident text
+*.cs text
+*.jade text
+*.json text
+*.js text
+*.css text
+*.htm text
+*.txt text
+*.py text
+*.lua text
+*.php text
+*.in text
+
+# Cegui specific
+*.layout text
+*.looknfeel text
+*.imageset text
+*.font text
+*.scheme text
+
+# Web templates
+*.tpl text
+
+# Doxygen
+*.xsd text
+*.dox text
+
+# Linux specific
+*.sh text eol=lf
+*.am text eol=lf
+*.pkg text
+
+# Windows specific
+*.dsw text eol=crlf
+*.sln text eol=crlf
+*.dsp text eol=crlf
+*.vcproj text eol=crlf
+*.bat text eol=crlf
+
+# Common files
+AUTHORS text
+COPYING text
+INSTALL text
+NEWS text
+README text
+THANKS text
+
+# NeL specific
+*.cfg text
+*.uxt text
+
+# Special cases
+database.xml text eol=lf
+msg.xml text eol=lf
+ninja-lfs.diff text eol=lf
+*.afm text eol=lf

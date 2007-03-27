@@ -1,7 +1,7 @@
 /** \file memory_common.h
  * Common definition for memory project
  *
- * $Id: memory_common.h,v 1.5 2005/01/31 13:52:39 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

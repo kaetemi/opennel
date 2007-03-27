@@ -1,7 +1,7 @@
 /** \file ViewDialog.cpp
  * implementation file
  *
- * $Id: ViewDialog.cpp,v 1.8 2004/03/01 19:47:53 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

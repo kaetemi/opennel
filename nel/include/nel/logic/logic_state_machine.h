@@ -1,7 +1,7 @@
 /** \file logic_state_machine.h
  * 
  *
- * $Id: logic_state_machine.h,v 1.4 2002/06/20 12:17:49 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file u_track.h
  * User interface to access tracks fonctionnalities
  *
- * $Id: u_track.h,v 1.8 2004/04/07 09:52:26 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

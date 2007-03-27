@@ -1,7 +1,7 @@
 /** \file patch.h
  * TODO: File description
  *
- * $Id: patch.h,v 1.39 2005/02/22 10:19:11 besson Exp $
+ * $Id$
  * \todo yoyo:
 		- "UV correction" infos.
 		- NOISE, or displacement map (ptr/index).

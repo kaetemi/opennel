@@ -1,7 +1,7 @@
 /** \file u_instance_material.h
  * User interface for instance material
  *
- * $Id: u_instance_material.h,v 1.17 2006/05/31 12:03:13 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file net_layer3/client.cpp
  * Layer3 example
  *
- * $Id: client.cpp,v 1.2 2004/05/07 12:56:21 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

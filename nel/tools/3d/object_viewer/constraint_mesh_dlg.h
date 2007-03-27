@@ -1,7 +1,7 @@
 /** \file constraint_mesh_dlg.h
  * A dialog for editing constraint meshs
  *
- * $Id: constraint_mesh_dlg.h,v 1.2 2001/12/18 18:34:34 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

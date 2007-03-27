@@ -1,7 +1,7 @@
 /** \file mrm_internal.h
  * Internal Classes for CMRMBuilder.
  *
- * $Id: mrm_internal.h,v 1.6 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

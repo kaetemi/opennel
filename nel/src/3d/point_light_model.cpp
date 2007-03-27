@@ -1,7 +1,7 @@
 /** \file point_light_model.cpp
  * TODO: File description
  *
- * $Id: point_light_model.cpp,v 1.10 2005/02/22 10:19:11 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

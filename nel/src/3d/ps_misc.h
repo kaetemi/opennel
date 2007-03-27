@@ -1,7 +1,7 @@
 /** \file ps_misc.h
  * Some functions used by the particle system
  *
- * $Id: ps_misc.h,v 1.4 2005/02/22 10:19:11 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

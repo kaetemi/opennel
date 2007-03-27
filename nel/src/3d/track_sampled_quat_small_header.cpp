@@ -1,7 +1,7 @@
 /** \file track_sampled_quat_small_header.cpp
  * TODO: File description
  *
- * $Id: track_sampled_quat_small_header.cpp,v 1.3 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

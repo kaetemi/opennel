@@ -1,7 +1,7 @@
 /** \file tile_light_influence.cpp
  * TODO: File description
  *
- * $Id: tile_light_influence.cpp,v 1.5 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

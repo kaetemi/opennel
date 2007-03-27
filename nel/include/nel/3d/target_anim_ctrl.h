@@ -1,7 +1,7 @@
 /** \file target_anim_ctrl.h
  * TODO: File description
  *
- * $Id: target_anim_ctrl.h,v 1.3 2005/02/22 10:14:13 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

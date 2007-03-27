@@ -1,7 +1,7 @@
 /** \file surface_splitter.h
  * TODO: File description
  *
- * $Id: surface_splitter.h,v 1.4 2007/03/19 09:55:28 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

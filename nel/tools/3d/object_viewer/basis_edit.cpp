@@ -1,7 +1,7 @@
 /** \file basis_edit.cpp
  * a dialog to edit the orientation of a basis
  *
- * $Id: basis_edit.cpp,v 1.7 2004/11/02 16:15:07 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

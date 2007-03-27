@@ -1,7 +1,7 @@
 /** \file calc_lm_rad.cpp
  * extension of the lightmapper with radiosity
  *
- * $Id: calc_lm_rad.cpp,v 1.3 2002/08/27 14:36:25 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

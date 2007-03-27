@@ -1,7 +1,7 @@
 /** \file flare_shape.h
  * TODO: File description
  *
- * $Id: flare_shape.h,v 1.14 2005/02/22 10:19:10 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

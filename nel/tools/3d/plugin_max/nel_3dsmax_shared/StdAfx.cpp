@@ -3,7 +3,7 @@
  * nel_3dsmax_shared.pch will be the pre-compiled header
  * stdafx.obj will contain the pre-compiled type information
  *
- * $Id: StdAfx.cpp,v 1.1 2001/04/26 16:37:31 corvazier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

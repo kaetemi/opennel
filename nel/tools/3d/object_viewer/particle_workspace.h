@@ -1,6 +1,6 @@
 /** \file particle_workspace.h
  *
- * $Id: particle_workspace.h,v 1.3 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

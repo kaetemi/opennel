@@ -1,7 +1,7 @@
 /** \file tga2dds.cpp
  * TGA to DDS converter
  *
- * $Id: tga2dds.cpp,v 1.12 2004/01/29 09:23:02 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

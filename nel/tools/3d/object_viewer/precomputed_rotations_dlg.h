@@ -1,7 +1,7 @@
 /** \file precomputed_rotations_dlg.h
  * a dialog to edit precomputed rotations of elements in a particle system
  *
- * $Id: precomputed_rotations_dlg.h,v 1.3 2004/06/17 08:06:54 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

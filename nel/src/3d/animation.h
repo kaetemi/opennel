@@ -1,7 +1,7 @@
 /** \file animation.h
  * TODO: File description
  *
- * $Id: animation.h,v 1.13 2004/11/15 10:24:31 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

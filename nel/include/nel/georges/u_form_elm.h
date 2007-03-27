@@ -1,7 +1,7 @@
 /** \file u_form_elm.h
  * Georges form element interface
  *
- * $Id: u_form_elm.h,v 1.14 2005/01/17 16:39:41 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

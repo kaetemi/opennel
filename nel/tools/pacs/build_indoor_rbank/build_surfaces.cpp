@@ -1,7 +1,7 @@
 /** \file build_surfaces.cpp
  * 
  *
- * $Id: build_surfaces.cpp,v 1.4 2007/03/19 09:55:28 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

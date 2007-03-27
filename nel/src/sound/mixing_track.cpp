@@ -1,7 +1,7 @@
 /** \file mixing_track.cpp
  * CTrack: a source selected for playing
  *
- * $Id: mixing_track.cpp,v 1.5 2004/10/29 18:08:47 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file shadow_map_manager.cpp
  * TODO: File description
  *
- * $Id: shadow_map_manager.cpp,v 1.19 2006/07/12 14:37:22 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

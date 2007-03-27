@@ -2,7 +2,7 @@
  * This is a sub-module for calculating ligtmaps
  * This is the code of the plane wich regroup lightmap faces
  *
- * $Id: calc_lm_plane.cpp,v 1.10 2004/05/14 15:00:14 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

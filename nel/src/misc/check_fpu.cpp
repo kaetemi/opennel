@@ -1,7 +1,7 @@
 /** \file check_fpu.cpp
  * Check FPU macro
  *
- * $Id: check_fpu.cpp,v 1.2 2007/03/09 09:49:30 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2005 Nevrax Ltd.

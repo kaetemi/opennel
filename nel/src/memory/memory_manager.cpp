@@ -1,7 +1,7 @@
 /** \file memory_manager.cpp
  * A new memory manager
  *
- * $Id: memory_manager.cpp,v 1.11 2005/05/16 09:12:34 distrib Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

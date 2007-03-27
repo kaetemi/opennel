@@ -1,7 +1,7 @@
 /** \file color_modifier.h
  * A class describing color modifications
  *
- * $Id: color_modifier.h,v 1.4 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

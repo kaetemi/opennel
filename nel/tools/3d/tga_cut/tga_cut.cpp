@@ -1,7 +1,7 @@
 /** \file tga_cut.cpp
  * TGA to DDS converter
  *
- * $Id: tga_cut.cpp,v 1.3 2003/07/09 14:03:05 meyrignac Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

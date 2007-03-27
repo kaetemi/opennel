@@ -1,7 +1,7 @@
 /** \file vertex_neighborhood.cpp
  * TODO: File description
  *
- * $Id: vertex_neighborhood.cpp,v 1.2 2004/11/15 10:25:11 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

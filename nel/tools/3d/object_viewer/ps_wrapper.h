@@ -3,7 +3,7 @@
  *	 a dialog.
  *
  *
- * $Id: ps_wrapper.h,v 1.8 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

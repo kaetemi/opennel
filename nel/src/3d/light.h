@@ -1,7 +1,7 @@
 /** \file light.h
  * CLight definition
  *
- * $Id: light.h,v 1.2 2001/10/25 08:17:57 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

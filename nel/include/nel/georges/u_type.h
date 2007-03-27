@@ -1,7 +1,7 @@
 /** \file u_type.h
  * Georges form loader interface
  *
- * $Id: u_type.h,v 1.4 2003/08/27 16:16:25 distrib Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

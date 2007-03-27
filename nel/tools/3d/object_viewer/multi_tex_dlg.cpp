@@ -1,7 +1,7 @@
 /** \file multi_tex_dlg.cpp
  * A dialog to tune multexturing for particles that support it
  *
- * $Id: multi_tex_dlg.cpp,v 1.6 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

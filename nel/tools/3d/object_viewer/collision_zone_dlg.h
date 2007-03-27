@@ -1,7 +1,7 @@
 /** \file collision_zone_dlg.h
  * a dialog to edit collision zone properties in a particle system
  *
- * $Id: collision_zone_dlg.h,v 1.7 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

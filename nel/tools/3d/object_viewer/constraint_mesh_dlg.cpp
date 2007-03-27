@@ -1,7 +1,7 @@
 /** \file constraint_mesh_dlg.cpp
  * A dialog for editing constraint meshs
  *
- * $Id: constraint_mesh_dlg.cpp,v 1.4 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

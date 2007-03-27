@@ -1,6 +1,6 @@
 /** \file nel_launcher_dlg.h
  *
- * $Id: nel_launcher_dlg.h,v 1.4 2004/05/05 17:18:54 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2004 Nevrax Ltd.

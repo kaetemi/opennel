@@ -1,7 +1,7 @@
 /** \file edit_ps_sound.h
  * A dialog for editing sounds in a particle system
  *
- * $Id: edit_ps_sound.h,v 1.9 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

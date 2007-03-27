@@ -1,7 +1,7 @@
 /** \file value_from_emitter_dlg.h
  * Dialog used to tune particle attributes that are computed from their emitter
  *
- * $Id: value_from_emitter_dlg.h,v 1.7 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

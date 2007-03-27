@@ -1,7 +1,7 @@
 /** \file logic_event.h
  * 
  *
- * $Id: logic_event.h,v 1.3 2002/07/26 09:52:24 coutelas Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

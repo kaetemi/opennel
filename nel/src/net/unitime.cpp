@@ -2,7 +2,7 @@
  * _CUniTime class
  * THIS CLASS IS DEPRECATED, DON'T USE IT
  *
- * $Id: unitime.cpp,v 1.36 2004/07/12 13:58:34 miller Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

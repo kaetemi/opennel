@@ -1,7 +1,7 @@
 /** \file std_afx.h
  * TODO: File description
  *
- * $Id: std_afx.h,v 1.17 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

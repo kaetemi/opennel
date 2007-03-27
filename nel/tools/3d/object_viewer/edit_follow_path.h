@@ -1,6 +1,6 @@
 /** \file edit_follow_path.h
  *
- * $Id: edit_follow_path.h,v 1.2 2004/06/17 08:14:13 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

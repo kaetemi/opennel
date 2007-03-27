@@ -1,7 +1,7 @@
 /** \file shared_memory.cpp
  * Encapsulation of shared memory APIs
  *
- * $Id: shared_memory.cpp,v 1.7 2004/06/14 15:04:41 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file u_instance.h
  * Interface for instance objects.
  *
- * $Id: u_instance.h,v 1.22 2005/09/20 16:22:01 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

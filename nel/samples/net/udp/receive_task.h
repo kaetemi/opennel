@@ -1,7 +1,7 @@
 /** \file receive_task.h
  * receive task
  *
- * $Id: receive_task.h,v 1.1 2002/04/17 08:08:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

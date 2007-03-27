@@ -1,7 +1,7 @@
 /** \file dllentry.cpp
  * TODO: File description
  *
- * $Id: DllEntry.cpp,v 1.5 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

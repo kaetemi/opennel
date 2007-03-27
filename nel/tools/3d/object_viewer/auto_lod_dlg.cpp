@@ -1,7 +1,7 @@
 /** \file auto_lod_dlg.cpp
  * A dialog to tune auto-lod options of particle systems.
  *
- * $Id: auto_lod_dlg.cpp,v 1.5 2004/06/17 08:18:01 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 - 2002 Nevrax Ltd.

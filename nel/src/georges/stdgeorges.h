@@ -1,7 +1,7 @@
 /** \file stdgeorges.h
  * Georges system files
  *
- * $Id: stdgeorges.h,v 1.4 2005/01/31 13:52:39 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

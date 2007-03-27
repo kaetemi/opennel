@@ -1,7 +1,7 @@
 /** \file main_dlg.cpp
  * TODO: File description
  *
- * $Id: main_dlg.cpp,v 1.11 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file LogSessions.h
  * header file
  *
- * $Id: LogSessions.h,v 1.4 2003/08/06 14:05:57 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file stdafx.h
  *
  *
- * $Id: StdAfx.h,v 1.2 2002/08/08 11:01:49 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file ig_lighter_lib.h
  * TODO: File description
  *
- * $Id: ig_lighter_lib.h,v 1.5 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

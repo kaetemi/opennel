@@ -1,6 +1,6 @@
 /** \file create_file_dlg.cpp
  *
- * $Id: create_file_dlg.cpp,v 1.1 2004/06/17 08:15:05 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

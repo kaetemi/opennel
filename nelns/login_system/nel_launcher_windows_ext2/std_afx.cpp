@@ -1,6 +1,6 @@
 /** \file std_afx.cpp
  *
- * $Id: std_afx.cpp,v 1.2 2004/01/08 11:38:58 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2004 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file module_common.h
  * basic type and forward declaration for module system
  *
- * $Id: module_common.h,v 1.6 2007/03/09 09:49:29 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

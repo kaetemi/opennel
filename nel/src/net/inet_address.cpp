@@ -1,7 +1,7 @@
 /** \file inet_address.cpp
  * Class CInetAddress (IP address + port)
  *
- * $Id: inet_address.cpp,v 1.47 2006/09/14 16:55:00 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

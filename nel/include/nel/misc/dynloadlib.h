@@ -1,7 +1,7 @@
 /** \file misc/dynloadlib.h
  * class for dynamic library loading
  *
- * $Id: dynloadlib.h,v 1.6 2005/08/29 16:12:12 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

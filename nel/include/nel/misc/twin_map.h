@@ -1,6 +1,6 @@
 /** \file twin_map.h
  *
- * $Id: twin_map.h,v 1.4 2005/08/29 16:12:13 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2004 Nevrax Ltd.

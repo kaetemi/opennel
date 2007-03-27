@@ -1,7 +1,7 @@
 /** \file move_container.cpp
  * TODO: File description
  *
- * $Id: move_container.cpp,v 1.52 2005/02/22 10:19:20 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file interface.h
  * Snowballs 2 specific code for managing interface
  *
- * $Id: interface.h,v 1.2 2001/07/18 16:06:20 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

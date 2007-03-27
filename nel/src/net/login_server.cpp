@@ -1,7 +1,7 @@
 /** \file login_server.cpp
  * CLoginServer is the interface used by the front end to *s authenticate users.
  *
- * $Id: login_server.cpp,v 1.43 2007/03/09 09:49:30 boucher Exp $
+ * $Id$
  *
  */
 

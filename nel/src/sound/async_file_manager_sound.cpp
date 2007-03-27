@@ -1,7 +1,7 @@
 /** \file async_file_manager_sound.cpp
  * TODO: File description
  *
- * $Id: async_file_manager_sound.cpp,v 1.9 2005/06/23 16:39:37 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

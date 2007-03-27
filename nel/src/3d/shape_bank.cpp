@@ -1,7 +1,7 @@
 /** \file shape_bank.cpp
  * TODO: File description
  *
- * $Id: shape_bank.cpp,v 1.37 2006/05/31 12:03:14 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

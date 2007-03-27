@@ -2,7 +2,7 @@
  * base class for attribute edition dialog in a particle system.
  * It gives a basic interface, to position and enable / disable the window
  *
- * $Id: edit_attrib_dlg.h,v 1.3 2001/06/25 13:22:15 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

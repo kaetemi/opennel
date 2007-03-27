@@ -1,7 +1,7 @@
 /** \file sound_anim_view.cpp
  * Dialog for the sound animations 
  *
- * $Id: sound_anim_view.cpp,v 1.5 2003/07/02 17:26:31 distrib Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

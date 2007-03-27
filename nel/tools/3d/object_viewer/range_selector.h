@@ -1,7 +1,7 @@
 /** \file range_selector.h
  * Helps to select a range for numeric values in a CEditableRange dialog
  *
- * $Id: range_selector.h,v 1.2 2001/06/25 12:57:31 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

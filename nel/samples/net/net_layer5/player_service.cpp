@@ -1,7 +1,7 @@
 /** \file net_layer5/player_service.cpp
  * Layer 5 and IService example
  *
- * $Id: player_service.cpp,v 1.1 2002/04/17 08:08:32 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

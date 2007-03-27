@@ -1,7 +1,7 @@
 /** \file net_layer3/ping_service.cpp
  * Example of the IService class and the layer 3
  *
- * $Id: ping_service.cpp,v 1.2 2004/05/07 12:56:21 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

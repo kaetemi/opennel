@@ -25,7 +25,7 @@
  *      implementation only works with messages with a length that is
  *      a multiple of the size of an 8-bit character.
  *
- * $Id: sha1.cpp,v 1.5 2005/01/31 13:52:40 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2001 Nevrax Ltd.

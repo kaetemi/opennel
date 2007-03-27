@@ -8,7 +8,7 @@
  *      single character names, were used because those were the names
  *      used in the publication.
  *
- * $Id: sha1.h,v 1.7 2005/08/19 15:34:08 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.

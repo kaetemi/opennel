@@ -1,7 +1,7 @@
 /** \file prim_checker.cpp
  * TODO: File description
  *
- * $Id: prim_checker.cpp,v 1.8 2007/03/19 09:55:28 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2003 Nevrax Ltd.

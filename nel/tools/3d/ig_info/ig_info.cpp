@@ -1,6 +1,6 @@
 /** \file ig_info.cpp
  * A simple tool to view the content of an ig
- * $Id: ig_info.cpp,v 1.2 2007/03/19 09:55:25 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001, 2002 Nevrax Ltd.

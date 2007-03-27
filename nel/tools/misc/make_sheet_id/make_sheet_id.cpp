@@ -1,7 +1,7 @@
 /** \file make_fiche_id.cpp
  * 
  *
- * $Id: make_sheet_id.cpp,v 1.1 2005/03/15 15:07:32 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2002-2005 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file zone_edge.h
  * A ZoneEdge descriptor
  *
- * $Id: zone_edge.h,v 1.1 2002/02/14 11:16:43 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000, 2001 Nevrax Ltd.

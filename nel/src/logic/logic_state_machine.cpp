@@ -2,7 +2,7 @@
 /** \file logic_state_machine.cpp
  * 
  *
- * $Id: logic_state_machine.cpp,v 1.6 2003/04/15 08:08:46 lecroart Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

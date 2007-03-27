@@ -1,7 +1,7 @@
 /** \file curve_edit.h
  * A dialog for editing a curve
  *
- * $Id: curve_edit.h,v 1.6 2007/03/19 09:55:26 boucher Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

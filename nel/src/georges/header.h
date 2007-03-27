@@ -1,7 +1,7 @@
 /** \file header.h
  * Georges header file class
  *
- * $Id: header.h,v 1.5 2005/02/22 10:19:22 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

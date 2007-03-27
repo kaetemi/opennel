@@ -1,7 +1,7 @@
 /** \file smart_ptr.cpp
  * CSmartPtr and CRefPtr class.
  *
- * $Id: smart_ptr.cpp,v 1.5 2004/10/15 13:23:28 berenguier Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

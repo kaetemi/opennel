@@ -1,7 +1,7 @@
 /** \file main.cpp
  * viewer of cluster system
  *
- * $Id: main.cpp,v 1.6 2005/04/04 09:53:44 cado Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

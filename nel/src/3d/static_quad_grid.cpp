@@ -1,7 +1,7 @@
 /** \file static_quad_grid.cpp
  * TODO: File description
  *
- * $Id: static_quad_grid.cpp,v 1.4 2005/02/22 10:19:12 besson Exp $
+ * $Id$
  */
 
 /* Copyright, 2000-2002 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file popup_notify.h
  * an interface to now when popup windows are removed
  *
- * $Id: popup_notify.h,v 1.2 2001/12/18 18:39:43 vizerie Exp $
+ * $Id$
  */
 
 /* Copyright, 2000 Nevrax Ltd.

@@ -1,7 +1,7 @@
 /** \file increment_version.cpp
  *	Increment the version number
  *
- * $Id: increment_version.cpp,v 1.2 2002/09/09 13:25:14 coutelas Exp $
+ * $Id$
  */
 
 /* Copyright, 2002 Nevrax Ltd.
