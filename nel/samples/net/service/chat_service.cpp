@@ -132,7 +132,7 @@ public:
 // each time the message CHAT is received, this function is called.
 // the first param contains parameters of the message. the second one is the
 // identifier of who sent this message
-static void cbChat (CMessage &msgin, const std::string &serviceName, uint16 sid)
+static void cbChat (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	// get the chat string of the client
 	string chat;

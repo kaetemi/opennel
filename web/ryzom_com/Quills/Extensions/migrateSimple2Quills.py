@@ -4,7 +4,7 @@
 # Author:      Tim Knapp <duffyd@kokorice.org>
 #
 # Created:     2005/04/03
-# SVN-ID:      $Id: migrateSimple2Quills.py,v 1.1 2006/03/10 15:07:05 chaouche Exp $
+# SVN-ID:      $Id: migrateSimple2Quills.py,v 1.1 2006-03-10 15:07:05 chaouche Exp $
 # Copyright:   (c) 2005 eMerge Technology. All Rights Reserved.
 # Licence:     LGPL
 #-----------------------------------------------------------------------------

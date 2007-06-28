@@ -56,11 +56,11 @@ public:
 		return ret;
 	}
 
-	void				onServiceUp(const std::string &serviceName, uint16 serviceId)
+	void				onServiceUp(const std::string &serviceName, NLNET::TServiceId serviceId)
 	{
 	}
 	/// A nel layer 5 service has stopped.
-	void				onServiceDown(const std::string &serviceName, uint16 serviceId) 
+	void				onServiceDown(const std::string &serviceName, NLNET::TServiceId serviceId) 
 	{
 	}
 	void				onModuleUpdate()
@@ -2901,15 +2901,15 @@ public:
 		TEST_ASSERT(mif.parseParamList(paramString));
 
 		TEST_ASSERT(mif.getParam("a") != NULL);
-		TEST_ASSERT(mif.getParam("a") == &mif.SubParams[0]);
+		TEST_ASSERT(mif.getParam("a") == mif.SubParams[0]);
 
 		TEST_ASSERT(mif.getParam("sub") != NULL);
-		TEST_ASSERT(mif.getParam("sub") == &mif.SubParams[2]);
+		TEST_ASSERT(mif.getParam("sub") == mif.SubParams[2]);
 
 		TEST_ASSERT(mif.getParam("foo") == NULL);
 
 		TEST_ASSERT(mif.getParam("sub.subsub.g") != NULL);
-		TEST_ASSERT(mif.getParam("sub.subsub.g") == &mif.SubParams[2].SubParams[2].SubParams[0]);
+		TEST_ASSERT(mif.getParam("sub.subsub.g") == mif.SubParams[2]->SubParams[2]->SubParams[0]);
 	}
 
 	void testModuleInitInfoParsing()
@@ -2934,37 +2934,37 @@ public:
 
 		TEST_ASSERT(mif.SubParams.size() == 3);
 
-		TEST_ASSERT(mif.SubParams[0].SubParams.size() == 0);
-		TEST_ASSERT(mif.SubParams[0].ParamName == "a");
-		TEST_ASSERT(mif.SubParams[0].ParamValue == "1");
+		TEST_ASSERT(mif.SubParams[0]->SubParams.size() == 0);
+		TEST_ASSERT(mif.SubParams[0]->ParamName == "a");
+		TEST_ASSERT(mif.SubParams[0]->ParamValue == "1");
 
-		TEST_ASSERT(mif.SubParams[1].SubParams.size() == 0);
-		TEST_ASSERT(mif.SubParams[1].ParamName == "b");
-		TEST_ASSERT(mif.SubParams[1].ParamValue == "2");
+		TEST_ASSERT(mif.SubParams[1]->SubParams.size() == 0);
+		TEST_ASSERT(mif.SubParams[1]->ParamName == "b");
+		TEST_ASSERT(mif.SubParams[1]->ParamValue == "2");
 
-		TEST_ASSERT(mif.SubParams[2].SubParams.size() == 3);
-		TEST_ASSERT(mif.SubParams[2].ParamName == "sub");
-		TEST_ASSERT(mif.SubParams[2].ParamValue.empty());
+		TEST_ASSERT(mif.SubParams[2]->SubParams.size() == 3);
+		TEST_ASSERT(mif.SubParams[2]->ParamName == "sub");
+		TEST_ASSERT(mif.SubParams[2]->ParamValue.empty());
 
-		TEST_ASSERT(mif.SubParams[2].SubParams[0].SubParams.size() == 0);
-		TEST_ASSERT(mif.SubParams[2].SubParams[0].ParamName == "y");
-		TEST_ASSERT(mif.SubParams[2].SubParams[0].ParamValue == "22");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[0]->SubParams.size() == 0);
+		TEST_ASSERT(mif.SubParams[2]->SubParams[0]->ParamName == "y");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[0]->ParamValue == "22");
 	
-		TEST_ASSERT(mif.SubParams[2].SubParams[1].SubParams.size() == 0);
-		TEST_ASSERT(mif.SubParams[2].SubParams[1].ParamName == "zzzz");
-		TEST_ASSERT(mif.SubParams[2].SubParams[1].ParamValue == "12");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[1]->SubParams.size() == 0);
+		TEST_ASSERT(mif.SubParams[2]->SubParams[1]->ParamName == "zzzz");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[1]->ParamValue == "12");
 	
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].SubParams.size() == 2);
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].ParamName == "subsub");
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].ParamValue.empty());
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->SubParams.size() == 2);
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->ParamName == "subsub");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->ParamValue.empty());
 	
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].SubParams[0].SubParams.size() == 0);
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].SubParams[0].ParamName == "g");
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].SubParams[0].ParamValue == "bean in box");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->SubParams[0]->SubParams.size() == 0);
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->SubParams[0]->ParamName == "g");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->SubParams[0]->ParamValue == "bean in box");
 	
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].SubParams[1].SubParams.size() == 0);
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].SubParams[1].ParamName == "z");
-		TEST_ASSERT(mif.SubParams[2].SubParams[2].SubParams[1].ParamValue == "2");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->SubParams[1]->SubParams.size() == 0);
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->SubParams[1]->ParamName == "z");
+		TEST_ASSERT(mif.SubParams[2]->SubParams[2]->SubParams[1]->ParamValue == "2");
 	}
 };
 

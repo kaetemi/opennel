@@ -450,21 +450,23 @@ bool CVPParser::parseConstantRegister(CVPOperand &operand, std::string &errorOut
 	}
 	++_CurrChar;
 	skipSpacesAndComments();
-	uint &index = operand.Value.ConstantValue;
+	sint &index = operand.Value.ConstantValue;
 	if (isdigit(*_CurrChar))
 	{		
 		// immediat case : c[0] to c[95]
-		_CurrChar = parseUInt(_CurrChar, index);
-		if (index > 95)
+		uint uIndex;
+		_CurrChar = parseUInt(_CurrChar, uIndex);
+		if (uIndex > 95)
 		{
 			errorOutput = "Constant register index must range from 0 to 95.";
 			return false;
 		}
+		index = (sint) uIndex;
 		operand.Indexed = false;
 	}
 	else if (*_CurrChar == 'A')
 	{
-		// indexed case : c[A0.x + 0] to c[A0.x + 95]
+		// indexed case : c[A0.x - 64] to c[A0.x + 63]
 		operand.Indexed = true;
 		index = 0;
 		if (_CurrChar[1] == '0'
@@ -479,12 +481,36 @@ bool CVPParser::parseConstantRegister(CVPOperand &operand, std::string &errorOut
 				skipSpacesAndComments();
 				if (isdigit(*_CurrChar))
 				{
-					_CurrChar = parseUInt(_CurrChar, index);
-					if (index > 95)
+					uint uIndex;
+					_CurrChar = parseUInt(_CurrChar, uIndex);
+					if (uIndex > 63)
 					{
-						errorOutput = "Constant register index must range from 0 to 95.";
+						errorOutput = "Constant register index must range from -64 to +63.";
 						return false;
 					}
+					index = (sint) uIndex;
+				}
+				else
+				{
+					errorOutput = "Can't parse offset for constant register.";
+					return false;
+				}
+			}
+			else
+			if (*_CurrChar == '-')
+			{
+				++ _CurrChar;
+				skipSpacesAndComments();
+				if (isdigit(*_CurrChar))
+				{
+					uint uIndex;
+					_CurrChar = parseUInt(_CurrChar, uIndex);					
+					if (uIndex > 64)
+					{
+						errorOutput = "Constant register index must range from -64 to +63.";
+						return false;
+					}
+					index = - (sint) uIndex;
 				}
 				else
 				{

@@ -18,7 +18,7 @@
 ## Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
 #
-# $Id: utils.py,v 1.2 2006/04/19 14:36:55 bernard Exp $
+# $Id: utils.py,v 1.2 2006-04-19 14:36:55 bernard Exp $
 #
 
 __author__  = 'Gilles Lenfant <gilles.lenfant@ingeniweb.com>'

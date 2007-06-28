@@ -81,6 +81,7 @@ static bool Registered;
 static bool RegisteredSuccess;
 static TServiceId *RegisteredSID = NULL;
 static string Reason;
+void cbRegisterBroadcast (CMessage &msgin, TSockId from, CCallbackNetBase &netbase);
 
 static void cbRegister (CMessage &msgin, TSockId from, CCallbackNetBase &netbase)
 {

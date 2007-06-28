@@ -29,6 +29,7 @@
 #include "nel/misc/variable.h"
 #include "nel/net/buf_sock.h"
 #include "nel/net/buf_server.h"
+#include "nel/net/net_log.h"
 
 #ifdef NL_OS_WINDOWS
 #include <windows.h>
@@ -52,8 +53,6 @@ NLMISC::CMutex nettrace_mutex("nettrace_mutex");
  * Constructor
  */
 CBufSock::CBufSock( CTcpSock *sock ) :
-	SendNextValue(0),
-	ReceiveNextValue(0),
 	Sock( sock ),
 	_KnowConnected( false ),
 	_LastFlushTime( 0 ),
@@ -194,16 +193,16 @@ bool CBufSock::flush( uint *nbBytesRemaining )
 /*				// Debug display
 				switch ( _FlushTrigger )
 				{
-				case FTTime : nldebug( "LNETL1: Time triggered flush for %s:", asString().c_str() ); break;
-				case FTSize : nldebug( "LNETL1: Size triggered flush for %s:", asString().c_str() ); break;
-				default:	  nldebug( "LNETL1: Manual flush for %s:", asString().c_str() );
+				case FTTime : LNETL1_DEBUG( "LNETL1: Time triggered flush for %s:", asString().c_str() ); break;
+				case FTSize : LNETL1_DEBUG( "LNETL1: Size triggered flush for %s:", asString().c_str() ); break;
+				default:	  LNETL1_DEBUG( "LNETL1: Manual flush for %s:", asString().c_str() );
 				}
 				_FlushTrigger = FTManual;
-				nldebug( "LNETL1: %s sent effectively a buffer (%d on %d B)", asString().c_str(), len, _ReadyToSendBuffer.size() );
+				LNETL1_DEBUG( "LNETL1: %s sent effectively a buffer (%d on %d B)", asString().c_str(), len, _ReadyToSendBuffer.size() );
 */			
 				
 				// TODO OPTIM remove the nldebug for speed
-				//commented for optimisation nldebug( "LNETL1: %s sent effectively %u/%u bytes (pos %u wantedsend %u)", asString().c_str(), len, _ReadyToSendBuffer.size(), _RTSBIndex, realLen/*, stringFromVectorPart(_ReadyToSendBuffer,_RTSBIndex,len).c_str()*/ );
+				//commented for optimisation LNETL1_DEBUG( "LNETL1: %s sent effectively %u/%u bytes (pos %u wantedsend %u)", asString().c_str(), len, _ReadyToSendBuffer.size(), _RTSBIndex, realLen/*, stringFromVectorPart(_ReadyToSendBuffer,_RTSBIndex,len).c_str()*/ );
 
 				if ( _RTSBIndex+len == _ReadyToSendBuffer.size() ) // for non-blocking mode
 				{
@@ -240,7 +239,7 @@ bool CBufSock::flush( uint *nbBytesRemaining )
 			{
 #ifdef NL_DEBUG
 				// Can happen in a normal behavior if, for example, the other side is not connected anymore
-				nldebug( "LNETL1: %s failed to send effectively a buffer of %d bytes", asString().c_str(), _ReadyToSendBuffer.size() );
+				LNETL1_DEBUG( "LNETL1: %s failed to send effectively a buffer of %d bytes", asString().c_str(), _ReadyToSendBuffer.size() );
 #endif
 				// NEW: Clearing (loosing) the buffer if the sending can't be performed at all
 				_ReadyToSendBuffer.clear();
@@ -330,8 +329,6 @@ void CBufSock::connect( const CInetAddress& addr, bool nodelay, bool connectedst
 	nlassert (this != InvalidSockId);	// invalid bufsock
 	nlassert( ! Sock->connected() );
 
-	SendNextValue = ReceiveNextValue = 0;
-	
 	Sock->connect( addr );
 	_ConnectedState = connectedstate;
 	_KnowConnected = connectedstate;
@@ -353,8 +350,6 @@ void CBufSock::disconnect( bool connectedstate )
 	Sock->disconnect();
 	_ConnectedState = connectedstate;
 	_KnowConnected = connectedstate;
-
-	SendNextValue = ReceiveNextValue = 0;
 }
 
 
@@ -431,12 +426,12 @@ bool CNonBlockingBufSock::receivePart( uint32 nbExtraBytes )
 		CSock :: TSockResult ret = Sock->receive( (uint8*)(&_Length)+_BytesRead, actuallen, false );
 		if (ret == CSock::ConnectionClosed)
 		{
-			nldebug( "LNETL1: Connection %s closed", asString().c_str() );
+			LNETL1_DEBUG( "LNETL1: Connection %s closed", asString().c_str() );
 			return false;
 		}
 		else if (ret == CSock::Error)
 		{
-			nldebug( "LNETL1: Socket error for %s", asString().c_str() );
+			LNETL1_DEBUG( "LNETL1: Socket error for %s", asString().c_str() );
 			Sock->disconnect();
 			return false;
 		}
@@ -477,7 +472,7 @@ bool CNonBlockingBufSock::receivePart( uint32 nbExtraBytes )
 		if ( _BytesRead == _Length )
 		{
 #ifdef NL_DEBUG
-			nldebug( "LNETL1: %s received buffer (%u bytes): [%s]", asString().c_str(), _ReceiveBuffer.size(), stringFromVector(_ReceiveBuffer).c_str() );
+			LNETL1_DEBUG( "LNETL1: %s received buffer (%u bytes): [%s]", asString().c_str(), _ReceiveBuffer.size(), stringFromVector(_ReceiveBuffer).c_str() );
 #endif
 			_NowReadingBuffer = false;
 			//nldebug( "I-%u all %u B on %u", Sock->descriptor(), actuallen );

@@ -26,6 +26,7 @@
 #include "stdnet.h"
 
 #include "nel/net/sock.h"
+#include "nel/net/net_log.h"
 #include "nel/misc/time_nl.h"
 #include "nel/misc/hierarchical_timer.h"
 
@@ -116,7 +117,7 @@ ESocket::ESocket( const char *reason, bool systemerror, CInetAddress *addr )
 		}
 		_Reason += ")";
 	}
-	nlinfo( "LNETL0: Exception will be launched: %s", _Reason.c_str() );
+	LNETL0_INFO( "LNETL0: Exception will be launched: %s", _Reason.c_str() );
 
 }
 
@@ -279,7 +280,7 @@ void CSock::createSocket( int type, int protocol )
 
 	if ( _Logging )
 	{
-//		nldebug( "LNETL0: Socket %d open (TCP)", _Sock );
+//		LNETL0_DEBUG( "LNETL0: Socket %d open (TCP)", _Sock );
 	}
 
 #ifdef NL_OS_UNIX
@@ -305,7 +306,7 @@ void CSock::close()
 {
 	if ( _Logging )
 	{
-		nldebug( "LNETL0: Socket %d closing for %s at %s", _Sock, _RemoteAddr.asString().c_str(), _LocalAddr.asString().c_str() );
+		LNETL0_DEBUG( "LNETL0: Socket %d closing for %s at %s", _Sock, _RemoteAddr.asString().c_str(), _LocalAddr.asString().c_str() );
 	}
 	SOCKET sockToClose = _Sock;
 	// preset to invalid to bypass exception in listen thread
@@ -330,7 +331,7 @@ CSock::~CSock()
 	{
 		if ( _Logging )
 		{
-			nldebug( "LNETL0: Socket %d closing for %s at %s", _Sock, _RemoteAddr.asString().c_str(), _LocalAddr.asString().c_str() );
+			LNETL0_DEBUG( "LNETL0: Socket %d closing for %s at %s", _Sock, _RemoteAddr.asString().c_str(), _LocalAddr.asString().c_str() );
 		}
 
 		if ( connected() )
@@ -354,7 +355,7 @@ CSock::~CSock()
  */
 void CSock::connect( const CInetAddress& addr )
 {
-	nldebug( "LNETL0: Socket %d connecting to %s...", _Sock, addr.asString().c_str() );
+	LNETL0_DEBUG( "LNETL0: Socket %d connecting to %s...", _Sock, addr.asString().c_str() );
 
 	// Check address
 	if ( ! addr.isValid() )
@@ -389,7 +390,7 @@ void CSock::connect( const CInetAddress& addr )
 	setLocalAddress();
 	if ( _Logging )
 	{
-		nldebug( "LNETL0: Socket %d connected to %s (local %s)", _Sock, addr.asString().c_str(), _LocalAddr.asString().c_str() );
+		LNETL0_DEBUG( "LNETL0: Socket %d connected to %s (local %s)", _Sock, addr.asString().c_str(), _LocalAddr.asString().c_str() );
 	}	
 	_RemoteAddr = addr;
 
@@ -453,7 +454,7 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 
 	if ( _Logging )
 	{
-//		nldebug ("LNETL0: CSock::send(): Sent %d bytes to %d res: %d (%d)", realLen, _Sock, len, ERROR_NUM);
+//		LNETL0_DEBUG ("LNETL0: CSock::send(): Sent %d bytes to %d res: %d (%d)", realLen, _Sock, len, ERROR_NUM);
 	}
 
 	if ( ((int)len) == SOCKET_ERROR )
@@ -465,7 +466,7 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 			nlSleep(10);
 			if (!_Blocking)
 			{
-				nlwarning("SendWouldBlock - %s / %s Entering snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
+				nldebug("SendWouldBlock - %s / %s Entering snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
 				_Blocking= true;
 			}
 			return Ok;
@@ -484,7 +485,7 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 	
 	if (_Blocking)
 	{
-		nlwarning("SendWouldBlock - %s / %s Leaving snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
+		nldebug("SendWouldBlock - %s / %s Leaving snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
 		_Blocking= false;
 	}
 	return Ok;
@@ -508,7 +509,7 @@ CSock::TSockResult CSock::receive( uint8 *buffer, uint32& len, bool throw_except
 
 		if ( _Logging )
 		{
-//			nldebug ("LNETL0: CSock::receive(): NBM Received %d bytes to %d res: %d (%d)", realLen, _Sock, len, ERROR_NUM);
+//			LNETL0_DEBUG ("LNETL0: CSock::receive(): NBM Received %d bytes to %d res: %d (%d)", realLen, _Sock, len, ERROR_NUM);
 		}
 
 		_MaxReceiveTime = max( (uint32)(CTime::ticksToSecond(CTime::getPerformanceTime()-before)*1000.0f), _MaxReceiveTime );
@@ -604,7 +605,7 @@ CSock::TSockResult CSock::receive( uint8 *buffer, uint32& len, bool throw_except
 
 	/*if ( _Logging )
 	{
-		nldebug( "LNETL0: Socket %d received %d bytes", _Sock, len );
+		LNETL0_DEBUG( "LNETL0: Socket %d received %d bytes", _Sock, len );
 	}*/
 	_BytesReceived += len;
 	return CSock::Ok;

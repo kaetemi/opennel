@@ -35,11 +35,20 @@ namespace NLMISC
 //INelContext *NelContext = NULL;
 INelContext *INelContext::_NelContext = NULL;
 
+INelContext ** INelContext::_getInstance()
+{
+	static INelContext *nelContext = NULL;
+
+	return &nelContext;
+}
+
+
 INelContext &INelContext::getInstance()
 {
-	if (_NelContext == NULL)
+	if (*(_getInstance()) == NULL)
 	{
 		_NelContext = new CApplicationContext;
+		*(_getInstance()) = _NelContext;
 	}
 
 	return *_NelContext;
@@ -47,7 +56,7 @@ INelContext &INelContext::getInstance()
 
 bool INelContext::isContextInitialised()
 {
-	return _NelContext != NULL;
+	return (*_getInstance()) != NULL;
 }
 
 
@@ -64,6 +73,7 @@ INelContext::~INelContext()
 	CInstanceCounterLocalManager::releaseInstance();
 
 	_NelContext = NULL;
+	*(_getInstance()) = NULL;
 }
 
 
@@ -71,8 +81,9 @@ INelContext::~INelContext()
 void	INelContext::contextReady()
 {
 	// Register the NeL Context
-	nlassert(_NelContext == NULL);
+	nlassert(*(_getInstance()) == NULL);
 	_NelContext = this;
+	*(_getInstance()) = this;
 
 	// register any pending thinks
 

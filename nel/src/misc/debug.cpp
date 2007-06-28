@@ -35,6 +35,7 @@
 #include "nel/misc/command.h"
 #include "nel/misc/report.h"
 #include "nel/misc/path.h"
+#include "nel/misc/variable.h"
 
 #ifdef NL_OS_WINDOWS
 #	define _WIN32_WINDOWS	0x0410
@@ -49,6 +50,9 @@
 #	include <cstdio>
 #	include <cstdlib>
 #	define IsDebuggerPresent() false
+#	include <execinfo.h>
+#	include <malloc.h>
+#	include <errno.h>
 #endif
 
 #include <cstdarg>
@@ -80,6 +84,14 @@ static const bool TrapCrashInDebugger = false;
 
 namespace NLMISC 
 {
+
+//
+// Globals
+//
+
+bool DissableNLDebug= false;
+NLMISC::CVariablePtr<bool> _DissableNLDebug("nel","DissableNLDebug","Dissables generation and output of nldebug logs (no code associated with the log generation is executed)",&DissableNLDebug,true);
+
 
 //bool DebugNeedAssert = false;
 //bool NoAssert = false;
@@ -547,47 +559,64 @@ public:
 	// display the callstack
 	void addStackAndLogToReason (sint skipNFirst = 0)
 	{
-/*		// ace hack
-		skipNFirst = 0;
-		
-		DWORD symOptions = SymGetOptions();
-		symOptions |= SYMOPT_LOAD_LINES;
-		symOptions &= ~SYMOPT_UNDNAME;
-		SymSetOptions (symOptions);
-		
-		nlverify (SymInitialize(getProcessHandle(), NULL, FALSE) == TRUE);
+#ifdef NL_OS_WINDOWS
+//		// ace hack
+//		skipNFirst = 0;
+//		
+//		DWORD symOptions = SymGetOptions();
+//		symOptions |= SYMOPT_LOAD_LINES;
+//		symOptions &= ~SYMOPT_UNDNAME;
+//		SymSetOptions (symOptions);
+//		
+//		nlverify (SymInitialize(getProcessHandle(), NULL, FALSE) == TRUE);
+//
+//		STACKFRAME callStack;
+//		::ZeroMemory (&callStack, sizeof(callStack));
+//		callStack.AddrPC.Mode      = AddrModeFlat;
+//		callStack.AddrPC.Offset    = m_pexp->ContextRecord->Eip;
+//		callStack.AddrStack.Mode   = AddrModeFlat;
+//		callStack.AddrStack.Offset = m_pexp->ContextRecord->Esp;
+//		callStack.AddrFrame.Mode   = AddrModeFlat;
+//		callStack.AddrFrame.Offset = m_pexp->ContextRecord->Ebp;
+//
+//		_Reason += "\nCallstack:\n";
+//		_Reason += "-------------------------------\n";
+//		for (sint32 i = 0; ; i++)
+//		{
+//			SetLastError(0);
+//			BOOL res = StackWalk (IMAGE_FILE_MACHINE_I386, getProcessHandle(), GetCurrentThread(), &callStack,
+//				m_pexp->ContextRecord, NULL, FunctionTableAccess, GetModuleBase, NULL);
+//
+//			if (res == FALSE || callStack.AddrFrame.Offset == 0)
+//				break;
+//		
+//			string symInfo, srcInfo;
+//
+//			if (i >= skipNFirst)
+//			{
+//				srcInfo = getSourceInfo (callStack.AddrPC.Offset);
+//				symInfo = getFuncInfo (callStack.AddrPC.Offset, callStack.AddrFrame.Offset);
+//				_Reason += srcInfo + ": " + symInfo + "\n";
+//			}
+//		}
+//		SymCleanup(getProcessHandle());
+#else
+		// Make place for stack frames and function names
+		const uint MaxFrame=64;
+		void *trace[MaxFrame];
+		char **messages = (char **)NULL;
+		int i, trace_size = 0;
 
-		STACKFRAME callStack;
-		::ZeroMemory (&callStack, sizeof(callStack));
-		callStack.AddrPC.Mode      = AddrModeFlat;
-		callStack.AddrPC.Offset    = m_pexp->ContextRecord->Eip;
-		callStack.AddrStack.Mode   = AddrModeFlat;
-		callStack.AddrStack.Offset = m_pexp->ContextRecord->Esp;
-		callStack.AddrFrame.Mode   = AddrModeFlat;
-		callStack.AddrFrame.Offset = m_pexp->ContextRecord->Ebp;
-
-		_Reason += "\nCallstack:\n";
+		trace_size = backtrace(trace, MaxFrame);
+		messages = backtrace_symbols(trace, trace_size);
+		result += "Callstack:\n";
 		_Reason += "-------------------------------\n";
-		for (sint32 i = 0; ; i++)
-		{
-			SetLastError(0);
-			BOOL res = StackWalk (IMAGE_FILE_MACHINE_I386, getProcessHandle(), GetCurrentThread(), &callStack,
-				m_pexp->ContextRecord, NULL, FunctionTableAccess, GetModuleBase, NULL);
-
-			if (res == FALSE || callStack.AddrFrame.Offset == 0)
-				break;
+		for (i=0; i<trace_size; ++i)
+			_Reason += toString("%i : %s\n", i, messages[i]);
+		// free the messages
+		free(messages);
+#endif
 		
-			string symInfo, srcInfo;
-
-			if (i >= skipNFirst)
-			{
-				srcInfo = getSourceInfo (callStack.AddrPC.Offset);
-				symInfo = getFuncInfo (callStack.AddrPC.Offset, callStack.AddrFrame.Offset);
-				_Reason += srcInfo + ": " + symInfo + "\n";
-			}
-		}
-		SymCleanup(getProcessHandle());
-*/
 		_Reason += "-------------------------------\n";
 		_Reason += "\n";
 		if(DefaultMemDisplayer)
@@ -981,7 +1010,7 @@ static void exceptionTranslator(unsigned, EXCEPTION_POINTERS *pexp)
 
 #endif // NL_OS_WINDOWS
 
-void getCallStackAndLog (string &result, sint skipNFirst)
+void getCallStack(std::string &result, sint skipNFirst)
 {
 #ifdef NL_OS_WINDOWS
 	try
@@ -998,9 +1027,56 @@ void getCallStackAndLog (string &result, sint skipNFirst)
 	}
 #else
 
-	// there s no stack on GNU/Linux, only get the log without filters
+	// Make place for stack frames and function names
+	const uint MaxFrame=64;
+	void *trace[MaxFrame];
+	char **messages = (char **)NULL;
+	int i, trace_size = 0;
 
-	result += "No callstack available\n";
+	trace_size = backtrace(trace, MaxFrame);
+	messages = backtrace_symbols(trace, trace_size);
+	result += "Dumping call stack :\n";
+	for (i=0; i<trace_size; ++i)
+		result += toString("%i : %s\n", i, messages[i]);
+	// free the messages
+	free(messages);
+#endif
+}
+
+
+void getCallStackAndLog (string &result, sint skipNFirst)
+{
+	getCallStack(result, skipNFirst);
+//#ifdef NL_OS_WINDOWS
+//	try
+//	{
+//		WORKAROUND_VCPP_SYNCHRONOUS_EXCEPTION // force to install a exception frame		
+//			
+//		DWORD array[1];
+//		array[0] = skipNFirst;
+//		RaiseException (0xACE0ACE, 0, 1, array);
+//	}
+//	catch (EDebug &e)
+//	{
+//		result += e.what();
+//	}
+//#else
+//
+//	// Make place for stack frames and function names
+//	const uint MaxFrame=64;
+//	void *trace[MaxFrame];
+//	char **messages = (char **)NULL;
+//	int i, trace_size = 0;
+//
+//	trace_size = backtrace(trace, MaxFrame);
+//	messages = backtrace_symbols(trace, trace_size);
+//	result += "Dumping call stack :\n";
+//	for (i=0; i<trace_size; ++i)
+//		result += toString("%i : %s\n", i, messages[i]);
+//	// free the messages
+//	free(messages);
+//#endif
+//
 	result += "-------------------------------\n";
 	result += "\n";
 	if(DefaultMemDisplayer)
@@ -1034,8 +1110,6 @@ void getCallStackAndLog (string &result, sint skipNFirst)
 		}
 		result += "-------------------------------\n";
 	}
-	
-#endif
 }
 
 void changeLogDirectory(const std::string &dir)
@@ -1297,6 +1371,45 @@ void CInstanceCounterLocalManager::unregisterInstanceCounter(TInstanceCounterDat
 		releaseInstance();
 	}
 }
+
+
+/// Return the last error code generated by a system call
+int getLastError()
+{
+#ifdef NL_OS_WINDOWS
+	return GetLastError();
+#else
+	return errno;
+#endif
+}
+
+/// Return a readable text according to the error code submited
+std::string formatErrorMessage(int errorCode)
+{
+#ifdef NL_OS_WINDOWS
+	LPVOID lpMsgBuf;
+	FormatMessage( 
+		FORMAT_MESSAGE_ALLOCATE_BUFFER | 
+		FORMAT_MESSAGE_FROM_SYSTEM | 
+		FORMAT_MESSAGE_IGNORE_INSERTS,
+		NULL,
+		errorCode,
+		MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), // Default language
+		(LPTSTR) &lpMsgBuf,
+		0,
+		NULL 
+	);
+
+	string ret = (char*)lpMsgBuf;
+	// Free the buffer.
+	LocalFree( lpMsgBuf );
+
+	return ret;
+#else
+	return strerror(errorCode);
+#endif
+}
+
 
 
 //

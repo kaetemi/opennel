@@ -26,6 +26,7 @@
 #include "stdnet.h"
 
 #include "nel/net/tcp_sock.h"
+#include "nel/net/net_log.h"
 
 #ifdef NL_OS_WINDOWS
 # ifdef NL_COMP_VC8
@@ -87,7 +88,7 @@ void CTcpSock::connect( const CInetAddress& addr )
 	{
 	  if ( _Logging )
 	    {
-//		nldebug( "LNETL0: Closing socket %d before reconnecting", _Sock );
+//		LNETL0_DEBUG( "LNETL0: Closing socket %d before reconnecting", _Sock );
 	    }
 	  close();
 	}	
@@ -106,7 +107,7 @@ void CTcpSock::connect( const CInetAddress& addr )
  */
 void CTcpSock::disconnect()
 {
-	nldebug( "LNETL0: Socket %d disconnecting from %s...", _Sock, _RemoteAddr.asString().c_str() );
+	LNETL0_DEBUG( "LNETL0: Socket %d disconnecting from %s...", _Sock, _RemoteAddr.asString().c_str() );
 
 	// This shutdown resets the connection immediatly (not a graceful closure)
 #ifdef NL_OS_WINDOWS

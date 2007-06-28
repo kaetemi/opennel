@@ -180,6 +180,8 @@ void cbWSChooseShard (CMessage &msgin, const std::string &serviceName, TServiceI
 	msgout.serial (reason);
 	msgout.serial (cookie);
 	msgout.serial (ListenAddr);
+	uint32 nbPending = PendingUsers.size();
+	msgout.serial (nbPending);
 	CUnifiedNetwork::getInstance()->send ("WS", msgout);
 }
 

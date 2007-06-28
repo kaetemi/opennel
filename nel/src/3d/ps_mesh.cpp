@@ -42,7 +42,7 @@
 #include "nel/misc/path.h"
 
 #include <memory>
-
+#include <functional>
 
 
 

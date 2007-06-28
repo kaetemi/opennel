@@ -2,12 +2,13 @@
 
 /* Includes */
 
-#include <vector>
-#include <string>
-
 #include "nel/misc/debug.h"
 #include "nel/misc/file.h"
 #include "nel/misc/mem_stream.h"
+
+#include <vector>
+#include <string>
+
 
 using namespace std;
 using namespace NLMISC;
@@ -36,7 +37,7 @@ enum cf_type { T_UNKNOWN, T_INT, T_STRING, T_REAL };
 struct cf_value
 {
 	cf_type	Type;
-	int	Int;
+	int		Int;
 	double	Real;
 	char	String[1024];
 };
@@ -100,6 +101,8 @@ string		\"[^\"\n]*\"
 "}"			{ if (!cf_Ignore) return RBRACE; }
 "{"			{ if (!cf_Ignore) return LBRACE; }
 ","			{ if (!cf_Ignore) return COMMA; }
+"#fileline"	{ if (!cf_Ignore) return FILELINE; }
+
 
 (\ |\t)		{ /* ignore tabulation and spaces */; }
 

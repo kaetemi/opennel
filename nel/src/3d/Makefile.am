@@ -1,5 +1,5 @@
 #
-# $Id: Makefile.am,v 1.111 2005/03/22 10:01:27 cado Exp $
+# $Id: Makefile.am,v 1.112 2007-05-02 13:51:01 cado Exp $
 #
 
 MAINTAINERCLEANFILES = Makefile.in
@@ -233,6 +233,8 @@ libnel3d_la_SOURCES  = \
 	noise_3d.cpp \
 	noise_3d.h \
 	ordering_table.h \
+	packed_zone.cpp \
+	packed_zone.h \
 	particle_system.cpp \
 	particle_system.h \
 	particle_system_manager.cpp \
@@ -355,6 +357,7 @@ libnel3d_la_SOURCES  = \
 	ptr_set.h \
 	quad_effect.cpp \
 	quad_effect.h \
+	quad_grid.cpp \
 	quad_grid.h \
 	quad_grid_clip_cluster.cpp \
 	quad_grid_clip_cluster.h \
@@ -401,6 +404,8 @@ libnel3d_la_SOURCES  = \
 	shape_bank.h \
 	shape_bank_user.cpp \
 	shape_bank_user.h \
+	shape_info.cpp \
+	shape_info.h \
 	shifted_triangle_cache.cpp \
 	shifted_triangle_cache.h \
 	skeleton_model.cpp \

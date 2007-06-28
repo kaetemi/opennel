@@ -121,7 +121,7 @@ technique three_stages_3
 		AlphaOp[1] = SELECTARG1;
 		AlphaArg1[1] = TEXTURE; // for case when there's alpha test
 		AlphaOp[2] = DISABLE;
-		PixelShader = (NULL);
+		PixelShader = NULL;
 	}
 }
 

@@ -112,11 +112,6 @@ private:
 	virtual bool replaySystemCallbacks();
 #endif
 	
-
-	// debug features, we number all packet to be sure that they are all sent and received
-	// \todo remove this debug feature when ok
-	uint32 SendNextValue, ReceiveNextValue;
-
 	bool LockDeletion;
 };
 

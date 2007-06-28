@@ -20,8 +20,8 @@
 This module implements subscription to keywords search
 """
 __version__ = "$Revision: 1.2 $"
-# $Source: /mnt/x/wsl/cvsexp3/cvs/code/web/ryzom_com/PloneSubscription/content/KeywordsSubscription.py,v $
-# $Id: KeywordsSubscription.py,v 1.2 2006/04/19 14:36:55 bernard Exp $
+# $Source: /home/cvsroot/code/web/ryzom_com/PloneSubscription/content/KeywordsSubscription.py,v $
+# $Id: KeywordsSubscription.py,v 1.2 2006-04-19 14:36:55 bernard Exp $
 __docformat__ = 'restructuredtext'
 
 # Python imports

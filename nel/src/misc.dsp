@@ -225,6 +225,14 @@ SOURCE=..\include\nel\misc\stream.h
 
 SOURCE=..\include\nel\misc\stream_inline.h
 # End Source File
+# Begin Source File
+
+SOURCE=.\misc\xml_pack.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=..\include\nel\misc\xml_pack.h
+# End Source File
 # End Group
 # Begin Group "ConfigFile"
 
@@ -330,7 +338,7 @@ InputName=cf_lexical
 # Begin Source File
 
 SOURCE=.\misc\config_file\config_file.cpp
-# SUBTRACT CPP /YX /Yc /Yu
+# SUBTRACT CPP /Yu
 # End Source File
 # Begin Source File
 

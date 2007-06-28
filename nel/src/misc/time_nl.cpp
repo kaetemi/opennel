@@ -55,15 +55,15 @@ uint32 CTime::getSecondsSince1970 ()
  * nor it have the daylight saving ajustement.
  * This values is the same on all computer if computers are synchronized (with NTP for example).
  */
-uint32	CTime::getSecondsSince1970UTC ()
-{
-	// get the local time
-	time_t nowLocal = time(NULL);
-	// convert it to GMT time (UTC)
-	struct tm * timeinfo;
-	timeinfo = gmtime(&nowLocal);
-	return nl_mktime(timeinfo);
-}
+//uint32	CTime::getSecondsSince1970UTC ()
+//{
+//	// get the local time
+//	time_t nowLocal = time(NULL);
+//	// convert it to GMT time (UTC)
+//	struct tm * timeinfo;
+//	timeinfo = gmtime(&nowLocal);
+//	return nl_mktime(timeinfo);
+//}
 
 /* Return the local time in milliseconds.
  * Use it only to measure time difference, the absolute value does not mean anything.
@@ -324,6 +324,44 @@ std::string	CTime::getHumanRelativeTime(sint32 nbSeconds)
 
 	return ret;
 }
+
+#ifdef NL_OS_WINDOWS
+	/** Return the offset in 10th of micro sec between the windows base time (
+	 *	01-01-1601 0:0:0 UTC) and the unix base time (01-01-1970 0:0:0 UTC).
+	 *	This value is used to convert windows system and file time back and
+	 *	forth to unix time (aka epoch)
+	 */
+	uint64 CTime::getWindowsToUnixBaseTimeOffset()
+	{
+		static bool init = false;
+
+		static uint64 offset = 0;
+
+		if (! init)
+		{
+			// compute the offset to convert windows base time into unix time (aka epoch)
+			// build a WIN32 system time for jan 1, 1970
+			SYSTEMTIME baseTime;
+			baseTime.wYear = 1970;
+			baseTime.wMonth = 1;
+			baseTime.wDayOfWeek = 0;
+			baseTime.wDay = 1;
+			baseTime.wHour = 0;
+			baseTime.wMinute = 0;
+			baseTime.wSecond = 0;
+			baseTime.wMilliseconds = 0;
+
+			FILETIME baseFileTime = {0,0};
+			// convert it into a FILETIME value
+			SystemTimeToFileTime(&baseTime, &baseFileTime);
+			offset = baseFileTime.dwLowDateTime | (uint64(baseFileTime.dwHighDateTime)<<32);
+
+			init = true;
+		}
+
+		return offset;
+	}
+#endif
 
 
 } // NLMISC

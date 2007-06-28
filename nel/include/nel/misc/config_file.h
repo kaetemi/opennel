@@ -252,6 +252,9 @@ public:
 	/// Returns true if the file has been loaded
 	bool loaded();
 
+	/// Returns the number of variables in the configuration
+	uint32 getVarCount();
+
 	/// reload and reparse the file
 	void reparse (bool lookupPaths = false);
 

@@ -82,7 +82,7 @@
 # attributions are listed in the accompanying credits file.
 #
 ##############################################################################
-'''$Id: utils.py,v 1.1 2006/05/23 09:22:00 bernard Exp $
+'''$Id: utils.py,v 1.1 2006-05-23 09:22:00 bernard Exp $
 '''
 
 import Globals

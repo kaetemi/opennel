@@ -24,6 +24,9 @@
  */
 
 #include "stdmisc.h"
+
+#ifdef NL_OS_WINDOWS
+
 #include "nel/misc/check_fpu.h"
 #include "nel/misc/fast_floor.h"
 
@@ -104,3 +107,4 @@ void CFpuChecker::check()
 
 }
 
+#endif // NL_OS_WINDOWS

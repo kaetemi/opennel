@@ -1,5 +1,5 @@
 #
-# $Id: Makefile.am,v 1.85 2006/01/11 13:32:45 distrib Exp $
+# $Id: Makefile.am,v 1.87 2007-06-20 09:23:14 distrib Exp $
 #
 
 MAINTAINERCLEANFILES  = Makefile.in
@@ -29,7 +29,6 @@ libnelmisc_la_SOURCES = \
 	cpu_info.cpp \
 	cpu_time_stat.cpp \
 	debug.cpp \
-	device_manager.cpp \
 	di_event_emitter.cpp \
 	di_game_device.cpp \
 	di_game_device.h \
@@ -70,12 +69,10 @@ libnelmisc_la_SOURCES = \
 	mem_stream.cpp \
 	mouse_smoother.cpp \
 	mutex.cpp \
-	new_path.cpp \
 	noise_value.cpp \
 	o_xml.cpp \
 	object_arena_allocator.cpp \
 	object_vector.cpp \
-	old_path.cpp \
 	p_thread.cpp \
 	path.cpp \
 	plane.cpp \
@@ -122,7 +119,8 @@ libnelmisc_la_SOURCES = \
 	words_dictionary.cpp \
 	dynloadlib.cpp \
 	sstring.cpp \
-	co_task.cpp
+	co_task.cpp \
+	xml_pack.cpp
 
 
 noinst_HEADERS        = di_game_device.h \

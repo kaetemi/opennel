@@ -28,17 +28,19 @@
 #include "nel/misc/app_context.h"
 #include "nel/misc/dynloadlib.h"
 #include "nel/misc/command.h"
-#include "nel/net/module_common.h"
 #include "nel/misc/path.h"
 #include "nel/misc/twin_map.h"
 #include "nel/misc/sstring.h"
 #include "nel/misc/smart_ptr_inline.h"
-#include "nel/net/module_manager.h"
 
+#include "nel/net/module_common.h"
+#include "nel/net/module_manager.h"
 #include "nel/net/service.h"
 #include "nel/net/module_gateway.h"
 #include "nel/net/module.h"
 #include "nel/net/module_socket.h"
+#include "nel/net/net_log.h"
+
 
 using namespace std;
 using namespace NLMISC;
@@ -117,6 +119,9 @@ namespace NLNET
 		/// Module socket registry
 		TModuleSockets			_ModuleSocketsRegistry;
 
+		typedef std::map<std::string, IModuleGateway*>		TModuleGateways;
+		/// Module factory registry
+		TModuleGateways			_ModuleGatewaysRegistry;
 
 		///////////////////////////////////////////////////////////////////
 		// Methods 
@@ -498,7 +503,7 @@ namespace NLNET
 						// check for finished task
 						if (task->isFinished())
 						{
-							nldebug("NLNETL6: updateModule : task %p is finished, delete and remove from task list", task);
+							LNETL6_DEBUG("NLNETL6: updateModule : task %p is finished, delete and remove from task list", task);
 							// delete the task and resume the next one if any
 							delete task;
 							modBase->_ModuleTasks.erase(modBase->_ModuleTasks.begin());
@@ -559,20 +564,34 @@ namespace NLNET
 		 */
 		virtual IModuleGateway *getModuleGateway(const std::string &gatewayName)
 		{
-			nlstop;
-			return NULL;
+			TModuleGateways::iterator it(_ModuleGatewaysRegistry.find(gatewayName));
+			if (it == _ModuleGatewaysRegistry.end())
+				return NULL;
+			else
+				return it->second;
 		}
 		/** Register a gateway in the manager.
 		 */
 		virtual void registerModuleGateway(IModuleGateway *moduleGateway)
 		{
-			nlstop;
+			nlassert(moduleGateway != NULL);
+			TModuleGateways::iterator it(_ModuleGatewaysRegistry.find(moduleGateway->getGatewayName()));
+			nlassert(it == _ModuleGatewaysRegistry.end());
+
+			nldebug("Registering module gateway '%s'", moduleGateway->getGatewayName().c_str());
+			_ModuleGatewaysRegistry.insert(make_pair(moduleGateway->getGatewayName(), moduleGateway));
 		}
 		/** Unregister a socket in the manager.
 		 */
 		virtual void unregisterModuleGateway(IModuleGateway *moduleGateway)
 		{
-			nlstop;
+			nlassert(moduleGateway != NULL);
+			TModuleGateways::iterator it(_ModuleGatewaysRegistry.find(moduleGateway->getGatewayName()));
+			nlassert(it != _ModuleGatewaysRegistry.end());
+
+			nldebug("Unregistering module gateway '%s'", moduleGateway->getGatewayName().c_str());
+
+			_ModuleGatewaysRegistry.erase(it);
 		}
 
 		/** Get a module proxy with the module ID */

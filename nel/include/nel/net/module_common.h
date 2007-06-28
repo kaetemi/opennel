@@ -69,6 +69,9 @@ namespace NLNET
 	{
 	public:
 
+		// copy constructor is needed because SubParams contains pointers
+		TParsedCommandLine(const TParsedCommandLine& copy);
+
 		TParsedCommandLine()
 		{
 

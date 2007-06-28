@@ -1,4 +1,5 @@
 
+#include "nel/misc/types_nl.h"
 #include "nel/misc/command.h"
 #include "dyn_lib_test.h"
 #include "singleton_test.h"

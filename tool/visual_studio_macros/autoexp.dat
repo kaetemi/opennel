@@ -2,6 +2,8 @@
 ; Copyright(c) 1997 Microsoft Corporation. All Rights Reserved.
 ;---------------------------------------------------------------
 ;
+; Location: C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin
+;
 ; While debugging, Data Tips and items in the Watch and Variable
 ; windows are automatically expanded to show their most important
 ; elements. The expansion follows the format given by the rules
@@ -140,6 +142,16 @@ _STLD::map<*>=size=<size(),d>
 _STLD::deque<*>=size=<size(),d>
 _STLD::queue<*>=size=<size(),d>
 _STLD::_DBG_iter<*>=<_M_iterator,x>
+
+_STL::basic_string<*>=<_M_start,s>
+_STL::basic_stringstream<*>=<_M_buf._M_str._M_start,s>
+_STL::vector<*>=size=<size(),d> begin=<_M_start,x>
+_STL::set<*>=size=<size(),d>
+_STL::list<*>=size=<size(),d>
+_STL::map<*>=size=<size(),d>
+_STL::deque<*>=size=<size(),d>
+_STL::queue<*>=size=<size(),d>
+_STL::_DBG_iter<*>=<_M_iterator,x>
 
 ; NeL
 NLMISC::CMemStream=size=<length(),u>

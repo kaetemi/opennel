@@ -270,12 +270,12 @@ void CI18N::remove_C_Comment(ucstring &commentedString)
 }
 
 
-void	CI18N::skipWhiteSpace(ucstring::const_iterator &it, ucstring::const_iterator &last, ucstring *storeComments)
+void	CI18N::skipWhiteSpace(ucstring::const_iterator &it, ucstring::const_iterator &last, ucstring *storeComments, bool newLineAsWhiteSpace)
 {
 	while (it != last &&
 			(
-					*it == 0xa
-				||	*it == 0xd
+					(*it == 0xa && newLineAsWhiteSpace)
+				||	(*it == 0xd && newLineAsWhiteSpace)
 				||	*it == ' '
 				||	*it == '\t'
 				||	(storeComments && *it == '/' && it+1 != last && *(it+1) == '/')
@@ -316,6 +316,7 @@ void	CI18N::skipWhiteSpace(ucstring::const_iterator &it, ucstring::const_iterato
 
 bool CI18N::parseLabel(ucstring::const_iterator &it, ucstring::const_iterator &last, std::string &label)
 {
+	ucstring::const_iterator rewind = it;
 	label.erase();
 
 	// first char must be A-Za-z@_
@@ -330,7 +331,10 @@ bool CI18N::parseLabel(ucstring::const_iterator &it, ucstring::const_iterator &l
 		)
 		label.push_back(char(*it++));
 	else
+	{
+		it = rewind;
 		return false;
+	}
 
 	// other char must be [0-9A-Za-z@_]*
 	while (it != last && 
@@ -347,7 +351,7 @@ bool CI18N::parseLabel(ucstring::const_iterator &it, ucstring::const_iterator &l
 	return true;
 }
 
-bool CI18N::parseMarkedString(ucchar openMark, ucchar closeMark, ucstring::const_iterator &it, ucstring::const_iterator &last, ucstring &result)
+bool CI18N::parseMarkedString(ucchar openMark, ucchar closeMark, ucstring::const_iterator &it, ucstring::const_iterator &last, ucstring &result, uint32 *lineCounter, bool allowNewline)
 {
 //		ucstring ret;
 	result.erase();
@@ -357,7 +361,7 @@ bool CI18N::parseMarkedString(ucchar openMark, ucchar closeMark, ucstring::const
 	{
 		++it;
 
-		while (it != last && *it != closeMark)
+		while (it != last && *it != closeMark && (allowNewline || *it != '\n'))
 		{
 			// ignore tab, new lines and line feed
 			if (*it == openMark)
@@ -365,7 +369,9 @@ bool CI18N::parseMarkedString(ucchar openMark, ucchar closeMark, ucstring::const
 				nlwarning("I18N: Found a non escaped openmark %c in a delimited string (Delimiters : '%c' - '%c')", char(openMark), char(openMark), char(closeMark));
 				return false;
 			}
-			if (*it == '\t' || *it == '\n' || *it == '\r')
+			if (*it == '\t' 
+				|| (*it == '\n' && allowNewline) 
+				|| *it == '\r')
 				++it;
 			else if (*it == '\\' && it+1 != last && *(it+1) != '\\')
 			{
@@ -406,7 +412,13 @@ bool CI18N::parseMarkedString(ucchar openMark, ucchar closeMark, ucstring::const
 				++it;
 			}
 			else
+			{
+				if (*it == '\n' && lineCounter != NULL)
+					// update line counter
+					++(*lineCounter);
+
 				result.push_back(*it++);
+			}
 		}
 
 		if (it == last || *it != closeMark)
@@ -432,11 +444,68 @@ void CI18N::readTextFile(const std::string &filename,
 						 bool forceUtf8, 
 						 bool fileLookup, 
 						 bool preprocess,
-						 TLineFormat lineFmt)
+						 TLineFormat lineFmt,
+						 bool warnIfIncludesNotFound)
+{
+	// create the read context
+	TReadContext readContext;
+
+	// call the inner function
+	_readTextFile(filename, result, forceUtf8, fileLookup, preprocess, lineFmt, warnIfIncludesNotFound, readContext);
+
+	if (!readContext.IfStack.empty())
+	{
+		nlwarning("Preprocess: Missing %u closing #endif after parsing %s", readContext.IfStack.size(), filename.c_str() );
+	}
+}
+
+
+bool CI18N::matchToken(const char* token, ucstring::const_iterator &it, ucstring::const_iterator end)
+{
+	ucstring::const_iterator rewind = it;
+	skipWhiteSpace(it, end, NULL, false);
+	while (it != end && *token != 0 && *it == *token)
+	{
+		++it;
+		++token;
+	}
+
+	if (*token == 0)
+	{
+		// we fund the token
+		return true;
+	}
+
+	// not found
+	it = rewind;
+	return false;
+}
+
+void CI18N::skipLine(ucstring::const_iterator &it, ucstring::const_iterator end, uint32 &lineCounter)
+{
+	while (it != end && *it != '\n')
+		++it;
+
+	if (it != end)
+	{
+		++lineCounter;
+		++it;
+	}
+}
+
+
+void CI18N::_readTextFile(const std::string &filename, 
+						 ucstring &result, 
+						 bool forceUtf8, 
+						 bool fileLookup, 
+						 bool preprocess,
+						 TLineFormat lineFmt,
+						 bool warnIfIncludesNotFound,
+						 TReadContext &readContext)
 {
 	std::string fullName;
 	if (fileLookup)
-		fullName = CPath::lookup(filename, false);
+		fullName = CPath::lookup(filename, false,warnIfIncludesNotFound);
 	else
 		fullName = filename;
 
@@ -467,76 +536,296 @@ void CI18N::readTextFile(const std::string &filename,
 
 	if (preprocess)
 	{
+		// a string to old the result of the preprocess
 		ucstring final;
+		// make rooms to reduce allocation cost
+		final.reserve(raiseToNextPowerOf2(result.size()));
+
 		// parse the file, looking for preprocessor command.
-		ucstring::size_type pos = 0;
-		ucstring::size_type lastPos = 0;
-		ucstring	includeCmd("#include");
+		ucstring::const_iterator it(result.begin()), end(result.end());
 
-		while ((pos = result.find(includeCmd, pos)) != ucstring::npos)
+		// input line counter
+		uint32 currentLine = 1;
+
+		// set the current file and line info
+		final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
+
+		while (it != end)
 		{
-			// check that the #include come first on the line (only white space before)
-			if (pos != 0)
+			// remember the begin of the line
+			ucstring::const_iterator beginOfLine = it;
+
+			// advance in the line, looking for a preprocessor command
+			skipWhiteSpace(it, end, NULL, false);
+
+			if (it != end && *it == '#')
 			{
-				uint i=0;
-				while ((pos-i-1) > 0 && (result[pos-i-1] == ' ' || result[pos-i-1] == '\t'))
-					++i;
-				if (pos-i > 0 && result[pos-i-1] != '\n' && result[pos-i-1] != '\r')
+				// skip the '#' symbol
+				++it;
+				// we found a preprocessor command !
+				skipWhiteSpace(it, end, NULL, false);
+
+				if (matchToken("include", it, end))
 				{
-					// oups, not at start of line, ignore the #include
-					pos = pos + includeCmd.size();
-					continue;
-				}
-			}
-			// copy the previous text
-			final += result.substr(lastPos, pos - lastPos);
-
-			// extract the inserted file name.
-			ucstring::const_iterator first, last;
-			first = result.begin()+pos+includeCmd.size();
-			last = result.end();
-
-			ucstring name;
-			skipWhiteSpace(first, last);
-			if (parseMarkedString('\"', '\"', first, last, name))
-			{
-				string subFilename = name.toString();
-				nldebug("I18N: Including '%s' into '%s'",
-					subFilename.c_str(),
-					filename.c_str());
-				ucstring inserted;
-
-				{
-					CIFile testFile;
-					if (!testFile.open(subFilename))
+					if (readContext.IfStack.empty() || readContext.IfStack.back())
 					{
-						// try to open the include file relative to current file
-						subFilename = CFile::getPath(filename)+subFilename;
+						// we have an include command
+						skipWhiteSpace(it, end, NULL, false);
+						
+						// read the file name between quote
+						ucstring str;
+						breakable
+						{
+							if (!parseMarkedString(ucchar('\"'), ucchar('\"'), it, end, str, &currentLine, false))
+							{
+								nlwarning("Preprocess: In file %s(%u) : Error parsing include file command", filename.c_str(), currentLine);
+								
+								break;
+							}
+							else
+							{
+								// ok, read the subfile
+								string subFilename = str.toString();
+								
+								// check is file exist
+								if (!CFile::fileExists(subFilename))
+								{
+									// look for the file relative to current file
+									subFilename = CFile::getPath(filename)+subFilename;
+									if (!CFile::fileExists(subFilename))
+									{
+										// the include file is not found, issue a warning
+										nlwarning("Preprocess: In file %s(%u) : Cannot include file '%s'", 
+											filename.c_str(), currentLine,
+											str.toString().c_str());
+										
+										break;
+									}
+								}
+								
+								nlinfo("Preprocess: In file %s(%u) : Including '%s'",
+									filename.c_str(), currentLine,
+									subFilename.c_str());
+								
+								ucstring inserted;
+								_readTextFile(subFilename, inserted, forceUtf8, fileLookup, preprocess, lineFmt, warnIfIncludesNotFound, readContext);
+								final += inserted;
+							}
+						}
+						// advance to next line
+						skipLine(it, end, currentLine);
+						// reset filename and line counter
+						final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
 					}
 				}
-				readTextFile(subFilename, inserted, forceUtf8, fileLookup, preprocess);
+				else if (matchToken("optional", it, end))
+				{
+					if (readContext.IfStack.empty() || readContext.IfStack.back())
+					{
+						// we have an optional include command
+						skipWhiteSpace(it, end, NULL, false);
+						
+						// read the file name between quote
+						ucstring str;
+						breakable
+						{
+							if (!parseMarkedString('\"', '\"', it, end, str, &currentLine, false))
+							{
+								nlwarning("Preprocess: In file %s(%u) : Error parsing optional file command", filename.c_str(), currentLine);
+								
+								break;
+							}
+							else
+							{
+								// ok, read the subfile
+								string subFilename = str.toString();
+								
+								// check is file exist
+								if (!CFile::fileExists(subFilename))
+								{
+									// look for the file relative to current file
+									subFilename = CFile::getPath(filename)+subFilename;
+									if (!CFile::fileExists(subFilename))
+									{
+										// not found but optionnal, only emit a debug log
+										// the include file is not found, issue a warning
+										nldebug("Preprocess: In file %s(%u) : Cannot include optional file '%s'", 
+											filename.c_str(), currentLine,
+											str.toString().c_str());
+										
+										break;
+									}
+								}
+								
+								nlinfo("Preprocess: In file %s(%u) : Including optional '%s'",
+									filename.c_str(), currentLine,
+									subFilename.c_str());
+								
+								ucstring inserted;
+								_readTextFile(subFilename, inserted, forceUtf8, fileLookup, preprocess, lineFmt, warnIfIncludesNotFound, readContext);
+								final += inserted;
+							}
+						}
+						// advance to next line
+						skipLine(it, end, currentLine);
+						// reset filename and line counter
+						final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
+					}
+				}
+				else if (matchToken("define", it, end))
+				{
+					if (readContext.IfStack.empty() || readContext.IfStack.back())
+					{
+						skipWhiteSpace(it, end, NULL, false);
+						
+						string label;
+						if (parseLabel(it, end, label))
+						{
+							if (readContext.Defines.find(label) != readContext.Defines.end())
+							{
+								nlinfo("Preprocess: In file %s(%u) : symbol '%s' already defined", 
+									filename.c_str(), currentLine,
+									label.c_str());
+							}
+							else
+							{
+								readContext.Defines.insert(label);
+							}
+						}
+						else
+						{
+							nlwarning("Preprocess: In file %s(%u) : Error parsing #define command", filename.c_str(), currentLine);
+						}
+						
+						// advance to next line
+						skipLine(it, end, currentLine);
+						// update filename and line number
+						final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
+					}
+				}
+				else if (matchToken("ifdef", it, end))
+				{
+					if (readContext.IfStack.empty() || readContext.IfStack.back())
+					{
+						skipWhiteSpace(it, end, NULL, false);
+						string label;
+						if (parseLabel(it, end, label))
+						{
+							if (readContext.Defines.find(label) != 	readContext.Defines.end())
+							{
+								// symbol defined, push a true
+								readContext.IfStack.push_back(true);
+							}
+							else
+							{
+								// symbol not defines, push a false
+								readContext.IfStack.push_back(false);
+							}
+						}
+						else
+						{
+							nlwarning("Preprocess: In file %s(%u) : Error parsing #ifdef command", filename.c_str(), currentLine);
+						}
+						
+						// advance to next line
+						skipLine(it, end, currentLine);
+						// update filename and line number
+						final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
+					}
+					else
+					{
+						// just push à false
+						readContext.IfStack.push_back(false);
 
-				final += inserted;
+						skipLine(it, end, currentLine);
+					}
+				}
+				else if (matchToken("ifndef", it, end))
+				{
+					if (readContext.IfStack.empty() || readContext.IfStack.back())
+					{
+						skipWhiteSpace(it, end, NULL, false);
+						string label;
+						if (parseLabel(it, end, label))
+						{
+							if (readContext.Defines.find(label) == 	readContext.Defines.end())
+							{
+								// symbol defined, push a true
+								readContext.IfStack.push_back(true);
+							}
+							else
+							{
+								// symbol not defines, push a false
+								readContext.IfStack.push_back(false);
+							}
+						}
+						else
+						{
+							nlwarning("Preprocess: In file %s(%u) : Error parsing #ifndef command", filename.c_str(), currentLine);
+						}
+						
+						// advance to next line
+						skipLine(it, end, currentLine);
+						// update filename and line number
+						final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
+					}
+					else
+					{
+						// just push à false
+						readContext.IfStack.push_back(false);
+
+						skipLine(it, end, currentLine);
+					}
+				}
+				else if (matchToken("endif", it, end))
+				{
+					bool previous = false;
+					if (readContext.IfStack.empty())
+					{
+						nlwarning("Preprocess: In file %s(%u) : Error found '#endif' without matching #if", filename.c_str(), currentLine);
+					}
+					else
+					{
+						previous = readContext.IfStack.back();
+						
+						readContext.IfStack.pop_back();
+					}
+					skipLine(it, end, currentLine);
+
+					if (!previous && (readContext.IfStack.empty() || readContext.IfStack.back()))
+					{
+						// end of ignored file part, restore the file and line number
+						final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
+					}
+					// update filename and line number
+//					final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
+				}
+				else 
+				{
+					// unrecognized command, ignore line
+					nlwarning("Preprocess: In file %s(%u) : Error unrecognized preprocessor command",
+						filename.c_str(), currentLine);
+
+					skipLine(it, end, currentLine);
+					// update filename and line number
+					final += toString("#fileline \"%s\" %u\n", filename.c_str(), currentLine);
+				}
 			}
-			else
+			else 
 			{
-				nlwarning("I18N: Error parsing include file in line '%s' from file '%s'",
-					result.substr(pos, result.find(ucstring("\n"), pos) - pos).c_str(),
-					filename.c_str());
+				// normal line
+				skipLine(it, end, currentLine);
+
+				if (readContext.IfStack.empty() || readContext.IfStack.back())
+				{
+					// copy the line to the final string
+					final.append(beginOfLine, it);
+				}
 			}
-
-			pos = lastPos = first - result.begin();
 		}
 
-		// copy the remaining chars
-		ucstring temp = final;
-		
-		for (uint i=lastPos; i<result.size(); ++i)
-		{
-			temp += result[i];
-		}
-
-		result.swap(temp);
+		// set the result with the preprocessed content
+		result.swap(final);
 	}
 
 	// apply line delimiter conversion if needed

@@ -26,6 +26,7 @@
 #include "stdnet.h"
 
 #include "nel/net/listen_sock.h"
+#include "nel/net/net_log.h"
 
 #ifdef NL_OS_WINDOWS
 
@@ -83,7 +84,7 @@ void CListenSock::init( uint16 port )
 	// Now set the address visible from outside
 	_LocalAddr = CInetAddress::localHost();
 	_LocalAddr.setPort( port );
-	nldebug( "LNETL0: Socket %d listen socket is at %s", _Sock, _LocalAddr.asString().c_str() );
+	LNETL0_DEBUG( "LNETL0: Socket %d listen socket is at %s", _Sock, _LocalAddr.asString().c_str() );
 }
 
 
@@ -94,7 +95,7 @@ void CListenSock::init( const CInetAddress& addr )
 {
 	if ( ! addr.isValid() )
 	{
-		nldebug( "LNETL0: Binding listen socket to any address, port %hu", addr.port() );
+		LNETL0_DEBUG( "LNETL0: Binding listen socket to any address, port %hu", addr.port() );
 	}
 
 #ifndef NL_OS_WINDOWS
@@ -119,7 +120,7 @@ void CListenSock::init( const CInetAddress& addr )
 	{
 		throw ESocket( "Unable to listen on specified port" );
 	}
-//	nldebug( "LNETL0: Socket %d listening at %s", _Sock, _LocalAddr.asString().c_str() );
+//	LNETL0_DEBUG( "LNETL0: Socket %d listening at %s", _Sock, _LocalAddr.asString().c_str() );
 }
 
 
@@ -138,7 +139,7 @@ CTcpSock *CListenSock::accept()
 			// normal case, the listen sock have been closed, just return NULL.
 			return NULL;
 
-	  /*nlinfo( "LNETL0: Error accepting a connection");
+	  /*LNETL0_INFO( "LNETL0: Error accepting a connection");
 	  // See accept() man on Linux
 	  newsock = ::accept( _Sock, (sockaddr*)&saddr, &saddrlen );
 	  if ( newsock == INVALID_SOCKET )*/
@@ -150,7 +151,7 @@ CTcpSock *CListenSock::accept()
 	// Construct and save a CTcpSock object
 	CInetAddress addr;
 	addr.setSockAddr( &saddr );
-	nldebug( "LNETL0: Socket %d accepted an incoming connection from %s, opening socket %d", _Sock, addr.asString().c_str(), newsock );
+	LNETL0_DEBUG( "LNETL0: Socket %d accepted an incoming connection from %s, opening socket %d", _Sock, addr.asString().c_str(), newsock );
 	CTcpSock *connection = new CTcpSock( newsock, addr );
 	return connection;
 }

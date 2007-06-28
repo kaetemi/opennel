@@ -30,6 +30,7 @@
 #include "nel/net/buf_client.h"
 #include "nel/misc/thread.h"
 #include "nel/net/dummy_tcp_sock.h"
+#include "nel/net/net_log.h"
 
 #ifdef NL_OS_WINDOWS
 #include <windows.h>
@@ -177,7 +178,7 @@ bool CBufClient::dataAvailable()
 			// Process disconnection event
 			case CBufNetBase::Disconnection:
 
-				nldebug( "LNETL1: Disconnection event" );
+				LNETL1_DEBUG( "LNETL1: Disconnection event" );
 				_BufSock->setConnectedState( false );
 
 				// Call callback if needed
@@ -196,9 +197,9 @@ bool CBufClient::dataAvailable()
 					CFifoAccessor recvfifo( &receiveQueue() );
 					vector<uint8> buffer;
 					recvfifo.value().front (buffer);
-					nlinfo( "LNETL1: Invalid block type: %hu (should be = %hu)", (uint16)(buffer[buffer.size()-1]), (uint16)val );
-					nlinfo( "LNETL1: Buffer (%d B): [%s]", buffer.size(), stringFromVector(buffer).c_str() );
-					nlinfo( "LNETL1: Receive queue:" );
+					LNETL1_INFO( "LNETL1: Invalid block type: %hu (should be = %hu)", (uint16)(buffer[buffer.size()-1]), (uint16)val );
+					LNETL1_INFO( "LNETL1: Buffer (%d B): [%s]", buffer.size(), stringFromVector(buffer).c_str() );
+					LNETL1_INFO( "LNETL1: Receive queue:" );
 					recvfifo.value().display();
 					nlerror( "LNETL1: Invalid system event type in client receive queue" );
 				}
@@ -265,7 +266,7 @@ void CBufClient::receive( NLMISC::CMemStream& buffer )
 
 	// Extract event type
 	nlassert( buffer.buffer()[buffer.size()-1] == CBufNetBase::User );
-	//commented for optimisation nldebug( "LNETL1: Client read buffer (%d+%d B)", buffer.size(), sizeof(TSockId)+1 );
+	//commented for optimisation LNETL1_DEBUG( "LNETL1: Client read buffer (%d+%d B)", buffer.size(), sizeof(TSockId)+1 );
 	buffer.resize( buffer.size()-1 );
 }
 
@@ -389,7 +390,7 @@ CBufClient::~CBufClient()
 	// Clean thread termination
 	if ( _RecvThread != NULL )
 	{
-		nldebug( "LNETL1: Waiting for the end of the receive thread..." );
+		LNETL1_DEBUG( "LNETL1: Waiting for the end of the receive thread..." );
 		_RecvThread->wait();
 	}
 
@@ -437,7 +438,7 @@ void CClientReceiveTask::run()
 			{
 				if ( ! _NBBufSock->Sock->connected() )
 				{
-					nldebug( "LNETL1: Client connection %s closed", sockId()->asString().c_str() );
+					LNETL1_DEBUG( "LNETL1: Client connection %s closed", sockId()->asString().c_str() );
 					// The socket went to _Connected=false when throwing the exception
 					connected = false;
 					break;
@@ -447,7 +448,7 @@ void CClientReceiveTask::run()
 			// Process the data received
 			if ( _NBBufSock->receivePart( 1 ) ) // 1 for the event type
 			{
-				//commented out for optimisation: nldebug( "LNETL1: Client %s received buffer (%u bytes)", _SockId->asString().c_str(), buffer.size()/*, stringFromVector(buffer).c_str()*/ );
+				//commented out for optimisation: LNETL1_DEBUG( "LNETL1: Client %s received buffer (%u bytes)", _SockId->asString().c_str(), buffer.size()/*, stringFromVector(buffer).c_str()*/ );
 				// Add event type
 				_NBBufSock->fillEventTypeOnly();
 
@@ -459,7 +460,7 @@ void CClientReceiveTask::run()
 		}
 		catch ( ESocket& )
 		{
-			nldebug( "LNETL1: Client connection %s broken", sockId()->asString().c_str() );
+			LNETL1_DEBUG( "LNETL1: Client connection %s broken", sockId()->asString().c_str() );
 			sockId()->Sock->disconnect();
 			connected = false;
 		}

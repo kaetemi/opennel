@@ -67,21 +67,9 @@ END_MESSAGE_MAP()
 
 void CCreateFileDlg::OnBrowse() 
 {
-	char chosenPath[MAX_PATH];
-	// browse folder
-	CString title = getStrRsc(IDS_CHOOSE_BASE_PATH);
-	BROWSEINFO bi;		
-	bi.hwndOwner = m_hWnd;
-	bi.pidlRoot = NULL;
-	bi.pszDisplayName = chosenPath;
-	bi.lpszTitle = (LPCTSTR) title;
-	bi.ulFlags = BIF_DONTGOBELOWDOMAIN | BIF_EDITBOX;
-	bi.lpfn = NULL;
-	bi.lParam = NULL;
-	bi.iImage = 0;
-	LPITEMIDLIST result = SHBrowseForFolder(&bi);
-	if (result != NULL && SHGetPathFromIDList(result, chosenPath))
-	{
+	CString chosenPath;
+	if (browseFolder(getStrRsc(IDS_CHOOSE_BASE_PATH), chosenPath, this->m_hWnd))
+	{	
 		GetDlgItem(IDC_LOCATION)->SetWindowText((LPCTSTR) chosenPath);
 	}
 }

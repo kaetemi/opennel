@@ -568,7 +568,7 @@ void	CScene::renderPart(UScene::TRenderPart rp, bool	doHrcPass)
 	// If part asked already rendered, abort
 	nlassert((rp & _RenderedPart) == 0); // cannot render the same part twice during a render
 		
-	// if first part ro be rendered, do the start stuff
+	// if first part to be rendered, do the start stuff
 	if (_RenderedPart == UScene::RenderNothing)
 	{			
 		// update water envmap

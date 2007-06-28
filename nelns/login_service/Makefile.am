@@ -1,5 +1,5 @@
 #
-# $Id: Makefile.am,v 1.8 2002/09/16 14:50:07 lecroart Exp $
+# $Id: Makefile.am,v 1.8 2002-09-16 14:50:07 lecroart Exp $
 #
 
 MAINTAINERCLEANFILES  = Makefile.in

@@ -1,7 +1,7 @@
 -- \file nel_pacs_cylinder.ms
 -- Pacs cylinder primitive object for 3dsmax.
 --
--- $Id: nel_pacs_cylinder.ms,v 1.2 2003/05/21 09:48:17 corvazier Exp $
+-- $Id: nel_pacs_cylinder.ms,v 1.2 2003-05-21 09:48:17 corvazier Exp $
 --
 -- Copyright, 2001 Nevrax Ltd.
 --

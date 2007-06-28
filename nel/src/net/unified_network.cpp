@@ -77,6 +77,8 @@ CVariablePtr<uint32> DefaultMaxSentBlockSize("nel", "DefaultMaxSentBlockSize", "
 // Small log to help debugging unified network connection events (TODO: remove)
 static string allstuffs;
 
+const TServiceId	TServiceId::InvalidId = TServiceId(uint16(~0));
+
 //
 // Callbacks from NAMING SERVICE
 //
@@ -335,7 +337,8 @@ void	uncbServiceIdentification(CMessage &msgin, TSockId from, CCallbackNetBase &
 		{
 			inSid = CUnifiedNetwork::getInstance ()->_ExtSId;
 			CUnifiedNetwork::getInstance ()->_ExtSId.set(CUnifiedNetwork::getInstance ()->_ExtSId.get()+1);
-			nlwarning ("HNETL5: Received a connection from a service with a SId 0, we give him the SId %d", inSid.get());
+			// the following was an nlwarning but this is in fact desired behaviour and not an error so we have changed to nlinfo
+			nlinfo ("HNETL5: Received a connection from a service with a SId 0, we give him the SId %d", inSid.get());
 		}
 		else
 		{
@@ -489,7 +492,7 @@ void	uncbMsgProcessing(CMessage &msgin, TSockId from, CCallbackNetBase &netbase)
 				TTime after = CTime::getLocalTime();
 
 				// sum the time used to do callback
-				TimeInCallback += (after-before);
+				TimeInCallback += uint32((after-before));
 			}
 		}
 
@@ -575,7 +578,7 @@ void	CAliveCheck::run()
 				catch (ESocketConnectionFailed &e)
 				{
 #if FINAL_VERSION
-					nlinfo ("HNETL5: can't connect to %s-%hu now (%s)", CheckList[i].ServiceName.c_str(), CheckList[i].ServiceId, e.what ());
+					nlinfo ("HNETL5: can't connect to %s-%hu now (%s)", CheckList[i].ServiceName.c_str(), CheckList[i].ServiceId.get(), e.what ());
 #else
 					nlwarning ("HNETL5: can't connect to %s-%hu now (%s)", CheckList[i].ServiceName.c_str(), CheckList[i].ServiceId.get(), e.what ());
 #endif
@@ -1359,7 +1362,7 @@ void CUnifiedNetwork::autoReconnect( CUnifiedConnection &uc, uint connectionInde
 	catch (ESocketConnectionFailed &e)
 	{
 #if FINAL_VERSION
-		nlinfo ("HNETL5: can't connect to %s-%hu now (%s)", uc.ServiceName.c_str(), uc.ServiceId, e.what ());
+		nlinfo ("HNETL5: can't connect to %s-%hu now (%s)", uc.ServiceName.c_str(), uc.ServiceId.get(), e.what ());
 #else
 		nlwarning ("HNETL5: can't connect to %s-%hu now (%s)", uc.ServiceName.c_str(), uc.ServiceId.get(), e.what ());
 #endif
@@ -1430,6 +1433,14 @@ void CUnifiedNetwork::sleepUntilDataAvailable( TTime msecMax )
 #endif
 
 
+
+bool CUnifiedNetwork::isConnectionConnected(TServiceId sid) const
+{
+	// a Connected connection is a connection that is Ready but that is not yet connected (serverUp will be called latter via L5).
+	return sid.get() < _IdCnx.size() 
+		&& _IdCnx[sid.get()].State == CUnifiedConnection::Ready 
+		&& !_IdCnx[sid.get()].Connections.empty();
+}
 //
 //
 //

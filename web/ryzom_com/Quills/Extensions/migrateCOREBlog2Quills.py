@@ -6,7 +6,7 @@
 #              script migrateSimple2Quills.py
 #
 # Created:     2005/04/19
-# SVN-ID:      $Id: migrateCOREBlog2Quills.py,v 1.1 2006/03/10 15:07:05 chaouche Exp $
+# SVN-ID:      $Id: migrateCOREBlog2Quills.py,v 1.1 2006-03-10 15:07:05 chaouche Exp $
 # Licence:     LGPL
 #
 # This file is part of Quills

@@ -47,6 +47,9 @@ class TServiceId
 public:
 	typedef uint16	size_type;
 
+	/// A constant for the invalid service id
+	static const TServiceId	InvalidId;
+
 	/// Default constructor, set the id to 0 (no service should have 0)
 	TServiceId()
 		:	_ServiceId(0)
@@ -426,6 +429,9 @@ public:
 
 	/// Return the service ids of the active connections
 	const std::vector<TServiceId>&	getConnectionList() const { return _UsedConnection; }
+	
+	/// Return the state of the connection (return true if the connection is fully connected)
+	bool isConnectionConnected(TServiceId sid) const;
 
 	void				displayInternalTables (NLMISC::CLog *log = NLMISC::InfoLog);
 

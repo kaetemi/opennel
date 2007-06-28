@@ -185,6 +185,7 @@
 #define IDC_PROJECTION_MODE             1070
 #define IDC_MATRIX_MODE                 1070
 #define IDC_TRAIL_COORD_SYSTEM          1070
+#define IDC_OUTPUTPATH_OPTION           1070
 #define IDC_START_PICTURE               1071
 #define IDD_SET_VALUE                   1071
 #define IDC_ALTERNATE_OP                1071
@@ -327,6 +328,7 @@
 #define IDC_ENABLE_SLOW_DOWN            1148
 #define IDD_TUNE_MRM_DLG                1148
 #define IDC_FORCE_LIFE_TIME_UPDATE      1149
+#define IDD_SNAPSHOT_TOOL               1149
 #define IDC_DISPLAY_BBOX                1152
 #define IDC_BB_X                        1153
 #define IDC_BB_Y                        1154
@@ -588,6 +590,7 @@
 #define IDC_ANIM_SOUND_REMOVE           1345
 #define IDC_ROTY                        1345
 #define IDC_SSD_EDIT_BONE_SZ            1345
+#define IDC_OUTPUT_PATH                 1345
 #define IDC_ANIM_SOUND_SAVE             1346
 #define IDC_SSD_EDIT_SKIN_SZ            1346
 #define IDC_SOUNDANIMINFO               1347
@@ -684,6 +687,28 @@
 #define IDC_TDM_STATIC_MAX              1430
 #define IDC_TDM_STATIC                  1431
 #define IDC_MESH_ERROR                  1432
+#define IDC_BROWSE_INPUT_PATH           1433
+#define IDC_BROWSE_OUTPUT_PATH          1434
+#define IDC_RECURSE_SUBFOLDER           1435
+#define IDC_ADD_FILTER                  1438
+#define IDC_REMOVE_FILTER               1439
+#define IDC_EDIT_FILTER                 1440
+#define IDC_FORMAT                      1444
+#define IDC_INPUT_PATH                  1445
+#define IDC_GO                          1446
+#define IDC_FILTERS                     1447
+#define IDC_CLOSE                       1448
+#define IDC_LOG                         1449
+#define IDC_DUMP_TEXTURE_SETS           1451
+#define IDC_VIEW_FRONT                  1452
+#define IDC_VIEW_RIGHT                  1453
+#define IDC_VIEW_LEFT                   1454
+#define IDC_VIEW_TOP                    1455
+#define IDC_VIEW_BOTTOM                 1456
+#define IDC_VIEW_BACK                   1457
+#define IDC_POSTFIX_VIEWNAME            1458
+#define IDC_VIEW_ALL                    1459
+#define IDC_VIEW_NONE                   1460
 #define IDM_DOT_LOC                     2000
 #define IDM_LOOKAT_LOC                  2001
 #define IDM_FANLIGHT_LOC                2002
@@ -906,16 +931,31 @@
 #define IDS_OBJECT_VIEWER               32911
 #define ID_SCENE_SETLIGHTGROUPFACTOR    32912
 #define IDS_ERROR_IN_MORPH_MESH         32912
+#define IDS_CHOOSE_SNAPSHOT_INPUT_PATH  32913
 #define ID_SCENE_CAMERA_FIRST           32914
 #define ID_SCENE_CAMERA_0               32914
+#define IDS_CHOOSE_SNAPSHOT_OUTPUT_PATH 32914
 #define ID_SCENE_CAMERA_1               32915
+#define IDS_GETTING_PATH_CONTENT        32915
 #define ID_SCENE_CAMERA_2               32916
+#define IDS_DESKTOP_TOO_SMALL_FOR_SNAPSHOT 32916
 #define ID_SCENE_CAMERA_3               32917
+#define IDS_SNAPSHOT_NO_FILES_FOUND     32917
 #define ID_SCENE_CAMERA_4               32918
+#define IDS_SNAPSHOT_NO_FILTER_MATCH_FOUND 32918
 #define ID_SCENE_CAMERA_5               32919
+#define IDS_SNAPSHOT_FILES_TO_PROCESS   32919
 #define ID_SCENE_CAMERA_6               32920
+#define IDS_SNAPSHOT_NO_CONTENT_RETRIEVED 32920
 #define ID_SCENE_CAMERA_LAST            32921
 #define ID_SCENE_CAMERA_7               32921
+#define IDS_SNAPSHOT_FINISHED           32921
+#define IDS_SNAPSHOT_EMPTY_INPUT_PATH   32922
+#define IDS_SNAPSHOT_EMPTY_INPUT_PATH_NOT_FOUND 32923
+#define IDS_SNAPSHOT_EMPTY_OUTPUT_PATH  32924
+#define IDS_SNAPSHOT_CREATE_OUTPUT_DIRECTORY 32925
+#define IDS_SNAPSHOT_OUTPUT_PATH_CREATION_FAILED 32926
+#define IDS_SNAPSHOT_NO_VIEW_SELECTED   32927
 #define ID_WINDOW_CHOOSE_FRAME_DELAY    32955
 #define ID_WINDOW_CHOOSE_BG_COLOR       32956
 #define IDM_LIGHT                       32957
@@ -946,15 +986,16 @@
 #define iDM_SHOW_OCCLUSION_TEST_MESHS   32983
 #define ID_WINDOW_SKELETON_SCALE        32984
 #define ID_WINDOW_TUNE_MRM              32985
+#define IDM_SNAPSHOT_TOOL               32986
 #define ID_PS_EDITOR_STATUS             36111
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        1149
-#define _APS_NEXT_COMMAND_VALUE         32986
-#define _APS_NEXT_CONTROL_VALUE         1433
+#define _APS_NEXT_RESOURCE_VALUE        1151
+#define _APS_NEXT_COMMAND_VALUE         32987
+#define _APS_NEXT_CONTROL_VALUE         1460
 #define _APS_NEXT_SYMED_VALUE           1001
 #endif
 #endif

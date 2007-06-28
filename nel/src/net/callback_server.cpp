@@ -26,6 +26,7 @@
 #include "stdnet.h"
 
 #include "nel/net/callback_server.h"
+#include "nel/net/net_log.h"
 
 #ifdef USE_MESSAGE_RECORDER
 #include "nel/net/dummy_tcp_sock.h"
@@ -45,7 +46,7 @@ void cbsNewConnection (TSockId from, void *data)
 	nlassert (data != NULL);
 	CCallbackServer *server = (CCallbackServer *)data;
 
-	nldebug("LNETL3S: newConnection()");
+	LNETL3_DEBUG("LNETL3S: newConnection()");
 
 #ifdef USE_MESSAGE_RECORDER
 	// Record connection
@@ -108,7 +109,7 @@ void CCallbackServer::send (const CMessage &buffer, TSockId hostid, bool log)
 
 //	if (log)
 	{
-//		nldebug ("LNETL3S: Server: send(%s, %s)", buffer.toString().c_str(), hostid->asString().c_str());
+//		LNETL3_DEBUG ("LNETL3S: Server: send(%s, %s)", buffer.toString().c_str(), hostid->asString().c_str());
 	}
 
 #ifdef USE_MESSAGE_RECORDER
@@ -146,7 +147,7 @@ void CCallbackServer::update2 ( sint32 timeout, sint32 mintime )
 	checkThreadId ();
 	nlassert (connected ());
 
-	//	nldebug ("LNETL3S: Client: update()");
+//	LNETL3_DEBUG ("LNETL3S: Client: update()");
 	baseUpdate2 ( timeout, mintime ); // first receive
 
 #ifdef USE_MESSAGE_RECORDER
@@ -174,7 +175,7 @@ void CCallbackServer::update ( sint32 timeout )
 	checkThreadId ();
 	nlassert (connected ());
 
-	//	nldebug ("LNETL3S: Client: update()");
+//	LNETL3_DEBUG ("LNETL3S: Client: update()");
 	baseUpdate ( timeout ); // first receive
 
 #ifdef USE_MESSAGE_RECORDER
@@ -330,7 +331,7 @@ bool CCallbackServer::replaySystemCallbacks()
 				return true;
 
 			case Disconnecting:
-				nldebug( "LNETL3S: Disconnection event for %p", sockid );
+				LNETL3_DEBUG( "LNETL3S: Disconnection event for %p", sockid );
 				sockid->Sock->disconnect();
 				sockid->setConnectedState( false );
 	
@@ -357,7 +358,7 @@ bool CCallbackServer::replaySystemCallbacks()
 				// Bind it to the "old" sockid
 				_MR_SockIds.insert( make_pair( _MR_Recorder.ReceivedMessages.front().SockId, sockid ) );
 
-				nldebug( "LNETL3S: Connection event for %p", sockid );
+				LNETL3_DEBUG( "LNETL3S: Connection event for %p", sockid );
 				sockid->setConnectedState( true );
 					
 				// Call callback if needed

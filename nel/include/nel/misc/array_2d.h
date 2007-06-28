@@ -58,10 +58,10 @@ public:
 	void init(uint width, uint height, const T &defaultValue);
 	bool empty() const { return _Array.empty(); }
 	void clear();
-	typename iterator begin() { return _Array.begin(); }
-	typename iterator end() { return _Array.end(); }
-	typename const_iterator begin() const { return _Array.begin(); }
-	typename const_iterator end() const { return _Array.end(); }
+	iterator begin() { return _Array.begin(); }
+	iterator end() { return _Array.end(); }
+	const_iterator begin() const { return _Array.begin(); }
+	const_iterator end() const { return _Array.end(); }
 
 	bool isIn(sint x, sint y) const { return x >= 0 && y >= 0 && x < (sint) _Width && y < (sint) _Height; }
 	

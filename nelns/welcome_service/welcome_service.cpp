@@ -269,9 +269,6 @@ map<uint32, TServiceId> UserIdSockAssociations;
 // ubi hack
 string FrontEndAddress;
 
-/// \todo ace: code a better heuristic to distribute user on FES (using NbUser and not only NbEstimatedUser)
-
-
 
 
 enum TFESState
@@ -282,13 +279,10 @@ enum TFESState
 
 struct CFES
 {
-	CFES (TServiceId sid) : SId(sid), NbPendingUsers(0), NbEstimatedUser(0), NbUser(0), State(PatchOnly) { }
+	CFES (TServiceId sid) : SId(sid), NbPendingUsers(0), NbUser(0), State(PatchOnly) { }
 
 	TServiceId	SId;				// Connection to the front end
 	uint32		NbPendingUsers;		// Number of not yet connected users (but rooted to this frontend)
-	uint32		NbEstimatedUser;	// Number of user that already routed to this FES. This number could be different with the NbUser if
-									// some users are not yet connected on the FES (used to equilibrate connection to all front end).
-									// This number *never* decrease, it's just to fairly distribute user.
 	uint32		NbUser;				// Number of user currently connected on this front end
 
 	TFESState	State;				// State of frontend (patching/accepting clients)
@@ -296,7 +290,6 @@ struct CFES
 
 	uint32		getUsersCountHeuristic() const
 	{
-		//return NbEstimatedUser;
 		return NbUser + NbPendingUsers;
 	}
 
@@ -394,7 +387,7 @@ void displayFES ()
 	nlinfo ("There's %d FES in the list:", FESList.size());
 	for (list<CFES>::iterator it = FESList.begin(); it != FESList.end(); it++)
 	{
-		nlinfo(" > %u NbUser:%d NbEstUser:%d", (*it).SId.get(), (*it).NbUser, (*it).NbEstimatedUser);
+		nlinfo(" > %u NbUser:%d NbPendingUser:%d", it->SId.get(), it->NbUser, it->NbPendingUsers);
 	}
 	nlinfo ("End of the list");
 }
@@ -441,6 +434,19 @@ void cbFESShardChooseShard (CMessage &msgin, const std::string &serviceName, TSe
 		else
 		{
 			msgout.serial (FrontEndAddress);
+		}
+
+		uint32 nbPendingUser;
+		msgin.serial(nbPendingUser);
+
+		// update the pending user count for this shard
+		for (list<CFES>::iterator it = FESList.begin(); it != FESList.end(); it++)
+		{
+			if (it->SId == sid)
+			{
+				it->NbPendingUsers = nbPendingUser;
+				break;
+			}
 		}
 
 		/*
@@ -532,7 +538,8 @@ void cbFESClientConnected (CMessage &msgin, const std::string &serviceName, TSer
 		totalNbPendingUsers += (*it).NbPendingUsers;
 	}
 
-	CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
+	if (CWelcomeServiceMod::isInitialized() != NULL)
+		CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
 
 	if (con)
 	{
@@ -568,8 +575,11 @@ void	cbFESRemovedPendingCookie(CMessage &msgin, const std::string &serviceName, 
 		totalNbPendingUsers += (*it).NbPendingUsers;
 	}
 
-	CWelcomeServiceMod::getInstance()->pendingUserLost(cookie);
-	CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
+	if (CWelcomeServiceMod::isInitialized() != NULL)
+	{
+		CWelcomeServiceMod::getInstance()->pendingUserLost(cookie);
+		CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
+	}
 }
 
 // This function is called by FES to setup its PatchAddress
@@ -640,7 +650,8 @@ void	cbFESNbPlayers(CMessage &msgin, const std::string &serviceName, TServiceId 
 		totalNbPendingUsers += (*it).NbPendingUsers;
 	}
 
-	CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
+	if (CWelcomeServiceMod::isInitialized() != NULL)
+		CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
 }
 
 
@@ -671,7 +682,8 @@ void	cbFESNbPlayers2(CMessage &msgin, const std::string &serviceName, TServiceId
 		totalNbPendingUsers += fes.NbPendingUsers;
 	}
 
-	CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
+	if (CWelcomeServiceMod::isInitialized() != NULL)
+		CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
 }
 
 /*
@@ -747,12 +759,6 @@ void cbFESConnection (const std::string &serviceName, TServiceId  sid, void *arg
 	bool	dummy;
 	FESList.back().reportStateToLS(dummy);
 
-	// Reset NbEstimatedUser to NbUser for all front-ends
-	for (list<CFES>::iterator it = FESList.begin(); it != FESList.end(); it++)
-	{
-		(*it).NbEstimatedUser = (*it).NbUser;
-	}
-
 	if (!UsePatchMode.get())
 	{
 		FESList.back().setToAcceptClients();
@@ -802,6 +808,19 @@ void cbFESDisconnection (const std::string &serviceName, TServiceId  sid, void *
 			break;
 		}
 	}
+
+	// Update the welcome service client with the new count of connection 
+
+	uint32 totalNbOnlineUsers =0, totalNbPendingUsers = 0;
+	for (list<CFES>::iterator it = FESList.begin(); it != FESList.end(); it++)
+	{
+		const CFES &fes = *it;
+		totalNbOnlineUsers += fes.NbUser;
+		totalNbPendingUsers += fes.NbPendingUsers;
+	}
+
+	if (CWelcomeServiceMod::isInitialized() != NULL)
+		CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
 
 	displayFES ();
 }
@@ -1009,7 +1028,6 @@ std::string lsChooseShard (const std::string &userName,
 	msgout.serial (charSlot);
 
 	CUnifiedNetwork::getInstance()->send (best->SId, msgout);
-	best->NbEstimatedUser++;
 	best->NbPendingUsers++;
 
 	// Update counts
@@ -1019,7 +1037,8 @@ std::string lsChooseShard (const std::string &userName,
 		totalNbOnlineUsers += (*it).NbUser;
 		totalNbPendingUsers += (*it).NbPendingUsers;
 	}
-	CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
+	if (CWelcomeServiceMod::isInitialized() != NULL)
+		CWelcomeServiceMod::getInstance()->updateConnectedPlayerCount(totalNbOnlineUsers, totalNbPendingUsers);
 
 	return "";
 }
@@ -1038,7 +1057,7 @@ bool disconnectClient(uint32 userId)
 	map<uint32, TServiceId>::iterator it = UserIdSockAssociations.find (userId);
 	if (it == UserIdSockAssociations.end ())
 	{
-		nlwarning ("Can't disconnect the user %d, he is not found", userId);
+		nlinfo ("Login service ask to disconnect user %d, he is not connected here, so ignoring", userId);
 		return false;
 	}
 	else
@@ -1538,7 +1557,11 @@ NLMISC_COMMAND (frontends, "displays the list of all registered front ends", "")
 	log.displayNL ("Display the %d registered front end :", FESList.size());
 	for (list<CFES>::iterator it = FESList.begin(); it != FESList.end (); it++)
 	{
-		log.displayNL ("> FE %u: nb estimated users: %u nb users: %u", (*it).SId.get(), (*it).NbEstimatedUser, (*it).NbUser );
+//		log.displayNL ("> FE %u: nb estimated users: %u nb users: %u, nb pending users : %u", 
+		log.displayNL ("> FE %u: nb users: %u, nb pending users : %u", 
+			it->SId.get(), 
+			it->NbUser,
+			it->NbPendingUsers);
 	}
 	log.displayNL ("End ot the list");
 

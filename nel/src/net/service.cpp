@@ -66,6 +66,7 @@
 #include "nel/net/varpath.h"
 #include "nel/net/admin.h"
 #include "nel/net/module_manager.h"
+#include "nel/net/transport_class.h"
 
 #include "nel/memory/memory_manager.h"
 
@@ -1020,7 +1021,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 			}
 			else
 			{
-				_SId.set(sid);
+				_SId.set(static_cast<uint16>(sid));
 			}
 		}
 		else
@@ -1210,6 +1211,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 			SaveFilesDirectory = IService::getInstance()->getArg('W');
 		}
 
+		CTransportClass::init();
 
 		//
 		// Call the user service init
@@ -1545,6 +1547,8 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 			setCurrentStatus("Releasing");
 			release ();
 		}
+
+		CTransportClass::release();
 
 		//
 		// Delete all network connection (naming client also)

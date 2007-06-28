@@ -235,12 +235,26 @@ namespace NLNET
 	};
 
 
+	/** Register the gateway in the module manager gateway registry
+	 */
+	void CModuleGateway::registerGateway()
+	{
+		IModuleManager::getInstance().registerModuleGateway(this);
+	}
+	/** Unregister the gateway in the module manager gateway registry
+	 */
+	void CModuleGateway::unregisterGateway()
+	{
+		IModuleManager::getInstance().unregisterModuleGateway(this);
+	}
+
+
 	/** The standard gateway that interconnect module 
 	 *	across process.
 	 */
 	class CStandardGateway : 
 		public CModuleBase,
-		public IModuleGateway,
+		public CModuleGateway,
 		public CModuleSocket
 	{
 		typedef map<TModuleId, TModuleProxyPtr>		TModuleProxies;
@@ -316,6 +330,7 @@ namespace NLNET
 
 			// must be done before the other destructors are called
 			unregisterSocket();
+			unregisterGateway();
 		}
 
 		CModuleProxy *getModuleProxy(TModuleId proxyId)
@@ -1438,6 +1453,7 @@ namespace NLNET
 			// no options for now
 
 			registerSocket();
+			registerGateway();
 
 			return ret;
 		}

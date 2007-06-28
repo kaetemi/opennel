@@ -44,7 +44,7 @@ namespace NLNET
 	 */
 	class CLocalGateway : 
 		public CModuleBase,
-		public IModuleGateway,
+		public CModuleGateway,
 		public CModuleSocket
 	{
 		// the proxy that represent this gateway
@@ -72,6 +72,7 @@ namespace NLNET
 
 			// must be done before the other destructors are called
 			unregisterSocket();
+			unregisterGateway();
 		}
 
 		/***********************************************************
@@ -324,7 +325,7 @@ namespace NLNET
 			// in fact, this gateway is so simple, that it have no option !
 
 			registerSocket();
-//			IModuleManager::getInstance().registerModuleSocket(this);
+			registerGateway();
 
 			return ret;
 		}

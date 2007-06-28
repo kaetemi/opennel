@@ -33,6 +33,7 @@
 #include "nel/misc/path.h"
 #include "nel/misc/command.h"
 #include "nel/misc/sstring.h"
+#include "nel/misc/xml_pack.h"
 
 using namespace std;
 
@@ -66,6 +67,7 @@ CIFile::CIFile() : IStream(true)
 	_FileSize = 0;
 	_BigFileOffset = 0;
 	_IsInBigFile = false;
+	_IsInXMLPackFile = false;
 	_CacheFileOnOpen = false;
 	_IsAsyncLoading = false;
 	_AllowBNPCacheFileOnOpen= true;
@@ -80,6 +82,7 @@ CIFile::CIFile(const std::string &path, bool text) : IStream(true)
 	_FileSize = 0;
 	_BigFileOffset = 0;
 	_IsInBigFile = false;
+	_IsInXMLPackFile = false;
 	_CacheFileOnOpen = false;
 	_IsAsyncLoading = false;
 	_AllowBNPCacheFileOnOpen= true;
@@ -183,22 +186,43 @@ bool		CIFile::open(const std::string &path, bool text)
 	_FileName = path;
 	_ReadPos = 0;
 
-	// Bigfile access requested ?
-	if (path.find('@') != string::npos)
+	// Bigfile or xml pack access requested ?
+	string::size_type pos;
+	if ((pos = path.find('@')) != string::npos)
 	{
-		_IsInBigFile = true;
-		if(_AllowBNPCacheFileOnOpen)
+		// check for a double @ to identify XML pack file
+		if (pos+1 < path.size() && path[pos+1] == '@')
 		{
-			_F = CBigFile::getInstance().getFile (path, _FileSize, _BigFileOffset, _CacheFileOnOpen, _AlwaysOpened);
+			// xml pack file
+			_IsInXMLPackFile = true;
+
+			if(_AllowBNPCacheFileOnOpen)
+			{
+				_F = CXMLPack::getInstance().getFile(path, _FileSize, _BigFileOffset, _CacheFileOnOpen, _AlwaysOpened);
+			}
+			else
+			{
+				bool	dummy;
+				_F = CXMLPack::getInstance().getFile (path, _FileSize, _BigFileOffset, dummy, _AlwaysOpened);
+			}
 		}
 		else
 		{
-			bool	dummy;
-			_F = CBigFile::getInstance().getFile (path, _FileSize, _BigFileOffset, dummy, _AlwaysOpened);
+			// bnp file
+			_IsInBigFile = true;
+			if(_AllowBNPCacheFileOnOpen)
+			{
+				_F = CBigFile::getInstance().getFile (path, _FileSize, _BigFileOffset, _CacheFileOnOpen, _AlwaysOpened);
+			}
+			else
+			{
+				bool	dummy;
+				_F = CBigFile::getInstance().getFile (path, _FileSize, _BigFileOffset, dummy, _AlwaysOpened);
+			}
 		}
 		if(_F != NULL)
 		{
-			// Start to load the bigfile at the file offset.
+			// Start to load the bigfile or xml file at the file offset.
 			nlfseek64 (_F, _BigFileOffset, SEEK_SET);
 
 			// Load into cache ?
@@ -219,6 +243,7 @@ bool		CIFile::open(const std::string &path, bool text)
 	else
 	{
 		_IsInBigFile = false;
+		_IsInXMLPackFile = false;
 		_BigFileOffset = 0;
 		_AlwaysOpened = false;
 		_F = fopen (path.c_str(), mode);
@@ -246,6 +271,7 @@ bool		CIFile::open(const std::string &path, bool text)
 		}
 		else
 		{
+			nlwarning("Failed to open file '%s', error %u : %s", path.c_str(), errno, strerror(errno));
 			_FileSize = 0;
 		}
 		
@@ -289,7 +315,7 @@ void		CIFile::close()
 	}
 	else
 	{
-		if (_IsInBigFile)
+		if (_IsInBigFile || _IsInXMLPackFile)
 		{
 			if (!_AlwaysOpened)
 			{
@@ -309,6 +335,7 @@ void		CIFile::close()
 			}
 		}
 	}
+	nlassert(_Cache == NULL);
 	resetPtrTable();
 }
 
@@ -379,6 +406,8 @@ bool		CIFile::eof ()
 // ======================================================================================================
 void		CIFile::serialBuffer(uint8 *buf, uint len) throw(EReadError)
 {
+	if (len == 0)
+		return;
 	// Check the read pos
 	if ((_ReadPos < 0) || ((_ReadPos+len) > _FileSize))
 		throw EReadError (_FileName);
@@ -392,7 +421,8 @@ void		CIFile::serialBuffer(uint8 *buf, uint len) throw(EReadError)
 		_NbBytesSerialized += len;
 		if (_NbBytesSerialized > 64 * 1024)
 		{
-			nlSleep (5);
+			// give up time slice
+			nlSleep (0);
 			_NbBytesSerialized = 0;
 		}
 	}
@@ -406,11 +436,11 @@ void		CIFile::serialBuffer(uint8 *buf, uint len) throw(EReadError)
 	{
 		int read;
 		_ReadingFromFile += len;
-		read=fread(buf, 1, len, _F);
+		read=fread(buf, len, 1, _F);
 		_FileRead++;
 		_ReadingFromFile -= len;
-		_ReadFromFile += read * 1;
-		if (read < (int)len)
+		_ReadFromFile += /*read **/ len;
+		if (read != 1 /*< (int)len*/)
 			throw EReadError(_FileName);
 		_ReadPos += len;
 	}
@@ -593,13 +623,13 @@ void	COFile::internalClose(bool success)
 			// Delete old
 			if (success)
 			{
-				if (CFile::fileExists(_FileName))
-					CFile::deleteFile (_FileName);
-
 				// Bug under windows, sometimes the file is not deleted
 				uint retry = 1000;
 				while (--retry)
 				{
+					if (CFile::fileExists(_FileName))
+						CFile::deleteFile (_FileName);
+
 					if (CFile::moveFile (_FileName.c_str(), _TempFileName.c_str()))
 						break;
 					nlSleep (0);
@@ -630,8 +660,8 @@ void		COFile::serialBuffer(uint8 *buf, uint len) throw(EWriteError)
 {
 	if(!_F)
 		throw	EFileNotOpened(_FileName);
-//	if(fwrite(buf, len, 1, _F) != 1)
-	if(fwrite(buf, 1, len, _F) != len)
+	if(fwrite(buf, len, 1, _F) != 1)
+//	if(fwrite(buf, 1, len, _F) != len)
 	{
 		if (ferror(_F) && errno == 28 /*ENOSPC*/)
 		{

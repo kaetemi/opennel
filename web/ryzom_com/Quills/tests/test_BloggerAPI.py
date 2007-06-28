@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 """
-$Id: test_BloggerAPI.py,v 1.1 2006/03/10 15:07:06 chaouche Exp $
+$Id: test_BloggerAPI.py,v 1.1 2006-03-10 15:07:06 chaouche Exp $
 """
 
 import os, sys

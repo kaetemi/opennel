@@ -53,6 +53,7 @@ namespace NLMISC
 	 */
 	class INelContext
 	{
+		static INelContext ** _getInstance();
 	public:
 
 		/// Access to the context singleton

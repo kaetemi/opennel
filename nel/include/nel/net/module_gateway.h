@@ -153,6 +153,13 @@ namespace NLNET
 
 		virtual ~IModuleGateway() {}
 
+		/** Register the gateway in the module manager gateway registry
+		 */
+		virtual void registerGateway() =0;
+		/** Unregister the gateway in the module manager gateway registry
+		 */
+		virtual void unregisterGateway() =0;
+
 		//@{
 		//@name Gateway general information and control
 		/// Return the local name of the gateway
@@ -274,6 +281,20 @@ namespace NLNET
 		 */
 		virtual void dispatchModuleMessage(IModuleProxy *senderProxy, IModuleProxy *addresseeProxy, const CMessage &message) =0;
 		//@}
+	};
+
+	/** Intermediate class must be used as base class
+	 *	for implementing gateway.
+	 */
+	class CModuleGateway : public IModuleGateway
+	{
+	protected:
+		/** Register the gateway in the module manager gateway registry
+		 */
+		virtual void registerGateway();
+		/** Unregister the gateway in the module manager gateway registry
+		 */
+		virtual void unregisterGateway();
 	};
 
 	/** Interface class for gateway transport.

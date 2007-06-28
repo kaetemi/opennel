@@ -30,11 +30,8 @@
 
 #include <cstdio>
 #include <cstdarg>
-#if NL_COMP_STLPORT5
-// needed to define std::vector<bool>::reference
-#include <vector>
-#endif
-namespace	NLMISC
+
+namespace NLMISC
 {
 
 // get a string and add \r before \n if necessary
@@ -203,15 +200,14 @@ inline std::string toString(const double &val) { return toString("%lf", val); }
 inline std::string toString(const bool &val) { return toString("%u", val?1:0); }
 inline std::string toString(const std::string &val) { return val; }
 
-
-#ifndef NL_COMP_STLPORT5
-
 // stl vectors of bool use bit reference and not real bools, so define the operator for bit reference
-inline std::string toString(const std::_Bit_reference &val) { return toString( bool(val)); }
+
+// Debug : Sept 01 2006
+#if _STLPORT_VERSION >= 0x510
+	inline std::string toString(const std::priv::_Bit_reference &val) { return toString( bool(val)); }
 #else
-// stdl port move _Bit_reference into private namespace
-inline std::string toString(const std::vector<bool>::reference &val) { return toString( bool(val)); }
-#endif
+	inline std::string toString(const std::_Bit_reference &val) { return toString( bool(val)); }
+#endif // _STLPORT_VERSION
 
 #ifdef NL_COMP_VC6
 inline std::string toString(const uint &val) { return toString("%u", val); }
@@ -236,14 +232,16 @@ inline void fromString(const std::string &str, float &val) { sscanf(str.c_str(),
 inline void fromString(const std::string &str, double &val) { sscanf(str.c_str(), "%lf", &val); }
 inline void fromString(const std::string &str, bool &val) { uint32 v; fromString(str, v); val = (v==1); }
 inline void fromString(const std::string &str, std::string &val) { val = str; }
-#ifndef NL_COMP_STLPORT5
-// stl vectors of bool use bit reference and not real bools, so define the operator for bit reference
-inline void fromString(const std::string &str, std::_Bit_reference &val) { uint32 v; fromString(str, v); val = (v==1); }
-#else
-// stdl port move _Bit_reference into private namespace
-inline void fromString(const std::string &str, std::vector<bool>::reference &val) { uint32 v; fromString(str, v); val = (v==1); }
 
-#endif
+// stl vectors of bool use bit reference and not real bools, so define the operator for bit reference
+
+// Debug : Sept 01 2006
+#if _STLPORT_VERSION >= 0x510
+	inline void fromString(const std::string &str, std::priv::_Bit_reference &val) { uint32 v; fromString(str, v); val = (v==1); }
+#else
+	inline void fromString(const std::string &str, std::_Bit_reference &val) { uint32 v; fromString(str, v); val = (v==1); }
+#endif // _STLPORT_VERSION
+
 #ifdef NL_COMP_VC6
 inline void fromString(const std::string &str, uint &val) { sscanf(str.c_str(), "%u", &val); }
 inline void fromString(const std::string &str, sint &val) { sscanf(str.c_str(), "%d", &val); }

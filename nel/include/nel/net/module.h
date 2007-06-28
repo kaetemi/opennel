@@ -742,7 +742,7 @@ namespace NLNET
 
 	public:
 		/// return the default init string (empty)
-		static const std::string &CModuleBase::getInitStringHelp();
+		static const std::string &getInitStringHelp();
 
 		/** Search an interceptor in the interceptor list.
 		 *	By default, the method begin to search at the first interceptor.

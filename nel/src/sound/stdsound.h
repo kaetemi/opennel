@@ -1,4 +1,8 @@
 
+#include "nel/misc/types_nl.h"
+#include "nel/misc/common.h"
+#include "nel/misc/debug.h"
+
 #include <cstdlib>
 #include <cstdio>
 #include <cmath>
@@ -14,9 +18,5 @@
 #include <exception>
 #include <utility>
 #include <deque>
-
-#include "nel/misc/types_nl.h"
-#include "nel/misc/common.h"
-#include "nel/misc/debug.h"
 
 #include "nel/misc/vector.h"

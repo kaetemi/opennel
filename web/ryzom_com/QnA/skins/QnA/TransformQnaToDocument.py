@@ -32,7 +32,7 @@ if object:
    #on fabrique une nouvelle id (faire autre chose)
    newid = id + '_Document'
 
-   #appel du constructeur et on remplis les diffÃƒÂ©rents champs
+   #appel du constructeur et on remplis les diffÃ©rents champs
    target.invokeFactory(id=newid, type_name='Document', title=title, description=description,text=text)
    new_obj = getattr(target, newid)
    new_obj.setDescription(description)

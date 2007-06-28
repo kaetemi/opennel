@@ -1974,7 +1974,8 @@ bool CDriverUser::stretchRect(UScene * scene, class UTexture & srcUText, NLMISC:
 		setMatrixMode3D(pCam);
 
 		_MatTextStretchInternal.setTexture(0, NULL);
-		setRenderTarget(CTextureUser(), 0, 0, 0, 0);
+		CTextureUser cu;
+		setRenderTarget(cu, 0, 0, 0, 0);
 	}
 
 	return true;
@@ -1987,7 +1988,8 @@ bool CDriverUser::setRenderTarget(class UTexture & uTex, uint32 x, uint32 y, uin
 
 	if(tex!=NULL)
 	{
-		setRenderTarget(CTextureUser());
+		CTextureUser cu;
+		setRenderTarget(cu);
 	}
 
 	bool result = _Driver->setRenderTarget(tex, x, y, width, height, mipmapLevel, cubeFace);

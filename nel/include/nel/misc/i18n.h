@@ -154,7 +154,8 @@ public:
 								ucstring &result, bool forceUtf8 = false, 
 								bool fileLookup = true, 
 								bool preprocess = false,
-								TLineFormat lineFmt = LINE_FMT_NO_CARE);
+								TLineFormat lineFmt = LINE_FMT_NO_CARE,
+							    bool warnIfIncludesNotFound = true);
 
 	/** Read the content of a buffer as a unicode text.
 	 *	This is to read preloaded unicode files.
@@ -191,11 +192,19 @@ public:
 	 *	This is usefull if you whant to keep the comments.
 	 *	NB : comments are appended to the comments string.
 	 */
-	static void		skipWhiteSpace		(ucstring::const_iterator &it, ucstring::const_iterator &last, ucstring *storeComments = NULL);
+	static void		skipWhiteSpace		(ucstring::const_iterator &it, ucstring::const_iterator &last, ucstring *storeComments = NULL, bool newLineAsWhiteSpace = true);
 	/// Parse a label
 	static bool		parseLabel			(ucstring::const_iterator &it, ucstring::const_iterator &last, std::string &label);
 	/// Parse a marked string. NB : usualy, we use [ and ] as string delimiters in translation files.
-	static bool		parseMarkedString	(ucchar openMark, ucchar closeMark, ucstring::const_iterator &it, ucstring::const_iterator &last, ucstring &result);
+	static bool		parseMarkedString	(ucchar openMark, ucchar closeMark, ucstring::const_iterator &it, ucstring::const_iterator &last, ucstring &result, uint32 *lineCounter = NULL, bool allowNewline = true);
+	/** Try to read a given token at current position.
+	 *	The function will fist skip any white space then try to read the token
+	 *	If found, the function return true and 'it' is advanced after the matched token,
+	 *	Otherwise, the function return false and 'it' is unchanged.
+	 */
+	static bool		matchToken(const char* token, ucstring::const_iterator &it, ucstring::const_iterator end);
+	/// Advance iterator to the start of next line or to the end of string
+	static void		skipLine(ucstring::const_iterator &it, ucstring::const_iterator end, uint32 &lineCounter);
 	//@}
 
 	//@{
@@ -226,9 +235,34 @@ private:
 
 	static sint32												 _SelectedLanguage;
 	static const ucstring										_NotTranslatedValue;
+
+	/** Structure to hold contextual info during
+	 *	read of preprocessed file
+	 */
+	struct TReadContext
+	{
+		/// The defined symbols
+		std::set<std::string>		Defines;
+
+		/// The if stack (push true until a bad test is found, push false for
+		/// all subsequent if imbrication)
+		std::vector<bool>		IfStack;
+	};
+
 private:
 
 	static bool loadFileIntoMap(const std::string &filename, StrMapContainer &dest);
+
+	/// The internal read function, it doeas the real job of readTextFile
+	static void _readTextFile(const std::string &filename, 
+								ucstring &result, bool forceUtf8, 
+								bool fileLookup, 
+								bool preprocess,
+								TLineFormat lineFmt,
+							    bool warnIfIncludesNotFound,
+								TReadContext &readContext);
+
+
 };
 
 

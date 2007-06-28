@@ -1,5 +1,5 @@
 #
-# $Id: Makefile.am,v 1.9 2002/10/21 10:19:03 lecroart Exp $
+# $Id: Makefile.am,v 1.9 2002-10-21 10:19:03 lecroart Exp $
 #
 
 MAINTAINERCLEANFILES = Makefile.in configure config.guess missing \

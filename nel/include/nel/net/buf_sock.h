@@ -31,13 +31,14 @@
 
 #include "buf_net_base.h"
 #include "tcp_sock.h"
+#include "net_log.h"
 
 //#include <deque>
 
 namespace NLNET {
 
 
-#define nlnettrace(__msg) //nldebug("LNETL1: %s",__msg);
+#define nlnettrace(__msg) //LNETL1_DEBUG("LNETL1: %s",__msg);
 
 
 class CTcpSock;
@@ -71,10 +72,6 @@ public:
 	/// Little tricky but this string is used by Layer4 to know which callback is authorized.
 	/// This is empty when all callback are authorized.
 	std::string				AuthorizedCallback;
-
-	// debug features, we number all packet to be sure that they are all sent and received
-	// \todo remove this debug feature when ok
-	uint32					SendNextValue, ReceiveNextValue;
 
 protected:
 
@@ -152,7 +149,7 @@ protected:
 		// Test flag
 		if ( flag==condition )
 		{
-			nldebug( "LNETL1: Pushing event to %s", asString().c_str() );
+			LNETL1_DEBUG( "LNETL1: Pushing event to %s", asString().c_str() );
 			std::vector<uint8> buffer;
 			if ( sockid == InvalidSockId )
 			{
@@ -186,13 +183,13 @@ protected:
 	bool pushBuffer( const NLMISC::CMemStream& buffer )
 	{
 		nlassert (this != InvalidSockId);	// invalid bufsock
-//		nldebug( "LNETL1: Pushing buffer to %s", asString().c_str() );
+//		LNETL1_DEBUG( "LNETL1: Pushing buffer to %s", asString().c_str() );
 
 		static uint32 biggerBufferSize = 64000;
 		if (buffer.length() > biggerBufferSize)
 		{
 			biggerBufferSize = buffer.length();
-			nldebug ("LNETL1: new record! bigger network message pushed (sent) is %u bytes", biggerBufferSize);
+			LNETL1_DEBUG ("LNETL1: new record! bigger network message pushed (sent) is %u bytes", biggerBufferSize);
 		}
 
 		if ( Sock->connected() )
@@ -210,7 +207,7 @@ protected:
 	/*bool pushBuffer( const std::vector<uint8>& buffer )
 	{
 		nlassert (this != InvalidSockId);	// invalid bufsock
-//		nldebug( "LNETL1: Pushing buffer to %s", asString().c_str() );
+//		LNETL1_DEBUG( "LNETL1: Pushing buffer to %s", asString().c_str() );
 
 		static uint32 biggerBufferSize = 64000;
 		if (buffer.size() > biggerBufferSize)

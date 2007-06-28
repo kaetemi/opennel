@@ -3914,3 +3914,26 @@ CString getStrRsc(uint stringID)
 	str.LoadString(stringID);
 	return str;
 }
+
+bool browseFolder(const CString &caption, CString &destFolder, HWND parent)
+{
+	char chosenPath[MAX_PATH];
+	// browse folder	
+	BROWSEINFO bi;		
+	bi.hwndOwner = parent;
+	bi.pidlRoot = NULL;
+	bi.pszDisplayName = chosenPath;
+	bi.lpszTitle = (LPCTSTR) caption;
+	bi.ulFlags = BIF_DONTGOBELOWDOMAIN | BIF_EDITBOX;
+	bi.lpfn = NULL;
+	bi.lParam = NULL;
+	bi.iImage = 0;
+	LPITEMIDLIST result = SHBrowseForFolder(&bi);
+	if (result != NULL && SHGetPathFromIDList(result, chosenPath))
+	{
+		destFolder = chosenPath;
+		return true;
+	}
+	return false;
+}
+

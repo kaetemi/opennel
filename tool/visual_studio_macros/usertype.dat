@@ -11,3 +11,6 @@ uint
 string
 ucstring
 ucchar
+CSString
+CEntityId
+CSheetId

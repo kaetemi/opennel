@@ -72,7 +72,7 @@ public:
 	 * nor it have the daylight saving ajustement.
 	 * This values is the same on all computer if computers are synchronized (with NTP for example).
 	 */
-	static uint32	getSecondsSince1970UTC ();
+//	static uint32	getSecondsSince1970UTC ();
 
 	/** Return the local time in milliseconds.
 	 * Use it only to measure time difference, the absolute value does not mean anything.
@@ -104,6 +104,16 @@ public:
 	 *	The result will be of the form '1 years 2 months 2 days 10 seconds'
 	 */
 	static std::string	getHumanRelativeTime(sint32 nbSeconds);
+
+#ifdef NL_OS_WINDOWS
+	/** Return the offset in 10th of micro sec between the windows base time (
+	 *	01-01-1601 0:0:0 UTC) and the unix base time (01-01-1970 0:0:0 UTC).
+	 *	This value is used to convert windows system and file time back and
+	 *	forth to unix time (aka epoch)
+	 */
+	static uint64 getWindowsToUnixBaseTimeOffset();
+#endif
+
 };
 
 } // NLMISC

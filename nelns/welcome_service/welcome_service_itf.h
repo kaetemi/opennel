@@ -43,8 +43,24 @@ namespace WS
 		};
 		
 		/// Index table to convert enum value to linear index table
-		static std::map<TValues, uint32>	_IndexTable;
+		const std::map<TValues, uint32> &getIndexTable() const
+		{
+			static std::map<TValues, uint32> indexTable;
+			static bool init = false;
+			if (!init)
+			{
+				// fill the index table
+				indexTable.insert(std::make_pair(ur_player, 0));
+				indexTable.insert(std::make_pair(ur_editor, 1));
+				indexTable.insert(std::make_pair(ur_animator, 2));
+			
+				init = true;
+			}
+
+			return indexTable;
+		}
 		
+
 		static const NLMISC::CStringConversion<TValues> &getConversionTable()
 		{
 			NL_BEGIN_STRING_CONVERSION_TABLE(TValues)
@@ -66,18 +82,6 @@ namespace WS
 		TUserRole()
 			: _Value(invalid_val)
 		{
-		
-			static bool init(false);
-			if (!init)
-			{
-				// fill the index table
-				_IndexTable.insert(std::make_pair(ur_player, 0));
-				_IndexTable.insert(std::make_pair(ur_editor, 1));
-				_IndexTable.insert(std::make_pair(ur_animator, 2));
-			
-				init = true;
-			}
-		
 		}
 		TUserRole(TValues value)
 			: _Value(value)
@@ -148,8 +152,8 @@ namespace WS
 		
 		uint32 asIndex()
 		{
-			std::map<TValues, uint32>::iterator it(_IndexTable.find(_Value));
-			nlassert(it != _IndexTable.end());
+			std::map<TValues, uint32>::const_iterator it(getIndexTable().find(_Value));
+			nlassert(it != getIndexTable().end());
 			return it->second;
 		}
 		

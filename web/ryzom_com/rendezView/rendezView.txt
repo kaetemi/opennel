@@ -1,14 +1,14 @@
 **Produit rendezView**
 
-Le produit rendezView permet la crÃ©ation d'evenement simple.
+Le produit rendezView permet la création d'evenement simple.
 
-Lors de la visualisation un utilisateur connectÃ© Ã  la possibilitÃ© de s'inscrire, ce qui crÃ©e un objet 'participant',
-ou de se dÃ©sinscrire (suppression de l'objet correspondant)
+Lors de la visualisation un utilisateur connecté à la possibilité de s'inscrire, ce qui crée un objet 'participant',
+ou de se désinscrire (suppression de l'objet correspondant)
 
 
 ****Objet rendezView****
 
-Les objets rendezView sont des containeurs ils possÃ¨dent des caractÃ©ristiques propres Ã  l'Ã©venement ainsi qu'un certains
+Les objets rendezView sont des containeurs ils possèdent des caractéristiques propres à l'évenement ainsi qu'un certains
 nombres d'objets 'participant'.
 
 
@@ -31,18 +31,18 @@ actions possible sur un objet rendezView : voir,editer*,liste des inscriptions*.
 
 Fonctions de l'objets :
 
-- isAvailable : vÃ©rifie si l'utilisateur Ã  toujours le droit de s'inscrire (nombre de place, date d'inscriptions).
+- isAvailable : vérifie si l'utilisateur à toujours le droit de s'inscrire (nombre de place, date d'inscriptions).
 - listingParticipants : renvoie la liste des participants.
 - nbParticipants : renvoie le nombre de participants.
-#- sendConfirmation : envoie un email de confirmation Ã  chaque participants.
+#- sendConfirmation : envoie un email de confirmation à chaque participants.
 - ...
 
 
 Visualisation : 
 
 Si le visiteur est anonyme, il voie l'evenement mais ne peut s'inscrire.
-Si le visiteur est connectÃ©, il peut s'inscrire/dÃ©sinscrire.
-Si le visiteur est 'manager', il peut voir la liste des participants, en supprimer si nÃ©cÃ©ssaire.
+Si le visiteur est connecté, il peut s'inscrire/désinscrire.
+Si le visiteur est 'manager', il peut voir la liste des participants, en supprimer si nécéssaire.
 
 
 
@@ -50,9 +50,9 @@ Si le visiteur est 'manager', il peut voir la liste des participants, en supprim
 
 ****Objet participant****
 
-L'objet participant contient les informations relative Ã  l'utilisateur.
-Les diffÃ©rents champs de l'objet seront remplis automatiquement lors de la crÃ©ations,
-on rÃ©cupÃ¨re pour cela les informations du profil de l'utilisateur.
+L'objet participant contient les informations relative à l'utilisateur.
+Les différents champs de l'objet seront remplis automatiquement lors de la créations,
+on récupère pour cela les informations du profil de l'utilisateur.
 
 Schema archetype de participant :
 
@@ -60,11 +60,11 @@ Schema archetype de participant :
 - prenoms TextField TextAreaWidget
 - email TextField TextAreaWidget
 - login TextField TextAreaWidget
-- Seat (nombre de place Ã  rÃ©server) IntegerField IntegerWidget
+- Seat (nombre de place à réserver) IntegerField IntegerWidget
 - comment (commentaires du joueurs) TextField RichWidget
 
 Actions possible sur un objet participant : voir,suppression*
-(en theoris on ne devrais pas rÃ©alisÃ© d'action autres que 'voir' sur ces objets)
+(en theoris on ne devrais pas réalisé d'action autres que 'voir' sur ces objets)
 
 Fonctions de l'objets :
 
@@ -74,7 +74,7 @@ Visualisation :
 
 La vue est gerer par rendezView
 
-(* : pour le crÃ©ateur de l'event)
+(* : pour le créateur de l'event)
 
 
 

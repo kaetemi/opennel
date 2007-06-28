@@ -66,7 +66,7 @@
 #	define NL_LITTLE_ENDIAN
 #	define NL_CPU_INTEL
 #   ifndef _WIN32_WINNT
-#	define _WIN32_WINNT 0x0400
+#		define _WIN32_WINNT 0x0400
 #   endif
 #	if _MSC_VER >= 1400
 #		define NL_COMP_VC8
@@ -305,16 +305,25 @@ typedef	uint16	ucchar;
 #  define UINT64_CONSTANT(c)	(c##ULL)
 #endif
 
+#if (_MSC_VER >= 1200) && (_MSC_VER < 1400) && (WINVER < 0x0500)
+//Using VC7 and later lib, need this to compile on VC6
+extern "C" long _ftol( double ); //defined by VC6 C libs
+extern "C" long _ftol2( double dblSource );
+#endif
+
 // Fake "for" to be conform with ANSI "for scope" on Windows compiler older than Visual Studio 8
 // On Visual Studio 8, the for is conform with ANSI, no need to define this macro in this case
 #if defined(NL_OS_WINDOWS) && !defined(NL_EXTENDED_FOR_SCOPE) && !defined(NL_COMP_VC8)
 #  define for if(false) {} else for
 #endif
 
-#ifdef NL_COMP_VC6
-// only for MSDEV 6.0
-extern "C" long _ftol( double ); //defined by VC6 C libs
-extern "C" long _ftol2( double dblSource );
+// Define a macro to write template function according to compiler weaknes
+#ifdef NL_COMP_NEED_PARAM_ON_METHOD
+ #define NL_TMPL_PARAM_ON_METHOD_1(p1)	<p1>
+ #define NL_TMPL_PARAM_ON_METHOD_2(p1, p2)	<p1, p2>
+#else
+ #define NL_TMPL_PARAM_ON_METHOD_1(p1)
+ #define NL_TMPL_PARAM_ON_METHOD_2(p1, p2)	
 #endif
 
 

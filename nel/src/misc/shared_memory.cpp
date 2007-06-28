@@ -60,7 +60,7 @@ void			*CSharedMemory::createSharedMemory( TSharedMemId sharedMemId, uint32 size
 	HANDLE hMapFile = CreateFileMapping( INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, size, sharedMemId );
 	if ( (hMapFile == NULL) || (GetLastError() == ERROR_ALREADY_EXISTS) )
 	{
-		nlwarning( "SHDMEM: Cannot create file mapping: error %u, mapFile %p", GetLastError(), hMapFile );
+		nlwarning( "SHDMEM: Cannot create file mapping for smid %s: error %u%s, mapFile %p", sharedMemId, GetLastError(), (GetLastError()==ERROR_ALREADY_EXISTS) ? " (already exists) ": "", hMapFile );
 		return NULL;
 	}
 	//else

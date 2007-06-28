@@ -29,6 +29,7 @@
 
 #include "nel/net/buf_sock.h"
 #include "nel/net/callback_net_base.h"
+#include "nel/net/net_log.h"
 
 #ifdef USE_MESSAGE_RECORDER
 #ifdef NL_OS_WINDOWS
@@ -56,7 +57,7 @@ void cbnbNewDisconnection (TSockId from, void *data)
 	nlassert (data != NULL);
 	CCallbackNetBase *base = (CCallbackNetBase *)data;
 
-	nldebug("LNETL3NB: cbnbNewDisconnection()");
+	LNETL3_DEBUG("LNETL3NB: cbnbNewDisconnection()");
 
 #ifdef USE_MESSAGE_RECORDER
 	// Record or replay disconnection
@@ -146,7 +147,7 @@ void CCallbackNetBase::addCallbackArray (const TCallbackItem *callbackarray, sin
 		_CallbackArray[ni] = callbackarray[i];
 
 	}
-//	nldebug ("LNETL3NB_CB: Added %d callback Now, there're %d callback associated with message type", arraysize, _CallbackArray.size ());
+//	LNETL3_DEBUG ("LNETL3NB_CB: Added %d callback Now, there're %d callback associated with message type", arraysize, _CallbackArray.size ());
 }
 
 
@@ -208,7 +209,7 @@ void CCallbackNetBase::processOneMessage ()
 	}
 	else
 	{
-		nldebug ("LNETL3NB_CB: Calling callback (%s)%s", msgin.getName().c_str(), (cb==_DefaultCallback)?" DEFAULT_CB":"");
+		LNETL3_DEBUG ("LNETL3NB_CB: Calling callback (%s)%s", msgin.getName().c_str(), (cb==_DefaultCallback)?" DEFAULT_CB":"");
 
 		if (_PreDispatchCallback != NULL)
 		{
@@ -243,7 +244,7 @@ void CCallbackNetBase::processOneMessage ()
 		}
 		else
 		{
-			nldebug ("LNETL3NB_CB: Calling callback (%s)", _CallbackArray[pos].Key);
+			LNETL3_DEBUG ("LNETL3NB_CB: Calling callback (%s)", _CallbackArray[pos].Key);
 			_CallbackArray[pos].Callback (msgin, realid, *this);
 		}
 	}
@@ -271,7 +272,7 @@ void CCallbackNetBase::baseUpdate (sint32 timeout)
 	//
 	if (_FirstUpdate)
 	{
-//		nldebug("LNETL3NB: First update()");
+//		LNETL3_DEBUG("LNETL3NB: First update()");
 		_FirstUpdate = false;
 		_LastUpdateTime = t0;
 		_LastMovedStringArray = t0;
@@ -338,7 +339,7 @@ void CCallbackNetBase::baseUpdate2 (sint32 timeout, sint32 mintime)
 	//
 	if (_FirstUpdate)
 	{
-//		nldebug("LNETL3NB: First update()");
+//		LNETL3_DEBUG("LNETL3NB: First update()");
 		_FirstUpdate = false;
 		_LastUpdateTime = t0;
 		_LastMovedStringArray = t0;
@@ -450,7 +451,7 @@ void	CCallbackNetBase::authorizeOnly (const char *callbackName, TSockId hostid)
 {
 	checkThreadId ();
 
-	nldebug ("LNETL3NB: authorizeOnly (%s, %s)", callbackName, hostid->asString().c_str());
+	LNETL3_DEBUG ("LNETL3NB: authorizeOnly (%s, %s)", callbackName, hostid->asString().c_str());
 
 	hostid = getSockId (hostid);
 	

@@ -27,7 +27,6 @@
  * Limitations: Not threadsafe, not reentrant.
  */
 
-
 //
 // Includes
 //
@@ -43,6 +42,7 @@
 
 #include "nel/net/transport_class.h"
 
+
 //
 // Namespace
 //
@@ -52,6 +52,13 @@ using namespace NLMISC;
 using namespace NLNET;
 
 namespace NLNET {
+
+//
+// Globals
+//
+
+NLMISC::CVariable<bool> VerboseNETTC("nel","VerboseNETTC","Enable verbose logging in CTransportClass operations",true,0,true);
+
 
 //
 // Variables
@@ -89,17 +96,17 @@ string typeToString (CTransportClass::TProp type)
 
 void CTransportClass::displayDifferentClass (TServiceId sid, const string &className, const vector<CRegisteredBaseProp> &otherClass, const vector<CRegisteredBaseProp *> &myClass)
 {
-	nlinfo ("NETTC: Service with sid %hu send me the TransportClass '%s' with differents properties:", sid.get(), className.c_str());
-	nlinfo ("NETTC:  My local TransportClass is:");
+	NETTC_INFO ("NETTC: Service with sid %hu send me the TransportClass '%s' with differents properties:", sid.get(), className.c_str());
+	NETTC_INFO ("NETTC:  My local TransportClass is:");
 	for (uint i = 0; i < myClass.size(); i++)
 	{
-		nlinfo ("NETTC:    Property: %d Name: '%s' type: '%s'", i, myClass[i]->Name.c_str(), typeToString(myClass[i]->Type).c_str());
+		NETTC_INFO ("NETTC:    Property: %d Name: '%s' type: '%s'", i, myClass[i]->Name.c_str(), typeToString(myClass[i]->Type).c_str());
 	}
 
-	nlinfo ("NETTC:  The other side TransportClass is:");
+	NETTC_INFO ("NETTC:  The other side TransportClass is:");
 	for (uint i = 0; i < otherClass.size(); i++)
 	{
-		nlinfo ("NETTC:    Property: %d Name: '%s' type: '%s'", i, otherClass[i].Name.c_str(), typeToString(otherClass[i].Type).c_str());
+		NETTC_INFO ("NETTC:    Property: %d Name: '%s' type: '%s'", i, otherClass[i].Name.c_str(), typeToString(otherClass[i].Type).c_str());
 	}
 }
 
@@ -112,8 +119,10 @@ void CTransportClass::registerOtherSideClass (TServiceId sid, TOtherSideRegister
 		TRegisteredClass::iterator res = LocalRegisteredClass.find ((*it).first);
 		if (res == LocalRegisteredClass.end ())
 		{
-			// it s a class that the other side have but not me, can't send this class
-			nlwarning ("NETTC: the other side class '%s' is not registered in my system, skip it", (*it).first.c_str());
+			// The other service knows a class that we don't
+			// there was previously an nlwarning here but that was wrong because it is quite normal for this to happen when one service
+			// ueses different transport classes to communicate with several different services, so the message has been changed to an nldebug
+			NETTC_DEBUG ("NETTC: the other side class '%s' declared from service %d is not registered in my system, skip it", (*it).first.c_str(),(uint32)sid.get());
 			continue;
 		}
 
@@ -222,20 +231,20 @@ void CTransportClass::unregisterClass ()
 
 void CTransportClass::displayLocalRegisteredClass (CRegisteredClass &c)
 {
-	nldebug ("NETTC:  > %s", c.Instance->Name.c_str());
+	NETTC_DEBUG ("NETTC:  > %s", c.Instance->Name.c_str());
 	for (uint j = 0; j < c.Instance->Prop.size (); j++)
 	{
-		nldebug ("NETTC:    > %s %s", c.Instance->Prop[j]->Name.c_str(), typeToString(c.Instance->Prop[j]->Type).c_str());
+		NETTC_DEBUG ("NETTC:    > %s %s", c.Instance->Prop[j]->Name.c_str(), typeToString(c.Instance->Prop[j]->Type).c_str());
 	}
 
 	for (uint l = 0; l < c.Instance->States.size (); l++)
 	{
 		if (c.Instance->States[l].size () != 0)
 		{
-			nldebug ("NETTC:      > sid: %u", l);
+			NETTC_DEBUG ("NETTC:      > sid: %u", l);
 			for (uint k = 0; k < c.Instance->States[l].size (); k++)
 			{
-				nldebug ("NETTC:      - %d type : %s", c.Instance->States[l][k].first, typeToString(c.Instance->States[l][k].second).c_str());
+				NETTC_DEBUG ("NETTC:      - %d type : %s", c.Instance->States[l][k].first, typeToString(c.Instance->States[l][k].second).c_str());
 			}
 		}
 	}
@@ -243,7 +252,7 @@ void CTransportClass::displayLocalRegisteredClass (CRegisteredClass &c)
 
 void CTransportClass::displayLocalRegisteredClass ()
 {
-	nldebug ("NETTC:> LocalRegisteredClass:");
+	NETTC_DEBUG ("NETTC:> LocalRegisteredClass:");
 	for (TRegisteredClass::iterator it = LocalRegisteredClass.begin(); it != LocalRegisteredClass.end (); it++)
 	{
 		displayLocalRegisteredClass ((*it).second);
@@ -252,13 +261,13 @@ void CTransportClass::displayLocalRegisteredClass ()
 
 void cbTCReceiveMessage (CMessage &msgin, const string &name, TServiceId sid)
 {
-	nldebug ("NETTC: cbReceiveMessage");
+	NETTC_DEBUG ("NETTC: cbReceiveMessage");
 
 	CTransportClass::TempMessage.clear();
 	CTransportClass::TempMessage.assignFromSubMessage( msgin );
 
 	string className;
-	CTransportClass::TempMessage.serial (className);
+	CTransportClass::readHeader(CTransportClass::TempMessage, className);
 
 	CTransportClass::TRegisteredClass::iterator it = CTransportClass::LocalRegisteredClass.find (className);
 	if (it == CTransportClass::LocalRegisteredClass.end ())
@@ -277,14 +286,14 @@ void cbTCReceiveMessage (CMessage &msgin, const string &name, TServiceId sid)
 
 void cbTCReceiveOtherSideClass (CMessage &msgin, const string &name, TServiceId sid)
 {
-	nldebug ("NETTC: cbReceiveOtherSideClass");
+	NETTC_DEBUG ("NETTC: cbReceiveOtherSideClass");
 
 	CTransportClass::TOtherSideRegisteredClass osrc;
 
 	uint32 nbClass;
 	msgin.serial (nbClass);
 
-	nldebug ("NETTC: %d class", nbClass);
+	NETTC_DEBUG ("NETTC: %d class", nbClass);
 
 	for (uint i = 0; i < nbClass; i++)
 	{
@@ -296,14 +305,14 @@ void cbTCReceiveOtherSideClass (CMessage &msgin, const string &name, TServiceId 
 		uint32 nbProp;
 		msgin.serial (nbProp);
 
-		nldebug ("NETTC:   %s (%d prop)", className.c_str(), nbProp);
+		NETTC_DEBUG ("NETTC:   %s (%d prop)", className.c_str(), nbProp);
 
 		for (uint j = 0; j < nbProp; j++)
 		{
 			CTransportClass::CRegisteredBaseProp prop;
 			msgin.serial (prop.Name);
 			msgin.serialEnum (prop.Type);
-			nldebug ("NETTC:     %s %s", prop.Name.c_str(), typeToString(prop.Type).c_str());
+			NETTC_DEBUG ("NETTC:     %s %s", prop.Name.c_str(), typeToString(prop.Type).c_str());
 			osrc[osrc.size()-1].second.push_back (prop);
 		}
 	}
@@ -320,7 +329,7 @@ static TUnifiedCallbackItem CallbackArray[] =
 
 void cbTCUpService (const std::string &serviceName, TServiceId sid, void *arg)
 {
-	nldebug ("NETTC: CTransportClass Service %s %hu is up", serviceName.c_str(), sid.get());
+	NETTC_DEBUG ("NETTC: CTransportClass Service %s %hu is up", serviceName.c_str(), sid.get());
 	if (sid.get() >= 256)
 		return;
 	CTransportClass::sendLocalRegisteredClass (sid);

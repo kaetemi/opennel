@@ -8,7 +8,7 @@ except ImportError:
 
 from config import *
 
-#dÃ©fini le schÃ©ma 
+#défini le schéma 
 participantSchema=BaseSchema.copy()+ Schema((
 	TextField('fullName',
 		widget=TextAreaWidget()

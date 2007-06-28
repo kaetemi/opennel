@@ -87,7 +87,7 @@ public:
 	static void addNewCookieCallback(TNewCookieCallback newCookieCb);
 
 	/// Used only in UDP, check if the cookie is valid. return empty string if valid, reason otherwise
-	static std::string CLoginServer::isValidCookie (const CLoginCookie &lc, std::string &userName, std::string &userPriv, std::string &userExtended, uint32 &instanceId, uint32 &charSlot);
+	static std::string isValidCookie (const CLoginCookie &lc, std::string &userName, std::string &userPriv, std::string &userExtended, uint32 &instanceId, uint32 &charSlot);
 
 	/// Call this method when a user is disconnected or the server disconnect the user.
 	/// This method will warn the login system that the user is not here anymore

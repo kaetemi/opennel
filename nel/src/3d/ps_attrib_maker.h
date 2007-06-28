@@ -38,7 +38,7 @@
 namespace NL3D {
 
 
-/** this struct only contains an enum that tell chat the input of an attribute maker is
+/** this struct only contains an enum that tell what the input of an attribute maker is
   * \see class CPSAttributeMaker
   */
 struct CPSInputType

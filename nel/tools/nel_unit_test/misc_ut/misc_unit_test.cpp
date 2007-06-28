@@ -432,6 +432,8 @@ Test::Suite *createPureNelLibTS(const std::string &workingPath);
 Test::Suite *createCStreamTS();
 Test::Suite *createCCoTaskTS();
 Test::Suite *createCConfigFileTS(const std::string &workingPath);
+Test::Suite *createCPackFileTS(const std::string &workingPath);
+
 
 
 // global test for any misc feature
@@ -451,6 +453,7 @@ public:
 		add(auto_ptr<Test::Suite>(createCStreamTS()));
 		add(auto_ptr<Test::Suite>(createCCoTaskTS()));
 		add(auto_ptr<Test::Suite>(createCConfigFileTS(workingPath)));
+		add(auto_ptr<Test::Suite>(createCPackFileTS(workingPath)));
 
 		// initialise the application context
 		NLMISC::CApplicationContext::getInstance();

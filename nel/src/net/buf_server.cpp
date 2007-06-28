@@ -28,6 +28,7 @@
 #include "nel/misc/hierarchical_timer.h"
 
 #include "nel/net/buf_server.h"
+#include "nel/net/net_log.h"
 
 #ifdef NL_OS_WINDOWS
 #include <windows.h>
@@ -39,6 +40,9 @@
 #include <sys/time.h>
 #endif
 
+/*
+ * On Linux, the default limit of descriptors is usually 1024, you can increase it with ulimit
+ */
 
 using namespace NLMISC;
 using namespace std;
@@ -104,7 +108,7 @@ void CBufServer::init( uint16 port )
 	}
 	else
 	{
-		nldebug( "LNETL1: Binding listen socket to any address, port %hu", port );
+		LNETL1_DEBUG( "LNETL1: Binding listen socket to any address, port %hu", port );
 	}
 }
 
@@ -146,7 +150,7 @@ void CServerTask::wakeUp()
 	uint8 b;
 	if ( write( _WakeUpPipeHandle[PipeWrite], &b, 1 ) == -1 )
 	{
-		nldebug( "LNETL1: In CServerTask::wakeUp(): write() failed" );
+		LNETL1_DEBUG( "LNETL1: In CServerTask::wakeUp(): write() failed" );
 	}
 }
 #endif
@@ -186,7 +190,7 @@ CBufServer::~CBufServer()
 		// Clean receive thread exits
 		CThreadPool::iterator ipt;
 		{
-			nldebug( "LNETL1: Waiting for end of threads..." );
+			LNETL1_DEBUG( "LNETL1: Waiting for end of threads..." );
 			CSynchronized<CThreadPool>::CAccessor poolsync( &_ThreadPool );
 			for ( ipt=poolsync.value().begin(); ipt!=poolsync.value().end(); ++ipt )
 			{
@@ -219,7 +223,7 @@ CBufServer::~CBufServer()
 				(*ipt)->wait();
 			}
 
-			nldebug( "LNETL1: Deleting sockets, tasks and threads..." );
+			LNETL1_DEBUG( "LNETL1: Deleting sockets, tasks and threads..." );
 			for ( ipt=poolsync.value().begin(); ipt!=poolsync.value().end(); ++ipt )
 			{
 				// Delete the socket objects
@@ -321,17 +325,6 @@ void CBufServer::send( const CMemStream& buffer, TSockId hostid )
 			// this host is not connected
 			return;
 		}
-		// debug features, we number all packet to be sure that they are all sent and received
-		// \todo remove this debug feature when ok
-//		nldebug ("send message number %u", hostid->SendNextValue);
-#ifdef NL_BIG_ENDIAN
-		uint32 val = NLMISC_BSWAP32(hostid->SendNextValue);
-#else
-		uint32 val = hostid->SendNextValue;
-#endif
-
-		*(uint32*)buffer.buffer() = val;
-		hostid->SendNextValue++;
 
 		pushBufferToHost( buffer, hostid );
 	}
@@ -352,17 +345,6 @@ void CBufServer::send( const CMemStream& buffer, TSockId hostid )
 						// Send only if the socket is logically connected
 						if ( (*ipb)->connectedState() ) 
 						{
-							// debug features, we number all packet to be sure that they are all sent and received
-							// \todo remove this debug feature when ok
-//							nldebug ("send message number %u", (*ipb)->SendNextValue);
-#ifdef NL_BIG_ENDIAN
-							uint32 val = NLMISC_BSWAP32((*ipb)->SendNextValue);
-#else
-							uint32 val = (*ipb)->SendNextValue;
-#endif
-							*(uint32*)buffer.buffer() = val;
-							(*ipb)->SendNextValue++;
-
 							pushBufferToHost( buffer, *ipb );
 						}
 					}
@@ -429,7 +411,7 @@ bool CBufServer::dataAvailable()
 			case CBufNetBase::Disconnection:
 				{
 					TSockId sockid = *((TSockId*)(&*buffer.begin()));
-					nldebug( "LNETL1: Disconnection event for %p %s", sockid, sockid->asString().c_str());
+					LNETL1_DEBUG( "LNETL1: Disconnection event for %p %s", sockid, sockid->asString().c_str());
 
 					sockid->setConnectedState( false );
 
@@ -443,7 +425,7 @@ bool CBufServer::dataAvailable()
 					nlverify(_ConnectedClients.erase(sockid) == 1);
 
 					// Add socket object into the synchronized remove list
-					nldebug( "LNETL1: Adding the connection to the remove list" );
+					LNETL1_DEBUG( "LNETL1: Adding the connection to the remove list" );
 					nlassert( ((CServerBufSock*)sockid)->ownerTask() != NULL );
 					((CServerBufSock*)sockid)->ownerTask()->addToRemoveSet( sockid );
 					break;
@@ -452,7 +434,7 @@ bool CBufServer::dataAvailable()
 			case CBufNetBase::Connection:
 				{
 					TSockId sockid = *((TSockId*)(&*buffer.begin()));
-					nldebug( "LNETL1: Connection event for %p %s", sockid, sockid->asString().c_str());
+					LNETL1_DEBUG( "LNETL1: Connection event for %p %s", sockid, sockid->asString().c_str());
 
 					// add this socket in the list of client
 					nlverify(_ConnectedClients.insert(sockid).second);
@@ -467,9 +449,9 @@ bool CBufServer::dataAvailable()
 					break;
 				}
 			default: // should not occur
-				nlinfo( "LNETL1: Invalid block type: %hu (should be = to %hu", (uint16)(buffer[buffer.size()-1]), (uint16)(val) );
-				nlinfo( "LNETL1: Buffer (%d B): [%s]", buffer.size(), stringFromVector(buffer).c_str() );
-				nlinfo( "LNETL1: Receive queue:" );
+				LNETL1_INFO( "LNETL1: Invalid block type: %hu (should be = to %hu", (uint16)(buffer[buffer.size()-1]), (uint16)(val) );
+				LNETL1_INFO( "LNETL1: Buffer (%d B): [%s]", buffer.size(), stringFromVector(buffer).c_str() );
+				LNETL1_INFO( "LNETL1: Receive queue:" );
 				{
 					CFifoAccessor recvfifo( &receiveQueue() );
 					recvfifo.value().display();
@@ -549,20 +531,10 @@ void CBufServer::receive( CMemStream& buffer, TSockId* phostid )
 	uint32 val = *(uint32*)buffer.buffer();
 #endif
 
-	//	nldebug ("receive message number %u", val);
-	if ((*phostid)->ReceiveNextValue != val)
-	{
-		nlwarning ("LNETL1: !!!LOST A MESSAGE!!! I received the message number %u but I'm waiting the message number %u (cnx %s), warn lecroart@nevrax.com with the log now please", val, (*phostid)->ReceiveNextValue, (*phostid)->asString().c_str());
-		// resync the message number
-		(*phostid)->ReceiveNextValue = val;
-	}
-
-	(*phostid)->ReceiveNextValue++;
-
 	buffer.resize( buffer.size()-sizeof(TSockId)-1 );
 
 	// TODO OPTIM remove the nldebug for speed
-	//commented for optimisation nldebug( "LNETL1: Read buffer (%d+%d B) from %s", buffer.size(), sizeof(TSockId)+1, /*stringFromVector(buffer).c_str(), */(*phostid)->asString().c_str() );
+	//commented for optimisation LNETL1_DEBUG( "LNETL1: Read buffer (%d+%d B) from %s", buffer.size(), sizeof(TSockId)+1, /*stringFromVector(buffer).c_str(), */(*phostid)->asString().c_str() );
 
 	// Statistics
 	_BytesPoppedIn += buffer.size() + sizeof(TBlockSize);
@@ -597,7 +569,7 @@ void CBufServer::update()
 				    if ( ! ((*ipb)->Sock->connected() && (*ipb)->update()) )
 				    {
 						// Update did not work or the socket is not connected anymore
-				        nldebug( "LNETL1: Socket %s is disconnected", (*ipb)->asString().c_str() );
+				        LNETL1_DEBUG( "LNETL1: Socket %s is disconnected", (*ipb)->asString().c_str() );
 						// Disconnection event if disconnected (known either from flush (in update) or when receiving data)
 						(*ipb)->advertiseDisconnection( this, *ipb );
 					
@@ -800,7 +772,7 @@ void CListenTask::run()
 	{
 		try
 		{
-			nldebug( "LNETL1: Waiting incoming connection..." );
+			LNETL1_DEBUG( "LNETL1: Waiting incoming connection..." );
 			// Get and setup the new socket
 #ifdef NL_OS_UNIX
 			FD_ZERO( &readers );
@@ -815,7 +787,7 @@ void CListenTask::run()
 				// we'll ignore message (Interrupted system call) caused by a CTRL-C
 				if (CSock::getLastError() == 4)
 				{
-					nldebug ("LNETL1: Select failed (in listen thread): %s (code %u) but IGNORED", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError());
+					LNETL1_DEBUG ("LNETL1: Select failed (in listen thread): %s (code %u) but IGNORED", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError());
 					continue;
 				}
 				nlerror( "LNETL1: Select failed (in listen thread): %s (code %u)", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError() );
@@ -826,12 +798,12 @@ void CListenTask::run()
 				uint8 b;
 				if ( read( _WakeUpPipeHandle[PipeRead], &b, 1 ) == -1 ) // we were woken-up by the wake-up pipe
 				{
-					nldebug( "LNETL1: In CListenTask::run(): read() failed" );
+					LNETL1_DEBUG( "LNETL1: In CListenTask::run(): read() failed" );
 				}
-				nldebug( "LNETL1: listen thread select woken-up" );
+				LNETL1_DEBUG( "LNETL1: listen thread select woken-up" );
 				continue;
 			}
-#else ifdef NL_OS_WINDOWS
+#elif defined (NL_OS_WINDOWS)
 			FD_ZERO( &readers );
 			FD_SET( _ListenSock.descriptor(), &readers );
 			int res = ::select( 1, &readers, NULL, NULL, NULL ); /// Wait indefinitely
@@ -842,12 +814,12 @@ void CListenTask::run()
 				continue;
 			}
 #endif
-			nldebug( "LNETL1: Accepting an incoming connection..." );
+			LNETL1_DEBUG( "LNETL1: Accepting an incoming connection..." );
 			CTcpSock *newSock = _ListenSock.accept();
 			if (newSock != NULL)
 			{
 				CServerBufSock *bufsock = new CServerBufSock( newSock );
-				nldebug( "LNETL1: New connection : %s", bufsock->asString().c_str() );
+				LNETL1_DEBUG( "LNETL1: New connection : %s", bufsock->asString().c_str() );
 				bufsock->setNonBlocking();
 				bufsock->setMaxExpectedBlockSize( _MaxExpectedBlockSize );
 				if ( _Server->noDelay() )
@@ -866,7 +838,7 @@ void CListenTask::run()
 		}
 		catch ( ESocket& e )
 		{
-			nlinfo( "LNETL1: Exception in listen thread: %s", e.what() ); 
+			LNETL1_INFO( "LNETL1: Exception in listen thread: %s", e.what() ); 
 			// It can occur when too many sockets are open (e.g. 885 connections)
 		}
 	}
@@ -936,7 +908,7 @@ void CBufServer::dispatchNewSocket( CServerBufSock *bufsock )
 			{
 				nlwarning( "LNETL1: Exceeding the maximum number of sockets per thread" );
 			}
-			nldebug( "LNETL1: New socket dispatched to thread %d", iptmin-poolsync.value().begin() );
+			LNETL1_DEBUG( "LNETL1: New socket dispatched to thread %d", iptmin-poolsync.value().begin() );
 		}
 
 	}
@@ -970,7 +942,7 @@ void CBufServer::dispatchNewSocket( CServerBufSock *bufsock )
 #ifdef NL_OS_UNIX
 			task->wakeUp();
 #endif			
-			nldebug( "LNETL1: New socket dispatched to thread %d", ipt-poolsync.value().begin() );
+			LNETL1_DEBUG( "LNETL1: New socket dispatched to thread %d", ipt-poolsync.value().begin() );
 		}
 	}
 }
@@ -995,8 +967,8 @@ void CBufServer::addNewThread( CThreadPool& threadpool, CServerBufSock *bufsock 
 	{
 		threadpool.push_back( thr );
 		thr->start();
-		nldebug( "LNETL1: Added a new thread; pool size is %d", threadpool.size() );
-		nldebug( "LNETL1: New socket dispatched to thread %d", threadpool.size()-1 );
+		LNETL1_DEBUG( "LNETL1: Added a new thread; pool size is %d", threadpool.size() );
+		LNETL1_DEBUG( "LNETL1: New socket dispatched to thread %d", threadpool.size()-1 );
 	}
 }
 
@@ -1118,11 +1090,11 @@ void CServerReceiveTask::run()
 				// we'll ignore message (Interrupted system call) caused by a CTRL-C
 				/*if (CSock::getLastError() == 4)
 				{
-					nldebug ("LNETL1: Select failed (in receive thread): %s (code %u) but IGNORED", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError());
+					LNETL1_DEBUG ("LNETL1: Select failed (in receive thread): %s (code %u) but IGNORED", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError());
 					continue;
 				}*/
 				//nlerror( "LNETL1: Select failed (in receive thread): %s (code %u)", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError() );
-				nldebug( "LNETL1: Select failed (in receive thread): %s (code %u)", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError() );
+				LNETL1_DEBUG( "LNETL1: Select failed (in receive thread): %s (code %u)", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError() );
 				goto end;
 		}
 
@@ -1166,12 +1138,12 @@ void CServerReceiveTask::run()
 				}
 //				catch ( ESocketConnectionClosed& )
 //				{
-//					nldebug( "LNETL1: Connection %s closed", serverbufsock->asString().c_str() );
+//					LNETL1_DEBUG( "LNETL1: Connection %s closed", serverbufsock->asString().c_str() );
 //					// The socket went to _Connected=false when throwing the exception
 //				}
 				catch ( ESocket& )
 				{
-					nldebug( "LNETL1: Connection %s broken", serverbufsock->asString().c_str() );
+					LNETL1_DEBUG( "LNETL1: Connection %s broken", serverbufsock->asString().c_str() );
 					(*ic)->Sock->disconnect();
 				}
 /*
@@ -1190,9 +1162,9 @@ void CServerReceiveTask::run()
 			uint8 b;
 			if ( read( _WakeUpPipeHandle[PipeRead], &b, 1 ) == -1 ) // we were woken-up by the wake-up pipe
 			{
-				nldebug( "LNETL1: In CServerReceiveTask::run(): read() failed" );
+				LNETL1_DEBUG( "LNETL1: In CServerReceiveTask::run(): read() failed" );
 			}
-			nldebug( "LNETL1: Receive thread select woken-up" );
+			LNETL1_DEBUG( "LNETL1: Receive thread select woken-up" );
 		}
 #endif
 
@@ -1221,7 +1193,7 @@ void CServerReceiveTask::clearClosedConnections()
 				NLMISC::CSynchronized<CConnections>::CAccessor connectionssync( &_Connections );
 				for ( ic=removesetsync.value().begin(); ic!=removesetsync.value().end(); ++ic )
 				{
-					nldebug( "LNETL1: Removing a connection" );
+					LNETL1_DEBUG( "LNETL1: Removing a connection" );
 
 					TSockId sid = (*ic);
 

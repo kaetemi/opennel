@@ -165,6 +165,32 @@ namespace NLMISC
 	};
 
 
+	/** A macro for safe global variable value.
+	 *	Concept : global initialized variable value are inherently unsafe because the order of
+	 *	initialisation if undefined. If some init code use static value, you
+	 *	may encounter hazardous error, depending on you compiler will, when you 
+	 *	read the value of a global, you may read it before it is initialized.
+	 *	This little class is a workaround that allow a safe global value.
+	 *	A drawback is that the value is enclosed inside a function and thus not
+	 *	accessible in the debugger.
+	 *	use getGlobal_<name>() to retrieve a reference to the value.
+	 */
+#define NL_MISC_SAFE_GLOBAL(type, name, value)	\
+	type &getGlobal_##name() \
+	{ \
+		static type	theVar = (value); \
+		return theVar; \
+	} \
+
+#define NL_MISC_SAFE_CLASS_GLOBAL(type, name, value)	\
+	static type &getGlobal_##name() \
+	{ \
+		static type	theVar = (value); \
+		return theVar; \
+	} \
+
+
+
 } // NLMISC
 
 #endif // NL_SINGLETON_H
