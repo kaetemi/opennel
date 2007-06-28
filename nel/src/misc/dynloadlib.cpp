@@ -347,6 +347,3 @@ uint32	INelLibrary::getLoadingCounter()
 
 
 }	// namespace NLMISC
-
-/* Merge NeL CVS (RING into HEAD)
- */

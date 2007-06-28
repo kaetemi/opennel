@@ -35,6 +35,7 @@
 #include "nel/misc/stream.h"
 #include "nel/misc/entity_id.h"
 #include "nel/misc/sheet_id.h"
+#include "nel/misc/variable.h"
 
 #include "unified_network.h"
 #include "message.h"
@@ -55,6 +56,10 @@ namespace NLNET {
 #define TRANSPORT_CLASS_REGISTER(_c) \
 	static _c _c##Instance; \
 	CTransportClass::registerClass (_c##Instance);
+
+#define NETTC_INFO if (!VerboseNETTC.get()) {} else nlinfo
+#define NETTC_DEBUG if (!VerboseNETTC.get()) {} else nldebug
+extern NLMISC::CVariable<bool> VerboseNETTC;
 
 
 //
@@ -186,7 +191,7 @@ public:
 			val += NLMISC::toString (defaultValue);
 			val += " val: ";
 			val += NLMISC::toString (value);
-			nldebug ("NETTC:   prop %s %d: %s", name.c_str(), type, val.c_str());
+			NETTC_DEBUG ("NETTC:   prop %s %d: %s", name.c_str(), type, val.c_str());
 		}
 		else
 		{
@@ -217,7 +222,7 @@ public:
 				val += NLMISC::toString (*it);
 				val += " ";
 			}
-			nldebug ("NETTC:   prop %s %d: %d elements ( %s)", name.c_str(), type, value.size(), val.c_str());
+			NETTC_DEBUG ("NETTC:   prop %s %d: %d elements ( %s)", name.c_str(), type, value.size(), val.c_str());
 		}
 		else
 		{
@@ -225,6 +230,11 @@ public:
 		}
 	}
 
+	// Read the header (first part of the transport class message, currently only className)
+	static void readHeader(CMessage& msgin, std::string& className)
+	{
+		msgin.serial(className);
+	}
 	
 	/// Display with nlinfo the content of the class (debug purpose)
 	void display ();
@@ -384,7 +394,7 @@ protected:
 	static void sendLocalRegisteredClass (NLNET::TServiceId sid)
 	{
 		nlassert (Init);
-		nldebug ("NETTC: sendLocalRegisteredClass to %hu", sid.get());
+		NETTC_DEBUG ("NETTC: sendLocalRegisteredClass to %hu", sid.get());
 		createLocalRegisteredClassMessage ();
 		NLNET::CUnifiedNetwork::getInstance()->send (sid, TempMessage);
 	}
@@ -437,7 +447,7 @@ inline void CTransportClass::className (const std::string &name)
 	}
 	else if (Mode == 4) // display
 	{
-		nldebug ("NETTC: class %s:", name.c_str());
+		NETTC_DEBUG ("NETTC: class %s:", name.c_str());
 	}
 	else
 	{

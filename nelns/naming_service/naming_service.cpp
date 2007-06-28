@@ -416,7 +416,7 @@ list<CServiceEntry>::iterator doRemove (list<CServiceEntry>::iterator it)
 		}
 	}
 
-	nlinfo ("Before removing the service, we wait the ACK of '%s'", res.c_str());
+	nlinfo ("Before removing the service %s-%hu, we wait the ACK of '%s'", (*it).Name.c_str(), (*it).SId.get(), res.c_str());
 	
 	if ((*it).WaitingUnregistrationServices.empty())
 	{
@@ -580,7 +580,7 @@ bool doRegister (const string &name, const vector<CInetAddress> &addr, TServiceI
 				if (!reconnection)
 				{
 					CMessage msgout ("RGB");
-					uint8 s = 1;
+					TServiceId::size_type s = 1;
 					msgout.serial (s);
 					msgout.serial (const_cast<string &>(name));
 					msgout.serial (sid);
@@ -623,7 +623,7 @@ bool doRegister (const string &name, const vector<CInetAddress> &addr, TServiceI
 				msgout.serial (sid);
 
 				// send him all services available (also itself)
-				uint8 nb = 0;
+				TServiceId::size_type nb = 0;
 
 				vector<CInetAddress> accessibleAddress;
 
@@ -669,7 +669,7 @@ void checkWaitingUnregistrationServices ()
 		{
 			if ((*it).WaitingUnregistrationServices.empty())
 			{
-				nlinfo ("Remove the service because all services ACK the remove");
+				nlinfo ("Removing the service %s-%hu because all services ACKd the removal", (*it).Name.c_str(), (*it).SId.get());
 			}
 			else
 			{
@@ -678,7 +678,7 @@ void checkWaitingUnregistrationServices ()
 				{
 					res += toString(it2->get()) + " ";
 				}
-				nlwarning ("Remove the service because time out occurs (service numbers %s didn't ACK)", res.c_str());
+				nlwarning ("Removing the service %s-%hu because time out occurs (service numbers %s didn't ACK)", (*it).Name.c_str(), (*it).SId.get(), res.c_str());
 			}
 			it = effectivelyRemove (it);
 		}
@@ -1165,6 +1165,3 @@ NLMISC_COMMAND( killAllServices, "SIM: Make all the controlled services quit", "
 	SIMInstance->killAllServices();
 	return true;
 }
-
-/* Merge NeL CVS (RING into HEAD)
- */

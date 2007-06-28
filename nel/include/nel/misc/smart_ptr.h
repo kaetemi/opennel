@@ -361,13 +361,17 @@ public:
 	}
 };
 
-// this operator only to compare with NULL value
+#ifdef NL_COMP_VC8
+
+// This operator only purpose is to compare with NULL value
 template <class T>
 bool operator == (const CRefPtr<T> &refPtr, int null)
 {
-	nlassert(null == NULL);
+	nlassert(null == 0);
 	return (T*)refPtr == (T*)null;
 }
+
+#endif
 
 template <class T>
 bool operator == (const CRefPtr<T> &refPtr, T *ptr)
@@ -925,6 +929,3 @@ bool CstCDbgPtr<T>::operator <(const CstCDbgPtr& p) const
 #endif // NL_SMART_PTR_H
 
 /* End of smart_ptr.h */
-
-/* Merge NeL CVS (RING into HEAD)
- */

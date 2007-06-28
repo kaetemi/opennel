@@ -131,6 +131,3 @@ private:
 #endif // NL_STREAM_H
 
 /* End of stream.h */
-
-/* Merge NeL CVS (RING into HEAD)
- */

@@ -48,6 +48,7 @@ CStaticMap<CSheetId::CChar,uint32, CSheetId::CCharComp> CSheetId::_SheetNameToId
 vector<std::string> CSheetId::_FileExtensions;
 bool CSheetId::_Initialised=false;
 bool CSheetId::_RemoveUnknownSheet=true;
+bool CSheetId::_DontHaveSheetKnowledge = false;
 
 const CSheetId CSheetId::Unknown(0);
 
@@ -96,6 +97,13 @@ CSheetId::CSheetId( const string& sheetName )
 	if (!buildSheetId(sheetName))
 	{
 		nlwarning("SHEETID: The sheet '%s' is not in sheet_id.bin, setting it to Unknown",sheetName.c_str());
+		std::string stack;
+		NLMISC::getCallStack(stack);
+		std::vector<std::string> contexts;
+		NLMISC::explode(stack, "\n", contexts);
+		nldebug("Dumping callstack :");
+		for (uint i=0; i<contexts.size(); ++i)
+			nldebug("  %3u : %s", i, contexts[i].c_str());
 		*this = Unknown;
 	}
 
@@ -108,7 +116,8 @@ CSheetId::CSheetId( const string& sheetName )
 //-----------------------------------------------
 bool CSheetId::buildSheetId(const std::string& sheetName)
 {
-	if (!_Initialised) init(false);
+	nlassert(_Initialised);
+	nlassert(!_DontHaveSheetKnowledge);
 
 	// try looking up the sheet name in _SheetNameToId
 	CStaticMap<CChar,uint32,CCharComp>::const_iterator itId;
@@ -145,7 +154,7 @@ bool CSheetId::buildSheetId(const std::string& sheetName)
 void CSheetId::loadSheetId ()
 {
 	H_AUTO(CSheetIdInit);
-	nldebug("Loding sheet_id.bin");
+	nldebug("Loading sheet_id.bin");
 
 	// Open the sheet id to sheet file name association
 	CIFile file;
@@ -291,6 +300,13 @@ void CSheetId::init(bool removeUnknownSheet)
 
 } // init //
 
+void CSheetId::initWithoutSheet()
+{
+	_Initialised = true;
+	_DontHaveSheetKnowledge = true;
+}
+
+
 
 //-----------------------------------------------
 //	uninit
@@ -332,7 +348,8 @@ CSheetId& CSheetId::operator=( const CSheetId& sheetId )
 //-----------------------------------------------
 CSheetId& CSheetId::operator=( const string& sheetName )
 {
-	if (!_Initialised) init(false);
+	nlassert(_Initialised);
+	nlassert(!_DontHaveSheetKnowledge);
 
 	CStaticMap<CChar,uint32,CCharComp>::const_iterator itId;
 	CChar c;

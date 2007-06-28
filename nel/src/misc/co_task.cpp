@@ -46,7 +46,7 @@
 #else //NL_USE_THREAD_COTASK
 // some platform specifics
 #if defined (NL_OS_WINDOWS)
-# define _WIN32_WINNT 0x0500
+//# define _WIN32_WINNT 0x0500
 # define NL_WIN_CALLBACK CALLBACK
 // Visual .NET won't allow Fibers for a Windows version older than 2000. However the basic features are sufficient for us, we want to compile them for all Windows >= 95
 # if !defined(_WIN32_WINNT) || (_WIN32_WINNT < 0x0400)
@@ -273,7 +273,10 @@ namespace NLMISC
 
 #else //NL_USE_THREAD_COTASK 
 #if defined (NL_OS_WINDOWS)
-		DeleteFiber(_PImpl->_Fiber);
+		if (_PImpl->_Fiber)
+		{
+			DeleteFiber(_PImpl->_Fiber);
+		}
 #elif defined(NL_OS_UNIX)
 		// free the stack
 		delete [] _PImpl->_Stack;
@@ -555,6 +558,3 @@ namespace NLMISC
 
 } // namespace NLMISC
 
-
-/* Merge NeL CVS (RING into HEAD)
- */

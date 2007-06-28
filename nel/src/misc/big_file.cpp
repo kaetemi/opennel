@@ -118,23 +118,25 @@ void CBigFile::CThreadFileArray::currentThreadFinished()
 // ***************************************************************************
 bool CBigFile::add (const std::string &sBigFileName, uint32 nOptions)
 {
-	BNP bnpTmp;
-
-	bnpTmp.BigFileName= sBigFileName;
-
 	// Is already the same bigfile name ?
-	string bigfilenamealone = CFile::getFilename (sBigFileName);
+	string bigfilenamealone = toLower(CFile::getFilename (sBigFileName));
 	if (_BNPs.find(bigfilenamealone) != _BNPs.end())
 	{
 		nlwarning ("CBigFile::add : bigfile %s already added.", bigfilenamealone.c_str());
 		return false;
 	}
 
+	// Create the new bnp entry
+	BNP &bnp = _BNPs[bigfilenamealone];
+
+	bnp.BigFileName= sBigFileName;
+
+
 	// Allocate a new ThreadSafe FileId for this bnp.
-	bnpTmp.ThreadFileId= _ThreadFileArray.allocate();
+	bnp.ThreadFileId= _ThreadFileArray.allocate();
 
 	// Get a ThreadSafe handle on the file
-	CHandleFile		&handle= _ThreadFileArray.get(bnpTmp.ThreadFileId);
+	CHandleFile		&handle= _ThreadFileArray.get(bnp.ThreadFileId);
 	// Open the big file.
 	handle.File = fopen (sBigFileName.c_str(), "rb");
 	if (handle.File == NULL)
@@ -186,7 +188,7 @@ bool CBigFile::add (const std::string &sBigFileName, uint32 nOptions)
 			return false;
 		}
 
-		if (fread (FileName, 1, nStringSize, handle.File) != nStringSize)
+		if (fread (FileName, nStringSize, 1, handle.File) != 1)
 		{
 			fclose (handle.File);			
 			handle.File = NULL;
@@ -235,20 +237,20 @@ bool CBigFile::add (const std::string &sBigFileName, uint32 nOptions)
 			it++;
 		}
 
-		bnpTmp.FileNames = new char[nSize];
-		memset(bnpTmp.FileNames, 0, nSize);
-		bnpTmp.Files.resize(nNb);
+		bnp.FileNames = new char[nSize];
+		memset(bnp.FileNames, 0, nSize);
+		bnp.Files.resize(nNb);
 
 		it = tempMap.begin();
 		nSize = 0;
 		nNb = 0;
 		while (it != tempMap.end())
 		{
-			strcpy(bnpTmp.FileNames+nSize, it->first.c_str());
+			strcpy(bnp.FileNames+nSize, it->first.c_str());
 			
-			bnpTmp.Files[nNb].Name = bnpTmp.FileNames+nSize;
-			bnpTmp.Files[nNb].Size = it->second.Size;
-			bnpTmp.Files[nNb].Pos = it->second.Pos;
+			bnp.Files[nNb].Name = bnp.FileNames+nSize;
+			bnp.Files[nNb].Size = it->second.Size;
+			bnp.Files[nNb].Pos = it->second.Pos;
 
 			nSize += it->first.size() + 1;
 			nNb++;
@@ -258,23 +260,22 @@ bool CBigFile::add (const std::string &sBigFileName, uint32 nOptions)
 	// End of temp map conversion
 
 	if (nOptions&BF_CACHE_FILE_ON_OPEN)
-		bnpTmp.CacheFileOnOpen = true;
+		bnp.CacheFileOnOpen = true;
 	else
-		bnpTmp.CacheFileOnOpen = false;
+		bnp.CacheFileOnOpen = false;
 
 	if (!(nOptions&BF_ALWAYS_OPENED))
 	{
 		fclose (handle.File);		
 		handle.File = NULL;
-		bnpTmp.AlwaysOpened = false;
+		bnp.AlwaysOpened = false;
 	}
 	else
 	{
-		bnpTmp.AlwaysOpened = true;
+		bnp.AlwaysOpened = true;
 	}
 
-	nldebug("BigFile : adding bnp '%s' to the collection", bigfilenamealone.c_str());
-	_BNPs.insert (make_pair(toLower(bigfilenamealone), bnpTmp));
+	nldebug("BigFile : added bnp '%s' to the collection", bigfilenamealone.c_str());
 
 	return true;
 }
@@ -492,6 +493,3 @@ void CBigFile::getBigFilePaths(std::vector<std::string> &bigFilePaths)
 
 
 } // namespace NLMISC
-
-/* Merge NeL CVS (RING into HEAD)
- */

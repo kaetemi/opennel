@@ -26,6 +26,9 @@
 #ifndef NL_MEMORY_CONFIG_H
 #define NL_MEMORY_CONFIG_H
 
+// Define this to use the default memory manager (ie not usuing the NeL memory manager)
+#define NL_USE_DEFAULT_MEMORY_MANAGER
+
 // Define this to disable debug features (use to trace buffer overflow and add debug informations in memory headers)
 #define NL_HEAP_ALLOCATION_NDEBUG
 

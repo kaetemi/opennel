@@ -2520,6 +2520,3 @@ void fillQuadIndexes (uint16 *indexes, uint first, uint last);
 extern HINSTANCE HInstDLL;
 
 #endif // NL_DRIVER_DIRECT3D_H
-
-/* Merge NeL CVS (RING into HEAD)
- */

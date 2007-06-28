@@ -151,7 +151,7 @@ class ScenarioRanking(BaseContent):
 		return "[]"
 
 
-	## stocker le rÃ©sultat de la requete SQL
+	## stocker le résultat de la requete SQL
 	security.declareProtected(CMFCorePermissions.ModifyPortalContent, 'update')
 	def update(self,limit=10):
 		"""update Ranking"""

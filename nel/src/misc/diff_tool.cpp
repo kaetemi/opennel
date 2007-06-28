@@ -145,6 +145,17 @@ bool loadStringFile(const std::string filename, vector<TStringInfo> &stringInfos
 			break;
 		}
 
+		// try to read a #fileline preprocessor command
+		if (CI18N::matchToken("#fileline", first, last))
+		{
+			// for now, just skip
+			uint32 lineCounter =0;	// we count line another way
+			CI18N::skipLine(first, last, lineCounter);
+
+			// begin parse of next line
+			continue;
+		}
+
 		if (!CI18N::parseLabel(first, last, si.Identifier))
 		{
 			uint32 line = countLine(text, first);
@@ -332,6 +343,18 @@ bool readPhraseFileFromString(ucstring const& doc, const std::string &filename, 
 			}
 			break;
 		}
+
+		// try to read a #fileline preprocessor command
+		if (CI18N::matchToken("#fileline", first, last))
+		{
+			// for now, just skip
+			uint32 lineCounter =0;	// we count line another way
+			CI18N::skipLine(first, last, lineCounter);
+
+			// begin parse of next line
+			continue;
+		}
+
 		if (!CI18N::parseLabel(first, last, phrase.Identifier))
 		{
 			uint32 line = countLine(doc, first);

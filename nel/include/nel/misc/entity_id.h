@@ -480,8 +480,11 @@ public:
 	std::string toString() const
 	{
 		std::string id;
+		id.reserve(25);
+		id+='(';
 		getDebugString (id);
-		return "(" + id + ")";
+		id+=')';
+		return id;
 	}
 
 	/// Read from a debug string, use the same format as toString() (id:type:creator:dynamic) in hexadecimal
@@ -508,7 +511,8 @@ public:
 	/// Have a debug string.
 	void getDebugString(std::string &str) const
 //	virtual void getDebugString(std::string &str) const
-	{											
+	{			
+		str.reserve(str.size()+24);
 		char b[256];
 		memset(b,0,255);
 		memset(b,'0',19);
@@ -545,7 +549,8 @@ public:
 			b[19 - n] = baseTable[(x & 15)];
 			x >>= 4;
 		}
-		str += "0x" + std::string(b);
+		str += "0x";
+		str += b;
 	}
 /*
 	/// \name NLMISC::IStreamable method.

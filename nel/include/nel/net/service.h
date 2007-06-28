@@ -582,6 +582,3 @@ inline IService *IService::getInstance()
 #endif // NL_SERVICE_H
 
 /* End of service.h */
-
-/* Merge NeL CVS (RING into HEAD)
- */

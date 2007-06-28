@@ -23,16 +23,21 @@
  * MA 02111-1307, USA.
  */
 
+
+
 #include "zone_bank.h"
+
+#ifdef NL_OS_WINDOWS
+
 #include "nel/misc/debug.h"
 #include "nel/misc/file.h"
 #include "nel/misc/i_xml.h"
 #include "nel/misc/o_xml.h"
-
 #include <windows.h>
 
 using namespace std;
 using namespace NLMISC;
+
 
 namespace NLLIGO
 {
@@ -697,3 +702,5 @@ void CZoneBank::getSelection (std::vector<CZoneBankElement*> &SelectedElements)
 // ***************************************************************************
 
 } // namespace NLLIGO
+
+#endif // NL_OS_WINDOWS

@@ -1190,6 +1190,3 @@ uint32 CSystemInfo::virtualMemory ()
 }
 
 } // NLMISC
-
-/* Merge NeL CVS (RING into HEAD)
- */

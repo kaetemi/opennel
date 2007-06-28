@@ -68,6 +68,7 @@ public:
 
 	virtual void run()
 	{
+_CrtCheckMemory();
 		// do the job
 		CApplicationContext serviceContext;
 		CTestService *scn = new CTestService;

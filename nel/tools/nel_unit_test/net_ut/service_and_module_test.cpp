@@ -201,6 +201,7 @@ public:
 	
 	void setup()
 	{
+_CrtCheckMemory();
 		_RestorePath = CPath::getCurrentPath();
 
 		nlverify(CPath::setCurrentPath(_WorkingPath.c_str()));
@@ -210,6 +211,7 @@ public:
 		// copy the service dll and config file to
 		// have completely different memory context
 
+_CrtCheckMemory();
 		for (uint i=0; i<NB_SERVICES; ++i)
 		{
 			string libName = CLibrary::makeLibName("net_service_lib_test");
@@ -229,6 +231,7 @@ public:
 			// load the library file
 			ServiceLib[i].loadLibrary(destDll, false, false, true);
 		}
+_CrtCheckMemory();
 
 		// Start the services
 		for (uint i=0; i<NB_SERVICES; ++i)
@@ -242,6 +245,7 @@ public:
 
 		// leave some time for services to start
 //		nlSleep(2000);
+_CrtCheckMemory();
 
 		// add the service in layer 5
 		cmdFuncs[0] = *(TCommandFunc**)ServiceLib[0].getSymbolAddress("runCommand");
@@ -255,6 +259,7 @@ public:
 		cmdFuncs[2]= *(TCommandFunc**)ServiceLib[2].getSymbolAddress("runCommand");
 		cmdFuncs[2]("unifiedNetwork.addService test_service_1 (address=localhost:8061 external sendId)");
 		cmdFuncs[2]("unifiedNetwork.addService test_service_2 (address=localhost:8062 external sendId)");
+_CrtCheckMemory();
 
 		// leave some time to establish connections
 //		nlSleep(5000);

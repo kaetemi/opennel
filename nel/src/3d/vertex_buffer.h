@@ -1293,6 +1293,3 @@ inline void CVertexBuffer::unlock () const
 
 
 
-
-/* Merge NeL CVS (RING into HEAD)
- */

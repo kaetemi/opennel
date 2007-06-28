@@ -30,6 +30,7 @@
 #include "buf_net_base.h"
 #include "listen_sock.h"
 #include "buf_sock.h"
+#include "net_log.h"
 #include <list>
 #include <set>
 
@@ -477,7 +478,7 @@ public:
 			// See clearClosedConnections().
 			NLMISC::CSynchronized<CConnections>::CAccessor removesetsync( &_RemoveSet );
 			removesetsync.value().insert( sockid );
-			//nldebug( "LNETL1: ic: %p - RemoveSet.size(): %d", ic, removesetsync.value().size() );
+			//LNETL1_DEBUG( "LNETL1: ic: %p - RemoveSet.size(): %d", ic, removesetsync.value().size() );
 		}
 #ifdef NL_OS_UNIX
 		wakeUp();

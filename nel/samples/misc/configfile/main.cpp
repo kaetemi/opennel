@@ -50,7 +50,7 @@ void var12Callback (CConfigFile::CVar &var)
 {
 	stringstream str;
 	
-	for (int i = 0; i < var.size (); i++)
+	for (uint i = 0; i < var.size (); i++)
 		str << var.asInt (i) << " ";
 
 	nlinfo("%s modified, new value: %s\n", var.Name.c_str (), str.str().c_str());
@@ -82,7 +82,7 @@ int main (int argc, char **argv)
 	cf.setCallback ("var12", var12Callback);
 
 	// display all variables
-	cf.print ();
+	cf.display(InfoLog);
 
 	// get the value of var1 as int
 	int var1 = cf.getVar ("var1").asInt();
@@ -97,7 +97,7 @@ int main (int argc, char **argv)
 
 	// if the variable is an array of values, you can access them putting the
 	// index of the variable you want. Example, get and print all value of var12:
-	for (sint i = 0; i < cf.getVar ("var12").size(); i++)
+	for (uint i = 0; i < cf.getVar ("var12").size(); i++)
 	{
 		int val = cf.getVar ("var12").asInt(i);
 		nlinfo("%d -> %d", i, val);
@@ -120,7 +120,7 @@ int main (int argc, char **argv)
 	cf.getVar ("var13").asInt (1);
 	cf.getVar ("var13").asInt (2);
 	
-	printf("Try to modify the var12 in the configfile or any other variable.\n\nPress CTRL-C to exit\n");
+	nlinfo("Try to modify the var12 in the configfile or any other variable.\n\nPress CTRL-C to exit\n");
 
 	while(true)
 	{

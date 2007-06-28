@@ -982,6 +982,3 @@ void main()
 		fprintf (stderr,"main trapped an exception: '%s'", e.what ());
 	}
 }
-
-/* Merge NeL CVS (RING into HEAD)
- */

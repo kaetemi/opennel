@@ -308,6 +308,3 @@ public:
 
 /* End of computed_string.h */
 
-
-/* Merge NeL CVS (RING into HEAD)
- */

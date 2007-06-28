@@ -81,6 +81,11 @@ public :
 	static void init(bool removeUnknownSheet = true);
 
 	/**
+	 *	Init the sheet id to work without knowlege of sheet name
+	 */
+	static void initWithoutSheet();
+
+	/**
 	 * Remove all allocated memory
 	 */
 	static void uninit();
@@ -224,6 +229,8 @@ private :
 	static void loadSheetId ();
 	static void loadSheetAlias ();
 	static void cbFileChange (const std::string &filename);
+
+	static bool _DontHaveSheetKnowledge;
 };
 
 

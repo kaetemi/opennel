@@ -20,6 +20,7 @@
 #include "skeleton_scale_dlg.h"
 #include "light_group_factor.h"
 #include "tune_mrm_dlg.h"
+#include "snapshot_tool_dlg.h"
 #include "nel/misc/file.h"
 #include "nel/../../src/3d/nelu.h"
 #include "nel/../../src/3d/mesh.h"
@@ -148,6 +149,7 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_COMMAND(ID_ENABLE_ELEMENT_ZROTATE, OnEnableElementZrotate)
 	ON_COMMAND(ID_FILE_EXIT, OnFileExit)
 	ON_COMMAND(ID_FILE_LOADCONFIG, OnFileLoadconfig)
+	ON_COMMAND(IDM_SNAPSHOT_TOOL, OnSnapShotTool)
 	ON_COMMAND(ID_FILE_OPEN, OnFileOpen)
 	ON_COMMAND(ID_FILE_SAVECONFIG, OnFileSaveconfig)	
 	ON_COMMAND(ID_VIEW_FIRSTPERSONMODE, OnViewFirstpersonmode)
@@ -1460,3 +1462,10 @@ void CMainFrame::OnUpdateWindowTuneMRM(CCmdUI* pCmdUI)
 {
 	pCmdUI->SetCheck (TuneMRMWindow);
 }
+
+void CMainFrame::OnSnapShotTool()
+{
+	CSnapshotToolDlg snapshotTool(ObjView);
+	snapshotTool.DoModal();
+}
+

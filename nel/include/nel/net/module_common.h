@@ -69,6 +69,9 @@ namespace NLNET
 	{
 	public:
 
+		// copy constructor is needed because SubParams contains pointers
+		TParsedCommandLine(const TParsedCommandLine& copy);
+
 		TParsedCommandLine()
 		{
 
@@ -119,6 +122,3 @@ namespace NLNET
 } // namespace NLNET
 
 #endif // NL_MODULE_COMMON_H
-
-/* Merge NeL CVS (RING into HEAD)
- */

@@ -192,6 +192,3 @@ private:
 #endif // NL_BIG_FILE_H
 
 /* End of big_file.h */
-
-/* Merge NeL CVS (RING into HEAD)
- */

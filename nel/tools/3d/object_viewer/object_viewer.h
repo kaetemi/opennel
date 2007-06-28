@@ -499,6 +499,8 @@ public:
 	void		setOcclusionTestMeshsVisible(bool visible) { _OcclusionTestMeshsVisible = visible; }
 	bool		getOcclusionTestMeshsVisible() const { return _OcclusionTestMeshsVisible; }
 
+	
+
 private:
 
 	CMainFrame									*_MainFrame;
@@ -673,6 +675,8 @@ int localizedMessageBox(HWND parentWindow, const char *message, int captionStrin
 // Return a string from the string table
 CString getStrRsc(uint stringID);
 
+
+bool browseFolder(const CString &caption, CString &destFolder, HWND parent);
 
 
 //{{AFX_INSERT_LOCATION}}

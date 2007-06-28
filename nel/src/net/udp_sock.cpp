@@ -26,6 +26,7 @@
 #include "stdnet.h"
 
 #include "nel/net/udp_sock.h"
+#include "nel/net/net_log.h"
 
 #ifdef NL_OS_WINDOWS
 # ifdef NL_COMP_VC8
@@ -107,7 +108,7 @@ void CUdpSock::bind( const CInetAddress& addr )
 	_Bound = true;
 	if ( _Logging )
 	{
-		nldebug( "LNETL0: Socket %d bound at %s", _Sock, _LocalAddr.asString().c_str() );
+		LNETL0_DEBUG( "LNETL0: Socket %d bound at %s", _Sock, _LocalAddr.asString().c_str() );
 	}
 }
 
@@ -127,7 +128,7 @@ void CUdpSock::sendTo( const uint8 *buffer, uint len, const CInetAddress& addr )
 
 	if ( _Logging )
 	{
-		nldebug( "LNETL0: Socket %d sent %d bytes to %s", _Sock, len, addr.asString().c_str() );
+		LNETL0_DEBUG( "LNETL0: Socket %d sent %d bytes to %s", _Sock, len, addr.asString().c_str() );
 	}
 
 	// If socket is unbound, retrieve local address
@@ -146,7 +147,7 @@ void CUdpSock::sendTo( const uint8 *buffer, uint len, const CInetAddress& addr )
 		int  size = sizeof (MMS);
 		getsockopt (_Sock, SOL_SOCKET, SO_SNDBUF, (char *)&SB, &size);
 		getsockopt (_Sock, SOL_SOCKET, SO_MAX_MSG_SIZE, (char *)&MMS, &size);
-		nlinfo ("LNETL0: The udp SO_MAX_MSG_SIZE=%u, SO_SNDBUF=%u", MMS, SB);
+		LNETL0_INFO ("LNETL0: The udp SO_MAX_MSG_SIZE=%u, SO_SNDBUF=%u", MMS, SB);
 		first = false;
 	}
 #endif
@@ -174,7 +175,7 @@ bool CUdpSock::receive( uint8 *buffer, uint32& len, bool throw_exception )
 	_BytesReceived += len;
 	if ( _Logging )
 	{
-		nldebug( "LNETL0: Socket %d received %d bytes from peer %s", _Sock, len, _RemoteAddr.asString().c_str() );
+		LNETL0_DEBUG( "LNETL0: Socket %d received %d bytes from peer %s", _Sock, len, _RemoteAddr.asString().c_str() );
 	}
 	return true;
 }
@@ -206,7 +207,7 @@ bool CUdpSock::receivedFrom( uint8 *buffer, uint& len, CInetAddress& addr, bool 
 	_BytesReceived += len;
 	if ( _Logging )
 	{
-		nldebug( "LNETL0: Socket %d received %d bytes from %s", _Sock, len, addr.asString().c_str() );
+		LNETL0_DEBUG( "LNETL0: Socket %d received %d bytes from %s", _Sock, len, addr.asString().c_str() );
 	}
 	return true;
 }

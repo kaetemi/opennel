@@ -77,9 +77,9 @@ static void *ProxyFunc( void *arg )
  * Constructor
  */
 CPThread::CPThread(IRunnable *runnable, uint32 stackSize) 
-	:	_State(0), 
-		_StackSize(stackSize),
-		Runnable(runnable)
+	:	Runnable(runnable),
+		_State(0), 
+		_StackSize(stackSize)
 {}
 
 

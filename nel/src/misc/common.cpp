@@ -137,12 +137,13 @@ using namespace std;
 
 	#pragma message( " " )
 
-#endif // NL_OS_WINDOWS
-
-#ifdef NL_COMP_VC6
-// only for MSDEV 6.0
+#if (_MSC_VER >= 1200) && (_MSC_VER < 1400) && (WINVER < 0x0500)
+//Using VC7 and later lib, need this to compile on VC6
 extern "C" long _ftol2( double dblSource ) { return _ftol( dblSource ); }
 #endif
+
+
+#endif // NL_OS_WINDOWS
 
 
 
@@ -747,7 +748,33 @@ bool launchProgram (const std::string &programName, const std::string &arguments
 		firstLaunchProgram = false;
 	}
 
+	// convert one arg into several args
+	vector<string> args;
+	uint32 pos1 = 0, pos2 = 0;
+	do
+	{
+		pos1 = arguments.find_first_not_of (" ", pos2);
+		if (pos1 == string::npos) break;
+		pos2 = arguments.find_first_of (" ", pos1);
+		args.push_back (arguments.substr (pos1, pos2-pos1));
+	}
+	while (pos2 != string::npos);
+
+	// Store the size of each arg
+	vector<char *> argv(args.size()+2);
+	uint i = 0;
+	argv[i] = (char *)programName.c_str();
+	for (; i < args.size(); i++)
+	{
+		argv[i+1] = (char *) args[i].c_str();
+	}
+	argv[i+1] = NULL;
+
 	int status = vfork ();
+	/////////////////////////////////////////////////////////
+	/// WARNING : NO MORE INSTRCUTION AFTER VFORK !
+	/// READ VFORK manual 
+	/////////////////////////////////////////////////////////
 	if (status == -1)
 	{
 		char *err = strerror (errno);
@@ -755,29 +782,8 @@ bool launchProgram (const std::string &programName, const std::string &arguments
 	}
 	else if (status == 0)
     {
-		// convert one arg into several args
-		vector<string> args;
-		uint32 pos1 = 0, pos2 = 0;
-		do
-		{
-			pos1 = arguments.find_first_not_of (" ", pos2);
-			if (pos1 == string::npos) break;
-			pos2 = arguments.find_first_of (" ", pos1);
-			args.push_back (arguments.substr (pos1, pos2-pos1));
-		}
-		while (pos2 != string::npos);
 
-		// Store the size of each arg
-		vector<char *> argv(args.size()+1);
-		uint i = 0;
-		argv[i] = (char *)programName.c_str();
-		for (; i < args.size(); i++)
-		{
-			argv[i+1] = (char *) args[i].c_str();
-		}
-		argv[i+1] = NULL;
-
-		// Exec
+		// Exec (the only allowed instruction after vfork)
 		status = execvp(programName.c_str(), &argv.front());
 
 		if (status == -1)
@@ -1110,6 +1116,3 @@ std::string trim (const std::string &str)
 }
 
 } // NLMISC
-
-/* Merge NeL CVS (RING into HEAD)
- */

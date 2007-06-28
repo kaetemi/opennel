@@ -306,6 +306,11 @@ SOURCE=.\slot_dlg.cpp
 # End Source File
 # Begin Source File
 
+SOURCE=.\snapshot_tool_dlg.cpp
+# SUBTRACT CPP /YX /Yc /Yu
+# End Source File
+# Begin Source File
+
 SOURCE=.\sound_system.cpp
 # End Source File
 # Begin Source File
@@ -448,6 +453,10 @@ SOURCE=.\skippable_message_box.h
 # Begin Source File
 
 SOURCE=.\slot_dlg.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\snapshot_tool_dlg.h
 # End Source File
 # Begin Source File
 

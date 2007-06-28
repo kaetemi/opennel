@@ -26,6 +26,7 @@
 #include "stdnet.h"
 
 #include "nel/net/dummy_tcp_sock.h"
+#include "nel/net/net_log.h"
 
 using namespace NLMISC;
 
@@ -48,7 +49,7 @@ void CDummyTcpSock::connect( const CInetAddress& addr )
 	//sync.value() = true;
 	_Connected = true;
 
-	nldebug( "LNETL0: Socket connected to %s", addr.asString().c_str() );
+	LNETL0_DEBUG( "LNETL0: Socket connected to %s", addr.asString().c_str() );
 }
 
 
@@ -57,7 +58,7 @@ void CDummyTcpSock::connect( const CInetAddress& addr )
  */
 void CDummyTcpSock::disconnect()
 {
-	nldebug( "LNETL0: Socket disconnecting from %s...", _RemoteAddr.asString().c_str() );
+	LNETL0_DEBUG( "LNETL0: Socket disconnecting from %s...", _RemoteAddr.asString().c_str() );
 
 	//CSynchronized<bool>::CAccessor sync( &_SyncConnected );
 	//sync.value() = false;

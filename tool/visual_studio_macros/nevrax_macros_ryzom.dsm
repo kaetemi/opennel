@@ -8,7 +8,7 @@
 '
 '------------------------------------------------------------------------------
 ' FILE DESCRIPTION: Nevrax Visual Studio macro file
-' $Id: nevrax_macros_ryzom.dsm,v 1.6 2004/01/06 14:23:07 cado Exp $
+' $Id: nevrax_macros_ryzom.dsm,v 1.6 2004-01-06 14:23:07 cado Exp $
 '------------------------------------------------------------------------------
 
 
@@ -24,7 +24,7 @@ Sub NevraxInsertFileHeader( filename, productname )
 		"/** \file " + filename + vbLf + _
 		" * <File description>" + vbLf + _
 		" *" + vbLf + _
-		" * $Id: nevrax_macros_ryzom.dsm,v 1.6 2004/01/06 14:23:07 cado Exp $" + vbLf + _
+		" * $Id: nevrax_macros_ryzom.dsm,v 1.6 2004-01-06 14:23:07 cado Exp $" + vbLf + _
 		" */" + vbLf + vbLf
 	ActiveDocument.Selection = _
 		"/* Copyright, 2000-2004 Nevrax Ltd." + vbLf + _

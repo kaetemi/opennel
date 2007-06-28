@@ -842,6 +842,3 @@ namespace NLNET
 	}
 
 } // namespace NLNET
-
-/* Merge NeL CVS (RING into HEAD)
- */

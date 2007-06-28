@@ -3946,6 +3946,3 @@ void CBitmap::getDibData(uint8*& extractData)
 
 } // NLMISC
 
-
-/* Merge NeL CVS (RING into HEAD)
- */

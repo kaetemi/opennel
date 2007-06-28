@@ -93,6 +93,3 @@ void CTDS::setPointer (void* pointer)
 // *********************************************************
 
 } // NLMISC
-
-/* Merge NeL CVS (RING into HEAD)
- */

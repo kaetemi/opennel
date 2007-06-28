@@ -1107,6 +1107,3 @@ void	updateRetrieverBank()
 	outputBank.close();
 }
 
-
-/* Merge NeL CVS (RING into HEAD)
- */

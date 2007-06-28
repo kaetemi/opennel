@@ -664,7 +664,7 @@ void CPackedZone32::build(std::vector<const CTessFace*> &leaves,
 			igs[k]->getInstanceMatrix(l, instanceMatrix);
 			if (NLMISC::strlwr(NLMISC::CFile::getExtension(igs[k]->getShapeName(l))) == "pacs_prim") continue;
 			std::string stdShapeName = standardizeShapeName(igs[k]->getShapeName(l));
-			TShapeCache::const_iterator &it = shapeCache.find(stdShapeName);
+			TShapeCache::const_iterator it = shapeCache.find(stdShapeName);
 			if (it != shapeCache.end())
 			{
 				CAABBox xformBBox = CAABBox::transformAABBox(instanceMatrix, it->second.LocalBBox);
@@ -1289,7 +1289,7 @@ template <class T> bool raytrace(T &packedZone, const NLMISC::CVector &start, co
 		if (x >= (sint) packedZone.Grid.getWidth()) continue;
 		if (y < 0) continue;
 		if (y >= (sint) packedZone.Grid.getHeight()) continue;		
-		uint32 triListIndex = packedZone.Grid(x, y);
+		T::TIndexType triListIndex = packedZone.Grid(x, y);
 		if (triListIndex != (T::TIndexType) ~0)
 		{
 			CTriangle tri;

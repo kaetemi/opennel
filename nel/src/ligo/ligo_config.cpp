@@ -821,6 +821,3 @@ void CLigoConfig::updateDynamicAliasBitCount(uint32 newDynamicAliasBitCount)
 }
 
 
-
-/* Merge NeL CVS (RING into HEAD)
- */

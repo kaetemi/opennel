@@ -31,6 +31,7 @@
 #include "nel/net/module_message.h"
 #include "nel/net/unified_network.h"
 #include "nel/net/service.h"
+#include "nel/net/net_log.h"
 
 using namespace std;
 using namespace NLMISC;
@@ -285,7 +286,7 @@ namespace NLNET
 
 			if (!callbackRegistered)
 			{
-				nldebug("LNETL6: L5 transport open : registering callbacks");
+				LNETL6_DEBUG("LNETL6: L5 transport open : registering callbacks");
 				// set the service con/disconnect callback
 				un->setServiceUpCallback("*", CGatewayL5Transport::cbOnServiceUp);
 				un->setServiceDownCallback("*", CGatewayL5Transport::cbOnServiceDown);
@@ -306,8 +307,16 @@ namespace NLNET
 				TServiceId sid = *(uniqueService.begin());
 				uniqueService.erase(uniqueService.begin());
 
-				// send transport descriptor to other service
-				onServiceUp(un->getServiceName(sid), sid);
+				if ( un->isConnectionConnected(sid))
+				{
+					// send transport descriptor to other service
+					onServiceUp(un->getServiceName(sid), sid);
+				}
+				else
+				{
+					// the Connection is not established right now. We wait for the ServiceUp callback
+				}
+				
 			}
 
 			_Open = true;
@@ -341,7 +350,7 @@ namespace NLNET
 		{
 			H_AUTO(L5_onServiceUp);
 
-			nldebug("LNETL6: L5 transport onServiceUp('%s')", serviceName.c_str());
+			LNETL6_DEBUG("LNETL6: L5 transport onServiceUp('%s')", serviceName.c_str());
 			// send the transport descriptor to the new service
 			TTransportDesc	desc;
 			desc.SubNetName = _SubNetName;
@@ -360,12 +369,12 @@ namespace NLNET
 		{
 			H_AUTO(L5_onServicedown);
 
-			nldebug("LNETL6: L5 transport onServiceDown('%hu')", sid.get());
+			LNETL6_DEBUG("LNETL6: L5 transport onServiceDown('%hu')", sid.get());
 			// retrieve the route
 			TRouteMap::iterator it(_Routes.find(sid));
 			if (it == _Routes.end())
 			{
-				nlwarning("Transport L5 : service down, can't find a route for the service");
+				nlinfo("Transport L5 : service down, can't find a route for the service");
 				return;
 			}
 			CL5Route *route = it->second;
@@ -383,7 +392,7 @@ namespace NLNET
 		{
 			H_AUTO(L5_onDispatchMessage);
 
-			nldebug("LNETL6: L5 transport onDispatchMessage from service %hu", sid.get());
+			LNETL6_DEBUG("LNETL6: L5 transport onDispatchMessage from service %hu", sid.get());
 			/// retrieve the route for dispatching
 			TRouteMap::iterator it(_Routes.find(sid));
 			if (it == _Routes.end())
@@ -413,13 +422,13 @@ namespace NLNET
 		{
 			H_AUTO(L5_onAddTransport);
 
-			nldebug("LNETL6: L5 transport onAddTransport from service %hu", sid.get());
+			LNETL6_DEBUG("LNETL6: L5 transport onAddTransport from service %hu", sid.get());
 			// we need to create a route for this transport
 			// create a new route and send the route open message
 
 			if (_Routes.find(sid) != _Routes.end())
 			{
-				nldebug("LNETL6: L5 transport onAddTransport a route for this service alredy exist");
+				LNETL6_DEBUG("LNETL6: L5 transport onAddTransport a route for this service alredy exist");
 				return;
 			}
 
@@ -453,7 +462,7 @@ namespace NLNET
 		{
 			H_AUTO(L5_onRemoveTransport);
 
-			nldebug("LNETL6: L5 transport onRemoveTransport from service %hu", sid.get());
+			LNETL6_DEBUG("LNETL6: L5 transport onRemoveTransport from service %hu", sid.get());
 			// Remove the route
 			TRouteMap::iterator it(_Routes.find(sid));
 			if (it == _Routes.end())
@@ -481,7 +490,7 @@ namespace NLNET
 
 		static void cbL5AddTransport(CMessage &msgin, const std::string &serviceName, TServiceId sid)
 		{
-			nldebug("LNETL6: L5 transport cbL5AddTransport from service %hu", sid.get());
+			LNETL6_DEBUG("LNETL6: L5 transport cbL5AddTransport from service %hu", sid.get());
 			// Receive a transport descriptor from another service, create
 			// a route for it
 
@@ -509,7 +518,7 @@ namespace NLNET
 
 		static void cbL5RemoveTransport(CMessage &msgin, const std::string &serviceName, TServiceId sid)
 		{
-			nldebug("LNETL6: L5 transport cbL5RemoveTransport from service %hu", sid.get());
+			LNETL6_DEBUG("LNETL6: L5 transport cbL5RemoveTransport from service %hu", sid.get());
 			// Receive a transport descriptor from another service, delete
 			// the route for it
 
@@ -536,7 +545,7 @@ namespace NLNET
 	
 		static void cbDispatchL5Message (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 		{
-			nldebug("LNETL6: L5 transport cbDispatch called, receiving from %s", serviceName.c_str());
+			LNETL6_DEBUG("LNETL6: L5 transport cbDispatch called, receiving from %s", serviceName.c_str());
 			// dispatch the message to the route associated with the service
 			// the first info in the message is the transport id
 			TL5TransportId transportId;
@@ -557,7 +566,7 @@ namespace NLNET
 
 		static  void cbOnServiceUp (const std::string &serviceName, TServiceId sid, void *arg)
 		{
-			nldebug("LNETL6: L5 transport cbOnServiceUp called, service up for %s", serviceName.c_str());
+			LNETL6_DEBUG("LNETL6: L5 transport cbOnServiceUp called, service up for %s", serviceName.c_str());
 			// callback all open transport about the new service
 			TTransportDispatcher::iterator first(_TransportDispatcher.begin()), last(_TransportDispatcher.end());
 			for (; first != last; ++first)
@@ -571,7 +580,7 @@ namespace NLNET
 
 		static  void cbOnServiceDown (const std::string &serviceName, TServiceId sid, void *arg)
 		{
-			nldebug("LNETL6: L5 transport cbOnServicedown called, service down for %s", serviceName.c_str());
+			LNETL6_DEBUG("LNETL6: L5 transport cbOnServicedown called, service down for %s", serviceName.c_str());
 			// callback all open transport about the removed service
 			TTransportDispatcher::iterator first(_TransportDispatcher.begin()), last(_TransportDispatcher.end());
 			for (; first != last; ++first)
@@ -615,6 +624,3 @@ namespace NLNET
 	}
 
 } // namespace NLNET
-
-/* Merge NeL CVS (RING into HEAD)
- */

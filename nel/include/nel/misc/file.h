@@ -182,9 +182,13 @@ private:
 	mutable sint32	_ReadPos;
 	uint32			_FileSize;
 
-	// Big file
+	// Big file & xml pack
 	bool	_AlwaysOpened;
+	/// Flag true if file is in a big file
 	bool	_IsInBigFile;
+	/// Flag true if file is in an xml pack
+	bool	_IsInXMLPackFile;
+	//// Offset in bnp or xml pack
 	uint32	_BigFileOffset;
 
 	// Load async if needed in the cache.

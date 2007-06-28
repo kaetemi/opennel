@@ -411,9 +411,10 @@ static void setFX(CShader &s, const char *name, INT rsc, CDriverD3D *drv)
 	H_AUTO_D3D(setFX)
 	HRSRC hrsrc = FindResource(HInstDLL, MAKEINTRESOURCE(rsc), "FX");
 	HGLOBAL hglob = LoadResource(HInstDLL, hrsrc);
-	const char *datas = (const char *) LockResource(hglob);
+	std::vector<char> shaderText(SizeofResource(HInstDLL, hrsrc) + 1, 0);	
+	memcpy(&shaderText[0], LockResource(hglob), shaderText.size() - 1);
 	s.setName(name);
-	s.setText(datas);
+	s.setText(&shaderText[0]);
 	nlverify (drv->activeShader (&s));
 }
 
@@ -551,7 +552,9 @@ void CDriverD3D::notifyAllShaderDrvOfResetDevice()
 		CShaderDrvInfosD3D *drvInfo = NLMISC::safe_cast<CShaderDrvInfosD3D *>(*it);
 		if (drvInfo->Effect)
 		{
-			nlverify(drvInfo->Effect->OnResetDevice() == D3D_OK);
+			//nlverify(
+			drvInfo->Effect->OnResetDevice();
+			//== D3D_OK);
 		}
 	}
 }

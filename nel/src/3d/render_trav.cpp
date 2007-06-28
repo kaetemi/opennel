@@ -1374,6 +1374,3 @@ void CRenderTrav::debugWaterModelMemory(const char *tag, bool dumpList)
 
 
 
-
-/* Merge NeL CVS (RING into HEAD)
- */

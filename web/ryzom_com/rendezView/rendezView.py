@@ -32,7 +32,7 @@ rendezViewSchema=BaseFolderSchema.copy()+ Schema((
 		widget=RichWidget(
 			label="",
 			label_msgid="rendezView_schema_label_text",
-			description="Description de l'Ã©venement",
+			description="Description de l'évenement",
 			description_msgid="rendezView_schema_text",
 			i18n_domain="rendezView",
 		)
@@ -72,7 +72,7 @@ rendezViewSchema=BaseFolderSchema.copy()+ Schema((
 		widget=IntegerWidget(
 			label="",
 			label_msgid="rendezView_schema_label_maxseat",
-			description="Nombre de place rÃ©servable au maximum par personne",
+			description="Nombre de place réservable au maximum par personne",
 			description_msgid="rendezView_schema_maxseat",
 			i18n_domain="rendezView",
 		)
@@ -171,7 +171,7 @@ class rendezView(BaseFolder):
 		return (self.nbSeatsTake() < self.getNbSeat()) and (not self.isRegister())
 
 	def isRegister(self):
-		"""test si l'utilisateur est dÃ©ja inscrit"""
+		"""test si l'utilisateur est déja inscrit"""
 		#on recupere le membre
 		mtool = getToolByName(self, 'portal_membership')
 		inscriptId = self.getId()+'_'+mtool.getAuthenticatedMember().getUserName()
@@ -235,8 +235,8 @@ class rendezView(BaseFolder):
 
 	security.declarePublic('removeParticipant')
 	def removeParticipant(self,REQUEST):
-		"""Permet Ã  un inscrit de se dÃ©sinscrire"""
-		#on rÃ©cupÃ¨re l'objet participant correspondant
+		"""Permet à un inscrit de se désinscrire"""
+		#on récupère l'objet participant correspondant
 		mtool = getToolByName(self, 'portal_membership')
 		inscriptId = self.getId()+'_'+mtool.getAuthenticatedMember().getUserName()			
 

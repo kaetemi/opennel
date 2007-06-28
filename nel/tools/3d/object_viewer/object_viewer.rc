@@ -237,6 +237,26 @@ END
 STRINGTABLE DISCARDABLE 
 BEGIN
     IDS_ERROR_IN_MORPH_MESH "ERROR IN MORPH MESHS"
+    IDS_CHOOSE_SNAPSHOT_INPUT_PATH "Choose input path for the snapshot tool"
+    IDS_CHOOSE_SNAPSHOT_OUTPUT_PATH "Choose output path for the snapshot tool"
+    IDS_GETTING_PATH_CONTENT "Getting path content ..."
+    IDS_DESKTOP_TOO_SMALL_FOR_SNAPSHOT 
+                            "The snapshot tool require that the desktop resolution be greater than the snapshot size. Please enlarge the desktop or choose a smaller snapshot size."
+    IDS_SNAPSHOT_NO_FILES_FOUND "No files found!"
+    IDS_SNAPSHOT_NO_FILTER_MATCH_FOUND 
+                            "File(s) were found, but no file match the filters! Please check the path or the list or filters"
+    IDS_SNAPSHOT_FILES_TO_PROCESS " files to process"
+    IDS_SNAPSHOT_NO_CONTENT_RETRIEVED 
+                            "Couldn't take window snapshot! window too small ?"
+    IDS_SNAPSHOT_FINISHED   "Done !"
+    IDS_SNAPSHOT_EMPTY_INPUT_PATH "Input path is empty !"
+    IDS_SNAPSHOT_EMPTY_INPUT_PATH_NOT_FOUND "Input path not found !"
+    IDS_SNAPSHOT_EMPTY_OUTPUT_PATH "Output path is empty!"
+    IDS_SNAPSHOT_CREATE_OUTPUT_DIRECTORY 
+                            "Output directory was not found, create it ?"
+    IDS_SNAPSHOT_OUTPUT_PATH_CREATION_FAILED "Output path creation failed!"
+    IDS_SNAPSHOT_NO_VIEW_SELECTED 
+                            "No views were selected ! No snapshot will be taken."
 END
 
 #endif    // English (U.S.) resources
@@ -811,7 +831,7 @@ END
 
 IDD_CHOOSE_MESH DIALOGEX 0, 0, 374, 19
 STYLE WS_CHILD
-FONT 8, "MS Sans Serif"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
     LTEXT           "Static",IDC_SHAPE_NAME,29,3,69,15,WS_DISABLED,
                     WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
@@ -1830,6 +1850,63 @@ BEGIN
                     60,190,10
 END
 
+IDD_SNAPSHOT_TOOL DIALOGEX 0, 0, 292, 343
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Snapshot tool"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Input path :",IDC_STATIC,8,11,38,10
+    EDITTEXT        IDC_INPUT_PATH,55,8,176,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...",IDC_BROWSE_INPUT_PATH,234,8,47,14
+    LTEXT           "Output path :",IDC_STATIC,8,44,41,10
+    EDITTEXT        IDC_OUTPUT_PATH,55,41,176,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...",IDC_BROWSE_OUTPUT_PATH,234,41,47,14
+    CONTROL         "Recurse sub-folders",IDC_RECURSE_SUBFOLDER,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,8,60,77,10
+    COMBOBOX        IDC_OUTPUTPATH_OPTION,55,26,176,52,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_FILTERS,9,88,81,95,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_ADD_FILTER,93,88,45,16
+    GROUPBOX        "Paths",IDC_STATIC,3,0,282,73
+    PUSHBUTTON      "Remove",IDC_REMOVE_FILTER,93,106,45,16
+    PUSHBUTTON      "Edit",IDC_EDIT_FILTER,93,124,45,16
+    GROUPBOX        "Filters",IDC_STATIC,3,75,140,112
+    LTEXT           "Width :",IDC_STATIC,154,85,25,10
+    LTEXT           "Height :",IDC_STATIC,154,100,27,10
+    EDITTEXT        IDC_WIDTH,181,83,42,14,ES_AUTOHSCROLL,WS_EX_RIGHT
+    EDITTEXT        IDC_HEIGHT,181,98,42,14,ES_AUTOHSCROLL,WS_EX_RIGHT
+    LTEXT           "Format :",IDC_STATIC,154,115,26,11
+    COMBOBOX        IDC_FORMAT,181,114,43,51,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Output",IDC_STATIC,146,75,139,112
+    PUSHBUTTON      "Go !",IDC_GO,167,321,50,15
+    LISTBOX         IDC_LOG,3,200,282,115,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Stop",IDC_STOP,223,319,50,16
+    LTEXT           "Log :",IDC_STATIC,5,189,20,10
+    PUSHBUTTON      "Close",IDC_CLOSE,113,321,50,15
+    LTEXT           "Output mode :",IDC_STATIC,8,27,46,10
+    CONTROL         "Dump texture sets",IDC_DUMP_TEXTURE_SETS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,151,158,72,14
+    CONTROL         "Front",IDC_VIEW_FRONT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,228,83,54,10
+    CONTROL         "Right",IDC_VIEW_RIGHT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,228,93,54,10
+    CONTROL         "Left",IDC_VIEW_LEFT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,228,103,54,10
+    CONTROL         "Top",IDC_VIEW_TOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    228,113,54,10
+    CONTROL         "Bottom",IDC_VIEW_BOTTOM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,228,123,54,10
+    CONTROL         "Back",IDC_VIEW_BACK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,228,133,54,10
+    CONTROL         "Postfix with view name",IDC_POSTFIX_VIEWNAME,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,151,171,92,12
+    PUSHBUTTON      "All",IDC_VIEW_ALL,228,144,23,10
+    PUSHBUTTON      "None",IDC_VIEW_NONE,254,144,23,10
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -2446,6 +2523,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 85
     END
+
+    IDD_SNAPSHOT_TOOL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 285
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 336
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -2495,7 +2580,7 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1, 0, 0, 103
+ FILEVERSION 1,0,0,103
  PRODUCTVERSION 1,0,0,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
@@ -2711,6 +2796,8 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "Load config...",              ID_FILE_LOADCONFIG
         MENUITEM "Save config...",              ID_FILE_SAVECONFIG
+        MENUITEM SEPARATOR
+        MENUITEM "Snapshot tool",               IDM_SNAPSHOT_TOOL
         MENUITEM SEPARATOR
         MENUITEM "E&xit",                       ID_FILE_EXIT
     END
@@ -3139,6 +3226,25 @@ BEGIN
     IDC_TRAIL_COORD_SYSTEM, 0x403, 25, 0
 0x6146, 0x6874, 0x7265, 0x6320, 0x6f6f, 0x6472, 0x6e69, 0x7461, 0x2065, 
 0x7973, 0x7473, 0x6d65, "\000" 
+    0
+END
+
+IDD_SNAPSHOT_TOOL DLGINIT
+BEGIN
+    IDC_OUTPUTPATH_OPTION, 0x403, 19, 0
+0x7543, 0x7473, 0x6d6f, 0x6f20, 0x7475, 0x7570, 0x2074, 0x6170, 0x6874, 
+"\000" 
+    IDC_OUTPUTPATH_OPTION, 0x403, 35, 0
+0x7355, 0x2065, 0x6f72, 0x746f, 0x6920, 0x706e, 0x7475, 0x7020, 0x7461, 
+0x2068, 0x7361, 0x6f20, 0x7475, 0x7570, 0x2074, 0x6170, 0x6874, "\000" 
+    IDC_OUTPUTPATH_OPTION, 0x403, 38, 0
+0x7355, 0x2065, 0x7563, 0x7272, 0x6e65, 0x2074, 0x6873, 0x7061, 0x2065, 
+0x6170, 0x6874, 0x6120, 0x2073, 0x756f, 0x7074, 0x7475, 0x7020, 0x7461, 
+0x0068, 
+    IDC_FORMAT, 0x403, 4, 0
+0x4754, 0x0041, 
+    IDC_FORMAT, 0x403, 5, 0
+0x504a, 0x4745, "\000" 
     0
 END
 

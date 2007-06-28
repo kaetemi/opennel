@@ -122,7 +122,7 @@ struct CVPOperand
 		EOutputRegister OutputRegisterValue;		
 		EInputRegister  InputRegisterValue;		
 		uint		    VariableValue; // Index from 0 to 11			
-		uint            ConstantValue; // Index from 0 to 95		
+		sint            ConstantValue; // Index from 0 to 95, or -64 to +63 for constants with displacement
 	} Value;
 
 	bool Indexed; // true if it is a constant value, and if it is indexed

@@ -3520,6 +3520,3 @@ void CDriverD3D::endDialogMode()
 
 
 } // NL3D
-
-/* Merge NeL CVS (RING into HEAD)
- */

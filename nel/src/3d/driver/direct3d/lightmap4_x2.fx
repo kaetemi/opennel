@@ -136,7 +136,7 @@ technique four_stages_4
 		AlphaArg1[1] = TEXTURE;
 		AlphaOp[2] = DISABLE;
 		AlphaOp[3] = DISABLE;
-		PixelShader = (NULL);
+		PixelShader = NULL;
 	}
 }
 

@@ -25,13 +25,13 @@ QnASchema=BaseSchema.copy()+ Schema((
 		default=DateTime(),
 		required=True,
 		searchable=False,
-		widget=CalendarWidget(description="date de dÃ©part",label="Date",)
+		widget=CalendarWidget(description="date de départ",label="Date",)
 	),
 	DateTimeField('dateEnd',
 		default=DateTime(),
 		required=True,
 		searchable=False,
-		widget=CalendarWidget(description="date d'arrivÃ©e",label="Date",)
+		widget=CalendarWidget(description="date d'arrivée",label="Date",)
 	),	
 	TextField('description',
 		searchable=False,
@@ -39,7 +39,7 @@ QnASchema=BaseSchema.copy()+ Schema((
 	),
 	TextField('filter',
 		searchable=False,
-		widget=TextAreaWidget(description="Enter a les noms des auteurs Ã  chercher",)
+		widget=TextAreaWidget(description="Enter a les noms des auteurs à chercher",)
 	),
 	LinesField('choice',
 		searchable=False,
@@ -206,7 +206,7 @@ class QnA(BaseContent):
 			post_text   = self.TryToUTF8(str(row[3]))
 			post_title  = self.TryToUTF8(str(row[4]))
 			
-			#ajout des donnÃ©es dans le dictionnaire
+			#ajout des données dans le dictionnaire
 			newtext = self.generate_text([post_date,post_author,post_text,post_id])
 			PostList.update({i:[post_date,post_author,newtext,post_id,post_title]})
 		#return PostList

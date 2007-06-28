@@ -99,7 +99,7 @@ CWinThread::CWinThread (void* threadHandle, uint32 threadId)
 	nlassert (TLSThreadPointer!=0xffffffff);
  
 	// Set the thread pointer in TLS memory
-	nlverify (TlsSetValue (TLSThreadPointer, (void*)this));
+	nlverify (TlsSetValue (TLSThreadPointer, (void*)this) != 0);
 	
 	if (GetCurrentThreadId() == threadId)
 	{
@@ -606,6 +606,3 @@ bool CProcessWatch::isRunning() const
 } // NLMISC
 
 #endif // NL_OS_WINDOWS
-
-/* Merge NeL CVS (RING into HEAD)
- */

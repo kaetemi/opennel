@@ -1738,7 +1738,8 @@ namespace NLMISC
 		if (file==NULL)
 		{
 			clear();
-			nlwarning("Failed to open file for reading: %s",fileName.c_str());
+			// There was previously a warning displayed here but that was incorrect as it is defined that refaFromFile returns an empty result if the file is not found
+			// nlwarning("Failed to open file for reading: %s",fileName.c_str());
 			return false;
 		}
 		resize(NLMISC::CFile::getFileSize(file));

@@ -29,6 +29,7 @@
 
 #include "nel/net/inet_address.h"
 #include "nel/net/sock.h"
+#include "nel/net/net_log.h"
 
 #ifdef NL_OS_WINDOWS
 
@@ -239,7 +240,7 @@ CInetAddress& CInetAddress::setByName( const std::string& hostName )
 		if ( phostent == NULL )
 		{
 			_Valid = false;
-			nldebug( "LNETL0: Network error: resolution of hostname '%s' failed", hostName.c_str() );
+			LNETL0_DEBUG( "LNETL0: Network error: resolution of hostname '%s' failed", hostName.c_str() );
 			// return *this;
 			throw ESocket( (string("Hostname resolution failed for ")+hostName).c_str() );
 		}

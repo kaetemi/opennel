@@ -51,11 +51,11 @@ typedef void*		NL_LIB_HANDLE;
 #endif
 
 #ifdef NL_OS_WINDOWS
-// Windows need explicit tag to export or import symbol form a code module
+// MSCV need explicit tag to export or import symbol for a code module
 #define NL_LIB_EXPORT	__declspec(dllexport)
 #define NL_LIB_IMPORT	__declspec(dllimport)
 #else
-// other systems don't bother with this kind of detail, they export any 'extern' sumbol (almost all functions)
+// other systems don't bother with this kind of detail, they export any 'extern' symbol (almost all functions)
 #define NL_LIB_EXPORT
 #define NL_LIB_IMPORT
 #endif
@@ -72,7 +72,7 @@ void			*nlGetSymbolAddress(NL_LIB_HANDLE libHandle, const std::string &symbolNam
 #define NL_LIB_EXPORT_SYMBOL(symbolName, classOrFunctionName, instancePointer) \
 extern "C"\
 {\
-	NL_LIB_EXPORT classOrFunctionName	*symbolName = instancePointer;\
+	NL_LIB_EXPORT classOrFunctionName	*symbolName = (classOrFunctionName*)instancePointer;\
 };
 
 /*

@@ -25,13 +25,14 @@
 
 //#include "../stdmisc.h"
 
+#include "nel/misc/config_file.h"
+
 #include <ctime>
 #include <sys/types.h>
 #include <sys/stat.h>
 
 #include "nel/misc/file.h"
 #include "nel/misc/debug.h"
-#include "nel/misc/config_file.h"
 #include "nel/misc/path.h"
 #include "nel/misc/i18n.h"
 #include "nel/misc/mem_stream.h"
@@ -44,6 +45,7 @@ extern void cfrestart (FILE *);	// used to reinit the file
 extern int cfparse (void *);	// used to parse the file
 //extern FILE *cfin;
 extern int cf_CurrentLine;
+extern char *cf_CurrentFile;
 extern bool cf_Ignore;
 extern bool cf_OverwriteExistingVariable;
 extern CMemStream cf_ifile;
@@ -370,6 +372,12 @@ bool CConfigFile::loaded()
 	return !CConfigFile::FileNames.empty();
 }
 
+uint32 CConfigFile::getVarCount()
+{
+	return _Vars.size();
+}
+
+
 void CConfigFile::reparse (bool lookupPaths)
 {
 	if (FileNames.empty())
@@ -414,7 +422,8 @@ void CConfigFile::reparse (bool lookupPaths)
 			}
 
 			cfrestart (NULL);
-			cf_CurrentLine = 1;
+			cf_CurrentLine = 0;
+			cf_CurrentFile = NULL;
 			cf_Ignore = false;
 			cf_OverwriteExistingVariable = (FileNames.size()==1);
 			LoadRoot = (FileNames.size()>1);
@@ -428,9 +437,15 @@ void CConfigFile::reparse (bool lookupPaths)
 				debugFileName += CFile::getFilename(fn);
 
 				CI18N::writeTextFile(debugFileName, content, true);
-				nlwarning ("CF: Parsing error in file %s line %d, look in '%s' for a preprocessed version of the config file", fn.c_str(), cf_CurrentLine, debugFileName.c_str());
+				nlwarning ("CF: Parsing error in file %s line %d, look in '%s' for a preprocessed version of the config file", 
+					cf_CurrentFile, 
+					cf_CurrentLine, 
+					debugFileName.c_str());
 				throw EParseError (fn, cf_CurrentLine);
 			}
+
+			if (cf_CurrentFile != NULL)
+				free(cf_CurrentFile);
 
 			// reset all 'FromLocalFile' flag on created vars before reading next root cfg
 			for (uint i=0; i<_Vars.size(); ++i)

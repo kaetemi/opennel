@@ -124,6 +124,11 @@ typedef struct SHA1Context
     int Corrupted;             /* Is the message digest corrupted? */
 } SHA1Context;
 
+
+// Because the code does some tricky stuff, VC>6 would cry at runtime
+#pragma runtime_checks( "", off )
+
+
 //
 //  Function Prototypes
 //
@@ -585,3 +590,6 @@ void SHA1PadMessage(SHA1Context *context)
 
     SHA1ProcessMessageBlock(context);
 }
+
+
+#pragma runtime_checks( "", restore )

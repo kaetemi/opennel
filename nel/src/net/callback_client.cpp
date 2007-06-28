@@ -28,6 +28,7 @@
 #include "nel/misc/types_nl.h"
 #include "nel/net/callback_net_base.h"
 #include "nel/net/callback_client.h"
+#include "nel/net/net_log.h"
 
 #ifdef USE_MESSAGE_RECORDER
 #include "nel/net/message_recorder.h"
@@ -41,7 +42,7 @@ namespace NLNET {
  * Constructor
  */
 CCallbackClient::CCallbackClient( TRecordingState rec, const std::string& recfilename, bool recordall, bool initPipeForDataAvailable ) :
-	CCallbackNetBase( rec, recfilename, recordall ), CBufClient( true, rec==Replay, initPipeForDataAvailable ), SendNextValue(0), ReceiveNextValue(0)
+	CCallbackNetBase( rec, recfilename, recordall ), CBufClient( true, rec==Replay, initPipeForDataAvailable )
 {
 	LockDeletion = false;
 	CBufClient::setDisconnectionCallback (_NewDisconnectionCallback, this);
@@ -72,21 +73,9 @@ void CCallbackClient::send (const CMessage &buffer, TSockId hostid, bool log)
 
 //	if (log)
 	{
-////		nldebug ("LNETL3C: Client: send(%s)", buffer.toString().c_str());
+//		nldebug ("LNETL3C: Client: send(%s)", buffer.toString().c_str());
 //		nldebug ("send message number %u", SendNextValue);
 	}
-
-	// debug features, we number all packet to be sure that they are all sent and received
-	// \todo remove this debug feature when ok
-	// fill the number
-	uint32 *val = (uint32*)buffer.buffer ();
-#ifdef NL_BIG_ENDIAN
-	*val = NLMISC_BSWAP32(SendNextValue);
-#else
-	*val = SendNextValue;
-#endif
-	SendNextValue++;
-
 
 #ifdef USE_MESSAGE_RECORDER
 	if ( _MR_RecordingState != Replay )
@@ -257,15 +246,6 @@ void CCallbackClient::receive (CMessage &buffer, TSockId *hostid)
 		uint32 val = *(uint32*)buffer.buffer ();
 #endif
 
-//		nldebug ("receive message number %u", val);
-		if (ReceiveNextValue != val)
-		{
-			nlstopex (("LNETL3C: !!!LOST A MESSAGE!!! I received the message number %u but I'm waiting the message number %u (cnx %s), warn lecroart@nevrax.com with the log now please", val, ReceiveNextValue, id()->asString().c_str()));
-			// resync the message number
-			ReceiveNextValue = val;
-		}
-		ReceiveNextValue++;
-
 #ifdef USE_MESSAGE_RECORDER
 		if ( _MR_RecordingState == Record )
 		{
@@ -304,8 +284,6 @@ TSockId	CCallbackClient::getSockId (TSockId hostid)
 void CCallbackClient::connect( const CInetAddress& addr )
 {
 	checkThreadId ();
-
-	SendNextValue = ReceiveNextValue = 0;
 
 #ifdef USE_MESSAGE_RECORDER
 	if ( _MR_RecordingState != Replay )
@@ -374,8 +352,6 @@ void CCallbackClient::disconnect( TSockId hostid )
 	nlassert (hostid == InvalidSockId);	// should always be InvalidSockId on client
 	checkThreadId ();
 
-	SendNextValue = ReceiveNextValue = 0;
-
 	// Disconnect only if connected (same as physically connected for the client)
 	if ( _BufSock->connectedState() )
 	{
@@ -427,7 +403,7 @@ bool CCallbackClient::replaySystemCallbacks()
 				return true;
 
 			case Disconnecting:
-				nldebug( "LNETL3C: Disconnection event" );
+				LNETL3_DEBUG( "LNETL3C: Disconnection event" );
 				_BufSock->setConnectedState( false );
 	
 				// Call callback if needed
@@ -452,6 +428,3 @@ bool CCallbackClient::replaySystemCallbacks()
 
 
 } // NLNET
-
-/* Merge NeL CVS (RING into HEAD)
- */

@@ -1458,6 +1458,3 @@ void	registerWGlExtensions(CGlExtensions &ext, HDC hDC)
 
 
 
-
-/* Merge NeL CVS (RING into HEAD)
- */

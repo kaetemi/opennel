@@ -13,7 +13,7 @@ except ImportError:
 #import de fonction du produit
 from config import *
 
-#Ajouter un formulaire pour modifier le titre des objets generer a la crÃ©ation.
+#Ajouter un formulaire pour modifier le titre des objets generer a la création.
 
 RingRankingSchema=BaseFolderSchema.copy()+ Schema((
 #	LinesField('lang',

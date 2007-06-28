@@ -106,6 +106,9 @@ static void cbWSShardChooseShard/* (CMessage &msgin, TSockId from, CCallbackNetB
 		msgin.serial (addr);
 		msgout.serial (addr);
 
+		uint32 nbPendingUser;
+		msgin.serial(nbPendingUser);
+
 		// read patch addresses sent by WS
 		/*
 		// OBSOLETE: web doesn't read incoming patching URLs any longer, but them directly from database

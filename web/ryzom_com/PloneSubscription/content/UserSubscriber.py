@@ -20,8 +20,8 @@
 This module implement a simple user subscriber.
 """
 __version__ = "$Revision: 1.2 $"
-# $Source: /mnt/x/wsl/cvsexp3/cvs/code/web/ryzom_com/PloneSubscription/content/UserSubscriber.py,v $
-# $Id: UserSubscriber.py,v 1.2 2006/04/19 14:36:55 bernard Exp $
+# $Source: /home/cvsroot/code/web/ryzom_com/PloneSubscription/content/UserSubscriber.py,v $
+# $Id: UserSubscriber.py,v 1.2 2006-04-19 14:36:55 bernard Exp $
 __docformat__ = 'restructuredtext'
 
 # Python imports

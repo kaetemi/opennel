@@ -105,6 +105,3 @@
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_STDAFX_H__9B22CB86_1929_11D5_9CD4_0050DAC3A412__INCLUDED_)
-
-/* Merge NeL CVS (RING into HEAD)
- */

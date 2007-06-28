@@ -184,6 +184,10 @@ SOURCE=.\singleton_test.h
 
 SOURCE=.\stream_test.cpp
 # End Source File
+# Begin Source File
+
+SOURCE=.\test_pack_file.cpp
+# End Source File
 # End Group
 # End Target
 # End Project

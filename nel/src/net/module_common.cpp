@@ -34,6 +34,22 @@ using namespace NLMISC;
 namespace NLNET
 {
 
+	TParsedCommandLine::TParsedCommandLine(const TParsedCommandLine& copy)
+		:ParamName(copy.ParamName), ParamValue(copy.ParamValue)
+	{
+
+
+		
+		uint first = 0, last = copy.SubParams.size();
+		SubParams.resize( last );
+		for (; first != last; ++first)
+		{
+			// calls recursively copy constructor
+			SubParams[first] = new TParsedCommandLine(*copy.SubParams[first]);
+		}
+
+	}
+
 	TParsedCommandLine::~TParsedCommandLine()
 	{
 		clear();
@@ -243,6 +259,3 @@ namespace NLNET
 
 
 } // namespace NLMISC
-
-/* Merge NeL CVS (RING into HEAD)
- */

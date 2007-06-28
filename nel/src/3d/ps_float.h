@@ -91,7 +91,7 @@ public:
 
 };
 
-/** An attribute maker whose output if the result of a binary op on floats
+/** An attribute maker whose output is the result of a binary op on floats
   *
   */
 class CPSFloatBinOp : public CPSAttribMakerBinOp<float>

@@ -20,8 +20,8 @@
 This module implements generic functions for subscriptions
 """
 __version__ = "$Revision: 1.7 $"
-# $Source: /mnt/x/wsl/cvsexp3/cvs/code/web/ryzom_com/PloneSubscription/SubscriptionTool.py,v $
-# $Id: SubscriptionTool.py,v 1.7 2006/10/04 09:19:27 bernard Exp $
+# $Source: /home/cvsroot/code/web/ryzom_com/PloneSubscription/SubscriptionTool.py,v $
+# $Id: SubscriptionTool.py,v 1.7 2006-10-04 09:19:27 bernard Exp $
 __docformat__ = 'restructuredtext'
 
 # Python imports

@@ -414,6 +414,7 @@ struct TCommandHandler : public TCommandHandlerInfo
 		TCommand cmd = className##_getCommandHandler(commandName); \
 		if (cmd != NULL) \
 		{ \
+			log.displayNL("Execute command: %s", rawCommandString.c_str()); \
 			return (this->*cmd)(rawCommandString, args, log, quiet, human); \
 		} \
 		else \

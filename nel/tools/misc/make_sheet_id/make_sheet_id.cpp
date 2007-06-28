@@ -320,6 +320,15 @@ void addId( string fileName )
 	map<string,TFormId>::iterator itFI = FormToId.find( fileName );
 	if( itFI == FormToId.end() )
 	{
+		// double check : if file not found we check with lower case version of filename
+		map<string,TFormId>::iterator itFILwr = FormToId.find( toLower(fileName) );
+		if( itFILwr != FormToId.end() )
+		{
+			nlwarning("Trying to add %s but the file %s is already known ! becareful with lower case and upper case.", fileName.c_str(), toLower(fileName).c_str());
+			NbFilesDiscarded++;
+			return;
+		}
+
 		string fileType;
 		if( getFileType( fileName, fileType ) )
 		{
@@ -494,7 +503,7 @@ int main( int argc, char ** argv )
 		CConfigFile::CVar * varPtr = configFile.getVarPtr("ExtensionsAllowed");
 		if(varPtr)										
 		{	
-			for( sint i=0; i<varPtr->size(); ++i )							
+			for( uint i=0; i<varPtr->size(); ++i )							
 			{	
 				ExtensionsAllowed.insert( varPtr->asString(i) );
 			}												

@@ -188,6 +188,7 @@ public:
 	afx_msg void OnUpdateWindowSkeletonScale(CCmdUI* pCmdUI);
 	afx_msg void OnWindowTuneMRM();
 	afx_msg void OnUpdateWindowTuneMRM(CCmdUI* pCmdUI);
+	afx_msg void OnSnapShotTool();
 	//}}AFX_MSG
 	afx_msg void OnSceneCamera(UINT id);
 	afx_msg void OnUpdateSceneCamera(CCmdUI* pCmdUI);

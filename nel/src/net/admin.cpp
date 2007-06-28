@@ -902,6 +902,3 @@ NLMISC_CATEGORISED_COMMAND(nel, getView, "send a view and receive an array as re
 }
 
 } // NLNET
-
-/* Merge NeL CVS (RING into HEAD)
- */

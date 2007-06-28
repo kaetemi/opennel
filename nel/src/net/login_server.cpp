@@ -180,6 +180,8 @@ void cbWSChooseShard (CMessage &msgin, const std::string &serviceName, TServiceI
 	msgout.serial (reason);
 	msgout.serial (cookie);
 	msgout.serial (ListenAddr);
+	uint32 nbPending = PendingUsers.size();
+	msgout.serial (nbPending);
 	CUnifiedNetwork::getInstance()->send ("WS", msgout);
 }
 
@@ -581,6 +583,3 @@ NLMISC_CATEGORISED_DYNVARIABLE(nel, string, LSListenAddress, "the listen address
 NLMISC_CATEGORISED_VARIABLE(nel, string, DefaultUserPriv, "Default User priv for people who don't use the login system");
 
 } // NLNET
-
-/* Merge NeL CVS (RING into HEAD)
- */

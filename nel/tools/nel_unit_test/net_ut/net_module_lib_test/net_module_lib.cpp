@@ -23,11 +23,11 @@ public:
 		return string();
 	}
 
-	void				onServiceUp(const std::string &serviceName, uint16 serviceId)
+	void				onServiceUp(const std::string &serviceName, NLNET::TServiceId serviceId)
 	{
 	}
 	/// A nel layer 5 service has stopped.
-	void				onServiceDown(const std::string &serviceName, uint16 serviceId) 
+	void				onServiceDown(const std::string &serviceName, NLNET::TServiceId serviceId) 
 	{
 	}
 	void				onModuleUpdate()

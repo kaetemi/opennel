@@ -742,7 +742,7 @@ namespace NLNET
 
 	public:
 		/// return the default init string (empty)
-		static const std::string &CModuleBase::getInitStringHelp();
+		static const std::string &getInitStringHelp();
 
 		/** Search an interceptor in the interceptor list.
 		 *	By default, the method begin to search at the first interceptor.
@@ -922,6 +922,3 @@ namespace NLNET
 } // namespace NLNET
 
 #endif // NL_FILE_MODULE_H
-
-/* Merge NeL CVS (RING into HEAD)
- */

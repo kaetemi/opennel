@@ -1,7 +1,7 @@
 -- \file nel_pacs_box.ms
 -- Pacs box primitive object for 3dsmax.
 --
--- $Id: nel_pacs_box.ms,v 1.2 2003/05/20 15:50:44 corvazier Exp $
+-- $Id: nel_pacs_box.ms,v 1.2 2003-05-20 15:50:44 corvazier Exp $
 --
 -- Copyright, 2001 Nevrax Ltd.
 --
