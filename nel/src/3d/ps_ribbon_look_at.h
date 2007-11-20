@@ -30,8 +30,6 @@
 #include "ps_ribbon_base.h"
 #include "vertex_buffer.h"
 #include "index_buffer.h"
-#include <hash_map>
-
 
 namespace NL3D 
 {
@@ -160,7 +158,7 @@ private:
 					VB.setName("CPSRibbonLookAt::CVBnPB::VB");
 				}
 			};
-			typedef std::hash_map<uint, CVBnPB> TVBMap;
+			typedef CHashMap<uint, CVBnPB> TVBMap;
 
 			static TVBMap					_VBMap;			  // index buffers with no color
 			static TVBMap					_ColoredVBMap;    // index buffer + colors			

@@ -45,7 +45,6 @@
 #include "build_surf.h"
 
 #include <deque>
-#include <hash_map>
 
 using namespace std;
 using namespace NLMISC;
@@ -1163,10 +1162,10 @@ void	NLPACS::CZoneTessellation::build()
 	}
 
 	// generate a vector of vertices and of surf element
-	hash_map<const CVector *, uint32, CHashPtr<const CVector> >				vremap;
-	hash_map<const CVector *, uint32, CHashPtr<const CVector> >::iterator	vremapit;
-	hash_map<const CTessFace *, CSurfElement *, CHashPtr<const CTessFace> >	fremap;
-	hash_map<const CTessFace *, CSurfElement *, CHashPtr<const CTessFace> >::iterator	fremapit;
+	CHashMap<const CVector *, uint32, CHashPtr<const CVector> >				vremap;
+	CHashMap<const CVector *, uint32, CHashPtr<const CVector> >::iterator	vremapit;
+	CHashMap<const CTessFace *, CSurfElement *, CHashPtr<const CTessFace> >	fremap;
+	CHashMap<const CTessFace *, CSurfElement *, CHashPtr<const CTessFace> >::iterator	fremapit;
 	_Vertices.clear();
 	_Tessellation.resize(leaves.size());
 

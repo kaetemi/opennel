@@ -702,7 +702,7 @@ void	CAudioMixerUser::buildSampleBankList()
 				// NB : the next commented line replaced by the next two line.
 				//		The first generate an access violation at the 64th insert !
 				// bankFile.insert(bankFile.begin()+i, filename);
-				bankFile.insert(bankFile.begin()+i);
+				bankFile.insert(bankFile.begin()+i, NULL);
 				bankFile[i] = filename;
 			}
 		}

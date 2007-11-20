@@ -64,6 +64,26 @@ namespace NLMISC {
  * \author Nevrax France
  * \date 2001
  */
+
+	template<class T>
+	class CSTLBlockAllocator : public std::allocator< T >
+	{
+	public:
+		/// Constructor. Must gives a blockMemory to ctor. NB: must gives a CBlockMemory<T, false> !!!
+		CSTLBlockAllocator(CBlockMemory<T, false> *bm)
+		{
+		}
+		/// copy ctor
+		CSTLBlockAllocator(const CSTLBlockAllocator<T> &other) : std::allocator<T>(other)
+		{
+		}
+		/// dtor
+		~CSTLBlockAllocator()
+		{
+		}
+	};
+
+#if 0
 #if defined(NL_OS_WINDOWS) && !defined(_STLP_MEMBER_TEMPLATE_CLASSES)
 
 template<class T>
@@ -229,7 +249,7 @@ public:
 
 #endif // NL_OS_WINDOWS
 
-
+#endif // 0
 
 } // NLMISC
 

@@ -70,7 +70,8 @@ class CPointLight
 {
 public:
 	/// The list of model this light influence.
-	typedef	NLMISC::CSTLBlockList<CTransform*>	TTransformList;
+	//typedef	NLMISC::CSTLBlockList<CTransform*>	TTransformList;
+	typedef	std::list<CTransform*>	TTransformList;
 	typedef	TTransformList::iterator			ItTransformList;
 
 	enum	TType 
@@ -241,7 +242,7 @@ private:
 	bool			_AddAmbientWithSun;
 
 	// The memory for list of LightedModels
-	static	NLMISC::CBlockMemory<CTransform*, false>		_LightedModelListMemory;
+	//static	NLMISC::CBlockMemory<CTransform*, false>		_LightedModelListMemory;
 	// LightedModels. NB: do not contains models that have this light in their FrozenStaticLightSetup
 	TTransformList		_LightedModels;
 

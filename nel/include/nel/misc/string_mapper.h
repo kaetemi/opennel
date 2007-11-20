@@ -48,11 +48,18 @@ typedef	const std::string * TStringId;
 class CStringIdHasher
 {
 public:
+	static const size_t bucket_size = 4;
+	static const size_t min_buckets = 8;
 	CStringIdHasher()
 	{}
 	inline	size_t	operator	()(const NLMISC::TStringId &stringId)	const
 	{
 		return	(size_t)stringId;
+	}
+
+	inline bool operator() (const NLMISC::TStringId &strId1, const NLMISC::TStringId &strId2) const
+	{
+		return (size_t)strId1 < (size_t)strId2;
 	}
 protected:
 private:

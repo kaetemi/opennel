@@ -32,12 +32,7 @@
 #define NOMINMAX
 #include <windows.h>
 
-// Debug : Sept 01 2006
-#if _STLPORT_VERSION >= 0x510
-	#include <typeinfo>
-#else
-	#include <typeinfo.h>
-#endif
+#include <typeinfo>
 
 namespace NLMISC {
 

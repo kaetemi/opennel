@@ -28,10 +28,9 @@
 #include "nel/net/tcp_sock.h"
 #include "nel/net/net_log.h"
 
-
 #ifdef NL_OS_WINDOWS
 #	if defined(NL_COMP_VC7) || defined(NL_COMP_VC71) || defined(NL_COMP_VC8)
-#		include <WinSock2.h>
+#		include <winsock2.h>
 #	endif
 #	define NOMINMAX
 #	include <windows.h>
@@ -109,7 +108,7 @@ void CTcpSock::disconnect()
 {
 	LNETL0_DEBUG( "LNETL0: Socket %d disconnecting from %s...", _Sock, _RemoteAddr.asString().c_str() );
 
-	// This shutdown resets the connection immediatly (not a graceful closure)
+	// This shutdown resets the connection immediately (not a graceful closure)
 #ifdef NL_OS_WINDOWS
 	::shutdown( _Sock, SD_BOTH );
 #elif defined NL_OS_UNIX

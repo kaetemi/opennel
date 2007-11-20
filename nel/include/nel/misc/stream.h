@@ -37,7 +37,6 @@
 #include	<list>
 #include	<set>
 #include	<map>
-#include	<hash_map>
 
 namespace	NLMISC
 {
@@ -402,7 +401,7 @@ public:
 	template<class K, class T>
 	void			serialCont(std::map<K, T> &cont) 			{serialMap(cont);}
 	template<class K, class T, class H>
-	void			serialCont(std::hash_map<K, T, H> &cont) 			{serialMap(cont);}
+	void			serialCont(CHashMap<K, T, H> &cont) 			{serialMap(cont);}
 	template<class K, class T>
 	void			serialCont(std::multimap<K, T> &cont) 	{serialMultimap(cont);}
 
@@ -981,20 +980,20 @@ private:
 	static	bool	_ThrowOnOlder;
 	static	bool	_ThrowOnNewer;
 
-	// Ptr registry. We store 64 bit Id, to be compatible with futur 64+ bits pointers.
+	// Ptr registry. We store 64 bit Id, to be compatible with future 64+ bits pointers.
 	uint32								_NextSerialPtrId;
-	std::hash_map<uint64, void*, NLMISC::CHashFunctionUInt64>		_IdMap;
-	typedef std::hash_map<uint64, void*, CHashFunctionUInt64>::iterator	ItIdMap;
-	typedef std::hash_map<uint64, void*, CHashFunctionUInt64>::value_type	ValueIdMap;
+	CHashMap<uint64, void*>		_IdMap;
+	typedef CHashMap<uint64, void*>::iterator	ItIdMap;
+	typedef CHashMap<uint64, void*>::value_type	ValueIdMap;
 
-	// Ptr serialisation.
+	// Ptr serialization.
 	void			serialIStreamable(IStreamable* &ptr) ;
 
 
 
 private:
 	/**
-	 * standard STL containers serialisation. Don't work with map<> and multimap<>.
+	 * standard STL containers serialization. Don't work with map<> and multimap<>.
 	 * Support up to sint32 length containers. serialize just len  element of the container.
 	 */
 	template<class T>

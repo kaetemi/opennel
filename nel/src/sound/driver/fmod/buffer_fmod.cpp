@@ -31,10 +31,9 @@
 #include "sound_driver_fmod.h"
 
 #ifdef NL_OS_WINDOWS
-#include <windows.h>
-#include <mmsystem.h>
-#undef min
-#undef max
+#	define NOMINMAX
+#	include <windows.h>
+#	include <mmsystem.h>
 #endif
 
 using namespace NLMISC;

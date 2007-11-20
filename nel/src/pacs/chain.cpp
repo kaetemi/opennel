@@ -154,7 +154,7 @@ float	NLPACS::COrderedChain::distance(const CVector &position) const
 }
 
 
-// serialises the ordered chain
+// serializes the ordered chain
 void	NLPACS::COrderedChain::serial(IStream &f)
 {
 	/*
@@ -270,7 +270,7 @@ void	NLPACS::CChain::make(const vector<CVector> &vertices, sint32 left, sint32 r
 	}
 }
 
-// serialises the CChain
+// serializes the CChain
 void	NLPACS::CChain::serial(IStream &f)
 {
 	/*

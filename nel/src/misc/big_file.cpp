@@ -363,13 +363,9 @@ bool CBigFile::getFileInternal (const std::string &sFileName, BNP *&zeBnp, BNPFi
 	vector<BNPFile>::iterator itNBPFile;
 
 	// Debug : Sept 01 2006
-	#if _STLPORT_VERSION >= 0x510
-		BNPFile temp_bnp_file;
-		temp_bnp_file.Name = (char*)zeFileName.c_str();
-		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
-	#else
-		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), zeFileName.c_str(), CBNPFileComp());
-	#endif //_STLPORT_VERSION
+	BNPFile temp_bnp_file;
+	temp_bnp_file.Name = (char*)zeFileName.c_str();
+	itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
 	
 	if (itNBPFile != rbnp.Files.end())
 	{
@@ -454,13 +450,9 @@ char *CBigFile::getFileNamePtr(const std::string &sFileName, const std::string &
 			return NULL;
 		string lwrFileName = toLower(sFileName);
 		// Debug : Sept 01 2006
-		#if _STLPORT_VERSION >= 0x510
-			BNPFile temp_bnp_file;
-			temp_bnp_file.Name = (char*)lwrFileName.c_str();
-			itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
-		#else
-			itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), lwrFileName.c_str(), CBNPFileComp());
-		#endif //_STLPORT_VERSION
+		BNPFile temp_bnp_file;
+		temp_bnp_file.Name = (char*)lwrFileName.c_str();
+		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
 	
 		if (itNBPFile != rbnp.Files.end())
 		{

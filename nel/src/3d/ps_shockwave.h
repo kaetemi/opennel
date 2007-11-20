@@ -29,7 +29,6 @@
 #include "ps_particle_basic.h"
 #include "vertex_buffer.h"
 #include "index_buffer.h"
-#include <hash_map>
 
 namespace NL3D 
 {
@@ -134,8 +133,8 @@ protected:
 	virtual CPSLocated *getTextureIndexOwner(void) { return _Owner; }
 
 private:
-	typedef std::hash_map<uint, CVertexBuffer> TVBMap;
-	typedef std::hash_map<uint, CIndexBuffer> TPBMap;
+	typedef CHashMap<uint, CVertexBuffer> TVBMap;
+	typedef CHashMap<uint, CIndexBuffer> TPBMap;
 private:
 	static TPBMap _PBMap; // the primitive blocks
 	static TVBMap _VBMap; // vb ith unanimated texture

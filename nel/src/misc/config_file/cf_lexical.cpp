@@ -2355,7 +2355,7 @@ YY_RULE_SETUP
 					cflval.Val.Type = T_INT;
 					cflval.Val.Int = atoi (yytext);
 					DEBUG_PRINTF("lex: int '%s' '%d'\n", yytext, cflval.Val.Int);
-					return INT;
+					return INTEGER;
 				}
 			}
 	YY_BREAK
@@ -2368,7 +2368,7 @@ YY_RULE_SETUP
 					cflval.Val.Type = T_INT;
 					sscanf (yytext, "%x", &(cflval.Val.Int));
 					DEBUG_PRINTF("lex: hexa '%s' '0x%x' '%d'\n", yytext, cflval.Val.Int, cflval.Val.Int);
-					return INT;
+					return INTEGER;
 				}
 			}
 	YY_BREAK

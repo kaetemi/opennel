@@ -29,9 +29,8 @@
 
 
 #ifdef NL_OS_WINDOWS
-# include <windows.h>
-# undef min
-# undef max
+#	define NOMINMAX
+#	include <windows.h>
 #endif // NL_OS_WINDOWS
 
 using namespace NLMISC;

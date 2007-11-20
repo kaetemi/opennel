@@ -1315,7 +1315,6 @@ void	NLPACS::CGlobalRetriever::findCollisionChains(CCollisionSurfaceTemp &cst, c
 
 		// For all collision chains added, look if they are a copy of preceding collsion chain (same Left/Right). Then delete them.
 		//================
-		// \todo yoyo: TODO_OPTIMIZE: this is a N² complexity.
 //		H_BEFORE(PACS_GR_findCC_removeDouble);
 		for(j=firstCollisionChain; j<nCollisionChain; j++)
 		{

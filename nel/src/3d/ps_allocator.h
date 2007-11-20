@@ -39,7 +39,7 @@ namespace NL3D
 		// fast mem alloc of particle systems only on windows for now
 		//
 		// PS_FAST_ALLOC // for fast alloc
-#		define PS_FAST_ALLOC
+//#		define PS_FAST_ALLOC
 #	endif
 #endif // NL_OS_WINDOWS
 

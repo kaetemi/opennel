@@ -31,7 +31,6 @@
 #include "index_buffer.h"
 
 #include <vector>
-#include <hash_map>
 
 
 namespace NL3D 
@@ -151,8 +150,8 @@ protected:
 	virtual CPSLocated *getAngle2DOwner(void) { return _Owner; }	
 private:
 	friend class CPSFanLightHelper;
-	typedef std::hash_map<uint, CVertexBuffer>  TVBMap;
-	typedef std::hash_map<uint, CIndexBuffer >  TIBMap;
+	typedef CHashMap<uint, CVertexBuffer>  TVBMap;
+	typedef CHashMap<uint, CIndexBuffer >  TIBMap;
 private:
 	uint32						_NbFans;
 	uint32						_PhaseSmoothness;	

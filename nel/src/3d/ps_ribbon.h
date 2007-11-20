@@ -32,7 +32,6 @@
 #include "vertex_buffer.h"
 #include "index_buffer.h"
 #include "nel/misc/vector.h"
-#include <hash_map>
 
 
 namespace NL3D 
@@ -242,7 +241,7 @@ private:
 					VB.setName("CPSRibbon::CVBnPB::VB");
 				}
 			};
-			typedef std::hash_map<uint, CVBnPB> TVBMap;
+			typedef CHashMap<uint, CVBnPB> TVBMap;
 			//
 			static TVBMap _VBMaps[16];  // 4 bits defines the display mode : 
 			                            // - color / no color

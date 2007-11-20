@@ -45,81 +45,7 @@
 using namespace std;
 
 #ifdef NL_OS_WINDOWS
-	#ifdef __STL_DEBUG
-		#define STL_MODE "debug"
-	#else
-		#define STL_MODE "normal"
-	#endif // __STL_DEBUG
-
-	#if(_STLPORT_MAJOR == 0)
-		#define STL_STR_MAJOR "0"
-	#elif(_STLPORT_MAJOR == 1)
-		#define STL_STR_MAJOR "1"
-	#elif(_STLPORT_MAJOR == 2)
-		#define STL_STR_MAJOR "2"
-	#elif(_STLPORT_MAJOR == 3)
-		#define STL_STR_MAJOR "3"
-	#elif(_STLPORT_MAJOR == 4)
-		#define STL_STR_MAJOR "4"
-	#elif(_STLPORT_MAJOR == 5)
-		#define STL_STR_MAJOR "5"
-	#elif(_STLPORT_MAJOR == 6)
-		#define STL_STR_MAJOR "6"
-	#elif(_STLPORT_MAJOR == 7)
-		#define STL_STR_MAJOR "7"
-	#elif(_STLPORT_MAJOR == 8)
-		#define STL_STR_MAJOR "8"
-	#elif(_STLPORT_MAJOR == 9)
-		#define STL_STR_MAJOR "9"
-	#endif // _STLPORT_MAJOR
-
-	#if(_STLPORT_MINOR == 0)
-		#define STL_STR_MINOR "0"
-	#elif(_STLPORT_MINOR == 1)
-		#define STL_STR_MINOR "1"
-	#elif(_STLPORT_MINOR == 2)
-		#define STL_STR_MINOR "2"
-	#elif(_STLPORT_MINOR == 3)
-		#define STL_STR_MINOR "3"
-	#elif(_STLPORT_MINOR == 4)
-		#define STL_STR_MINOR "4"
-	#elif(_STLPORT_MINOR == 5)
-		#define STL_STR_MINOR "5"
-	#elif(_STLPORT_MINOR == 6)
-		#define STL_STR_MINOR "6"
-	#elif(_STLPORT_MINOR == 7)
-		#define STL_STR_MINOR "7"
-	#elif(_STLPORT_MINOR == 8)
-		#define STL_STR_MINOR "8"
-	#elif(_STLPORT_MINOR == 9)
-		#define STL_STR_MINOR "9"
-	#endif // _STLPORT_MINOR
-
-	#if(_STLPORT_PATCHLEVEL == 0)
-		#define STL_STR_PATCHLEVEL "0"
-	#elif(_STLPORT_PATCHLEVEL == 1)
-		#define STL_STR_PATCHLEVEL "1"
-	#elif(_STLPORT_PATCHLEVEL == 2)
-		#define STL_STR_PATCHLEVEL "2"
-	#elif(_STLPORT_PATCHLEVEL == 3)
-		#define STL_STR_PATCHLEVEL "3"
-	#elif(_STLPORT_PATCHLEVEL == 4)
-		#define STL_STR_PATCHLEVEL "4"
-	#elif(_STLPORT_PATCHLEVEL == 5)
-		#define STL_STR_PATCHLEVEL "5"
-	#elif(_STLPORT_PATCHLEVEL == 6)
-		#define STL_STR_PATCHLEVEL "6"
-	#elif(_STLPORT_PATCHLEVEL == 7)
-		#define STL_STR_PATCHLEVEL "7"
-	#elif(_STLPORT_PATCHLEVEL == 8)
-		#define STL_STR_PATCHLEVEL "8"
-	#elif(_STLPORT_PATCHLEVEL == 9)
-		#define STL_STR_PATCHLEVEL "9"
-	#endif // _STLPORT_PATCHLEVEL
-
 	#pragma message( " " )
-
-	#pragma message( "Using STLPort version "STL_STR_MAJOR"."STL_STR_MINOR"."STL_STR_PATCHLEVEL" in "STL_MODE" mode" )
 
 	#if FINAL_VERSION
 		#pragma message( "************************" )
@@ -137,10 +63,10 @@ using namespace std;
 
 	#pragma message( " " )
 
-#if (_MSC_VER >= 1200) && (_MSC_VER < 1400) && (WINVER < 0x0500)
+#	if (_MSC_VER >= 1200) && (_MSC_VER < 1400) && (WINVER < 0x0500)
 //Using VC7 and later lib, need this to compile on VC6
 extern "C" long _ftol2( double dblSource ) { return _ftol( dblSource ); }
-#endif
+#	endif
 
 
 #endif // NL_OS_WINDOWS

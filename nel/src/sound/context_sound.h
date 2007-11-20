@@ -26,7 +26,6 @@
 #define NL_CONTEXT_SOUND_H
 
 #include "sound.h"
-#include <hash_map>
 #include "nel/misc/fast_mem.h"
 #include "nel/misc/string_mapper.h"
 
@@ -91,9 +90,15 @@ struct CContextMatcher
 
 	struct CHash : public std::unary_function<CContextMatcher, size_t>
 	{
+		static const size_t bucket_size = 4;
+		static const size_t min_buckets = 8;
 		size_t operator () (const CContextMatcher &patternMatcher) const
 		{
 			return patternMatcher.getHashValue();
+		}
+		bool operator() (const CContextMatcher &patternMatcher1, const CContextMatcher &patternMatcher2) const
+		{
+			return patternMatcher1.getHashValue() < patternMatcher2.getHashValue();
 		}
 	};
 
@@ -121,7 +126,7 @@ class CContextSoundContainer : public IContextSoundContainer
 		JOKER_ARRAY_SIZE = (NbJoker == 0 ? 1 : NbJoker)
 	};
 
-	typedef std::hash_map<CContextMatcher<NbJoker, UseRandom, Shift>, CSound *, typename CContextMatcher<NbJoker, UseRandom, Shift>::CHash>	THashContextSound;
+	typedef CHashMap<CContextMatcher<NbJoker, UseRandom, Shift>, CSound *, typename CContextMatcher<NbJoker, UseRandom, Shift>::CHash>	THashContextSound;
 
 	virtual void		init(uint *contextArgsIndex)
 	{

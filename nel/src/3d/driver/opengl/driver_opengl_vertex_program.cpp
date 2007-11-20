@@ -121,7 +121,7 @@ bool CDriverGL::activeNVVertexProgram (CVertexProgram *program)
 			}
 
 			// Insert into driver list. (so it is deleted when driver is deleted).
-			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end());
+			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end(), NULL);
 
 			// Create a driver info
 			*it = drvInfo = new CVertexProgamDrvInfosGL (this, it);
@@ -1474,7 +1474,7 @@ bool CDriverGL::activeARBVertexProgram (CVertexProgram *program)
 				return false;
 			}			
 			// Insert into driver list. (so it is deleted when driver is deleted).
-			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end());
+			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end(), NULL);
 
 			// Create a driver info
 			*it = drvInfo = new CVertexProgamDrvInfosGL (this, it);
@@ -1556,7 +1556,7 @@ bool CDriverGL::activeEXTVertexShader (CVertexProgram *program)
 			*/
 
 			// Insert into driver list. (so it is deleted when driver is deleted).
-			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end());
+			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end(), NULL);
 
 			// Create a driver info
 			*it = drvInfo = new CVertexProgamDrvInfosGL (this, it);

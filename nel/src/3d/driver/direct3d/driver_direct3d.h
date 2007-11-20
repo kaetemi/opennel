@@ -385,8 +385,8 @@ public:
 	virtual void apply(class CDriverD3D &drv) = 0;
 	virtual ~CStateRecord() {}
 	// use STL allocator for fast alloc. this works because objects are small ( < 128 bytes)
-	void *operator new(size_t size) { return Allocator.allocate(size); }
-	void operator delete(void *block) { Allocator.deallocate((uint8 *) block); }
+	void *operator new(size_t size) { return CStateRecord::Allocator.allocate(size); }
+	void operator delete(void *block) { CStateRecord::Allocator.deallocate((uint8 *) block); }
 
 	static std::allocator<uint8> Allocator;
 };
