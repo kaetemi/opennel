@@ -192,7 +192,7 @@ public:
 
 		/// \name Internal use
 		//@{
-		static char *TypeName[];
+		static const char *TypeName[];
 
 #ifndef NL_DONT_USE_EXTERNAL_CODE
 		enum TVarType { T_UNKNOWN, T_INT, T_STRING, T_REAL, T_BOOL };

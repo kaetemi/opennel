@@ -154,8 +154,6 @@ public:
 	std::queue<EAnim>				AnimQueue;
 	NL3D::CAnimationTime			StartAnimationTime;
 
-
-	/// \todo remove, just for bot automaton testing
 	uint							BotState;
 	NLMISC::TTime					BotStateStart;
 };

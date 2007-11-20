@@ -13,8 +13,10 @@
 *.mak
 *.plg
 *.aps
+*.suo
 thumbs.db
 Release
 ReleaseDebug
 Debug
 DebugFast
+.svn

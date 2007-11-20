@@ -185,8 +185,6 @@ private:
 
 #else // NL_OS_WINDOWS
 
-/// \todo yoyo: make it work under linux. For now, use std allocator instead...
-
 # if !defined (__STL_USE_SGI_ALLOCATORS)
 template<class T>
 class CSTLBlockAllocator : public  std::allocator< T >

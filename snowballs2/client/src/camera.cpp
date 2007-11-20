@@ -27,7 +27,7 @@
 // Includes
 //
 
-#include <math.h>
+#include <cmath>
 #include <nel/misc/vectord.h>
 #include <nel/3d/u_camera.h>
 #include <nel/3d/u_driver.h>

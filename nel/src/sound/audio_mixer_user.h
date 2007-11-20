@@ -80,7 +80,7 @@ struct THashPtr : public std::unary_function<const Pointer &, size_t>
 	{
 		std::hash_set<uint>::hasher	h;
 		// transtype the pointer into int then hash it
-		return h.operator()(uint(ptr));
+		return h.operator()(uint(uintptr_t(ptr)));
 	}
 };
 
@@ -404,7 +404,7 @@ public:
 private:
 
 	// utility function for automatic sample bank loading.
-	bool CAudioMixerUser::tryToLoadSoundBank(const std::string &sampleName);
+	bool tryToLoadSoundBank(const std::string &sampleName);
 
 
 	typedef std::hash_set<CSourceCommon*, THashPtr<CSourceCommon*> >					TSourceContainer;

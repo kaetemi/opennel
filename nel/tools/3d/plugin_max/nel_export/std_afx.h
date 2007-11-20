@@ -23,6 +23,11 @@
  * MA 02111-1307, USA.
  */
 
+#pragma conform(forScope, push)
+#pragma conform(forScope, off)
+
+#define _CRT_SECURE_NO_DEPRECATE
+
 #include <windows.h>
 #include <locale.h>
 #include <windowsx.h>
@@ -45,9 +50,13 @@
 #include <stdmat.h>
 #include <MaxScrpt/definsfn.h>
 #include <animtbl.h>
-#ifdef min
+
+#undef _CRT_SECURE_NO_DEPRECATE
+
+#pragma conform(forScope, pop)
+
 #undef min
-#endif
-#ifdef max
 #undef max
-#endif
+
+
+#include "nel/misc/bsphere.h"

@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo ace: test the signal redirection on Unix
  */
 
 /* Copyright, 2004 Nevrax Ltd.

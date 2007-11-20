@@ -307,7 +307,6 @@ void	buildSurfaces(CCollisionMeshBuild &cmb, CLocalRetriever &lr)
 
 	uint	surf, bord;
 
-	/// \todo compute real surface center and quadtree
 	for (surf=0; surf<surfaces.size(); ++surf)
 	{
 		CSurfaceQuadTree	quad;

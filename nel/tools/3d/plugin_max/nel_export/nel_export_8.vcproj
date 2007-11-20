@@ -54,6 +54,7 @@
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
+				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std_afx.h"
@@ -78,11 +79,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="version.lib freetype219.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib odbc32.lib odbccp32.lib libxml2_a.lib"
+				AdditionalDependencies="version.lib libxml2.lib freetype.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib ws2_32.lib"
 				OutputFile="$(OutDir)\$(ProjectName).dlu"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=""
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				ModuleDefinitionFile=".\nel_export.def"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\ReleaseDebug/nelexport.pdb"
@@ -153,6 +155,7 @@
 				AdditionalIncludeDirectories="../../../../include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;__STL_DEBUG"
 				RuntimeLibrary="2"
+				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std_afx.h"
@@ -178,7 +181,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib odbc32.lib odbccp32.lib libxml2.lib"
+				AdditionalDependencies="version.lib libxml2.lib freetype.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib ws2_32.lib"
 				OutputFile="$(OutDir)\$(ProjectName).dlu"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -256,6 +259,7 @@
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
+				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std_afx.h"
@@ -263,6 +267,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -281,7 +286,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="version.lib freetype231.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib odbc32.lib odbccp32.lib libxml2.lib"
+				AdditionalDependencies="version.lib libxml2.lib freetype.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib ws2_32.lib"
 				OutputFile="$(OutDir)\$(ProjectName).dlu"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -361,6 +366,7 @@
 				RuntimeLibrary="3"
 				BufferSecurityCheck="true"
 				EnableFunctionLevelLinking="true"
+				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std_afx.h"
@@ -387,7 +393,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="version.lib libxml2_a.lib freetype231.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="version.lib libxml2.lib freetype.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib ws2_32.lib"
 				OutputFile="$(OutDir)\$(ProjectName).dlu"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -463,6 +469,7 @@
 				AdditionalIncludeDirectories="../../../../include"
 				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;NL_DEBUG_FAST"
 				RuntimeLibrary="3"
+				ForceConformanceInForLoopScope="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std_afx.h"
@@ -489,7 +496,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="version.lib freetype231.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib odbc32.lib odbccp32.lib libxml2.lib"
+				AdditionalDependencies="version.lib libxml2.lib freetype.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib winmm.lib ws2_32.lib"
 				OutputFile="$(OutDir)\$(ProjectName).dlu"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

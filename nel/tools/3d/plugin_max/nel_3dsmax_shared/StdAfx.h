@@ -39,19 +39,23 @@
 // Insert your headers here
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 
+#pragma conform(forScope, push)
+#pragma conform(forScope, off)
+
+#define _CRT_SECURE_NO_DEPRECATE
+
 #include <max.h>
 #include <iparamb2.h>
 #include <istdplug.h>
 #include <iparamm2.h>
 #include <utilapi.h>
-#ifdef min
-#undef min
-#endif
-#ifdef max
-#undef max
-#endif
 
-// TODO: reference additional headers your program requires here
+#undef _CRT_SECURE_NO_DEPRECATE
+
+#pragma conform(forScope, pop)
+
+#undef min
+#undef max
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.

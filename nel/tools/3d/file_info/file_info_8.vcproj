@@ -73,7 +73,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype219MT.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\ReleaseDebug/file_info.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -164,7 +164,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\DebugFast/file_info.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -261,7 +261,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype219MT.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Debug/file_info.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -337,6 +337,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -353,7 +354,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Release/file_info.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

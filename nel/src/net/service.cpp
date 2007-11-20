@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo ace: test the signal redirection on Unix
  */
 
 /* Copyright, 2001 Nevrax Ltd.
@@ -36,6 +35,7 @@
 // just comment this and the IsDebuggerPresent to compile on windows 95
 #	define _WIN32_WINDOWS	0x0410
 #	define WINVER			0x0400
+#	define NOMINMAX
 #	include <windows.h>
 #	include <direct.h>
 #elif defined NL_OS_UNIX
@@ -67,8 +67,6 @@
 #include "nel/net/admin.h"
 #include "nel/net/module_manager.h"
 #include "nel/net/transport_class.h"
-
-#include "nel/memory/memory_manager.h"
 
 #include "stdin_monitor_thread.h"
 
@@ -198,7 +196,7 @@ static void sigHandler(int Sig)
 		{
 			if (getThreadId () != SignalisedThread)
 			{
-				nldebug ("SERVICE: Secondary thread received the signal (%s, %d), ignoring it", SignalName[i],Sig);
+				nldebug ("SERVICE: Not the main thread (%u, %u) received the signal (%s, %d), ignore it", getThreadId (), SignalisedThread, SignalName[i],Sig);
 				return;
 			}
 			else
@@ -245,7 +243,7 @@ static void initSignal()
 	SignalisedThread = getThreadId ();
 #ifdef NL_DEBUG
 	// in debug mode, we only trap the SIGINT signal (for ctrl-c handling)
-	signal(Signal[3], sigHandler);
+	//signal(Signal[3], sigHandler);
 	//nldebug("Signal : %s (%d) trapped", SignalName[3], Signal[3]);
 #else
 	// in release, redirect all signals
@@ -484,7 +482,7 @@ void IService::setArgs (const char *args)
 	_Args.push_back ("<ProgramName>");
 
 	string sargs (args);
-	uint32 pos1 = 0, pos2 = 0;
+	string::size_type pos1 = 0, pos2 = 0;
 
 	do
 	{
@@ -510,7 +508,7 @@ void IService::setArgs (const char *args)
 		}
 
 		// Compute the size of the string to extract
-		int length = (pos2 != string::npos) ? pos2-pos1 : string::npos;
+		string::difference_type length = (pos2 != string::npos) ? pos2-pos1 : string::npos;
 
 		string tmp = sargs.substr (pos1, length);
 		_Args.push_back (tmp);
@@ -1469,7 +1467,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 
 						string dispName = displayedVariables[i].first;
 						string varName = dispName;
-						uint32 pos = dispName.find("|");
+						string::size_type pos = dispName.find("|");
 						if (pos != string::npos)
 						{
 							varName = displayedVariables[i].first.substr(pos+1);
@@ -1607,18 +1605,12 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		delete timeoutThread;
 	}
 
-#ifdef NL_RELEASE
-#endif
-
 	CHTimer::display();
 	CHTimer::displayByExecutionPath ();
 	CHTimer::displayHierarchical(&CommandLog, true, 64);
 	CHTimer::displayHierarchicalByExecutionPathSorted (&CommandLog, CHTimer::TotalTime, true, 64);
 
 	nlinfo ("SERVICE: Service ends");
-
-	string name = getServiceLongName () + ".memory_report";
-	NLMEMORY::StatisticsReport (name.c_str(), false);
 
 	return ExitSignalAsked?100+ExitSignalAsked:getExitStatus ();
 }

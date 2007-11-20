@@ -1686,10 +1686,7 @@ sint	CMeshMRMGeom::loadHeader(NLMISC::IStream &f) throw(NLMISC::EStream)
 	f.serialCont(_LodInfos);
 
 	// read/save number of wedges.
-	/* NB: prepare memory space too for vertices.
-		\todo yoyo: TODO_OPTIMIZE. for now there is no Lod memory profit with vertices / skinWeights.
-		But resizing arrays is a problem because of reallocation...
-	*/
+	/* NB: prepare memory space too for vertices. */
 	uint32	nWedges;
 	f.serial(nWedges);
 	// Prepare the VBuffer.
@@ -2462,7 +2459,6 @@ void	CMeshMRMGeom::compileRunTime()
 	// Support MeshBlockRendering only if not skinned/meshMorphed.
 	_SupportMeshBlockRendering= !_Skinned && _MeshMorpher.BlendShapes.size()==0;
 
-	// \todo yoyo: support later MeshVertexProgram 
 	_SupportMeshBlockRendering= _SupportMeshBlockRendering && _MeshVertexProgram==NULL;
 }
 

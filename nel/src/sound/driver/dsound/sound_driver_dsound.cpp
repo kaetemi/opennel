@@ -80,7 +80,6 @@ long FAR PASCAL CSoundDriverCreateWindowProc(HWND hWnd, unsigned message, WPARAM
 
 __declspec(dllexport) ISoundDriver *NLSOUND_createISoundDriverInstance(bool useEax, ISoundDriver::IStringMapperProvider *stringMapper, bool forceSoftwareBuffer)
 {
-	NL_ALLOC_CONTEXT(NLSOUND_ISoundDriver);
 	static bool Registered = false;
 
 	if (!Registered)
@@ -308,7 +307,6 @@ CDeviceDescription* CDeviceDescription::_List = 0;
 
 BOOL CALLBACK CSoundDriverDSoundEnumCallback(LPGUID guid, LPCSTR description, PCSTR module, LPVOID context)
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundDriver);
     new CDeviceDescription(guid, description);
     return TRUE;
 }
@@ -789,7 +787,6 @@ uint CSoundDriverDSound::countHw2DBuffers()
 
 IListener *CSoundDriverDSound::createListener()
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundDriverDSound);
     LPDIRECTSOUND3DLISTENER8 dsoundListener;
 
     if (CListenerDSound::instance() != NULL) 
@@ -815,7 +812,6 @@ IListener *CSoundDriverDSound::createListener()
 
 IBuffer *CSoundDriverDSound::createBuffer()
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundDriverDSound);
     if (_PrimaryBuffer == 0) 
     {
         throw ESoundDriver("Corrupt driver");
@@ -848,7 +844,6 @@ bool CSoundDriverDSound::readRawBuffer( IBuffer *destbuffer, const std::string &
 
 ISource *CSoundDriverDSound::createSource()
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundDriverDSound);
     if (_PrimaryBuffer == 0) 
     {
         throw ESoundDriver("Corrupt driver");

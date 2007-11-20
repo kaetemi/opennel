@@ -271,7 +271,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype219MT.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\ReleaseDebug/zviewer.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

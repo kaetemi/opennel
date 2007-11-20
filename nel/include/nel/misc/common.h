@@ -150,9 +150,7 @@ template<class T>	inline T maxof(const T& a,  const T& b,  const T& c,  const T&
 template<class T>	inline void contReset (T& a)
 {
 	a.~T();
-#undef new
 	new (&a) T;
-#define new NL_NEW
 }
 
 /** Return the value maximized to the next power of 2 of v.

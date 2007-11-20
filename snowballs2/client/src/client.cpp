@@ -38,49 +38,51 @@
 #include <nel/misc/types_nl.h>
 
 #ifdef NL_OS_WINDOWS
+#	define NOMINMAX
 #	include <windows.h>
-#	undef min
-#	undef max
 #endif
 
-#include <time.h>
+#include <ctime>
 #include <string>
 #include <vector>
 
-#include <nel/misc/config_file.h>
+#include <nel/misc/md5.h>
 #include <nel/misc/path.h>
+#include <nel/misc/file.h>
 #include <nel/misc/vectord.h>
 #include <nel/misc/time_nl.h>
 #include <nel/misc/command.h>
-#include <nel/misc/file.h>
-
-#include <nel/3d/u_camera.h>
-#include <nel/3d/u_driver.h>
-#include <nel/3d/u_scene.h>
-#include <nel/3d/u_instance.h>
-#include <nel/3d/u_text_context.h>
-#include <nel/3d/u_material.h>
-#include <nel/3d/u_texture.h>
+#include <nel/misc/config_file.h>
 
 #include <nel/net/login_client.h>
 
-#include "commands.h"
-#include "landscape.h"
-#include "entities.h"
-#include "camera.h"
+#include <nel/3d/u_scene.h>
+#include <nel/3d/u_camera.h>
+#include <nel/3d/u_driver.h>
+#include <nel/3d/u_texture.h>
+#include <nel/3d/u_instance.h>
+#include <nel/3d/u_material.h>
+#include <nel/3d/u_text_context.h>
+
 #include "pacs.h"
-#include "animation.h"
+#include "radar.h"
+#include "graph.h"
+#include "camera.h"
+#include "compass.h"
+#include "commands.h"
+#include "entities.h"
 #include "network.h"
-#ifdef NL_OS_WINDOWS
-// Sound currently disabled under Linux
-#include "sound.h"
-#endif
+#include "landscape.h"
+#include "animation.h"
 #include "interface.h"
 #include "lens_flare.h"
 #include "mouse_listener.h"
-#include "radar.h"
-#include "compass.h"
-#include "graph.h"
+
+#ifdef NL_OS_WINDOWS
+// Sound currently disabled under Linux
+#	include "sound.h"
+#endif
+
 
 //
 // Namespaces
@@ -90,6 +92,7 @@ using namespace std;
 using namespace NLMISC;
 using namespace NL3D;
 using namespace NLNET;
+
 
 //
 // Globals
@@ -122,6 +125,7 @@ static bool			 ShowCommands;
 // if true, the mouse can't go out the client window (work only on Windows)
 static bool			 CaptureState = false;
 
+
 //
 // Prototypes
 //
@@ -131,6 +135,7 @@ static bool			 CaptureState = false;
 
 void initLoadingState ();
 void displayLoadingState (char *state);
+
 
 //
 // Functions
@@ -150,49 +155,8 @@ int main(int argc, char **argv)
 
 	// Look the command line to see if we have a cookie and a addr
 	
-	string cookie, fsaddr;
-
-#ifdef NL_OS_WINDOWS
-
-	// extract the 2 first param (argv[1] and argv[2]) it must be cookie and addr
-
-	string cmd = cmdline;
-	int pos1 = cmd.find_first_not_of (' ');
-	int pos2;
-	if (pos1 != string::npos)
-	{
-		pos2 = cmd.find (' ', pos1);
-		if(pos2 != string::npos)
-		{
-			cookie = cmd.substr (pos1, pos2-pos1);
-
-			pos1 = cmd.find_first_not_of (' ', pos2);
-			if (pos1 != string::npos)
-			{
-				pos2 = cmd.find (' ', pos1);
-				if(pos2 == string::npos)
-				{
-					fsaddr = cmd.substr (pos1);
-				}
-				else if (pos1 != pos2)
-				{
-					fsaddr = cmd.substr (pos1, pos2-pos1);
-				}
-			}
-		}
-	}
-
-#else
-
-	if (argc>=3)
-	{
-		cookie = argv[1];
-		fsaddr = argv[2];
-	}
-
-#endif
-
-	nlinfo ("cookie '%s' addr '%s'", cookie.c_str (), fsaddr.c_str());
+	string Cookie, FSAddr;
+	ucstring Login;
 
 	// Load config file
 	ConfigFile.load (SNOWBALLS_CONFIG "client.cfg");
@@ -203,8 +167,85 @@ int main(int argc, char **argv)
 	// Add different path for automatic file lookup
 	CPath::addSearchPath (ConfigFile.getVar("DataPath").asString (), true, false);
 
+	if(ConfigFile.getVar("Local").asInt() == 0)
+	{
+		if(ConfigFile.getVar("UseDirectClient").asInt() == 1)
+		{
+			string result;
+			string LSHost(ConfigFile.getVar("LSHost").asString());
+			Login = ConfigFile.getVar("Login").asString();
+			ucstring Password = ConfigFile.getVar("Password").asString();
+			CHashKeyMD5 hk = getMD5((uint8*)Password.c_str(), Password.size());
+			string CPassword = hk.toString();
+			nlinfo("The crypted password is %s", CPassword.c_str());
+			string Application = ConfigFile.getVar("ClientApplication").asString();
+			sint32 sid = ConfigFile.getVar("ShardId").asInt();
+
+			// 1/ Authenticate
+			result = CLoginClient::authenticate(LSHost, Login, CPassword, Application);
+			if(!result.empty()) nlerror ("*** Authenticate failed '%s' ***", result.c_str());
+
+			nlinfo("%d Shards are available:", CLoginClient::ShardList.size());
+			for (uint i = 0; i < CLoginClient::ShardList.size (); i++)
+			{
+				nlinfo ("    ShardId %3d: %s (%d online players)", CLoginClient::ShardList[i].Id, CLoginClient::ShardList[i].Name.toUtf8().c_str (), CLoginClient::ShardList[i].NbPlayers);
+			}
+
+			// 2/ Select shard
+			result = CLoginClient::wantToConnectToShard (sid, FSAddr, Cookie);
+			if(!result.empty()) nlerror ("*** Connection to the shard failed '%s' ***", result.c_str());
+		}
+		else
+		{
+#ifdef NL_OS_WINDOWS
+
+			// extract the 2 first param (argv[1] and argv[2]) it must be cookie and addr
+			string cmd = cmdline;
+			int pos1 = cmd.find_first_not_of (' ');
+			int pos2;
+			if (pos1 != string::npos)
+			{
+				pos2 = cmd.find (' ', pos1);
+				if(pos2 != string::npos)
+				{
+					Cookie = cmd.substr (pos1, pos2-pos1);
+
+					pos1 = cmd.find_first_not_of (' ', pos2);
+					if (pos1 != string::npos)
+					{
+						pos2 = cmd.find (' ', pos1);
+						if(pos2 == string::npos)
+						{
+							FSAddr = cmd.substr (pos1);
+						}
+						else if (pos1 != pos2)
+						{
+							FSAddr = cmd.substr (pos1, pos2-pos1);
+						}
+					}
+				}
+			}
+#else
+			if (argc>=3)
+			{
+				Cookie = argv[1];
+				FSAddr = argv[2];
+			}
+#endif
+		}
+		nlinfo ("Try to connect to FS addr '%s' and identify with the cookie '%s'", FSAddr.c_str(), Cookie.c_str ());
+	}
+
+	srand (uint(time(0)));
+	uint32 id = rand();
+	if(Login.empty())
+	{
+		Login = "Entity"+toString(id);
+	}
+
 	// Create a driver
-	Driver = UDriver::createDriver();
+	bool useD3D = ConfigFile.getVar("OpenGL").asInt()==0;
+	Driver = UDriver::createDriver(0, useD3D);
 
 	// Create the window with config file values
 	Driver->setDisplay (UDriver::CMode(ConfigFile.getVar("ScreenWidth").asInt(), 
@@ -295,20 +336,18 @@ int main(int argc, char **argv)
 
 	// Creates the self entity
 	displayLoadingState ("Adding your entity");
-	srand (time(NULL));
-	uint32 id = rand();
-	addEntity(id, "Entity"+toString(id), CEntity::Self, CVector(ConfigFile.getVar("StartPoint").asFloat(0),
+	addEntity(id, Login.toUtf8(), CEntity::Self, CVector(ConfigFile.getVar("StartPoint").asFloat(0),
 												 ConfigFile.getVar("StartPoint").asFloat(1),
 												 ConfigFile.getVar("StartPoint").asFloat(2)),
 										 CVector(ConfigFile.getVar("StartPoint").asFloat(0),
 												 ConfigFile.getVar("StartPoint").asFloat(1),
 												 ConfigFile.getVar("StartPoint").asFloat(2)));
 
-	if (ConfigFile.getVar("Local").asInt() == 0 && !cookie.empty (), !fsaddr.empty ())
+	if (ConfigFile.getVar("Local").asInt() == 0 && !Cookie.empty (), !FSAddr.empty ())
 	{
 		// Init the network structure
-		displayLoadingState ("Initialize Network");
-		initNetwork(cookie, fsaddr);
+		displayLoadingState ("Connect to the Server");
+		initNetwork(Cookie, FSAddr);
 	}
 
 	displayLoadingState ("Ready !!!");

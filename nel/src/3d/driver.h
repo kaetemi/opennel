@@ -81,26 +81,27 @@ struct IOcclusionQuery;
 
 //****************************************************************************
 /// A Graphic Mode descriptor.
-class GfxMode 
+struct GfxMode
 {
-public:
 	bool				OffScreen;
 	bool				Windowed;
 	uint16				Width;
 	uint16				Height;
 	uint8				Depth;
-	uint				Frequency;	// In hz. Used only in fullscreen, default is windows selection
+	uint				Frequency;	// In hz. Default is Windows selection
+	sint8				AntiAlias;	// -1 = no AA, 0 = max, 2 = 2x sample, 4 = 4x sample, ...
 
-						GfxMode(void) 
-						{ 
-							OffScreen=false;
-							Windowed=false;
-							Width=0;
-							Height=0;
-							Depth=0;
-							Frequency=0;
-						}
-						GfxMode(uint16 w, uint16 h, uint8 d, bool windowed= true, bool offscreen=false, uint frequency = 60);
+	GfxMode()
+	{
+		OffScreen=false;
+		Windowed=false;
+		Width = 0;
+		Height = 0;
+		Depth = 0;
+		Frequency = 0;
+		AntiAlias = -1;
+	}
+	GfxMode(uint16 w, uint16 h, uint8 d, bool windowed = true, bool offscreen = false, uint frequency = 0, sint8 aa = -1);
 };
 
 //****************************************************************************
@@ -169,7 +170,7 @@ public:
 							IDriver(void);
 	virtual					~IDriver(void);
 
-	virtual bool			init (uint windowIcon = 0)=0;
+	virtual bool			init (uint windowIcon = 0, emptyProc exitFunc = 0)=0;
 	
 	// Test if the device is lost. Can only happen with D3D.
 	// The calling application may skip some part of its rendering when it is the case (this is not a requirement, but may save cpu for other applications)
@@ -187,7 +188,7 @@ public:
 
 	// first param is the associated window. 
 	// Must be a HWND for Windows (WIN32).
-	virtual bool			setDisplay(void* wnd, const GfxMode& mode, bool show = true) throw(EBadDisplay)=0;
+	virtual bool			setDisplay(void* wnd, const GfxMode& mode, bool show = true, bool resizeable = true) throw(EBadDisplay)=0;
 	// Must be called after a setDisplay that initialize the mode
 	virtual bool			setMode(const GfxMode& mode)=0;
 	virtual bool			getModes(std::vector<GfxMode> &modes)=0;
@@ -217,7 +218,7 @@ public:
 	/// Before rendering via a driver in a thread, must activate() (per thread).
 	virtual bool			activate(void)=0;
 
-	/// Get the number of texture stage avaliable, for multitexturing (Normal material shaders). Valid only after setDisplay().
+	/// Get the number of texture stage available, for multi texturing (Normal material shaders). Valid only after setDisplay().
 	virtual	sint			getNbTextureStages() const =0;
 
 	/** is the texture is set up in the driver

@@ -30,6 +30,7 @@
 #include "nel/net/callback_server.h"
 
 //extern NLNET::CCallbackServer *WSServer;
+extern uint NbPlayers;
 
 void connectionWSInit ();
 void connectionWSUpdate ();

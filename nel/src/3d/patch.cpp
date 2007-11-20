@@ -210,9 +210,7 @@ void			CPatch::computeDefaultErrorSize()
 	CVector			&v1= p.Vertices[1];
 	CVector			&v2= p.Vertices[2];
 
-	// \todo yoyo: TODO_NOISE: modulate this value with tangents (roundiness of patch), and with the displacement map.
 	ErrorSize= ((v1 - v0)^(v2 - v0)).norm();
-
 }
 
 
@@ -831,7 +829,6 @@ void			CPatch::appendFaceToRenderList(CTessFace *face)
 		TessBlocks[numtb].extendSphereAdd(face->VLeft->EndPos);
 		TessBlocks[numtb].extendSphereAdd(face->VRight->EndPos);
 		// I think this should be done too on StartPos, for geomorph (rare??...) problems.
-		// \todo yoyo: is this necessary???
 		TessBlocks[numtb].extendSphereAdd(face->VBase->StartPos);
 		TessBlocks[numtb].extendSphereAdd(face->VLeft->StartPos);
 		TessBlocks[numtb].extendSphereAdd(face->VRight->StartPos);
@@ -1344,8 +1341,6 @@ void			CPatch::compile(CZone *z, uint patchId, uint8 orderS, uint8 orderT, CTess
 // ***************************************************************************
 CVector			CPatch::computeVertex(float s, float t) const
 {
-	// \todo yoyo: TODO_UVCORRECT: use UV correction.
-
 	if(getLandscape()->getNoiseMode())
 	{
 		// compute displacement map to disturb result.

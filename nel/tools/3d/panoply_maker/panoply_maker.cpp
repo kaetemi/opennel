@@ -27,7 +27,8 @@
 #include "color_modifier.h"
 #include "color_mask.h"
 #include "hls_bank_texture_info.h"
-
+#include "info_color_generation.h"
+#include "info_mask_generation.h"
 
 #include <nel/misc/types_nl.h>
 #include <nel/misc/config_file.h>
@@ -38,6 +39,7 @@
 
 #include <time.h>
 
+#pragma optimize("",off)
 
 using namespace NLMISC;
 using namespace std;
@@ -71,6 +73,11 @@ struct CBuildInfo
 	uint						 LowDefShift;
 };
 
+
+/// Temporary
+static void validateCgiInfo();
+static void validateGtmInfo();
+/// Temporary
 
 
 /** Build the infos we need from a config file
@@ -111,30 +118,23 @@ int main(int argc, char* argv[])
 {	
 	// Filter addSearchPath
 	NLMISC::createDebug();
-	NLMISC::InfoLog->addNegativeFilter ("adding the path");
 
-	if (argc != 2)
+	//"panoply.cfg" "gtm" "fyros"
+
+	if(!strcmp(argv[2], "gtm") || !strcmp(argv[2], "cgi"))
 	{
-		nlwarning("usage : %s [config_file name]", argv[0]);
-		exit(-1);
-	}
-
-	CBuildInfo bi;	
-
-	/////////////////////////////////////////
-	// reads infos from the config files   //
-	/////////////////////////////////////////
-			
 		NLMISC::CConfigFile cf;
+
+		std::string _Path_Input_TexBases;
+		std::string _Path_Input_Masks;
+		std::string _Path_Output_MaksOptimized;
+		std::string _Path_Output_Gtm;
+		std::string _Path_Output_Cgi;
+
 		try
 		{
 			/// load the config file
 			cf.load(argv[1]);
-
-			/// colors masks
-			BuildMasksFromConfigFile(cf, bi.ColorMasks);
-
-			
 
 			/// look paths
 			try
@@ -142,77 +142,56 @@ int main(int argc, char* argv[])
 				NLMISC::CConfigFile::CVar &additionnal_paths = cf.getVar ("additionnal_paths");
 				for (uint k = 0; k < (uint) additionnal_paths.size(); ++k)
 				{
-					NLMISC::CPath::addSearchPath(NLMISC::CPath::standardizePath(additionnal_paths.asString(k)));
+					NLMISC::CPath::addSearchPath(NLMISC::CPath::standardizePath(additionnal_paths.asString(k)),true, false);
 				}
 			}
 			catch (NLMISC::EUnknownVar &)
 			{
 			}
-			
-			/// input
+
+			/// repertory of textures bases (no-colorized)
 			try
 			{
-				bi.InputPath = NLMISC::CPath::standardizePath(cf.getVar ("input_path").asString());
+				_Path_Input_TexBases = NLMISC::CPath::standardizePath(cf.getVar ("input_path_texbase").asString());
 			}
 			catch (NLMISC::EUnknownVar &)
 			{
 			}
 
-			/// output
+			/// repertory of masks (original)
 			try
 			{
-				bi.OutputPath = NLMISC::CPath::standardizePath(cf.getVar ("output_path").asString());
+				_Path_Input_Masks = NLMISC::CPath::standardizePath(cf.getVar ("input_path_mask").asString());
 			}
 			catch (NLMISC::EUnknownVar &)
 			{
 			}
 
-			/// output
+			/// repertory output of masks optimized created 
 			try
 			{
-				bi.CachePath = NLMISC::CPath::standardizePath(cf.getVar ("cache_path").asString());
+				_Path_Output_MaksOptimized = NLMISC::CPath::standardizePath(cf.getVar ("output_path_mask_optimized").asString());
 			}
 			catch (NLMISC::EUnknownVar &)
 			{
 			}
 
-			/// default ascii character for unused masks
+			/// file of infos about colorization average for the client
 			try
 			{
-				bi.DefaultSeparator = cf.getVar ("default_separator").asString();								
+				_Path_Output_Cgi = NLMISC::CPath::standardizePath(cf.getVar ("output_path_cgi").asString());
 			}
 			catch (NLMISC::EUnknownVar &)
 			{
-				bi.DefaultSeparator = '_';
-			}
-			/// extension for bitmaps
-			try
-			{
-				NLMISC::CConfigFile::CVar &bitmap_extensions = cf.getVar ("bitmap_extensions");				
-				for (uint k = 0; k < (uint) bitmap_extensions.size(); ++k)
-				{
-					std::string ext = "." + bitmap_extensions.asString(k);
-					ext = NLMISC::strupr(ext);
-					if (std::find(bi.BitmapExtensions.begin(), bi.BitmapExtensions.end(), ext) == bi.BitmapExtensions.end())
-					{
-						bi.BitmapExtensions.push_back(ext);
-					}					
-				}				
-			}
-			catch (NLMISC::EUnknownVar &)
-			{
-				bi.BitmapExtensions[0].resize(1);
-				bi.BitmapExtensions[0] = ".tga";
 			}
 
+			/// file of infos about multiplexing texture for the client
 			try
 			{
-				bi.LowDefShift = cf.getVar ("low_def_shift").asInt();								
+				_Path_Output_Gtm = NLMISC::CPath::standardizePath(cf.getVar ("output_path_gtm").asString());
 			}
 			catch (NLMISC::EUnknownVar &)
 			{
-				// tranform 512*512 to 64*64 by default
-				bi.LowDefShift= 3;
 			}
 
 		}
@@ -223,22 +202,191 @@ int main(int argc, char* argv[])
 			return -1;
 		}
 
-	////////////////////////////////
-	// Build the colored versions //
-	////////////////////////////////
-	try
-	{
-		BuildColoredVersions(bi);
+		/// oriented program
+
+		if( !strcmp(argv[2], "gtm"))	/// masks optimized
+		{
+			CInfoMaskGeneration infoMaskGen(_Path_Input_TexBases,
+											_Path_Input_Masks,
+											_Path_Output_MaksOptimized,
+											_Path_Output_Gtm,
+											argv[3],
+											1);
+			infoMaskGen.init();
+			infoMaskGen.process();
+		}
+		else if( !strcmp(argv[2], "cgi")) /// colorized informations 
+		{
+			CInfoColorGeneration infoColor(_Path_Input_TexBases,
+										   _Path_Input_Masks,
+										   _Path_Output_Cgi,
+										   argv[3],
+										   1);
+			infoColor.init();
+			infoColor.process();
+		}
 	}
-	catch (std::exception &e)
+	else
 	{
-		nlwarning("Something went wrong while building bitmap : %s", e.what());
-		return -1;
+		NLMISC::InfoLog->addNegativeFilter ("adding the path");
+
+		if (argc != 2)
+		{
+			nlwarning("usage : %s [config_file name]", argv[0]);
+			exit(-1);
+		}
+
+		CBuildInfo bi;	
+
+		/////////////////////////////////////////
+		// reads infos from the config files   //
+		/////////////////////////////////////////
+
+			NLMISC::CConfigFile cf;
+			try
+			{
+				/// load the config file
+				cf.load(argv[1]);
+
+				/// colors masks
+				BuildMasksFromConfigFile(cf, bi.ColorMasks);
+
+				/// look paths
+				try
+				{
+					NLMISC::CConfigFile::CVar &additionnal_paths = cf.getVar ("additionnal_paths");
+					for (uint k = 0; k < (uint) additionnal_paths.size(); ++k)
+					{
+						NLMISC::CPath::addSearchPath(NLMISC::CPath::standardizePath(additionnal_paths.asString(k)));
+					}
+				}
+				catch (NLMISC::EUnknownVar &)
+				{
+				}
+				
+				/// input
+				try
+				{
+					bi.InputPath = NLMISC::CPath::standardizePath(cf.getVar ("input_path").asString());
+				}
+				catch (NLMISC::EUnknownVar &)
+				{
+				}
+
+				/// output
+				try
+				{
+					bi.OutputPath = NLMISC::CPath::standardizePath(cf.getVar ("output_path").asString());
+				}
+				catch (NLMISC::EUnknownVar &)
+				{
+				}
+
+				/// output
+				try
+				{
+					bi.CachePath = NLMISC::CPath::standardizePath(cf.getVar ("cache_path").asString());
+				}
+				catch (NLMISC::EUnknownVar &)
+				{
+				}
+
+				/// default ascii character for unused masks
+				try
+				{
+					bi.DefaultSeparator = cf.getVar ("default_separator").asString();								
+				}
+				catch (NLMISC::EUnknownVar &)
+				{
+					bi.DefaultSeparator = '_';
+				}
+				/// extension for bitmaps
+				try
+				{
+					NLMISC::CConfigFile::CVar &bitmap_extensions = cf.getVar ("bitmap_extensions");				
+					for (uint k = 0; k < (uint) bitmap_extensions.size(); ++k)
+					{
+						std::string ext = "." + bitmap_extensions.asString(k);
+						ext = NLMISC::strupr(ext);
+						if (std::find(bi.BitmapExtensions.begin(), bi.BitmapExtensions.end(), ext) == bi.BitmapExtensions.end())
+						{
+							bi.BitmapExtensions.push_back(ext);
+						}					
+					}				
+				}
+				catch (NLMISC::EUnknownVar &)
+				{
+					bi.BitmapExtensions[0].resize(1);
+					bi.BitmapExtensions[0] = ".tga";
+				}
+
+				try
+				{
+					bi.LowDefShift = cf.getVar ("low_def_shift").asInt();								
+				}
+				catch (NLMISC::EUnknownVar &)
+				{
+					// tranform 512*512 to 64*64 by default
+					bi.LowDefShift= 3;
+				}
+
+			}
+			catch (std::exception &e)
+			{
+				nlwarning("Panoply building failed.");
+				nlwarning(e.what());
+				return -1;
+			}
+
+		////////////////////////////////
+		// Build the colored versions //
+		////////////////////////////////
+		try
+		{
+			BuildColoredVersions(bi);
+		}
+		catch (std::exception &e)
+		{
+			nlwarning("Something went wrong while building bitmap : %s", e.what());
+			return -1;
+		}
+		return 0;
 	}
-	return 0;
 }
 
+///======================================================
 
+static void validateCgiInfo()
+{
+	NLMISC::CIFile f;
+	
+
+	vector<StrInfoTexColor> temp;
+	uint version;
+
+	try
+	{
+		f.open(CPath::lookup("info_color_texbase_fyros.cgi"));
+
+		f.serialCont(temp);
+
+	}
+	catch(std::exception &e)
+	{
+		nlwarning("Panoply building failed.");
+	}
+
+	uint16 a = temp.size();
+
+	f.close();
+}
+
+///======================================================
+
+static void validateGtmInfo()
+{
+
+}
 
 ///======================================================
 static void BuildMasksFromConfigFile(NLMISC::CConfigFile &cf,
@@ -260,14 +408,12 @@ static void BuildMasksFromConfigFile(NLMISC::CConfigFile &cf,
 		NLMISC::CConfigFile::CVar &saturation	   = cf.getVar (colorMasks[k].MaskExt + "_saturations");
 		NLMISC::CConfigFile::CVar &colorIDs		   = cf.getVar (colorMasks[k].MaskExt + "_color_id");
 
-
 		if (luminosities.size() != contrasts.size()
 			|| luminosities.size() != hues.size()	
 			|| luminosities.size() != lightness.size()
 			|| luminosities.size() != saturation.size()
 			|| luminosities.size() != colorIDs.size()
 			)
-
 		{
 			throw NLMISC::Exception("All color descriptors must have the same number of arguments");
 		}

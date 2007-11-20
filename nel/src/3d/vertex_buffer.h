@@ -659,7 +659,7 @@ private:
 	uint16		remapV2Flags (uint32 oldFlags, uint& weightCount);
 
 	// Reset the touch flags
-	void		resetTouchFlags() {_InternalFlags &= ~TouchedAll;}
+	void		resetTouchFlags() {_InternalFlags &= (uint16)(~TouchedAll);}
 
 	// Force non resident memory
 	void		restaureNonResidentMemory();

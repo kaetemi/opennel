@@ -80,13 +80,7 @@ const uint MaxPSUserParam = 4;
 class CParticleSystem : public NLMISC::CRefCount
 {
 public:
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	   #undef new
-	#endif
 	PS_FAST_OBJ_ALLOC
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-		   #define new NL_NEW
-	#endif	
 	// the pass that is applied on particles
 	enum TPass { Anim, SolidRender, BlendRender, ToolRender };
 public:

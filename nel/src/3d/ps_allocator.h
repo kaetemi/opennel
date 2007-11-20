@@ -38,15 +38,7 @@ namespace NL3D
 
 		// fast mem alloc of particle systems only on windows for now
 		//
-		// NB : When using NL_MEMORY, we solve the redefinition of new errors as follow :	
-		//
-		// #if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-		// #	undef new
-		// #endif
 		// PS_FAST_ALLOC // for fast alloc
-		// #if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-		// #	define new NL_NEW
-		// #endif
 #		define PS_FAST_ALLOC
 #	endif
 #endif // NL_OS_WINDOWS
@@ -56,13 +48,7 @@ namespace NL3D
 	// the following macros, that redefines new & delete for classes of ps, is now empty
 	// NB : When using NL_MEMORY, we solve the redefinition of new errors as follow :	
 	//
-	// #if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	//	   #undef new
-	// #endif
 	// PS_FAST_OBJ_ALLOC
-	// #if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	//	   #define new NL_NEW
-	// #endif
 #	define PS_FAST_OBJ_ALLOC
 	// Partial specialization tips for vectors. For non-windows version it just fallback on the default allocator
 	// To define a vector of type T, one must do : CPSVector<T>::V MyVector;
@@ -256,17 +242,9 @@ namespace NL3D
 #endif
 
 	// allocation of objects of ps (to be used inside base class declaration, replaces operator new & delete)
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-		// special version for nel memory
-		#define PS_FAST_OBJ_ALLOC \
-		void *operator new(size_t size, const char *filename, int line) { return PSFastMemAlloc((uint) size); }\
-		void operator delete(void *block, const char *filename, int line) { PSFastMemFree(block); } \
-		void operator delete(void *block) { PSFastMemFree(block); }
-	#else
-		#define PS_FAST_OBJ_ALLOC \
-		void *operator new(size_t size) { return PSFastMemAlloc((uint) size); }\
-		void operator delete(void *block) { PSFastMemFree(block); }
-	#endif
+#	define PS_FAST_OBJ_ALLOC \
+	void *operator new(size_t size) { return PSFastMemAlloc((uint) size); }\
+	void operator delete(void *block) { PSFastMemFree(block); }
 
 
 	// Partial specialization tips for vectors

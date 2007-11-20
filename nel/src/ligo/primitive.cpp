@@ -1243,8 +1243,8 @@ const	IPrimitive	*IPrimitive::getPrimitive	(const	std::string	&absoluteOrRelativ
 			continue;
 		}
 		
-		uint indexStr=path.find("/");
-		string	childName;
+		string::size_type indexStr=path.find("/");
+		string	          childName;
 		if (indexStr==string::npos)
 		{
 			childName=path;
@@ -2755,4 +2755,5 @@ void Register ()
 // ***************************************************************************
 
 } // namespace NLLIGO
+
 

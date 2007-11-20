@@ -35,15 +35,6 @@
 #include "visual_collision_manager_user.h"
 #include "play_list_manager_user.h"
 
-#define NL3D_MEM_SCENE						NL_ALLOC_CONTEXT( 3dScene )
-#define NL3D_MEM_SCENE_INIT					NL_ALLOC_CONTEXT( 3dScIni )
-#define NL3D_MEM_SCENE_INIT0				NL_ALLOC_CONTEXT( 3dScIn0 )
-#define NL3D_MEM_SCENE_INIT1				NL_ALLOC_CONTEXT( 3dScIn1 )
-#define NL3D_MEM_SCENE_INIT2				NL_ALLOC_CONTEXT( 3dScIn2 )
-#define NL3D_MEM_SCENE_INIT3				NL_ALLOC_CONTEXT( 3dScIn3 )
-#define NL3D_MEM_SCENE_INIT4				NL_ALLOC_CONTEXT( 3dScIn4 )
-#define NL3D_MEM_SCENE_INIT5				NL_ALLOC_CONTEXT( 3dScIn5 )
-#define NL3D_MEM_SCENE_INIT6				NL_ALLOC_CONTEXT( 3dScIn6 )
 
 namespace NL3D {
 
@@ -326,7 +317,6 @@ public:
 	// @{
 	CScene		&getScene()
 	{
-		NL3D_MEM_SCENE
 		return _Scene;
 	}
 	// @}

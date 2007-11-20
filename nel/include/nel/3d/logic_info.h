@@ -31,7 +31,6 @@
 #include "point_light_influence.h"
 #include <vector>
 
-#define NL3D_MEM_LOGIC						NL_ALLOC_CONTEXT( 3dLogic )
 
 namespace NL3D 
 {

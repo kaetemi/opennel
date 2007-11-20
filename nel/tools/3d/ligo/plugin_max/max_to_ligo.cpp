@@ -23,15 +23,23 @@
  * MA 02111-1307, USA.
  */
 
+#pragma conform(forScope, push)
+#pragma conform(forScope, off)
+
+#define _CRT_SECURE_NO_DEPRECATE
+
 // From MAXSDK
 #include <MaxScrpt/maxscrpt.h>
 
+#undef _CRT_SECURE_NO_DEPRECATE
+
+#pragma conform(forScope, pop)
+
+#undef min
+#undef max
+
 // From nel misc
 #include "nel/misc/stream.h"
-
-#ifdef NL_NEW
-#undef new
-#endif
 
 #include "max_to_ligo.h"
 

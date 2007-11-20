@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="driver_direct3d"
-	ProjectGUID="{263C0F2E-112D-437F-A6AB-DEA151A7A1F0}"
+	ProjectGUID="{1FEE8B42-BE4C-4E23-9101-0EA410D41E29}"
 	RootNamespace="driver_direct3d"
 	>
 	<Platforms>
@@ -16,10 +16,10 @@
 	<Configurations>
 		<Configuration
 			Name="DebugFast|Win32"
-			OutputDirectory=".\../../../../obj/DebugFast/driver_direct3d"
-			IntermediateDirectory=".\../../../../obj/DebugFast/driver_direct3d"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -57,10 +57,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stddirect3d.h"
-				PrecompiledHeaderFile=".\../../../../obj/DebugFast/driver_direct3d/driver_direct3d.pch"
-				AssemblerListingLocation=".\../../../../obj/DebugFast/driver_direct3d/"
-				ObjectFile=".\../../../../obj/DebugFast/driver_direct3d/"
-				ProgramDataBaseFileName=".\../../../../obj/DebugFast/driver_direct3d/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -78,14 +74,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="d3dx9.lib d3d9.lib dinput.lib dxguid.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="d3dx9.lib d3d9.lib dinput.lib dxguid.lib"
 				OutputFile="../../../../lib/nel_drv_direct3d_win_df.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_direct3d.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/DebugFast/driver_direct3d/nel_drv_direct3d_win_df.pdb"
-				ImportLibrary=".\../../../../obj/DebugFast/driver_direct3d/nel_drv_direct3d_win_df.lib"
+				ImportLibrary="$(OutDir)/nel_drv_direct3d_win_df.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -115,10 +110,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\../../../../obj/Debug/driver_direct3d"
-			IntermediateDirectory=".\../../../../obj/Debug/driver_direct3d"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -154,10 +149,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stddirect3d.h"
-				PrecompiledHeaderFile=".\../../../../obj/Debug/driver_direct3d/driver_direct3d.pch"
-				AssemblerListingLocation=".\../../../../obj/Debug/driver_direct3d/"
-				ObjectFile=".\../../../../obj/Debug/driver_direct3d/"
-				ProgramDataBaseFileName=".\../../../../obj/Debug/driver_direct3d/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -181,8 +172,7 @@
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_direct3d.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/Debug/driver_direct3d/nel_drv_direct3d_win_d.pdb"
-				ImportLibrary=".\../../../../obj/Debug/driver_direct3d/nel_drv_direct3d_win_d.lib"
+				ImportLibrary="$(OutDir)/nel_drv_direct3d_win_d.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -212,10 +202,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\../../../../obj/Release/driver_direct3d"
-			IntermediateDirectory=".\../../../../obj/Release/driver_direct3d"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -259,10 +249,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stddirect3d.h"
-				PrecompiledHeaderFile=".\../../../../obj/Release/driver_direct3d/driver_direct3d.pch"
-				AssemblerListingLocation=".\../../../../obj/Release/driver_direct3d/"
-				ObjectFile=".\../../../../obj/Release/driver_direct3d/"
-				ProgramDataBaseFileName=".\../../../../obj/Release/driver_direct3d/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -279,12 +265,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="d3dx9.lib d3d9.lib dinput.lib dxguid.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="d3dx9.lib d3d9.lib dinput.lib dxguid.lib"
 				OutputFile="../../../../lib/nel_drv_direct3d_win_r.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_direct3d.def"
-				ImportLibrary=".\../../../../obj/Release/driver_direct3d/nel_drv_direct3d_win_r.lib"
+				ImportLibrary="$(OutDir)/nel_drv_direct3d_win_r.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -314,10 +300,10 @@
 		</Configuration>
 		<Configuration
 			Name="ReleaseDebug|Win32"
-			OutputDirectory=".\../../../../obj/ReleaseDebug/driver_direct3d"
-			IntermediateDirectory=".\../../../../obj/ReleaseDebug/driver_direct3d"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -355,10 +341,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stddirect3d.h"
-				PrecompiledHeaderFile=".\../../../../obj/ReleaseDebug/driver_direct3d/driver_direct3d.pch"
-				AssemblerListingLocation=".\../../../../obj/ReleaseDebug/driver_direct3d/"
-				ObjectFile=".\../../../../obj/ReleaseDebug/driver_direct3d/"
-				ProgramDataBaseFileName=".\../../../../obj/ReleaseDebug/driver_direct3d/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -382,8 +364,7 @@
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_direct3d.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/ReleaseDebug/driver_direct3d/nel_drv_direct3d_win_rd.pdb"
-				ImportLibrary=".\../../../../obj/ReleaseDebug/driver_direct3d/nel_drv_direct3d_win_rd.lib"
+				ImportLibrary="$(OutDir)/nel_drv_direct3d_win_rd.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -416,7 +397,7 @@
 	</References>
 	<Files>
 		<Filter
-			Name="Shaders"
+			Name="shaders"
 			Filter="*.fx"
 			>
 			<File

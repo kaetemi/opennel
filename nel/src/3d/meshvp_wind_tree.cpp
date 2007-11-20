@@ -91,7 +91,6 @@ static const char*	WindTreeVPCodeEnd=
 // ***************************************************************************
 float	CMeshVPWindTree::speedCos(float angle)
 {
-	// \todo yoyo TODO_OPTIM
 	return cosf(angle * 2*(float)Pi);
 }
 

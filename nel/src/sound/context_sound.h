@@ -233,11 +233,11 @@ class CContextSoundContainer : public IContextSoundContainer
 
 #endif
 
-		std::pair<THashContextSound::iterator, bool>	ret;
+		std::pair<typename THashContextSound::iterator, bool>	ret;
 		ret = _ContextSounds.insert(std::make_pair(cm, sound));
 		if (!ret.second)
 		{
-			THashContextSound::iterator it = _ContextSounds.find(cm);
+			typename THashContextSound::iterator it = _ContextSounds.find(cm);
 			nlassertex(it != _ContextSounds.end(), ("Error wile adding soudn '%s' into context sound container", NLMISC::CStringMapper::unmap(sound->getName()).c_str()));
 
 			nlwarning("Sound %s has the same context matcher as the sound %s", NLMISC::CStringMapper::unmap(sound->getName()).c_str(), NLMISC::CStringMapper::unmap(it->second->getName()).c_str());
@@ -253,7 +253,7 @@ class CContextSoundContainer : public IContextSoundContainer
 
 		CContextMatcher<NbJoker, UseRandom, Shift>	cm(args, randomValue);
 
-		THashContextSound::iterator it = _ContextSounds.find(cm);
+		typename THashContextSound::iterator it = _ContextSounds.find(cm);
 
 		if (it != _ContextSounds.end())
 			return it->second;
@@ -263,7 +263,7 @@ class CContextSoundContainer : public IContextSoundContainer
 
 	void getSoundList(std::vector<std::pair<std::string, CSound*> > &subsounds) const
 	{
-		THashContextSound::const_iterator first(_ContextSounds.begin()), last(_ContextSounds.end());
+		typename THashContextSound::const_iterator first(_ContextSounds.begin()), last(_ContextSounds.end());
 		for (; first != last; ++first)
 		{
 			subsounds.push_back(std::make_pair(NLMISC::CStringMapper::unmap(first->second->getName()), first->second));

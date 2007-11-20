@@ -1,8 +1,6 @@
 /** \file bitmap.cpp
  * Class managing bitmaps
  *
- * \todo yoyo: readDDS and decompressDXTC* must work in BigEndifan and LittleEndian.
- *
  * $Id$
  */
 
@@ -340,7 +338,8 @@ uint8 CBitmap::readDDS(NLMISC::IStream &f, uint mipMapSkip)
 	//verify if file have linearsize set
 	if(!(flags & DDSD_LINEARSIZE)) 
     {
-		throw EDDSBadHeader();
+		nlwarning("A DDS doesn't have the flag DDSD_LINEARSIZE");
+		//throw EDDSBadHeader();
 	}
 	
 	//-------------- extracting and testing useful info
@@ -1515,7 +1514,6 @@ void CBitmap::buildMipMaps()
 		uint32	mulh= prech/h;
 
 		_Data[_MipMapCount].resize(w*h*4);
-		
 	
 		NLMISC::CRGBA *pRgba = (NLMISC::CRGBA*)&_Data[_MipMapCount][0];
 		NLMISC::CRGBA *pRgbaPrev = (NLMISC::CRGBA*)&_Data[_MipMapCount-1][0];
@@ -2188,6 +2186,7 @@ uint8 CBitmap::readTGA( NLMISC::IStream &f)
 			uint8 pixel[4];
 			uint32 imageSize = width*height;
 			uint32 readSize = 0;
+			uint8 upSideDown = ((desc & (1 << 5))==0);
 			_Data[0].resize(_Width*_Height*4);
 			uint	dstId= 0;
 
@@ -2239,6 +2238,8 @@ uint8 CBitmap::readTGA( NLMISC::IStream &f)
 				readSize += (packet & 0x7F) + 1;
 			}
 			PixelFormat = RGBA;
+			
+			if (upSideDown) flipV();
 		};
 		break;
 
@@ -2305,6 +2306,8 @@ bool CBitmap::writeTGA( NLMISC::IStream &f, uint32 d, bool upsideDown)
 		case Alpha:
 			d = 8;
 			break;
+		default:
+			;
 		}
 	}
 	if(d!=24 && d!=32 && d!=16 && d!=8) return false;
@@ -2980,7 +2983,8 @@ void	CBitmap::loadSize(NLMISC::IStream &f, uint32 &retWidth, uint32 &retHeight)
 		//verify if file have linearsize set
 		if(!(flags & DDSD_LINEARSIZE)) 
 		{
-			throw EDDSBadHeader();
+			nlwarning("A DDS doesn't have the flag DDSD_LINEARSIZE");
+			//throw EDDSBadHeader();
 		}
 		
 		//-------------- extracting and testing useful info
@@ -3706,6 +3710,8 @@ CRGBA CBitmap::getDXTCColorFromBlock(const uint8 *block, sint x, sint y)
 				uncompress(col1, c1);
 				result.blendFromui(c0, c1, 171);
 			break;
+		default:
+			;
 		}
 		result.A = 255;
 	}
@@ -3760,7 +3766,7 @@ CRGBA CBitmap::getDXTC3Texel(sint x, sint y, uint32 numMipMap) const
 	CRGBA result = getDXTCColorFromBlock(block + 8, x, y);
 	// get alpha part
 	uint8 alphaByte = block[((y & 3) << 1) + ((x & 2) >> 1)];
-	result.A = (x & 1) ?  (alphaByte & 0xf0) : (alphaByte << 4);
+	result.A = (x & 1) ?  (alphaByte & 0xf0) : ((alphaByte & 0x0f) << 4);
 	return result;
 }
 
@@ -3892,7 +3898,7 @@ void CBitmap::unattachPixels(CObjectVector<uint8> *mipmapDestArray, uint maxMipM
 void CBitmap::getData(uint8*& extractData)
 {
 	
-	uint32 size;
+	uint32 size=0;
 	if(PixelFormat==RGBA)
 		size=_Width*_Height*4;
 	else if(PixelFormat==Alpha||PixelFormat==Luminance)
@@ -3910,7 +3916,7 @@ void CBitmap::getData(uint8*& extractData)
 void CBitmap::getDibData(uint8*& extractData)
 {
 	
-	uint32 lineSize,size;
+	uint32 lineSize=0,size;
 	uint8** buf;
 	buf=new uint8*[_Height];
 	if(PixelFormat==RGBA)

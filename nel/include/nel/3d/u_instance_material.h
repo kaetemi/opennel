@@ -64,12 +64,12 @@ public:
 	/// \name Modes.
 	// @{
 	bool				isLighted() const;
-	void					setLighting(bool active, 
-										CRGBA emissive=CRGBA(0,0,0), 
-										CRGBA ambient=CRGBA(0,0,0), 
-										CRGBA diffuse=CRGBA(0,0,0), 
-										CRGBA specular=CRGBA(0,0,0),
-										float shininess= 10);
+	void				setLighting(bool active, 
+									CRGBA emissive=CRGBA(0,0,0), 
+									CRGBA ambient=CRGBA(0,0,0), 
+									CRGBA diffuse=CRGBA(0,0,0), 
+									CRGBA specular=CRGBA(0,0,0),
+									float shininess= 10);
 	bool				isUserColor() const;
 	// @}
 
@@ -91,20 +91,20 @@ public:
 	// @}
 
 
-	/// \name Lighted material mgt. Has effect only if isLighted().
+	/// \name Lighted material Mgt. Has effect only if isLighted().
 	// @{
 
-	/// Set the emissive part ot material. Usefull only if isLighted()
+	/// Set the emissive part of material. Useful only if isLighted()
 	void				setEmissive( CRGBA emissive=CRGBA(0,0,0) );
-	/// Set the Ambient part ot material. Usefull only if isLighted()
+	/// Set the Ambient part of material. Useful only if isLighted()
 	void				setAmbient( CRGBA ambient=CRGBA(0,0,0) );
-	/// Set the Diffuse part ot material. Usefull only if isLighted()
+	/// Set the Diffuse part of material. Useful only if isLighted()
 	void				setDiffuse( CRGBA diffuse=CRGBA(0,0,0) );
-	/// Set the Opacity part ot material. Usefull only if isLighted()
+	/// Set the Opacity part of material. Useful only if isLighted()
 	void				setOpacity( uint8	opa );
-	/// Set the specular part ot material. Usefull only if isLighted()
+	/// Set the specular part of material. Useful only if isLighted()
 	void				setSpecular( CRGBA specular=CRGBA(0,0,0) );
-	/// Set the shininess part ot material. Usefull only if isLighted()
+	/// Set the shininess part of material. Useful only if isLighted()
 	void				setShininess( float shininess );
 
 	CRGBA				getEmissive() const;
@@ -118,7 +118,7 @@ public:
 	// @}
 
 
-	/// \name UnLighted material mgt. Has effect only if !isLighted().
+	/// \name UnLighted material Mgt. Has effect only if !isLighted().
 	// @{
 	void				setColor(CRGBA rgba);
 	CRGBA				getColor(void) const;
@@ -141,7 +141,7 @@ public:
 	// @{
 	/// Get the last stage that got a texture. -1 means there is no textures.
 	sint				getLastTextureStage() const;
-	/// Check wether the texture of the n-th stage is a texture file
+	/// Check whether the texture of the n-th stage is a texture file
 	bool				isTextureFile(uint stage) const;
 	/// Get the fileName used by the n-th texture file. (must be a texture file or an assertion is raised)
 	std::string			getTextureFileName(uint stage) const;
@@ -152,15 +152,15 @@ public:
 	 *	is called
 	 */
 	void				setTextureFileName(const std::string &fileName, uint stage = 0);
-	/** Set the texture datas to be read from memory rather than from a file. This erases any previous texture at that slot.
+	/** Set the texture data to be read from memory rather than from a file. This erases any previous texture at that slot.
 	  * The provided block can be a memory image of a file, however
 	  * \param stage The stage at which texture must be set
-	  * \param data Pointer of the file, or of the pixels datas
-	  * \param length length, in bytes, of the datas.
+	  * \param data Pointer of the file, or of the pixels data
+	  * \param length length, in bytes, of the data.
 	  * \param isFile is true if the data must be interpreted as a texture file. Otherwise, it is interpreted
-	  *        as the raw datas of the texture, so the format and size of the texture must also have been set to match
-	  *        the raw datas
-	  * \param _delete Is true if the texture has ownership on the texture datas
+	  *        as the raw data of the texture, so the format and size of the texture must also have been set to match
+	  *        the raw data
+	  * \param _delete Is true if the texture has ownership on the texture data
 	  * \param texType relevant only when isFile is set to false. Gives the format to expand the texture to when it is generated.
 	  */
 	void				setTextureMem(uint stage, uint8 *data, uint32 length, bool _delete, bool isFile = true, uint width = 0, uint height = 0, NLMISC::CBitmap::TType texType = NLMISC::CBitmap::RGBA);
@@ -178,7 +178,7 @@ public:
 	// @{
 	// Enable a user texture matrix for the n-th stage. The initial matrix is set to identity.
 	void                    enableUserTexMat(uint stage, bool enabled = true);
-	// Test wether a user texture is enabled for the n-th stage
+	// Test whether a user texture is enabled for the n-th stage
 	bool                    isUserTexMatEnabled(uint stage) const;
 	/// Set a new texture matrix for the given stage.	
 	void					setUserTexMat(uint stage, const NLMISC::CMatrix &m);

@@ -29,6 +29,7 @@
 
 #include "nel/misc/win_thread.h"
 #include "nel/misc/path.h"
+#define NOMINMAX
 #include <windows.h>
 
 // Debug : Sept 01 2006

@@ -32,7 +32,11 @@
 
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 
-//#include "nel/misc/types_nl.h"
+#pragma conform(forScope, push)
+#pragma conform(forScope, off)
+
+#define _CRT_SECURE_NO_DEPRECATE
+
 // Max SDK includes
 #include <max.h>
 #include <stdmat.h>
@@ -44,12 +48,13 @@
 // Character Studio SDK include
 #include <bipexp.h>
 #include <phyexp.h>
-#ifdef min
+
+#undef _CRT_SECURE_NO_DEPRECATE
+
+#pragma conform(forScope, pop)
+
 #undef min
-#endif
-#ifdef max
 #undef max
-#endif
 
 #include <string>
 #include <vector>
@@ -64,9 +69,6 @@
 #include "nel/../../src/3d/skeleton_shape.h"
 #include "nel/../../src/3d/texture_file.h"
 #include "nel/../../src/3d/light.h"
-
-
-// TODO: reference additional headers your program requires here
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.

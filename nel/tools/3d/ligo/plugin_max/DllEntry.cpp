@@ -13,10 +13,6 @@
 #include "ligoscape_utility.h"
 #include "nel/misc/app_context.h"
 
-#ifdef NL_NEW
-	#undef new
-#endif
-
 extern ClassDesc2* GetLigoscapeDesc();
 
 HINSTANCE hInstance;

@@ -1415,7 +1415,6 @@ template <typename T> class CPSAttribMakerMemoryBase : public CPSAttribMaker<T>
 {
 public:	
 
-	/// \todo create a base class for CPSAttribMaker, that don't have the attributes not needed for this class
 	/// ctor (note : we don't use the nbCycle field ...)
 	CPSAttribMakerMemoryBase() : CPSAttribMaker<T>(1.f), _Scheme(NULL)
 	{

@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -152,7 +151,7 @@ CMatrix CDriverD3D::getFrustumMatrix()
 void CDriverD3D::setupViewMatrix(const CMatrix& mtx)
 {
 	H_AUTO_D3D(CDriverD3D_setupViewMatrix)
-	// Remeber the view matrix
+	// Remember the view matrix
 	_UserViewMtx= mtx;
 	_PZBCameraPos= CVector::Null;
 

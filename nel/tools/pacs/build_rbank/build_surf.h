@@ -444,10 +444,10 @@ public:
 
 		nldebug("%d elements added", Elements.size());
 
-		Center = CVector::Null;
+		Center = NLMISC::CVector::Null;
 		for (i=0; i<(sint)Elements.size(); ++i)
 		{
-			vector<CVector>	&vertices = *Elements[i]->Vertices;
+			std::vector<NLMISC::CVector>	&vertices = *Elements[i]->Vertices;
 			Center += (vertices[Elements[i]->Tri[0]]+vertices[Elements[i]->Tri[1]]+vertices[Elements[i]->Tri[2]]);
 		}
 		Center /= (float)(Elements.size()*3);

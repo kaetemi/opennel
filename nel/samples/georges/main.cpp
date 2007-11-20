@@ -40,6 +40,9 @@
 #include "nel/georges/u_form_elm.h"
 #include "nel/georges/load_form.h"
 
+#ifndef GF_DIR
+#       define GF_DIR "."
+#endif
 
 int main(void)
 {
@@ -47,6 +50,8 @@ int main(void)
 
 	// get a pointer ready for the form loader.
 	NLGEORGES::UFormLoader *formLoader = NULL;
+
+	NLMISC::CPath::addSearchPath(GF_DIR);
 
 	try {
 		// set the name of the form you're going to load.

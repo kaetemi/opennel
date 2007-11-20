@@ -141,7 +141,7 @@ public:
 	/// send the transport class to a specified service using the service name
 	void send (const std::string &serviceName);
 
-	/** The name of the transport class. Must be uniq for each class.
+	/** The name of the transport class. Must be unique for each class.
 	 */
 	void className (const std::string &name);
 

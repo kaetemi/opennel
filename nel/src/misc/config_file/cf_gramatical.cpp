@@ -42,7 +42,7 @@
 #include "nel/misc/common.h"
 #include "nel/misc/debug.h"
 
-#include <stdio.h>
+#include <cstdio>
 #include <vector>
 #include <string>
 
@@ -115,7 +115,7 @@ int yyerror (const char *);
 typedef union	{
 			cf_value Val;
 		} YYSTYPE;
-#include <stdio.h>
+#include <cstdio>
 
 #ifndef __cplusplus
 #ifndef __STDC__

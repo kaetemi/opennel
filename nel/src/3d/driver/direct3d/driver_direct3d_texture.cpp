@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -756,7 +755,6 @@ bool CDriverD3D::setupTextureEx (ITexture& tex, bool bUpload, bool &bAllUploaded
 		}
 		// b. Load part of the texture case.
 		//==================================
-		// \todo yoyo: TODO_DXTC
 		// Replace parts of a compressed image. Maybe don't work with the actual system of invalidateRect()...
 		else if (mustLoadPart && !d3dtext->SrcCompressed)
 		{

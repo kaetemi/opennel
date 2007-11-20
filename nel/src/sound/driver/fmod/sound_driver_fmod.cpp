@@ -30,7 +30,7 @@
 #include <cmath>
 	
 #ifdef NL_OS_WINDOWS
-#include <eax.h>
+#	include <eax.h>
 #endif
 
 #include "nel/misc/hierarchical_timer.h"
@@ -39,7 +39,7 @@
 #include "sound_driver_fmod.h"
 #include "listener_fmod.h"
 
-#include "fmod.h"
+#include <fmod.h>
 
 
 using namespace std;
@@ -67,7 +67,6 @@ BOOL WINAPI DllMain(HANDLE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
 
 __declspec(dllexport) ISoundDriver *NLSOUND_createISoundDriverInstance(bool useEax, ISoundDriver::IStringMapperProvider *stringMapper, bool forceSoftwareBuffer)
 {
-	NL_ALLOC_CONTEXT(NLSOUND_ISoundDriver);
 
 	CSoundDriverFMod *driver = new CSoundDriverFMod();
 	driver->init(stringMapper, forceSoftwareBuffer);
@@ -94,7 +93,6 @@ extern "C"
 {
 ISoundDriver *NLSOUND_createISoundDriverInstance(bool useEax, ISoundDriver::IStringMapperProvider *stringMapper, bool forceSoftwareBuffer)
 {
-	NL_ALLOC_CONTEXT(NLSOUND_ISoundDriver);
 	CSoundDriverFMod *driver = new CSoundDriverFMod();
 	driver->init(stringMapper, forceSoftwareBuffer);
 
@@ -108,8 +106,10 @@ uint32 NLSOUND_interfaceVersion ()
 #endif // NL_OS_UNIX
 
 // ******************************************************************
-#pragma warning( push )
-#pragma warning( disable : 4355 )
+#ifdef NL_OS_WINDOWS
+#	pragma warning( push )
+#	pragma warning( disable : 4355 )
+#endif
 CSoundDriverFMod::CSoundDriverFMod()
 :	_StringMapper(0)
 {
@@ -123,11 +123,12 @@ CSoundDriverFMod::CSoundDriverFMod()
     }
 	else
 	{
-		nlerror("Sound driver singleton instanciated twice");
+		nlerror("Sound driver singleton instantiated twice");
 	}
 }
-#pragma warning( pop )
-
+#ifdef NL_OS_WINDOWS
+#	pragma warning( pop )
+#endif
 
 // ******************************************************************
 
@@ -250,7 +251,6 @@ void CSoundDriverFMod::update()
 
 IListener *CSoundDriverFMod::createListener()
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundDriverFMod);
 
     if (CListenerFMod::instance() != NULL) 
     {
@@ -267,7 +267,6 @@ IListener *CSoundDriverFMod::createListener()
 
 IBuffer *CSoundDriverFMod::createBuffer()
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundDriverFMod);
 
     if ( !_FModOk ) 
         throw ESoundDriver("Corrupt driver");
@@ -297,7 +296,6 @@ bool CSoundDriverFMod::readRawBuffer( IBuffer *destbuffer, const std::string &na
 
 ISource *CSoundDriverFMod::createSource()
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundDriverFMod);
 
     if ( !_FModOk ) 
         throw ESoundDriver("Corrupt driver");

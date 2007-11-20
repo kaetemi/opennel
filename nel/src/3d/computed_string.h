@@ -112,15 +112,17 @@ public:
 
 	uint getIndex(uint i) const
 	{
-		if(i>=0 && i<_indexedColors.size())
+		// if(i>=0 && i<_indexedColors.size())
+		if(i<_indexedColors.size())
 			return _indexedColors[i].Index;
 
-		return -1;
+		return UINT_MAX; //-1;
 	}
 
 	const CRGBA & getColor(uint i) const
 	{
-		if(i>=0 && i<_indexedColors.size())
+		//if(i>=0 && i<_indexedColors.size())
+		if(i<_indexedColors.size())
 			return _indexedColors[i].Color;
 
 		return CRGBA::Black;
@@ -128,7 +130,8 @@ public:
 
 	const SLetterColor & getLetterColor(uint i) const
 	{
-		if(i>=0 && i<_indexedColors.size())
+		//if(i>=0 && i<_indexedColors.size())
+		if(i<_indexedColors.size())
 			return _indexedColors[i];
 
 		static SLetterColor defaultLetterColor(0, CRGBA::Black);
@@ -307,4 +310,5 @@ public:
 #endif // NL_COMPUTED_STRING_H
 
 /* End of computed_string.h */
+
 

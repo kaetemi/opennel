@@ -392,8 +392,8 @@ void CTileBank::makeAllExtensionDDS ()
 	// For all tiles
 	for (sint nTile=0; nTile<(sint)_TileVector.size(); nTile++)
 	{
-		string		tmp;
-		uint32		pos;
+		string		  tmp;
+		string::size_type pos;
 
 		// Diffuse
 		tmp= _TileVector[nTile].getRelativeFileName (CTile::diffuse);

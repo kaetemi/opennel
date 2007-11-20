@@ -71,7 +71,8 @@ public:
 	CFontManager	*getFontManager() const {return _FontManager;}
 
 	/// Must be called before any print
-	void setFontGenerator (const std::string fontFileName, const std::string fontExFileName = "");
+	void setFontGenerator (const std::string &fontFileName, const std::string &fontExFileName = "");
+
 	NL3D::CFontGenerator *getFontGenerator () { return _FontGen; }
 
 	/**

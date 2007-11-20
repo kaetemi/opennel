@@ -22,14 +22,15 @@ LDFLAGS      =
 # The bit that changes each time we cut paste and hack this file :o)
 
 # The list of targets to build
-TARGETS		= libnelgeorges.a
+TARGET		= ../../libnelgeorges.a
 DSP_TARGET	= georges.dsp
 
 # The default build rule
-all:			check-deps $(TARGETS)
+all:			check-deps $(TARGET)
 
-libnelgeorges.a: $(OBJS)
-	ar r ../../libnelgeorges.a $(OBJS)
+$(TARGET): $(OBJS)
+	ar r $@ $(OBJS)
+
 
 #############################################################################
 # Rules

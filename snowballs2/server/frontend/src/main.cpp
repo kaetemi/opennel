@@ -104,7 +104,7 @@ void cbChatClient ( CMessage& msgin, TSockId from, CCallbackNetBase& clientcb )
  *
  * Receive chat messages from the Chat Service to send it to all the clients.
  ****************************************************************************/
-void cbChatService (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbChatService (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	string  message;
 
@@ -163,7 +163,7 @@ void cbPosClient ( CMessage& msgin, TSockId from, CCallbackNetBase& clientcb )
  * Receive position messages from the Position Service to send it to all the
  * clients.
  ****************************************************************************/
-void cbPosService (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbPosService (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	uint32  id;
 	CVector pos;
@@ -217,7 +217,7 @@ void cbAddClient ( CMessage& msgin, TSockId from, CCallbackNetBase& clientcb )
 	msgout.serial( start );
 
 	/*
-	 * The incomming message from the client is sent to the Position service
+	 * The incoming message from the client is sent to the Position service
 	 * under the "POS" identification.
 	 */
 	CUnifiedNetwork::getInstance ()->send( "POS", msgout );
@@ -232,7 +232,7 @@ void cbAddClient ( CMessage& msgin, TSockId from, CCallbackNetBase& clientcb )
  * Receive an ADD_ENTITY messages from the Position Service to send it to all
  * the clients.
  ****************************************************************************/
-void cbAddService (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbAddService (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	bool    all;
 	uint32  to;
@@ -317,7 +317,7 @@ void cbRemoveClient ( CMessage& msgin, TSockId from, CCallbackNetBase& clientcb 
  * Receive an REMOVE_ENTITY messages from the Position Service to send it to all
  * the clients.
  ****************************************************************************/
-void cbRemoveService (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbRemoveService (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	uint32  id;
 
@@ -341,7 +341,7 @@ void cbRemoveService (CMessage &msgin, const std::string &serviceName, uint16 si
  * Receive an SNOWBALL messages from the Position Service to send it to all
  * the clients.
  ****************************************************************************/
-void cbSnowballService (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbSnowballService (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	uint32  id,
 			playerId;
@@ -419,7 +419,7 @@ void cbSnowballClient ( CMessage& msgin, TSockId from, CCallbackNetBase& clientc
  * Receive an HIT messages from the Position Service to send it to all
  * the clients.
  ****************************************************************************/
-void cbHitService (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbHitService (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	uint32  snowballId,
 			victimId;
@@ -473,16 +473,16 @@ TUnifiedCallbackItem CallbackArray[] =
 /****************************************************************************
  * Connection callback for the Chat service
  ****************************************************************************/
-void onReconnectChat (const std::string &serviceName, uint16 sid, void *arg)
+void onReconnectChat (const std::string &serviceName, TServiceId sid, void *arg)
 {
 	nldebug( "SB: Chat Service reconnected" );
 }
 
 
 /****************************************************************************
- * Disonnection callback for the Chat service
+ * Disconnection callback for the Chat service
  ****************************************************************************/
-void onDisconnectChat (const std::string &serviceName, uint16 sid, void *arg)
+void onDisconnectChat (const std::string &serviceName, TServiceId sid, void *arg)
 {
 	/* Note: messages already forwarded should get no reply, but it may occure
 	 * (e.g. if the server reconnects before the forwarding of a message and
@@ -498,16 +498,16 @@ void onDisconnectChat (const std::string &serviceName, uint16 sid, void *arg)
 /****************************************************************************
  * Connection callback for the Position service
  ****************************************************************************/
-void onReconnectPosition (const std::string &serviceName, uint16 sid, void *arg)
+void onReconnectPosition (const std::string &serviceName, TServiceId sid, void *arg)
 {
 	nldebug( "SB: Position Service reconnected" );
 }
 
 
 /****************************************************************************
- * Disonnection callback for the Position service
+ * Disconnection callback for the Position service
  ****************************************************************************/
-void onDisconnectPosition (const std::string &serviceName, uint16 sid, void *arg)
+void onDisconnectPosition (const std::string &serviceName, TServiceId sid, void *arg)
 {
 	/* Note: messages already forwarded should get no reply, but it may occure
 	 * (e.g. if the server reconnects before the forwarding of a message and
@@ -529,7 +529,7 @@ void onConnectionClient (TSockId from, const CLoginCookie &cookie)
 
 	id = cookie.getUserId();
 
-	nlinfo( "The client with uniq Id %u is connected", id );
+	nlinfo( "The client with unique Id %u is connected", id );
 
 	// Add new client to the list of player managed by this FrontEnd
 	pair<_pmap::iterator, bool> player = localPlayers.insert( make_pair( id, CPlayer( id, from )));
@@ -538,7 +538,7 @@ void onConnectionClient (TSockId from, const CLoginCookie &cookie)
 
 	_pmap::iterator it = player.first;
 	CPlayer *p = &((*it).second);
-	from->setAppId((uint64)(uint)p);
+	from->setAppId((uint64)(uintptr_t)p);
 
 	// Output: send the IDENTIFICATION number to the new connected client
 	CMessage msgout( "IDENTIFICATION" );
@@ -552,7 +552,7 @@ void onConnectionClient (TSockId from, const CLoginCookie &cookie)
 
 
 /****************************************************************************
- * Disonnection callback for a client
+ * Disconnection callback for a client
  ****************************************************************************/
 void onDisconnectClient ( TSockId from, void *arg )
 {
@@ -566,7 +566,7 @@ void onDisconnectClient ( TSockId from, void *arg )
 	CPlayer *p = (CPlayer *)(uint)i;
 	id = p->id;
 
-	nlinfo( "A client with uniq Id %u has disconnected", id );
+	nlinfo( "A client with unique Id %u has disconnected", id );
 
 	// tell the login system that this client is disconnected
 	CLoginServer::clientDisconnected ( id );

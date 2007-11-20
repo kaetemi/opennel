@@ -31,6 +31,7 @@
 #include "nel/misc/config_file.h"
 #include "nel/misc/path.h"
 #include "nel/misc/file.h"
+#include "nel/misc/bsphere.h"
 
 using namespace std;
 using namespace NL3D;

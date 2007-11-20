@@ -193,7 +193,7 @@ CInstanceGroup*	CExportNel::buildInstanceGroup(const vector<INode*>& vectNode, v
 			++nNumIG;
 		}
 	}
-	/// \todo Make this work (precision):
+	// todo Make this work (precision):
 	/*
 	vGlobalPos = vGlobalPos / nNumIG;
 	for (i = 0; i < nNumIG; ++i)

@@ -27,7 +27,7 @@
 // Includes
 //
 
-#include <math.h>
+#include <cmath>
 #include <vector>
 
 #include <nel/misc/vector.h>
@@ -94,10 +94,8 @@ void	deleteSound (CEntity &entity)
 
 void	updateSound()
 {
-	/// \todo 
 }
 
 void	releaseSound()
 {
-	/// \todo 
 }

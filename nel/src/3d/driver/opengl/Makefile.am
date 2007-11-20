@@ -2,9 +2,14 @@
 # $Id: Makefile.am,v 1.14 2004-03-19 16:31:28 lecroart Exp $
 #
 
-MAINTAINERCLEANFILES         = Makefile.in
+MAINTAINERCLEANFILES		= Makefile.in
 
-lib_LTLIBRARIES              = libnel_drv_opengl.la
+EXTRA_DIST			=	driver_opengl_8.vcproj	\
+					driver_opengl.vcproj	\
+					driver_opengl.dsp	\
+					driver_opengl.def
+
+lib_LTLIBRARIES			= libnel_drv_opengl.la
 
 libnel_drv_opengl_la_SOURCES = driver_opengl.cpp                 \
                                driver_opengl.h                   \
@@ -35,6 +40,8 @@ AM_CXXFLAGS                  = -I$(top_srcdir)/src \
 libnel_drv_opengl_la_LIBADD  = @OPENGL_LIBS@ @XF86VIDMODE_LIBS@ -lXmu
 libnel_drv_opengl_la_LDFLAGS = -no-undefined
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = nel-driverogl.pc
 
 # End of Makefile.am
 

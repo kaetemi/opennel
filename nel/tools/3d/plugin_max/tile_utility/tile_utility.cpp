@@ -23,22 +23,12 @@
  * MA 02111-1307, USA.
  */
 
-//#pragma warning ( disable : 4876)
-#include <max.h>
-#include <stdmat.h>
-#ifdef min
-#undef min
-#endif
-#ifdef max
-#undef max
-#endif
+#include "tile_utility.h"
 
 #include "nel/misc/types_nl.h"
 #include "nel/../../src/3d/tile_bank.h"
 #include "nel/misc/file.h"
 #include "../nel_patch_lib/rpo.h"
-
-#include "tile_utility.h"
 
 #define TILE_UTILITY_CLASS_ID	Class_ID(0x2301c0, 0x4c156b46)
 

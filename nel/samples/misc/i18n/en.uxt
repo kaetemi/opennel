@@ -1,0 +1,5 @@
+// This is the name of this language.
+LanguageName    [English]
+hi		[Hello]
+PresentI18N	[%s is proud to present you NeL Internationalisation system]
+ExitStr		[press <return> to exit]

@@ -1265,6 +1265,9 @@ rc /l 0x40c /fo&quot;Release/object_viewer.res&quot; /d &quot;NDEBUG&quot; /d &q
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\snapshot_tool_dlg.cpp">
+			</File>
+			<File
 				RelativePath="sound_system.cpp">
 				<FileConfiguration
 					Name="ReleaseDebug|Win32">
@@ -1497,6 +1500,9 @@ rc /l 0x40c /fo&quot;Release/object_viewer.res&quot; /d &quot;NDEBUG&quot; /d &q
 			</File>
 			<File
 				RelativePath="slot_dlg.h">
+			</File>
+			<File
+				RelativePath=".\snapshot_tool_dlg.h">
 			</File>
 			<File
 				RelativePath="sound_system.h">

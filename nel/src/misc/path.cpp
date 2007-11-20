@@ -37,6 +37,7 @@
 #include "nel/misc/xml_pack.h"
 
 #ifdef NL_OS_WINDOWS
+#	define NOMINMAX
 #	include <windows.h>
 #	include <sys/types.h>
 #	include <sys/stat.h>
@@ -50,7 +51,7 @@
 #   include <sys/stat.h>
 #	include <dirent.h>
 #   include <unistd.h>
-#	include <stdio.h>
+#	include <cstdio>
 #   include <cerrno>
 #   include <sys/types.h>
 #   include <utime.h>
@@ -235,9 +236,7 @@ void CFileContainer::getFileListByName(const std::string &extension, const std::
 //{
 //	if (_Instance == NULL)
 //	{
-//#undef new
 //		_Instance = new CPath;
-//#define new NL_NEW
 //	}
 //	return _Instance;
 //}
@@ -300,7 +299,6 @@ void CPath::remapExtension (const string &ext1, const string &ext2, bool substit
 
 void CFileContainer::remapExtension (const string &ext1, const string &ext2, bool substitute)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	nlassert(!_MemoryCompressed);
 
 	string ext1lwr = toLower(ext1);
@@ -359,7 +357,7 @@ void CFileContainer::remapExtension (const string &ext1, const string &ext2, boo
 			if (!(*it).second.Remapped && ext == ext1lwr)
 			{
 				// find if already exist
-				uint32 pos = (*it).first.find_last_of (".");
+				string::size_type pos = (*it).first.find_last_of (".");
 				if (pos != string::npos)
 				{
 					string file = (*it).first.substr (0, pos + 1);
@@ -384,7 +382,6 @@ void CPath::remapFile (const std::string &file1, const std::string &file2)
 
 void CFileContainer::remapFile (const std::string &file1, const std::string &file2)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	CPath *inst = CPath::getInstance();
 	if (file1.empty()) return;
 	if (file2.empty()) return;
@@ -412,7 +409,6 @@ void CPath::loadRemappedFiles (const std::string &file)
 
 void CFileContainer::loadRemappedFiles (const std::string &file)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	string fullName = lookup(file, false, true, true);
 	CIFile f;
 	f.setCacheFileOnOpen (true);
@@ -790,12 +786,12 @@ dirent *readdir (DIR *dir)
 	if (hFind == NULL)
 	{
 		string fullPath = CPath::standardizePath(sDir) + "*";
-		hFind = FindFirstFile (fullPath.c_str(), &findData);
+		hFind = FindFirstFileA (fullPath.c_str(), &findData);
 	}
 	// directory already visited : FindNextFile()
 	else
 	{
-		if (!FindNextFile (hFind, &findData))
+		if (!FindNextFileA (hFind, &findData))
 			return NULL;
 	}
 
@@ -893,10 +889,10 @@ void CFileContainer::getPathContent (const string &path, bool recurse, bool want
 
 		if (isdirectory(de))
 		{
-			// skip CVS directory
-			if ((!showEverything) && (fn == "CVS"))
+			// skip CVS and .svn directory
+			if ((!showEverything) && (fn == "CVS" || fn == ".svn"))
 			{
-				NL_DISPLAY_PATH("PATH: CPath::getPathContent(%s, %d, %d, %d): skip CVS directory", path.c_str(), recurse, wantDir, wantFile);
+				NL_DISPLAY_PATH("PATH: CPath::getPathContent(%s, %d, %d, %d): skip CVS and .svn directory", path.c_str(), recurse, wantDir, wantFile);
 				continue;
 			}
 
@@ -985,7 +981,6 @@ void CPath::addSearchPath (const string &path, bool recurse, bool alternative, c
 
 void CFileContainer::addSearchPath (const string &path, bool recurse, bool alternative, class IProgressCallback *progressCallBack)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	//H_AUTO_INST(addSearchPath);
 
 	nlassert(!_MemoryCompressed);
@@ -1130,7 +1125,6 @@ void CPath::addSearchFile (const string &file, bool remap, const string &virtual
 
 void CFileContainer::addSearchFile (const string &file, bool remap, const string &virtual_ext, NLMISC::IProgressCallback *progressCallBack)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	nlassert(!_MemoryCompressed);
 
 	string newFile = standardizePath(file, false);
@@ -1218,7 +1212,6 @@ void CPath::addSearchListFile (const string &filename, bool recurse, bool altern
 
 void CFileContainer::addSearchListFile (const string &filename, bool recurse, bool alternative)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	// check empty file
 	if (filename.empty())
 	{
@@ -1451,7 +1444,6 @@ void CPath::addIgnoredDoubleFile(const std::string &ignoredFile)
 
 void CFileContainer::addIgnoredDoubleFile(const std::string &ignoredFile)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	IgnoredFiles.push_back(ignoredFile);
 }
 
@@ -1462,7 +1454,6 @@ void CFileContainer::addIgnoredDoubleFile(const std::string &ignoredFile)
 
 void CFileContainer::insertFileInMap (const string &filename, const string &filepath, bool remap, const string &extension)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	nlassert(!_MemoryCompressed);
 	// find if the file already exist
 	TFiles::iterator it = _Files.find (toLower(filename));
@@ -1580,7 +1571,6 @@ void CPath::removeBigFiles(const std::vector<std::string> &bnpFilenames)
 
 void CFileContainer::removeBigFiles(const std::vector<std::string> &bnpFilenames)
 {
-	NL_ALLOC_CONTEXT (MiPath);
 	nlassert(!isMemoryCompressed());
 	std::hash_set<TSStringId> bnpStrIds;
 	TFiles::iterator fileIt, fileCurrIt;
@@ -1638,7 +1628,6 @@ void CPath::memoryCompress()
 
 void CFileContainer::memoryCompress()
 { 
-	NL_ALLOC_CONTEXT (MiPath);
 
 	SSMext.memoryCompress();
 	SSMpath.memoryCompress();
@@ -1760,7 +1749,7 @@ std::string CFileContainer::getWindowsDirectory()
 
 int CFile::getLastSeparator (const string &filename)
 {
-	uint32 pos = filename.find_last_of ('/');
+	string::size_type pos = filename.find_last_of ('/');
 	if (pos == string::npos)
 	{
 		pos = filename.find_last_of ('\\');
@@ -1774,7 +1763,7 @@ int CFile::getLastSeparator (const string &filename)
 
 string CFile::getFilename (const string &filename)
 {
-	uint32 pos = CFile::getLastSeparator(filename);
+	string::size_type pos = CFile::getLastSeparator(filename);
 	if (pos != string::npos)
 		return filename.substr (pos + 1);
 	else
@@ -1784,7 +1773,7 @@ string CFile::getFilename (const string &filename)
 string CFile::getFilenameWithoutExtension (const string &filename)
 {
 	string filename2 = getFilename (filename);
-	uint32 pos = filename2.find_last_of ('.');
+	string::size_type pos = filename2.find_last_of ('.');
 	if (pos == string::npos)
 		return filename2;
 	else
@@ -1793,7 +1782,7 @@ string CFile::getFilenameWithoutExtension (const string &filename)
 
 string CFile::getExtension (const string &filename)
 {
-	uint32 pos = filename.find_last_of ('.');
+	string::size_type pos = filename.find_last_of ('.');
 	if (pos == string::npos)
 		return "";
 	else
@@ -1802,7 +1791,7 @@ string CFile::getExtension (const string &filename)
 
 string CFile::getPath (const string &filename)
 {
-	uint32 pos = CFile::getLastSeparator(filename);
+	string::size_type pos = CFile::getLastSeparator(filename);
 	if (pos != string::npos)
 		return filename.substr (0, pos + 1);
 	else
@@ -1851,7 +1840,7 @@ bool CFile::fileExists (const string& filename)
 
 string CFile::findNewFile (const string &filename)
 {
-	uint32 pos = filename.find_last_of ('.');
+	string::size_type pos = filename.find_last_of ('.');
 	if (pos == string::npos)
 		return filename;
 	
@@ -1934,7 +1923,7 @@ uint32	CFile::getFileSize (FILE *f)
 
 uint32	CFile::getFileModificationDate(const std::string &filename)
 {
-	uint pos;
+	string::size_type pos;
 	string fn;
 	if ((pos=filename.find("@@")) != string::npos)
 	{
@@ -2014,7 +2003,7 @@ uint32	CFile::getFileModificationDate(const std::string &filename)
 
 bool	CFile::setFileModificationDate(const std::string &filename, uint32 modTime)
 {
-	uint pos;
+	string::size_type pos;
 	string fn;
 	if ((pos=filename.find('@')) != string::npos)
 	{
@@ -2102,7 +2091,7 @@ bool	CFile::setFileModificationDate(const std::string &filename, uint32 modTime)
 
 uint32	CFile::getFileCreationDate(const std::string &filename)
 {
-	uint pos;
+	string::size_type pos;
 	string fn;
 	if ((pos=filename.find('@')) != string::npos)
 	{
@@ -2454,8 +2443,8 @@ bool CPath::makePathRelative (const char *basePath, std::string &relativePath)
 			break;
 
 		// Remove last directory
-		uint lastPos = tmp.rfind ('/', tmp.length ()-2);
-		uint previousPos = tmp.find ('/');
+		string::size_type lastPos = tmp.rfind ('/', tmp.length ()-2);
+		string::size_type previousPos = tmp.find ('/');
 		if ((lastPos == previousPos) || (lastPos == string::npos))
 			break;
 
@@ -2543,4 +2532,5 @@ void CFile::getTemporaryOutputFilename (const std::string &originalFilename, std
 }
 
 } // NLMISC
+
 

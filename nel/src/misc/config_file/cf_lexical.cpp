@@ -30,7 +30,7 @@
 // Manualy added for complient with NL memory, must be added each time source are re-generated.
 #include "nel/misc/types_nl.h"
 
-#include <stdio.h>
+#include <cstdio>
 
 
 /* cfront 1.2 defines "c_plusplus" instead of "__cplusplus" */

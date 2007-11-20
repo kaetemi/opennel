@@ -194,7 +194,6 @@ float CBufferDSound::getDuration() const
 
 bool CBufferDSound::readWavBuffer(const std::string &name, uint8 *wavData, uint dataSize)
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CBufferDSound);
     sint error; 
     sint32 num;
     HMMIO hmmio;
@@ -398,7 +397,6 @@ bool CBufferDSound::readWavBuffer(const std::string &name, uint8 *wavData, uint 
 
 bool CBufferDSound::readRawBuffer(const std::string &name, uint8 *rawData, uint dataSize, TSampleFormat format, uint32 frequency)
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CBufferDSound);
 	// free any existing data
     if (_Data != NULL)
     {

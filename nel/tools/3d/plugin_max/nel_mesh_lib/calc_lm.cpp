@@ -286,7 +286,6 @@ void SLightBuild::convertFromMaxLight (INode *node,TimeValue tvTime)
 		}
 	}
 
-	/// \todo hulud: modify this code to work under max4
 #if (MAX_RELEASE < 4000)
 		// Convert exclusion list
 		NameTab& ntExclu = maxLight->GetExclusionList();

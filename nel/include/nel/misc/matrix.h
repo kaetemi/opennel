@@ -1,7 +1,5 @@
 /** \file matrix.h
  * 
- * \todo yoyo: Optimize.
- *
  * $Id$
  */
 
@@ -243,12 +241,6 @@ public:
 	 * \return the matrix's 4*4 column matrix (4x4 matrix stored in column-major order as 16 consecutive values)
 	 */
 	const float *get() const;
-	/** Get Euler angles (in radians).
-	 * \param ro the RotOrder which show how to get the euler.
-	 * \return one solution of Euler angle. A rotate() with this value and the RotOrder ro will give the same matrix.
-	 * \todo yoyo: implement it.
-	 */
-	//CVector		toEuler(TRotOrder ro) const;
 	//@}
 
 

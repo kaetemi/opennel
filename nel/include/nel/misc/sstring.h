@@ -369,6 +369,12 @@ public:
 	CSString& operator=(const std::string &s);
 	/// assignment operator
 	CSString& operator=(char c);
+	/// assignment operator
+	CSString& operator=(int i);
+	/// assignment operator
+	CSString& operator=(unsigned u);
+	/// assignment operator
+	CSString& operator=(double d);
 
 	/// Case insensitive string compare
 	bool operator==(const CSString &other) const;
@@ -763,6 +769,27 @@ inline CSString& CSString::operator=(const std::string &s)
 inline CSString& CSString::operator=(char c)
 {
 	*(std::string *)this=c;
+	return *this;
+}
+
+inline CSString& CSString::operator=(int i)
+{
+	CSString other(i);
+	*this = other;
+	return *this;
+}
+
+inline CSString& CSString::operator=(unsigned u)
+{
+	CSString other(u);
+	*this = other;
+	return *this;
+}
+
+inline CSString& CSString::operator=(double d)
+{
+	CSString other(d);
+	*this = other;
 	return *this;
 }
 

@@ -528,6 +528,12 @@
 			<File
 				RelativePath="..\include\nel\misc\stream_inline.h">
 			</File>
+			<File
+				RelativePath=".\misc\xml_pack.cpp">
+			</File>
+			<File
+				RelativePath="..\include\nel\misc\xml_pack.h">
+			</File>
 		</Filter>
 		<Filter
 			Name="ConfigFile"
@@ -1374,49 +1380,6 @@
 			</File>
 			<File
 				RelativePath="..\include\nel\misc\fixed_size_allocator.h">
-			</File>
-			<File
-				RelativePath="misc\heap_allocator.cpp">
-				<FileConfiguration
-					Name="Debug|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
-						UsePrecompiledHeader="0"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="DebugFast|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
-						UsePrecompiledHeader="0"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseDebug|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						PreprocessorDefinitions=""
-						UsePrecompiledHeader="0"/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32">
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						PreprocessorDefinitions=""
-						UsePrecompiledHeader="0"/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="..\include\nel\misc\heap_allocator.h">
-			</File>
-			<File
-				RelativePath="..\include\nel\misc\heap_allocator_inline.h">
 			</File>
 			<File
 				RelativePath="misc\heap_memory.cpp">
@@ -2979,6 +2942,12 @@
 			</File>
 			<File
 				RelativePath="..\include\nel\misc\geom_ext.h">
+			</File>
+			<File
+				RelativePath=".\misc\grid_traversal.cpp">
+			</File>
+			<File
+				RelativePath="..\include\nel\misc\grid_traversal.h">
 			</File>
 			<File
 				RelativePath="misc\line.cpp">

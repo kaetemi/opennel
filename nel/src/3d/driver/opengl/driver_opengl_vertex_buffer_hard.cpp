@@ -334,7 +334,7 @@ void		*CVertexBufferHardGLNVidia::lock()
 	}
 
 	// Lock Profile?
-	TTicks	beforeLock;
+	TTicks	beforeLock = 0;
 	if(_Driver->_VBHardProfiling)
 	{
 		beforeLock= CTime::getPerformanceTime();
@@ -1380,7 +1380,7 @@ void *CVertexBufferHardARB::lock()
 		_VertexArrayRange->_LostVBList.erase(_IteratorInLostVBList);
 		// continue to standard mapping code below ..		
 	}	
-	TTicks	beforeLock;
+	TTicks	beforeLock = 0;
 	if(_Driver->_VBHardProfiling)
 	{
 		beforeLock= CTime::getPerformanceTime();

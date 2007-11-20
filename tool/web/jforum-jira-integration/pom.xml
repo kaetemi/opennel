@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jauthira</groupId>
+	<artifactId>jauthira</artifactId>
+	<version>0.0.1</version>
+	<description>
+		LoginAuthenticator for JForum which accesses JIRA to
+		authenticate users.
+	</description>
+	<packaging>jar</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>wsdl2java</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<tasks>
+								<!-- create source folder -->
+								<mkdir
+									dir="target/generated-sources/main/java" />
+
+								<!-- declare ant task -->
+								<taskdef
+									resource="axis-tasks.properties"
+									classpathref="maven.compile.classpath" />
+
+								<!-- run wsdl2java -->
+								<axis-wsdl2java
+									output="target/generated-sources/main/java"
+									deployScope="Application" serverSide="false" testcase="false"
+									url="src/main/wsdl/jira-v2.wsdl" />
+									<!-- url="http://jira.atlassian.com/rpc/soap/jirasoapservice-v2?wsdl" / -->
+
+								<!--
+									Delete server side implementation from /target/generated-sources/main/java/
+									because this class is defined in /src/main/java
+								-->
+								<!-- delete
+									file="target/generated-sources/main/java/com/mycompany/ws/HelloWorldBindingImpl.java" / -->
+
+							</tasks>
+
+							<!--
+								add "generated-sources" folders to the compile path
+							-->
+							<sourceRoot>
+								target/generated-sources/main/java
+							</sourceRoot>
+							<!--							<testSourceRoot>-->
+							<!--								target/generated-sources/test/java-->
+							<!--							</testSourceRoot>-->
+
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>axis</groupId>
+			<artifactId>axis</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.axis</groupId>
+			<artifactId>axis-ant</artifactId>
+			<version>1.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jforum</groupId>
+			<artifactId>jforum</artifactId>
+			<version>2.1.7</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-discovery</groupId>
+			<artifactId>commons-discovery</artifactId>
+			<version>20040218.194635</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>axis</groupId>
+			<artifactId>axis-wsdl4j</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+	</dependencies>
+
+</project>
+

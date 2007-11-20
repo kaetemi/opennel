@@ -195,6 +195,18 @@ inline std::string toString(const uint32 &val) { return toString("%u", val); }
 inline std::string toString(const sint32 &val) { return toString("%d", val); }
 inline std::string toString(const uint64 &val) { return toString("%"NL_I64"u", val); }
 inline std::string toString(const sint64 &val) { return toString("%"NL_I64"d", val); }
+// error fix for size_t? gcc 4.1.2 requested this type instead of size_t ...
+inline std::string toString(const long unsigned int &val)
+{
+	if (sizeof(long unsigned int) == 8)
+		return toString((uint64)val);
+	return toString((uint32)val);
+}
+#if (SIZEOF_SIZE_T) == 8
+inline std::string toString(const size_t &val) { return toString("%"NL_I64"u", val); }
+//#else
+//inline std::string toString(const size_t &val) { return toString("%u", val); }
+#endif
 inline std::string toString(const float &val) { return toString("%f", val); }
 inline std::string toString(const double &val) { return toString("%lf", val); }
 inline std::string toString(const bool &val) { return toString("%u", val?1:0); }
@@ -203,8 +215,8 @@ inline std::string toString(const std::string &val) { return val; }
 // stl vectors of bool use bit reference and not real bools, so define the operator for bit reference
 
 // Debug : Sept 01 2006
-#if _STLPORT_VERSION >= 0x510
-	inline std::string toString(const std::priv::_Bit_reference &val) { return toString( bool(val)); }
+#if _STLPORT_VERSION >= 0x501
+	//inline std::string toString(const std::priv::_Bit_reference &val) { return toString( bool(val)); }
 #else
 	inline std::string toString(const std::_Bit_reference &val) { return toString( bool(val)); }
 #endif // _STLPORT_VERSION
@@ -236,8 +248,8 @@ inline void fromString(const std::string &str, std::string &val) { val = str; }
 // stl vectors of bool use bit reference and not real bools, so define the operator for bit reference
 
 // Debug : Sept 01 2006
-#if _STLPORT_VERSION >= 0x510
-	inline void fromString(const std::string &str, std::priv::_Bit_reference &val) { uint32 v; fromString(str, v); val = (v==1); }
+#if _STLPORT_VERSION >= 0x501
+//	inline void fromString(const std::string &str, std::priv::_Bit_reference &val) { uint32 v; fromString(str, v); val = (v==1); }
 #else
 	inline void fromString(const std::string &str, std::_Bit_reference &val) { uint32 v; fromString(str, v); val = (v==1); }
 #endif // _STLPORT_VERSION

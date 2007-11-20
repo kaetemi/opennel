@@ -33,7 +33,6 @@
 #include "animation_set_user.h"
 #include "ptr_set.h"
 
-#define NL3D_MEM_PLAYLIST_MANAGER						NL_ALLOC_CONTEXT( 3dPLMng )
 
 namespace NL3D 
 {
@@ -58,7 +57,6 @@ public:
 	/// Constructor
 	CPlayListManagerUser()
 	{
-		NL3D_MEM_PLAYLIST_MANAGER
 	}
 
 

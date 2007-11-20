@@ -229,7 +229,6 @@ private:
 			/** a struct containing a vertex buffer and the matching primitive block
 			  * The number of slice is encoded in the upper word of the vb index (the int used to lookup in the map)
 			  * The number of vertices per slices is encoded in the lower word
-			  * \todo: primitive blocks can be shared for several vbs...
 			  */
 			class CVBnPB
 			{

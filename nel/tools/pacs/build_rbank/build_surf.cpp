@@ -214,7 +214,7 @@ public:
 	typedef	A	*ptrA;
 	size_t	operator() (const ptrA &a) const
 	{
-		return ((uint32)a)/sizeof(A);
+		return ((uintptr_t)a)/sizeof(A);
 	}
 };
 
@@ -1430,7 +1430,7 @@ void	NLPACS::CZoneTessellation::compile()
 	tz = float2Fixed(Translation.z);
 
 	uint	p;
-	for (i=0; i<(sint)_Vertices.size(); ++i)
+	for (i=0; i<_Vertices.size(); ++i)
 	{
 		vx = float2Fixed(_Vertices[i].x) + tx;
 		vy = float2Fixed(_Vertices[i].y) + ty;
@@ -1454,7 +1454,7 @@ void	NLPACS::CZoneTessellation::compile()
 			nlinfo("build and flood fill surfaces -- pass 1");
 		uint32	surfId = 0; // + (ZoneId<<16);
 
-		for (p=0; p<(sint)Elements.size(); ++p)
+		for (p=0; p<Elements.size(); ++p)
 		{
 			if (Elements[p]->SurfaceId == UnaffectedSurfaceId)
 			{
@@ -1524,7 +1524,7 @@ void	NLPACS::CZoneTessellation::compile()
 		uint	totalSurf = 0;
 		sint32	extSurf = -1024;
 
-		for (p=0; p<(sint)Elements.size(); ++p)
+		for (p=0; p<Elements.size(); ++p)
 		{
 			if (Elements[p]->SurfaceId == UnaffectedSurfaceId)
 			{
@@ -1708,7 +1708,7 @@ void	NLPACS::CZoneTessellation::loadTessellation(CIFile &input)
 	}
 
 	Elements.resize(_Tessellation.size());
-	for (i=0; i<(sint)_Tessellation.size(); ++i)
+	for (i=0; i<_Tessellation.size(); ++i)
 	{
 		Elements[i] = &_Tessellation[i];
 	}

@@ -1151,7 +1151,6 @@ bool CInstanceGroup::getDynamicPortal (std::string& name)
 void CInstanceGroup::setPos (const CVector &pos)
 {
 	if (_Root != NULL)
-		/// \todo Make this work (precision): _Root->setPos (_GlobalPos+pos);
 		_Root->setPos (pos);
 }
 

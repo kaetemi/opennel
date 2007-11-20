@@ -27,7 +27,7 @@
 // Includes
 //
 
-#include <math.h>
+#include <cmath>
 #include <nel/misc/vectord.h>
 #include <nel/misc/event_listener.h>
 
@@ -213,7 +213,7 @@ void	updateInterface()
 
 void	releaseInterface()
 {
-	// Rmove the keyboard listener from the server
+	// Remove the keyboard listener from the server
 	Driver->EventServer.removeListener (EventCharId, &InterfaceListener);
 }
 

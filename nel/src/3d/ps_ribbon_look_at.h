@@ -147,7 +147,6 @@ private:
 	//@{
 
 			/** a struct containing a vertex buffer and a primitive block
-			  * \todo: primitive blocks can be shared for several vbs...
 			  */
 			class CVBnPB
 			{

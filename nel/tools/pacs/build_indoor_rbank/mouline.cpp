@@ -206,7 +206,6 @@ void	buildExteriorMesh(CCollisionMeshBuild &cmb, CExteriorMesh &em)
 			{
 				// if the next edge belongs to the border, then go on the same element
 				cmb.Faces[current].EdgeFlags[nextEdge] = true;
-				/// \todo get the real edge link
 				sint	link = (cmb.Faces[current].Visibility[nextEdge]) ? -1 : 0;	//(numLink++);
 
 				//edges.push_back(CExteriorMesh::CEdge(cmb.Vertices[cmb.Faces[current].V[pivot]], link));

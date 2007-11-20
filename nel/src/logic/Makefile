@@ -22,14 +22,15 @@ LDFLAGS      =
 # The bit that changes each time we cut paste and hack this file :o)
 
 # The list of targets to build
-TARGETS		= libnellogic.a
+TARGET		= ../../libnellogic.a
 DSP_TARGET	= logic.dsp
 
 # The default build rule
-all:			check-deps $(TARGETS)
+all:			check-deps $(TARGET)
 
-libnellogic.a: $(OBJS)
-	ar r ../../libnellogic.a $(OBJS)
+$(TARGET): $(OBJS)
+	ar r $@ $(OBJS)
+
 
 #############################################################################
 # Rules

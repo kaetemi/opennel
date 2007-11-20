@@ -151,7 +151,7 @@ public:
 	/// A vector of instance.
 	typedef std::vector<CInstance> TInstanceArray;
 
-	/// \todo remove all of these methods. For the moment DO NOT USE THEM !!!
+	/// Remove all of these methods. For the moment DO NOT USE THEM !!!
 
 	/// Get number of instance in this group
 	uint					getNumInstance () const;

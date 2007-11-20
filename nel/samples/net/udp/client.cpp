@@ -85,7 +85,7 @@ CUdpSimSock	*UdpSock = NULL;
 
 uint8		Mode = 0;
 
-uint32		Session = 0;
+uint64		Session = 0;
 
 string		ConnectionName;
 

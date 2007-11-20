@@ -26,9 +26,9 @@
 
 #include "nel/misc/types_nl.h"
 
-#include <stdio.h>
+#include <cstdio>
 #include <ctype.h>
-#include <math.h>
+#include <cmath>
 
 #include <vector>
 #include <map>
@@ -68,7 +68,7 @@ map<uint32, CLoginCookie> TempCookies;
 // Callbacks
 //
 
-static void cbWSShardChooseShard/* (CMessage &msgin, TSockId from, CCallbackNetBase &netbase)*/ (CMessage &msgin, const std::string &serviceName, uint16 sid)
+static void cbWSShardChooseShard/* (CMessage &msgin, TSockId from, CCallbackNetBase &netbase)*/ (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	nlassert(WebServer != NULL);
 
@@ -106,8 +106,9 @@ static void cbWSShardChooseShard/* (CMessage &msgin, TSockId from, CCallbackNetB
 		msgin.serial (addr);
 		msgout.serial (addr);
 
-		uint32 nbPendingUser;
-		msgin.serial(nbPendingUser);
+		// MTR: No longer sent by WS?
+		//uint32 nbPendingUser;
+		//msgin.serial(nbPendingUser);
 
 		// read patch addresses sent by WS
 		/*

@@ -22,14 +22,15 @@ LDFLAGS      =
 # The bit that changes each time we cut paste and hack this file :o)
 
 # The list of targets to build
-TARGETS		= libnelnet.a
+TARGET		= ../../libnelnet.a
 DSP_TARGET	= net.dsp
 
 # The default build rule
-all:			check-deps $(TARGETS)
+all:			check-deps $(TARGET)
 
-libnelnet.a: $(OBJS)
-	ar r ../../libnelnet.a $(OBJS)
+$(TARGET): $(OBJS)
+	ar r $@ $(OBJS)
+
 
 #############################################################################
 # Rules

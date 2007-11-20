@@ -496,6 +496,8 @@ public:
 	CPSFluidFrictionFunctor() : _K(1.f) 
 	{		
 	}
+	
+	virtual ~CPSFluidFrictionFunctor() {}
 
 	#ifdef NL_OS_WINDOWS
 		__forceinline
@@ -632,6 +634,8 @@ protected:
 
 struct CPSTurbulForceFunc
 {	
+	virtual ~CPSTurbulForceFunc() {}
+	
 	#ifdef NL_OS_WINDOWS
 		__forceinline
 	#endif

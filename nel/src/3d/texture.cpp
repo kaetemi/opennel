@@ -107,7 +107,7 @@ void		ITexture::setFilterMode(TMagFilter magf, TMinFilter minf)
 		_MagFilter= magf;
 		_FilterOrWrapModeTouched = true;
 	}
-	// If the MipMap mode has siwtched Off/On, then must recompute...
+	// If the MipMap mode has switched Off/On, then must recompute...
 	bool	precOff= mipMapOff();
 	if (_MinFilter != minf)
 	{

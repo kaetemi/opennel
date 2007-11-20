@@ -56,6 +56,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -72,10 +73,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib"
+				AdditionalDependencies="libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\Release/build_rbank.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				ProgramDatabaseFile=".\Release/build_rbank.pdb"
 				SubSystem="1"
 				TargetMachine="1"
@@ -164,10 +166,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib libxml2.lib"
+				AdditionalDependencies="libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\DebugFast/build_rbank.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\DebugFast/build_rbank.pdb"
 				SubSystem="1"
@@ -257,10 +260,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libxml2_a.lib freetype231.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\ReleaseDebug/build_rbank.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\ReleaseDebug/build_rbank.pdb"
 				SubSystem="1"
@@ -332,6 +336,7 @@
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="4"
@@ -349,10 +354,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib libxml2.lib"
+				AdditionalDependencies="libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\Debug/build_rbank.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug/build_rbank.pdb"
 				SubSystem="1"

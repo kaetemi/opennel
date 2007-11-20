@@ -526,7 +526,7 @@ void cbUpdateRadar (CConfigFile::CVar &var)
 	else if (var.Name == "RadarParticularPlaces")
 	{
 		RadarParticularPlaces.clear ();
-		for (sint i = 0; i < var.size(); i += 3)
+		for (uint i = 0; i < var.size(); i += 3)
 		{
 			RadarParticularPlaces.push_back (RadarParticularPlace(var.asFloat(i), var.asFloat(i+1), var.asString(i+2)));
 		}

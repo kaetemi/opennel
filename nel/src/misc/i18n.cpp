@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo ace: manage unicode format
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -513,7 +512,6 @@ void CI18N::_readTextFile(const std::string &filename,
 		return;
 
 	// If ::lookup is used, the file can be in a bnp and CFile::fileExists fails.
-	// \todo Boris
 	bool isInBnp = fullName.find('@') != string::npos;
 	if (!isInBnp && !CFile::fileExists(fullName))
 	{

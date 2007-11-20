@@ -22,14 +22,15 @@ LDFLAGS      =
 # The bit that changes each time we cut paste and hack this file :o)
 
 # The list of targets to build
-TARGETS		= libnelligo.a
+TARGET		= ../../libnelligo.a
 DSP_TARGET	= ligo.dsp
 
 # The default build rule
-all:			check-deps $(TARGETS)
+all:			check-deps $(TARGET)
 
-libnelligo.a: $(OBJS)
-	ar r ../../libnelligo.a $(OBJS)
+$(TARGET): $(OBJS)
+	ar r $@ $(OBJS)
+
 
 #############################################################################
 # Rules

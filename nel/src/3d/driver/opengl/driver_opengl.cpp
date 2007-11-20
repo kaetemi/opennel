@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -27,21 +26,16 @@
 
 #include "stdopengl.h"
 #include "driver_opengl.h"
+#include "driver_opengl_extension.h"
 
 #ifdef NL_OS_WINDOWS
-
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
-#include <windowsx.h>
-#include <string>
-
-#undef min
-#undef max
-
+#	define WIN32_LEAN_AND_MEAN
+#	define NOMINMAX
+#	include <windows.h>
+#	include <windowsx.h>
+#	include <string>
 #else // NL_OS_UNIX
-
-#include <GL/glx.h>
-
+#	include <GL/glx.h>
 #endif // NL_OS_UNIX
 
 #include <vector>
@@ -75,6 +69,7 @@ using namespace NLMISC;
 
 // ***************************************************************************
 #ifdef NL_OS_WINDOWS
+#ifndef NL_STATIC
 // dllmain::
 BOOL WINAPI DllMain(HINSTANCE hinstDLL,ULONG fdwReason,LPVOID lpvReserved)
 {
@@ -85,6 +80,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL,ULONG fdwReason,LPVOID lpvReserved)
 	}
 	return true;
 }
+#endif
 #endif
 
 
@@ -106,6 +102,15 @@ const uint CDriverGL::_EVSNumConstant = 97;
 
 #ifdef NL_OS_WINDOWS
 
+#ifdef NL_STATIC
+
+IDriver* createIDriverInstance ()
+{
+	return new CDriverGL;
+}
+
+#endif
+
 __declspec(dllexport) IDriver* NL3D_createIDriverInstance ()
 {
 	return new CDriverGL;
@@ -116,7 +121,7 @@ __declspec(dllexport) uint32 NL3D_interfaceVersion ()
 	return IDriver::InterfaceVersion;
 }
 
-static void GlWndProc(CDriverGL *driver, HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+static bool GlWndProc(CDriverGL *driver, HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	H_AUTO_OGL(GlWndProc)
 	if(message == WM_SIZE)
@@ -154,13 +159,15 @@ static void GlWndProc(CDriverGL *driver, HWND hWnd, UINT message, WPARAM wParam,
 		}
 	}
 
+	bool trapMessage = false;
 	if (driver->_EventEmitter.getNumEmitters() > 0)
 	{
 		CWinEventEmitter *we = NLMISC::safe_cast<CWinEventEmitter *>(driver->_EventEmitter.getEmitter(0));
 		// Process the message by the emitter
 		we->setHWnd((uint32)hWnd);
-		we->processMessage ((uint32)hWnd, message, wParam, lParam);
+		trapMessage = we->processMessage ((uint32)hWnd, message, wParam, lParam);
 	}
+	return trapMessage;
 }
 
 static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -168,17 +175,35 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM l
 	H_AUTO_OGL(DriverGL_WndProc)
 	// Get the driver pointer..
 	CDriverGL *pDriver=(CDriverGL*)GetWindowLong (hWnd, GWL_USERDATA);
+	bool trapMessage = false;
 	if (pDriver != NULL)
 	{
-		GlWndProc (pDriver, hWnd, message, wParam, lParam);
+		trapMessage = GlWndProc (pDriver, hWnd, message, wParam, lParam);
 	}
-	return DefWindowProc(hWnd, message, wParam, lParam);
+
+#ifdef NL_DISABLE_MENU
+	// disable menu (F10, ALT and ALT+SPACE key doesn't freeze or open the menu)
+	if(message == WM_SYSCOMMAND && wParam == SC_KEYMENU)
+		return 0;
+#endif // NL_DISABLE_MENU
+
+	return trapMessage ? 0 : DefWindowProc(hWnd, message, wParam, lParam);
 }
 
 #elif defined (NL_OS_UNIX)
 
 extern "C"
 {
+
+#ifdef NL_STATIC
+
+IDriver* createIDriverInstance ()
+{
+	return new CDriverGL;
+}
+
+#else
+
 IDriver* NL3D_createIDriverInstance ()
 {
 	return new CDriverGL;
@@ -188,6 +213,9 @@ uint32 NL3D_interfaceVersion ()
 {
 	return IDriver::InterfaceVersion;
 }
+
+#endif
+
 }
 /*
 static Bool WndProc(Display *d, XEvent *e, char *arg)
@@ -363,7 +391,7 @@ CDriverGL::~CDriverGL()
 }
 
 // ***************************************************************************
-bool CDriverGL::init (uint windowIcon)
+bool CDriverGL::init (uint windowIcon, emptyProc exitFunc)
 {
 	H_AUTO_OGL(CDriverGL_init)
 #ifdef NL_OS_WINDOWS
@@ -439,16 +467,18 @@ bool CDriverGL::activeFrameBufferObject(ITexture * tex)
 {
 	if(supportFrameBufferObject() && supportPackedDepthStencil())
 	{
-		if(tex)
-		{
+//		if(tex)
+//		{
 			CTextureDrvInfosGL*	gltext = (CTextureDrvInfosGL*)(ITextureDrvInfos*)(tex->TextureDrvShare->DrvTexture);
 			return gltext->activeFrameBufferObject(tex);
-		}
+/*		}
+#ifdef NL_OS_WINDOWS
 		else
 		{
 			nglBindFramebufferEXT(GL_FRAMEBUFFER_EXT, 0);
 			return true;
 		}
+#endif */
 	}
 
 	return false;
@@ -476,13 +506,12 @@ void CDriverGL::disableHardwareTextureShader()
 
 // --------------------------------------------------
 
-bool CDriverGL::setDisplay(void *wnd, const GfxMode &mode, bool show) throw(EBadDisplay)
+bool CDriverGL::setDisplay(void *wnd, const GfxMode &mode, bool show, bool resizeable) throw(EBadDisplay)
 {
 	H_AUTO_OGL(CDriverGL_setDisplay)
 	
 	uint width = mode.Width;
 	uint height = mode.Height;
-
 
 #ifdef NL_OS_WINDOWS
 	
@@ -630,7 +659,7 @@ bool CDriverGL::setDisplay(void *wnd, const GfxMode &mode, bool show) throw(EBad
 		int nfattribs = 0;
 		int niattribs = 0;
 
-		// Attribute arrays must be “0” terminated – for simplicity, first
+		// Attribute arrays must be "0" terminated - for simplicity, first
 		// just zero-out the array then fill from left to right.
 		for ( int a = 0; a < 2*20; a++ )
 		{
@@ -639,7 +668,7 @@ bool CDriverGL::setDisplay(void *wnd, const GfxMode &mode, bool show) throw(EBad
 		}
 		
 		// Since we are trying to create a pbuffer, the pixel format we
-		// request (and subsequently use) must be “p-buffer capable”.
+		// request (and subsequently use) must be "buffer capable".
 		iattributes[2*niattribs ] = WGL_DRAW_TO_PBUFFER_ARB;
 		iattributes[2*niattribs+1] = true;
 		niattribs++;
@@ -748,7 +777,7 @@ bool CDriverGL::setDisplay(void *wnd, const GfxMode &mode, bool show) throw(EBad
 
 
 		/* The final step of pbuffer creation is to create an OpenGL rendering context and
-			associate it with the handle for the pbuffer’s device context created in step #4. This is done as follows */
+			associate it with the handle for the pbuffer's device context created in step #4. This is done as follows */
 		_hRC = wglCreateContext( _hDC );
 		if (_hRC == NULL)
 		{
@@ -780,7 +809,7 @@ bool CDriverGL::setDisplay(void *wnd, const GfxMode &mode, bool show) throw(EBad
 			nlwarning ("CDriverGL::setDisplay: DestroyWindow failed");
 
 		/* After a pbuffer has been successfully created you can use it for off-screen rendering. To do
-			so, you’ll first need to bind the pbuffer, or more precisely, make its GL rendering context
+			so, you'll first need to bind the pbuffer, or more precisely, make its GL rendering context
 			the current context that will interpret all OpenGL commands and state changes. */
 		if (!wglMakeCurrent(_hDC,_hRC))
 		{
@@ -814,7 +843,10 @@ bool CDriverGL::setDisplay(void *wnd, const GfxMode &mode, bool show) throw(EBad
 			_DestroyWindow=true;
 
 			if(mode.Windowed)
-				WndFlags=WS_OVERLAPPEDWINDOW+WS_CLIPCHILDREN+WS_CLIPSIBLINGS;
+				if(resizeable)
+					WndFlags=WS_OVERLAPPEDWINDOW+WS_CLIPCHILDREN+WS_CLIPSIBLINGS;
+				else
+					WndFlags=WS_SYSMENU+WS_DLGFRAME+WS_CLIPCHILDREN+WS_CLIPSIBLINGS;
 			else
 			{
 				WndFlags=WS_POPUP;
@@ -1164,7 +1196,8 @@ bool CDriverGL::setDisplay(void *wnd, const GfxMode &mode, bool show) throw(EBad
 	// Driver caps.
 	//=============
 	// Retrieve the extensions for the current context.
-	NL3D::registerGlExtensions (_Extensions);	
+	NL3D::registerGlExtensions (_Extensions);
+	nlinfo(_Extensions.toString().c_str());	
 	//
 #ifdef NL_OS_WINDOWS
 	NL3D::registerWGlExtensions (_Extensions, _hDC);

@@ -70,7 +70,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\ReleaseDebug/zone_check_bind.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -144,6 +144,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -160,7 +161,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Release/zone_check_bind.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -255,7 +256,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231_D.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Debug/zone_check_bind.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -344,7 +345,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231_D.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\DebugFast/zone_check_bind.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

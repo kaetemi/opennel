@@ -2973,6 +2973,18 @@
 				RelativePath="3d\ordering_table.h">
 			</File>
 			<File
+				RelativePath=".\3d\packed_world.cpp">
+			</File>
+			<File
+				RelativePath=".\3d\packed_world.h">
+			</File>
+			<File
+				RelativePath=".\3d\packed_zone.cpp">
+			</File>
+			<File
+				RelativePath=".\3d\packed_zone.h">
+			</File>
+			<File
 				RelativePath="3d\ptr_set.cpp">
 				<FileConfiguration
 					Name="DebugFast|Win32">
@@ -3007,6 +3019,9 @@
 			</File>
 			<File
 				RelativePath="3d\ptr_set.h">
+			</File>
+			<File
+				RelativePath=".\3d\quad_grid.cpp">
 			</File>
 			<File
 				RelativePath="3d\quad_grid.h">
@@ -8923,6 +8938,12 @@
 			</File>
 			<File
 				RelativePath=".\3d\ray_mesh.h">
+			</File>
+			<File
+				RelativePath=".\3d\shape_info.cpp">
+			</File>
+			<File
+				RelativePath=".\3d\shape_info.h">
 			</File>
 			<File
 				RelativePath="3d\visual_collision_entity.cpp">

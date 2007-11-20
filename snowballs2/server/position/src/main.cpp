@@ -98,7 +98,7 @@ list<_snowball> snoList;
  *             Callback function called when the Position Service receive a
  *             "ADD_ENTITY" message
  ****************************************************************************/
-void cbAddEntity (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbAddEntity (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	bool    all;
 	uint32  id;
@@ -159,7 +159,7 @@ void cbAddEntity (CMessage &msgin, const std::string &serviceName, uint16 sid)
  *             Callback function called when the Position Service receive a
  *             "ENTITY_POS" message
  ****************************************************************************/
-void cbPosition (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbPosition (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	uint32  id;
 	CVector pos;
@@ -207,7 +207,7 @@ void cbPosition (CMessage &msgin, const std::string &serviceName, uint16 sid)
  *             Callback function called when the Position Service receive a
  *             "REMOVE_ENTITY" message
  ****************************************************************************/
-void cbRemoveEntity (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbRemoveEntity (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	uint32 id;
 
@@ -237,7 +237,7 @@ void cbRemoveEntity (CMessage &msgin, const std::string &serviceName, uint16 sid
  *             Callback function called when the Position Service receive a
  *             "SNOWBALL" message
  ****************************************************************************/
-void cbSnowball (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbSnowball (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	static uint32 snowballId = START_SNOW_ID;
 

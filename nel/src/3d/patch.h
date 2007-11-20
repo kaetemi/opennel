@@ -2,10 +2,6 @@
  * TODO: File description
  *
  * $Id$
- * \todo yoyo:
-		- "UV correction" infos.
-		- NOISE, or displacement map (ptr/index).
- *
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -327,11 +323,6 @@ public:
 	CVector3s		Vertices[4];
 	CVector3s		Tangents[8];
 	CVector3s		Interiors[4];
-	/*
-		\todo yoyo: TODO_NOISE: - displacement map (ptr/index).
-		\todo yoyo: TODO_UVCORRECT: - "UV correction" infos.
-		
-	*/
 
 	// Lumel array compressed.
 	std::vector<uint8>			CompressedLumels;
@@ -1021,7 +1012,7 @@ private:
 
 	// get the current TLIColor given a TLI coordinate (in (0..OrderS/2+1, 0..OrderT/2+1) )
 	// NB: returned color is modulated by landscape material and precomputed diffuse factor
-	CRGBA		CPatch::getCurrentTLIColor(uint x, uint y) const;
+	CRGBA		getCurrentTLIColor(uint x, uint y) const;
 	// get the current TLIColors at the corners of the tile (according to pointLights current colors)
 	// corner order: 0,0; 1,0; 0,1; 1,1. NB: A undefined.
 	void		getCurrentTileTLIColors(uint ts, uint tt, NLMISC::CRGBA corners[4]);

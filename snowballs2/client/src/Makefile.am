@@ -39,7 +39,7 @@ snowballs_SOURCES    = animation.cpp                       \
 
 snowballs_LDADD      = @FREETYPE_LIBS@ @OPENAL_LIBS@
 
-AM_CXXFLAGS          = @FREETYPE_CFLAGS@
+AM_CXXFLAGS          = -DSNOWBALLS_CONFIG="\"${pkgsysconfdir}/\"" @FREETYPE_CFLAGS@
 
 
 # End of Makefile.am

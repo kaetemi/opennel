@@ -71,7 +71,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib s3tc.lib"
+				AdditionalDependencies="s3tc.lib freetype.lib"
 				OutputFile=".\DebugFast/hls_bank_maker.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -165,7 +165,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib s3tc.lib"
+				AdditionalDependencies="s3tc.lib freetype.lib"
 				OutputFile=".\ReleaseDebug/hls_bank_maker.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -242,6 +242,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -258,7 +259,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib s3tc.lib"
+				AdditionalDependencies="s3tc.lib freetype.lib"
 				OutputFile=".\Release/hls_bank_maker.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -355,7 +356,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib s3tc.lib"
+				AdditionalDependencies="s3tc.lib freetype.lib"
 				OutputFile=".\Debug/hls_bank_maker.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"

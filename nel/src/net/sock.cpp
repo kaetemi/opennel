@@ -32,9 +32,10 @@
 
 #ifdef NL_OS_WINDOWS
 
-# ifdef NL_COMP_VC8
+# if defined(NL_COMP_VC7) || defined(NL_COMP_VC71) || defined(NL_COMP_VC8)
 #	include <WinSock2.h>
 # endif
+#	define NOMINMAX
 #	include <windows.h>
 #	define socklen_t int
 #	define ERROR_NUM WSAGetLastError()
@@ -463,10 +464,10 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 		{
 			H_AUTO(L0SendWouldBlock);
 			len = 0;
-			nlSleep(10);
+			//nlSleep(10);
 			if (!_Blocking)
 			{
-				nldebug("SendWouldBlock - %s / %s Entering snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
+				//nldebug("SendWouldBlock - %s / %s Entering snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
 				_Blocking= true;
 			}
 			return Ok;
@@ -485,7 +486,7 @@ CSock::TSockResult CSock::send( const uint8 *buffer, uint32& len, bool throw_exc
 	
 	if (_Blocking)
 	{
-		nldebug("SendWouldBlock - %s / %s Leaving snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
+		//nldebug("SendWouldBlock - %s / %s Leaving snooze mode",_LocalAddr.asString().c_str(),_RemoteAddr.asString().c_str());
 		_Blocking= false;
 	}
 	return Ok;

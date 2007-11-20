@@ -147,8 +147,11 @@ void	initLandscape()
 		CRGBA(ConfigFile.getVar("LandscapeAmbiantColor").asInt(0), ConfigFile.getVar("LandscapeAmbiantColor").asInt(1), ConfigFile.getVar("LandscapeAmbiantColor").asInt(2)),
 		ConfigFile.getVar("LandscapeMultiplyFactor").asFloat());
 
+	// Enable the landscape to receive dynamic shadows.
+	Landscape->enableReceiveShadowMap(true);
+
 	CConfigFile::CVar igv = ConfigFile.getVar("InstanceGroups");
-	for (sint32 i = 0; i < igv.size (); i++)
+	for (uint32 i = 0; i < igv.size (); i++)
 	{
 		UInstanceGroup *inst = UInstanceGroup::createInstanceGroup (igv.asString (i));
 		if (inst == NULL)

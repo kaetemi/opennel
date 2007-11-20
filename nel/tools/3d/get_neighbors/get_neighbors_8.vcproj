@@ -76,6 +76,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Debug/get_neighbors.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -150,6 +151,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -166,6 +168,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Release/get_neighbors.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -256,6 +259,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\ReleaseDebug/get_neighbors.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -351,6 +355,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Debug/get_neighbors.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"

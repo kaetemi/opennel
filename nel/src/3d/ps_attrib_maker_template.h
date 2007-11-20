@@ -75,6 +75,7 @@ inline CPlaneBasis PSValueBlend(const CPlaneBasis &t1, const CPlaneBasis &t2, fl
 /// Base struct for blending function (exact or sampled)
 template <typename T> struct CPSValueBlendFuncBase
 {
+	virtual ~CPSValueBlendFuncBase() {};
 	virtual void getValues(T &startValue, T &endValue) const = 0;
 	virtual void setValues(T startValue, T endValue) = 0;
 };

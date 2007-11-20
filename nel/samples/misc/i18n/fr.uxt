@@ -1,0 +1,5 @@
+// This is the name of the language.
+LanguageName	[francais]
+hi		[Bonjour]
+PresentI18N	[%s est fiere de vous presenter le systeme d'internationalisation de NeL]
+ExitStr		[Appuyez sur <entree> pour quitter]

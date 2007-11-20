@@ -56,7 +56,7 @@ using namespace NL3D;
 namespace NLSOUND
 {
 
-char *CClusteredSound::_EnvironmentNames[] =
+const char *CClusteredSound::_EnvironmentNames[] =
 {
     "GENERIC",
     "PADDEDCELL",
@@ -86,7 +86,7 @@ char *CClusteredSound::_EnvironmentNames[] =
     "PSYCHOTIC",
 	NULL
 };
-char *CClusteredSound::_MaterialNames[] = 
+const char *CClusteredSound::_MaterialNames[] = 
 {
 	"SINGLEWINDOW",
 	"DOUBLEWINDOW",
