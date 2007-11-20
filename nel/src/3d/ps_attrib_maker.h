@@ -106,13 +106,7 @@ public:
 	// duplicate this attribute maker
 	virtual CPSAttribMakerBase *clone() const = 0;
 	// fast alloc for attrib makers
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	#undef new
-	#endif
-		PS_FAST_OBJ_ALLOC
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	#define new NL_NEW
-	#endif
+	PS_FAST_OBJ_ALLOC
 };
 
 
@@ -325,3 +319,6 @@ protected:
 #endif // NL_PS_ATTRIB_MAKER_H
 
 /* End of ps_attrib_maker.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

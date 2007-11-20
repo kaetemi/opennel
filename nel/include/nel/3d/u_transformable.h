@@ -43,7 +43,7 @@ using NLMISC::CQuat;
 // ***************************************************************************
 /**
  * Base interface for manipulating Movable Objects: camera, bones, lights, instances etc...
- * By default Transformmode is RotQuat.
+ * By default TransformMode is RotQuat.
  * \author Lionel Berenguier
  * \author Nevrax France
  * \date 2001
@@ -59,8 +59,8 @@ public:
 	enum	TTransformMode
 	{
 		DirectMatrix,		// DirectMatrixMode .
-		RotEuler,			// Matrix is computed from sperated composantes, with euler rotation.
-		RotQuat,			// Matrix is computed from sperated composantes, with quat rotation (default).
+		RotEuler,			// Matrix is computed from separated component, with Euler rotation.
+		RotQuat,			// Matrix is computed from separated component, with quat rotation (default).
 
 		TransformModeCount
 	};
@@ -84,11 +84,11 @@ public:
 	/// Work only in RotQuat mode (nlassert).
 	void			setRotQuat(const CQuat &quat);
 	/** Work only in RotQuat mode (nlassert). 
-	 * Build a quaternion from a forward direction (a J vector). there is no roll... jdir do not need to be noramlized.
+	 * Build a quaternion from a forward direction (a J vector). there is no roll... jdir do not need to be normalized.
 	 */
 	void			setRotQuat(const CVector &jdir);
 	/** Work only in RotQuat mode (nlassert). 
-	 * Build a quaternion from a forward direction (a J vector). the roll is determined with help of the vector up vup... vectors do not need to be noramlized.
+	 * Build a quaternion from a forward direction (a J vector). the roll is determined with help of the vector up vup... vectors do not need to be normalized.
 	 */
 	void			setRotQuat(const CVector &jdir, const CVector &vup);
 	/// Work only in Rot* mode (nlassert).
@@ -110,7 +110,7 @@ public:
 
 	/// get the current transform mode.
 	TTransformMode		getTransformMode();
-	/// get the current rotorder (information vlaid only when RotEuler mode).
+	/// get the current rotorder (information valid only when RotEuler mode).
 	CMatrix::TRotOrder	getRotOrder();
 
 	/// Get the matrix, compute her if necessary (work in all modes).
@@ -143,7 +143,7 @@ public:
 	/// \name Misc
 	// @{
 	/** 
-	  * Setup Matrix by the lookAt method. Work only in DirectMatrix mode and RotQuat mode (not euler...).
+	  * Setup Matrix by the lookAt method. Work only in DirectMatrix mode and RotQuat mode (not Euler...).
 	  * 
 	  * \param eye is the coordinate of the object.
 	  * \param target is the point the object look at.
@@ -151,8 +151,6 @@ public:
 	  */
 	void			lookAt (const CVector& eye, const CVector& target, float roll=0.f);
 	// @}
-
-
 
 	/// \name Channel name
 	// @{
@@ -181,10 +179,11 @@ protected:
 	ITransformable	*_Object;
 };
 
-
 } // NL3D
-
 
 #endif // NL_U_TRANSFORMABLE_H
 
 /* End of u_transformable.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

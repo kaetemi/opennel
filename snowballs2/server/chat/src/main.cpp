@@ -56,11 +56,11 @@ using namespace NLNET;
  *             Callback function called when the Chat Service receive a "CHAT"
  *             message
  ****************************************************************************/
-void cbChat (CMessage &msgin, const std::string &serviceName, uint16 sid)
+void cbChat (CMessage &msgin, const std::string &serviceName, TServiceId sid)
 {
 	string message;
 
-	// Extract the incomming message content from the Frontend and print it
+	// Extract the incoming message content from the Frontend and print it
 	msgin.serial( message );
 	nldebug( "SB: Received CHAT line: \"%s\"", message.c_str() );
 
@@ -104,3 +104,6 @@ NLNET_SERVICE_MAIN( IService, "CHAT", "chat_service", 0, CallbackArray, SNOWBALL
 
 
 /* end of file */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -57,6 +57,7 @@ using namespace std;
 // just comment this and the IsDebuggerPresent to compile on windows 95
 #define _WIN32_WINDOWS	0x0410
 #define WINVER			0x0400
+#define NOMINMAX
 #include <windows.h>
 
 
@@ -721,3 +722,6 @@ void CFairMutex::debugLeave()
 #endif // MUTEX_DEBUG
 
 } // NLMISC
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

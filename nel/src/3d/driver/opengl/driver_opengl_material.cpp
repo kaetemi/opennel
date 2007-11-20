@@ -299,7 +299,7 @@ bool CDriverGL::setupMaterial(CMaterial& mat)
 	if (!mat._MatDrvInfo)
 	{
 		// insert into driver list. (so it is deleted when driver is deleted).
-		ItMatDrvInfoPtrList		it= _MatDrvInfos.insert(_MatDrvInfos.end());
+		ItMatDrvInfoPtrList		it= _MatDrvInfos.insert(_MatDrvInfos.end(), NULL);
 		// create and set iterator, for future deletion.
 		*it= mat._MatDrvInfo= new CShaderGL(this, it);
 
@@ -1423,6 +1423,7 @@ struct CSpecCubeMapFunctor : ICubeMapFunctor
 		return NLMISC::CRGBA(intensity, intensity, intensity, intensity); 		
 		//return Exp == 1.f ? CRGBA((uint8)(v.x*127+127), (uint8)(v.y*127+127), (uint8)(v.z*127+127), 0): CRGBA::Black;
 	}
+	virtual ~CSpecCubeMapFunctor() {}
 	float Exp;
 };
 
@@ -1910,8 +1911,6 @@ void		CDriverGL::endCausticsMultiPass(const CMaterial &mat)
 }
 */
 
-/// \todo Optimize the cloud multipass with register combiner
-
 // ***************************************************************************
 sint		CDriverGL::beginCloudMultiPass ()
 {
@@ -2264,10 +2263,7 @@ void CDriverGL::setupWaterPassARB(const CMaterial &mat)
 			}
 			else
 			{
-				// \todo nico: test this pass when we got hardware to test it
 				nglProgramEnvParameter4fARB(GL_FRAGMENT_PROGRAM_ARB, 2, - 1.f/  (_FogEnd - _FogStart), _FogEnd / (_FogEnd - _FogStart), 0.f, 0.f);
-				
-					
 			}						
 		}				
 	}
@@ -2445,3 +2441,6 @@ void CDriverGL::endWaterMultiPass()
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -475,3 +474,6 @@ bool CDriverD3D::renderRawQuads(CMaterial& mat, uint32 startIndex, uint32 numQua
 
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

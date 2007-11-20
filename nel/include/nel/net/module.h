@@ -44,6 +44,7 @@ namespace NLNET
 	class IInterceptorRegistrar
 	{
 	public:
+		virtual ~IInterceptorRegistrar() {};
 		virtual void registerInterceptor(IModuleInterceptable *interceptor) =0;
 		virtual void unregisterInterceptor(IModuleInterceptable *interceptor) =0;
 	};
@@ -922,3 +923,6 @@ namespace NLNET
 } // namespace NLNET
 
 #endif // NL_FILE_MODULE_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

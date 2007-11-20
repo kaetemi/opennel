@@ -27,7 +27,7 @@
 // Includes
 //
 
-#include <math.h>
+#include <cmath>
 #include <vector>
 
 #include <nel/misc/vector.h>
@@ -94,10 +94,11 @@ void	deleteSound (CEntity &entity)
 
 void	updateSound()
 {
-	/// \todo 
 }
 
 void	releaseSound()
 {
-	/// \todo 
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

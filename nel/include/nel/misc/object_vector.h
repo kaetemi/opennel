@@ -35,7 +35,7 @@
 #ifndef NL_USE_DEFAULT_MEMORY_MANAGER
 # ifndef NLMISC_HEAP_ALLOCATION_NDEBUG
 #  define NL_OV_USE_NEW_ALLOCATOR
-# endif NLMISC_HEAP_ALLOCATION_NDEBUG
+# endif // NLMISC_HEAP_ALLOCATION_NDEBUG
 #endif // NL_USE_DEFAULT_MEMORY_MANAGER
 
 namespace NLMISC {
@@ -409,12 +409,8 @@ private:
 		// for all elements
 		for(uint i=i0;i<i1;i++)
 		{
-// Must do a placement new
-#undef new
 			// call ctor.
 			new (_Ptr+i) T;
-// Must do a placement new
-#define new NL_NEW
 		}
 	}
 
@@ -474,3 +470,6 @@ template<> class CObjectVector<double, true> : public CObjectVector<double, fals
 #endif // NL_OBJECT_VECTOR_H
 
 /* End of object_vector.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

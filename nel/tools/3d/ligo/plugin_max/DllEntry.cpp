@@ -13,10 +13,6 @@
 #include "ligoscape_utility.h"
 #include "nel/misc/app_context.h"
 
-#ifdef NL_NEW
-	#undef new
-#endif
-
 extern ClassDesc2* GetLigoscapeDesc();
 
 HINSTANCE hInstance;
@@ -84,3 +80,6 @@ TCHAR *GetString(int id)
 	return NULL;
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

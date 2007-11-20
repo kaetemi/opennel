@@ -442,7 +442,6 @@ CVector		CMatrix::getK() const
 // ======================================================================================================
 void		CMatrix::get(float m44[16]) const
 {
-	// \todo yoyo: TODO_OPTIMIZE_it.
 	testExpandRot();
 	testExpandProj();
 	memcpy(m44, M, 16*sizeof(float));
@@ -1093,7 +1092,6 @@ CMatrix		CMatrix::inverted() const
 
 	CMatrix	ret;
 
-	// \todo yoyo: TODO_OPTIMIZE it...
 	testExpandRot();
 	testExpandProj();
 
@@ -1182,7 +1180,6 @@ bool		CMatrix::normalize(TRotOrder ro)
 	tj= getJ();
 	tk= getK();
 
-	// \todo yoyo: TODO_OPTIMIZE it...
 	testExpandRot();
 
 	// Normalize with help of ro
@@ -1299,7 +1296,6 @@ CVectorH	CMatrix::operator*(const CVectorH& v) const
 
 	CVectorH ret;
 
-	// \todo yoyo: TODO_OPTIMIZE it...
 	testExpandRot();
 	testExpandProj();
 
@@ -1314,10 +1310,8 @@ CVectorH	CMatrix::operator*(const CVectorH& v) const
 // ======================================================================================================
 CPlane		operator*(const CPlane &p, const CMatrix &m)
 {
-	// \todo yoyo: TODO_OPTIMIZE it...
 	m.testExpandRot();
 	m.testExpandProj();
-
 
 	CPlane	ret;
 
@@ -1578,3 +1572,6 @@ void		CMatrix::setArbitraryRotK(const CVector &kdir)
 
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

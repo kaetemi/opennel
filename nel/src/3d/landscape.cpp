@@ -358,7 +358,8 @@ void			CLandscape::setTileNear (float tileNear)
 // ***************************************************************************
 void			CLandscape::setTileMaxSubdivision (uint tileDiv)
 {
-	nlassert(tileDiv>=0 && tileDiv<=4);
+       //nlassert(tileDiv>=0 && tileDiv<=4);
+	nlassert(tileDiv<=4);
 
 	if(tileDiv!=_TileMaxSubdivision)
 	{
@@ -828,7 +829,6 @@ void			CLandscape::updateGlobalsAndLockBuffers (const CVector &refineCenter)
 	CLandscapeGlobals::OOTileDistDeltaSqr = 1.0f / (CLandscapeGlobals::TileDistFarSqr - CLandscapeGlobals::TileDistNearSqr);
 
 	// Tile Pixel size part.
-	// \todo yoyo: choose according to wanted tile pixel size.
 	CLandscapeGlobals::TilePixelSize= 128.0f;
 	CLandscapeGlobals::TilePixelBias128= 0.5f/CLandscapeGlobals::TilePixelSize;
 	CLandscapeGlobals::TilePixelScale128= 1-1/CLandscapeGlobals::TilePixelSize;
@@ -1415,9 +1415,6 @@ void			CLandscape::render(const CVector &refineCenter, const CVector &frontVecto
 			driver->setupFog(driver->getFogStart(), driver->getFogEnd(), CRGBA::White);
 			
 			// Lightmap Pass.
-			/* \todo yoyo: TODO_CLOUD: setup stage2, and setup texcoord generation. COMPLEX because of interaction
-			 with Dynamic LightMap
-			*/
 
 			// Setup the Dynamic Lightmap into stage 0.
 			TileMaterial.setTexture(0, _TextureDLM);
@@ -2005,7 +2002,6 @@ NLMISC::CSmartPtr<ITexture>		CLandscape::getTileTexture(uint16 tileId, CTile::TB
 // ***************************************************************************
 CTileElement *CLandscape::getTileElement(const CPatchIdent &patchId, const CUV &uv)
 {
-	// \todo yoyo: TODO_ZONEID: change ZoneId in 32 bits...
 	std::map<uint16, CZone*>::const_iterator	it= Zones.find((uint16)patchId.ZoneId);
 	if(it!=Zones.end())
 	{
@@ -2187,7 +2183,8 @@ void		CLandscape::releaseTileLightMap(uint tileLightMapId)
 	// Get the id local in the texture.
 	textNum= tileLightMapId / NbTileLightMapByTexture;
 	id= tileLightMapId % NbTileLightMapByTexture;
-	nlassert(textNum>=0 && textNum<_TextureNears.size());
+	//nlassert(textNum>=0 && textNum<_TextureNears.size());
+	nlassert(textNum<_TextureNears.size());
 
 	// Release the tile in this texture.
 	CPatchRdrPass	*nearRdrPass= _TextureNears[textNum];
@@ -2209,7 +2206,8 @@ void		CLandscape::refillTileLightMap(uint tileLightMapId, CRGBA  map[NL_TILE_LIG
 	// Get the id local in the texture.
 	textNum= tileLightMapId / NbTileLightMapByTexture;
 	id= tileLightMapId % NbTileLightMapByTexture;
-	nlassert(textNum>=0 && textNum<_TextureNears.size());
+	//nlassert(textNum>=0 && textNum<_TextureNears.size());
+	nlassert(textNum<_TextureNears.size());
 
 	// get a ptr on the texture.
 	CPatchRdrPass	*nearRdrPass= _TextureNears[textNum];
@@ -2684,8 +2682,6 @@ CVector			CLandscape::getTesselatedPos(const CPatchIdent &patchId, const CUV &uv
 		CLandscapeGlobals::RefineCenter= _OldRefineCenter;
 	}
 
-
-	// \todo yoyo: TODO_ZONEID: change ZoneId in 32 bits...
 	std::map<uint16, CZone*>::const_iterator	it= Zones.find((uint16)patchId.ZoneId);
 	if(it!=Zones.end())
 	{
@@ -3444,7 +3440,6 @@ float		CLandscape::getVegetableDensity() const
 // ***************************************************************************
 uint8		CLandscape::getLumel(const CPatchIdent &patchId, const CUV &uv) const
 {
-	// \todo yoyo: TODO_ZONEID: change ZoneId in 32 bits...
 	std::map<uint16, CZone*>::const_iterator	it= Zones.find((uint16)patchId.ZoneId);
 	if(it!=Zones.end())
 	{
@@ -3464,7 +3459,6 @@ uint8		CLandscape::getLumel(const CPatchIdent &patchId, const CUV &uv) const
 void		CLandscape::appendTileLightInfluences(const CPatchIdent &patchId, const CUV &uv, 
 	std::vector<CPointLightInfluence> &pointLightList) const
 {
-	// \todo yoyo: TODO_ZONEID: change ZoneId in 32 bits...
 	std::map<uint16, CZone*>::const_iterator	it= Zones.find((uint16)patchId.ZoneId);
 	if(it!=Zones.end())
 	{
@@ -3961,3 +3955,7 @@ void CLandscape::removeTileCallback(ULandscapeTileCallback *cb)
 
 
 
+
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

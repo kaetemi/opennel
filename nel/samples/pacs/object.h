@@ -76,8 +76,8 @@ public:
 		uint8 worldImage, uint8 nbImage, uint8 insertWorldImage);
 
 	/// Set position
-	void			setPos (const NLMISC::CVectorD& pos);
-	void			setGlobalPos (NLPACS::UGlobalPosition& gpos, NLMISC::CVectorD& pos, uint8 worldimage);
+	void	setPos (const NLMISC::CVectorD& pos);
+	void	setGlobalPos (NLPACS::UGlobalPosition& gpos, NLMISC::CVectorD& pos, uint8 worldimage);
 
 	/// Set position
 	void	setSpeed (const NLMISC::CVectorD& speed);
@@ -117,3 +117,6 @@ private:
 #endif // NL_OBJECT_H
 
 /* End of object.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -1425,7 +1425,7 @@ extern "C" void NL3D_expandLightmap (const NL3D_CExpandLightmap* pLightmap)
 
 				// Color index
 				uint srcIndex=srcIndexPixel>>8;
-				nlassert (srcIndex>=0);
+				//nlassert (srcIndex>=0); // uint => always >= 0
 				nlassert (srcIndex<pLightmap->Width-1);
 
 				// Compute current color
@@ -2113,3 +2113,6 @@ void NL3D_drawFarTileInFarTextureAdditiveAlpha (const NL3D_CComputeTileFar* pTil
 	}
 }
 //#endif // NL_NO_ASM
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

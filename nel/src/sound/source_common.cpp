@@ -42,11 +42,11 @@ CSourceCommon::CSourceCommon(TSoundId id, bool spawn, TSpawnEndCallback cb, void
 	_Velocity(CVector::Null),
 	_Direction(CVector::Null),
 	_Gain(1.0f),
-	_InitialGain(1.0f),
 	_Pitch(1.0f),
 	_RelativeMode(false),
-	_3DPosition(NULL),
+	_InitialGain(1.0f),
 	_PlayStart(0),
+	_3DPosition(NULL),
 	_Spawn(spawn),
 	_SpawnEndCb(cb),
 	_CbUserParam(cbUserParam),
@@ -229,3 +229,6 @@ uint32					CSourceCommon::getTime()
 
 
 } // NLSOUND
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

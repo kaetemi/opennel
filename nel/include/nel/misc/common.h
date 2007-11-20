@@ -150,9 +150,7 @@ template<class T>	inline T maxof(const T& a,  const T& b,  const T& c,  const T&
 template<class T>	inline void contReset (T& a)
 {
 	a.~T();
-#undef new
 	new (&a) T;
-#define new NL_NEW
 }
 
 /** Return the value maximized to the next power of 2 of v.
@@ -573,13 +571,6 @@ inline int nlisprint(int c)
 #define nlisprint isprint
 #endif
 
-
-// hash function for 64 bits integer
-struct CHashFunctionUInt64
-{
-	size_t operator()(const uint64 &x) const { return (size_t)x; }
-};
-
 // Open an url in a browser
 bool openURL (const char *url);
 
@@ -609,3 +600,6 @@ inline T		iavoid0(T x)
 } // NLMISC
 
 #endif	// NL_COMMON_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

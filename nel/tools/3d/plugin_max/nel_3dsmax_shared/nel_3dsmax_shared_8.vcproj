@@ -61,6 +61,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -77,7 +78,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="paramblk2.lib odbc32.lib odbccp32.lib maxscrpt.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib freetype231.lib"
+				AdditionalDependencies="maxscrpt.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib freetype.lib"
 				OutputFile=".\Release\nel_3dsmax_shared.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -178,7 +179,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib maxscrpt.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib freetype231.lib"
+				AdditionalDependencies="maxscrpt.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib freetype.lib"
 				OutputFile=".\Debug\nel_3dsmax_shared.dll"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -276,7 +277,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype219.lib paramblk2.lib odbc32.lib odbccp32.lib maxscrpt.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib"
+				AdditionalDependencies="maxscrpt.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib freetype.lib"
 				OutputFile=".\ReleaseDebug\nel_3dsmax_shared.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -374,7 +375,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib odbc32.lib odbccp32.lib maxscrpt.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib"
+				AdditionalDependencies="maxscrpt.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib freetype.lib"
 				OutputFile=".\DebugFast\nel_3dsmax_shared.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -534,3 +535,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

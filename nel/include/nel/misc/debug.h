@@ -50,8 +50,8 @@ namespace NLMISC
 /** Imposter class to wrap all global access to the nel context for backward compatibility
  *	Yoyo note: This was a template before, hence with inline. 
  *	We removed the inline because there was a hard compilation bug
- *	in plugin max under some compiler wich caused operator-> to crash.... (don't understand why grrrr)
- *	Btw the method is optimized like this (1 call instead of 3 (and one with virual)) because we added a local cache (_Log)
+ *	in plugin max under some compiler which caused operator-> to crash.... (don't understand why grrrr)
+ *	Btw the method is optimized like this (1 call instead of 3 (and one with virtual)) because we added a local cache (_Log)
  *	Thus it is much better like this.
  */
 class CImposterLog
@@ -96,7 +96,7 @@ extern CMsgBoxDisplayer *DefaultMsgBoxDisplayer;
 //
 
 // internal use only
-void createDebug (const char *logPath = NULL, bool logInFile = true);
+void createDebug (const char *logPath = NULL, bool logInFile = true, bool eraseLastLog = false);
 
 // call this if you want to change the dir of the log.log file
 void changeLogDirectory(const std::string &dir);
@@ -117,7 +117,7 @@ typedef std::string (*TCrashCallback)();
 // this function enables user application to add information in the log when a crash occurs
 void setCrashCallback(TCrashCallback crashCallback);
 
-// For Crash report window. allow to know if a crash has alredy raised in the application
+// For Crash report window. allow to know if a crash has already raised in the application
 bool	isCrashAlreadyReported();
 void	setCrashAlreadyReported(bool state);
 
@@ -176,7 +176,7 @@ void	setCrashAlreadyReported(bool state);
  *\endcode
  */
 #ifdef NL_RELEASE
-#	ifdef NL_COMP_VC71
+#	if defined(NL_COMP_VC71) || defined(NL_COMP_VC8)
 #		define nldebug __noop
 #	else
 #		define nldebug 0&&
@@ -191,7 +191,7 @@ void	setCrashAlreadyReported(bool state);
  * Same as nldebug but it will be display in debug and in release mode.
  */
 #ifdef NL_RELEASE
-#	ifdef NL_COMP_VC71
+#	if defined(NL_COMP_VC71) || defined(NL_COMP_VC8)
 #		define nlinfo __noop
 #	else
 #		define nlinfo 0&&
@@ -219,7 +219,7 @@ void	setCrashAlreadyReported(bool state);
  */
 
 #ifdef NL_RELEASE
-#	ifdef NL_COMP_VC71
+#	if defined(NL_COMP_VC71) || defined(NL_COMP_VC8)
 #		define nlwarning __noop
 #	else
 #		define nlwarning 0&&
@@ -387,7 +387,7 @@ if(false)
 
 #ifdef NL_OS_UNIX
 
-// Linux set of asserts is reduced due tothat there is no message box displayer
+// Linux set of asserts is reduced due to that there is no message box displayer
 
 #define nlassert(exp) \
 { \
@@ -808,7 +808,7 @@ private:
  *	and a macro in the implementation file.
  *	The macro only add a compiler minimum size for member
  *	struct of 0 octets (witch can be 0 or 1 octet, compiler
- *	dependend).
+ *	dependent).
  *	usage :
  *	
  *	In the header :
@@ -1012,3 +1012,6 @@ private:
 #endif // NL_DEBUG_H
 
 /* End of debug.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

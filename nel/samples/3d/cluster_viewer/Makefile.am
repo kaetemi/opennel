@@ -4,15 +4,24 @@
 
 MAINTAINERCLEANFILES      = Makefile.in
 
+SUBDIRS = shapes groups fonts
+
 bin_PROGRAMS              = cluster_viewer
 
 cluster_viewer_SOURCES = main.cpp
 
-AM_CXXFLAGS               = -I$(top_srcdir)/src 
+cluster_viewerdir = $(datadir)/nel/samples/cluster_viewer
+
+cluster_viewer_DATA = readme.txt main.cvs
+
+AM_CXXFLAGS               = -DCV_DIR="\"$(cluster_viewerdir)\"" -I$(top_srcdir)/src 
 
 cluster_viewer_LDADD   = ../../../src/misc/libnelmisc.la \
                          ../../../src/3d/libnel3d.la
 
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

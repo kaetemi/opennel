@@ -33,12 +33,13 @@ namespace NL3D {
 
 ILogicInfo::ILogicInfo()
 {
-	NL3D_MEM_LOGIC
 }
 ILogicInfo::~ILogicInfo()
 {
-	NL3D_MEM_LOGIC
 }
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

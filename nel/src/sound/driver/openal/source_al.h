@@ -72,7 +72,7 @@ public:
 	//virtual void					setNext( ISource *next );
 	//@}
 
-	virtual IBuffer					*getStaticBuffer() { /* TODO */ return NULL; }
+	virtual IBuffer			*getStaticBuffer();
 
 	/// \name Playback control
 	//@{
@@ -150,6 +150,8 @@ public:
 	ALuint					sourceName()							{ return _SourceName; }
 
 private:
+	// assigned buffer object
+	IBuffer*				_Buffer;
 
 	// Source name
 	ALuint					_SourceName;
@@ -164,3 +166,6 @@ private:
 #endif // NL_SOURCE_AL_H
 
 /* End of source_al.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

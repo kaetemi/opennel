@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -329,7 +328,7 @@ bool CDriverD3D::setupMaterial(CMaterial &mat)
 	if (!mat._MatDrvInfo)
 	{
 		// Insert into driver list. (so it is deleted when driver is deleted).
-		ItMatDrvInfoPtrList		it= _MatDrvInfos.insert(_MatDrvInfos.end());
+		ItMatDrvInfoPtrList		it= _MatDrvInfos.insert(_MatDrvInfos.end(), NULL);
 
 		*it = mat._MatDrvInfo = new CMaterialDrvInfosD3D(this, it);
 
@@ -2044,3 +2043,6 @@ void CDriverD3D::getNumPerStageConstant(uint &lightedMaterial, uint &unlightedMa
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

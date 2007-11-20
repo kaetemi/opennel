@@ -286,7 +286,6 @@ void SLightBuild::convertFromMaxLight (INode *node,TimeValue tvTime)
 		}
 	}
 
-	/// \todo hulud: modify this code to work under max4
 #if (MAX_RELEASE < 4000)
 		// Convert exclusion list
 		NameTab& ntExclu = maxLight->GetExclusionList();
@@ -2685,3 +2684,6 @@ bool CExportNel::calculateLM( CMesh::CMeshBuild *pZeMeshBuild, CMeshBase::CMeshB
 	return true;	
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

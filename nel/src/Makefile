@@ -1,28 +1,11 @@
+all:
+	+make -C .. all
 
-BUILD_DIRS = \
-misc\
-net\
-pacs\
-memory\
-georges\
-ligo\
-logic\
+clean:
+	+make -C .. clean
 
-night: all
+update:
+	+make -C .. update
 
-all: $(foreach dir,$(BUILD_DIRS),$(dir)-all)
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 
-%-all:
-	+make -C $* all
-
-clean: $(foreach dir,$(BUILD_DIRS),$(dir)-clean)
-
-%-clean:
-	+make -C $* clean
-
-update: $(foreach dir,$(BUILD_DIRS),$(dir)-update)
-
-%-update:
-	+make -C $* update
-
-.NOTPARALLEL: night all clean update 

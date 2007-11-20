@@ -33,6 +33,7 @@
 #include <ctime>
 
 #ifdef NL_OS_WINDOWS
+#	define NOMINMAX
 #   include <windows.h>
 #endif
 
@@ -409,7 +410,7 @@ void serviceGetView (uint32 rid, const string &rawvarpath, TAdminViewResult &ans
 			string cmd = varpath.Destination[j].first;
 
 			// replace = with space to execute the command
-			uint eqpos = cmd.find("=");
+			string::size_type eqpos = cmd.find("=");
 			if (eqpos != string::npos)
 			{
 				cmd[eqpos] = ' ';
@@ -496,7 +497,7 @@ void serviceGetView (uint32 rid, const string &rawvarpath, TAdminViewResult &ans
 				else
 				{
 					// replace = with space to execute the command
-					uint eqpos = cmd.find("=");
+					string::size_type eqpos = cmd.find("=");
 					if (eqpos != string::npos)
 					{
 						cmd[eqpos] = ' ';
@@ -516,7 +517,7 @@ void serviceGetView (uint32 rid, const string &rawvarpath, TAdminViewResult &ans
 					{
 						const string &str = strs[k];
 
-						uint32 pos = str.find(" ");
+						string::size_type pos = str.find(" ");
 						if(pos == string::npos)
 							continue;
 						
@@ -902,3 +903,6 @@ NLMISC_CATEGORISED_COMMAND(nel, getView, "send a view and receive an array as re
 }
 
 } // NLNET
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

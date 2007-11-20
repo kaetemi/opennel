@@ -54,7 +54,7 @@ using namespace NL3D;
 
 #define BAR_LENGTH 21
 
-char *progressbar[BAR_LENGTH]=
+const char *progressbar[BAR_LENGTH]=
 {
 	"[                    ]",
 	"[.                   ]",
@@ -944,3 +944,6 @@ int main(int argc, char* argv[])
 	// exit.
 	return 0;
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

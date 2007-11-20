@@ -10,10 +10,16 @@ AM_YFLAGS = --defines=cf_gramatical.h -p cf
 
 AM_LFLAGS = -f -8 -Pcf -olex.yy.c
 
-EXTRA_DIST = cf_gramatical.h
+EXTRA_DIST = cf_gramatical.h cf_bison.simple cf_flex.skl do.bat
 
-libconfig_la_SOURCES    = cf_lexical.lxx             \
-                          cf_gramatical.yxx          \
+libconfig_la_SOURCES    = cf_lexical.lpp             \
+                          cf_gramatical.ypp          \
                           config_file.cpp 
 
+#libconfig_la_SOURCES    = config_file.cpp 
+
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+

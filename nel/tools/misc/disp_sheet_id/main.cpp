@@ -24,8 +24,29 @@
  */
 
 
-
+#ifdef NL_OS_WINDOWS
 #include <conio.h>
+#else
+#include <stdio.h>
+#include <termios.h>
+#include <unistd.h>
+
+/// This is our Unix-variant to the Windows _getch function.
+int _getch()
+{
+	struct termios oldt, newt;
+	int ch;
+	tcgetattr(STDIN_FILENO, &oldt);
+	newt=oldt;
+	newt.c_lflag &= ~(ICANON | ECHO);
+	tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+	ch = getchar();
+	tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+	return ch;
+}
+
+#endif
+
 #include "nel/misc/path.h"
 #include "nel/misc/sheet_id.h"
 #include <vector>
@@ -82,3 +103,6 @@ int		main(int argc, const char *argv[])
 		fclose(out);
 	}
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -2,13 +2,21 @@
 # $Id: Makefile.am,v 1.8 2002-09-16 14:50:07 lecroart Exp $
 #
 
-MAINTAINERCLEANFILES  = Makefile.in
+MAINTAINERCLEANFILES		= Makefile.in
 
-EXTRA_DIST		       = login_service.cfg \
-				 login_service.dsp \
-				 common.cfg
+EXTRA_DIST			= login_service.cfg \
+				  login_service.dsp \
+				  login_service.vcproj \
+				  login_service_8.vcproj \
+				  common.cfg
 
-sbin_PROGRAMS         = login_service
+sbin_PROGRAMS			= login_service
+
+login_servicedir		= ${pkgsysconfdir}
+login_service_DATA		= login_service.cfg common.cfg
+login_service_LDADD		= @MYSQL_LDFLAGS@
+
+AM_CXXFLAGS			= -DNELNS_CONFIG="\"${pkgsysconfdir}\"" -DNELNS_STATE="\"${pkglocalstatedir}\"" -DNELNS_LOGS="\"${logdir}\"" @MYSQL_CFLAGS@
 
 login_service_SOURCES = connection_web.cpp              \
                         connection_web.h                \
@@ -18,4 +26,7 @@ login_service_SOURCES = connection_web.cpp              \
                         login_service.h
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

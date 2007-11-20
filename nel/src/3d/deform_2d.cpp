@@ -154,8 +154,6 @@ void CDeform2d::doDeform(const TPoint2DVect &surf, IDriver *drv, IPerturbUV *uvp
 		uint k = 0; // current index in the vertex buffer
 		for (it = dest.begin(); it != dest.end(); ++it, k += 4)
 		{
-
-			// \todo optimize this by a direct access to the vertex buffer (if needed)
 			// blit data to frame buffer and apply deformations
 
 			vba.setVertexCoord(k, NLMISC::CVector(it->x, 0, it->y));
@@ -188,3 +186,6 @@ void CDeform2d::doDeform(const TPoint2DVect &surf, IDriver *drv, IPerturbUV *uvp
 }
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

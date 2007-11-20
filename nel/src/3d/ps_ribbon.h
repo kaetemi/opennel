@@ -32,7 +32,6 @@
 #include "vertex_buffer.h"
 #include "index_buffer.h"
 #include "nel/misc/vector.h"
-#include <hash_map>
 
 
 namespace NL3D 
@@ -229,7 +228,6 @@ private:
 			/** a struct containing a vertex buffer and the matching primitive block
 			  * The number of slice is encoded in the upper word of the vb index (the int used to lookup in the map)
 			  * The number of vertices per slices is encoded in the lower word
-			  * \todo: primitive blocks can be shared for several vbs...
 			  */
 			class CVBnPB
 			{
@@ -243,7 +241,7 @@ private:
 					VB.setName("CPSRibbon::CVBnPB::VB");
 				}
 			};
-			typedef std::hash_map<uint, CVBnPB> TVBMap;
+			typedef CHashMap<uint, CVBnPB> TVBMap;
 			//
 			static TVBMap _VBMaps[16];  // 4 bits defines the display mode : 
 			                            // - color / no color
@@ -293,3 +291,6 @@ private:
 #endif // NL_PS_RIBBON_H
 
 /* End of ps_ribbon.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

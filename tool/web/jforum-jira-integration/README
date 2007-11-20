@@ -1,0 +1,87 @@
+JForum-JIRA-Integration "jauthira"
+==============================================================================
+
+This is a Maven2 project which contains 2 classes,
+
+org.nevrax.open.jforum.JiraLoginAuthenticator
+
+  which acts as a LoginAuthenticator, means it replaces the normal
+  DefaultLoginAuthenticator of JForum. It connects to the JIRA SOAP
+  interface and checks if the credentials match a user registered
+  at JIRA, if it is the case and there is no such user in JForum,
+  a new user with default settings is generated.
+
+  Everytime a user logs in the password stored in the JForum user
+  record is updated with the JIRA one.
+
+  Depending on the configuration the JiraLoginAuthenticator allows
+  for a fallback LoginAuthenticator, which is used in the case the
+  connection to the JIRA SOAP service is completely broken. Without
+  such a fallback defined, an exception is raised instead.
+
+
+org.nevrax.open.jforum.JiraSSOAuthenticator
+
+  is an implementation of the Single-Sign-On integration solution
+  explained in the JForum documentation. It expects a "seraph.os.cookie"
+  to be defined in a path which is accessible to the JForum, otherwise
+  the SSO won't work.
+
+  Once the setup of the websites is done properly (or fixed in regard
+  to that cookie), and this authenticator detects this cookie, it
+  will crosscheck the user in JIRA using it's SOAP service and either
+  stay with the default ("anonymous") or with the user defined in the
+  "seraph.os.cookie". In the latter case matching JForum cookies are
+  defined as well. Loggin off from JIRA also implies a logoff from
+  JForum, as the "seraph.os.cookie" gets deleted in the logoff process.
+
+
+"mvn install"
+------------------------------------------------------------------------------
+
+To run a "mvn install", a jforum.jar must be compiled first. It's done
+by creating a jar-file out of the classes located in the WEB-INF/classes
+directory in an extracted JForum installation.
+
+This jar-file needs to be added to the local maven repository by calling
+
+  mvn install:install-file -DgroupId=jforum -DartifactId=jforum \
+      -Dversion=2.1.7 -Dpackaging=jar -DcreateChecksum=true     \
+      -DgeneratePom=true -Dfile=<path to JForum-jar-file>
+
+Then a simple "mvn install" should do compile a jar file into the target/
+subdirectory of this project. This file, together with
+
+* axis.jar (Axis 1),
+* jaxrpc.jar,
+* saaj.jar,
+* commons-discovery-0.2.jar and
+* wsdl4j-1.5.1.jar
+
+(check your maven repository under ~/.m2/) should be copied to the
+WEB-INF/lib directory of JForum. Change the configuration files accordingly,
+namely WEB-INF/config/SystemGlobals.properties. See
+src/main/java/org/nevrax/open/jforum/JiraConfigKeys.java for an explanation
+of the different keys required.
+
+
+JIRA configuration
+------------------------------------------------------------------------------
+
+To get things running, JIRA needs the SOAP/RPC plugin activated, which is
+described in detail in the JIRA documentation at
+
+  http://confluence.atlassian.com/display/JIRA/JIRA+XML-RPC+Overview
+
+under "Enable the RPC plugin".
+
+For the SSO method to work, JIRA must either run in the root-context of
+the servlet container (e.g. Tomcat) or the Seraph framework it uses must
+be changed so the "seraph.os.cookie" isn't located in the JIRA context
+path. See the references/docs about HTTP-Cookies for further details
+about the details of the "path"-value.
+
+The normal login method should work out of the box as soon as the RPC-plugin
+is enabled and the JForum configuration is set to the proper SOAP-endpoint
+path of the JIRA application.
+

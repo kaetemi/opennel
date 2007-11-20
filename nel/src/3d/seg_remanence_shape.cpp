@@ -299,3 +299,6 @@ bool CSegRemanenceShape::clip(const std::vector<CPlane>	&pyramid, const CMatrix 
 }
 
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

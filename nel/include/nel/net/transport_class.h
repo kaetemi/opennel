@@ -141,7 +141,7 @@ public:
 	/// send the transport class to a specified service using the service name
 	void send (const std::string &serviceName);
 
-	/** The name of the transport class. Must be uniq for each class.
+	/** The name of the transport class. Must be unique for each class.
 	 */
 	void className (const std::string &name);
 
@@ -562,3 +562,6 @@ inline bool CTransportClass::read (const std::string &name, NLNET::TServiceId si
 #endif // NL_TRANSPORT_CLASS_H
 
 /* End of transport_class.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

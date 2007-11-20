@@ -32,14 +32,12 @@
 #include "nel/3d/u_ps_sound_interface.h"
 #include "nel/3d/u_ps_sound_impl.h"
 
-#define NL3D_MEM_PS_SOUND							NL_ALLOC_CONTEXT( 3dPSSnd )
 
 namespace NL3D 
 {
 
 void assignSoundServerToPS(UPSSoundServer *soundServer)	
 {
-	NL3D_MEM_PS_SOUND
 	CParticleSystem::registerSoundServer(soundServer);
 } // NL3D
 
@@ -85,3 +83,6 @@ void CPSSoundInstanceImpl::release(void)
 }
 
 /* End of particle_system_sound_user.cpp */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

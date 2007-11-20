@@ -70,7 +70,6 @@ void Init()
 		AudioMixer->setPackedSheetOption("data", true);
 		// init with 32 tracks, EAX enabled, no ADPCM, and activate automatic sample bank loading
 		AudioMixer->init(32, true, false, NULL, true, UAudioMixer::DriverFMod);
-//		AudioMixer->init(32, true, false, NULL, true);
 
 		/*
 		 * 2. Initialize listener's position and orientation (in NeL coordinate system).
@@ -149,6 +148,8 @@ void OnMove( const CVector& listenerpos )
  */
 int main()
 {
+	CApplicationContext myApplicationContext;
+
 	// Initialization
 	Init();
 
@@ -203,3 +204,5 @@ int main()
 	getchar();
 	delete AudioMixer;
 }
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

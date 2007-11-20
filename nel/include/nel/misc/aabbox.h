@@ -31,17 +31,17 @@
 #include "plane.h"
 #include "common.h"
 #include "stream.h"
+#include "bsphere.h"
 
 
 namespace NLMISC
 {
 
 class CMatrix;
-class CBSphere;
 
 // ***************************************************************************
 /**
- * An Axis Aligned Bouding Box.
+ * An Axis Aligned Bounding Box.
  * Note: Center/HalfSize set to private, to have same manipulation for CAABBox and CAABBoxExt.
  * \author Lionel Berenguier
  * \author Nevrax France
@@ -238,3 +238,6 @@ public:
 #endif // NL_AABBOX_H
 
 /* End of aabbox.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

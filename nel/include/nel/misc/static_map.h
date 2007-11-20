@@ -37,7 +37,7 @@
 #ifndef NL_USE_DEFAULT_MEMORY_MANAGER
 # ifndef NLMISC_HEAP_ALLOCATION_NDEBUG
 #  define NL_OV_USE_NEW_ALLOCATOR
-# endif NLMISC_HEAP_ALLOCATION_NDEBUG
+# endif // NLMISC_HEAP_ALLOCATION_NDEBUG
 #endif // NL_USE_DEFAULT_MEMORY_MANAGER
 
 namespace NLMISC {
@@ -256,3 +256,6 @@ public:
 #endif // NL_STATIC_MAP_H
 
 /* End of static_map.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

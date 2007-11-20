@@ -60,6 +60,7 @@ struct CTileAddedInfo
   */
 struct ULandscapeTileCallback
 {	
+	virtual ~ULandscapeTileCallback() {};
 	virtual void tileAdded(const CTileAddedInfo &infos) = 0;
 	virtual void tileRemoved(uint64 id) = 0;
 };
@@ -334,3 +335,6 @@ public:
 #endif // NL_U_LANDSCAPE_H
 
 /* End of u_landscape.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

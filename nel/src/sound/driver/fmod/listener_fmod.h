@@ -31,13 +31,8 @@
 #include "nel/misc/matrix.h"
 #include "../sound_driver.h"
 #ifdef NL_OS_WINDOWS
-//#include <windows.h>
 #include <dsound.h>
 #endif
-
-#undef min
-#undef max
-
 
 namespace NLSOUND {
 
@@ -153,3 +148,6 @@ private:
 
 #endif // NL_LISTENER_FMOD_H
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

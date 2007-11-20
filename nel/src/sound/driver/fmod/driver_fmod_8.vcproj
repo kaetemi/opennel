@@ -16,10 +16,10 @@
 	<Configurations>
 		<Configuration
 			Name="DebugFast|Win32"
-			OutputDirectory=".\../../../../obj/DebugFast/driver_fmod"
-			IntermediateDirectory=".\../../../../obj/DebugFast/driver_fmod"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -55,9 +55,6 @@
 				RuntimeLibrary="3"
 				RuntimeTypeInfo="true"
 				PrecompiledHeaderFile=".\../../../../obj/DebugFast/driver_fmod/driver_fmod.pch"
-				AssemblerListingLocation=".\../../../../obj/DebugFast/driver_fmod/"
-				ObjectFile=".\../../../../obj/DebugFast/driver_fmod/"
-				ProgramDataBaseFileName=".\../../../../obj/DebugFast/driver_fmod/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -75,14 +72,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="fmodvc.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="fmodvc.lib"
 				OutputFile="../../../../lib/nel_drv_fmod_win_df.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_fmod.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/DebugFast/driver_fmod/nel_drv_fmod_win_df.pdb"
-				ImportLibrary=".\../../../../obj/DebugFast/driver_fmod/nel_drv_fmod_win_df.lib"
+				ImportLibrary="$(OutDir)/nel_drv_fmod_win_df.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -112,10 +108,10 @@
 		</Configuration>
 		<Configuration
 			Name="ReleaseDebug|Win32"
-			OutputDirectory=".\../../../../obj/ReleaseDebug/driver_fmod"
-			IntermediateDirectory=".\../../../../obj/ReleaseDebug/driver_fmod"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -152,9 +148,6 @@
 				EnableFunctionLevelLinking="true"
 				RuntimeTypeInfo="true"
 				PrecompiledHeaderFile=".\../../../../obj/ReleaseDebug/driver_fmod/driver_fmod.pch"
-				AssemblerListingLocation=".\../../../../obj/ReleaseDebug/driver_fmod/"
-				ObjectFile=".\../../../../obj/ReleaseDebug/driver_fmod/"
-				ProgramDataBaseFileName=".\../../../../obj/ReleaseDebug/driver_fmod/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -178,8 +171,7 @@
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_fmod.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/ReleaseDebug/driver_fmod/nel_drv_fmod_win_rd.pdb"
-				ImportLibrary=".\../../../../obj/ReleaseDebug/driver_fmod/nel_drv_fmod_win_rd.lib"
+				ImportLibrary="$(OutDir)/nel_drv_fmod_win_rd.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -209,10 +201,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\../../../../obj/Release/driver_fmod"
-			IntermediateDirectory=".\../../../../obj/Release/driver_fmod"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -249,9 +241,6 @@
 				EnableFunctionLevelLinking="true"
 				RuntimeTypeInfo="true"
 				PrecompiledHeaderFile=".\../../../../obj/Release/driver_fmod/driver_fmod.pch"
-				AssemblerListingLocation=".\../../../../obj/Release/driver_fmod/"
-				ObjectFile=".\../../../../obj/Release/driver_fmod/"
-				ProgramDataBaseFileName=".\../../../../obj/Release/driver_fmod/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -268,12 +257,12 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="fmodvc.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="fmodvc.lib"
 				OutputFile="../../../../lib/nel_drv_fmod_win_r.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_fmod.def"
-				ImportLibrary=".\../../../../obj/Release/driver_fmod/nel_drv_fmod_win_r.lib"
+				ImportLibrary="$(OutDir)/nel_drv_fmod_win_r.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -303,10 +292,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\../../../../obj/Debug/driver_fmod"
-			IntermediateDirectory=".\../../../../obj/Debug/driver_fmod"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -341,9 +330,6 @@
 				RuntimeLibrary="3"
 				RuntimeTypeInfo="true"
 				PrecompiledHeaderFile=".\../../../../obj/Debug/driver_fmod/driver_fmod.pch"
-				AssemblerListingLocation=".\../../../../obj/Debug/driver_fmod/"
-				ObjectFile=".\../../../../obj/Debug/driver_fmod/"
-				ProgramDataBaseFileName=".\../../../../obj/Debug/driver_fmod/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -361,14 +347,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="fmodvc.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="fmodvc.lib"
 				OutputFile="../../../../lib/nel_drv_fmod_win_d.dll"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_fmod.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/Debug/driver_fmod/nel_drv_fmod_win_d.pdb"
-				ImportLibrary=".\../../../../obj/Debug/driver_fmod/nel_drv_fmod_win_d.lib"
+				ImportLibrary="$(OutDir)/nel_drv_fmod_win_d.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -716,3 +701,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

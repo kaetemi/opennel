@@ -1,10 +1,6 @@
 /** \file driver_opengl_texture.cpp
  * OpenGL driver implementation : setupTexture
  *
- * \todo yoyo: BUG with texture parameters. If parameters change are made between two renders, but the texture has not
- * changed (eg: only one texture in the whole world), those parameters are not bound!!! 
- * OPTIM: like the TexEnvMode style, a PackedParameter format should be done, to limit tests...
- *
  * $Id$
  */
 
@@ -130,7 +126,7 @@ bool CTextureDrvInfosGL::initFrameBufferObject(ITexture * tex)
 										 GL_RENDERBUFFER_EXT, DepthStencilFBOId);
 		}
 
-		// verify le statut
+		// check status
 		GLenum status;
 		status = (GLenum) nglCheckFramebufferStatusEXT(GL_FRAMEBUFFER_EXT);
 		switch(status) {
@@ -140,12 +136,19 @@ bool CTextureDrvInfosGL::initFrameBufferObject(ITexture * tex)
 			case GL_FRAMEBUFFER_UNSUPPORTED_EXT:
 				nlwarning("Unsupported framebuffer format\n");
 				break;
+#if GL_GLEXT_VERSION > 24
+			case GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT:
+				nlwarning("Framebuffer incomplete attachment\n");
+				break;
+#endif
 			case GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT:
 				nlwarning("Framebuffer incomplete, missing attachment\n");
 				break;
+#if GL_GLEXT_VERSION < 39
 			case GL_FRAMEBUFFER_INCOMPLETE_DUPLICATE_ATTACHMENT_EXT:
 				nlwarning("Framebuffer incomplete, duplicate attachment\n");
 				break;
+#endif
 			case GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT:
 				nlwarning("Framebuffer incomplete, attached images must have same dimensions\n");
 				break;
@@ -554,7 +557,7 @@ bool CDriverGL::setupTextureEx (ITexture& tex, bool bUpload, bool &bAllUploaded,
 	if ( !tex.TextureDrvShare )
 	{
 		// insert into driver list. (so it is deleted when driver is deleted).
-		ItTexDrvSharePtrList	it= _TexDrvShares.insert(_TexDrvShares.end());
+		ItTexDrvSharePtrList	it= _TexDrvShares.insert(_TexDrvShares.end(), NULL);
 		// create and set iterator, for future deletion.
 		*it= tex.TextureDrvShare= new CTextureDrvShare(this, it, &tex);
 
@@ -880,7 +883,6 @@ bool CDriverGL::setupTextureEx (ITexture& tex, bool bUpload, bool &bAllUploaded,
 		}
 		// b. Load part of the texture case.
 		//==================================
-		// \todo yoyo: TODO_DXTC
 		// Replace parts of a compressed image. Maybe don't work with the actual system of invalidateRect()...
 		else if (mustLoadPart && !gltext->Compressed)
 		{
@@ -1967,3 +1969,6 @@ bool CDriverGL::getRenderTargetSize (uint32 &width, uint32 &height)
 
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

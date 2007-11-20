@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -189,3 +188,6 @@ uint CDriverD3D::getDoubleClickDelay(bool hardwareMouse)
 // ***************************************************************************
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

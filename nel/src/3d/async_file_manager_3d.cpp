@@ -40,8 +40,6 @@
 using namespace std;
 using namespace NLMISC;
 
-#define NL3D_MEM_INSTANCE					NL_ALLOC_CONTEXT( 3dIns )
-#define NL3D_MEM_IG							NL_ALLOC_CONTEXT( 3dIg )
 
 namespace NL3D
 {
@@ -154,6 +152,8 @@ public:
 	CLoadTextureCancel (CTextureFile *ptextureFile)
 		: _TextureFile(ptextureFile)
 	{}
+	
+	virtual ~CLoadTextureCancel() {}
 
 private:	
 	CTextureFile	*_TextureFile;
@@ -234,7 +234,6 @@ CAsyncFileManager3D::CMeshLoad::CMeshLoad(const std::string& sMeshName, IShape**
 
 void CAsyncFileManager3D::CMeshLoad::run()
 {
-	NL3D_MEM_INSTANCE
 	// This set represent the texture already loaded in memory
 	// We have to have this set because the driver load the textures only on the 
 	// setupTexture, done in CShapeBank::isPresent. This must be done in the main
@@ -423,7 +422,6 @@ CAsyncFileManager3D::CIGLoadUser::CIGLoadUser (const std::string &IGName, UInsta
 // ***************************************************************************
 void CAsyncFileManager3D::CIGLoadUser::run (void)
 {
-	NL3D_MEM_IG
 	CInstanceGroupUser *pIG = new CInstanceGroupUser();
 	try
 	{
@@ -482,3 +480,6 @@ void CAsyncFileManager3D::CTextureLoad::getName (std::string &result) const
 }
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

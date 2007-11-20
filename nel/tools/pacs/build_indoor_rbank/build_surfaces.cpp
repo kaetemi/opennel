@@ -307,7 +307,6 @@ void	buildSurfaces(CCollisionMeshBuild &cmb, CLocalRetriever &lr)
 
 	uint	surf, bord;
 
-	/// \todo compute real surface center and quadtree
 	for (surf=0; surf<surfaces.size(); ++surf)
 	{
 		CSurfaceQuadTree	quad;
@@ -356,3 +355,6 @@ void	buildSnapping(CCollisionMeshBuild &cmb, CLocalRetriever &lr)
 	lr.initFaceGrid();
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

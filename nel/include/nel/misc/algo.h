@@ -204,7 +204,7 @@ void		splitUCString(const ucstring &ucstr, const ucstring &separator, std::vecto
 template<class T, class U>
 bool		strFindReplace(T &str, const T &strFind, const U &strReplace)
 {
-	uint	pos= str.find(strFind);
+	typename T::size_type pos= str.find(strFind);
 	if(pos != T::npos)
 	{
 		str.replace(pos, strFind.size(), T(strReplace) );
@@ -241,3 +241,6 @@ inline void setFlags(T &dest, U mask, bool on)
 #endif // NL_ALGO_H
 
 /* End of algo.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

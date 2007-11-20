@@ -8,11 +8,17 @@ bin_PROGRAMS              = font
 
 font_SOURCES = main.cpp
 
-AM_CXXFLAGS               = -I$(top_srcdir)/src 
+fontdir = $(datadir)/nel/samples/font
+font_DATA = beteckna.ttf
+
+AM_CXXFLAGS               = -DFONT_DIR="\"$(fontdir)\"" -I$(top_srcdir)/src 
 
 font_LDADD   = ../../../src/misc/libnelmisc.la \
                ../../../src/3d/libnel3d.la
 
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

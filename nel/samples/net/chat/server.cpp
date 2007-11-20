@@ -1,4 +1,4 @@
-/** \file service/chat_service.cpp
+/** \file samples/net/chat/server.cpp
  * example of the IService class
  *
  * $Id$
@@ -27,7 +27,6 @@
 
 #include "nel/misc/common.h"
 #include "nel/misc/path.h"
-#include "nel/misc/heap_allocator.h"
 
 // contains the service base class
 #include "nel/net/service.h"
@@ -125,3 +124,6 @@ public:
 // using the naming service. the third one is the port where the listen socket will
 // be created. If you put 0, the system automatically finds a port.
 NLNET_SERVICE_MAIN (CChatService, "CS", "chat_service", 0, EmptyCallbackArray, "", "");
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

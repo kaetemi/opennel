@@ -74,7 +74,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2.lib freetype231.lib"
+				AdditionalDependencies="comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\Hybrid\nelligo.dlx"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -175,10 +175,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2_a.lib freetype219.lib"
+				AdditionalDependencies="comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\ReleaseDebug\nelligo.dlx"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\ReleaseDebug/nelligo.pdb"
 				SubSystem="2"
@@ -272,7 +273,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2.lib freetype231.lib"
+				AdditionalDependencies="comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\DebugFast\nelligo.dlx"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -353,6 +354,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				CompileAs="0"
@@ -370,7 +372,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2.lib freetype231.lib"
+				AdditionalDependencies="comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\Release\nelligo.dlx"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -474,7 +476,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2_a.lib freetype231.lib"
+				AdditionalDependencies="comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib maxscrpt.lib gup.lib paramblk2.lib libxml2.lib freetype.lib ws2_32.lib"
 				OutputFile=".\Debug\nelligo.dlx"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -732,3 +734,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

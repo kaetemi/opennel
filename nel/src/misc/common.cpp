@@ -26,17 +26,17 @@
 #include "stdmisc.h"
 
 #ifdef NL_OS_WINDOWS
-#  include <windows.h>
-#  include <io.h>
-#  undef min
-#  undef max
+#	define NOMINMAX
+#	include <windows.h>
+#	include <io.h>
+#	include <tchar.h>
 #elif defined NL_OS_UNIX
-#  include <unistd.h>
-#  include <cstring>
-#  include <cerrno>
-#  include <csignal>
-#  include <pthread.h>
-#  include <sched.h>
+#	include <unistd.h>
+#	include <cstring>
+#	include <cerrno>
+#	include <csignal>
+#	include <pthread.h>
+#	include <sched.h>
 #endif
 
 #include "nel/misc/command.h"
@@ -45,81 +45,7 @@
 using namespace std;
 
 #ifdef NL_OS_WINDOWS
-	#ifdef __STL_DEBUG
-		#define STL_MODE "debug"
-	#else
-		#define STL_MODE "normal"
-	#endif // __STL_DEBUG
-
-	#if(_STLPORT_MAJOR == 0)
-		#define STL_STR_MAJOR "0"
-	#elif(_STLPORT_MAJOR == 1)
-		#define STL_STR_MAJOR "1"
-	#elif(_STLPORT_MAJOR == 2)
-		#define STL_STR_MAJOR "2"
-	#elif(_STLPORT_MAJOR == 3)
-		#define STL_STR_MAJOR "3"
-	#elif(_STLPORT_MAJOR == 4)
-		#define STL_STR_MAJOR "4"
-	#elif(_STLPORT_MAJOR == 5)
-		#define STL_STR_MAJOR "5"
-	#elif(_STLPORT_MAJOR == 6)
-		#define STL_STR_MAJOR "6"
-	#elif(_STLPORT_MAJOR == 7)
-		#define STL_STR_MAJOR "7"
-	#elif(_STLPORT_MAJOR == 8)
-		#define STL_STR_MAJOR "8"
-	#elif(_STLPORT_MAJOR == 9)
-		#define STL_STR_MAJOR "9"
-	#endif // _STLPORT_MAJOR
-
-	#if(_STLPORT_MINOR == 0)
-		#define STL_STR_MINOR "0"
-	#elif(_STLPORT_MINOR == 1)
-		#define STL_STR_MINOR "1"
-	#elif(_STLPORT_MINOR == 2)
-		#define STL_STR_MINOR "2"
-	#elif(_STLPORT_MINOR == 3)
-		#define STL_STR_MINOR "3"
-	#elif(_STLPORT_MINOR == 4)
-		#define STL_STR_MINOR "4"
-	#elif(_STLPORT_MINOR == 5)
-		#define STL_STR_MINOR "5"
-	#elif(_STLPORT_MINOR == 6)
-		#define STL_STR_MINOR "6"
-	#elif(_STLPORT_MINOR == 7)
-		#define STL_STR_MINOR "7"
-	#elif(_STLPORT_MINOR == 8)
-		#define STL_STR_MINOR "8"
-	#elif(_STLPORT_MINOR == 9)
-		#define STL_STR_MINOR "9"
-	#endif // _STLPORT_MINOR
-
-	#if(_STLPORT_PATCHLEVEL == 0)
-		#define STL_STR_PATCHLEVEL "0"
-	#elif(_STLPORT_PATCHLEVEL == 1)
-		#define STL_STR_PATCHLEVEL "1"
-	#elif(_STLPORT_PATCHLEVEL == 2)
-		#define STL_STR_PATCHLEVEL "2"
-	#elif(_STLPORT_PATCHLEVEL == 3)
-		#define STL_STR_PATCHLEVEL "3"
-	#elif(_STLPORT_PATCHLEVEL == 4)
-		#define STL_STR_PATCHLEVEL "4"
-	#elif(_STLPORT_PATCHLEVEL == 5)
-		#define STL_STR_PATCHLEVEL "5"
-	#elif(_STLPORT_PATCHLEVEL == 6)
-		#define STL_STR_PATCHLEVEL "6"
-	#elif(_STLPORT_PATCHLEVEL == 7)
-		#define STL_STR_PATCHLEVEL "7"
-	#elif(_STLPORT_PATCHLEVEL == 8)
-		#define STL_STR_PATCHLEVEL "8"
-	#elif(_STLPORT_PATCHLEVEL == 9)
-		#define STL_STR_PATCHLEVEL "9"
-	#endif // _STLPORT_PATCHLEVEL
-
 	#pragma message( " " )
-
-	#pragma message( "Using STLPort version "STL_STR_MAJOR"."STL_STR_MINOR"."STL_STR_PATCHLEVEL" in "STL_MODE" mode" )
 
 	#if FINAL_VERSION
 		#pragma message( "************************" )
@@ -137,10 +63,10 @@ using namespace std;
 
 	#pragma message( " " )
 
-#if (_MSC_VER >= 1200) && (_MSC_VER < 1400) && (WINVER < 0x0500)
+#	if (_MSC_VER >= 1200) && (_MSC_VER < 1400) && (WINVER < 0x0500)
 //Using VC7 and later lib, need this to compile on VC6
 extern "C" long _ftol2( double dblSource ) { return _ftol( dblSource ); }
-#endif
+#	endif
 
 
 #endif // NL_OS_WINDOWS
@@ -158,8 +84,8 @@ void nlSleep( uint32 ms )
 {
 #ifdef NL_OS_WINDOWS
 
-/// \todo yoyo: BUG WITH DEBUG/_CONSOLE!!!! a Sleep(0) "block" the other thread!!!
 #ifdef NL_DEBUG
+	// a Sleep(0) "block" the other thread in DEBUG/_CONSOLE, so we clamp
 	ms = max(ms, (uint32)1);
 #endif
 
@@ -397,7 +323,7 @@ bool isPowerOf2(sint32 v)
 
 string bytesToHumanReadable (const std::string &bytes)
 {
-	static char *divTable[]= { "B", "KB", "MB", "GB" };
+	static const char *divTable[]= { "B", "KB", "MB", "GB" };
 	uint div = 0;
 	uint64 res = atoiInt64(bytes.c_str());
 	uint64 newres = res;
@@ -414,7 +340,7 @@ string bytesToHumanReadable (const std::string &bytes)
 
 string bytesToHumanReadable (uint32 bytes)
 {
-	static char *divTable[]= { "B", "KB", "MB", "GB" };
+	static const char *divTable[]= { "B", "KB", "MB", "GB" };
 	uint div = 0;
 	uint32 res = bytes;
 	uint32 newres = res;
@@ -485,7 +411,7 @@ NLMISC_CATEGORISED_COMMAND(nel,hrtob, "Convert a human readable number into a by
 
 string secondsToHumanReadable (uint32 time)
 {
-	static char *divTable[] = { "s", "mn", "h", "d" };
+	static const char *divTable[] = { "s", "mn", "h", "d" };
 	static uint  divCoef[]  = { 60, 60, 24 };
 	uint div = 0;
 	uint32 res = time;
@@ -673,7 +599,7 @@ bool launchProgram (const std::string &programName, const std::string &arguments
 {
 
 #ifdef NL_OS_WINDOWS
-	STARTUPINFO         si;
+	STARTUPINFOA         si;
     PROCESS_INFORMATION pi;
 	
     memset(&si, 0, sizeof(si));
@@ -700,7 +626,7 @@ bool launchProgram (const std::string &programName, const std::string &arguments
 */
 
 	// Enable nlassert/nlstop to display the error reason & callstack
-	const char *SE_TRANSLATOR_IN_MAIN_MODULE = "NEL_SE_TRANS";
+	const TCHAR *SE_TRANSLATOR_IN_MAIN_MODULE = _T("NEL_SE_TRANS");
 	TCHAR envBuf [2];
 	if ( GetEnvironmentVariable( SE_TRANSLATOR_IN_MAIN_MODULE, envBuf, 2 ) != 0)
 	{
@@ -708,7 +634,7 @@ bool launchProgram (const std::string &programName, const std::string &arguments
 	}
 	
 	string arg = " " + arguments;
-	BOOL res = CreateProcess(programName.c_str(), (char*)arg.c_str(), 0, 0, FALSE, CREATE_DEFAULT_ERROR_MODE | CREATE_NO_WINDOW, 0, 0, &si, &pi);
+	BOOL res = CreateProcessA(programName.c_str(), (char*)arg.c_str(), 0, 0, FALSE, CREATE_DEFAULT_ERROR_MODE | CREATE_NO_WINDOW, 0, 0, &si, &pi);
 
 	if (res)
 	{
@@ -750,7 +676,7 @@ bool launchProgram (const std::string &programName, const std::string &arguments
 
 	// convert one arg into several args
 	vector<string> args;
-	uint32 pos1 = 0, pos2 = 0;
+	string::size_type pos1 = 0, pos2 = 0;
 	do
 	{
 		pos1 = arguments.find_first_not_of (" ", pos2);
@@ -923,9 +849,9 @@ int	nlfseek64( FILE *stream, sint64 offset, int origin )
 		// Get the size of the next fseek
 		sint nextSeek;
 		if (offset > 0)
-			nextSeek = (sint)std::min (SINT64_CONSTANT(2147483647), offset);
+			nextSeek = (sint)std::min ((sint64)SINT64_CONSTANT(2147483647), offset);
 		else
-			nextSeek = (sint)std::max (-SINT64_CONSTANT(2147483648), offset);
+			nextSeek = (sint)std::max ((sint64)-SINT64_CONSTANT(2147483648), offset);
 		
 		// Make a seek
 		int result = fseek ( stream, nextSeek, first?origin:SEEK_CUR );
@@ -1010,17 +936,17 @@ NLMISC_CATEGORISED_COMMAND(nel, killProgram, "kill a program given the pid", "<p
 }
 
 #ifdef NL_OS_WINDOWS
-LONG GetRegKey(HKEY key, LPCTSTR subkey, LPTSTR retdata)
+LONG GetRegKey(HKEY key, LPCSTR subkey, LPSTR retdata)
 {
     HKEY hkey;
-    LONG retval = RegOpenKeyEx(key, subkey, 0, KEY_QUERY_VALUE, &hkey);
+    LONG retval = RegOpenKeyExA(key, subkey, 0, KEY_QUERY_VALUE, &hkey);
 
     if (retval == ERROR_SUCCESS) 
 	{
         long datasize = MAX_PATH;
-        TCHAR data[MAX_PATH];
-        RegQueryValue(hkey, NULL, data, &datasize);
-        lstrcpy(retdata,data);
+        char data[MAX_PATH];
+        RegQueryValueA(hkey, NULL, data, &datasize);
+        lstrcpyA(retdata,data);
         RegCloseKey(hkey);
     }
 
@@ -1031,27 +957,27 @@ LONG GetRegKey(HKEY key, LPCTSTR subkey, LPTSTR retdata)
 bool openURL (const char *url)
 {
 #ifdef NL_OS_WINDOWS
-    TCHAR key[MAX_PATH + MAX_PATH];
+    char key[1024];
     if (GetRegKey(HKEY_CLASSES_ROOT, ".html", key) == ERROR_SUCCESS) 
 	{
-        lstrcat(key, "\\shell\\open\\command");
+        lstrcatA(key, "\\shell\\open\\command");
 
         if (GetRegKey(HKEY_CLASSES_ROOT,key,key) == ERROR_SUCCESS) 
 		{
-            TCHAR *pos;
+            char *pos;
             pos = strstr(key, "\"%1\"");
             if (pos == NULL) {                     // No quotes found
                 pos = strstr(key, "%1");       // Check for %1, without quotes 
                 if (pos == NULL)                   // No parameter at all...
-                    pos = key+lstrlen(key)-1;
+                    pos = key+lstrlenA(key)-1;
                 else
                     *pos = '\0';                   // Remove the parameter
             }
             else
                 *pos = '\0';                       // Remove the parameter
 
-            lstrcat(pos, " ");
-            lstrcat(pos, url);
+            lstrcatA(pos, " ");
+            lstrcatA(pos, url);
             int res = WinExec(key,SW_SHOWDEFAULT);
 			return (res>31);
         }
@@ -1064,34 +990,34 @@ bool openDoc (const char *document)
 {
 #ifdef NL_OS_WINDOWS
 	string ext = CFile::getExtension (document);
-    TCHAR key[MAX_PATH + MAX_PATH];
+    char key[MAX_PATH + MAX_PATH];
 
     // First try ShellExecute()
-    HINSTANCE result = ShellExecute(NULL, "open", document, NULL,NULL, SW_SHOWDEFAULT);
+    HINSTANCE result = ShellExecuteA(NULL, "open", document, NULL,NULL, SW_SHOWDEFAULT);
 
     // If it failed, get the .htm regkey and lookup the program
     if ((UINT)result <= HINSTANCE_ERROR) 
 	{
         if (GetRegKey(HKEY_CLASSES_ROOT, ext.c_str(), key) == ERROR_SUCCESS) 
 		{
-            lstrcat(key, "\\shell\\open\\command");
+            lstrcatA(key, "\\shell\\open\\command");
 
             if (GetRegKey(HKEY_CLASSES_ROOT,key,key) == ERROR_SUCCESS) 
 			{
-                TCHAR *pos;
+                char *pos;
                 pos = strstr(key, "\"%1\"");
                 if (pos == NULL) {                     // No quotes found
                     pos = strstr(key, "%1");       // Check for %1, without quotes 
                     if (pos == NULL)                   // No parameter at all...
-                        pos = key+lstrlen(key)-1;
+                        pos = key+lstrlenA(key)-1;
                     else
                         *pos = '\0';                   // Remove the parameter
                 }
                 else
                     *pos = '\0';                       // Remove the parameter
 
-                lstrcat(pos, " ");
-                lstrcat(pos, document);
+                lstrcatA(pos, " ");
+                lstrcatA(pos, document);
                 int res = WinExec(key,SW_SHOWDEFAULT);
 				return (res>31);
             }
@@ -1116,3 +1042,6 @@ std::string trim (const std::string &str)
 }
 
 } // NLMISC
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

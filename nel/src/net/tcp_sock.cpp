@@ -29,29 +29,28 @@
 #include "nel/net/net_log.h"
 
 #ifdef NL_OS_WINDOWS
-# ifdef NL_COMP_VC8
-#   include <WinSock2.h>
-# endif
-# include <windows.h>
-# define socklen_t int
-# define ERROR_NUM WSAGetLastError()
-
+#	if defined(NL_COMP_VC7) || defined(NL_COMP_VC71) || defined(NL_COMP_VC8)
+#		include <winsock2.h>
+#	endif
+#	define NOMINMAX
+#	include <windows.h>
+#	define socklen_t int
+#	define ERROR_NUM WSAGetLastError()
 #elif defined NL_OS_UNIX
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/time.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <netinet/tcp.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-#include <cerrno>
-#define SOCKET_ERROR -1
-#define INVALID_SOCKET -1
-#define ERROR_NUM errno
-#define ERROR_MSG strerror(errno)
+#	include <unistd.h>
+#	include <sys/types.h>
+#	include <sys/time.h>
+#	include <sys/socket.h>
+#	include <netinet/in.h>
+#	include <netinet/tcp.h>
+#	include <arpa/inet.h>
+#	include <netdb.h>
+#	include <cerrno>
+#	define SOCKET_ERROR -1
+#	define INVALID_SOCKET -1
+#	define ERROR_NUM errno
+#	define ERROR_MSG strerror(errno)
 typedef int SOCKET;
-
 #endif
 
 using namespace NLMISC;
@@ -109,7 +108,7 @@ void CTcpSock::disconnect()
 {
 	LNETL0_DEBUG( "LNETL0: Socket %d disconnecting from %s...", _Sock, _RemoteAddr.asString().c_str() );
 
-	// This shutdown resets the connection immediatly (not a graceful closure)
+	// This shutdown resets the connection immediately (not a graceful closure)
 #ifdef NL_OS_WINDOWS
 	::shutdown( _Sock, SD_BOTH );
 #elif defined NL_OS_UNIX
@@ -218,3 +217,6 @@ uint32 CTcpSock::getWindowSize()
 
 
 } // NLNET
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

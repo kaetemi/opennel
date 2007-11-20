@@ -1686,10 +1686,7 @@ sint	CMeshMRMGeom::loadHeader(NLMISC::IStream &f) throw(NLMISC::EStream)
 	f.serialCont(_LodInfos);
 
 	// read/save number of wedges.
-	/* NB: prepare memory space too for vertices.
-		\todo yoyo: TODO_OPTIMIZE. for now there is no Lod memory profit with vertices / skinWeights.
-		But resizing arrays is a problem because of reallocation...
-	*/
+	/* NB: prepare memory space too for vertices. */
 	uint32	nWedges;
 	f.serial(nWedges);
 	// Prepare the VBuffer.
@@ -1888,14 +1885,14 @@ void	CMeshMRMGeom::save(NLMISC::IStream &f) throw(NLMISC::EStream)
 		sint32	absCurPos= f.getPos();
 
 		// come back to "relative lodOffset" absolute position in the stream. (temp stored in lodOffset[i]).
-		f.seek(lodOffsets[i], IStream::begin);
+		f.seek(lodOffsets[i], NLMISC::IStream::begin);
 
 		// write the relative position of the lod to the stream.
 		sint32	relCurPos= absCurPos - startPos;
 		f.serial(relCurPos);
 
 		// come back to absCurPos, to save the lod.
-		f.seek(absCurPos, IStream::begin);
+		f.seek(absCurPos, NLMISC::IStream::begin);
 
 		// And so now, save the lod.
 		// write the lod face data.
@@ -1996,7 +1993,7 @@ void	CMeshMRMGeom::loadNextLod(NLMISC::IStream &f)
 		return;
 
 	// Set pos to good lod.
-	f.seek(_LodInfos[_NbLodLoaded].LodOffset, IStream::begin);
+	f.seek(_LodInfos[_NbLodLoaded].LodOffset, NLMISC::IStream::begin);
 
 	// Serial this lod data.
 	// read the lod face data.
@@ -2462,7 +2459,6 @@ void	CMeshMRMGeom::compileRunTime()
 	// Support MeshBlockRendering only if not skinned/meshMorphed.
 	_SupportMeshBlockRendering= !_Skinned && _MeshMorpher.BlendShapes.size()==0;
 
-	// \todo yoyo: support later MeshVertexProgram 
 	_SupportMeshBlockRendering= _SupportMeshBlockRendering && _MeshVertexProgram==NULL;
 }
 
@@ -3617,3 +3613,6 @@ bool		CMeshMRMGeom::intersectSkin(CMeshMRMInstance	*mi, const CMatrix &toRaySpac
 
 } // NL3D
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

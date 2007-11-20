@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo ace: manage unicode format
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -181,7 +180,7 @@ const ucstring &CI18N::get (const std::string &label)
 	if (it != _StrMap.end())
 		return it->second;
 
-	static hash_set<string>	missingStrings;
+	static CHashSet<string>	missingStrings;
 	if (missingStrings.find(label) == missingStrings.end())
 	{
 		sint32 nblang = sizeof(_LanguageCodes)/sizeof(_LanguageCodes[0]);
@@ -243,14 +242,14 @@ void CI18N::remove_C_Comment(ucstring &commentedString)
 				++first;
 				if (first != last && *first == '/')
 				{
-					temp.pop_back();
+					temp.resize(temp.size()-1);
 					// one line comment, skip until end of line
 					while (first != last && *first != '\n')
 						++first;
 				}
 				else if (first != last && *first == '*')
 				{
-					temp.pop_back();
+					temp.resize(temp.size()-1);
 					// start of multiline comment, skip until we found '*/'
 					while (first != last && !(*first == '*' && (first+1) != last && *(first+1) == '/'))
 						++first;
@@ -513,7 +512,6 @@ void CI18N::_readTextFile(const std::string &filename,
 		return;
 
 	// If ::lookup is used, the file can be in a bnp and CFile::fileExists fails.
-	// \todo Boris
 	bool isInBnp = fullName.find('@') != string::npos;
 	if (!isInBnp && !CFile::fileExists(fullName))
 	{

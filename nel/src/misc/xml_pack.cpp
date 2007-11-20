@@ -4,7 +4,7 @@
 #include "nel/misc/xml_pack.h"
 #include "nel/misc/file.h"
 
-#include <stdio.h>
+#include <cstdio>
 
 using namespace std;
 
@@ -256,3 +256,6 @@ namespace NLMISC
 
 } // namespace NLMISC
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

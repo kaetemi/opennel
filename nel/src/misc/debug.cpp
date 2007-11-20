@@ -40,8 +40,10 @@
 #ifdef NL_OS_WINDOWS
 #	define _WIN32_WINDOWS	0x0410
 #	define WINVER			0x0400
+#	define NOMINMAX
 #	include <windows.h>
 #	include <direct.h>
+#	include <tchar.h>
 #	include <imagehlp.h>
 #	pragma comment(lib, "imagehlp.lib")
 #	define getcwd(_a, _b) (_getcwd(_a,_b))
@@ -315,7 +317,7 @@ static DWORD __stdcall GetModuleBase(HANDLE hProcess, DWORD dwReturnAddress)
 		 cch = GetModuleFileNameA((HINSTANCE)memoryBasicInfo.AllocationBase,
 								 szFile, MAX_PATH);
 
-		if (cch && (lstrcmp(szFile, "DBFN")== 0))
+		if (cch && (lstrcmpA(szFile, "DBFN")== 0))
 		{
 			 if (!SymLoadModule(hProcess,
 				   NULL, "MN",
@@ -387,10 +389,10 @@ typedef enum _NEL_MINIDUMP_TYPE
 
 static void DumpMiniDump(PEXCEPTION_POINTERS excpInfo)
 {
-	HANDLE file = CreateFile (NL_CRASH_DUMP_FILE, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+	HANDLE file = CreateFileA (NL_CRASH_DUMP_FILE, GENERIC_WRITE, 0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
 	if (file)
 	{
-		HMODULE hm = LoadLibrary ("dbghelp.dll");
+		HMODULE hm = LoadLibraryA ("dbghelp.dll");
 		if (hm)
 		{
 			BOOL (WINAPI* MiniDumpWriteDump)(
@@ -527,7 +529,7 @@ public:
 			if(!shortExc.empty() || !longExc.empty())
 			{
 				char name[1024];
-				GetModuleFileName (NULL, name, 1023);
+				GetModuleFileNameA (NULL, name, 1023);
 				progname = CFile::getFilename(name);
 				progname += " ";
 			}
@@ -560,46 +562,47 @@ public:
 	void addStackAndLogToReason (sint skipNFirst = 0)
 	{
 #ifdef NL_OS_WINDOWS
-//		// ace hack
-//		skipNFirst = 0;
-//		
-//		DWORD symOptions = SymGetOptions();
-//		symOptions |= SYMOPT_LOAD_LINES;
-//		symOptions &= ~SYMOPT_UNDNAME;
-//		SymSetOptions (symOptions);
-//		
-//		nlverify (SymInitialize(getProcessHandle(), NULL, FALSE) == TRUE);
-//
-//		STACKFRAME callStack;
-//		::ZeroMemory (&callStack, sizeof(callStack));
-//		callStack.AddrPC.Mode      = AddrModeFlat;
-//		callStack.AddrPC.Offset    = m_pexp->ContextRecord->Eip;
-//		callStack.AddrStack.Mode   = AddrModeFlat;
-//		callStack.AddrStack.Offset = m_pexp->ContextRecord->Esp;
-//		callStack.AddrFrame.Mode   = AddrModeFlat;
-//		callStack.AddrFrame.Offset = m_pexp->ContextRecord->Ebp;
-//
-//		_Reason += "\nCallstack:\n";
-//		_Reason += "-------------------------------\n";
-//		for (sint32 i = 0; ; i++)
-//		{
-//			SetLastError(0);
-//			BOOL res = StackWalk (IMAGE_FILE_MACHINE_I386, getProcessHandle(), GetCurrentThread(), &callStack,
-//				m_pexp->ContextRecord, NULL, FunctionTableAccess, GetModuleBase, NULL);
-//
-//			if (res == FALSE || callStack.AddrFrame.Offset == 0)
-//				break;
-//		
-//			string symInfo, srcInfo;
-//
-//			if (i >= skipNFirst)
-//			{
-//				srcInfo = getSourceInfo (callStack.AddrPC.Offset);
-//				symInfo = getFuncInfo (callStack.AddrPC.Offset, callStack.AddrFrame.Offset);
-//				_Reason += srcInfo + ": " + symInfo + "\n";
-//			}
-//		}
-//		SymCleanup(getProcessHandle());
+		// ace hack
+/*		skipNFirst = 0;
+		
+		DWORD symOptions = SymGetOptions();
+		symOptions |= SYMOPT_LOAD_LINES;
+		symOptions &= ~SYMOPT_UNDNAME;
+		SymSetOptions (symOptions);
+		
+		nlverify (SymInitialize(getProcessHandle(), NULL, FALSE) == TRUE);
+
+		STACKFRAME callStack;
+		::ZeroMemory (&callStack, sizeof(callStack));
+		callStack.AddrPC.Mode      = AddrModeFlat;
+		callStack.AddrPC.Offset    = m_pexp->ContextRecord->Eip;
+		callStack.AddrStack.Mode   = AddrModeFlat;
+		callStack.AddrStack.Offset = m_pexp->ContextRecord->Esp;
+		callStack.AddrFrame.Mode   = AddrModeFlat;
+		callStack.AddrFrame.Offset = m_pexp->ContextRecord->Ebp;
+
+		_Reason += "\nCallstack:\n";
+		_Reason += "-------------------------------\n";
+		for (sint32 i = 0; ; i++)
+		{
+			SetLastError(0);
+			BOOL res = StackWalk (IMAGE_FILE_MACHINE_I386, getProcessHandle(), GetCurrentThread(), &callStack,
+				m_pexp->ContextRecord, NULL, FunctionTableAccess, GetModuleBase, NULL);
+
+			if (res == FALSE || callStack.AddrFrame.Offset == 0)
+				break;
+		
+			string symInfo, srcInfo;
+
+			if (i >= skipNFirst)
+			{
+				srcInfo = getSourceInfo (callStack.AddrPC.Offset);
+				symInfo = getFuncInfo (callStack.AddrPC.Offset, callStack.AddrFrame.Offset);
+				_Reason += srcInfo + ": " + symInfo + "\n";
+			}
+		}
+		SymCleanup(getProcessHandle());
+		*/
 #else
 		// Make place for stack frames and function names
 		const uint MaxFrame=64;
@@ -617,39 +620,39 @@ public:
 		free(messages);
 #endif
 		
-		_Reason += "-------------------------------\n";
-		_Reason += "\n";
-		if(DefaultMemDisplayer)
-		{
-			_Reason += "Log with no filter:\n";
-			_Reason += "-------------------------------\n";
-			DefaultMemDisplayer->write (_Reason);
-		}
-		else
-		{
-			_Reason += "No log\n";
-		}
-		_Reason += "-------------------------------\n";
+// 		_Reason += "-------------------------------\n";
+// 		_Reason += "\n";
+// 		if(DefaultMemDisplayer)
+// 		{
+// 			_Reason += "Log with no filter:\n";
+// 			_Reason += "-------------------------------\n";
+// 			DefaultMemDisplayer->write (_Reason);
+// 		}
+// 		else
+// 		{
+// 			_Reason += "No log\n";
+// 		}
+//		_Reason += "-------------------------------\n";
 
 		// add specific information about the application
-		if(CrashCallback)
-		{
-			_Reason += "User Crash Callback:\n";
-			_Reason += "-------------------------------\n";
-			static bool looping = false;
-			if(looping)
-			{
-				_Reason += "******* WARNING: crashed in the user crash callback *******\n";
-				looping = false;
-			}
-			else
-			{
-				looping = true;
-				_Reason += CrashCallback();
-				looping = false;
-			}
-			_Reason += "-------------------------------\n";
-		}
+// 		if(CrashCallback)
+// 		{
+// 			_Reason += "User Crash Callback:\n";
+// 			_Reason += "-------------------------------\n";
+// 			static bool looping = false;
+// 			if(looping)
+// 			{
+// 				_Reason += "******* WARNING: crashed in the user crash callback *******\n";
+// 				looping = false;
+// 			}
+// 			else
+// 			{
+// 				looping = true;
+// 				_Reason += CrashCallback();
+// 				looping = false;
+// 			}
+// 			_Reason += "-------------------------------\n";
+// 		}
 	}
 
 	string getSourceInfo (DWORD addr)
@@ -835,8 +838,6 @@ public:
 
 //		nlinfo ("not parsed '%s'", parse.c_str());
 
-/// \todo ace it sometimes crash because try to access invalid address because the stack is not good (i don t know why)
-
 		// if there s parameter, parse them
 		if(i!=string::npos)
 		{
@@ -882,7 +883,7 @@ public:
 					{
 						if (!IsBadReadPtr(addr,sizeof(char*)) && *addr != NULL)
 						{
-							if (!IsBadStringPtr((char*)*addr,32))
+							if (!IsBadStringPtrA((char*)*addr,32))
 							{
 								uint pos = 0;
 								tmp[pos++] = '\"';
@@ -975,12 +976,16 @@ void force_exception_frame(...) {std::cout.flush();}
 
 static void exceptionTranslator(unsigned, EXCEPTION_POINTERS *pexp)
 {
+#ifndef NL_NO_DEBUG_FILES
 	FILE *file = fopen ("exception_catched", "wb");
 	fclose (file);
+#endif
 	if (pexp->ExceptionRecord->ExceptionCode == EXCEPTION_BREAKPOINT)
 	{
+#ifndef NL_NO_DEBUG_FILES
 		FILE *file2 = fopen ("breakpointed", "wb");
 		fclose (file2);
+#endif
 		return;
 	}
 #if FINAL_VERSION
@@ -1119,9 +1124,8 @@ void changeLogDirectory(const std::string &dir)
 	fd->setParam(p);
 }
 
-void createDebug (const char *logPath, bool logInFile)
+void createDebug (const char *logPath, bool logInFile, bool eraseLastLog)
 {
-	NL_ALLOC_CONTEXT (_Debug)
 	
 //	static bool alreadyCreateSharedAmongThreads = false;
 //	if ( !alreadyCreateSharedAmongThreads )
@@ -1138,12 +1142,12 @@ void createDebug (const char *logPath, bool logInFile)
 			// Use an environment variable to share the value among the EXE and its child DLLs
 			// (otherwise there would be one distinct bool by module, and the last
 			// _set_se_translator would overwrite the previous ones)
-			const char *SE_TRANSLATOR_IN_MAIN_MODULE = "NEL_SE_TRANS";
+			const TCHAR *SE_TRANSLATOR_IN_MAIN_MODULE = _T("NEL_SE_TRANS");
 			TCHAR envBuf [2];
 			if ( GetEnvironmentVariable( SE_TRANSLATOR_IN_MAIN_MODULE, envBuf, 2 ) == 0)
 			{
 				_set_se_translator(exceptionTranslator);
-				SetEnvironmentVariable( SE_TRANSLATOR_IN_MAIN_MODULE, "1" );
+				SetEnvironmentVariable( SE_TRANSLATOR_IN_MAIN_MODULE, _T("1") );
 			}
 		}
 #endif // NL_OS_WINDOWS
@@ -1182,7 +1186,7 @@ void createDebug (const char *logPath, bool logInFile)
 #if FINAL_VERSION
 			fd = new CFileDisplayer (fn, true, "DEFAULT_FD");
 #else // FINAL_VERSION
-			fd = new CFileDisplayer (fn, false, "DEFAULT_FD");
+			fd = new CFileDisplayer (fn, eraseLastLog, "DEFAULT_FD");
 #endif // FINAL_VERSION
 		}
 #endif // LOG_IN_FILE
@@ -1679,3 +1683,6 @@ NLMISC_CATEGORISED_COMMAND(nel, readaccess, "read a uint8 value in an invalid ad
 #endif // FINAL_VERSION
 
 } // NLMISC
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

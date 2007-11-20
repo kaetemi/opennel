@@ -39,7 +39,8 @@ namespace NLGEORGES
 class UFormElm
 {
 public:
-
+	// dtor
+	virtual ~UFormElm() {};
 
 	// ** Common methods
 
@@ -260,3 +261,6 @@ public:
 } // NLGEORGES
 
 #endif // NL_U_FORM_ELM_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

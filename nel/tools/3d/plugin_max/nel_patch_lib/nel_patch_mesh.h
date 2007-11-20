@@ -28,10 +28,12 @@
 
 #pragma warning (disable : 4786)
 #include "nel/misc/types_nl.h"
+
 #include <windows.h>
 #include <vector>
 #include <set>
 #include <string>
+
 #include "nel/misc/debug.h"
 #include "nel/../../src/3d/tile_bank.h"
 #include "nel/misc/file.h"
@@ -789,3 +791,6 @@ public:
 // ------------------------------------------------------------------------------------------------------------------------------------------------
 
 #endif // __RYKOL_PATCH_MESH_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

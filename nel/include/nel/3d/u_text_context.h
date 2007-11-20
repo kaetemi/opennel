@@ -196,7 +196,7 @@ public:
 	virtual	void			setShadeColor (NLMISC::CRGBA sc) = 0;
 	/**
 	 * get the shadow's color
-	 * \returb the shadow color
+	 * \return the shadow color
 	 */
 	virtual	NLMISC::CRGBA	getShadeColor () const = 0;
 	/** set to true if you want that the font manager look at Driver window size, and resize 
@@ -331,3 +331,6 @@ public:
 #endif // NL_U_TEXT_CONTEXT_H
 
 /* End of u_text_context.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

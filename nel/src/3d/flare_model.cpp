@@ -129,7 +129,6 @@ static inline void vbWrite(uint8 *&dest, float uCoord, float vCoord)
 //********************************************************************************************************************
 void	CFlareModel::traverseRender()
 {				
-	NL_ALLOC_CONTEXT( RdrFlar )
 	CRenderTrav			&renderTrav = getOwnerScene()->getRenderTrav();
 	if (renderTrav.isCurrentPassOpaque()) return;	
 	IDriver				*drv  = renderTrav.getDriver();
@@ -727,3 +726,6 @@ void CFlareModel::renderOcclusionTestMesh(IDriver &drv)
 
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

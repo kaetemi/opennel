@@ -83,7 +83,7 @@ private:
 class CPProcess : public IProcess
 {
 public:
-
+	virtual ~CPProcess() {}
 	virtual uint64 getCPUMask();
 	virtual bool setCPUMask(uint64 mask);
 	
@@ -97,3 +97,6 @@ public:
 #endif // NL_P_THREAD_H
 
 /* End of p_thread.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

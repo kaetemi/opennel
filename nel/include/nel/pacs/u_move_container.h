@@ -61,6 +61,11 @@ class UMoveContainer
 {
 public:
 
+	/**
+	  * destructor
+	  */
+	virtual ~UMoveContainer () { }
+
 	/// \name Manage primitives.
 
 	/**
@@ -245,3 +250,6 @@ public:
 #endif // NL_U_MOVE_CONTAINER_H
 
 /* End of u_move_container.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

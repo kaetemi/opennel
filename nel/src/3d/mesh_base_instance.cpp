@@ -409,7 +409,7 @@ void			CMeshBaseInstance::enableAsyncTextureMode(bool enable)
 					// Must setup the AsyncTextures
 					AsyncTextures[i].IsTextureFile[stage]= true;
 					AsyncTextures[i].TextureNames[stage]= text->getFileName();
-					AsyncTextures[i].TextIds[stage]= -1;
+					AsyncTextures[i].TextIds[stage]= UINT_MAX; //-1;
 					// Now, must copy the textureFile, to Avoid writing in CMeshBase TextureFile descriptor !!!
 					CTextureFile *tf = new CTextureFile(*text);
 					// setup a dummy texture => Instance won't block rendering because texture not yet ready
@@ -570,3 +570,6 @@ sint			CMeshBaseInstance::getAsyncTextureId(uint matId, uint stage) const
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

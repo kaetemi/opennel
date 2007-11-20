@@ -33,6 +33,7 @@
 #include "nel/misc/file.h"
 #include "nel/misc/i_xml.h"
 #include "nel/misc/o_xml.h"
+#define NOMINMAX
 #include <windows.h>
 
 using namespace std;
@@ -704,3 +705,6 @@ void CZoneBank::getSelection (std::vector<CZoneBankElement*> &SelectedElements)
 } // namespace NLLIGO
 
 #endif // NL_OS_WINDOWS
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

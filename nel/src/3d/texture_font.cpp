@@ -309,7 +309,6 @@ CTextureFont::SLetterInfo* CTextureFont::getLetterInfo (SLetterKey& k)
 	uint32 width, height;
 
 	//k.FontGenerator->getSizes (k.Char, k.Size, width, height);
-	// \todo mat : Temporaire !!! Essayer de faire intervenir le cache de freetype
 	uint32 nPitch, nGlyphIndex;
 	sint32 nLeft, nTop, nAdvX;
 	k.FontGenerator->getBitmap (k.Char, k.Size, width, height, nPitch, nLeft, nTop, 
@@ -382,3 +381,6 @@ CTextureFont::SLetterInfo* CTextureFont::getLetterInfo (SLetterKey& k)
 }
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

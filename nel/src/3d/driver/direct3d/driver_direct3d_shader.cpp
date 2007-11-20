@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -29,6 +28,11 @@
 
 #include "driver_direct3d.h"
 #include "resource.h"
+
+#ifdef NL_STATIC
+#	include "nel/misc/path.h"
+#	include "nel/misc/file.h"
+#endif
 
 using namespace std;
 using namespace NLMISC;
@@ -359,7 +363,7 @@ bool CDriverD3D::activeShader(CShader *shd)
 		if ( !shd->_DrvInfo )
 		{
 			// insert into driver list. (so it is deleted when driver is deleted).
-			ItShaderDrvInfoPtrList	it= _ShaderDrvInfos.insert(_ShaderDrvInfos.end());
+			ItShaderDrvInfoPtrList	it= _ShaderDrvInfos.insert(_ShaderDrvInfos.end(), NULL);
 			// create and set iterator, for future deletion.
 			shaderInfo = new CShaderDrvInfosD3D(this, it);
 			*it= shd->_DrvInfo = shaderInfo;
@@ -386,7 +390,7 @@ bool CDriverD3D::activeShader(CShader *shd)
 		}
 		else
 		{
-			nlwarning ("Can't create shader:");
+			nlwarning ("Can't create shader '%s':", shd->getText());
 			nlwarning ((const char*)pErrorMsgs->GetBufferPointer());
 			shd->_ShaderChanged = false;
 			_CurrentShader = NULL;
@@ -403,21 +407,34 @@ bool CDriverD3D::activeShader(CShader *shd)
 	return true;
 }
 
-
 // ***************************************************************************
 // tmp for debug
 static void setFX(CShader &s, const char *name, INT rsc, CDriverD3D *drv)
 {
 	H_AUTO_D3D(setFX)
+
+#ifdef NL_STATIC
+
+	// in static mode, you need to have the .fx file in a directory
+	std::string path = CPath::lookup(string(name)+".fx");
+	CIFile file (path.c_str());
+	int size = file.getFileSize();
+	std::vector<char> shaderText(size + 1, 0);	
+	file.serialBuffer((uint8*)&shaderText[0], size);
+
+#else
+
 	HRSRC hrsrc = FindResource(HInstDLL, MAKEINTRESOURCE(rsc), "FX");
 	HGLOBAL hglob = LoadResource(HInstDLL, hrsrc);
 	std::vector<char> shaderText(SizeofResource(HInstDLL, hrsrc) + 1, 0);	
 	memcpy(&shaderText[0], LockResource(hglob), shaderText.size() - 1);
+
+#endif
+
 	s.setName(name);
 	s.setText(&shaderText[0]);
 	nlverify (drv->activeShader (&s));
 }
-
 
 #define setFx(a,b) { setFX(a, #b, b, this); }
 
@@ -1057,8 +1074,6 @@ HRESULT STDMETHODCALLTYPE CFXPassRecorder::SetVertexShaderConstantI(UINT StartRe
 	return D3D_OK;
 }
 
-#define new NL_NEW
-
 //===================================================================================
 CFXPassRecord::~CFXPassRecord()
 {
@@ -1194,3 +1209,6 @@ void CFXCache::reset()
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -54,7 +54,6 @@ CSampleBank::TVirtualBankCont		CSampleBank::_VirtualBanks;
 
 void				CSampleBank::init(NLGEORGES::UFormElm *mixerConfig)
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSampleBank);
 	if (mixerConfig == 0)
 		return;
 
@@ -619,3 +618,6 @@ void				CSampleBank::releaseAll()
 
 } // namespace NLSOUND
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

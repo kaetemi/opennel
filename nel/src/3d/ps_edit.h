@@ -61,6 +61,8 @@ namespace NL3D {
 
 struct IPSMover
 {
+	virtual ~IPSMover() {};
+	
 	/** Send back true if uniform scaling can be applied
 	 *  If it sends false, uniform scaling leads to undefine results
 	 */
@@ -106,3 +108,6 @@ struct IPSMover
 #endif // NL_PS_EDIT_H
 
 /* End of ps_edit.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

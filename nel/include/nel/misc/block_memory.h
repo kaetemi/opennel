@@ -120,10 +120,7 @@ public:
 		
 		// construct the allocated element.
 		if( __ctor_dtor__ )
-#undef new
 			new (ret) T;
-#define new NL_NEW
-
 
 		// some simple Check.
 #ifdef NL_DEBUG
@@ -326,3 +323,6 @@ private:
 #endif // NL_BLOCK_MEMORY_H
 
 /* End of block_memory.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

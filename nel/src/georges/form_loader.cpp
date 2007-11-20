@@ -231,7 +231,7 @@ UForm *CFormLoader::loadForm (const char *filename)
 		{
 			// Get the form DFN filename
 			string name = CFile::getFilename (filename);
-			uint index = name.rfind ('.');
+			string::size_type index = name.rfind ('.');
 			if (index == string::npos)
 			{
 				// Output error
@@ -332,3 +332,6 @@ void CFormLoader::warning (bool exception, const char *function, const char *for
 // ***************************************************************************
 
 } // NLGEORGES
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

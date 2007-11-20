@@ -3,6 +3,18 @@ Microsoft Developer Studio Workspace File, Format Version 6.00
 
 ###############################################################################
 
+Project: "3d"=..\..\..\src\3d.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
 Project: "misc"=..\..\..\src\misc.dsp - Package Owner=<4>
 
 Package=<5>
@@ -28,6 +40,9 @@ Package=<4>
     End Project Dependency
     Begin Project Dependency
     Project_Dep_Name s3tc_compressor_lib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name 3d
     End Project Dependency
 }}}
 
@@ -56,4 +71,7 @@ Package=<3>
 }}}
 
 ###############################################################################
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

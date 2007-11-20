@@ -22,17 +22,21 @@ LDFLAGS      =
 # The bit that changes each time we cut paste and hack this file :o)
 
 # The list of targets to build
-TARGETS		= libnelpacs.a
+TARGET		= ../../libnelpacs.a
 DSP_TARGET	= pacs.dsp
 
 # The default build rule
-all:			check-deps $(TARGETS)
+all:			check-deps $(TARGET)
 
-libnelpacs.a: $(OBJS)
-	ar r ../../libnelpacs.a $(OBJS)
+$(TARGET): $(OBJS)
+	ar r $@ $(OBJS)
+
 
 #############################################################################
 # Rules
 
 include ../Rules.mk
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

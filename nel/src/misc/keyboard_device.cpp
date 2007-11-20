@@ -23,6 +23,7 @@
  * MA 02111-1307, USA.
  */
 
+#include "stdmisc.h"
 
 //#include "nel/3d/u_keyboard_device.h"
 
@@ -39,3 +40,6 @@ namespace NL3D {
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -9,7 +9,7 @@ EXTRA_DIST                = zwelder.cfg \
 
 bin_PROGRAMS              = zone_welder
 
-zone_welder_SOURCES       = zone_welder.cpp
+zone_welder_SOURCES = internal_weld.cpp zone_welder.cpp
 
 AM_CXXFLAGS               = -I$(top_srcdir)/src 
 
@@ -19,4 +19,7 @@ zone_welder_LDADD         = ../../../src/misc/libnelmisc.la \
 
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

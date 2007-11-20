@@ -9,8 +9,8 @@ EXTRA_DIST                = panoply.cfg \
 
 bin_PROGRAMS              = panoply_maker
 
-panoply_maker_SOURCES     = color_modifier.cpp \
-                            panoply_maker.cpp
+panoply_maker_SOURCES = color_modifier.cpp hls_bank_texture_info.cpp \
+	panoply_maker.cpp
 
 noinst_HEADERS            = color_mask.h \
                             color_modifier.h
@@ -21,4 +21,7 @@ panoply_maker_LDADD       = ../../../src/misc/libnelmisc.la
 
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

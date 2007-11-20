@@ -192,7 +192,7 @@ public:
 
 		/// \name Internal use
 		//@{
-		static char *TypeName[];
+		static const char *TypeName[];
 
 #ifndef NL_DONT_USE_EXTERNAL_CODE
 		enum TVarType { T_UNKNOWN, T_INT, T_STRING, T_REAL, T_BOOL };
@@ -368,3 +368,6 @@ struct EFileNotFound : public EConfigFile
 #endif // NL_CONFIG_FILE_H
 
 /* End of config_file.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

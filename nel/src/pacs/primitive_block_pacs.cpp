@@ -110,7 +110,6 @@ void CPrimitiveBlock::serial (NLMISC::IStream &s)
 // ***************************************************************************
 UPrimitiveBlock *UPrimitiveBlock::createPrimitiveBlock(NLMISC::IStream &src)
 {
-	NL_ALLOC_CONTEXT( Pacs )
 
 	nlassert(src.isReading());
 	std::auto_ptr<CPrimitiveBlock> pb(new CPrimitiveBlock);
@@ -121,7 +120,6 @@ UPrimitiveBlock *UPrimitiveBlock::createPrimitiveBlock(NLMISC::IStream &src)
 // ***************************************************************************
 UPrimitiveBlock *UPrimitiveBlock::createPrimitiveBlockFromFile(const std::string &fileName)
 {
-	NL_ALLOC_CONTEXT( Pacs )
 
 	NLMISC::CIFile input;
 	if (input.open(fileName))
@@ -144,3 +142,6 @@ UPrimitiveBlock *UPrimitiveBlock::createPrimitiveBlockFromFile(const std::string
 
 
 } // NLPACS
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -45,8 +45,14 @@ namespace NLNET
 		virtual void init()=0;
 		virtual void update()=0;
 		virtual void release()=0;
+
+		// virtual destructor
+		virtual ~IStdinMonitorSingleton() { }
 	};
 
 } // NLMISC
 
 #endif
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

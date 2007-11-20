@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8,00"
+	Version="8.00"
 	Name="3d"
 	ProjectGUID="{2B48BE83-108B-4E8E-8A55-6627CF09AC5A}"
 	RootNamespace="3d"
@@ -16,10 +16,10 @@
 	<Configurations>
 		<Configuration
 			Name="DebugFast|Win32"
-			OutputDirectory=".\../obj/DebugFast/3d"
-			IntermediateDirectory=".\../obj/DebugFast/3d"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -52,10 +52,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std3d.h"
-				PrecompiledHeaderFile=".\../obj/DebugFast/3d/3d.pch"
-				AssemblerListingLocation=".\../obj/DebugFast/3d/"
-				ObjectFile=".\../obj/DebugFast/3d/"
-				ProgramDataBaseFileName=".\../obj/DebugFast/3d/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -94,10 +90,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\../obj/Release/3d"
-			IntermediateDirectory=".\../obj/Release/3d"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -136,10 +132,7 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std3d.h"
-				PrecompiledHeaderFile=".\../obj/Release/3d/3d.pch"
-				AssemblerListingLocation=".\../obj/Release/3d/"
-				ObjectFile=".\../obj/Release/3d/"
-				ProgramDataBaseFileName=".\../obj/Release/3d/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -177,10 +170,10 @@
 		</Configuration>
 		<Configuration
 			Name="ReleaseDebug|Win32"
-			OutputDirectory=".\../obj/ReleaseDebug/3d"
-			IntermediateDirectory=".\../obj/ReleaseDebug/3d"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -212,10 +205,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std3d.h"
-				PrecompiledHeaderFile=".\../obj/ReleaseDebug/3d/3d.pch"
-				AssemblerListingLocation=".\../obj/ReleaseDebug/3d/"
-				ObjectFile=".\../obj/ReleaseDebug/3d/"
-				ProgramDataBaseFileName=".\../obj/ReleaseDebug/3d/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -254,10 +243,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\../obj/Debug/3d"
-			IntermediateDirectory=".\../obj/Debug/3d"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -292,10 +281,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="std3d.h"
-				PrecompiledHeaderFile=".\../obj/Debug/3d/3d.pch"
-				AssemblerListingLocation=".\../obj/Debug/3d/"
-				ObjectFile=".\../obj/Debug/3d/"
-				ProgramDataBaseFileName=".\../obj/Debug/3d/"
 				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
@@ -334,12 +319,163 @@
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
+		<Configuration
+			Name="DebugStatic|Win32"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			ConfigurationType="4"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="/Zm200 "
+				Optimization="0"
+				AdditionalIncludeDirectories="..\include"
+				PreprocessorDefinitions="NL_STATIC;__STL_DEBUG;_LIB;_DEBUG;WIN32;LIBXML_STATIC"
+				StringPooling="false"
+				BasicRuntimeChecks="3"
+				SmallerTypeCheck="false"
+				RuntimeLibrary="1"
+				BufferSecurityCheck="true"
+				EnableFunctionLevelLinking="true"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="std3d.h"
+				BrowseInformation="0"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="4"
+				CompileAs="2"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1036"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="../lib/nl3d_ds.lib"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="ReleaseDebugStatic|Win32"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			ConfigurationType="4"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="..\include"
+				PreprocessorDefinitions="NL_STATIC;_LIB;NL_RELEASE_DEBUG;LIBXML_STATIC;WIN32;NDEBUG;ASSERT_THROW_EXCEPTION;$(NOINHERIT)"
+				StringPooling="true"
+				ExceptionHandling="2"
+				RuntimeLibrary="0"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="std3d.h"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1036"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="../lib/nl3d_rds.lib"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
 	</Configurations>
 	<References>
 	</References>
 	<Files>
 		<Filter
-			Name="Traversals"
+			Name="traversals"
 			>
 			<File
 				RelativePath="3d\anim_detail_trav.cpp"
@@ -380,6 +516,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -428,6 +583,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\clip_trav.h"
@@ -472,6 +646,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -520,6 +713,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\light_trav.h"
@@ -564,6 +776,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -612,6 +843,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\render_trav.h"
@@ -658,6 +908,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\trav_scene.h"
@@ -665,7 +934,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Models"
+			Name="models"
 			>
 			<File
 				RelativePath="3d\camera.cpp"
@@ -706,6 +975,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -754,6 +1042,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\flare_model.h"
@@ -798,6 +1105,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -846,6 +1172,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_base_instance.h"
@@ -890,6 +1235,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -938,6 +1302,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_mrm_instance.h"
@@ -982,6 +1365,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1030,6 +1432,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_multi_lod_instance.h"
@@ -1074,6 +1495,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1122,6 +1562,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\point_light_model.h"
@@ -1166,6 +1625,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1214,6 +1692,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\seg_remanence.h"
@@ -1258,6 +1755,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1306,6 +1822,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\transform.h"
@@ -1350,6 +1885,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1398,6 +1952,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\water_model.h"
@@ -1405,7 +1978,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Landscape"
+			Name="landscape"
 			>
 			<File
 				RelativePath="3d\bezier_patch.cpp"
@@ -1446,6 +2019,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1494,6 +2086,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\landscape.h"
@@ -1538,6 +2149,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1586,6 +2216,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\landscape_face_vector_manager.h"
@@ -1630,6 +2279,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1678,6 +2346,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\landscape_vegetable_block.h"
@@ -1722,6 +2409,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1770,6 +2476,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\landscapevb_info.h"
@@ -1814,6 +2539,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1862,6 +2606,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\patch_noise.cpp"
@@ -1904,6 +2667,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\patch_rdr_pass.cpp"
@@ -1944,6 +2726,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -1992,6 +2793,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\patch_vegetable.cpp"
@@ -2034,6 +2854,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\patchdlm_context.cpp"
@@ -2074,6 +2913,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -2122,6 +2980,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\patchuv_locator.h"
@@ -2166,6 +3043,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -2214,6 +3110,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\tess_face_priority_list.h"
@@ -2258,6 +3173,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -2306,6 +3240,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\tessellation.h"
@@ -2350,6 +3303,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -2398,6 +3370,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\texture_far.h"
@@ -2442,6 +3433,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -2490,6 +3500,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\tile_color.h"
@@ -2534,6 +3563,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -2582,6 +3630,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\tile_light_influence.h"
@@ -2628,6 +3695,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\tile_lumel.h"
@@ -2672,6 +3758,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -2723,6 +3828,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\zone_manager.h"
@@ -2767,6 +3891,25 @@
 							Optimization="0"
 							PreprocessorDefinitions=""
 							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
 						/>
 					</FileConfiguration>
 				</File>
@@ -2819,6 +3962,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\instance_lighter.h"
@@ -2863,6 +4025,25 @@
 							Optimization="0"
 							PreprocessorDefinitions=""
 							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
 						/>
 					</FileConfiguration>
 				</File>
@@ -2911,6 +4092,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\zone_lighter.h"
@@ -2955,6 +4155,25 @@
 							Optimization="0"
 							PreprocessorDefinitions=""
 							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
 						/>
 					</FileConfiguration>
 				</File>
@@ -3003,6 +4222,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\zone_symmetrisation.h"
@@ -3049,6 +4287,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\zone_tgt_smoother.h"
@@ -3057,7 +4314,7 @@
 			</Filter>
 		</Filter>
 		<Filter
-			Name="Driver"
+			Name="miscanelous"
 			>
 			<File
 				RelativePath="3d\driver.cpp"
@@ -3098,6 +4355,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -3150,6 +4426,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\dru.h"
@@ -3194,6 +4489,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -3242,6 +4556,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\light.h"
@@ -3286,6 +4619,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -3338,6 +4690,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\shader.h"
@@ -3382,6 +4753,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -3430,6 +4820,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vertex_buffer.h"
@@ -3474,6 +4883,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -3522,6 +4950,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vertex_program_parse.h"
@@ -3529,7 +4976,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Font"
+			Name="font"
 			>
 			<File
 				RelativePath="3d\computed_string.cpp"
@@ -3570,6 +5017,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -3618,6 +5084,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\font_generator.h"
@@ -3662,6 +5147,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -3710,6 +5214,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\text_context.h"
@@ -3717,7 +5240,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Container"
+			Name="container"
 			>
 			<File
 				RelativePath="3d\bsp_tree.h"
@@ -3764,6 +5287,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\cube_grid.h"
@@ -3808,6 +5350,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -3864,6 +5425,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\ptr_set.h"
@@ -3918,6 +5498,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\static_quad_grid.h"
@@ -3925,7 +5524,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Tiles"
+			Name="tiles"
 			>
 			<File
 				RelativePath="3d\tile_bank.cpp"
@@ -3966,6 +5565,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4014,6 +5632,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\tile_far_bank.h"
@@ -4058,6 +5695,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4106,6 +5762,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\tile_vegetable_desc.h"
@@ -4113,7 +5788,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Shapes"
+			Name="shapes"
 			>
 			<File
 				RelativePath="3d\flare_shape.cpp"
@@ -4154,6 +5829,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4202,6 +5896,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh.h"
@@ -4246,6 +5959,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4294,6 +6026,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_blender.h"
@@ -4338,6 +6089,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4386,6 +6156,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_geom.h"
@@ -4430,6 +6219,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4478,6 +6286,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_mrm.h"
@@ -4522,6 +6349,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4570,6 +6416,27 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_mrm_skinned.cpp"
@@ -4610,6 +6477,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4662,6 +6548,27 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					ExcludedFromBuild="true"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_multi_lod.cpp"
@@ -4702,6 +6609,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4750,6 +6676,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mesh_vertex_program.h"
@@ -4794,6 +6739,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4842,6 +6806,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\meshvp_wind_tree.h"
@@ -4886,6 +6869,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -4934,6 +6936,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\particle_system_shape.h"
@@ -4978,6 +6999,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5026,6 +7066,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\raw_skinned.h"
@@ -5070,6 +7129,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5126,6 +7204,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\shape.h"
@@ -5170,6 +7267,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5218,6 +7334,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\shifted_triangle_cache.h"
@@ -5262,6 +7397,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5310,6 +7464,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\tangent_space_build.h"
@@ -5354,6 +7527,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5402,6 +7594,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\water_shape.h"
@@ -5409,7 +7620,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Textures"
+			Name="textures"
 			>
 			<File
 				RelativePath="3d\async_texture_block.cpp"
@@ -5450,6 +7661,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5498,6 +7728,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\async_texture_manager.h"
@@ -5542,6 +7791,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5590,6 +7858,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\fasthls_modifier.h"
@@ -5634,6 +7921,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5682,6 +7988,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\hls_texture_bank.h"
@@ -5726,6 +8051,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5774,6 +8118,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\texture_blank.h"
@@ -5820,9 +8183,36 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\texture_blend.h"
+				>
+			</File>
+			<File
+				RelativePath=".\3d\texture_bloom.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\3d\texture_bloom.h"
 				>
 			</File>
 			<File
@@ -5864,6 +8254,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -5912,6 +8321,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\texture_cube.h"
@@ -5956,6 +8384,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6004,6 +8451,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\texture_file.h"
@@ -6048,6 +8514,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6096,6 +8581,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\texture_grouped.h"
@@ -6140,6 +8644,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6188,6 +8711,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\texture_multi_file.h"
@@ -6195,7 +8737,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Mrm"
+			Name="mrm"
 			>
 			<File
 				RelativePath="3d\mrm_builder.cpp"
@@ -6236,6 +8778,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6284,6 +8845,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mrm_internal.h"
@@ -6328,6 +8908,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6376,6 +8975,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\mrm_parameters.h"
@@ -6383,7 +9001,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Animation"
+			Name="animation"
 			>
 			<File
 				RelativePath="3d\anim_ctrl.cpp"
@@ -6426,6 +9044,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\animatable.cpp"
@@ -6466,6 +9103,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6514,6 +9170,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\animated_lightmap.h"
@@ -6558,6 +9233,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6606,6 +9300,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\animated_morph.h"
@@ -6650,6 +9363,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6698,6 +9430,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\animation.h"
@@ -6742,6 +9493,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6790,6 +9560,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\animation_playlist.h"
@@ -6834,6 +9623,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6882,6 +9690,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\bone.cpp"
@@ -6922,6 +9749,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -6970,6 +9816,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\channel_mixer.h"
@@ -7014,6 +9879,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7062,6 +9946,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\play_list_manager.h"
@@ -7106,6 +10009,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7154,6 +10076,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\skeleton_weight.h"
@@ -7200,6 +10141,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\track.cpp"
@@ -7240,6 +10200,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7292,6 +10271,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\track_keyframer.h"
@@ -7336,6 +10334,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7384,6 +10401,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\track_sampled_quat.h"
@@ -7430,6 +10466,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\track_sampled_quat_small_header.h"
@@ -7474,6 +10529,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7526,6 +10600,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\transformable.h"
@@ -7533,7 +10626,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="UserImp"
+			Name="user_imp"
 			>
 			<File
 				RelativePath="3d\animation_set_user.cpp"
@@ -7574,6 +10667,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7622,6 +10734,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\cloud_scape_user.h"
@@ -7666,6 +10797,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7714,6 +10864,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\frustum.cpp"
@@ -7754,6 +10923,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7798,6 +10986,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\instance_group_user.cpp"
@@ -7838,6 +11045,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -7886,6 +11112,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\landscape_user.h"
@@ -7932,6 +11177,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\light_user.cpp"
@@ -7972,6 +11236,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8020,6 +11303,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\particle_system_sound_user.cpp"
@@ -8062,6 +11364,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\play_list_manager_user.cpp"
@@ -8102,6 +11423,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8150,6 +11490,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\play_list_user.h"
@@ -8196,6 +11555,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\scene_user.cpp"
@@ -8236,6 +11614,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8284,6 +11681,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\shape_bank_user.cpp"
@@ -8324,6 +11740,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8372,6 +11807,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\text_context_user.h"
@@ -8416,6 +11870,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8464,6 +11937,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\u_camera.cpp"
@@ -8504,6 +11996,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8548,6 +12059,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\u_instance_material.cpp"
@@ -8588,6 +12118,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8632,6 +12181,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\u_particle_system_instance.cpp"
@@ -8672,6 +12240,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8716,6 +12303,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\u_shape.cpp"
@@ -8756,6 +12362,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8800,6 +12425,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\u_transform.cpp"
@@ -8840,6 +12484,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8884,6 +12547,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\u_visual_collision_mesh.cpp"
@@ -8924,6 +12606,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -8968,6 +12669,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\viewport.cpp"
@@ -9010,6 +12730,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\visual_collision_entity_user.cpp"
@@ -9050,6 +12789,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -9098,6 +12856,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\visual_collision_manager_user.h"
@@ -9144,6 +12921,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\water_env_map_user.h"
@@ -9151,7 +12947,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="User"
+			Name="user"
 			>
 			<File
 				RelativePath="..\include\nel\3d\anim_ctrl.h"
@@ -9335,7 +13131,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Fx"
+			Name="fx"
 			>
 			<Filter
 				Name="particles"
@@ -9379,6 +13175,25 @@
 							Optimization="0"
 							PreprocessorDefinitions=""
 							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
 						/>
 					</FileConfiguration>
 				</File>
@@ -9427,6 +13242,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\particle_system_manager.h"
@@ -9473,6 +13307,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\particle_system_process.h"
@@ -9517,6 +13370,25 @@
 							Optimization="0"
 							PreprocessorDefinitions=""
 							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
 						/>
 					</FileConfiguration>
 				</File>
@@ -9571,6 +13443,25 @@
 							Optimization="0"
 							PreprocessorDefinitions=""
 							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
 						/>
 					</FileConfiguration>
 				</File>
@@ -9631,6 +13522,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\ps_util.h"
@@ -9680,6 +13590,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_dot.h"
@@ -9724,6 +13653,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -9772,6 +13720,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_face_look_at.h"
@@ -9816,6 +13783,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -9868,6 +13854,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_mesh.h"
@@ -9912,6 +13917,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -9960,6 +13984,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_particle2.h"
@@ -10004,6 +14047,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10052,6 +14114,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_quad.h"
@@ -10098,6 +14179,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_ribbon.cpp"
@@ -10138,6 +14238,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10186,6 +14305,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_ribbon_base.h"
@@ -10230,6 +14368,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10278,6 +14435,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_shockwave.h"
@@ -10322,6 +14498,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10382,6 +14577,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_attrib_maker_bin_op.h"
@@ -10430,6 +14644,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10482,6 +14715,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_attrib_maker_template.h"
@@ -10526,6 +14778,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10578,6 +14849,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_float.h"
@@ -10622,6 +14912,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10674,6 +14983,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_plane_basis_maker.h"
@@ -10718,6 +15046,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10782,6 +15129,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_force.h"
@@ -10826,6 +15192,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10874,6 +15259,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_zone.cpp"
@@ -10914,6 +15318,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -10966,6 +15389,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 					<File
 						RelativePath="3d\ps_emitter.h"
@@ -11012,6 +15454,25 @@
 								BasicRuntimeChecks="3"
 							/>
 						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
+							/>
+						</FileConfiguration>
 					</File>
 				</Filter>
 				<Filter
@@ -11056,6 +15517,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -11106,6 +15586,25 @@
 								Optimization="0"
 								PreprocessorDefinitions=""
 								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="DebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="0"
+								PreprocessorDefinitions=""
+								BasicRuntimeChecks="3"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseDebugStatic|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								Optimization="2"
+								PreprocessorDefinitions=""
 							/>
 						</FileConfiguration>
 					</File>
@@ -11159,6 +15658,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\deform_2d.h"
@@ -11203,6 +15721,25 @@
 							Optimization="0"
 							PreprocessorDefinitions=""
 							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
 						/>
 					</FileConfiguration>
 				</File>
@@ -11251,6 +15788,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\motion_blur.h"
@@ -11297,6 +15853,25 @@
 							BasicRuntimeChecks="3"
 						/>
 					</FileConfiguration>
+					<FileConfiguration
+						Name="DebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="0"
+							PreprocessorDefinitions=""
+							BasicRuntimeChecks="3"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="ReleaseDebugStatic|Win32"
+						>
+						<Tool
+							Name="VCCLCompilerTool"
+							Optimization="2"
+							PreprocessorDefinitions=""
+						/>
+					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="3d\quad_effect.h"
@@ -11305,7 +15880,7 @@
 			</Filter>
 		</Filter>
 		<Filter
-			Name="Collisions"
+			Name="collisions"
 			>
 			<File
 				RelativePath="3d\camera_col.cpp"
@@ -11346,6 +15921,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -11394,9 +15988,93 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\landscape_collision_grid.h"
+				>
+			</File>
+			<File
+				RelativePath="3d\mini_col.cpp"
+				>
+				<FileConfiguration
+					Name="DebugFast|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="3d\mini_col.h"
 				>
 			</File>
 			<File
@@ -11472,6 +16150,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\visual_collision_entity.h"
@@ -11516,6 +16213,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -11564,6 +16280,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\visual_collision_mesh.h"
@@ -11571,7 +16306,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="ClipAccelerator"
+			Name="clip_accelerator"
 			>
 			<File
 				RelativePath="3d\cluster.cpp"
@@ -11612,6 +16347,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -11660,6 +16414,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\portal.h"
@@ -11704,6 +16477,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -11752,6 +16544,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\quad_grid_clip_manager.h"
@@ -11759,7 +16570,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Water"
+			Name="water"
 			>
 			<File
 				RelativePath="3d\water_env_map.cpp"
@@ -11800,6 +16611,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -11848,6 +16678,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\water_height_map.h"
@@ -11894,6 +16743,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\water_pool_manager.h"
@@ -11901,7 +16769,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Stripifier"
+			Name="stripifier"
 			>
 			<File
 				RelativePath="3d\stripifier.cpp"
@@ -11942,6 +16810,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -11994,6 +16881,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vegetable.h"
@@ -12038,6 +16944,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12086,6 +17011,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vegetable_clip_block.h"
@@ -12130,6 +17074,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12178,6 +17141,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vegetable_instance_group.h"
@@ -12222,6 +17204,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12270,6 +17271,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vegetable_manager.h"
@@ -12314,6 +17334,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12362,6 +17401,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vegetable_shape.h"
@@ -12406,6 +17464,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12454,6 +17531,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vegetable_uv8.h"
@@ -12500,6 +17596,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\vegetablevb_allocator.h"
@@ -12507,7 +17622,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Util"
+			Name="utils"
 			>
 			<File
 				RelativePath="3d\matrix_3x4.cpp"
@@ -12548,6 +17663,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12596,6 +17730,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\radix_sort.h"
@@ -12603,7 +17756,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Lighting"
+			Name="lighting"
 			>
 			<File
 				RelativePath="3d\ig_surface_light.cpp"
@@ -12644,6 +17797,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12692,6 +17864,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\ig_surface_light_build.h"
@@ -12736,6 +17927,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12784,6 +17994,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\light_influence_interpolator.h"
@@ -12828,6 +18057,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12876,6 +18124,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\point_light.h"
@@ -12920,6 +18187,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -12968,6 +18254,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\point_light_named_array.h"
@@ -13014,6 +18319,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\surface_light_grid.h"
@@ -13021,7 +18345,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="LodSystems"
+			Name="lod_systems"
 			>
 			<File
 				RelativePath="3d\coarse_mesh_build.cpp"
@@ -13062,6 +18386,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -13110,6 +18453,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\coarse_mesh_manager.h"
@@ -13154,6 +18516,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -13202,6 +18583,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\lod_character_instance.h"
@@ -13246,6 +18646,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -13294,6 +18713,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\lod_character_shape.h"
@@ -13338,6 +18776,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -13386,6 +18843,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\lod_character_texture.h"
@@ -13393,7 +18869,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="CloudScape"
+			Name="cloud_scape"
 			>
 			<File
 				RelativePath="3d\cloud.cpp"
@@ -13434,6 +18910,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -13482,6 +18977,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\cloud_scape.h"
@@ -13528,6 +19042,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\noise_3d.h"
@@ -13535,7 +19068,7 @@
 			</File>
 		</Filter>
 		<Filter
-			Name="Shadows"
+			Name="shadows"
 			>
 			<File
 				RelativePath="3d\shadow_map.cpp"
@@ -13576,6 +19109,25 @@
 						Optimization="0"
 						PreprocessorDefinitions=""
 						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
 					/>
 				</FileConfiguration>
 			</File>
@@ -13624,6 +19176,25 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\shadow_map_manager.h"
@@ -13670,62 +19241,31 @@
 						BasicRuntimeChecks="3"
 					/>
 				</FileConfiguration>
+				<FileConfiguration
+					Name="DebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="0"
+						PreprocessorDefinitions=""
+						BasicRuntimeChecks="3"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="ReleaseDebugStatic|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						Optimization="2"
+						PreprocessorDefinitions=""
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="3d\shadow_poly_receiver.h"
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath="3d\async_file_manager.cpp"
-			>
-			<FileConfiguration
-				Name="DebugFast|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="0"
-					PreprocessorDefinitions=""
-					BasicRuntimeChecks="3"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="2"
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="ReleaseDebug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="2"
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="0"
-					PreprocessorDefinitions=""
-					BasicRuntimeChecks="3"
-				/>
-			</FileConfiguration>
-		</File>
-		<File
-			RelativePath="3d\async_file_manager.h"
-			>
-		</File>
 		<File
 			RelativePath="3d\async_file_manager_3d.cpp"
 			>
@@ -13767,9 +19307,36 @@
 					BasicRuntimeChecks="3"
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="3d\async_file_manager_3d.h"
+			>
+		</File>
+		<File
+			RelativePath=".\3d\bloom_effect.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\3d\bloom_effect.h"
 			>
 		</File>
 		<File
@@ -13811,6 +19378,25 @@
 					Optimization="0"
 					PreprocessorDefinitions=""
 					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
 		</File>
@@ -13859,6 +19445,25 @@
 					BasicRuntimeChecks="3"
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="3d\event_mouse_listener.h"
@@ -13905,55 +19510,28 @@
 					BasicRuntimeChecks="3"
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="3d\init_3d.h"
-			>
-		</File>
-		<File
-			RelativePath="3d\mini_col.cpp"
-			>
-			<FileConfiguration
-				Name="DebugFast|Win32"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="0"
-					PreprocessorDefinitions=""
-					BasicRuntimeChecks="3"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="2"
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="ReleaseDebug|Win32"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="2"
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Win32"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="0"
-					PreprocessorDefinitions=""
-					BasicRuntimeChecks="3"
-				/>
-			</FileConfiguration>
-		</File>
-		<File
-			RelativePath="3d\mini_col.h"
 			>
 		</File>
 		<File
@@ -13997,9 +19575,32 @@
 					BasicRuntimeChecks="3"
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="3d\nelu.h"
+			>
+		</File>
+		<File
+			RelativePath="..\include\nel\3d\quad_tree.h"
 			>
 		</File>
 		<File
@@ -14041,6 +19642,25 @@
 					Optimization="0"
 					PreprocessorDefinitions=""
 					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
 		</File>
@@ -14089,6 +19709,25 @@
 					BasicRuntimeChecks="3"
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="3d\scene.h"
@@ -14133,6 +19772,25 @@
 					Optimization="0"
 					PreprocessorDefinitions=""
 					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
 		</File>
@@ -14185,62 +19843,36 @@
 					UsePrecompiledHeader="1"
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+					UsePrecompiledHeader="1"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+					UsePrecompiledHeader="1"
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="3d\std3d.h"
-			>
-		</File>
-		<File
-			RelativePath="3d\vertex_buffer_heap.cpp"
-			>
-			<FileConfiguration
-				Name="DebugFast|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="0"
-					PreprocessorDefinitions=""
-					BasicRuntimeChecks="3"
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="2"
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="ReleaseDebug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="2"
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Debug|Win32"
-				ExcludedFromBuild="true"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					Optimization="0"
-					PreprocessorDefinitions=""
-					BasicRuntimeChecks="3"
-				/>
-			</FileConfiguration>
-		</File>
-		<File
-			RelativePath="3d\vertex_buffer_heap.h"
 			>
 		</File>
 	</Files>
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

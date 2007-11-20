@@ -526,7 +526,7 @@ void cbUpdateRadar (CConfigFile::CVar &var)
 	else if (var.Name == "RadarParticularPlaces")
 	{
 		RadarParticularPlaces.clear ();
-		for (sint i = 0; i < var.size(); i += 3)
+		for (uint i = 0; i < var.size(); i += 3)
 		{
 			RadarParticularPlaces.push_back (RadarParticularPlace(var.asFloat(i), var.asFloat(i+1), var.asString(i+2)));
 		}
@@ -647,3 +647,6 @@ NLMISC_COMMAND(go,"change position of the player with a player name or location"
 
 	return true;
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

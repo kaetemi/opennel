@@ -31,7 +31,6 @@
 #include "visual_collision_entity.h"
 #include "visual_collision_manager.h"
 
-#define NL3D_MEM_ENTITY_USER						NL_ALLOC_CONTEXT( 3dEnty )
 
 namespace NL3D 
 {
@@ -50,14 +49,12 @@ public:
 	/// Constructor. create entity.
 	CVisualCollisionEntityUser(CVisualCollisionManager *manager)
 	{
-		NL3D_MEM_ENTITY_USER
 		_Manager= manager;
 		_Entity= _Manager->createEntity();
 	}
 	/// dtor, delete the entity.
 	~CVisualCollisionEntityUser()
 	{
-		NL3D_MEM_ENTITY_USER
 		_Manager->deleteEntity(_Entity);
 	}
 
@@ -98,3 +95,6 @@ private:
 #endif // NL_VISUAL_COLLISION_ENTITY_USER_H
 
 /* End of visual_collision_entity_user.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

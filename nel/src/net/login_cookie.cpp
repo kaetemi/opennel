@@ -58,8 +58,6 @@ CLoginCookie::CLoginCookie (uint32 addr, uint32 id) : _Valid(true), _UserAddr(ad
 	_UserKey = generateKey();
 }
 
-/// \todo ace: is the cookie enough to avoid hackers to predice keys?
-
 uint32 CLoginCookie::generateKey()
 {
 	uint32 t = (uint32)time (NULL);
@@ -96,3 +94,6 @@ void main()
 */
 
 } // NL.
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

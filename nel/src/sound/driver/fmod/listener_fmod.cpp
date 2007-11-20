@@ -29,7 +29,7 @@
 #include "listener_fmod.h"
 #include "sound_driver_fmod.h"
 
-#include "fmod.h"
+#include <fmod.h>
 
 
 using namespace NLMISC;
@@ -230,3 +230,6 @@ void CListenerFMod::updateFModPos()
 
 
 } // NLSOUND
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -6,7 +6,13 @@ MAINTAINERCLEANFILES = Makefile.in
 
 SUBDIRS              = src
 
-EXTRA_DIST	     = frontend_service.cfg
+EXTRA_DIST	     = frontend_service.cfg frontend_8.vcproj frontend.dsp frontend.vcproj
+
+sno_frontenddir		= ${pkgsysconfdir}
+sno_frontend_DATA	= frontend_service.cfg
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

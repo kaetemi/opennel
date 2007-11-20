@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="georges"
-	ProjectGUID="{9D284C6B-BE12-4549-87E5-2337D64F31BE}"
+	ProjectGUID="{D430A4D6-9DCF-4252-B9D3-20EE5C2650A5}"
 	RootNamespace="georges"
 	>
 	<Platforms>
@@ -16,10 +16,10 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\../obj/Debug/georges"
-			IntermediateDirectory=".\../obj/Debug/georges"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -53,10 +53,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdgeorges.h"
-				PrecompiledHeaderFile=".\../obj/Debug/georges/georges.pch"
-				AssemblerListingLocation=".\../obj/Debug/georges/"
-				ObjectFile=".\../obj/Debug/georges/"
-				ProgramDataBaseFileName=".\../obj/Debug/georges/"
 				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
@@ -97,10 +93,10 @@
 		</Configuration>
 		<Configuration
 			Name="DebugFast|Win32"
-			OutputDirectory=".\../obj/DebugFast/georges"
-			IntermediateDirectory=".\../obj/DebugFast/georges"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -131,10 +127,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdgeorges.h"
-				PrecompiledHeaderFile=".\../obj/DebugFast/georges/georges.pch"
-				AssemblerListingLocation=".\../obj/DebugFast/georges/"
-				ObjectFile=".\../obj/DebugFast/georges/"
-				ProgramDataBaseFileName=".\../obj/DebugFast/georges/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -173,10 +165,10 @@
 		</Configuration>
 		<Configuration
 			Name="ReleaseDebug|Win32"
-			OutputDirectory=".\../obj/ReleaseDebug/georges"
-			IntermediateDirectory=".\../obj/ReleaseDebug/georges"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -208,10 +200,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdgeorges.h"
-				PrecompiledHeaderFile=".\../obj/ReleaseDebug/georges/georges.pch"
-				AssemblerListingLocation=".\../obj/ReleaseDebug/georges/"
-				ObjectFile=".\../obj/ReleaseDebug/georges/"
-				ProgramDataBaseFileName=".\../obj/ReleaseDebug/georges/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -250,10 +238,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\../obj/Release/georges"
-			IntermediateDirectory=".\../obj/Release/georges"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="4"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -285,10 +273,7 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdgeorges.h"
-				PrecompiledHeaderFile=".\../obj/Release/georges/georges.pch"
-				AssemblerListingLocation=".\../obj/Release/georges/"
-				ObjectFile=".\../obj/Release/georges/"
-				ProgramDataBaseFileName=".\../obj/Release/georges/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -306,6 +291,156 @@
 			<Tool
 				Name="VCLibrarianTool"
 				OutputFile="../lib/nlgeorges_r.lib"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="DebugStatic|Win32"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			ConfigurationType="4"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="../include"
+				PreprocessorDefinitions="__STL_DEBUG;_LIB;_DEBUG;WIN32;LIBXML_STATIC"
+				StringPooling="true"
+				BasicRuntimeChecks="3"
+				SmallerTypeCheck="true"
+				RuntimeLibrary="1"
+				BufferSecurityCheck="true"
+				EnableFunctionLevelLinking="true"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdgeorges.h"
+				BrowseInformation="0"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="4"
+				CompileAs="2"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1033"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="../lib/nlgeorges_ds.lib"
+				SuppressStartupBanner="true"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="ReleaseDebugStatic|Win32"
+			OutputDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\obj\$(ConfigurationName)\$(ProjectName)"
+			ConfigurationType="4"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="false"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="2"
+				AdditionalIncludeDirectories="../include"
+				PreprocessorDefinitions="_LIB;NL_RELEASE_DEBUG;LIBXML_STATIC;WIN32;NDEBUG"
+				StringPooling="true"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="true"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="2"
+				PrecompiledHeaderThrough="stdgeorges.h"
+				WarningLevel="3"
+				SuppressStartupBanner="true"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1033"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLibrarianTool"
+				OutputFile="../lib/nlgeorges_rds.lib"
 				SuppressStartupBanner="true"
 			/>
 			<Tool
@@ -377,6 +512,25 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="georges\form_dfn.h"
@@ -416,6 +570,25 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
 				>
 				<Tool
 					Name="VCCLCompilerTool"
@@ -469,6 +642,25 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="georges\form_loader.h"
@@ -515,6 +707,25 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="georges\header.h"
@@ -554,6 +765,25 @@
 			</FileConfiguration>
 			<FileConfiguration
 				Name="Release|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
 				>
 				<Tool
 					Name="VCCLCompilerTool"
@@ -611,6 +841,27 @@
 					UsePrecompiledHeader="1"
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+					UsePrecompiledHeader="1"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+					UsePrecompiledHeader="1"
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="georges\stdgeorges.h"
@@ -657,6 +908,25 @@
 					PreprocessorDefinitions=""
 				/>
 			</FileConfiguration>
+			<FileConfiguration
+				Name="DebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="0"
+					PreprocessorDefinitions=""
+					BasicRuntimeChecks="3"
+				/>
+			</FileConfiguration>
+			<FileConfiguration
+				Name="ReleaseDebugStatic|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					Optimization="2"
+					PreprocessorDefinitions=""
+				/>
+			</FileConfiguration>
 		</File>
 		<File
 			RelativePath="georges\type.h"
@@ -686,3 +956,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

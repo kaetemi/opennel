@@ -358,7 +358,6 @@ void		CPatch::getTileTileColors(uint ts, uint tt, CRGBA corners[4])
 inline void		bilinearColor(CRGBA	corners[4], uint x, uint y, uint &R, uint &G, uint &B)
 {
 	// Fast bilinear and modulate. 
-	// \todo yoyo: TODO_OPTIMIZE: should be ASMed later. (MMX...)
 	// hardcoded for 4 pixels.
 	nlassert(NL_LUMEL_BY_TILE==4);
 
@@ -2044,3 +2043,6 @@ void		CPatch::endDLMLighting()
 
 } // NL3D
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

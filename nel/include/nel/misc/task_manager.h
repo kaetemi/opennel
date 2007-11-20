@@ -96,6 +96,7 @@ public:
 	class IChangeTaskPriority
 	{
 	public:
+		virtual ~IChangeTaskPriority() {};
 		virtual float getTaskPriority(const IRunnable &runable) = 0;
 	};
 
@@ -169,3 +170,6 @@ private:
 #endif // NL_TASK_MANAGER_H
 
 /* End of task_manager.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -106,13 +106,7 @@ struct CPSCollisionInfo
 class CPSLocated : public CParticleSystemProcess
 {
 public:
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	#undef new
-	#endif
-		PS_FAST_OBJ_ALLOC
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	#define new NL_NEW
-	#endif
+	PS_FAST_OBJ_ALLOC
 	/// Constructor
 	CPSLocated();
 
@@ -739,13 +733,7 @@ const uint32 PSSound = 5;
 class CPSLocatedBindable : public NLMISC::IStreamable
 {
 public:	
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	#undef new
-	#endif
-		PS_FAST_OBJ_ALLOC
-	#if !defined (NL_USE_DEFAULT_MEMORY_MANAGER) && !defined (NL_NO_DEFINE_NEW)
-	#define new NL_NEW
-	#endif
+	PS_FAST_OBJ_ALLOC
 	///\name Object
 	//@{
 		/// ctor	
@@ -1091,3 +1079,6 @@ inline const NLMISC::CMatrix &CPSLocatedBindable::getLocalToWorldMatrix() const
 #endif // NL_PARTICLE_SYSTEM_LOCATED_H
 
 /* End of particle_system_located.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

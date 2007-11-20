@@ -31,11 +31,10 @@
 #include <vector>
 
 #ifdef NL_OS_WINDOWS
-#include <windows.h>
-#undef max
-#undef min
+#	define NOMINMAX
+#	include <windows.h>
 #else
-#include <dlfcn.h>
+#	include <dlfcn.h>
 #endif
 
 namespace NLMISC 
@@ -254,3 +253,6 @@ public:
 
 #endif // NL_DYNLIBLOAD_H
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

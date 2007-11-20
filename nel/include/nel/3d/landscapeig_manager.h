@@ -31,7 +31,6 @@
 #include <map>
 #include <string>
 
-#define NL3D_MEM_LANDSCAPE_IG						NL_ALLOC_CONTEXT( 3dLdIg )
 
 namespace NLMISC
 {
@@ -141,3 +140,6 @@ private:
 #endif // NL_LANDSCAPEIG_MANAGER_H
 
 /* End of landscapeig_manager.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

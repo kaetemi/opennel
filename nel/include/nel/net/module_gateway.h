@@ -498,6 +498,8 @@ namespace NLNET
 			: _Gateway(params.Gateway)
 		{
 		}
+		
+		virtual ~CGatewaySecurity() {} // TODO virtual destructor
 
 		/** the gateway send a command to the security module */
 		virtual void onCommand(const TParsedCommandLine &command)	{}
@@ -553,3 +555,6 @@ namespace NLNET
 
 #endif // NL_FILE_MODULE_GATEWAY_H
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

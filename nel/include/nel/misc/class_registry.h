@@ -31,7 +31,6 @@
 #include	<typeinfo>
 #include	<string>
 #include	<set>
-#include	<hash_map>
 
 
 namespace	NLMISC
@@ -111,13 +110,13 @@ private:
 		std::string			TypeIdCheck;
 		IClassable*	(*Creator)();		
 	};
-	typedef std::hash_map<std::string, CClassNode> TClassMap;
+	typedef CHashMap<std::string, CClassNode> TClassMap;
 	static	TClassMap	*RegistredClasses;
 
 };
 
 
-/// Usefull Macros.
+/// Useful Macros.
 #define	NLMISC_DECLARE_CLASS(_class_)					\
 	virtual std::string	getClassName() {return #_class_;}		\
 	static	NLMISC::IClassable	*creator() {return new _class_;}
@@ -131,3 +130,6 @@ private:
 #endif // NL_STREAM_H
 
 /* End of stream.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -905,7 +905,8 @@ void			CPatchDLMContext::compileLighting(TCompileType compType, CRGBA modulateCt
 				// if must modulate with tileColor
 				if(compType == ModulateTileColor)
 				{
-					nlassert(_Patch->TileColors.size()>=0);
+					// a vector can't have negative size
+					//nlassert(_Patch->TileColors.size()>=0);
 					#ifdef NL_DLM_TILE_RES
 					// retrieve userColor pointer.
 					uint16	*tileColor= (uint16*)(&_Patch->TileColors[0]);
@@ -1111,7 +1112,8 @@ void			CPatchDLMContext::computeTextureFar()
 
 	// Modulate result with TileColors.
 	//==================
-	nlassert(_Patch->TileColors.size()>=0);
+	// vector-size is always >= 0
+	//nlassert(_Patch->TileColors.size()>=0);
 	#ifdef NL_DLM_TILE_RES
 	// retrieve userColor pointer.
 	uint16	*tileColor= (uint16*)(&_Patch->TileColors[0]);
@@ -1257,3 +1259,6 @@ void		CPatchDLMContext::blendTileToTexture(const CRGBA *srcPixel, sint srcDeltaX
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

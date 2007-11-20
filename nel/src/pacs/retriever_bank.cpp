@@ -38,7 +38,6 @@ using namespace NLMISC;
 
 NLPACS::URetrieverBank *NLPACS::URetrieverBank::createRetrieverBank (const char *retrieverBank, bool loadAll)
 {
-	NL_ALLOC_CONTEXT( Pacs )
 
 	CIFile	file;
 	if (file.open( CPath::lookup(retrieverBank) ))
@@ -77,3 +76,6 @@ void	NLPACS::CRetrieverBank::clean()
 }
 
 // end of CRetrieverBank methods implementation
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

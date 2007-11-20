@@ -38,13 +38,8 @@
 
 #ifdef NL_OS_WINDOWS
 #	define WIN32_LEAN_AND_MEAN
+#	define NOMINMAX
 #	include <windows.h>
-#	ifdef min
-#		undef min
-#	endif // min
-#	ifdef max
-#		undef max
-#	endif // max
 #else // NL_OS_UNIX
 #	define GLX_GLXEXT_PROTOTYPES
 #	include <GL/glx.h>
@@ -105,7 +100,6 @@ void displayGLError(GLenum error);
 */
 
 #define UNSUPPORTED_INDEX_OFFSET_MSG "Unsupported by driver, check IDriver::supportIndexOffset."
-
 
 namespace NL3D {
 
@@ -300,13 +294,13 @@ public:
 
 	virtual	bool			isLost() const { return false; } // there's no notion of 'lost device" in OpenGL
 
-	virtual bool			init (uint windowIcon = 0);
+	virtual bool			init (uint windowIcon = 0, emptyProc exitFunc = 0);
 
 	virtual void			disableHardwareVertexProgram();
 	virtual void			disableHardwareVertexArrayAGP();
 	virtual void			disableHardwareTextureShader();
 
-	virtual bool			setDisplay(void* wnd, const GfxMode& mode, bool show) throw(EBadDisplay);
+	virtual bool			setDisplay(void* wnd, const GfxMode& mode, bool show, bool resizeable) throw(EBadDisplay);
 	virtual bool			setMode(const GfxMode& mode);
 	virtual bool			getModes(std::vector<GfxMode> &modes);
 	virtual bool			getCurrentScreenMode(GfxMode &mode);
@@ -666,7 +660,7 @@ private:
 
 #ifdef NL_OS_WINDOWS
 
-	friend static void GlWndProc(CDriverGL *driver, HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+	friend static bool GlWndProc(CDriverGL *driver, HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 	
 	HWND						_hWnd;
 	sint32						_WindowWidth, _WindowHeight, _WindowX, _WindowY;
@@ -1340,7 +1334,9 @@ public:
 	CVertexProgamDrvInfosGL (CDriverGL *drv, ItVtxPrgDrvInfoPtrList it);
 };
 
-
 } // NL3D
 
 #endif // NL_DRIVER_OPENGL_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

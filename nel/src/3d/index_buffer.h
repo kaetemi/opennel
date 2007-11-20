@@ -435,7 +435,7 @@ private:
 	inline void	unlock () const;
 
 	// Reset the touch flags
-	void		resetTouchFlags() {_InternalFlags &= ~TouchedAll;}
+	void		resetTouchFlags() {_InternalFlags &= (uint16)(~TouchedAll);}
 
 	// Force non resident memory
 	void		restaureNonResidentMemory();
@@ -830,3 +830,6 @@ inline void CIndexBuffer::unlock () const
 #endif // NL_INDEX_BUFFER_H
 
 /* End of index_buffer.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -30,8 +30,5 @@
 
 #include "stdafx.h"
 
-#include <max.h>
-#include <iparamb2.h>
-#include <istdplug.h>
-#include <iparamm2.h>
-#include <utilapi.h>
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

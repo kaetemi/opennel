@@ -30,6 +30,7 @@
 
 #ifdef NL_OS_WINDOWS
 
+#define NOMINMAX
 #include <windows.h>
 typedef sint socklen_t;
 
@@ -66,7 +67,6 @@ CListenSock::CListenSock() : CTcpSock(), _Bound( false )
 	// Create socket
 	createSocket( SOCK_STREAM, IPPROTO_TCP );
 
-	/// \todo cado: tune backlog value, not too small, not to big (20-200) to prevent SYN attacks (see http://www.cyberport.com/~tangent/programming/winsock/advanced.html)
 	setBacklog( -1 );
 }
 
@@ -181,3 +181,6 @@ void CListenSock::setBacklog( sint backlog )
 
 
 } // NLNET
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

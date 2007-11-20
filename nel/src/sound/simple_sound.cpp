@@ -43,10 +43,10 @@ namespace NLSOUND {
  * Constructor
  */
 CSimpleSound::CSimpleSound() :
-	_Buffer(NULL), 
-	_MinDist(1.0f),
-	_Detailed(false),
 	_Registered(false),
+	_Buffer(NULL), 
+	_Detailed(false),
+	_MinDist(1.0f),
 	_NeedContext(false)
 {
 	// init with NULL in case of unexecpted access
@@ -198,3 +198,6 @@ void				CSimpleSound::importForm(const std::string& filename, NLGEORGES::UFormEl
 }
 
 } // NLSOUND
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -30,7 +30,6 @@
 #include "nel/misc/string_mapper.h"
 #include "audio_mixer_user.h"
 #include <string>
-#include <hash_map>
 
 namespace NLSOUND {
 
@@ -102,12 +101,12 @@ private:
 	/// CSoundBank singleton instance.
 	static CSoundBank		*_Instance;
 
-	typedef std::hash_set<class CSimpleSound*, THashPtr<CSimpleSound*> >	TSimpleSoundContainer;
-//	typedef std::hash_map<std::string, TSimpleSoundContainer >				TBufferAssocContainer;
-	typedef std::hash_map<NLMISC::TStringId, TSimpleSoundContainer, NLMISC::CStringIdHasher >		TBufferAssocContainer;
+	typedef CHashSet<class CSimpleSound*, THashPtr<CSimpleSound*> >	TSimpleSoundContainer;
+//	typedef CHashMap<std::string, TSimpleSoundContainer >				TBufferAssocContainer;
+	typedef CHashMap<NLMISC::TStringId, TSimpleSoundContainer, NLMISC::CStringIdHasher >		TBufferAssocContainer;
 	/// Sound names hash map
-//	typedef std::hash_map<std::string, CSound*>								TSoundTable;
-	typedef std::hash_map<NLMISC::TStringId, CSound*, NLMISC::CStringIdHasher>						TSoundTable;
+//	typedef CHashMap<std::string, CSound*>								TSoundTable;
+	typedef CHashMap<NLMISC::TStringId, CSound*, NLMISC::CStringIdHasher>						TSoundTable;
 
 	/// Assoc from buffer to sound. Used for sound unloading.
 	TBufferAssocContainer		_BufferAssoc;

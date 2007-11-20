@@ -105,6 +105,7 @@ class CWinProcess : public IProcess
 public:
 
 	CWinProcess (void *handle);
+	virtual ~CWinProcess() {} // TODO do something with _ProcessHandle?
 
 	virtual uint64 getCPUMask();
 	virtual bool setCPUMask(uint64 mask);
@@ -151,3 +152,6 @@ private:
 #endif // NL_WIN_THREAD_H
 
 /* End of win_thread.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -30,7 +30,6 @@
 #include "nel/misc/bitmap.h"
 #include <vector>
 
-#define NL3D_MEM_HMAP						NL_ALLOC_CONTEXT( 3dHMap )
 
 namespace NL3D
 {
@@ -59,7 +58,6 @@ public:
 	/// Constructor
 	CHeightMap()
 	{
-		NL3D_MEM_HMAP
 		SizeX= SizeY= 160;
 		OriginX= OriginY= 0;
 		MaxZ= 100;
@@ -93,3 +91,6 @@ private:
 #endif // NL_HEIGHT_MAP_H
 
 /* End of height_map.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

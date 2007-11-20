@@ -50,6 +50,7 @@ class UTrack;
 class UAnimation
 {
 public:
+	virtual ~UAnimation() {};
 
 	/// \name Create / delete animations
 	// @{
@@ -119,3 +120,6 @@ public:
 #endif // NL_U_ANIMATION_H
 
 /* End of u_animation.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

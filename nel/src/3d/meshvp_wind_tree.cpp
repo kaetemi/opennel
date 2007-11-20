@@ -91,7 +91,6 @@ static const char*	WindTreeVPCodeEnd=
 // ***************************************************************************
 float	CMeshVPWindTree::speedCos(float angle)
 {
-	// \todo yoyo TODO_OPTIM
 	return cosf(angle * 2*(float)Pi);
 }
 
@@ -434,3 +433,6 @@ float	CMeshVPWindTree::getMaxVertexMove()
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

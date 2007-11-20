@@ -1151,7 +1151,6 @@ bool CInstanceGroup::getDynamicPortal (std::string& name)
 void CInstanceGroup::setPos (const CVector &pos)
 {
 	if (_Root != NULL)
-		/// \todo Make this work (precision): _Root->setPos (_GlobalPos+pos);
 		_Root->setPos (pos);
 }
 
@@ -1579,3 +1578,6 @@ void			CInstanceGroup::displayDebugClusters(IDriver *drv, class CTextContext *tx
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

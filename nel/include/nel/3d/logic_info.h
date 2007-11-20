@@ -31,7 +31,6 @@
 #include "point_light_influence.h"
 #include <vector>
 
-#define NL3D_MEM_LOGIC						NL_ALLOC_CONTEXT( 3dLogic )
 
 namespace NL3D 
 {
@@ -82,3 +81,6 @@ public:
 #endif // NL_LOGIC_INFO_H
 
 /* End of logic_info.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -6,7 +6,13 @@ MAINTAINERCLEANFILES = Makefile.in
 
 SUBDIRS              = src
 
-EXTRA_DIST	     = position_service.cfg
+EXTRA_DIST	     = position_service.cfg position_8.vcproj position.dsp position.vcproj
+
+sno_posdir		= ${pkgsysconfdir}
+sno_pos_DATA		= position_service.cfg
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

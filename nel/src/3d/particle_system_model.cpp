@@ -692,7 +692,6 @@ void	CParticleSystemModel::doAnimate()
 //////////////////////////////////////////////
 void	CParticleSystemModel::traverseRender()
 {
-	NL_ALLOC_CONTEXT( RdrPS )
 	MINI_TIMER(PSStatsTraverseRender)
 /*
 	if (!_OutOfFrustum)
@@ -1139,3 +1138,6 @@ void CParticleSystemModel::update()
 
  
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

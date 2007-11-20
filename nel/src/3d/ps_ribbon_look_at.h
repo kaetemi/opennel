@@ -30,8 +30,6 @@
 #include "ps_ribbon_base.h"
 #include "vertex_buffer.h"
 #include "index_buffer.h"
-#include <hash_map>
-
 
 namespace NL3D 
 {
@@ -147,7 +145,6 @@ private:
 	//@{
 
 			/** a struct containing a vertex buffer and a primitive block
-			  * \todo: primitive blocks can be shared for several vbs...
 			  */
 			class CVBnPB
 			{
@@ -161,7 +158,7 @@ private:
 					VB.setName("CPSRibbonLookAt::CVBnPB::VB");
 				}
 			};
-			typedef std::hash_map<uint, CVBnPB> TVBMap;
+			typedef CHashMap<uint, CVBnPB> TVBMap;
 
 			static TVBMap					_VBMap;			  // index buffers with no color
 			static TVBMap					_ColoredVBMap;    // index buffer + colors			
@@ -182,3 +179,6 @@ private:
 #endif // NL_PS_RIBBON_LOOK_AT_H
 
 /* End of ps_ribbon_look_at.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

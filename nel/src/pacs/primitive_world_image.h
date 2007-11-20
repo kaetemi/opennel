@@ -224,7 +224,7 @@ public:
 						CMoveContainer &container, uint8 worldImage);
 
 	/// Add the primitive in the cell at the end of the list and don't sort
-	void CPrimitiveWorldImage::addMoveElementendOfList (CMoveCell& cell, uint16 x, uint16 y, CMovePrimitive *primitive,
+	void addMoveElementendOfList (CMoveCell& cell, uint16 x, uint16 y, CMovePrimitive *primitive,
 														CMoveContainer &container);
 
 	/// Update precalculated data
@@ -505,3 +505,6 @@ private:
 #endif // NL_PRIMITIVE_WORLD_IMAGE_H
 
 /* End of primitive_world_image.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

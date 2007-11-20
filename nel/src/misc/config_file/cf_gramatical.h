@@ -15,9 +15,12 @@ typedef union	{
 #define	RBRACE	268
 #define	LBRACE	269
 #define	COMMA	270
-#define	INT	271
+#define	INTEGER	271
 #define	REAL	272
 #define	FILELINE	273
 
 
 extern YYSTYPE cflval;
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

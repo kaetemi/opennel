@@ -33,7 +33,6 @@
 #include "animation_set_user.h"
 #include "ptr_set.h"
 
-#define NL3D_MEM_PLAYLIST_MANAGER						NL_ALLOC_CONTEXT( 3dPLMng )
 
 namespace NL3D 
 {
@@ -58,7 +57,6 @@ public:
 	/// Constructor
 	CPlayListManagerUser()
 	{
-		NL3D_MEM_PLAYLIST_MANAGER
 	}
 
 
@@ -90,3 +88,6 @@ public:
 #endif // NL_PLAY_LIST_MANAGER_USER_H
 
 /* End of play_list_manager_user.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

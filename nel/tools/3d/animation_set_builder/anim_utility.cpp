@@ -24,7 +24,7 @@
  */
 
 
-#include <iostream.h>
+#include <iostream>
 #include "nel/misc/types_nl.h"
 #include "nel/misc/file.h"
 
@@ -96,3 +96,6 @@ std::string getExt (const std::string& path)
 }
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

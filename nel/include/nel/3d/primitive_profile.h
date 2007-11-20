@@ -28,7 +28,6 @@
 
 #include "nel/misc/types_nl.h"
 
-#define NL3D_MEM_PRIMITIVE_PROFILE						NL_ALLOC_CONTEXT( 3dPrmPf )
 
 namespace NL3D {
 
@@ -52,7 +51,6 @@ public:
 
 	CPrimitiveProfile()
 	{
-		NL3D_MEM_PRIMITIVE_PROFILE
 		reset();
 	}
 
@@ -68,3 +66,6 @@ public:
 #endif // NL_PRIMITIVE_PROFILE_H
 
 /* End of primitive_profile.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

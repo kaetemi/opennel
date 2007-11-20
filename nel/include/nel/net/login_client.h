@@ -51,6 +51,30 @@ class IDisplayer;
 class CLoginClient {
 public:
 
+	struct CShardEntry
+	{
+		CShardEntry() { NbPlayers = 0; Id = -1; }
+		CShardEntry(const ucstring &name, uint8 nbp, sint32 sid) : Name(name), NbPlayers(nbp), Id(sid) { }
+		sint32		Id;
+		ucstring	Name;
+		uint8		NbPlayers;
+	};
+
+	typedef std::vector<CShardEntry> TShardList;
+
+	// This list is filled after a successful authenticate call
+	static TShardList ShardList;
+
+	/** Try to login with login and password. cpassword must be md5 crypted (that's why it's a string and not an ucstring)
+	* application is the name of the application. the LS will return all shards that is available for this application (sample, snowballs, ...)
+	* If the authentication is ok, the function return an empty string else it returns the reason of the failure.
+	*/
+	static std::string authenticate (const std::string &loginServiceAddr, const ucstring &login, const std::string &cpassword, const std::string &application);
+
+	/** Try to connect to the shard and return a TCP connection to the shard.
+	*/
+	static std::string wantToConnectToShard (sint32 shardId, std::string &ip, std::string &cookie);
+
 	/** Try to connect to the shard and return a TCP connection to the shard.
 	 */
 	static std::string connectToShard (CLoginCookie &lc, const std::string &addr, CCallbackClient &cnx);
@@ -63,6 +87,13 @@ public:
 	 */
 	static std::string connectToShard (const std::string &addr, CUdpSimSock &cnx);
 
+private:
+
+	static std::string confirmConnection (sint32 sharId);
+	static CLoginClient::CShardEntry *getShard (sint32 shardId);
+
+	static NLNET::CCallbackClient *_LSCallbackClient;
+
 };
 
 
@@ -71,3 +102,6 @@ public:
 #endif // NL_LOGIN_CLIENT_H
 
 /* End of login_client.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

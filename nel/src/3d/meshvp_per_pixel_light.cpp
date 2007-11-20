@@ -401,7 +401,6 @@ void	CMeshVPPerPixelLight::initInstance(CMeshBaseInstance *mbi)
 		nlassert(NumVp == numvp); // make sure that it is in sync with header..todo : compile time assert :)
 		for (uint vp = 0; vp < NumVp; ++vp)
 		{
-			// \todo yoyo TODO_OPTIM Manage different number of pointLights
 			// NB: never call getLightVPFragment() with normalize, because already done by PerPixel fragment before.
 			std::string vpCode	= std::string(vpName[vp])
 								  + std::string("# ***************") // temp for debug
@@ -455,7 +454,6 @@ bool	CMeshVPPerPixelLight::begin(IDriver *drv,
 	sint strongestLightIndex = renderTrav->getStrongestLightIndex();
 	if (strongestLightIndex == -1) return false; // if no strongest light, disable this vertex program		
 	// setup the strongest light
-	///\todo disabling of specular lighting with this shader
 	const CLight &strongestLight  = renderTrav->getDriverLight(strongestLightIndex);
 
 	switch (strongestLight.getMode())
@@ -575,3 +573,6 @@ void	CMeshVPPerPixelLight::setupForMaterial(const CMaterial &mat,
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

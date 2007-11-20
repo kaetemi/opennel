@@ -54,7 +54,9 @@ public:
 	{
 		for(uint i=0;i<IDRV_MAT_MAXTEXTURES;i++)
 		{
-			TextIds[i]= -1;
+			// FIXME
+			//async_texture_block.h:58: warning: converting of negative value `-0x00000000000000001' to `uint'
+			TextIds[i]= UINT_MAX; //-1;
 			IsTextureFile[i]= false;
 		}
 	}
@@ -76,3 +78,6 @@ private:
 #endif // NL_ASYNC_TEXTURE_BLOCK_H
 
 /* End of async_texture_block.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

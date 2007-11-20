@@ -196,6 +196,8 @@ public:
 	 *  \param shape the pointer on the IShape derived object you want to serialize.
 	 */
 	CShapeStream (IShape* shape);
+	
+	virtual ~CShapeStream() {}
 
 	/** Set the pointer to the IShape object. Used to serial a shape in output.
 	 *  \param shape the pointer on the IShape derived object you want to serialize.
@@ -219,3 +221,6 @@ private:
 #endif // NL_SHAPE_H
 
 /* End of shape.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -33,6 +33,7 @@
 
 // include the command system
 #include "nel/misc/command.h"
+#include "nel/misc/variable.h"
 
 
 //
@@ -194,3 +195,6 @@ int main (int argc, char **argv)
 	
 	return EXIT_SUCCESS;
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

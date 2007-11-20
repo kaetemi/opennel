@@ -287,11 +287,6 @@ void CBigFile::remove (const std::string &sBigFileName)
 	{
 		map<string, BNP>::iterator it = _BNPs.find (sBigFileName);
 		BNP &rbnp = it->second;
-		/* \todo yoyo: THERE is a MAJOR drawback here: Only the FILE * of the current (surely main) thread
-			is closed. other FILE* in other threads are still opened. This is not a big issue (system close the FILE* 
-			at the end of the process) and this is important so AsyncLoading of a currentTask can end up correclty 
-			(without an intermediate fclose()).
-		*/
 		// Get a ThreadSafe handle on the file
 		CHandleFile		&handle= _ThreadFileArray.get(rbnp.ThreadFileId);
 		// close it if needed
@@ -300,8 +295,6 @@ void CBigFile::remove (const std::string &sBigFileName)
 			fclose (handle.File);
 			handle.File= NULL;
 		}
-		/* \todo trap : can make the CPath crash. CPath must be informed that the files in bigfiles have been removed
-			this is because CPath use memory of CBigFile if it runs in memoryCompressed mode */
 		delete [] rbnp.FileNames;
 		_BNPs.erase (it);
 	}
@@ -344,7 +337,7 @@ void CBigFile::removeAll ()
 bool CBigFile::getFileInternal (const std::string &sFileName, BNP *&zeBnp, BNPFile *&zeBnpFile)
 {
 	string zeFileName, zeBigFileName, lwrFileName = toLower(sFileName);
-	uint32 i, nPos = sFileName.find ('@');
+	string::size_type i, nPos = sFileName.find ('@');
 	if (nPos == string::npos)
 	{
 		return false;
@@ -370,13 +363,9 @@ bool CBigFile::getFileInternal (const std::string &sFileName, BNP *&zeBnp, BNPFi
 	vector<BNPFile>::iterator itNBPFile;
 
 	// Debug : Sept 01 2006
-	#if _STLPORT_VERSION >= 0x510
-		BNPFile temp_bnp_file;
-		temp_bnp_file.Name = (char*)zeFileName.c_str();
-		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
-	#else
-		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), zeFileName.c_str(), CBNPFileComp());
-	#endif //_STLPORT_VERSION
+	BNPFile temp_bnp_file;
+	temp_bnp_file.Name = (char*)zeFileName.c_str();
+	itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
 	
 	if (itNBPFile != rbnp.Files.end())
 	{
@@ -461,13 +450,9 @@ char *CBigFile::getFileNamePtr(const std::string &sFileName, const std::string &
 			return NULL;
 		string lwrFileName = toLower(sFileName);
 		// Debug : Sept 01 2006
-		#if _STLPORT_VERSION >= 0x510
-			BNPFile temp_bnp_file;
-			temp_bnp_file.Name = (char*)lwrFileName.c_str();
-			itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
-		#else
-			itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), lwrFileName.c_str(), CBNPFileComp());
-		#endif //_STLPORT_VERSION
+		BNPFile temp_bnp_file;
+		temp_bnp_file.Name = (char*)lwrFileName.c_str();
+		itNBPFile = lower_bound(rbnp.Files.begin(), rbnp.Files.end(), temp_bnp_file, CBNPFileComp());
 	
 		if (itNBPFile != rbnp.Files.end())
 		{
@@ -493,3 +478,6 @@ void CBigFile::getBigFilePaths(std::vector<std::string> &bigFilePaths)
 
 
 } // namespace NLMISC
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

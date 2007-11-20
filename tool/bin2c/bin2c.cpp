@@ -52,8 +52,9 @@ int main(int argc, char* argv[])
 				unsigned int size=0;
 				while (1)
 				{
+					int i;
 					fprintf (pOut, "\t");
-					for (int i=0; i<8; i++)
+					for (i=0; i<8; i++)
 					{
 						int c=fgetc (pIn);
 						if (c==EOF)
@@ -77,3 +78,6 @@ int main(int argc, char* argv[])
 	
 	return 0;
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

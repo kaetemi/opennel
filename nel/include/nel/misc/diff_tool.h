@@ -163,7 +163,7 @@ namespace STRING_MANAGER
 			for (uint i=0; i<Data.size(); ++i)
 			{
 				// insert a default value.
-				Data[i].insert(Data[i].begin()+colIndex);
+				Data[i].insert(Data[i].begin()+colIndex, ucstring());
 			}
 			ColCount++;
 		}
@@ -555,3 +555,6 @@ namespace STRING_MANAGER
 }	// namespace STRING_MANAGER
 
 #endif // DIFF_TOOL_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -52,6 +52,7 @@ public:
 	/// an interface to compute the u,v perturbations at a given point (x and and y range from 0 to 1)
 	struct IPerturbUV
 	{
+		virtual ~IPerturbUV() {};
 		virtual void perturbUV(float x, float y, float &du, float &dv) const = 0 ;
 	};
 
@@ -93,3 +94,6 @@ protected:
 #endif // NL_DEFORM_2D_H
 
 /* End of deform_2d.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

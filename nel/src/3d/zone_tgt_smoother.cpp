@@ -121,15 +121,12 @@ void		CZoneTgtSmoother::makeVerticesCoplanar(std::vector<CZoneInfo>  &zones)
 		// a. verify if coplanar is possible.
 		//===================================
 
-		// \todo yoyo: later: do it too on non border vertices if wanted (with a normal threshold...).
 		if(!vert.OnBorder)
 			continue;
-		// \todo yoyo: later: formula with 3, 5 ... patchs around the vertex.
 		if(vert.Patchs.size()!=4)
 			continue;
 
 		// Test if there is no bind 1/x on this patch, around this vertex.
-		// \todo yoyo: later: binds should works...
 		std::list<CPatchId>::iterator	itPatch;
 		bool	bindFound= false;
 		for(itPatch= vert.Patchs.begin(); itPatch!= vert.Patchs.end(); itPatch++)
@@ -319,3 +316,6 @@ void		CZoneTgtSmoother::makeVerticesCoplanar(std::vector<CZoneInfo>  &zones)
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

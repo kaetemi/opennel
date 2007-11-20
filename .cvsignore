@@ -13,8 +13,13 @@
 *.mak
 *.plg
 *.aps
+*.suo
 thumbs.db
 Release
 ReleaseDebug
 Debug
 DebugFast
+.svn
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+

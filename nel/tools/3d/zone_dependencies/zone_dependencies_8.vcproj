@@ -78,10 +78,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231_D.lib libxml2_debug.lib"
+				AdditionalDependencies="freetype.lib libxml2.lib ws2_32.lib"
 				OutputFile=".\Debug/zone_dependencies.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug/zone_dependencies.pdb"
 				SubSystem="1"
@@ -172,10 +173,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib  libxml2.lib"
+				AdditionalDependencies="freetype.lib libxml2.lib ws2_32.lib"
 				OutputFile=".\ReleaseDebug/zone_dependencies.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\ReleaseDebug/zone_dependencies.pdb"
 				SubSystem="1"
@@ -249,6 +251,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -265,7 +268,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib libxml2.lib"
+				AdditionalDependencies="freetype.lib libxml2.lib ws2_32.lib"
 				OutputFile=".\Release/zone_dependencies.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -356,7 +359,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231_D.lib libxml2_debug.lib"
+				AdditionalDependencies="freetype.lib libxml2.lib ws2_32.lib"
 				OutputFile=".\DebugFast/zone_dependencies.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -513,3 +516,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

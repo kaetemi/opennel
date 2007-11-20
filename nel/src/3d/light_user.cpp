@@ -33,7 +33,6 @@ namespace NL3D
 
 ULight *ULight::createLight ()
 {
-	NL3D_MEM_LIGHT
 	// return the new light
 	return new CLightUser;
 }
@@ -41,3 +40,6 @@ ULight *ULight::createLight ()
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

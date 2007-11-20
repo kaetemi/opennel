@@ -112,6 +112,8 @@ public:
 class UWaterHeightMap
 {
 public:
+	virtual ~UWaterHeightMap() {};
+
 	/// get the size in meter of a heightmap texel
 	virtual float	getUnitSize() const =0;
 
@@ -144,3 +146,6 @@ public:
 #endif // NL_U_WATER_INSTANCE_H
 
 /* End of u_water_instance.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

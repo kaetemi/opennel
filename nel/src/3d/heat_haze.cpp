@@ -37,6 +37,7 @@ namespace NL3D
 
 	struct CSinWave : public CDeform2d::IPerturbUV
 	{
+		virtual ~CSinWave() {}
 		float Phase;
 		virtual void perturbUV(float x, float y, float &du, float &dv) const
 		{
@@ -121,3 +122,6 @@ namespace NL3D
 	}
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

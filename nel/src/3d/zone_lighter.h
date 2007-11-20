@@ -614,9 +614,9 @@ private:
 	TWaterShapeQuadGrid							_WaterShapeQuadGrid;
 
 	/// Some constants
-	static const sint8 CZoneLighter::TriangleIndexes[10][2][3];
-	static const sint8 CZoneLighter::VertexThanCanBeSnappedOnABorder[8][4];
-	static const sint8 CZoneLighter::VertexThanCanBeSnappedOnACorner[3][2];
+	static const sint8 TriangleIndexes[10][2][3];
+	static const sint8 VertexThanCanBeSnappedOnABorder[8][4];
+	static const sint8 VertexThanCanBeSnappedOnACorner[3][2];
 };
 
 } // NL3D
@@ -625,3 +625,6 @@ private:
 #endif // NL_ZONE_LIGHTER_H
 
 /* End of zone_lighter.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

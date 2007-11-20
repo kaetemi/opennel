@@ -28,9 +28,8 @@
 #include "nel/misc/tds.h"
 
 #ifdef NL_OS_WINDOWS
-
-#include <windows.h>
-
+#	define NOMINMAX
+#	include <windows.h>
 #endif // NL_OS_WINDOWS
 
 namespace NLMISC 
@@ -93,3 +92,6 @@ void CTDS::setPointer (void* pointer)
 // *********************************************************
 
 } // NLMISC
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

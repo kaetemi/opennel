@@ -71,7 +71,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\DebugFast/lightmap_optimizer.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -168,7 +168,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Debug/lightmap_optimizer.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -244,6 +244,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -260,7 +261,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Release/lightmap_optimizer.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -351,7 +352,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype231.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\ReleaseDebug/lightmap_optimizer.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -450,3 +451,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

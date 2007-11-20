@@ -8,8 +8,7 @@ SUBDIRS              = driver
 
 lib_LTLIBRARIES      = libnelsnd.la
 
-libnelsnd_la_SOURCES = \
-	async_file_manager_sound.cpp \
+libnelsnd_la_SOURCES = async_file_manager_sound.cpp \
 	async_file_manager_sound.h \
 	audio_mixer_user.cpp \
 	audio_mixer_user.h \
@@ -66,4 +65,7 @@ libnelsnd_la_LDFLAGS = -version-info @LIBTOOL_VERSION@
 
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

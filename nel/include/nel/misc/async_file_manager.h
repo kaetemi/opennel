@@ -69,6 +69,7 @@ public:
 	class ICancelCallback
 	{
 	public:
+		virtual ~ICancelCallback() {};
 		virtual bool callback(const IRunnable *prunnable) const =0;
 	};
 
@@ -130,3 +131,6 @@ private:
 #endif // NL_ASYNC_FILE_MANAGER_H
 
 /* End of async_file_manager.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

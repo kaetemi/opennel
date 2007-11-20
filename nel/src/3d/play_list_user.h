@@ -33,7 +33,6 @@
 #include "channel_mixer.h"
 #include "animation_playlist.h"
 
-#define NL3D_MEM_PLAYLIST						NL_ALLOC_CONTEXT( 3dPL )
 
 namespace NL3D 
 {
@@ -62,7 +61,6 @@ public:
 	/// Constructor
 	CPlayListUser(NLMISC::CSmartPtr<CAnimationSet>		animationSet)
 	{
-		NL3D_MEM_PLAYLIST
 		nlassert(animationSet!=NULL);
 		_AnimationSet= animationSet;
 
@@ -142,3 +140,6 @@ public:
 #endif // NL_PLAY_LIST_USER_H
 
 /* End of play_list_user.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

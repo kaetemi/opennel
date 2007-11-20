@@ -154,8 +154,6 @@ public:
 	std::queue<EAnim>				AnimQueue;
 	NL3D::CAnimationTime			StartAnimationTime;
 
-
-	/// \todo remove, just for bot automaton testing
 	uint							BotState;
 	NLMISC::TTime					BotStateStart;
 };
@@ -215,3 +213,6 @@ void	renderEntitiesNames ();
 #endif // ENTITIES_H
 
 /* End of entities.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

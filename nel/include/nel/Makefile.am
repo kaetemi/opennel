@@ -4,7 +4,7 @@
 
 MAINTAINERCLEANFILES = Makefile.in
 
-DIST_SUBDIRS      = net 3d pacs sound misc georges ligo memory
+DIST_SUBDIRS      = net 3d pacs sound misc georges ligo
 
 SUBDIRS              = @NEL_SUBDIRS@
 
@@ -14,4 +14,7 @@ includedir           = ${prefix}/include/nel
 
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

@@ -43,6 +43,7 @@
 #include "events.h"
 #include "rect.h"
 #include "game_device.h"
+#define NOMINMAX
 #include <windows.h>
 #include <dinput.h>
 
@@ -83,7 +84,6 @@ struct EDirectInputCooperativeLevelFailed : public  EDirectInput
 // Class to represent Direct Inputs events
 struct CDIEvent : public IInputDeviceEvent
 {
-	// TODO : redefine operator new ?
 	virtual bool	operator < (const IInputDeviceEvent &ide) const
 	{
 		// just compare the dates
@@ -208,3 +208,6 @@ private:
 #endif // NL_DX_EVENT_EMITTER_H
 
 /* End of dx_event_emitter.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

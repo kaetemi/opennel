@@ -67,7 +67,7 @@ UGlobalRetriever			*GlobalRetriever;
 // The move container used for dynamic collisions
 UMoveContainer				*MoveContainer;
 
-// The collision manager for ground snappping
+// The collision manager for ground snapping
 UVisualCollisionManager		*VisualCollisionManager;
 
 // The collision primitive for the instances in the landscape
@@ -91,7 +91,7 @@ void	initPACS()
 	VisualCollisionManager = Scene->createVisualCollisionManager();
 	VisualCollisionManager->setLandscape(Landscape);
 
-	// create a move primite for each instance in the instance group
+	// create a move primitive for each instance in the instance group
 	uint	i, j;
 	for (j=0; j<InstanceGroups.size(); ++j)
 	{
@@ -134,7 +134,7 @@ void	initPACS()
 
 void	releasePACS()
 {
-	// create a move primite for each instance in the instance group
+	// create a move primitive for each instance in the instance group
 	uint	i;
 	for (i=0; i<InstancesMovePrimitives.size(); ++i)
 		MoveContainer->removePrimitive(InstancesMovePrimitives[i]);
@@ -152,3 +152,6 @@ void	releasePACS()
 }
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

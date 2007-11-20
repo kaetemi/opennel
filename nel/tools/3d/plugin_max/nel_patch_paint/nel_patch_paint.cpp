@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "nel_patch_paint.h"
-#include "../../../code/nel/tools/3d/plugin_max/nel_patch_lib/vertex_neighborhood.h"
+#include "..//nel_patch_lib/vertex_neighborhood.h"
 
 // in mods.cpp
 extern HINSTANCE hInstance;
@@ -66,3 +66,6 @@ void PaintPatchMod::RescaleWorldUnits(float f)
 	NotifyDependents(FOREVER, PART_GEOM, REFMSG_CHANGE);
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

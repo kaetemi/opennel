@@ -189,7 +189,6 @@ bool CPortal::setPoly(const std::vector<CVector> &poly)
 	}
 
 	// Check if the polygon is convex
-	/// \todo check if the polygon has the good orientation
 	/*
 	CPlane p2;
 	for( i = 0; i < (poly.size()-1); ++i )
@@ -331,3 +330,6 @@ bool CPortal::clipRay(const NLMISC::CVector &startWorld, const NLMISC::CVector &
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

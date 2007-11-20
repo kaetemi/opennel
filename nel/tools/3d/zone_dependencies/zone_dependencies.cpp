@@ -55,7 +55,7 @@ typedef pair<sint, sint> CZoneDependenciesValue;
 
 #define BAR_LENGTH 21
 
-char *progressbar[BAR_LENGTH]=
+const char *progressbar[BAR_LENGTH]=
 {
 	"[                    ]",
 	"[.                   ]",
@@ -924,3 +924,6 @@ static void computeIGBBoxFromContinent(NLMISC::CConfigFile &parameter,
 		nlinfo(e.what());
 	}
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

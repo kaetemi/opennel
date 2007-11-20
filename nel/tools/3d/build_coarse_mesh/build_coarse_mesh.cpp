@@ -31,6 +31,7 @@
 #include "nel/misc/config_file.h"
 #include "nel/misc/path.h"
 #include "nel/misc/file.h"
+#include "nel/misc/bsphere.h"
 
 using namespace std;
 using namespace NL3D;
@@ -278,3 +279,6 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

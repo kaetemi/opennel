@@ -188,7 +188,7 @@ public:
 	float						CellSize;
 public:
 	NLMISC_DECLARE_CLASS(CPackedZone16)
-	CPackedZone16::CPackedZone16();
+	CPackedZone16();
 	//
 	void serial(NLMISC::IStream &f) throw(NLMISC::EStream);
 	// TMP For debug : render position covered by a frustum
@@ -210,3 +210,6 @@ public:
 } // NL3D
 
 #endif
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

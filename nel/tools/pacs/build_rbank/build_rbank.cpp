@@ -111,7 +111,7 @@ uint32	getIdByCoord(uint x, uint y)
 	return y*256+x;
 }
 
-string	changeExt(string name, string &ext)
+string	changeExt(string name, const string &ext)
 {
 	string::iterator	it, last;
 	last = name.end();
@@ -161,7 +161,7 @@ void processAllPasses(string &zoneName)
 			retriever.setBBox(rbbox);
 			retriever.setType(NLPACS::CLocalRetriever::Landscape);
 
-			for (j=0; j<(sint)tessellation.Surfaces.size(); ++j)
+			for (j=0; j<tessellation.Surfaces.size(); ++j)
 			{
 				retriever.addSurface(0,
 									 0,
@@ -181,7 +181,7 @@ void processAllPasses(string &zoneName)
 				}
 			}
 
-			for (j=0; j<(sint)tessellation.Borders.size(); ++j)
+			for (j=0; j<tessellation.Borders.size(); ++j)
 			{
 				if (tessellation.Borders[j].Right < -1)
 				{
@@ -567,7 +567,7 @@ void	fixFaultyLinks(map<uint, CFaultyInstance> &faultyInstances,
 				{
 					inst.Reconstructed.back().Chains.push_back(l);
 				}
-				while ((l=inst.Chains[l].NextChain) != -1);
+				while ((sint)(l=inst.Chains[l].NextChain) != -1);
 				inst.Reconstructed.back().Start = inst.Chains[inst.Reconstructed.back().Chains.front()].Start;
 				inst.Reconstructed.back().End   = inst.Chains[inst.Reconstructed.back().Chains.back()].End;
 			}
@@ -1107,3 +1107,6 @@ void	updateRetrieverBank()
 	outputBank.close();
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

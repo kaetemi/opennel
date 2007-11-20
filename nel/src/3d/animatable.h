@@ -38,7 +38,7 @@ namespace NL3D
 
 class ITrack;
 class CChannelMixer;
-
+class IAnimatedValue;
 
 /**
  * An animatable object. 
@@ -249,3 +249,6 @@ protected:
 #endif // NL_ANIMATABLE_H
 
 /* End of animatable.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

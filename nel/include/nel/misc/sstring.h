@@ -369,6 +369,12 @@ public:
 	CSString& operator=(const std::string &s);
 	/// assignment operator
 	CSString& operator=(char c);
+	/// assignment operator
+	CSString& operator=(int i);
+	/// assignment operator
+	CSString& operator=(unsigned u);
+	/// assignment operator
+	CSString& operator=(double d);
 
 	/// Case insensitive string compare
 	bool operator==(const CSString &other) const;
@@ -766,6 +772,27 @@ inline CSString& CSString::operator=(char c)
 	return *this;
 }
 
+inline CSString& CSString::operator=(int i)
+{
+	CSString other(i);
+	*this = other;
+	return *this;
+}
+
+inline CSString& CSString::operator=(unsigned u)
+{
+	CSString other(u);
+	*this = other;
+	return *this;
+}
+
+inline CSString& CSString::operator=(double d)
+{
+	CSString other(d);
+	*this = other;
+	return *this;
+}
+
 inline bool CSString::operator==(const CSString &other) const
 {
 	return stricmp(c_str(),other.c_str())==0;
@@ -968,3 +995,6 @@ struct CUnsensitiveSStringLessPred : public std::less<NLMISC::CSString>
 #endif // NL_SSTRING_H
 
 /* End of sstring.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

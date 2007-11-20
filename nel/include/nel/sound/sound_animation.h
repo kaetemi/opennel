@@ -51,7 +51,7 @@ public:
 		NoId = -1
 	};
 
-	CSoundAnimation(std::string& name, TSoundAnimId id) : _Name(name), _Id(id), _Dirty(false) {}
+	CSoundAnimation(std::string& name, TSoundAnimId id) : _Id(id), _Name(name), _Dirty(false) {}
 
 	virtual ~CSoundAnimation() {}
 
@@ -119,3 +119,6 @@ protected:
 } // namespace NLSOUND
 
 #endif // NL_SOUND_ANIM_TRACK_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

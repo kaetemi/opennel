@@ -19,7 +19,6 @@ enable_net=@enable_net@
 enable_3d=@enable_3d@
 enable_pacs=@enable_pacs@
 enable_sound=@enable_sound@
-enable_ai=@enable_ai@
 
 usage()
 {
@@ -37,7 +36,6 @@ Options:
    [--without-3d]
    [--without-pacs]
    [--without-sound]
-   [--without-ai]
 EOF
     exit $1
 }
@@ -94,9 +92,6 @@ do
             ;;
         --without-pacs)
             without_pacs=yes
-            ;;
-        --without-ai)
-            without_ai=yes
             ;;
         --without-snd|--without-sound)
             without_sound=yes
@@ -169,11 +164,6 @@ then
         libs="$libs $lib_sound"
     fi
 
-    if test "$without_ai" != "yes" -a "$enable_ai" = "yes"
-    then
-        libs="$libs $lib_ai"
-    fi
-
     echo -L@libdir@ $libs
 fi
 
@@ -184,7 +174,6 @@ then
     libtool_3d="$lib_dir/libnel3d.la"
     libtool_pacs="$lib_dir/libnelpacs.la"
     libtool_sound="$lib_dir/libnelsnd.la"
-    libtool_ai="$lib_dir/libnelai.la"
 
     libtool="$libtool_misc"
 
@@ -208,13 +197,11 @@ then
         libtool="$libtool $libtool_sound"
     fi
 
-    if test "$without_ai" != "yes"
-    then
-        libtool="$libtool $libtool_ai"
-    fi
-
     echo $libtool
 fi
 
 # EOF
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

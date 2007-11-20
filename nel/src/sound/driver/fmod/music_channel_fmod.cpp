@@ -27,7 +27,8 @@
 
 #include "music_channel_fmod.h"
 #include "sound_driver_fmod.h"
-#include "fmod.h"
+
+#include <fmod.h>
 
 
 using namespace std;
@@ -434,3 +435,6 @@ void	CMusicChannelFMod::markMusicFaderEnded(void *stream, void *fader)
 
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

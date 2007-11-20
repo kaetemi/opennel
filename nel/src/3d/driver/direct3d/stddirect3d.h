@@ -26,6 +26,12 @@
 // Default NeL includes
 #include "nel/misc/types_nl.h"
 
+#ifdef NL_OS_WINDOWS
+#	define WIN32_LEAN_AND_MEAN
+#	define NOMINMAX
+#	include <windows.h>
+#endif
+
 // System includes
 #include <cstdlib>
 #include <cstdio>
@@ -52,9 +58,6 @@
 #include <d3d9.h>
 #include <d3dx9math.h>
 
-#undef min
-#undef max
-
 // NeL includes
 #include "nel/misc/common.h"
 #include "nel/misc/debug.h"
@@ -62,3 +65,6 @@
 #include "nel/misc/mem_stream.h"
 #include "nel/misc/time_nl.h"
 #include "nel/misc/command.h"
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

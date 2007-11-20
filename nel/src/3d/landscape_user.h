@@ -32,7 +32,6 @@
 #include "zone_manager.h"
 #include "scene.h"
 
-#define NL3D_MEM_LANDSCAPE						NL_ALLOC_CONTEXT( 3dLand )
 
 namespace NL3D
 {
@@ -61,7 +60,6 @@ public:
 	// @{
 	CLandscapeUser(CScene *scene)
 	{
-		NL3D_MEM_LANDSCAPE
 		nlassert(scene);
 		_Scene= scene;
 		_Landscape= (CLandscapeModel*)_Scene->createModel(LandscapeModelId);
@@ -147,12 +145,10 @@ public:
 
 	virtual	void		show()
 	{
-		NL3D_MEM_LANDSCAPE
 		_Landscape->show();
 	}
 	virtual	void		hide()
 	{
-		NL3D_MEM_LANDSCAPE
 		_Landscape->hide();
 	}
 
@@ -223,7 +219,6 @@ public:
 	// @{
 	CLandscapeModel		*getLandscape()
 	{
-		NL3D_MEM_LANDSCAPE
 		return _Landscape;
 	}
 	// @}
@@ -237,3 +232,6 @@ public:
 #endif // NL_LANDSCAPE_USER_H
 
 /* End of landscape_user.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -57,6 +57,7 @@ template <class BaseClass>
 class IFactoryRegister
 {
 public:
+	virtual ~IFactoryRegister() {};
 	/// This method is called to create an instance of the factored object.
 	virtual BaseClass *createObject(const typename BaseClass::TCtorParam &ctorParam) = 0;
 };
@@ -272,3 +273,6 @@ public:
 } // namespace NLMISC
 
 #endif // FACTORY_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

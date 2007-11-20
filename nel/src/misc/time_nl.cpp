@@ -28,6 +28,7 @@
 #include <ctime>
 
 #ifdef NL_OS_WINDOWS
+#	define NOMINMAX
 #	include <windows.h>
 #elif defined (NL_OS_UNIX)
 #	include <sys/time.h>
@@ -46,7 +47,7 @@ namespace NLMISC
  */
 uint32 CTime::getSecondsSince1970 ()
 {
-	return nl_time (NULL);
+	return uint32(time(NULL));
 }
 
 /** Return the number of second since midnight (00:00:00), January 1, 1970,
@@ -181,7 +182,11 @@ TTicks CTime::getPerformanceTime ()
 		return 0;
 #else // NL_OS_WINDOWS
 
-#ifdef HAVE_X86
+#if defined(HAVE_X86_64)
+	unsigned long long int hi, lo;
+	__asm__ volatile (".byte 0x0f, 0x31" : "=a" (lo), "=d" (hi));
+	return (hi << 32) | (lo & 0xffffffff);
+#elif defined(HAVE_X86)
 	unsigned long long int x;
 	__asm__ volatile (".byte 0x0f, 0x31" : "=A" (x));
 	return x;
@@ -257,52 +262,34 @@ std::string	CTime::getHumanRelativeTime(sint32 nbSeconds)
 		delta = -delta;
 
 	// some constants of time duration in seconds
-	const uint32 oneMinute = 60;
-	const uint32 oneHour = oneMinute * 60;
-	const uint32 oneDay = oneHour * 24;
-	const uint32 oneWeek = oneDay * 7;
-	const uint32 oneMonth = oneDay * 30; // aprox, a more precise value is 30.416666... but no matter
-	const uint32 oneYear = oneDay * 365; // aprox, a more precise value is 365.26.. who care?
+	const sint32 oneMinute = 60;
+	const sint32 oneHour = oneMinute * 60;
+	const sint32 oneDay = oneHour * 24;
+	const sint32 oneWeek = oneDay * 7;
+	const sint32 oneMonth = oneDay * 30; // aprox, a more precise value is 30.416666... but no matter
+	const sint32 oneYear = oneDay * 365; // aprox, a more precise value is 365.26.. who care?
 
-	uint32 year, month, week, day, hour, minute;
+	sint32 year, month, week, day, hour, minute;
 	year = month = week = day = hour = minute = 0;
 
 	/// compute the different parts
-	while (delta > oneYear)
-	{
-		++year;
-		delta -= oneYear;
-	}
+	year = delta / oneYear;
+	delta %= oneYear;
 
-	while (delta > oneMonth)
-	{
-		++month;
-		delta -= oneMonth;
-	}
+	month = delta / oneMonth;
+	delta %= oneMonth;
+	
+	week = delta / oneWeek;
+	delta %= oneWeek;
 
-	while (delta > oneWeek)
-	{
-		++week;
-		delta -= oneWeek;
-	}
+	day = delta / oneDay;
+	delta %= oneDay;
 
-	while (delta > oneDay)
-	{
-		++day;
-		delta -= oneDay;
-	}
+	hour = delta / oneHour;
+	delta %= oneHour;
 
-	while (delta > oneHour)
-	{
-		++hour;
-		delta -= oneHour;
-	}
-
-	while (delta > oneMinute)
-	{
-		++minute;
-		delta -= oneMinute;
-	}
+	minute = delta / oneMinute;
+	delta %= oneMinute;
 
 	// compute the string
 	CSString ret;
@@ -365,3 +352,6 @@ std::string	CTime::getHumanRelativeTime(sint32 nbSeconds)
 
 
 } // NLMISC
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

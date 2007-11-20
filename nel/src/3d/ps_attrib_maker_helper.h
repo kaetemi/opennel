@@ -1415,7 +1415,6 @@ template <typename T> class CPSAttribMakerMemoryBase : public CPSAttribMaker<T>
 {
 public:	
 
-	/// \todo create a base class for CPSAttribMaker, that don't have the attributes not needed for this class
 	/// ctor (note : we don't use the nbCycle field ...)
 	CPSAttribMakerMemoryBase() : CPSAttribMaker<T>(1.f), _Scheme(NULL)
 	{
@@ -1817,3 +1816,6 @@ private:
 #endif // NL_PS_ATTRIB_MAKER_HELPER_H
 
 /* End of ps_attrib_maker_helper.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

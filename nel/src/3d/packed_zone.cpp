@@ -321,7 +321,7 @@ void CVectorPacker::serialPackedVector16(std::vector<uint16> &v,NLMISC::IStream 
 		CBitMemStream bits(false);
 		uint32 numValues = v.size();
 		bits.serial(numValues);
-		_LastTag = -1;
+		_LastTag = UINT_MAX; //-1;
 		_LastDeltas.clear();
 		for(uint k = 0; k < v.size(); ++k)			
 		{
@@ -851,7 +851,7 @@ void CPackedZone32::build(std::vector<const CTessFace*> &leaves,
 	
 	while (currIt != lastIt)
 	{
-		if (*currIt == ~0)
+		if (*currIt == (uint32)(~0))
 		{
 			std::sort(firstIt, currIt);
 			++ currIt;
@@ -991,11 +991,11 @@ void CPackedZone32::render(CVertexBuffer &vb, IDriver &drv, CMaterial &material,
 				if (x < 0) continue;
 				if (x >= (sint) Grid.getWidth()) break;
 				uint32 triRefIndex = Grid(x, gridY);
-				if (triRefIndex == ~0) continue;
+				if (triRefIndex == (uint32)(~0)) continue;
 				for (;;)
 				{
 					uint32 triIndex = TriLists[triRefIndex];
-					if (triIndex == ~0) break; // end of list					
+					if (triIndex == (uint32)(~0)) break; // end of list					
 					unpackTri(Tris[triIndex], dest);
 					dest += 3;
 					if (dest == endDest)
@@ -1060,7 +1060,7 @@ CSmartPtr<CPackedZone16> CPackedZone32::buildPackedZone16()
 		dest->Tris[k].V2 = (uint16) Tris[k].V2;
 	}
 	dest->TriLists.resize(TriLists.size());
-	for(uint k = 0; k < (sint) TriLists.size(); ++k)
+	for(uint k = 0; k < TriLists.size(); ++k)
 	{
 		dest->TriLists[k] = (uint16) TriLists[k];
 	}
@@ -1289,16 +1289,16 @@ template <class T> bool raytrace(T &packedZone, const NLMISC::CVector &start, co
 		if (x >= (sint) packedZone.Grid.getWidth()) continue;
 		if (y < 0) continue;
 		if (y >= (sint) packedZone.Grid.getHeight()) continue;		
-		T::TIndexType triListIndex = packedZone.Grid(x, y);
-		if (triListIndex != (T::TIndexType) ~0)
+		uint32 triListIndex = packedZone.Grid(x, y);
+		if (triListIndex != (uint32)(~0))
 		{
 			CTriangle tri;
-			CPlane triPlane;			
+			CPlane triPlane;
 			float bestInterDist = FLT_MAX;
 			NLMISC::CVector bestNormal;
-			CVector currInter;			
+			CVector currInter;
 			do
-			{			
+			{
 				packedZone.unpackTri(packedZone.Tris[packedZone.TriLists[triListIndex]], &tri.V0);
 				if (testedTriangles)
 				{
@@ -1311,13 +1311,13 @@ template <class T> bool raytrace(T &packedZone, const NLMISC::CVector &start, co
 					if (dist < bestInterDist)
 					{
 						bestInterDist = dist;
-						inter = currInter;						
+						inter = currInter;
 						bestNormal.set(triPlane.a, triPlane.b, triPlane.c);
 					}
 				}
 				++ triListIndex;
 			}
-			while (packedZone.TriLists[triListIndex] != (T::TIndexType) ~0);			
+			while (packedZone.TriLists[triListIndex] != (typename T::TIndexType)~0);
 			if (bestInterDist != FLT_MAX)
 			{
 				if (normal)
@@ -1325,7 +1325,7 @@ template <class T> bool raytrace(T &packedZone, const NLMISC::CVector &start, co
 					*normal = bestNormal.normed();
 				}
 				return true;
-			}			
+			}
 		}
 	}
 	while(CGridTraversal::traverse(start2f, dir2f, x, y));
@@ -1437,3 +1437,7 @@ void CPackedZone32::appendSelection(const NLMISC::CPolygon2D &poly, std::vector<
 
 
 
+
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -574,7 +574,6 @@ void CShapeBank::cancelLoadAsync (const std::string &shapeNameNotLwr)
 								- the texture is still in memory (the sync mesh still point to it), but with
 									partialy uploaded data!
 						*/
-						// \todo yoyo: should be very rare, and don't know if really happens. must do tests
 						//forceEndUpLoadTexture(wsmmIt->second);
 					}
 
@@ -920,3 +919,6 @@ void CShapeBank::buildSystemGeometryForshape(const std::string &shapeName)
 
 
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

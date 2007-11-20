@@ -10,5 +10,10 @@ sno_position_SOURCES = main.cpp      \
                        physics.h     \
 		       physics.cpp
 
+AM_CXXFLAGS		=	-DSNOWBALLS_CONFIG="\"${pkgsysconfdir}\"" -DSNOWBALLS_LOGS="\"${logdir}\""
+
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

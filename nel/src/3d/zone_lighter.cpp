@@ -51,15 +51,10 @@
 
 
 #ifdef NL_OS_WINDOWS
-#  define WIN32_LEAN_AND_MEAN
-#  include "windows.h"
-#  include "winbase.h"
-#  ifdef min
-#    undef min
-#  endif
-#  ifdef max
-#    undef max
-#  endif
+#	define WIN32_LEAN_AND_MEAN
+#	define NOMINMAX
+#	include <windows.h>
+#	include <winbase.h>
 #endif // NL_OS_WINDOWS
 
 using namespace NLMISC;
@@ -3890,3 +3885,6 @@ float CZoneLighter::attenuation (const CVector &pos, const CZoneLighter::CLightD
 // ***********************************************************
 
  
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

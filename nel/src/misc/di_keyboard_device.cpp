@@ -37,15 +37,6 @@
 
 #include "Mmsystem.h"
 
-
-#ifdef min
-#undef min
-#endif
-
-#ifdef max
-#undef max
-#endif
-
 namespace NLMISC 
 {
 
@@ -699,3 +690,6 @@ void CDIKeyboard::getDisabledRepetitions(TKey *destTab) const
 } // NLMISC
 
 #endif // NL_OS_WINDOWS
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

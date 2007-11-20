@@ -6,7 +6,13 @@ MAINTAINERCLEANFILES = Makefile.in
 
 includedir           = ${prefix}/include/nel/ligo
 
-include_HEADERS      = $(wildcard *.h)
+include_HEADERS      =	ligo_config.h			\
+			primitive_class.h		\
+			primitive_configuration.h	\
+			primitive.h			\
+			primitive_utils.h
 
 # End of Makefile.am
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

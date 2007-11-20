@@ -157,6 +157,7 @@ struct EThread : public Exception
 class IProcess
 {
 public:
+	virtual ~IProcess() {};
 
 	/** 
 	  * Return a pointer on the current process.
@@ -184,3 +185,6 @@ public:
 #endif // NL_THREAD_H
 
 /* End of thread.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

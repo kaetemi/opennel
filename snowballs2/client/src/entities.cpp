@@ -27,7 +27,7 @@
 // Includes
 //
 
-#include <math.h>
+#include <cmath>
 #include <map>
 
 #include <nel/misc/types_nl.h>
@@ -81,7 +81,7 @@ using namespace NLPACS;
 // Variables
 //
 
-// A map of entities. All entities are later reffered by their unique id
+// A map of entities. All entities are later referred by their unique id
 map<uint32, CEntity>	Entities;
 
 CEntity					*Self = NULL;
@@ -140,7 +140,7 @@ void addEntity (uint32 eid, std::string name, CEntity::TType type, const CVector
 	eit = (Entities.insert (make_pair (eid, CEntity()))).first;
 	CEntity	&entity = (*eit).second;
 
-	// Check that in the case the entity newly created is a Self, ther isn't a Self yet.
+	// Check that in the case the entity newly created is a Self, there's not a Self yet.
 	if (type == CEntity::Self)
 	{
 		if (Self != NULL)
@@ -181,7 +181,7 @@ void addEntity (uint32 eid, std::string name, CEntity::TType type, const CVector
 		entity.MovePrimitive->setHeight(1.8f);
 		// only use one world image, so use insert in world image 0
 		entity.MovePrimitive->insertInWorldImage(0);
-		// retreive the start position of the entity
+		// retrieve the start position of the entity
 		entity.MovePrimitive->setGlobalPosition(CVectorD(startPosition.x, startPosition.y, startPosition.z), 0);
 
 		// create instance of the mesh character
@@ -189,6 +189,9 @@ void addEntity (uint32 eid, std::string name, CEntity::TType type, const CVector
 		entity.Skeleton = Scene->createSkeleton ("gnu.skel");
 		// use the instance on the skeleton
 		entity.Skeleton.bindSkin (entity.Instance);
+
+		// Allow the skeleton to cast shadows.
+		entity.Skeleton.enableCastShadowMap(true);
 
 		entity.Instance.hide ();
 
@@ -205,7 +208,7 @@ void addEntity (uint32 eid, std::string name, CEntity::TType type, const CVector
 	case CEntity::Other:
 		entity.MovePrimitive = MoveContainer->addCollisionablePrimitive(0, 1);
 		entity.MovePrimitive->setPrimitiveType(UMovePrimitive::_2DOrientedCylinder);
-		entity.MovePrimitive->setReactionType(UMovePrimitive::DoNothing);
+		entity.MovePrimitive->setReactionType(UMovePrimitive::Slide);
 		entity.MovePrimitive->setTriggerType(UMovePrimitive::NotATrigger);
 		entity.MovePrimitive->setCollisionMask(OtherCollisionBit+SelfCollisionBit+SnowballCollisionBit);
 		entity.MovePrimitive->setOcclusionMask(OtherCollisionBit);
@@ -314,7 +317,7 @@ void removeEntity (uint32 eid)
 	EIT eit = findEntity (eid);
 	CEntity	&entity = (*eit).second;
 
-	// if there is a particule system linked, delete it
+	// if there is a particle system linked, delete it
 	if (!entity.Particule.empty())
 	{
 		Scene->deleteInstance (entity.Particule);
@@ -368,7 +371,7 @@ void stateAppear (CEntity &entity)
 	}
 
 	// after 5 seconds, delete the particle system (if any)
-	// and passe the entity into the Normal state
+	// and pass the entity into the Normal state
 	if (CTime::getLocalTime () > entity.StateStartTime + 3000)
 	{
 		if (!entity.Particule.empty())
@@ -403,7 +406,7 @@ void stateDisappear (CEntity &entity)
 		}
 	}
 
-	// after 5 seconds, remove the particule system and the entity entry
+	// after 5 seconds, remove the particle system and the entity entry
 	if (CTime::getLocalTime () > entity.StateStartTime + 3000)
 	{
 		deleteEntity (entity);
@@ -414,11 +417,6 @@ void stateDisappear (CEntity &entity)
 			entity.MovePrimitive->move(CVector(0,0,0), 0);
 	}
 }
-
-
-
-
-
 
 void stateNormal (CEntity &entity)
 {
@@ -886,6 +884,9 @@ void	shotSnowball(uint32 sid, uint32 eid, const CVector &start, const CVector &t
 
 
 //
+// Commands
+//
+
 NLMISC_COMMAND(remove_entity,"remove a local entity","<eid>")
 {
 	// check args, if there s not the right number of parameter, return bad
@@ -997,3 +998,6 @@ NLMISC_COMMAND(entities, "display all entities info", "")
 	}
 	return true;
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

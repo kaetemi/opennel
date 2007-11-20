@@ -291,6 +291,9 @@ void CComplexSource::stop()
 	case CComplexSound::MODE_ALL_IN_ONE:
 		mixer->removeEvents(this);
 		break;
+	case CComplexSound::MODE_UNDEFINED:
+	default:
+		break;
 	}
 
 	CSourceCommon::stop();
@@ -719,3 +722,6 @@ void CComplexSource::checkup()
 
 
 } // NLSOUND
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

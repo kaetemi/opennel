@@ -47,7 +47,7 @@ class CStringStream : public CMemStream
 public:
 
 	/// Initialization constructor
-	CStringStream( bool inputStream=false, uint32 defaultcapacity=0 ) : CMemStream( inputStream, defaultcapacity ) {}
+	CStringStream( bool inputStream=false, uint32 defaultcapacity=0 ) : CMemStream( inputStream, false, defaultcapacity ) {}
 
 	/// Copy constructor
 	CStringStream( const CStringStream& other ) : CMemStream( other ) {}
@@ -140,3 +140,6 @@ public:
 #endif // NL_STRING_STREAM_H
 
 /* End of string_stream.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

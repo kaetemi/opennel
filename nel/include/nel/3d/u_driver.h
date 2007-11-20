@@ -73,6 +73,8 @@ class ULight;
 class UAnimationSet;
 class UWaterEnvMap;
 
+typedef void (*emptyProc)(void);
+
 //****************************************************************************
 /// Monitor color properties
 struct CMonitorColorProperties
@@ -97,33 +99,35 @@ struct CMonitorColorProperties
  */
 class UDriver
 {
-public:	
+public:
 	/// A Graphic Mode descriptor.
-	class CMode 
+	struct CMode
 	{
-	public:
 		bool				Windowed;
 		uint16				Width;
 		uint16				Height;
 		uint8				Depth;
-		uint				Frequency;	// In hz. Used only in fullscreen, default is window selection
+		uint				Frequency;	// In hz. Default is Windows selection
+		sint8				AntiAlias;	// -1 = no AA, 0 = max, 2 = 2x sample, 4 = 4x sample, ...
 
-							CMode(void) 
-							{ 
-								Windowed=false;
-								Width=0;
-								Height=0;
-								Depth=0;
-								Frequency=0;
-							}
-							CMode(uint16 w, uint16 h, uint8 d, bool windowed= true, uint frequency = 0)
-							{
-								Windowed=windowed;
-								Width=w;
-								Height=h;
-								Depth=d;
-								Frequency=frequency;
-							}
+		CMode()
+		{
+			Windowed = false;
+			Width = 0;
+			Height = 0;
+			Depth = 0;
+			Frequency = 0;
+			AntiAlias = -1;
+		}
+		CMode(uint16 w, uint16 h, uint8 d, bool windowed= true, uint frequency = 0, sint8 aa = -1)
+		{
+			Windowed = windowed;
+			Width = w;
+			Height = h;
+			Depth = d;
+			Frequency = frequency;
+			AntiAlias = aa;
+		}
 	};
 
 	typedef std::vector<CMode> TModeList;
@@ -182,7 +186,8 @@ public:
 	  * create the window. call activate(). Return true if mode activated, false if it failed.
 	  * \param show show or hide the window in window mode.
 	  */
-	virtual	bool			setDisplay(const CMode &mode, bool show = true) =0;
+	virtual	bool			setDisplay(const CMode &mode, bool show = true, bool resizeable = true) =0;
+	virtual	bool			setDisplay(void *wnd, const CMode &mode, bool show = true, bool resizeable = true) =0;
 	virtual bool			setMode(const CMode& mode)=0;
 	virtual bool			getModes(std::vector<CMode> &modes)=0;
 	virtual bool			getCurrentScreenMode(CMode &mode)=0;
@@ -801,7 +806,7 @@ public:
 	/**
 	 *	This is the static function which build a UDriver, the root for all 3D functions.
 	 */
-	static	UDriver			*createDriver(uint windowIcon = 0, bool direct3d = false);
+	static	UDriver			*createDriver(uint windowIcon = 0, bool direct3d = false, emptyProc exitFunc = 0);
 
 	/**
 	 *	Purge static memory
@@ -817,3 +822,6 @@ public:
 #endif // NL_U_DRIVER_H
 
 /* End of u_driver.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -717,7 +717,7 @@ bool CEntityIdTranslator::isEntityOnline (const CEntityId &eid)
 std::string CEntityIdTranslator::getRegisterableString( const ucstring & entityName )
 {
 	string ret = toLower( entityName.toString() );
-	uint pos = ret.find( 0x20 );
+	string::size_type pos = ret.find( 0x20 );
 	while( pos != string::npos )
 	{
 		ret.erase( pos,1 );
@@ -874,3 +874,6 @@ NLMISC_CATEGORISED_COMMAND(nel,playerInfo,"Get informations about a player or al
 }
 
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

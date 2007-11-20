@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo manage better the init/release system (if a throw occurs in the init, we must release correctly the driver)
  */
 
 /* Copyright, 2000 Nevrax Ltd.
@@ -122,7 +121,7 @@ bool CDriverGL::activeNVVertexProgram (CVertexProgram *program)
 			}
 
 			// Insert into driver list. (so it is deleted when driver is deleted).
-			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end());
+			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end(), NULL);
 
 			// Create a driver info
 			*it = drvInfo = new CVertexProgamDrvInfosGL (this, it);
@@ -575,7 +574,7 @@ bool CDriverGL::setupEXTVertexShader(const CVPParser::TProgram &program, GLuint 
 					}
 					break;
 					case CVPOperand::Constant: 
-						nlassert(operand.Value.ConstantValue < _EVSNumConstant); // constant index too high
+						nlassert(uint(operand.Value.ConstantValue) < _EVSNumConstant); // constant index too high
 						srcValue[l] = _EVSConstantHandle + operand.Value.ConstantValue; 												
 						EVS_INFO(("Src = constant" + toString(operand.Value.ConstantValue)).c_str());
 					break;
@@ -1475,7 +1474,7 @@ bool CDriverGL::activeARBVertexProgram (CVertexProgram *program)
 				return false;
 			}			
 			// Insert into driver list. (so it is deleted when driver is deleted).
-			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end());
+			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end(), NULL);
 
 			// Create a driver info
 			*it = drvInfo = new CVertexProgamDrvInfosGL (this, it);
@@ -1557,7 +1556,7 @@ bool CDriverGL::activeEXTVertexShader (CVertexProgram *program)
 			*/
 
 			// Insert into driver list. (so it is deleted when driver is deleted).
-			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end());
+			ItVtxPrgDrvInfoPtrList	it= _VtxPrgDrvInfos.insert(_VtxPrgDrvInfos.end(), NULL);
 
 			// Create a driver info
 			*it = drvInfo = new CVertexProgamDrvInfosGL (this, it);
@@ -1897,3 +1896,6 @@ bool CDriverGL::supportVertexProgramDoubleSidedColor() const
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

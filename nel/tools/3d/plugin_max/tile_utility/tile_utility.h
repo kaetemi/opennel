@@ -26,13 +26,27 @@
 #ifndef __TILE_UTILITY__H
 #define __TILE_UTILITY__H
 
-#include "Max.h"
-#include "resource.h"
-#include "istdplug.h"
-#include "iparamb2.h"
-#include "iparamm2.h"
+#pragma conform(forScope, push)
+#pragma conform(forScope, off)
 
-#include "utilapi.h"
+#define _CRT_SECURE_NO_DEPRECATE
+
+#include <Max.h>
+#include <istdplug.h>
+#include <iparamb2.h>
+#include <iparamm2.h>
+#include <utilapi.h>
+#include <plugapi.h>
+#include <stdmat.h>
+
+#undef _CRT_SECURE_NO_DEPRECATE
+
+#pragma conform(forScope, pop)
+
+#undef min
+#undef max
+
+#include "resource.h"
 
 extern TCHAR *GetString(int id);
 
@@ -41,3 +55,6 @@ extern HINSTANCE hInstance;
 #define RGBAddClassID (Class_ID(0x5621932, 0x565a6387))
 
 #endif // __TILE_UTILITY__H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

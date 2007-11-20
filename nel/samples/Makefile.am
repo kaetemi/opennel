@@ -4,8 +4,12 @@
 
 MAINTAINERCLEANFILES = Makefile.in
 
-SUBDIRS              = sound_sources pacs georges 3d net
+DIST_SUBDIRS              = sound_sources pacs georges 3d net misc
 
+SUBDIRS              = pacs georges 3d net misc
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

@@ -30,6 +30,7 @@
 #include "nel/net/callback_server.h"
 
 //extern NLNET::CCallbackServer *WSServer;
+extern uint NbPlayers;
 
 void connectionWSInit ();
 void connectionWSUpdate ();
@@ -38,3 +39,6 @@ void connectionWSRelease ();
 #endif // NL_CONNECTION_WS_H
 
 /* End of connection_ws.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

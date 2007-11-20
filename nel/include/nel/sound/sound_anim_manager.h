@@ -30,7 +30,6 @@
 
 #include "nel/misc/vector.h"
 #include "u_source.h"
-#include <hash_map>
 
 namespace NL3D
 {
@@ -63,7 +62,7 @@ const TSoundAnimId CSoundAnimationNoId = -1;
 typedef sint32 TSoundAnimPlayId;
 
 /// Animation name-to-id hash map
-typedef std::hash_map<std::string, TSoundAnimId> TSoundAnimMap;
+typedef CHashMap<std::string, TSoundAnimId> TSoundAnimMap;
 
 /// Animation vector
 typedef std::vector<CSoundAnimation*> TSoundAnimVector;
@@ -188,3 +187,6 @@ public:
 } // namespace NLSOUND
 
 #endif // NL_SOUND_ANIM_MANAGER_H
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

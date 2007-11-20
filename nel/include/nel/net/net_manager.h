@@ -43,6 +43,8 @@
 #include <vector>
 
 #include "nel/misc/time_nl.h"
+#include "nel/misc/string_id_array.h"
+
 #include "callback_net_base.h"
 #include "naming_client.h"
 
@@ -125,7 +127,7 @@ public:
 	static void	addGroup (const std::string &groupName, const std::string &serviceName);
 
 	/// Adds a callback array to a specific service connection. You can add callback only *after* adding the server, the client or the group
-	static void	addCallbackArray (const std::string &serviceName, const TCallbackItem *callbackarray, sint arraysize);
+	static void	addCallbackArray (const std::string &serviceName, const TCallbackItem *callbackarray, NLMISC::CStringIdArray::TStringId arraysize);
 
 	/** Call it evenly. the parameter select the timeout value in milliseconds for each update. You are absolutely certain that this
 	 * function will not be returns before this amount of time you set.
@@ -192,3 +194,6 @@ private:
 #endif // NL_NET_MANAGER_H
 
 /* End of net_manager.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

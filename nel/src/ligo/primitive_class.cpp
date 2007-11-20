@@ -659,8 +659,8 @@ void	CPrimitiveClass::CParameter::CConstStringValue::getPrimitivesForPrimPath	(s
 bool CPrimitiveClass::CParameter::translateAutoname (std::string &result, const IPrimitive &primitive, const CPrimitiveClass &primitiveClass) const
 {
 	result = "";
-	uint strBegin = 0;
-	uint strEnd = 0;
+	string::size_type strBegin = 0;
+	string::size_type strEnd = 0;
 	while (strBegin != Autoname.size())
 	{
 		strEnd = Autoname.find ('$', strBegin);
@@ -816,3 +816,7 @@ bool CPrimitiveClass::CParameter::getDefaultValue (std::vector<std::string> &res
 
 // ***************************************************************************
 
+
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

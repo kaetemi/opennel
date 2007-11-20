@@ -32,6 +32,7 @@
 #ifdef NL_OS_WINDOWS
 
 #define WIN32_LEAN_AND_MEAN
+#define NOMINMAX
 #include <windows.h>
 
 #else // NL_OS_UNIX
@@ -42,14 +43,14 @@
 
 
 #include <GL/gl.h>
-#include <GL/glext.h>	// Please download it from http://oss.sgi.com/projects/ogl-sample/ABI/"
+#include <GL/glext.h>	// Please download it from http://www.opengl.org/registry/"
 
 #ifndef GL_GLEXT_VERSION
-#error "I need a newer <GL/glext.h>. Please download it from http://oss.sgi.com/projects/ogl-sample/ABI/"
+#error "I need a newer <GL/glext.h>. Please download it from http://www.opengl.org/registry/"
 #endif // GL_GLEXT_VERSION
 
 #if GL_GLEXT_VERSION < 7
-#error "I need a newer <GL/glext.h>. Please download it from http://oss.sgi.com/projects/ogl-sample/ABI/"
+#error "I need a newer <GL/glext.h>. Please download it from http://www.opengl.org/registry/"
 #endif // GL_GLEXT_VERSION < 7
 
 #include "driver_opengl_extension_def.h"
@@ -67,7 +68,7 @@ struct	CGlExtensions
 
 	// Required Extensions.
 	bool	ARBMultiTexture;
-	sint	NbTextureStages;
+	uint	NbTextureStages;
 	bool	EXTTextureEnvCombine;
 
 	// Optionnal Extensions.	
@@ -156,7 +157,6 @@ public:
 		WGLARBPixelFormat= false;
 		WGLEXTSwapControl= false;
 		EXTBlendColor= false;
-		ATIVertexArrayObject= false;
 		ATIEnvMapBumpMap = false;
 		ATIFragmentShader = false;
 		ATIVertexArrayObject = false;
@@ -175,8 +175,57 @@ public:
 		// misc
 		IsATI9500OrAbove = false;
 	};
-};
+	
 
+	std::string toString() {
+		std::string result = "OpenGL ver ";
+		result += Version1_2 ? "1.2 or above" : "1.1 or below";
+		result += "; extensions:\n  texturing: ";
+		result += ARBMultiTexture ? "ARBMultiTexture " : "";
+		result += EXTTextureEnvCombine ? "EXTTextureEnvCombine " : "";
+		result += ARBTextureCompression ? "ARBTextureCompression " : "";
+		result += EXTTextureCompressionS3TC ? "EXTTextureCompressionS3TC " : "";
+		result += NVTextureEnvCombine4 ? "NVTextureEnvCombine4 " : "";
+		result += ATITextureEnvCombine3 ? "ATITextureEnvCombine3 " : "";
+		result += ATIXTextureEnvRoute ? "ATITextureEnvRoute " : "";
+		result += ARBTextureCubeMap ? "ARBTextureCubeMap " : "";
+		result += ATIEnvMapBumpMap ? "ATIEnvMapBumpMap " : "";
+		result += "texture stages = ";
+		result += NLMISC::toString(NbTextureStages);
+		
+		result += "\n  programs:  ";
+		result += NVTextureShader ? "NVTextureShader " : "";
+		result += ATIFragmentShader ? "ATIFragmentShader " : "";
+		result += ARBFragmentProgram ? "ARBFragmentProgram " : "";
+		result += NVVertexProgram ? "NVVertexProgram " : "";
+		result += ARBVertexProgram ? "ARBVertexProgram " : "";
+		result += EXTVertexShader ? "EXTVertexShader " : "";
+		result += NVVertexProgramEmulated ? "NVVertexProgramEmulated " : "";
+
+		result += "\n  misc:      ";
+		result += EXTVertexWeighting ? "EXTVertexWeighting " : "";
+		result += EXTSeparateSpecularColor ? "EXTSeparateSpecularColor " : "";
+		result += EXTSecondaryColor ? "EXTSecondaryColor " : "";
+		result += EXTBlendColor ? "EXTBlendColor " : "";
+
+		result += "\n  WindowsGL: ";
+		result += WGLARBPBuffer ? "WGLARBPBuffer " : "";
+		result += WGLARBPixelFormat ? "WGLARBPixelFormat " : "";
+		result += WGLEXTSwapControl ? "WGLEXTSwapControl " : "";
+
+		result += "\n  Array/VBO: ";
+		result += NVVertexArrayRange ? ("NVVertexArrayRange (MaxVertex = " +
+					NLMISC::toString(NVVertexArrayRangeMaxVertex) + ") ") : "";
+		result += ATIVertexArrayObject ? "ATIVertexArrayObject " : "";
+		result += ATIVertexArrayObject ? "ATIVertexArrayObject " : "";
+		result += ATIVertexAttribArrayObject ? "ATIVertexAttribArrayObject " : "";
+		result += ARBVertexBufferObject ? "ARBVertexBufferObject " : "";
+		result += ATIMapObjectBuffer ? "ATIMapObjectBuffer" : "";
+	
+		return result;
+	}
+
+};
 
 // ***************************************************************************
 
@@ -612,6 +661,8 @@ extern PFNWGLGETSWAPINTERVALEXTPROC	wglGetSwapIntervalEXT;
 // WGL_ARB_extensions_string
 extern PFNWGFGETEXTENSIONSSTRINGARB			wglGetExtensionsStringARB;
 
+#endif
+
 // GL_EXT_framebuffer_object
 extern NEL_PFNGLISRENDERBUFFEREXTPROC			nglIsRenderbufferEXT;
 extern NEL_PFNGLISFRAMEBUFFEREXTPROC			nglIsFramebufferEXT;
@@ -626,8 +677,9 @@ extern NEL_PFNGLFRAMEBUFFERRENDERBUFFEREXTPROC	nglFramebufferRenderbufferEXT;
 extern NEL_PFNGLDELETERENDERBUFFERSEXTPROC		nglDeleteRenderbuffersEXT;
 extern NEL_PFNGLDELETEFRAMEBUFFERSEXTPROC		nglDeleteFramebuffersEXT;
 
-#endif
-
 
 #endif // NL_OPENGL_EXTENSION_H
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

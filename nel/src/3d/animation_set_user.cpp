@@ -36,7 +36,6 @@ namespace NL3D
 
 UAnimation *CAnimationSetUser::getAnimation (uint animationId)
 {
-	NL3D_MEM_ANIMATION_SET
 
 	return _AnimationSet->getAnimation (animationId);
 }
@@ -45,7 +44,6 @@ UAnimation *CAnimationSetUser::getAnimation (uint animationId)
 
 const CAnimationSet* CAnimationSetUser::getAnimationSet () const
 {
-	NL3D_MEM_ANIMATION_SET
 
 	return _AnimationSet;
 }
@@ -65,7 +63,6 @@ uint CAnimationSetUser::getAnimationSampleDivisor() const
 // ***************************************************************************
 void CAnimationSetUser::build ()
 {
-	NL3D_MEM_ANIMATION_SET
 
 	// build
 	_AnimationSet->build ();
@@ -77,3 +74,6 @@ void CAnimationSetUser::build ()
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

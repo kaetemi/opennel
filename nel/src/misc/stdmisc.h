@@ -1,25 +1,24 @@
 
 #include "nel/misc/types_nl.h"
 
-#include <cstdlib>
-#include <cstdio>
+#include <map>
+#include <set>
+#include <list>
 #include <cmath>
-
+#include <deque>
+#include <cstdio>
 #include <string>
 #include <vector>
-#include <list>
-#include <map>
-#include <hash_map>
-#include <set>
-#include <hash_set>
-#include <algorithm>
-//#include <sstream>
-#include <exception>
+#include <cstdlib>
 #include <utility>
-#include <deque>
+#include <algorithm>
+#include <exception>
 
-#include "nel/misc/mem_displayer.h"
-#include "nel/misc/common.h"
 #include "nel/misc/debug.h"
-#include "nel/misc/system_info.h"
+#include "nel/misc/common.h"
 #include "nel/misc/fast_mem.h"
+#include "nel/misc/system_info.h"
+#include "nel/misc/mem_displayer.h"
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

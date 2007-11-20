@@ -171,7 +171,7 @@ void CVarPath::decode ()
 	for (uint i = 0; i < dest.size(); ++i)
 	{
 		string srv, var;
-		uint pos;
+		string::size_type pos;
 		
 		if ((pos = dest[i].find ('.')) != string::npos)
 		{
@@ -229,3 +229,6 @@ NLMISC_CATEGORISED_COMMAND(nel, varPath, "Test a varpath (for debug purpose)", "
 	
 	return true;
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

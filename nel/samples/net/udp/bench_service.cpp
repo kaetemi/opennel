@@ -65,8 +65,8 @@ using namespace NLNET;
 
 struct CClient
 {
-	CClient (TSockId from, uint32 session, const string &cn) : From(from), Session(session), NextPingNumber(0), ConnectionName(cn), FirstWrite(true),
-		NbPing(0), NbPong(0), MeanPongTime(0), NbDuplicated(0), LastPongReceived(0), FullMeanPongTime(0), FullNbPong(0), BlockNumber(0)
+	CClient (TSockId from, uint32 session, const string &cn) : From(from), Session(session), NextPingNumber(0), LastPongReceived(0), ConnectionName(cn),
+		BlockNumber(0), FullMeanPongTime(0), FullNbPong(0), NbPing(0), NbPong(0), MeanPongTime(0), NbDuplicated(0), FirstWrite(true)
 	{ PongReceived.resize (1001); }
 
 	CInetAddress	Address;	// udp address
@@ -166,7 +166,7 @@ string getDate()
 
 void cbInit (CMessage &msgin, TSockId from, CCallbackNetBase &netbase)
 {
-	uint32 session = (uint32) from;
+	uint64 session = (uint64)(uintptr_t) from;
 
 	string connectionName;
 	msgin.serial (connectionName);
@@ -771,3 +771,6 @@ public:
 
  
 NLNET_SERVICE_MAIN (CBenchService, "BS", "bench_service", 45459, EmptyCallbackArray, "", "")
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

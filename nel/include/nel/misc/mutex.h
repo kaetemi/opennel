@@ -37,6 +37,9 @@
 #include <semaphore.h> // PThread POSIX semaphores
 #include <unistd.h>
 #define __forceinline
+#elif defined(NL_OS_WINDOWS)
+#	define NOMINMAX
+#	include <windows.h>
 #endif
 
 #undef MUTEX_DEBUG

@@ -14,17 +14,6 @@
 //#include "ViewPopup.h"
 #include "pic\readpic.h"
 
-/*#ifdef _DEBUG
-#define new DEBUG_NEW
-#undef THIS_FILE
-static char THIS_FILE[] = __FILE__;
-#endif*/
-
-
-#ifdef NL_NEW
-	#undef new
-#endif
-
 using namespace NL3D;
 
 extern CTileBank tileBank2;
@@ -1673,3 +1662,6 @@ void CTView::OnLButtonDblClk(UINT nFlags, CPoint point)
 	// TODO: Add your message handler code here and/or call default
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

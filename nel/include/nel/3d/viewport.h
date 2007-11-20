@@ -31,7 +31,6 @@
 #include "nel/misc/matrix.h"
 #include "frustum.h"
 
-#define NL3D_MEM_VIEWPORT						NL_ALLOC_CONTEXT( 3dVwPrt )
 
 namespace NL3D
 {
@@ -92,7 +91,6 @@ public:
 	  */
 	void getValues (float& x, float& y, float& width, float& height) const
 	{
-		NL3D_MEM_VIEWPORT
 		x=_X;
 		y=_Y;
 		width=_Width;
@@ -119,3 +117,6 @@ private:
 #endif // NL_VIEWPORT_H
 
 /* End of viewport.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

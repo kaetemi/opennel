@@ -496,6 +496,8 @@ public:
 	CPSFluidFrictionFunctor() : _K(1.f) 
 	{		
 	}
+	
+	virtual ~CPSFluidFrictionFunctor() {}
 
 	#ifdef NL_OS_WINDOWS
 		__forceinline
@@ -632,6 +634,8 @@ protected:
 
 struct CPSTurbulForceFunc
 {	
+	virtual ~CPSTurbulForceFunc() {}
+	
 	#ifdef NL_OS_WINDOWS
 		__forceinline
 	#endif
@@ -820,3 +824,6 @@ class CPSMagneticForce : public CPSDirectionnalForce
 #endif // NL_PS_FORCE_H
 
 /* End of ps_force.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

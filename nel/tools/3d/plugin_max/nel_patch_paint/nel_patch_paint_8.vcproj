@@ -60,6 +60,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				CompileAs="0"
@@ -79,7 +80,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib libxml2.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype231.lib"
+				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib libxml2.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype.lib ws2_32.lib"
 				OutputFile=".\Release\nelpaintpatch.dlm"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -184,7 +185,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib libxml2_a.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype231.lib"
+				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib libxml2.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype.lib ws2_32.lib"
 				OutputFile=".\Debug\nelpaintpatch.dlm"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -286,10 +287,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib libxml2_a.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype219.lib"
+				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib libxml2.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype.lib ws2_32.lib"
 				OutputFile=".\ReleaseDebug\nelpaintpatch.dlm"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				ModuleDefinitionFile=".\nel_patch_paint.def"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\ReleaseDebug/nelpaintpatch.pdb"
@@ -387,7 +389,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="nl3d_debug.lib nlmisc_debug.lib libxml2.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype231.lib"
+				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib libxml2.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype.lib ws2_32.lib"
 				OutputFile=".\Hybrid\nelpaintpatch.dlm"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -488,7 +490,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib stlport_vc6.lib libxml2.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype231.lib"
+				AdditionalDependencies="Maxscrpt.lib helpsys.lib winmm.lib libxml2.lib comctl32.lib delayimp.lib bmm.lib core.lib edmodel.lib geom.lib gfx.lib mesh.lib mnmath.lib paramblk2.lib maxutil.lib acap.lib version.lib freetype.lib ws2_32.lib"
 				OutputFile=".\DebugFast\nelpaintpatch.dlm"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -4502,3 +4504,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

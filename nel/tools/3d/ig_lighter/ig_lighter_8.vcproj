@@ -78,7 +78,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Debug/ig_lighter.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -154,6 +154,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -170,7 +171,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\Release/ig_lighter.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -260,7 +261,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\DebugFast/ig_lighter.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -353,7 +354,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib freetype231.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\ReleaseDebug/ig_lighter.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -441,3 +442,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

@@ -41,7 +41,9 @@
 #endif
 
 #if defined(NL_USE_THREAD_COTASK)
+	#ifndef __GNUC__
 	#pragma message(NL_LOC_MSG "Using threaded coroutine")
+	#endif
 	# include "nel/misc/thread.h"
 #else //NL_USE_THREAD_COTASK
 // some platform specifics
@@ -56,12 +58,13 @@
 #  define _WIN32_WINNT 0x0400
 # endif
 
-# include <windows.h>
+#	define NOMINMAX
+#	include <windows.h>
 #elif defined (NL_OS_UNIX)
-# define NL_WIN_CALLBACK 
-# include <ucontext.h>
+#	define NL_WIN_CALLBACK 
+#	include <ucontext.h>
 #else
-# error "Coroutine task are not supported yet by your platform, do it ?"
+#	error "Coroutine task are not supported yet by your platform, do it ?"
 #endif
 #endif //NL_USE_THREAD_COTASK
 
@@ -558,3 +561,6 @@ namespace NLMISC
 
 } // namespace NLMISC
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

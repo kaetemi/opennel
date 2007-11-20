@@ -35,7 +35,6 @@ namespace NL3D {
 // ***************************************************************************
 uint		CVisualCollisionManagerUser::addMeshInstanceCollision(const UVisualCollisionMesh &mesh, const NLMISC::CMatrix &instanceMatrix, bool avoidCollisionWhenInside, bool avoidCollisionWhenOutside)
 {
-	NL3D_MEM_CAMERA_COLLISION
 	// if empty proxy abort
 	if(mesh.empty())
 		return 0;
@@ -80,3 +79,6 @@ void CVisualCollisionManagerUser::getMeshs(const NLMISC::CAABBox &aabbox, std::v
 
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

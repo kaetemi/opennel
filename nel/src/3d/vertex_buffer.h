@@ -659,7 +659,7 @@ private:
 	uint16		remapV2Flags (uint32 oldFlags, uint& weightCount);
 
 	// Reset the touch flags
-	void		resetTouchFlags() {_InternalFlags &= ~TouchedAll;}
+	void		resetTouchFlags() {_InternalFlags &= (uint16)(~TouchedAll);}
 
 	// Force non resident memory
 	void		restaureNonResidentMemory();
@@ -1293,3 +1293,6 @@ inline void CVertexBuffer::unlock () const
 
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

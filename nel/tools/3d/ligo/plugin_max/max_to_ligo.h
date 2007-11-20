@@ -28,12 +28,15 @@
 
 #include "nel/misc/types_nl.h"
 
-#ifdef NL_NEW
-#undef new
-#endif
+#pragma conform(forScope, push)
+#pragma conform(forScope, off)
 
-
+#define _CRT_SECURE_NO_DEPRECATE
 #include <max.h>
+#undef _CRT_SECURE_NO_DEPRECATE
+
+#pragma conform(forScope, pop)
+
 #undef min
 #undef max
 
@@ -87,3 +90,6 @@ public:
 #endif // NL_MAX_TO_LIGO_H
 
 /* End of max_to_ligo.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

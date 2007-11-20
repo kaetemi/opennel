@@ -155,10 +155,12 @@ void	CVegetableBlendLayerModel::render(IDriver *driver)
 // ***************************************************************************
 void	CVegetableBlendLayerModel::traverseRender()
 {
-	NL_ALLOC_CONTEXT( RdrVege )
 	CRenderTrav		&rTrav= getOwnerScene()->getRenderTrav();
 	render(rTrav.getDriver());
 }
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

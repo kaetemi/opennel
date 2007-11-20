@@ -69,6 +69,9 @@ namespace NLMISC
 			return *Instance;
 		}
 
+		/// shorter version of getInstance()
+		static T &instance() { return getInstance(); }
+
 		static void releaseInstance()
 		{
 			if(Instance)
@@ -196,3 +199,6 @@ namespace NLMISC
 #endif // NL_SINGLETON_H
 
 /* End of singleton.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

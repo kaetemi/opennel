@@ -116,6 +116,7 @@ public:
 		/// interface for object that observe this model. They will be notified when it becomes invalid
 		struct IPSModelObserver
 		{
+			virtual ~IPSModelObserver() {};
 			/// called when a system has been invalidated
 			virtual void invalidPS(CParticleSystemModel *psm) = 0;
 		};
@@ -507,3 +508,6 @@ extern uint64 PSStatRender;
 
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

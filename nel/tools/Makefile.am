@@ -4,8 +4,11 @@
 
 MAINTAINERCLEANFILES = Makefile.in
 
-SUBDIRS              = 3d
+SUBDIRS              = 3d misc pacs
 
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

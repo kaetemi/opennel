@@ -271,7 +271,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="freetype219MT.lib odbc32.lib odbccp32.lib"
+				AdditionalDependencies="freetype.lib"
 				OutputFile=".\ReleaseDebug/zviewer.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -522,3 +522,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

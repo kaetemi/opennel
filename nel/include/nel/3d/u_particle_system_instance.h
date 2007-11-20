@@ -165,7 +165,6 @@ public:
 	   * If not used, the fx would only start when it enters the camera, and thus could be late.
 	   * The system must have persistence when it is not visible (for example be flagged as 'SpellFX) or the system will only persist for 1 frame.
 	   * NB : no effect if the fx has been invalidated (because it is finished) or if it is already instanciated
-	   * \todo detect the 'SpellFX' flag of fx at loading to automate this ? (not useful for projectile, though, so it may be better to let the decision to the caller for now..)
 	   */
 	 void   forceInstanciate();
 
@@ -214,3 +213,6 @@ public:
 #endif // NL_U_PARTICLE_SYSTEM_INSTANCE_H
 
 /* End of u_particle_system_instance.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

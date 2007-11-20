@@ -16,10 +16,10 @@
 	<Configurations>
 		<Configuration
 			Name="DebugFast|Win32"
-			OutputDirectory=".\../../../../obj/DebugFast/driver_opengl"
-			IntermediateDirectory=".\../../../../obj/DebugFast/driver_opengl"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -57,10 +57,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdopengl.h"
-				PrecompiledHeaderFile=".\../../../../obj/DebugFast/driver_opengl/driver_opengl.pch"
-				AssemblerListingLocation=".\../../../../obj/DebugFast/driver_opengl/"
-				ObjectFile=".\../../../../obj/DebugFast/driver_opengl/"
-				ProgramDataBaseFileName=".\../../../../obj/DebugFast/driver_opengl/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -84,8 +80,7 @@
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_opengl.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/DebugFast/driver_opengl/nel_drv_opengl_win_df.pdb"
-				ImportLibrary=".\../../../../obj/DebugFast/driver_opengl/nel_drv_opengl_win_df.lib"
+				ImportLibrary="$(OutDir)/nel_drv_opengl_win_df.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -115,10 +110,10 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory=".\../../../../obj/Release/driver_opengl"
-			IntermediateDirectory=".\../../../../obj/Release/driver_opengl"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -162,10 +157,7 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdopengl.h"
-				PrecompiledHeaderFile=".\../../../../obj/Release/driver_opengl/driver_opengl.pch"
-				AssemblerListingLocation=".\../../../../obj/Release/driver_opengl/"
-				ObjectFile=".\../../../../obj/Release/driver_opengl/"
-				ProgramDataBaseFileName=".\../../../../obj/Release/driver_opengl/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -187,7 +179,7 @@
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_opengl.def"
-				ImportLibrary=".\../../../../obj/Release/driver_opengl/nel_drv_opengl_win_r.lib"
+				ImportLibrary="$(OutDir)/nel_drv_opengl_win_r.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -217,10 +209,10 @@
 		</Configuration>
 		<Configuration
 			Name="ReleaseDebug|Win32"
-			OutputDirectory=".\../../../../obj/ReleaseDebug/driver_opengl"
-			IntermediateDirectory=".\../../../../obj/ReleaseDebug/driver_opengl"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -259,10 +251,6 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdopengl.h"
-				PrecompiledHeaderFile=".\../../../../obj/ReleaseDebug/driver_opengl/driver_opengl.pch"
-				AssemblerListingLocation=".\../../../../obj/ReleaseDebug/driver_opengl/"
-				ObjectFile=".\../../../../obj/ReleaseDebug/driver_opengl/"
-				ProgramDataBaseFileName=".\../../../../obj/ReleaseDebug/driver_opengl/"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -286,8 +274,7 @@
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_opengl.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/ReleaseDebug/driver_opengl/nel_drv_opengl_win_rd.pdb"
-				ImportLibrary=".\../../../../obj/ReleaseDebug/driver_opengl/nel_drv_opengl_win_rd.lib"
+				ImportLibrary="$(OutDir)/nel_drv_opengl_win_rd.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -317,10 +304,10 @@
 		</Configuration>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory=".\../../../../obj/Debug/driver_opengl"
-			IntermediateDirectory=".\../../../../obj/Debug/driver_opengl"
+			OutputDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
+			IntermediateDirectory="..\..\..\..\obj\$(ConfigurationName)\$(ProjectName)"
 			ConfigurationType="2"
-			InheritedPropertySheets="UpgradeFromVC71.vsprops"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
@@ -356,10 +343,7 @@
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdopengl.h"
-				PrecompiledHeaderFile=".\../../../../obj/Debug/driver_opengl/driver_opengl.pch"
-				AssemblerListingLocation=".\../../../../obj/Debug/driver_opengl/"
-				ObjectFile=".\../../../../obj/Debug/driver_opengl/"
-				ProgramDataBaseFileName=".\../../../../obj/Debug/driver_opengl/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 				DebugInformationFormat="3"
@@ -383,8 +367,7 @@
 				SuppressStartupBanner="true"
 				ModuleDefinitionFile=".\driver_opengl.def"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\../../../../obj/Debug/driver_opengl/nel_drv_opengl_win_d.pdb"
-				ImportLibrary=".\../../../../obj/Debug/driver_opengl/nel_drv_opengl_win_d.lib"
+				ImportLibrary="$(OutDir)/nel_drv_opengl_win_d.lib"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -946,3 +929,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

@@ -414,7 +414,8 @@ struct TCommandHandler : public TCommandHandlerInfo
 		TCommand cmd = className##_getCommandHandler(commandName); \
 		if (cmd != NULL) \
 		{ \
-			log.displayNL("Execute command: %s", rawCommandString.c_str()); \
+			if (!quiet)\
+				log.displayNL("Execute command: %s", rawCommandString.c_str()); \
 			return (this->*cmd)(rawCommandString, args, log, quiet, human); \
 		} \
 		else \
@@ -675,3 +676,6 @@ struct CSerialCommand
 #endif // NL_COMMAND_H
 
 /* End of command.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

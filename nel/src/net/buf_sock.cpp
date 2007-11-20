@@ -31,10 +31,12 @@
 #include "nel/net/buf_server.h"
 #include "nel/net/net_log.h"
 
+
 #ifdef NL_OS_WINDOWS
-#include <windows.h>
+#	define NOMINMAX
+#	include <windows.h>
 #elif defined NL_OS_UNIX
-#include <netinet/in.h>
+#	include <netinet/in.h>
 #endif
 
 using namespace NLMISC;
@@ -490,3 +492,6 @@ bool CNonBlockingBufSock::receivePart( uint32 nbExtraBytes )
 
 
 } // NLNET
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

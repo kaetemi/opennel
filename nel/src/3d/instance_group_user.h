@@ -30,7 +30,6 @@
 #include "nel/3d/u_instance_group.h"
 #include "scene_group.h"
 
-#define NL3D_MEM_IG						NL_ALLOC_CONTEXT( 3dIg )
 
 namespace NLMISC
 {
@@ -147,7 +146,6 @@ public:
 	// Debug purpose only.
 	CInstanceGroup	&getInternalIG() 
 	{
-		NL3D_MEM_IG
 		return _InstanceGroup;
 	}
 };
@@ -159,3 +157,6 @@ public:
 #endif // NL_INSTANCE_GROUP_USER_H
 
 /* End of instance_group_user.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

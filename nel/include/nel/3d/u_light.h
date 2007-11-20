@@ -62,6 +62,8 @@ public:
 	 */
 	static	ULight	*createLight ();
 
+	virtual ~ULight() {};
+
 	/// \name Quick setup.
 	//@{
 
@@ -256,3 +258,6 @@ public:
 #endif // NL_U_LIGHT_H
 
 /* End of u_light.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

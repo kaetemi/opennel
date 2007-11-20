@@ -222,8 +222,6 @@ void	NLPACS::CRetrieverInstance::link(CRetrieverInstance &neighbor,
 		chainTips.push_back(make_pair(retriever.getStartVector(borderChains[i]),
 									  retriever.getStopVector(borderChains[i])));
 
-	/// \todo Compute real position using _Orientation
-
 	CVector	translation = neighbor._Origin - _Origin;
 /*
 	for (i=0; i<nBorderChains.size(); ++i)
@@ -780,3 +778,6 @@ void	NLPACS::CRetrieverInstance::resetBorderChainLinks(const vector<uint> &links
 		_BorderChainLinks[links[i]].reset();
 	}
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

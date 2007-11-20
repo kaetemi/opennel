@@ -677,8 +677,6 @@ void CIXml::serial(ucstring &b)
 {
 	nlassert( isReading() );
 
-	/// \todo hulud: handle ucstring to utf-8.
-
 	if (_BinaryStream)
 	{
 		_BinaryStream->serial(b);
@@ -1155,3 +1153,6 @@ bool CIXml::getContentString (std::string &result, xmlNodePtr node)
 } // NLMISC
 
 #endif // NL_DONT_USE_EXTERNAL_CODE
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

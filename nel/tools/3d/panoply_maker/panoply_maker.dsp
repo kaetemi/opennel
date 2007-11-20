@@ -94,7 +94,8 @@ LINK32=link.exe
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_CONSOLE" /D "_MBCS" /Yu"stdafx.h" /FD /c
-# ADD CPP /nologo /MD /W3 /GR /GX /Zi /O2 /I "../../../include" /D "_CONSOLE" /D "_MBCS" /D "WIN32" /D "NDEBUG" /D "NL_RELEASE_DEBUG" /Yu"stdafx.h" /FD /c
+# ADD CPP /nologo /MD /W3 /GR /GX /Zi /O2 /I "../../../include" /D "_CONSOLE" /D "_MBCS" /D "WIN32" /D "NDEBUG" /D "NL_RELEASE_DEBUG" /FR /FD /c
+# SUBTRACT CPP /YX /Yc /Yu
 # ADD BASE RSC /l 0x40c /d "NDEBUG"
 # ADD RSC /l 0x40c /d "NDEBUG"
 BSC32=bscmake.exe
@@ -103,6 +104,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /machine:I386
 # ADD LINK32 s3tc.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /debug /machine:I386 /pdbtype:sept
+# SUBTRACT LINK32 /nodefaultlib
 
 !ELSEIF  "$(CFG)" == "panoply_maker - Win32 DebugFast"
 
@@ -119,7 +121,7 @@ LINK32=link.exe
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MDd /W3 /Gm /GR /GX /ZI /Od /D "_CONSOLE" /D "_MBCS" /D "__STL_DEBUG" /D "WIN32" /D "_DEBUG" /FD /GZ /c
 # SUBTRACT BASE CPP /YX /Yc /Yu
-# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /D "_CONSOLE" /D "_MBCS" /D "NL_DEBUG_FAST" /D "WIN32" /D "_DEBUG" /FD /GZ /c
+# ADD CPP /nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "../../../include" /D "_CONSOLE" /D "_MBCS" /D "NL_DEBUG_FAST" /D "WIN32" /D "_DEBUG" /FR /FD /GZ /c
 # SUBTRACT CPP /YX /Yc /Yu
 # ADD BASE RSC /l 0x40c /d "_DEBUG"
 # ADD RSC /l 0x40c /d "_DEBUG"
@@ -188,6 +190,22 @@ SOURCE=.\hls_bank_texture_info.h
 # End Source File
 # Begin Source File
 
+SOURCE=.\info_color_generation.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\info_color_generation.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\info_mask_generation.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\info_mask_generation.h
+# End Source File
+# Begin Source File
+
 SOURCE=.\panoply.cfg
 # End Source File
 # Begin Source File
@@ -211,3 +229,6 @@ SOURCE=.\panoply_maker.cpp
 # End Source File
 # End Target
 # End Project
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+

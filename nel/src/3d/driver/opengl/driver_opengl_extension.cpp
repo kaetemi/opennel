@@ -570,7 +570,6 @@ static bool	setupARBTextureCompression(const char	*glext)
 static bool	setupNVVertexArrayRange(const char	*glext)
 {
 	H_AUTO_OGL(setupNVVertexArrayRange)
-	// \todo_yoyo: TODO_LINUX: for now, just return false.
 #ifndef NL_OS_WINDOWS
 	return false;
 #endif
@@ -1458,3 +1457,6 @@ void	registerWGlExtensions(CGlExtensions &ext, HDC hDC)
 
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

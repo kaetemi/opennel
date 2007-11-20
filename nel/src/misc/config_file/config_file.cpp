@@ -60,9 +60,9 @@ namespace NLMISC
 {
 
 #ifndef NL_DONT_USE_EXTERNAL_CODE
-char *CConfigFile::CVar::TypeName[] = { "Integer", "String", "Float", "Boolean" };
+const char *CConfigFile::CVar::TypeName[] = { "Integer", "String", "Float", "Boolean" };
 #else
-char *CConfigFile::CVar::TypeName[] = { "Integer", "String", "Float" };
+const char *CConfigFile::CVar::TypeName[] = { "Integer", "String", "Float" };
 #endif // NL_DONT_USE_EXTERNAL_CODE
 
 int CConfigFile::CVar::asInt (int index) const
@@ -410,7 +410,7 @@ void CConfigFile::reparse (bool lookupPaths)
 		if (!CPath::lookup(fn, false).empty())
 		{
 			ucstring content;
-			CI18N::readTextFile(fn, content, false, true, true);
+			CI18N::readTextFile(fn, content, true, true, true);
 			string utf8 = content.toUtf8();
 
 			CMemStream stream;
@@ -890,3 +890,6 @@ CConfigFile::CVar *CConfigFile::insertVar (const std::string &varName, const CVa
 }
 
 } // NLMISC
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

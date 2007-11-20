@@ -233,9 +233,10 @@ bool CLibrary::loadLibrary(const std::string &libName, bool addNelDecoration, bo
 	_LibFileName = libPath;
 	// MTR: some new error handling. Just logs if it couldn't load the handle.
 	if(_LibHandle == NULL) {
-		char *errormsg="Verify DLL existence.";
 #ifdef NL_OS_UNIX
-		errormsg=dlerror();
+		char *errormsg=dlerror();
+#else
+		const char *errormsg="Verify DLL existence.";
 #endif
 		nlwarning("Loading library %s failed: %s", libPath.c_str(), errormsg);
 	}
@@ -347,3 +348,6 @@ uint32	INelLibrary::getLoadingCounter()
 
 
 }	// namespace NLMISC
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

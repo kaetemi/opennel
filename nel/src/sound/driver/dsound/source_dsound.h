@@ -30,19 +30,11 @@
 #include "../sound_driver.h"
 #include "../buffer.h"
 
-//#include <windows.h>
 #include <dsound.h>
-#undef min
-#undef max
-
 
 namespace NLSOUND {
 
-
-
 class CBufferDSound;
-
-
 
 /**  Keep trace of following states of the DirectSound buffer:
  *   - the buffer is being filled with samples (filling),
@@ -508,3 +500,6 @@ public:
 #endif // NL_SOURCE_DSOUND_H
 
 /* End of source_al.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

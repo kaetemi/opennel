@@ -4,7 +4,9 @@
 
 MAINTAINERCLEANFILES          = Makefile.in
 
-SUBDIRS                       = fmod
+EXTRA_DIST			= fmod openal dsound
+
+SUBDIRS                       = @SOUND_SUBDIRS@
 
 noinst_LTLIBRARIES            = libnelsnd_lowlevel.la
 
@@ -22,4 +24,7 @@ libnelsnd_lowlevel_la_SOURCES = buffer.cpp                 \
 AM_CXXFLAGS                   = -I$(top_srcdir)/src
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

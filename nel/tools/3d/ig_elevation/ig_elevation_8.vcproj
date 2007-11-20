@@ -72,10 +72,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libxml2.lib freetype231.lib"
+				AdditionalDependencies="freetype.lib libxml2.lib ws2_32.lib"
 				OutputFile=".\ReleaseDebug/ig_elevation.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\ReleaseDebug/ig_elevation.pdb"
 				SubSystem="1"
@@ -163,7 +164,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libxml2.lib freetype231_D.lib"
+				AdditionalDependencies="freetype.lib libxml2.lib ws2_32.lib"
 				OutputFile=".\DebugFast/ig_elevation.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -260,10 +261,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libxml2.lib freetype231_D.lib"
+				AdditionalDependencies="freetype.lib libxml2.lib ws2_32.lib"
 				OutputFile=".\Debug/ig_elevation.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
+				IgnoreDefaultLibraryNames="libcmt.lib"
 				GenerateDebugInformation="true"
 				ProgramDatabaseFile=".\Debug/ig_elevation.pdb"
 				SubSystem="1"
@@ -335,6 +337,7 @@
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
+				BrowseInformation="0"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
 			/>
@@ -351,7 +354,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libxml2.lib freetype231.lib"
+				AdditionalDependencies="freetype.lib libxml2.lib ws2_32.lib"
 				OutputFile=".\Release/ig_elevation.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
@@ -449,3 +452,6 @@
 	<Globals>
 	</Globals>
 </VisualStudioProject>
+
+<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ -->

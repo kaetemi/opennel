@@ -31,7 +31,6 @@
 #include "text_context.h"
 #include "driver_user.h"
 
-#define NL3D_MEM_TEXT_CONTEXT						NL_ALLOC_CONTEXT( 3dTxtCx )
 
 namespace NL3D
 {
@@ -56,7 +55,6 @@ public:
 	/// Constructor
 	CTextContextUser(const std::string fontFileName, const std::string fontExFileName, CDriverUser *drv, CFontManager *fmg)
 	{
-		NL3D_MEM_TEXT_CONTEXT
 		nlassert(drv);
 		_DriverUser= drv;
 
@@ -69,7 +67,6 @@ public:
 	}
 	virtual ~CTextContextUser() 
 	{
-		NL3D_MEM_TEXT_CONTEXT
 	}
 
 
@@ -150,3 +147,6 @@ public:
 #endif // NL_TEXT_CONTEXT_USER_H
 
 /* End of text_context_user.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -329,7 +329,7 @@ void	initNetwork(const std::string &lc, const std::string &addr)
 		loginCookie.setFromString (lc);
 	}
 
-	string res;// TODO = CLoginClient::connectToShard (loginCookie, fsaddr, *Connection);
+	string res = CLoginClient::connectToShard (loginCookie, fsaddr, *Connection);
 	if (!res.empty ())
 	{
 		string err = string ("Connection to shard failed: ") + res;
@@ -394,3 +394,6 @@ void	releaseNetwork()
 		Connection = NULL;
 	}
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

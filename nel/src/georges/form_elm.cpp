@@ -671,7 +671,7 @@ bool CFormElm::arrayInsertNodeByName (const char *name, const CFormDfn **parentD
 			if (arrayIndex<array->Elements.size ())
 			{
 				// Insert the element
-				array->Elements.insert (array->Elements.begin() + arrayIndex);
+				array->Elements.insert (array->Elements.begin() + arrayIndex, CFormElmArray::CElement());
 
 				// Create a new element
 
@@ -3076,3 +3076,6 @@ void CFormElmAtom::warning (bool exception, const char *function, const char *fo
 // ***************************************************************************
 
 } // NLGEORGES
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

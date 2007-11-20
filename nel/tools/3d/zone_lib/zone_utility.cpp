@@ -24,13 +24,13 @@
  */
 
 
-#include <iostream.h>
 #include "nel/misc/types_nl.h"
 #include "nel/misc/file.h"
 #include "nel/3d/quad_tree.h"
 #include "nel/../../src/3d/zone.h"
 #include <vector>
 #include <set>
+#include <iostream>
 
 
 using namespace NL3D;
@@ -280,3 +280,6 @@ uint16 createZoneId(std::string zoneName)
 	getZoneCoordByName(zoneName.c_str(), x, y);
 	return ((y-1)<<8) + x;
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

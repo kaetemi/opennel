@@ -75,6 +75,7 @@ inline CPlaneBasis PSValueBlend(const CPlaneBasis &t1, const CPlaneBasis &t2, fl
 /// Base struct for blending function (exact or sampled)
 template <typename T> struct CPSValueBlendFuncBase
 {
+	virtual ~CPSValueBlendFuncBase() {};
 	virtual void getValues(T &startValue, T &endValue) const = 0;
 	virtual void setValues(T startValue, T endValue) = 0;
 };
@@ -550,3 +551,6 @@ void CPSValueGradientFunc<T>::serial(NLMISC::IStream &f) throw(NLMISC::EStream)
 #endif // NL_PS_ATTRIB_MAKER_TEMPLATE_H
 
 /* End of ps_attrib_maker_template.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

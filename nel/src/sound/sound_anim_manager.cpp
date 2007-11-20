@@ -119,7 +119,6 @@ TSoundAnimId CSoundAnimManager::loadAnimation(std::string& name)
 
 TSoundAnimId CSoundAnimManager::createAnimation(std::string& name)
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundAnimManager);
 	nlassert(!name.empty());
 
 	// create and insert animations
@@ -324,3 +323,6 @@ void CSoundAnimManager::update(float lastTime, float curTime)
 } // namespace NLSOUND 
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

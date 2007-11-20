@@ -25,7 +25,7 @@
 #define	RBRACE	268
 #define	LBRACE	269
 #define	COMMA	270
-#define	INT	271
+#define	INTEGER	271
 #define	REAL	272
 #define	FILELINE	273
 
@@ -42,7 +42,7 @@
 #include "nel/misc/common.h"
 #include "nel/misc/debug.h"
 
-#include <stdio.h>
+#include <cstdio>
 #include <vector>
 #include <string>
 
@@ -115,7 +115,7 @@ int yyerror (const char *);
 typedef union	{
 			cf_value Val;
 		} YYSTYPE;
-#include <stdio.h>
+#include <cstdio>
 
 #ifndef __cplusplus
 #ifndef __STDC__
@@ -196,7 +196,7 @@ static const short yyrline[] = { 0,
 
 static const char * const yytname[] = {   "$","error","$undefined.","ADD_ASSIGN",
 "ASSIGN","VARIABLE","STRING","SEMICOLON","PLUS","MINUS","MULT","DIVIDE","RPAREN",
-"LPAREN","RBRACE","LBRACE","COMMA","INT","REAL","FILELINE","ROOT","instlist",
+"LPAREN","RBRACE","LBRACE","COMMA","INTEGER","REAL","FILELINE","ROOT","instlist",
 "inst","expression","exprbrace","expr2","expr3","expr4","variable", NULL
 };
 #endif
@@ -1530,3 +1530,6 @@ int yyerror (const char *s)
 }
 
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

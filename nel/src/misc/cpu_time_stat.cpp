@@ -3,7 +3,6 @@
  *
  * $Id$
  *
- * \todo ace: test the signal redirection on Unix
  */
 
 /* Copyright, 2004 Nevrax Ltd.
@@ -168,3 +167,6 @@ void	CCPUTimeStat::peekMeasures()
 
 
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

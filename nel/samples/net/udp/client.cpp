@@ -85,7 +85,7 @@ CUdpSimSock	*UdpSock = NULL;
 
 uint8		Mode = 0;
 
-uint32		Session = 0;
+uint64		Session = 0;
 
 string		ConnectionName;
 
@@ -421,3 +421,6 @@ int main( int argc, char **argv )
 	exit ("");
 	return EXIT_SUCCESS;
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -158,7 +158,6 @@ void CSoundAnimation::play(UAudioMixer* mixer, float lastTime, float curTime, NL
 
 void CSoundAnimation::load()
 {
-	NL_ALLOC_CONTEXT(NLSOUND_CSoundAnimation);
 	CIFile file;
 
 	// Open the file
@@ -219,3 +218,6 @@ void CSoundAnimation::load()
 }
 
 } //namespace NLSOUND 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

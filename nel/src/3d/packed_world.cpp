@@ -208,4 +208,7 @@ void CPackedWorld::select(const NLMISC::CPolygon2D &poly, std::vector<NLMISC::CT
 }
 
 
-} // Nl3D
+} // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

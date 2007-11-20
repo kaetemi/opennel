@@ -34,7 +34,6 @@ namespace NL3D
 // ***************************************************************************
 void	CPrimitiveProfile::reset()
 {
-	NL3D_MEM_PRIMITIVE_PROFILE
 	NPoints= 0;
 	NLines= 0;
 	NTriangles= 0;
@@ -44,3 +43,6 @@ void	CPrimitiveProfile::reset()
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -200,7 +200,6 @@ IShape* CExportNel::buildShape (INode& node, TimeValue time, const TInodePtrInt 
 			if (obj != tri) 
 				deleteIt = true;
 
-			/// \todo hulud: here, check if it is another kind of shape than mesh, multi lod mesh or mrm mesh. 
 			if (hasWaterMaterial(node, time)) // is this a water shape ?
 			{
 				retShape = buildWaterShape(node, time);
@@ -324,10 +323,6 @@ IShape* CExportNel::buildShape (INode& node, TimeValue time, const TInodePtrInt 
 					// Build it
 					multiMesh->build (multiLodBuild);
 
-					/* \todo yoyo: TODO_OPTIM: CMeshMultiLod::optimizeMaterialUsage();
-						must update "force material to be animatable"
-					*/
-
 					// Return this pointer
 					meshBase=multiMesh;
 
@@ -427,7 +422,6 @@ IShape* CExportNel::buildShape (INode& node, TimeValue time, const TInodePtrInt 
 					// Animate materials (must do it after optimizeMaterialUsage());
 					if (CExportNel::getScriptAppData (&node, NEL3D_APPDATA_EXPORT_ANIMATED_MATERIALS, 0) != 0)
 					{					
-						/// \todo hulud: check if material are animated before
 						for (uint i=0; i<maxBaseBuild.NumMaterials; i++)
 						{
 							// get the material name of the original material (not remaped)
@@ -607,7 +601,6 @@ void CExportNel::buildBaseMeshInterface (NL3D::CMeshBase::CMeshBaseBuild& buildM
 	buildMesh.DefaultPivot=CVector (0,0,0);
 	buildMesh.DefaultPos=pos;
 
-	// \todo : get the default blend shapes factor
 	Modifier *pMorphMod = getModifier (&node, MAX_MORPHER_CLASS_ID);
 	if (pMorphMod != NULL)
 	for (uint32 i = 0; i < 100; ++i)
@@ -2096,3 +2089,6 @@ bool CExportNel::buildMeshAABBox(INode &node, NLMISC::CAABBox &dest, TimeValue t
 	return true;
 }
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

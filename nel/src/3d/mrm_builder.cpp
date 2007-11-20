@@ -598,7 +598,6 @@ sint	CMRMBuilder::collapseEdge(const CMRMEdge &edge)
 	if( _HasMeshInterfaces )
 		Vertex1.InterfaceLink= InterValue<0.5f? Vertex1.InterfaceLink : Vertex2.InterfaceLink;
 
-	// \todo yoyo: TODO_BUG: Don't know why, but vertices may point on deleted faces.
 	// Temp: we destroy here thoses face from SharedFaces...
 	for(i=0;i<(sint)Vertex1.SharedFaces.size();i++)
 	{
@@ -965,7 +964,6 @@ void	CMRMBuilder::collapseEdges(sint nWantedFaces)
 		if(TmpVertices[ edge.v0 ].CollapsedTo>=0
 			|| TmpVertices[ edge.v1 ].CollapsedTo>=0)
 		{
-			// \todo yoyo: TODO_BUG: potential bug here...
 			CMRMFaceBuild		&f= *(EdgeIt->second.Face);
 			nlassert(f.validEdgeIt(EdgeIt->second));
 			f.invalidEdgeIt(EdgeIt->second, EdgeCollapses);
@@ -973,7 +971,6 @@ void	CMRMBuilder::collapseEdges(sint nWantedFaces)
 			bug2++;
 			continue;
 		}
-		// \todo yoyo: TODO_BUG: potential bug here...
 		// If a mesh is "open" it will crash if a "hole collapse"...
 		if(edge.v0==edge.v1)
 		{
@@ -3147,3 +3144,6 @@ bool	CMRMBuilder::buildMRMSewingMeshes(const CMesh::CMeshBuild &mbuild, uint nWa
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

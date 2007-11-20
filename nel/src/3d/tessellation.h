@@ -73,14 +73,14 @@ public:
 	// Create at middle.
 	CParamCoord(CParamCoord a, CParamCoord b) 
 	{
-		S= (uint16) (((sint)a.S + (sint)b.S)>>1);
-		T= (uint16) (((sint)a.T + (sint)b.T)>>1);
+		S= (uint16) (((uint16)a.S + (uint16)b.S)>>1);
+		T= (uint16) (((uint16)a.T + (uint16)b.T)>>1);
 	}
 	// Get s,t as floats. returned s,t E [0,1].
 	float	getS() const {return S*OO32768;}
 	float	getT() const {return T*OO32768;}
 	// Set s,t as float. s,t E [0,1].
-	void	setST(float s, float t) {S= (sint16)(s*32768);T= (sint16)(t*32768);}
+	void	setST(float s, float t) {S= (uint16)(s*32768);T= (uint16)(t*32768);}
 	// vertex on the border?
 	bool	onBorder() const {return (S==0 || S==0x8000 || T==0 || T==0x8000);}
 };
@@ -446,3 +446,6 @@ public:
 #endif // NL_TESSELLATION_H
 
 /* End of tessellation.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

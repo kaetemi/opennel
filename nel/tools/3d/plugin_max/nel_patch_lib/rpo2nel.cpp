@@ -30,14 +30,7 @@
 
 // For MAX_RELEASE
 #include <plugapi.h>
-// For mprintf
-#ifdef NL_NEW
-	#undef new 
-	#include <MaxScrpt/maxscrpt.h>
-	#define new NL_NEW
-#else
-	//#include <maxscrpt.h>
-#endif
+#include <MaxScrpt/maxscrpt.h>
 
 using namespace std;
 using namespace NL3D;
@@ -774,3 +767,6 @@ void RPatchMesh::importZone (PatchMesh* pPM, NL3D::CZone& zone, int &zoneId)
 
 // ***************************************************************************
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

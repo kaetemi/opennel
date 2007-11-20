@@ -476,7 +476,7 @@ class PaintPatchMod : public Modifier
 		CreateMouseCallBack* GetCreateMouseCallBack() { return NULL; } 
 		void BeginEditParams( IObjParam  *ip, ULONG flags, Animatable *prev );
 		void EndEditParams( IObjParam *ip, ULONG flags, Animatable *next );
-		RefTargetHandle Clone(RemapDir& remap = NoRemap());
+		RefTargetHandle Clone(RemapDir& remap = DefaultRemapDir());
 		TCHAR *GetObjectName() { return "NeL Patch Painter"; }
 		
 		void RescaleWorldUnits(float f);
@@ -674,3 +674,6 @@ inline bool EPM_PaintMouseProc::isLocked (PaintPatchMod *pobj, EPM_PaintTile* pT
 
 
 #endif // __EDITPATCH_H__
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

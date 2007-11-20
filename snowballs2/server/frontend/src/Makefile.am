@@ -8,5 +8,9 @@ sbin_PROGRAMS        = sno_frontend
 
 sno_frontend_SOURCES = main.cpp
 
+AM_CXXFLAGS		=	-DSNOWBALLS_CONFIG="\"${pkgsysconfdir}\"" -DSNOWBALLS_LOGS="\"${logdir}\""
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

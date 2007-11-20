@@ -27,7 +27,7 @@
 // Includes
 //
 
-#include <math.h>
+#include <cmath>
 #include <nel/misc/vectord.h>
 #include <nel/3d/u_camera.h>
 #include <nel/3d/u_driver.h>
@@ -182,3 +182,6 @@ void	update3dLogo ()
 	LogoScene->animate (float(NewTime)/1000);
 	LogoScene->render ();
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

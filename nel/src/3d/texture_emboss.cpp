@@ -163,3 +163,6 @@ void CTextureEmboss::doGenerate(bool async)
 
 
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

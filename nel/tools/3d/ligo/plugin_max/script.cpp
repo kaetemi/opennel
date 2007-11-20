@@ -25,6 +25,11 @@
 
 #define EXPORT_GET_ALLOCATOR
 
+#pragma conform(forScope, push)
+#pragma conform(forScope, off)
+
+#define _CRT_SECURE_NO_DEPRECATE
+
 // Various MAX and MXS includes
 #include <MaxScrpt/MAXScrpt.h>
 #include <MaxScrpt/3dmath.h>
@@ -41,12 +46,14 @@
 // Visual
 #include <direct.h>
 
-#ifdef min
+#undef _CRT_SECURE_NO_DEPRECATE
+
+#pragma conform(forScope, pop)
+
 #undef min
-#endif
-#ifdef max
 #undef max
-#endif
+
+
 
 // From nel patch lib
 #include "../../plugin_max/nel_patch_lib/rpo.h"
@@ -2087,3 +2094,6 @@ __declspec( dllexport ) void LibInit() { }
 
 // ***************************************************************************
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -46,6 +46,9 @@ class ICollisionCallback
 {
 public:
 
+	/// destructor
+	virtual ~ICollisionCallback () { }
+
 	/// Give a collision reaction
 	virtual	bool			reaction (CMovePrimitive& first, CMovePrimitive& second, const CCollisionDesc& desc)=0;
 
@@ -58,3 +61,6 @@ public:
 #endif // NL_COLLISION_CALLBACK_H
 
 /* End of collision_callback.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -143,14 +143,15 @@ bool		IDriver::release(void)
 
 
 // ***************************************************************************
-GfxMode::GfxMode(uint16 w, uint16 h, uint8 d, bool windowed, bool offscreen, uint frequency)
+GfxMode::GfxMode(uint16 w, uint16 h, uint8 d, bool windowed, bool offscreen, uint frequency, sint8 aa)
 {
-	Windowed= windowed;
-	Width= w;
-	Height= h;
-	Depth= d;
-	OffScreen= offscreen;
-	Frequency= frequency;
+	Windowed = windowed;
+	Width = w;
+	Height = h;
+	Depth = d;
+	OffScreen = offscreen;
+	Frequency = frequency;
+	AntiAlias = aa;
 }
 
 // ***************************************************************************
@@ -474,3 +475,6 @@ void IDriver::profileTextureUsage(std::vector<std::string> &result)
 // ***************************************************************************
 
 }
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

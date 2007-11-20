@@ -53,6 +53,8 @@ public:
 		clear ();
 	}
 
+	virtual ~CCollisionOT () { }
+
 	/// Clear the element
 	void			clear ()
 	{
@@ -474,3 +476,6 @@ inline CCollisionOTInfo	*CCollisionOT::getNextInfo () const
 #endif // NL_COLLISION_OT_H
 
 /* End of collision_ot.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

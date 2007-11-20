@@ -193,7 +193,7 @@ CInstanceGroup*	CExportNel::buildInstanceGroup(const vector<INode*>& vectNode, v
 			++nNumIG;
 		}
 	}
-	/// \todo Make this work (precision):
+	// todo Make this work (precision):
 	/*
 	vGlobalPos = vGlobalPos / nNumIG;
 	for (i = 0; i < nNumIG; ++i)
@@ -985,3 +985,5 @@ void CExportNel::buildScene (NL3D::CScene &scene, NL3D::CShapeBank &shapeBank, I
 
 	_Options.FeedBack = NULL;
 }
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

@@ -29,14 +29,10 @@
 
 #include "nel/misc/win_thread.h"
 #include "nel/misc/path.h"
+#define NOMINMAX
 #include <windows.h>
 
-// Debug : Sept 01 2006
-#if _STLPORT_VERSION >= 0x510
-	#include <typeinfo>
-#else
-	#include <typeinfo.h>
-#endif
+#include <typeinfo>
 
 namespace NLMISC {
 
@@ -606,3 +602,6 @@ bool CProcessWatch::isRunning() const
 } // NLMISC
 
 #endif // NL_OS_WINDOWS
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

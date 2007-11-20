@@ -96,3 +96,6 @@ void nlCheckIBA(CIndexBufferRead &iba, const uint8 *ptStart)
 }
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

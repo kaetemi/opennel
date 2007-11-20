@@ -4,8 +4,11 @@
 
 MAINTAINERCLEANFILES = Makefile.in
 
-SUBDIRS              = chat
+SUBDIRS              = chat udp login_system
 
 
 # End of Makefile.am
+
+
+# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
 

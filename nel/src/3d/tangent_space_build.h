@@ -53,3 +53,6 @@ bool	BuildTangentSpace(CMesh::CMeshBuild &outMeshBuild, const CMesh::CMeshBuild 
 } // NL3D
 
 #endif
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

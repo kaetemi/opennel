@@ -289,7 +289,7 @@ bool CForm::insertParent (uint before, const char *filename, CForm *parent)
 	if (parent->Elements.FormDfn == Elements.FormDfn)
 	{
 		// Set members
-		std::vector<CParent>::iterator ite = ParentList.insert (ParentList.begin() + before);
+		std::vector<CParent>::iterator ite = ParentList.insert (ParentList.begin() + before, CParent());
 		ite->Parent = parent;
 		ite->ParentFilename = filename;
 
@@ -409,3 +409,6 @@ UForm *CForm::getParentForm (uint parent) const
 
 } // NLGEORGES
 
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

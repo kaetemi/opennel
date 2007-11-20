@@ -37,7 +37,6 @@
 #include "quad_grid_clip_cluster.h"
 #include "scene.h"
 
-#define NL3D_MEM_INSTANCE					NL_ALLOC_CONTEXT( 3dIns )
 
 using namespace NLMISC;
 
@@ -177,7 +176,6 @@ bool	CTransformShape::clip()
 // ***************************************************************************
 void	CTransformShape::traverseRender()
 {
-	NL_ALLOC_CONTEXT( RdrShap )
 	H_AUTO( NL3D_TrShape_Render );
 
 
@@ -358,3 +356,6 @@ void	CTransformShape::getLightHotSpotInWorld(CVector &modelPos, float &modelRadi
 
 
 } // NL3D
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

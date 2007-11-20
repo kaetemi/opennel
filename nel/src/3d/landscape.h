@@ -151,7 +151,7 @@ public:
 	/// Constructor
 	CLandscape();
 	/// Destructor. clear().
-	~CLandscape();
+	virtual ~CLandscape();
 
 
 	/// \name Init/Build.
@@ -214,7 +214,6 @@ public:
 	// invalidate all the tiles (force the tiles callbakc to be called again)
 	void invalidateAllTiles();	
 
-	// \todo yoyo: other landscape param setup (Transition etc...).
 	// Store it by landscape, and not only globally in CLandscapeGlobals statics.
 	// @}
 
@@ -1041,3 +1040,6 @@ private:
 #endif // NL_LANDSCAPE_H
 
 /* End of landscape.h */
+
+/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+ */

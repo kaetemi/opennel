@@ -29,7 +29,7 @@
 #include "paint_fill.h"
 #include "paint_tileset.h"
 #include "paint_light.h"
-#include "../../../code/nel/tools/3d/plugin_max/nel_mesh_lib/export_nel.h"
+#include "../nel_mesh_lib/export_nel.h"
 
 using namespace NL3D;
 using namespace NLMISC;
