@@ -75,6 +75,3 @@ public:
 #endif // NL_UNIX_EVENT_EMITTER_H
 
 /* End of unix_event_emitter.h */
-
-/* Merge OpenNeL SVN
- */

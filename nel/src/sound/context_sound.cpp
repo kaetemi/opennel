@@ -296,6 +296,3 @@ void CContextSound::init()
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

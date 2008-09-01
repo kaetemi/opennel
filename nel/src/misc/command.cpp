@@ -983,6 +983,3 @@ ICommandsHandler::~ICommandsHandler()
 
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

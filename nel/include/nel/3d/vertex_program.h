@@ -118,6 +118,3 @@ public:
 #endif // NL_VERTEX_PROGRAM_H
 
 /* End of vertex_program.h */
-
-/* Merge OpenNeL SVN
- */

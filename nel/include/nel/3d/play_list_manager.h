@@ -98,6 +98,3 @@ private:
 #endif // NL_PLAY_LIST_MANAGER_H
 
 /* End of play_list_manager.h */
-
-/* Merge OpenNeL SVN
- */

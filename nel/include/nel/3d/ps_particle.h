@@ -44,6 +44,3 @@
 #endif // NL_PS_PARTICLE_H
 
 /* End of ps_particle.h */
-
-/* Merge OpenNeL SVN
- */

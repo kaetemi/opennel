@@ -322,6 +322,3 @@ void CFontManager::invalidate()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

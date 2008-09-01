@@ -49,6 +49,3 @@ void			CVegetableLightEx::computeCurrentColors()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

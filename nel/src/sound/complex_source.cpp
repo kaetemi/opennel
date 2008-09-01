@@ -722,6 +722,3 @@ void CComplexSource::checkup()
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

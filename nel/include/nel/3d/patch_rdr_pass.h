@@ -125,6 +125,3 @@ private:
 #endif // NL_PATCH_RDR_PASS_H
 
 /* End of patch_rdr_pass.h */
-
-/* Merge OpenNeL SVN
- */

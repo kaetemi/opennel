@@ -256,6 +256,3 @@ public:
 #endif // NL_STATIC_MAP_H
 
 /* End of static_map.h */
-
-/* Merge OpenNeL SVN
- */

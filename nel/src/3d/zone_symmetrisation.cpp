@@ -936,6 +936,3 @@ bool CZoneSymmetrisation::propagateTileState (uint patch, uint s, uint t, const 
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -830,6 +830,3 @@ inline void CIndexBuffer::unlock () const
 #endif // NL_INDEX_BUFFER_H
 
 /* End of index_buffer.h */
-
-/* Merge OpenNeL SVN
- */

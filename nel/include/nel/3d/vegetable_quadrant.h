@@ -63,6 +63,3 @@ public:
 #endif // NL_VEGETABLE_QUADRANT_H
 
 /* End of vegetable_quadrant.h */
-
-/* Merge OpenNeL SVN
- */

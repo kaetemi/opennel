@@ -163,6 +163,3 @@ private:
 #endif // NL_HLS_TEXTURE_BANK_H
 
 /* End of hls_texture_bank.h */
-
-/* Merge OpenNeL SVN
- */

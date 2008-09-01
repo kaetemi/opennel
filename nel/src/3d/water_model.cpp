@@ -2031,6 +2031,3 @@ void	CWaveMakerModel::traverseAnimDetail()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -144,6 +144,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_CURVE_EDIT_H__7E8F583B_8E0D_4623_9128_B0FD23E1DC4A__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

@@ -128,6 +128,3 @@ void getZoneNameByCoord(uint16 x, uint16 y, std::string& zoneName)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

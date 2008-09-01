@@ -486,6 +486,3 @@ void		CFastHLSModifier::convertRGBABitmap(CBitmap &dst, const CBitmap &src, uint
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

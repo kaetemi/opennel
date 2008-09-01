@@ -146,6 +146,3 @@ static const unsigned char light[] =
 
 static const unsigned int lightSize = 1068;
 
-
-/* Merge OpenNeL SVN
- */

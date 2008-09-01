@@ -46,6 +46,3 @@ void		CRawSkinNormalCache::clearArrays()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

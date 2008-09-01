@@ -35,6 +35,3 @@ namespace NL3D
 } // NL3D
 
 #endif
-
-/* Merge OpenNeL SVN
- */

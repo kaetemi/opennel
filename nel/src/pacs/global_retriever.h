@@ -531,6 +531,3 @@ protected:
 #endif // NL_GLOBAL_RETRIEVER_H
 
 /* End of global_retriever.h */
-
-/* Merge OpenNeL SVN
- */

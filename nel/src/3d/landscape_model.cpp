@@ -308,6 +308,3 @@ void		CLandscapeModel::receiveShadowMap(CShadowMap *shadowMap, const CVector &ca
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

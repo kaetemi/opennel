@@ -88,6 +88,3 @@ TCHAR *GetString(int id)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

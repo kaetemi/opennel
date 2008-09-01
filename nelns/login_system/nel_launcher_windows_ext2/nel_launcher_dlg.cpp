@@ -607,6 +607,3 @@ void CNeLLauncherDlg::OnLivesupport()
 {
 	GotoURL("http://atys.ryzom.com/?page=beta_chat");
 }
-
-/* Merge OpenNeL SVN
- */

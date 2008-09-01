@@ -46,6 +46,3 @@ namespace NL3D
 		CPSBrownianForce::initPrecalc();
 	}
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -244,6 +244,3 @@ void CBackgroundSource::onUpdate()
 }
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

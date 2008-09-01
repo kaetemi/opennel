@@ -86,6 +86,3 @@ void releaseGraph ();
 #endif // GRAPH_H
 
 /* End of graph.h */
-
-/* Merge OpenNeL SVN
- */

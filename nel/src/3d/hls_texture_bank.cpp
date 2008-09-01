@@ -194,6 +194,3 @@ void			CHLSTextureBank::CTextureInstance::buildColorVersion(NLMISC::CBitmap &out
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

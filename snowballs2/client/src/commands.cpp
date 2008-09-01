@@ -376,6 +376,3 @@ NLMISC_COMMAND(clear,"clear the chat history","")
 	clearCommands ();
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

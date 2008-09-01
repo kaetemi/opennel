@@ -246,6 +246,3 @@ public:
 #endif // NL_ANIMATION_SET_USER_H
 
 /* End of animation_set_user.h */
-
-/* Merge OpenNeL SVN
- */

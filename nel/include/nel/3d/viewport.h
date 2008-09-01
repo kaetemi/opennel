@@ -117,6 +117,3 @@ private:
 #endif // NL_VIEWPORT_H
 
 /* End of viewport.h */
-
-/* Merge OpenNeL SVN
- */

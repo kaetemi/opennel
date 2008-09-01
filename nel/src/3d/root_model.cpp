@@ -83,6 +83,3 @@ void	CRootModel::traverseRender()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

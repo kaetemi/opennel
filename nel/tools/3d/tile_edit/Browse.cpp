@@ -1495,6 +1495,3 @@ void Browse::OnImportBorder()
 		MessageBox ("The border has been changed.", "Import border", MB_OK|MB_ICONINFORMATION);
 	}
 }
-
-/* Merge OpenNeL SVN
- */

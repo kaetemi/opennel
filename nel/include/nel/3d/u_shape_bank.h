@@ -116,6 +116,3 @@ public:
 #endif // NL_U_SHAPE_BANK_H
 
 /* End of u_shape_bank.h */
-
-/* Merge OpenNeL SVN
- */

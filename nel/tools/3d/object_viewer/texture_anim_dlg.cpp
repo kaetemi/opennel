@@ -387,6 +387,3 @@ void CTextureAnimDlg::OnEditMultitex()
 	_MultiTexDlg = new 	CMultiTexDlg(_Node, _MTP, this, this);
 	_MultiTexDlg->init(this);
 }
-
-/* Merge OpenNeL SVN
- */

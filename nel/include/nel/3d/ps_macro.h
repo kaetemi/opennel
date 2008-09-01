@@ -40,6 +40,3 @@
 #endif
 
 #endif
-
-/* Merge OpenNeL SVN
- */

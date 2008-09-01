@@ -408,6 +408,3 @@ void		CStripifier::optimizeTriangles(const CIndexBuffer &in, CIndexBuffer &out, 
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

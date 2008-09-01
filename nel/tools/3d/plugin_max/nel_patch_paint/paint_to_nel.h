@@ -51,6 +51,3 @@ private:
 	CLandscape							*_Landscape;
 	CNelPatchMap						_MapNeLPatchInfo;
 };
-
-/* Merge OpenNeL SVN
- */

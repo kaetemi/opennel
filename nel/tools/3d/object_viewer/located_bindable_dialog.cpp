@@ -818,6 +818,3 @@ void CLocatedBindableDialog::OnZalign()
 	fla->setAlignOnZAxis(align);
 	updateModifiedFlag();
 }
-
-/* Merge OpenNeL SVN
- */

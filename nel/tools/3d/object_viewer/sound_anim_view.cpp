@@ -622,6 +622,3 @@ void CSoundAnimView::Dump(CDumpContext& dc) const
 
 
 
-
-/* Merge OpenNeL SVN
- */

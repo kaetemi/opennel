@@ -119,6 +119,3 @@ protected:
 } // namespace NLSOUND
 
 #endif // NL_SOUND_ANIM_TRACK_H
-
-/* Merge OpenNeL SVN
- */

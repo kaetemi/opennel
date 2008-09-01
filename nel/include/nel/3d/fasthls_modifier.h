@@ -102,6 +102,3 @@ private:
 #endif // NL_FASTHLS_MODIFIER_H
 
 /* End of fasthls_modifier.h */
-
-/* Merge OpenNeL SVN
- */

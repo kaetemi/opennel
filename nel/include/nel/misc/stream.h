@@ -1737,6 +1737,3 @@ public:
 #endif // NL_STREAM_H
 
 /* End of stream.h */
-
-/* Merge OpenNeL SVN
- */

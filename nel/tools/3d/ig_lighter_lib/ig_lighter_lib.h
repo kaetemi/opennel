@@ -101,6 +101,3 @@ private:
 #endif // NL_IG_LIGHTER_LIB_H
 
 /* End of ig_lighter_lib.h */
-
-/* Merge OpenNeL SVN
- */

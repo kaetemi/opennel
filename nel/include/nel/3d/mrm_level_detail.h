@@ -129,6 +129,3 @@ public:
 #endif // NL_MRM_LEVEL_DETAIL_H
 
 /* End of mrm_level_detail.h */
-
-/* Merge OpenNeL SVN
- */

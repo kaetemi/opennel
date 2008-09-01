@@ -160,6 +160,3 @@ void	CAnimatedLightmap::updateGroupColors (class NL3D::CScene &scene)
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

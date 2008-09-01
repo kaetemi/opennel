@@ -214,6 +214,3 @@ public:
 #endif // NL_PARTICLE_SYSTEM_SHAPE_H
 
 /* End of particle_system_shape.h */
-
-/* Merge OpenNeL SVN
- */

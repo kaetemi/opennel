@@ -65,6 +65,3 @@ void PSRegisterIntAttribs()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

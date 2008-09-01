@@ -530,6 +530,3 @@ static const unsigned char nothing[] =
 
 static const unsigned int nothingSize = 4140;
 
-
-/* Merge OpenNeL SVN
- */

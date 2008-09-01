@@ -2685,6 +2685,3 @@ bool CExportNel::calculateLM( CMesh::CMeshBuild *pZeMeshBuild, CMeshBase::CMeshB
 }
 
 
-
-/* Merge OpenNeL SVN
- */

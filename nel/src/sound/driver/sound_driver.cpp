@@ -257,6 +257,3 @@ ISoundDriver	*ISoundDriver::createDriver(bool useEax, IStringMapperProvider *str
 }
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

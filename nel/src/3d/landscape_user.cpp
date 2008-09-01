@@ -623,6 +623,3 @@ float CLandscapeUser::getRayCollision(const NLMISC::CVector &start, const NLMISC
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

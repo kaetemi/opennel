@@ -197,6 +197,3 @@ private:
 #endif // NL_CLIP_TRAV_H
 
 /* End of clip_trav.h */
-
-/* Merge OpenNeL SVN
- */

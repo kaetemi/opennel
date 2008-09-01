@@ -318,6 +318,3 @@ private:
 #endif // NL_LOD_CHARACTER_MANAGER_H
 
 /* End of lod_character_manager.h */
-
-/* Merge OpenNeL SVN
- */

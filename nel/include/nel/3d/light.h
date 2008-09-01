@@ -349,6 +349,3 @@ private:
 #endif // NL_LIGHT_H
 
 /* End of light.h */
-
-/* Merge OpenNeL SVN
- */

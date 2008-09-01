@@ -1541,6 +1541,3 @@ void CVertexBufferHardARB::invalidate()
 
 }
 
-
-/* Merge OpenNeL SVN
- */

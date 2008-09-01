@@ -142,6 +142,3 @@ NL_LIB_EXPORT_SYMBOL(runCommand, TCommandFunc, runCommandImp);
 NL_LIB_EXPORT_SYMBOL(stopService, TStopFunc, stopServiceImp);
 
 
-
-/* Merge OpenNeL SVN
- */

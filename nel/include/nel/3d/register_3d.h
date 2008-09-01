@@ -49,6 +49,3 @@ void	registerSerial3d();
 #endif // NL_REGISTER_3D_H
 
 /* End of register_3d.h */
-
-/* Merge OpenNeL SVN
- */

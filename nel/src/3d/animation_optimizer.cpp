@@ -631,6 +631,3 @@ bool		CAnimationOptimizer::isLowPrecisionTrack(const std::string &trackName)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

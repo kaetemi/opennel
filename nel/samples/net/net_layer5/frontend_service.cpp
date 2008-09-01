@@ -328,6 +328,3 @@ public:
  * The port is set to 37000 and the main callback array is CallbackArray.
  */
 NLNET_SERVICE_MAIN( CFrontEndService, "FS", "frontend_service", 37000, CallbackArray, "", "" )
-
-/* Merge OpenNeL SVN
- */

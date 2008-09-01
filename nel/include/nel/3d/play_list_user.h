@@ -140,6 +140,3 @@ public:
 #endif // NL_PLAY_LIST_USER_H
 
 /* End of play_list_user.h */
-
-/* Merge OpenNeL SVN
- */

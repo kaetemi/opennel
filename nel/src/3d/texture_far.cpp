@@ -2113,6 +2113,3 @@ void NL3D_drawFarTileInFarTextureAdditiveAlpha (const NL3D_CComputeTileFar* pTil
 	}
 }
 //#endif // NL_NO_ASM
-
-/* Merge OpenNeL SVN
- */

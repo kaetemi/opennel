@@ -106,6 +106,3 @@ private:
 #endif // NL_SHADER_H
 
 /* End of shader.h */
-
-/* Merge OpenNeL SVN
- */

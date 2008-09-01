@@ -346,6 +346,3 @@ public:
 #endif // NL_U_INSTANCE_GROUP_H
 
 /* End of u_instance_group.h */
-
-/* Merge OpenNeL SVN
- */

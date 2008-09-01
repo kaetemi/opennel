@@ -730,6 +730,3 @@ namespace NLMISC
 #endif // NL_PS_EMITTER_H
 
 /* End of ps_emitter.h */
-
-/* Merge OpenNeL SVN
- */

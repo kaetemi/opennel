@@ -888,6 +888,3 @@ CConfigFile::CVar *CConfigFile::insertVar (const std::string &varName, const CVa
 }
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

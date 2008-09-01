@@ -726,6 +726,3 @@ void CFlareModel::renderOcclusionTestMesh(IDriver &drv)
 
 
 
-
-/* Merge OpenNeL SVN
- */

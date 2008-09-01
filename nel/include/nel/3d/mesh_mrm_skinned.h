@@ -778,6 +778,3 @@ private:
 #endif // NL_MESH_MRM_SKINNED_H
 
 /* End of mesh_mrm_skinned.h */
-
-/* Merge OpenNeL SVN
- */

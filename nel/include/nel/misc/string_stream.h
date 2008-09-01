@@ -140,6 +140,3 @@ public:
 #endif // NL_STRING_STREAM_H
 
 /* End of string_stream.h */
-
-/* Merge OpenNeL SVN
- */

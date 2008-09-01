@@ -126,6 +126,3 @@ public:
 #endif // NL_SURFACE_LIGHT_GRID_H
 
 /* End of surface_light_grid.h */
-
-/* Merge OpenNeL SVN
- */

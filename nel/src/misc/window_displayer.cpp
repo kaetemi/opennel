@@ -222,6 +222,3 @@ void CWindowDisplayer::doDisplay (const NLMISC::CLog::TDisplayInfo &args, const 
 }
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

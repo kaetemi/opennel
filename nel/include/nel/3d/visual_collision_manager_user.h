@@ -114,6 +114,3 @@ protected:
 #endif // NL_VISUAL_COLLISION_MANAGER_USER_H
 
 /* End of visual_collision_manager_user.h */
-
-/* Merge OpenNeL SVN
- */

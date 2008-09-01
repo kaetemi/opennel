@@ -41,6 +41,3 @@ namespace NL3D
 		NLMISC_REGISTER_CLASS(CPSZoneCylinder);
 	}
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

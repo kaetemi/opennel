@@ -1204,6 +1204,3 @@ NLMISC_CATEGORISED_VARIABLE(nel, uint32, NbServerListenTask, "Number of server l
 NLMISC_CATEGORISED_VARIABLE(nel, uint32, NbServerReceiveTask, "Number of server receive thread");
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

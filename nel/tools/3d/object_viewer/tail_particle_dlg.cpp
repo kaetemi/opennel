@@ -208,6 +208,3 @@ void CTailParticleDlg::OnSelchangeRibbonOrientation()
 	r->setOrientation((NL3D::CPSRibbon::TOrientation) ((CComboBox *) GetDlgItem(IDC_RIBBON_ORIENTATION))->GetCurSel());
 	_Node->setModified(true);
 }
-
-/* Merge OpenNeL SVN
- */

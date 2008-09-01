@@ -213,5 +213,3 @@ int main()
 	getchar();
 	delete AudioMixer;
 }
-/* Merge OpenNeL SVN
- */

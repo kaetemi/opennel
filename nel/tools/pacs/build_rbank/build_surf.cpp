@@ -1748,6 +1748,3 @@ CAABBox	NLPACS::CZoneTessellation::computeBBox() const
 
 	return zbox;
 }
-
-/* Merge OpenNeL SVN
- */

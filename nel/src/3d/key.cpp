@@ -47,6 +47,3 @@ CKeyVector			ktoto11;
 CKeyQuat			ktoto12;
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

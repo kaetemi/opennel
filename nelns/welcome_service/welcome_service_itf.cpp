@@ -441,6 +441,3 @@ const NLNET::CMessage &CWelcomeServiceClientProxy::buildMessageFor_updateConnect
 } /* namespace WS */
 
 /* end of file */
-
-/* Merge OpenNeL SVN
- */

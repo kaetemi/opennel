@@ -498,6 +498,3 @@ void		CTessFacePriorityList::CRollingTable::shiftEntries(uint entryShift, CTessF
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

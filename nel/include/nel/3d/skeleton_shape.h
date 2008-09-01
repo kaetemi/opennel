@@ -135,6 +135,3 @@ private:
 #endif // NL_SKELETON_SHAPE_H
 
 /* End of skeleton_shape.h */
-
-/* Merge OpenNeL SVN
- */

@@ -232,6 +232,3 @@ class CParticleSystemProcess : public NLMISC::IStreamable
 #endif // NL_PARTICLE_SYSTEM_PROCESS_H
 
 /* End of particle_system_process.h */
-
-/* Merge OpenNeL SVN
- */

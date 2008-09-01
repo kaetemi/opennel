@@ -190,6 +190,3 @@ bool			UPointLight::getInfluenceLightMap() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

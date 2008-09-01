@@ -398,6 +398,3 @@ void	CTrackSampledCommon::applySampleDivisorCommon(uint sampleDivisor, std::vect
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

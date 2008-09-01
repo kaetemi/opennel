@@ -199,6 +199,3 @@ namespace NLMISC
 #endif // NL_SINGLETON_H
 
 /* End of singleton.h */
-
-/* Merge OpenNeL SVN
- */

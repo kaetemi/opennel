@@ -2529,6 +2529,3 @@ void CFile::getTemporaryOutputFilename (const std::string &originalFilename, std
 } // NLMISC
 
 
-
-/* Merge OpenNeL SVN
- */

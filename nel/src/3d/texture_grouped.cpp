@@ -395,6 +395,3 @@ void CTextureGrouped::displayIncompatibleTextureWarning(CSmartPtr<ITexture> *tex
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

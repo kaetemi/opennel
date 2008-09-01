@@ -22,6 +22,3 @@
 #include "nel/misc/mem_stream.h"
 #include "nel/misc/time_nl.h"
 #include "nel/misc/command.h"
-
-/* Merge OpenNeL SVN
- */

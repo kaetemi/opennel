@@ -711,6 +711,3 @@ const char *COXml::getErrorString () const
 } // NLMISC
 
 #endif // NL_DONT_USE_EXTERNAL_CODE
-
-/* Merge OpenNeL SVN
- */

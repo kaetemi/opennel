@@ -1816,6 +1816,3 @@ NLMISC_COMMAND( addRegisteredService, "Add an entry to the registered services c
 
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

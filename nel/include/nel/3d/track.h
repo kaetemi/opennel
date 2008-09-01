@@ -314,6 +314,3 @@ public:
 #endif // NL_TRACK_H
 
 /* End of track.h */
-
-/* Merge OpenNeL SVN
- */

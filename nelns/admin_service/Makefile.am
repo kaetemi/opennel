@@ -22,6 +22,3 @@ admin_service_SOURCES = admin_service.cpp connection_web.cpp
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

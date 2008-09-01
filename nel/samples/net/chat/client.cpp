@@ -168,6 +168,3 @@ int main (int argc, char **argv)
 	// Finishing
 	delete Client;
 }
-
-/* Merge OpenNeL SVN
- */

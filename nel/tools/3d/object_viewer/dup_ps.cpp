@@ -168,6 +168,3 @@ NL3D::CPSLocatedBindable	*DupPSLocatedBindable(CPSLocatedBindable *in)
 		return NULL;
 	}
 }
-
-/* Merge OpenNeL SVN
- */

@@ -298,6 +298,3 @@ float		CFrustum::getAspectRatio() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

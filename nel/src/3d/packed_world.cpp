@@ -209,6 +209,3 @@ void CPackedWorld::select(const NLMISC::CPolygon2D &poly, std::vector<NLMISC::CT
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

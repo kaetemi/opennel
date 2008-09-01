@@ -58,6 +58,3 @@ public :
 #endif // NL_PS_DIRECTION_H
 
 /* End of ps_direction.h */
-
-/* Merge OpenNeL SVN
- */

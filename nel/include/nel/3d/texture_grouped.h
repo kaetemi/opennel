@@ -197,6 +197,3 @@ protected:
 #endif // NL_TEXTURE_GROUPED_H
 
 /* End of texture_grouped.h */
-
-/* Merge OpenNeL SVN
- */

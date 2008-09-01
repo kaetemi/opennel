@@ -466,6 +466,3 @@ void	CLightMemDisplayer::doDisplay ( const CLog::TDisplayInfo& args, const char 
 
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

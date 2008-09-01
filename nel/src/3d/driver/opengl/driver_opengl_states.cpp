@@ -1022,6 +1022,3 @@ CDriverGLStates::TCullMode CDriverGLStates::getCullMode() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

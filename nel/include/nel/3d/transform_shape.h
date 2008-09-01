@@ -211,6 +211,3 @@ private:
 #endif // NL_TRANSFORM_SHAPE_H
 
 /* End of transform_shape.h */
-
-/* Merge OpenNeL SVN
- */

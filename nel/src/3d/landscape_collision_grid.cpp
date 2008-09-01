@@ -293,6 +293,3 @@ CVisualTileDescNode			*CLandscapeCollisionGrid::select(const NLMISC::CVector &po
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

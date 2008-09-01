@@ -921,6 +921,3 @@ ucstring prepareExcelSheet(const TWorksheet &worksheet)
 
 }	// namespace STRING_MANAGER
 
-
-/* Merge OpenNeL SVN
- */

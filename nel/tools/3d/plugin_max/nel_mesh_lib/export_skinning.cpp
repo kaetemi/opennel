@@ -1708,6 +1708,3 @@ bool CExportNel::mirrorPhysiqueSelection(INode &node, TimeValue tvTime, const st
 }
 
 
-
-/* Merge OpenNeL SVN
- */

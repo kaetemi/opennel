@@ -83,6 +83,3 @@ void CPSSoundInstanceImpl::release(void)
 }
 
 /* End of particle_system_sound_user.cpp */
-
-/* Merge OpenNeL SVN
- */

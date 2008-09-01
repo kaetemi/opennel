@@ -180,6 +180,3 @@ AC_OUTPUT
 
 
 # End of configure.ac
-
-# Merge OpenNeL SVN
-

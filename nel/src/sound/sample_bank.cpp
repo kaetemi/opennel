@@ -618,6 +618,3 @@ void				CSampleBank::releaseAll()
 
 } // namespace NLSOUND
 
-
-/* Merge OpenNeL SVN
- */

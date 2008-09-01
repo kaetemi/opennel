@@ -122,6 +122,3 @@ protected:
 };
 
 #endif
-
-/* Merge OpenNeL SVN
- */

@@ -492,6 +492,3 @@ IOResult RGBAdd::Load(ILoad *iload) {
 	}
 
 
-
-/* Merge OpenNeL SVN
- */

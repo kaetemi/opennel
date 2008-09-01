@@ -94,6 +94,3 @@ private:
 #endif // NL_SKELETON_WEIGHT_H
 
 /* End of skeleton_weight.h */
-
-/* Merge OpenNeL SVN
- */

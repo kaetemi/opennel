@@ -120,6 +120,3 @@ void					CLandscapeFaceVectorManager::deleteFaceVector(TLandscapeIndexType	*fv)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

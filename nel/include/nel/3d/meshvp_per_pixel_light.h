@@ -102,6 +102,3 @@ private:
 #endif // NL_MESHVP_PER_PIXEL_LIGHT_H
 
 /* End of meshvp_per_pixel_light.h */
-
-/* Merge OpenNeL SVN
- */

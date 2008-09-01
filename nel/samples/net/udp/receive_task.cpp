@@ -151,6 +151,3 @@ void CReceiveTask::setWriteQueue( CBufFIFO *writequeue )
 	wq.value() = writequeue;
 }
 
-
-/* Merge OpenNeL SVN
- */

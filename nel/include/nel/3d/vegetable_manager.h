@@ -467,6 +467,3 @@ private:
 #endif // NL_VEGETABLE_MANAGER_H
 
 /* End of vegetable_manager.h */
-
-/* Merge OpenNeL SVN
- */

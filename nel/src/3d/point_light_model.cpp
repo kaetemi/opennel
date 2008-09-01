@@ -191,6 +191,3 @@ void	CPointLightModel::traverseLight()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

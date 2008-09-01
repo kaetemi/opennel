@@ -455,6 +455,3 @@ void CMeshMorpher::updateRawSkin (CVertexBuffer *vbOri,
 
 
 
-
-/* Merge OpenNeL SVN
- */

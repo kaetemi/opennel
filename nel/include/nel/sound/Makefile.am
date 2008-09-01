@@ -14,6 +14,3 @@ include_HEADERS      =	sound_animation.h	\
 			u_source.h
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

@@ -123,6 +123,3 @@ void CWaterEnvMapUser::invalidate()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

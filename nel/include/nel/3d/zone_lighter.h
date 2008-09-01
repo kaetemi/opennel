@@ -625,6 +625,3 @@ private:
 #endif // NL_ZONE_LIGHTER_H
 
 /* End of zone_lighter.h */
-
-/* Merge OpenNeL SVN
- */

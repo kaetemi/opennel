@@ -545,6 +545,3 @@ void CCoarseMeshBuild::remapCoordinates (const std::vector<CCoarseMeshDesc>& coa
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

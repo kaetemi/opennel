@@ -2356,6 +2356,3 @@ void				CSSSBuild::compile(NL3D::CAnimation &dest, const char* sBaseName)
 
 
 
-
-/* Merge OpenNeL SVN
- */

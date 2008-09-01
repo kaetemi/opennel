@@ -10,6 +10,3 @@ SUBDIRS              = pacs georges 3d net misc
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

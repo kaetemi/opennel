@@ -1145,6 +1145,3 @@ bool	CLodCharacterManager::fastIntersect(const CLodCharacterInstance &instance, 
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

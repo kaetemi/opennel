@@ -296,6 +296,3 @@ Test::Suite *createCMessageTS()
 	return new CMessageTS;
 }
 
-
-/* Merge OpenNeL SVN
- */

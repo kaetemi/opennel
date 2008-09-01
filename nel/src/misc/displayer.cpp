@@ -790,6 +790,3 @@ void CMsgBoxDisplayer::display (const std::string& str)
 
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

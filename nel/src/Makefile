@@ -6,6 +6,3 @@ clean:
 
 update:
 	+make -C .. update
-
-# Merge OpenNeL SVN
-

@@ -330,6 +330,3 @@ public:
 #endif // NL_SCENE_USER_H
 
 /* End of scene_user.h */
-
-/* Merge OpenNeL SVN
- */

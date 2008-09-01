@@ -1574,6 +1574,3 @@ NLMISC_COMMAND( displayOnlineServices, "Display the online service instances", "
 NLMISC_VARIABLE( bool, OnlineStatus, "Main online status of the shard" );
 
 
-
-/* Merge OpenNeL SVN
- */

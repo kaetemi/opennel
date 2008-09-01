@@ -167,6 +167,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_TEXTURE_ANIM_DLG_H__4A689FB0_93B9_4F5A_8075_8006D8FD19B2__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

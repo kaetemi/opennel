@@ -169,6 +169,3 @@ NLMISC_COMMAND(graph,"swith on/off graphs","")
 	ShowGraph = !ShowGraph;
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

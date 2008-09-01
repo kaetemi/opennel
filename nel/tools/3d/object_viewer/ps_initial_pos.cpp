@@ -220,6 +220,3 @@ void CPSInitialPos::restoreSystem()
 	}
 	_PS = NULL;
 }
-
-/* Merge OpenNeL SVN
- */

@@ -945,6 +945,3 @@ uint32 CCloudScape::getMemSize()
 
 } // namespace NL3D
 
-
-/* Merge OpenNeL SVN
- */

@@ -11,6 +11,3 @@ sno_frontend_SOURCES = main.cpp
 AM_CXXFLAGS		=	-DSNOWBALLS_CONFIG="\"${pkgsysconfdir}\"" -DSNOWBALLS_LOGS="\"${logdir}\""
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

@@ -2043,6 +2043,3 @@ void CDriverD3D::getNumPerStageConstant(uint &lightedMaterial, uint &unlightedMa
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

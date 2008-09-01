@@ -194,6 +194,3 @@ void CAsyncFileManagerSound::CLoadWavFile::run (void)
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

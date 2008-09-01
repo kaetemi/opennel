@@ -181,6 +181,3 @@ void releaseCompass ()
 	Driver->deleteMaterial (CompassMaterial);
 	CompassMaterial = NULL;
 }
-
-/* Merge OpenNeL SVN
- */

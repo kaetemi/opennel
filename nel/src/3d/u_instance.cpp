@@ -421,6 +421,3 @@ void	UInstance::setRelativeScale (const CVector &rs)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

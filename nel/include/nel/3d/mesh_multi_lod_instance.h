@@ -143,6 +143,3 @@ private:
 #endif // NL_MESH_MULTI_LOD_INSTANCE_H
 
 /* End of mesh_multi_lod_instance.h */
-
-/* Merge OpenNeL SVN
- */

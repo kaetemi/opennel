@@ -77,6 +77,3 @@ NLMISC::CVector	getTarget(const NLMISC::CVector &start, const NLMISC::CVector &s
 #endif // LANDSCAPE_H
 
 /* End of landscape.h */
-
-/* Merge OpenNeL SVN
- */

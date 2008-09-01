@@ -355,6 +355,3 @@ void		CPatch::releaseVegetableBlock(uint numTb)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

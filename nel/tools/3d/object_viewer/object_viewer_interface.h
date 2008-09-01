@@ -134,6 +134,3 @@ public:
 };
 
 #endif OBJECT_VIEWER_INTERFACE
-
-/* Merge OpenNeL SVN
- */

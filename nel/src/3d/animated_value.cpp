@@ -43,6 +43,3 @@ CAnimatedValueRGBA	atoto7;
 */
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

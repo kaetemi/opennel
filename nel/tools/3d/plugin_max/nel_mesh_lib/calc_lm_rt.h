@@ -285,6 +285,3 @@ private:
 /* End of calc_lm_rt.h */
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -112,6 +112,3 @@ private:
 #endif // NL_ZONE_CORNER_SMOOTHER_H
 
 /* End of zone_corner_smoother.h */
-
-/* Merge OpenNeL SVN
- */

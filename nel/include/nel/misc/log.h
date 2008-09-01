@@ -238,6 +238,3 @@ protected:
 #endif // NL_LOG_H
 
 /* End of log.h */
-
-/* Merge OpenNeL SVN
- */

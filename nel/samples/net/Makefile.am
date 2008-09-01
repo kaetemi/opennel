@@ -9,6 +9,3 @@ SUBDIRS              = chat udp login_system
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

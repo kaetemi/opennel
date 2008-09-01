@@ -470,6 +470,3 @@ void releaseMouseListenerConfig()
 	ConfigFile->setCallback("ViewTargetHeight", NULL);
 }
 
-
-/* Merge OpenNeL SVN
- */

@@ -82,6 +82,3 @@ private:
 #endif // NL_TILE_LIGHT_INFLUENCE_H
 
 /* End of tile_light_influence.h */
-
-/* Merge OpenNeL SVN
- */

@@ -164,6 +164,3 @@ private:
 #endif // NL_PARTICLE_SYSTEM_MANAGER_H
 
 /* End of particle_system_manager.h */
-
-/* Merge OpenNeL SVN
- */

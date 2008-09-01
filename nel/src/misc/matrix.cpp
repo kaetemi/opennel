@@ -1572,6 +1572,3 @@ void		CMatrix::setArbitraryRotK(const CVector &kdir)
 
 }
 
-
-/* Merge OpenNeL SVN
- */

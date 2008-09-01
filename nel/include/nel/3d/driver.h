@@ -1254,6 +1254,3 @@ private:
 }
 
 #endif // NL_DRV_H
-
-/* Merge OpenNeL SVN
- */

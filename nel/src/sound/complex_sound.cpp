@@ -333,6 +333,3 @@ void	CComplexSound::importForm(const std::string& filename, NLGEORGES::UFormElm&
 }
 
 }
-
-/* Merge OpenNeL SVN
- */

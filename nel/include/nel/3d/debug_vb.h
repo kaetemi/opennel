@@ -72,6 +72,3 @@ void nlCheckIBA(CIndexBufferRead &ibrw, const uint8 *ptStart);
 } // NL3D
 
 #endif
-
-/* Merge OpenNeL SVN
- */

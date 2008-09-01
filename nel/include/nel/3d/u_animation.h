@@ -120,6 +120,3 @@ public:
 #endif // NL_U_ANIMATION_H
 
 /* End of u_animation.h */
-
-/* Merge OpenNeL SVN
- */

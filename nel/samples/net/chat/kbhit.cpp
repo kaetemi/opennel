@@ -60,5 +60,3 @@ int getch()
 }
 
 #endif // __GNUC__
-/* Merge OpenNeL SVN
- */

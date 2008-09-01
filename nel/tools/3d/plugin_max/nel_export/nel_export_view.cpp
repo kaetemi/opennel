@@ -725,6 +725,3 @@ void CNelExport::viewMesh (TimeValue time)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

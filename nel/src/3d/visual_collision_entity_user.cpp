@@ -119,6 +119,3 @@ bool	CVisualCollisionEntityUser::getSurfaceInfo(const CVector &pos, CSurfaceInfo
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

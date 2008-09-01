@@ -341,6 +341,3 @@ uint	CMeshMRMGeom::NumCacheVertexNormal4= NL_BlockByteL1 / sizeof(CRawVertexNorm
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

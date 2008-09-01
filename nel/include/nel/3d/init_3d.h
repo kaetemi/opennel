@@ -46,6 +46,3 @@ void init3d ();
 #endif // NL_INIT_3D_H
 
 /* End of init_3d.h */
-
-/* Merge OpenNeL SVN
- */

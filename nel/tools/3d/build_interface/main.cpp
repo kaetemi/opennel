@@ -443,6 +443,3 @@ int main(int nNbArg, char **ppArgs)
 	
 	return 0;
 }
-
-/* Merge OpenNeL SVN
- */

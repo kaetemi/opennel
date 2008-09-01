@@ -111,6 +111,3 @@ bool CNelExport::exportZone (const char *sPath, INode& node, TimeValue time)
 
 
 
-
-/* Merge OpenNeL SVN
- */

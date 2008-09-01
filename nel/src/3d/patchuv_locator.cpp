@@ -218,6 +218,3 @@ void	CPatchUVLocator::locateUV(const CVector2f &uvIn, uint patch, CPatch *&patch
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

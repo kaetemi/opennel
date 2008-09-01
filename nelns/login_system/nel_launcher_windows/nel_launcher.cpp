@@ -107,6 +107,3 @@ BOOL CNel_launcherApp::InitInstance()
 	//  application, rather than start the application's message pump.
 	return FALSE;
 }
-
-/* Merge OpenNeL SVN
- */

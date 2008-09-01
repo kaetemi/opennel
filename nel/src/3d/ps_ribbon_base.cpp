@@ -822,6 +822,3 @@ void CPSRibbonBase::systemDateChanged()
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

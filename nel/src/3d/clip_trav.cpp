@@ -759,6 +759,3 @@ void	CClipTrav::clipShadowCasters()
 
 
 }
-
-/* Merge OpenNeL SVN
- */

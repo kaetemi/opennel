@@ -169,6 +169,3 @@ private:
 
 #endif // NL_CLOUD_H
 
-
-/* Merge OpenNeL SVN
- */

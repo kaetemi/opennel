@@ -99,6 +99,3 @@ private:
 #endif // NL_VEGETABLE_CLIP_BLOCK_H
 
 /* End of vegetable_clip_block.h */
-
-/* Merge OpenNeL SVN
- */

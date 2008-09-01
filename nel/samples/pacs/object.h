@@ -117,6 +117,3 @@ private:
 #endif // NL_OBJECT_H
 
 /* End of object.h */
-
-/* Merge OpenNeL SVN
- */

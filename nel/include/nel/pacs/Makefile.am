@@ -16,6 +16,3 @@ include_HEADERS      =	u_collision_desc.h	\
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

@@ -22,6 +22,3 @@ cluster_viewer_LDADD   = ../../../src/misc/libnelmisc.la \
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

@@ -147,6 +147,3 @@ void	CMRMSewingMesh::build(const CMesh::CInterface &meshInt, uint nWantedLods, u
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

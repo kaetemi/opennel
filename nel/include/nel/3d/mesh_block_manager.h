@@ -146,6 +146,3 @@ private:
 #endif // NL_MESH_BLOCK_MANAGER_H
 
 /* End of mesh_block_manager.h */
-
-/* Merge OpenNeL SVN
- */

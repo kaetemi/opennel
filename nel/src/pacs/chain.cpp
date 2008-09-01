@@ -355,6 +355,3 @@ NLPACS::CVector2s	NLPACS::CChain::getStopVector(vector<NLPACS::COrderedChain> &o
 
 // end of CChain methods implementation
 
-
-/* Merge OpenNeL SVN
- */

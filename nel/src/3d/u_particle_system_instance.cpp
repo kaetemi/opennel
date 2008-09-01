@@ -375,6 +375,3 @@ void UParticleSystemInstance::reactivateSound()
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

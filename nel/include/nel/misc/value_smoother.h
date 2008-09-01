@@ -231,6 +231,3 @@ public:
 #endif // NL_VALUE_SMOOTHER_H
 
 /* End of value_smoother.h */
-
-/* Merge OpenNeL SVN
- */

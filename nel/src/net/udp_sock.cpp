@@ -213,6 +213,3 @@ bool CUdpSock::receivedFrom( uint8 *buffer, uint& len, CInetAddress& addr, bool 
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

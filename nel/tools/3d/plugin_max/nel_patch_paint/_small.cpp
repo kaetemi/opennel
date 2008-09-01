@@ -2066,6 +2066,3 @@ static const unsigned char _small[] =
 
 static const unsigned int _smallSize = 16428;
 
-
-/* Merge OpenNeL SVN
- */

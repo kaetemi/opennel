@@ -430,6 +430,3 @@ void	CMessage::serialMessage( CMessage& msg )
 }
 
 }
-
-/* Merge OpenNeL SVN
- */

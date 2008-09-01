@@ -142,6 +142,3 @@ extern uint64 PSLookAtRenderTime;
 #endif // NL_PS_FACE_LOOK_AT_H
 
 /* End of ps_face_look_at.h */
-
-/* Merge OpenNeL SVN
- */

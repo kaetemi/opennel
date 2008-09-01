@@ -94,6 +94,3 @@ public:
 #endif // NL_TILE_COLOR_H
 
 /* End of tile_color.h */
-
-/* Merge OpenNeL SVN
- */

@@ -188,6 +188,3 @@ uint CDriverD3D::getDoubleClickDelay(bool hardwareMouse)
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

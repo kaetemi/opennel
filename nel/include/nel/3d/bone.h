@@ -227,6 +227,3 @@ inline void	CBone::forceAnimate(CChannelMixer &chanMixer)
 #endif // NL_BONE_H
 
 /* End of bone.h */
-
-/* Merge OpenNeL SVN
- */

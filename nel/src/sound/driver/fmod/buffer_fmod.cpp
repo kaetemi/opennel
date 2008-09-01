@@ -634,6 +634,3 @@ void		CBufferFMod::unlock(void *ptr)
 
 
 
-
-/* Merge OpenNeL SVN
- */

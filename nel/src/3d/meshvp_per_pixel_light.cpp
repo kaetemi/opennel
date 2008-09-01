@@ -573,6 +573,3 @@ void	CMeshVPPerPixelLight::setupForMaterial(const CMaterial &mat,
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

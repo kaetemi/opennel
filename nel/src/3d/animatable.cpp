@@ -43,6 +43,3 @@ sint	IAnimatable::addValue(CChannelMixer *chanMixer, uint valueId, uint ownerVal
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

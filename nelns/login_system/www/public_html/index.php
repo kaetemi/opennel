@@ -319,6 +319,3 @@
 		}
 	}
 ?>
-
-<!-- Merge OpenNeL SVN
- -->

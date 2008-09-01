@@ -145,6 +145,3 @@ extern const char* PainterKeysName[KeyCounter];
 
 void LoadKeyCfg ();
 void LoadVarCfg ();
-
-/* Merge OpenNeL SVN
- */

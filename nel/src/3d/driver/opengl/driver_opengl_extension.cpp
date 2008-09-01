@@ -1414,6 +1414,3 @@ bool	registerWGlExtensions(CGlExtensions &ext, HDC hDC)
 #endif // NL_OS_WINDOWS
 
 }
-
-/* Merge OpenNeL SVN
- */

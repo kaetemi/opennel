@@ -148,6 +148,3 @@ void			CZoneSmoother::smoothTangents(CZoneInfo zones[5], float angleThreshold, b
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

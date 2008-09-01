@@ -1663,6 +1663,3 @@ void CTView::OnLButtonDblClk(UINT nFlags, CPoint point)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

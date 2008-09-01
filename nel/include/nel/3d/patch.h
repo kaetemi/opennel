@@ -1245,6 +1245,3 @@ public:
 #endif // NL_PATCH_H
 
 /* End of patch.h */
-
-/* Merge OpenNeL SVN
- */

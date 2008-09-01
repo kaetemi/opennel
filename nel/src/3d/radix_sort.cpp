@@ -48,6 +48,3 @@ static void	pipo()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

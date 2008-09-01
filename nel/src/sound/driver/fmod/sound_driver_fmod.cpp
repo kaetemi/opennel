@@ -633,6 +633,3 @@ void	CSoundDriverFMod::markMusicFaderEnded(void *stream, void *fader)
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

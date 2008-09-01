@@ -562,6 +562,3 @@ inline bool CTransportClass::read (const std::string &name, NLNET::TServiceId si
 #endif // NL_TRANSPORT_CLASS_H
 
 /* End of transport_class.h */
-
-/* Merge OpenNeL SVN
- */

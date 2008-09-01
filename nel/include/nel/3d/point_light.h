@@ -259,6 +259,3 @@ private:
 #endif // NL_POINT_LIGHT_H
 
 /* End of point_light.h */
-
-/* Merge OpenNeL SVN
- */

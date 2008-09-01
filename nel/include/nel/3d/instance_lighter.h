@@ -306,6 +306,3 @@ private:
 #endif // NL_INSTANCE_LIGHTER_H
 
 /* End of instance_lighter.h */
-
-/* Merge OpenNeL SVN
- */

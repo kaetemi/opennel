@@ -270,6 +270,3 @@ public:
 #endif // NL_MESH_BASE_INSTANCE_H
 
 /* End of mesh_base_instance.h */
-
-/* Merge OpenNeL SVN
- */

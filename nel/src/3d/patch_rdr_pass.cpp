@@ -65,6 +65,3 @@ void	CPatchRdrPass::clearAllRenderList()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -518,6 +518,3 @@ bool CDriverD3D::buildQuadIndexBuffer()
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -308,6 +308,3 @@ void initNelLibrary(CLibrary &lib);
 
 
 #endif //APP_CONTEXT_H
-
-/* Merge OpenNeL SVN
- */

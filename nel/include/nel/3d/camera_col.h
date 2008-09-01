@@ -120,6 +120,3 @@ private:
 #endif // NL_CAMERA_COL_H
 
 /* End of camera_col.h */
-
-/* Merge OpenNeL SVN
- */

@@ -234,6 +234,3 @@ private:
 #endif // NL_SOUND_DRIVER_AL_H
 
 /* End of sound_driver_al.h */
-
-/* Merge OpenNeL SVN
- */

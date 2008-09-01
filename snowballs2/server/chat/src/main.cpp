@@ -104,6 +104,3 @@ NLNET_SERVICE_MAIN( IService, "CHAT", "chat_service", 0, CallbackArray, SNOWBALL
 
 
 /* end of file */
-
-/* Merge OpenNeL SVN
- */

@@ -709,6 +709,3 @@ void			CLodCharacterShape::addBoneAlpha(uint boneId, std::vector<uint8> &tmpAlph
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

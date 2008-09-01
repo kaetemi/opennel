@@ -1699,6 +1699,3 @@ NLMISC_CATEGORISED_COMMAND(nel, readaccess, "read a uint8 value in an invalid ad
 #endif // FINAL_VERSION
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

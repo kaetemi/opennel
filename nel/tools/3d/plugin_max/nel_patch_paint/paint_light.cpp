@@ -130,6 +130,3 @@ void CPaintLight::build (Interface &ip, INode *node)
 }
 
 /*-------------------------------------------------------------------*/
-
-/* Merge OpenNeL SVN
- */

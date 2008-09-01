@@ -676,6 +676,3 @@ struct CSerialCommand
 #endif // NL_COMMAND_H
 
 /* End of command.h */
-
-/* Merge OpenNeL SVN
- */

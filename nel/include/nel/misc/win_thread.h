@@ -152,6 +152,3 @@ private:
 #endif // NL_WIN_THREAD_H
 
 /* End of win_thread.h */
-
-/* Merge OpenNeL SVN
- */

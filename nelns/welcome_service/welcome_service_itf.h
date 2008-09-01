@@ -482,6 +482,3 @@ public:
 #endif /* #ifndef WS_WELCOME_SERVICE_ITF_H */
 
 /* end of file */
-
-/* Merge OpenNeL SVN
- */

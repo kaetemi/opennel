@@ -79,6 +79,3 @@ void		CPlayListManagerUser::setup(TGlobalAnimationTime	time)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -143,6 +143,3 @@ private:
 #endif // NL_BEZIER_PATCH_H
 
 /* End of bezier_patch.h */
-
-/* Merge OpenNeL SVN
- */

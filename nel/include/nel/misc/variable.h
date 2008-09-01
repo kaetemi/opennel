@@ -514,6 +514,3 @@ public:
 #endif // NL_VARIABLE_H
 
 /* End of variable.h */
-
-/* Merge OpenNeL SVN
- */

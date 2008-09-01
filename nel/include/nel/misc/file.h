@@ -259,6 +259,3 @@ private:
 #endif // NL_FILE_H
 
 /* End of file.h */
-
-/* Merge OpenNeL SVN
- */

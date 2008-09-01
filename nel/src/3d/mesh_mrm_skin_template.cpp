@@ -1599,6 +1599,3 @@ void	CMeshMRMGeom::applyRawSkinWithNormal(CLod &lod, CRawSkinNormalCache &rawSki
 
 #endif // ADD_MESH_MRM_SKIN_TEMPLATE
 
-
-/* Merge OpenNeL SVN
- */

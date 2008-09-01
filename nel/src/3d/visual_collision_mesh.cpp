@@ -564,6 +564,3 @@ void		CVisualCollisionMesh::receiveShadowMap(const NLMISC::CMatrix &instanceMatr
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

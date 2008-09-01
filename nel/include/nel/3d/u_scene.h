@@ -652,6 +652,3 @@ public:
 #endif // NL_U_SCENE_H
 
 /* End of u_scene.h */
-
-/* Merge OpenNeL SVN
- */

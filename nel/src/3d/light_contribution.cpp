@@ -47,6 +47,3 @@ CLightContribution::CLightContribution()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

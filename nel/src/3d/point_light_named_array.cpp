@@ -203,6 +203,3 @@ void			CPointLightNamedArray::initAnimatedLightIndex (const CScene &scene)
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

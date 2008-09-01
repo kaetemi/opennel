@@ -97,6 +97,3 @@ private:
 #endif // NL_TILE_VEGETABLE_DESC_H
 
 /* End of tile_vegetable_desc.h */
-
-/* Merge OpenNeL SVN
- */

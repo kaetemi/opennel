@@ -929,6 +929,3 @@ bool CstCDbgPtr<T>::operator <(const CstCDbgPtr& p) const
 #endif // NL_SMART_PTR_H
 
 /* End of smart_ptr.h */
-
-/* Merge OpenNeL SVN
- */

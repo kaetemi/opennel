@@ -66,6 +66,3 @@ public:
 #endif // NL_TILE_NOISE_MAP_H
 
 /* End of tile_noise_map.h */
-
-/* Merge OpenNeL SVN
- */

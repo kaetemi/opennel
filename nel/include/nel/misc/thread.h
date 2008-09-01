@@ -185,6 +185,3 @@ public:
 #endif // NL_THREAD_H
 
 /* End of thread.h */
-
-/* Merge OpenNeL SVN
- */

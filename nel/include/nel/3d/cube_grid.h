@@ -375,6 +375,3 @@ void CCubeGrid<TCell>::project (const NLMISC::CTriangle &tri, NLMISC::CPlane pyr
 #endif // NL_CUBE_GRID_H
 
 /* End of cube_grid.h */
-
-/* Merge OpenNeL SVN
- */

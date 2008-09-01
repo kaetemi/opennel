@@ -86,6 +86,3 @@ float   UWaterInstance::getAttenuatedHeight(const NLMISC::CVector2f &pos, const 
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

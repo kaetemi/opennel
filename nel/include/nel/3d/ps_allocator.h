@@ -275,6 +275,3 @@ namespace NL3D
 } // NL3D
 
 #endif // NL_PS_ALLOCATOR_H
-
-/* Merge OpenNeL SVN
- */

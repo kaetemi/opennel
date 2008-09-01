@@ -39,6 +39,3 @@ void connectionWSRelease ();
 #endif // NL_CONNECTION_WS_H
 
 /* End of connection_ws.h */
-
-/* Merge OpenNeL SVN
- */

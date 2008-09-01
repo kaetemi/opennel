@@ -66,6 +66,3 @@ void PaintPatchMod::RescaleWorldUnits(float f)
 	NotifyDependents(FOREVER, PART_GEOM, REFMSG_CHANGE);
 }
 
-
-/* Merge OpenNeL SVN
- */

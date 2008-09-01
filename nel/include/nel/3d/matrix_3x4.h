@@ -404,6 +404,3 @@ class CMatrix3x4SSE : public  CMatrix3x4 { };
 #endif // NL_MATRIX_3X4_H
 
 /* End of matrix_3x4.h */
-
-/* Merge OpenNeL SVN
- */

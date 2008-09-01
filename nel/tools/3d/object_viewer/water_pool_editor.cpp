@@ -418,6 +418,3 @@ void CWaterPoolEditor::OnRenamePool()
 		fillPoolList();		
 	}	
 }
-
-/* Merge OpenNeL SVN
- */

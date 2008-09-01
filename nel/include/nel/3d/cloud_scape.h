@@ -203,6 +203,3 @@ private:
 
 #endif // NL_CLOUD_SCAPE_H
 
-
-/* Merge OpenNeL SVN
- */

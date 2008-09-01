@@ -638,6 +638,3 @@ void CPSRibbonLookAt::enumTexs(std::vector<NLMISC::CSmartPtr<ITexture> > &dest, 
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

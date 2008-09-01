@@ -94,6 +94,3 @@ public:
 #endif // NL_MRM_PARAMETERS_H
 
 /* End of mrm_parameters.h */
-
-/* Merge OpenNeL SVN
- */

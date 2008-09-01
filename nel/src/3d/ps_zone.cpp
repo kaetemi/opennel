@@ -1313,6 +1313,3 @@ void CPSZoneRectangle::deleteElement(uint32 index)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

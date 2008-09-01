@@ -647,6 +647,3 @@ bool	CExportNel::buildPrimitiveBlock (TimeValue time, std::vector<INode*> object
 }
 
 
-
-/* Merge OpenNeL SVN
- */

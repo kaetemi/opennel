@@ -331,6 +331,3 @@ public:
 #endif // NL_LIGHT_USER_H
 
 /* End of light_user.h */
-
-/* Merge OpenNeL SVN
- */

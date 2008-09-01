@@ -807,6 +807,3 @@ void			CAsyncTextureManager::updateTextureLodSystem(IDriver *pDriver)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -1803,6 +1803,3 @@ namespace NLMISC
 
 
 
-
-/* Merge OpenNeL SVN
- */

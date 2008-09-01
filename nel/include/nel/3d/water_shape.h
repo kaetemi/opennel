@@ -367,6 +367,3 @@ private:
 
 
 
-
-/* Merge OpenNeL SVN
- */

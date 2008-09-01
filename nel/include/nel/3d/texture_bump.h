@@ -114,6 +114,3 @@ private:
 #endif // NL_TEXTURE_BUMP_H
 
 /* End of texture_bump.h */
-
-/* Merge OpenNeL SVN
- */

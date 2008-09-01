@@ -487,6 +487,3 @@ void			CMiniCol::getFaces(std::vector<CTriangle>	&triresult, const CAABBox &bbox
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

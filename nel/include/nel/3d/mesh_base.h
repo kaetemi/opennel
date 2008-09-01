@@ -346,6 +346,3 @@ private:
 #endif // NL_MESH_BASE_H
 
 /* End of mesh_base.h */
-
-/* Merge OpenNeL SVN
- */

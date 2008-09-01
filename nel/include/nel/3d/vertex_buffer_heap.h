@@ -117,6 +117,3 @@ private:
 #endif // NL_VERTEX_BUFFER_HEAP_H
 
 /* End of vertex_buffer_heap.h */
-
-/* Merge OpenNeL SVN
- */

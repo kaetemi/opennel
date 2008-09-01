@@ -454,6 +454,3 @@ int main()
 
 	return EXIT_SUCCESS;
 }
-
-/* Merge OpenNeL SVN
- */

@@ -196,6 +196,3 @@ bool  CExportNel::buildLodCharacter (NL3D::CLodCharacterShapeBuild& lodBuild, IN
 
 	return res;
 }
-
-/* Merge OpenNeL SVN
- */

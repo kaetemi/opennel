@@ -290,6 +290,3 @@ typedef	CKeyBezier<NLMISC::CQuat>	CKeyBezierQuat;
 #endif // NL_KEY_H
 
 /* End of key.h */
-
-/* Merge OpenNeL SVN
- */

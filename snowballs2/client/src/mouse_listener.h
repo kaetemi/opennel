@@ -311,6 +311,3 @@ void releaseMouseListenerConfig();
 #endif // MOUSE_LISTENER_H
 
 /* End of mouse_listener.h */
-
-/* Merge OpenNeL SVN
- */

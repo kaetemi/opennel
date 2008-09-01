@@ -30,6 +30,3 @@ lightmap4blend_x2       FX      DISCARDABLE     "lightmap4blend_x2.fx"
 cloud                   FX      DISCARDABLE     "cloud.fx"
 water_no_diffuse        FX      DISCARDABLE     "water_no_diffuse.fx"
 water_diffuse           FX      DISCARDABLE     "water_diffuse.fx"
-
-// Merge OpenNeL SVN
-

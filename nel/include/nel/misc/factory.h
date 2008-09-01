@@ -273,6 +273,3 @@ public:
 } // namespace NLMISC
 
 #endif // FACTORY_H
-
-/* Merge OpenNeL SVN
- */

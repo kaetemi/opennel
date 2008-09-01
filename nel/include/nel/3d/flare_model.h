@@ -106,6 +106,3 @@ public:
 #endif // NL_FLARE_MODEL_H
 
 /* End of flare_model.h */
-
-/* Merge OpenNeL SVN
- */

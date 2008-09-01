@@ -662,6 +662,3 @@ inline void	computeBoneMatrixes3x4PreMul(TMatrixArray &boneMat3x4, const CMatrix
 #endif // NL_SKELETON_MODEL_H
 
 /* End of skeleton_model.h */
-
-/* Merge OpenNeL SVN
- */

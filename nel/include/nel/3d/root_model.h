@@ -81,6 +81,3 @@ private:
 #endif // NL_ROOT_MODEL_H
 
 /* End of root_model.h */
-
-/* Merge OpenNeL SVN
- */

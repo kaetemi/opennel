@@ -375,6 +375,3 @@ float			UMaterial::getShininess() const
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

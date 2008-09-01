@@ -83,6 +83,3 @@ void	releaseNetwork ();
 #endif // NETWORK_H
 
 /* End of network.h */
-
-/* Merge OpenNeL SVN
- */

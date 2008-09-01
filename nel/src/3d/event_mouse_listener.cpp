@@ -426,6 +426,3 @@ void CEvent3dMouseListener::getModelMatrixTransformMove(NLMISC::CMatrix& transMo
 
 
 }; // NL3D
-
-/* Merge OpenNeL SVN
- */

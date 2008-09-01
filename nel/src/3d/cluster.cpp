@@ -604,6 +604,3 @@ void CCluster::cameraRayClip(const CVector &start, const CVector &end, std::vect
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

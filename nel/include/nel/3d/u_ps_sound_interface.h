@@ -111,6 +111,3 @@ struct UPSSoundInstance
 #endif // NL_PS_SOUND_INTERFACE_H
 
 /* End of ps_sound_interface.h */
-
-/* Merge OpenNeL SVN
- */

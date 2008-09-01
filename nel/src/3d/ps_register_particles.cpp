@@ -54,6 +54,3 @@ namespace NL3D
 		CPSConstraintMesh::initPrerotVB();
 	}
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

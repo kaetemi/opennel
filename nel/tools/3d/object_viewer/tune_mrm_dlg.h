@@ -60,6 +60,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_TUNE_MRM_DLG_H__909B0EF0_8158_431F_91DC_B77D380DA7A0__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

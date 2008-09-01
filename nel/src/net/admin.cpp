@@ -903,6 +903,3 @@ NLMISC_CATEGORISED_COMMAND(nel, getView, "send a view and receive an array as re
 }
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

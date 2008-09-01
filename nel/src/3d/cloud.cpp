@@ -881,6 +881,3 @@ void CCloud::setMode2D ()
 
 } // namespace NL3D
 
-
-/* Merge OpenNeL SVN
- */

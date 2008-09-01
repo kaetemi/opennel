@@ -429,6 +429,3 @@ void	CPrimChecker::renderBits(const CPolygon &poly, uint8 bits)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

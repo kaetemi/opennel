@@ -405,6 +405,3 @@ bool CTextContextUser::isSameLetterColors(ULetterColors * letterColors, uint ind
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

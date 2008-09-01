@@ -355,6 +355,3 @@ TReportResult report (const std::string &title, const std::string &header, const
 
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

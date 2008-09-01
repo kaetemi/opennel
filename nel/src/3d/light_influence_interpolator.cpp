@@ -111,6 +111,3 @@ void		CLightInfluenceInterpolator::interpolate(std::vector<CPointLightInfluence>
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

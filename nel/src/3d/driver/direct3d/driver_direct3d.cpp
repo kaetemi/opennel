@@ -3743,5 +3743,3 @@ void NL3D::CDriverD3D::findNearestFullscreenVideoMode()
 		}
 	}
 }
-/* Merge OpenNeL SVN
- */

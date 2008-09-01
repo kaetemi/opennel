@@ -553,6 +553,3 @@ void		CLightingManager::getDynamicPointLightList(const CVector &worldPos, std::v
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

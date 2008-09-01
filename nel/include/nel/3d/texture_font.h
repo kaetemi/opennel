@@ -121,6 +121,3 @@ public:
 #endif // NL_TEXTURE_FONT_H
 
 /* End of texture_font.h */
-
-/* Merge OpenNeL SVN
- */

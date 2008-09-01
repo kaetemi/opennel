@@ -232,6 +232,3 @@ bool CStringConversion<DestType, Pred>::isValid(const DestType &value) const
 
 #endif
 
-
-/* Merge OpenNeL SVN
- */

@@ -78,6 +78,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_CHOOSE_SUN_COLOR_DLG_H__CA0B25DD_6DEE_4EF0_B561_2EFAA445321C__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

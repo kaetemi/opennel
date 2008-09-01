@@ -264,6 +264,3 @@ void			CVegetableSortBlock::updateSortBlock(CVegetableManager &vegetManager)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -136,6 +136,3 @@ struct CGDService : public IService
  * The port is automatically allocated (0) and the main callback array is empty.
  */
 NLNET_SERVICE_MAIN( CGDService, "GDS", "gd_service", 0, EmptyCallbackArray, "", "" )
-
-/* Merge OpenNeL SVN
- */

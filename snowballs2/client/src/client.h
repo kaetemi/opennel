@@ -64,6 +64,3 @@ extern ucstring				     Login;
 #endif // CLIENT_H
 
 /* End of client.h */
-
-/* Merge OpenNeL SVN
- */

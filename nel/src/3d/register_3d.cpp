@@ -146,6 +146,3 @@ void	registerSerial3d()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

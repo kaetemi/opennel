@@ -578,6 +578,3 @@ void CDriverD3D::disableHardwareVertexProgram()
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

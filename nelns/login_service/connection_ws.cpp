@@ -663,6 +663,3 @@ void connectionWSRelease ()
 */
 
 }
-
-/* Merge OpenNeL SVN
- */

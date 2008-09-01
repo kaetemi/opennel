@@ -213,6 +213,3 @@ public:
 #endif // NL_U_PARTICLE_SYSTEM_INSTANCE_H
 
 /* End of u_particle_system_instance.h */
-
-/* Merge OpenNeL SVN
- */

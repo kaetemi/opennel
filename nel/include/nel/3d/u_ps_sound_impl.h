@@ -218,6 +218,3 @@ inline void SpawnedSourceEndedCallback(NLSOUND::USource *source, void *userParam
 #endif // NL_PS_SOUND_IMPL_H
 
 /* End of ps_sound_impl.h */
-
-/* Merge OpenNeL SVN
- */

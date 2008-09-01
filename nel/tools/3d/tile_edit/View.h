@@ -203,6 +203,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_CTView_H__72269322_0419_4F61_BAA3_1B1BB2D3E34E__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

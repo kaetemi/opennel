@@ -225,6 +225,3 @@ protected:
 #endif // NL_PS_ATTRIB_MAKER_BIN_OP_H
 
 /* End of ps_attrib_maker_bin_op.h */
-
-/* Merge OpenNeL SVN
- */

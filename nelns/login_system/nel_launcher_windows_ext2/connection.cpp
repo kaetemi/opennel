@@ -317,6 +317,3 @@ string selectShard(uint32 shardId, string &cookie, string &addr)
 
 	return "";
 }
-
-/* Merge OpenNeL SVN
- */

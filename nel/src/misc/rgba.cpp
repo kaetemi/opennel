@@ -764,6 +764,3 @@ void CRGBAF::set(float r, float g, float b, float a)
 
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

@@ -1426,6 +1426,3 @@ const CPaletteSkin* CVertexBufferRead::getPaletteSkinPointer(uint idx) const
 
 
 
-
-/* Merge OpenNeL SVN
- */

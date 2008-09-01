@@ -302,6 +302,3 @@ IOResult PO2RPO::Load(ILoad *iload)
 */
 	return IO_OK;
 }
-
-/* Merge OpenNeL SVN
- */

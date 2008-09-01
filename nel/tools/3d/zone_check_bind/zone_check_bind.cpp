@@ -471,6 +471,3 @@ int main(int argc, char* argv[])
 }
 
 	
-
-/* Merge OpenNeL SVN
- */

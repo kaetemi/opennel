@@ -94,6 +94,3 @@ protected:
 #endif // NL_DEFORM_2D_H
 
 /* End of deform_2d.h */
-
-/* Merge OpenNeL SVN
- */

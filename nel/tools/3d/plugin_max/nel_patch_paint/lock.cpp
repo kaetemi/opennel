@@ -146,6 +146,3 @@ static const unsigned char lock[] =
 
 static const unsigned int lockSize = 1068;
 
-
-/* Merge OpenNeL SVN
- */

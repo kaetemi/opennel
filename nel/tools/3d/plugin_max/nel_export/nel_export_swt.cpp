@@ -108,6 +108,3 @@ bool CNelExport::exportSWT(const char *sPath, std::vector<INode*>& vectNode)
 	}
 	return false;
 }
-
-/* Merge OpenNeL SVN
- */

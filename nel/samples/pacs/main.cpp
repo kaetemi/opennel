@@ -387,6 +387,3 @@ int main ()
 
 	return 0;
 }
-
-/* Merge OpenNeL SVN
- */

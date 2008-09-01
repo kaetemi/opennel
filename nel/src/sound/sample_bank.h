@@ -197,6 +197,3 @@ public:
 
 /* End of sound.h */
 
-
-/* Merge OpenNeL SVN
- */

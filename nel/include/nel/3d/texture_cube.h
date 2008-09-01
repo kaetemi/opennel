@@ -108,6 +108,3 @@ private:
 #endif // NL_TEXTURE_CUBE_H
 
 /* End of texture_cube.h */
-
-/* Merge OpenNeL SVN
- */

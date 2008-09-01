@@ -2081,6 +2081,3 @@ NLMISC_CATEGORISED_DYNVARIABLE(cpu, float, PeakProcessSystemLoad, "Get instant C
 
 
 } //NLNET
-
-/* Merge OpenNeL SVN
- */

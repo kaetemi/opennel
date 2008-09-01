@@ -118,6 +118,3 @@ void CConstraintMeshDlg::OnForceVertexColorLighting()
 	UpdateData();
 	_CM->forceVertexColorLighting(m_ForceVertexColorLighting ? true : false /* VC  WARNING */);			
 }
-
-/* Merge OpenNeL SVN
- */

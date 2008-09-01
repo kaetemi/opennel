@@ -135,6 +135,3 @@ private:
 #endif // NL_VERTEX_STREAM_MANAGER_H
 
 /* End of vertex_stream_manager.h */
-
-/* Merge OpenNeL SVN
- */

@@ -185,6 +185,3 @@ private:
 #endif // NL_ZONE_MANAGER_H
 
 /* End of zone_manager.h */
-
-/* Merge OpenNeL SVN
- */

@@ -96,6 +96,3 @@ std::string getExt (const std::string& path)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -37,6 +37,3 @@ $(TARGET): $(OBJS)
 
 include ../Rules.mk
 
-
-# Merge OpenNeL SVN
-

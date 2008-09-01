@@ -94,6 +94,3 @@ private:
 #endif // NL_ZONE_SEARCH_H
 
 /* End of zone_search.h */
-
-/* Merge OpenNeL SVN
- */

@@ -628,6 +628,3 @@ const char *getPriorityStr( TSoundPriority p );
 #endif // NL_AUDIO_MIXER_USER_H
 
 /* End of audio_mixer_user.h */
-
-/* Merge OpenNeL SVN
- */

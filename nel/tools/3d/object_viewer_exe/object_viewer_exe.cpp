@@ -71,6 +71,3 @@ int APIENTRY WinMain(HINSTANCE hInstance,
 
 	return 0;
 }
-
-/* Merge OpenNeL SVN
- */

@@ -1585,6 +1585,3 @@ typedef GLvoid    (APIENTRY * NEL_PFNGLGETOCCLUSIONQUERYUIVNVPROC) (GLuint id, G
 
 #endif // NL_OPENGL_EXTENSION_DEF_H
 
-
-/* Merge OpenNeL SVN
- */

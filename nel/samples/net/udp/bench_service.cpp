@@ -779,6 +779,3 @@ public:
 
  
 NLNET_SERVICE_MAIN (CBenchService, "BS", "bench_service", 45459, EmptyCallbackArray, "", "")
-
-/* Merge OpenNeL SVN
- */

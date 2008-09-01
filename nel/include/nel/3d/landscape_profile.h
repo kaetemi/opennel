@@ -79,6 +79,3 @@ extern	sint		ProfNPatchRdrFar1;
 #endif // NL_LANDSCAPE_PROFILE_H
 
 /* End of landscape_profile.h */
-
-/* Merge OpenNeL SVN
- */

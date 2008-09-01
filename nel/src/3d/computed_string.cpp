@@ -746,6 +746,3 @@ void	CRenderStringBuffer::flushUnProjected(IDriver& driver, CMaterial *fontMat, 
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

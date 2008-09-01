@@ -701,6 +701,3 @@ void CWinDisplayer::getWindowPos (uint32 &x, uint32 &y, uint32 &w, uint32 &h)
 } // NLMISC
 
 #endif // NL_OS_WINDOWS
-
-/* Merge OpenNeL SVN
- */

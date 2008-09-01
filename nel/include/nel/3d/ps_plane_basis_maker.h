@@ -230,6 +230,3 @@ public:
 #endif // NL_PLANE_BASIS_MAKER_H
 
 /* End of plane_basis_maker.h */
-
-/* Merge OpenNeL SVN
- */

@@ -530,6 +530,3 @@ static const unsigned char goofy[] =
 
 static const unsigned int goofySize = 4140;
 
-
-/* Merge OpenNeL SVN
- */

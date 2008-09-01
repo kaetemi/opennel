@@ -1544,6 +1544,3 @@ void CBackgroundSoundManager::TFxZone::serial(NLMISC::IStream &s)
 
 } // NLSOUND
 
-
-/* Merge OpenNeL SVN
- */

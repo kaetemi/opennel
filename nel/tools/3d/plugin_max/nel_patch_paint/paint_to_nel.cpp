@@ -182,6 +182,3 @@ CNelPatchValue::~CNelPatchValue ()
 	if (TileColors)
 		delete TileColors;
 }
-
-/* Merge OpenNeL SVN
- */

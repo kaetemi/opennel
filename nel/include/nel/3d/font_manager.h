@@ -171,6 +171,3 @@ public:
 #endif // NL_FONT_MANAGER_H
 
 /* End of font_manager.h */
-
-/* Merge OpenNeL SVN
- */

@@ -1145,6 +1145,3 @@ bool CPSMultiTexturedParticle::isAlternateTextureUsed(IDriver &driver) const
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

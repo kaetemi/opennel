@@ -3144,6 +3144,3 @@ bool	CMRMBuilder::buildMRMSewingMeshes(const CMesh::CMeshBuild &mbuild, uint nWa
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

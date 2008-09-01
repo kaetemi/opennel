@@ -316,6 +316,3 @@ void		CZoneTgtSmoother::makeVerticesCoplanar(std::vector<CZoneInfo>  &zones)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

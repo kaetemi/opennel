@@ -247,6 +247,3 @@ void CPlayListUser::evalPlayList(double playTime)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

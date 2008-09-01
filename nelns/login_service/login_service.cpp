@@ -491,6 +491,3 @@ NLMISC_COMMAND (onlineUsers, "displays the list of online users", "")
 	return true;
 }
 
-
-/* Merge OpenNeL SVN
- */

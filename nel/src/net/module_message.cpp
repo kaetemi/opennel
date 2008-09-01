@@ -55,6 +55,3 @@ namespace NLNET
 
 
 } // namespace NLNET
-
-/* Merge OpenNeL SVN
- */

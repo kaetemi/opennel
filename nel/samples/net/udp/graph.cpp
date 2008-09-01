@@ -229,6 +229,3 @@ NLMISC_VARIABLE(bool, GraphDisplayAverageValue, "Display or not average values")
 */
 
 #endif
-
-/* Merge OpenNeL SVN
- */

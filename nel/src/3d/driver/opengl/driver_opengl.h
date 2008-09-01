@@ -1351,6 +1351,3 @@ public:
 } // NL3D
 
 #endif // NL_DRIVER_OPENGL_H
-
-/* Merge OpenNeL SVN
- */

@@ -109,6 +109,3 @@ private:
 #endif // NL_LOD_TEXTURE_BUILDER_H
 
 /* End of lod_texture_builder.h */
-
-/* Merge OpenNeL SVN
- */

@@ -387,6 +387,3 @@ uint				CSoundBank::countSounds()
 
 } // namespace NLSOUND
 
-
-/* Merge OpenNeL SVN
- */

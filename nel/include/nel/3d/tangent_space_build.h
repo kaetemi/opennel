@@ -53,6 +53,3 @@ bool	BuildTangentSpace(CMesh::CMeshBuild &outMeshBuild, const CMesh::CMeshBuild 
 } // NL3D
 
 #endif
-
-/* Merge OpenNeL SVN
- */

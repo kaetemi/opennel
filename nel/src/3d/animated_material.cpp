@@ -485,6 +485,3 @@ const char *CAnimatedMaterial::getTexMatWRotName(uint stage)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

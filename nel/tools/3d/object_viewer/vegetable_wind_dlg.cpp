@@ -192,6 +192,3 @@ void CVegetableWindDlg::OnButtonClose()
 }
 
 
-
-/* Merge OpenNeL SVN
- */

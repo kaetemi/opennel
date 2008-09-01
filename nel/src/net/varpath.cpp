@@ -229,6 +229,3 @@ NLMISC_CATEGORISED_COMMAND(nel, varPath, "Test a varpath (for debug purpose)", "
 	
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

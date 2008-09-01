@@ -381,6 +381,3 @@ CTextureFont::SLetterInfo* CTextureFont::getLetterInfo (SLetterKey& k)
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

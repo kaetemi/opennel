@@ -1142,6 +1142,3 @@ uint64 CI18N::stringToHash(const string &str)
 }
 
 } // namespace NLMISC
-
-/* Merge OpenNeL SVN
- */

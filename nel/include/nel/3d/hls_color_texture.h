@@ -154,6 +154,3 @@ public:
 #endif // NL_HLS_COLOR_TEXTURE_H
 
 /* End of hls_color_texture.h */
-
-/* Merge OpenNeL SVN
- */

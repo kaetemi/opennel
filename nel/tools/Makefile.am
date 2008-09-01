@@ -9,6 +9,3 @@ SUBDIRS              = 3d misc pacs
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

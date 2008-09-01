@@ -9,6 +9,3 @@ SUBDIRS              = font cluster_viewer @CEGUI_SUBDIR@
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

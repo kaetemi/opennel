@@ -239,6 +239,3 @@ void	CShadowMapProjector::applyToMaterial(const CMatrix &receiverWorldMatrix, CM
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

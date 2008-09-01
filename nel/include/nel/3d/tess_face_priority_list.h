@@ -255,6 +255,3 @@ private:
 #endif // NL_TESS_FACE_PRIORITY_LIST_H
 
 /* End of tess_face_priority_list.h */
-
-/* Merge OpenNeL SVN
- */

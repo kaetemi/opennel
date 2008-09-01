@@ -251,6 +251,3 @@ namespace NLNET
 
 #endif // MODULE_BUILDER_PARTS_H
 
-
-/* Merge OpenNeL SVN
- */

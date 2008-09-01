@@ -478,6 +478,3 @@ void CBigFile::getBigFilePaths(std::vector<std::string> &bigFilePaths)
 
 
 } // namespace NLMISC
-
-/* Merge OpenNeL SVN
- */

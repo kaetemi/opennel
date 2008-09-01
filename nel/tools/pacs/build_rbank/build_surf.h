@@ -655,6 +655,3 @@ public:
 #endif // NL_BUILD_SURF_H
 
 /* End of build_surf.h */
-
-/* Merge OpenNeL SVN
- */

@@ -1467,6 +1467,3 @@ void CMainFrame::OnSnapShotTool()
 }
 
 
-
-/* Merge OpenNeL SVN
- */

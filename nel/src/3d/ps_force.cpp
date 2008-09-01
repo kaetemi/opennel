@@ -1400,6 +1400,3 @@ void CPSBrownianForce::serial(NLMISC::IStream &f) throw(NLMISC::EStream)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

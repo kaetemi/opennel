@@ -81,6 +81,3 @@ void CCommandRegistry::initVariables(NLMISC::CConfigFile &configFile)
 }
 	
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

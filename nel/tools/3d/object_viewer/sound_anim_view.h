@@ -186,6 +186,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // NL_SOUND_ANIM_VIEW
-
-/* Merge OpenNeL SVN
- */

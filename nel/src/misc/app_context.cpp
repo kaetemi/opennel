@@ -449,6 +449,3 @@ void initNelLibrary(NLMISC::CLibrary &lib)
 
 
 } // namespace NLMISC
-
-/* Merge OpenNeL SVN
- */

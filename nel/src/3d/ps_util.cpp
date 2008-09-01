@@ -439,6 +439,3 @@ void CPSUtil::display3DQuad(IDriver &driver, const CVector &c1, const CVector &c
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

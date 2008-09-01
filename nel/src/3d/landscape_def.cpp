@@ -85,6 +85,3 @@ CIndexBuffer::TFormat	NL3D_LandscapeGlobals_PassTriFormat= CIndexBuffer::Indices
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

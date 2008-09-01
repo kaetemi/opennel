@@ -258,6 +258,3 @@ void CExportNel::getLights (std::vector<CLight>& vectLight, TimeValue time, INod
 // ***************************************************************************
 
 
-
-/* Merge OpenNeL SVN
- */

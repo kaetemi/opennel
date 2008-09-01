@@ -291,6 +291,3 @@ private:
 #endif // NL_PS_RIBBON_H
 
 /* End of ps_ribbon.h */
-
-/* Merge OpenNeL SVN
- */

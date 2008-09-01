@@ -40,6 +40,3 @@ void				CShiftedTriangleCache::clearArrays()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

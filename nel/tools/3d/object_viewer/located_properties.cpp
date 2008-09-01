@@ -364,6 +364,3 @@ void CLocatedProperties::touchPSState()
 }
 
 
-
-/* Merge OpenNeL SVN
- */

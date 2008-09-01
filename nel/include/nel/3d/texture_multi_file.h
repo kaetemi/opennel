@@ -97,6 +97,3 @@ private:
 #endif // NL_TEXTURE_MULTI_FILE_H
 
 /* End of texture_multi_file.h */
-
-/* Merge OpenNeL SVN
- */

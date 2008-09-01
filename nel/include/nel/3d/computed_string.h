@@ -309,6 +309,3 @@ public:
 /* End of computed_string.h */
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -253,6 +253,3 @@ AC_OUTPUT
 
 dnl End of configure.in
 
-
-# Merge OpenNeL SVN
-

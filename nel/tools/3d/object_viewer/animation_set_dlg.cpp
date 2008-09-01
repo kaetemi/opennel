@@ -564,6 +564,3 @@ void CAnimationSetDlg::OnSelchangeEditedObject()
 	refresh (TRUE);
 	_ObjView->getSlotDlg ()->refresh (TRUE);
 }
-
-/* Merge OpenNeL SVN
- */

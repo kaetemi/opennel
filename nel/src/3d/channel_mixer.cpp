@@ -826,6 +826,3 @@ void CChannelMixer::resetEvalDetailDate()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -778,6 +778,3 @@ void	NLPACS::CRetrieverInstance::resetBorderChainLinks(const vector<uint> &links
 		_BorderChainLinks[links[i]].reset();
 	}
 }
-
-/* Merge OpenNeL SVN
- */

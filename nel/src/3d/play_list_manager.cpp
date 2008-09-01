@@ -121,6 +121,3 @@ void CPlayListManager::deleteAll()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

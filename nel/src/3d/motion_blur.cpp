@@ -135,6 +135,3 @@ void CMotionBlur::performMotionBlur(IDriver *driver, float motionBlurAmount)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

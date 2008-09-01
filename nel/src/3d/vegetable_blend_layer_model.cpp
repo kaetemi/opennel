@@ -161,6 +161,3 @@ void	CVegetableBlendLayerModel::traverseRender()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

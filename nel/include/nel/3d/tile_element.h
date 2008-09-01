@@ -143,6 +143,3 @@ public:
 #endif // NL_TILE_ELEMENT_H
 
 /* End of tile_element.h */
-
-/* Merge OpenNeL SVN
- */

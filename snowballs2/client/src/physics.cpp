@@ -61,6 +61,3 @@ CVector	CTrajectory::evalSpeed(NLMISC::TTime t) const
 	res.z += 0.3f*_Distance*_Distance/90.0f*(float)Pi*(float)cos(Pi*ft);
 	return res;
 }
-
-/* Merge OpenNeL SVN
- */

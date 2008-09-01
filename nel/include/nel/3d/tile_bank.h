@@ -663,6 +663,3 @@ private:
 #endif // NL_Tile_BANK_H
 
 /* End of tile_bank.h */
-
-/* Merge OpenNeL SVN
- */

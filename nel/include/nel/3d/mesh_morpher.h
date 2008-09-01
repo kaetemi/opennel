@@ -125,6 +125,3 @@ private:
 #endif // NL_MESH_MORPHER_H
             
 /* End of mesh_morpher.h */
-
-/* Merge OpenNeL SVN
- */

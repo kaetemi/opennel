@@ -229,6 +229,3 @@ SOURCE=.\panoply_maker.cpp
 # End Source File
 # End Target
 # End Project
-
-# Merge OpenNeL SVN
-

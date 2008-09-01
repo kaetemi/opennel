@@ -476,6 +476,3 @@ inline CCollisionOTInfo	*CCollisionOT::getNextInfo () const
 #endif // NL_COLLISION_OT_H
 
 /* End of collision_ot.h */
-
-/* Merge OpenNeL SVN
- */

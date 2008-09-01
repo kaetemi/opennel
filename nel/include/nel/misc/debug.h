@@ -1013,6 +1013,3 @@ private:
 #endif // NL_DEBUG_H
 
 /* End of debug.h */
-
-/* Merge OpenNeL SVN
- */

@@ -241,6 +241,3 @@ Test::Suite *createObjectCommandTS()
 {
 	return new CObjectCommandTS;
 }
-
-/* Merge OpenNeL SVN
- */

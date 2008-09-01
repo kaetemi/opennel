@@ -463,6 +463,3 @@ public:
 #endif // NL_RENDER_TRAV_H
 
 /* End of render_trav.h */
-
-/* Merge OpenNeL SVN
- */

@@ -83,6 +83,3 @@ private:
 };
 	
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

@@ -195,6 +195,3 @@ void CDirectionAttr::OnGlobalDirection()
 	}
 	EnableWindow(TRUE);
 }
-
-/* Merge OpenNeL SVN
- */

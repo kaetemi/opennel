@@ -289,6 +289,3 @@ extern "C" void NL3D_drawFarTileInFarTextureAdditiveAlpha (const NL3D_CComputeTi
 #endif // NL_TEXTURE_FAR_H
 
 /* End of texture_far.h */
-
-/* Merge OpenNeL SVN
- */

@@ -198,6 +198,3 @@ void				CSimpleSound::importForm(const std::string& filename, NLGEORGES::UFormEl
 }
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

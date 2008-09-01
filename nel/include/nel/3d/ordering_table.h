@@ -272,6 +272,3 @@ inline COrderingTable<T> &COrderingTable<T>::operator=(const COrderingTable<T> &
 #endif // NL_ORDERING_TABLE_H
 
 /* End of ordering_table.h */
-
-/* Merge OpenNeL SVN
- */

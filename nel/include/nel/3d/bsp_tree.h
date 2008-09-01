@@ -300,6 +300,3 @@ template<class T> sint32 CBSPTree<T>::getNbNode()
 }
 
 #endif // NL_BSP_TREE_H
-
-/* Merge OpenNeL SVN
- */

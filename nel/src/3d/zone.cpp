@@ -2049,6 +2049,3 @@ bool CPatchInfo::transform (std::vector<CPatchInfo> &patchInfo, NL3D::CZoneSymme
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

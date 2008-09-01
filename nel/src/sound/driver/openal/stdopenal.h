@@ -24,6 +24,3 @@
 #include "AL/al.h"
 #include "AL/alut.h"
 #include "sound_driver_al.h"
-
-/* Merge OpenNeL SVN
- */

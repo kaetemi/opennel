@@ -71,6 +71,3 @@ void	animateSky (NLMISC::TTime dt);
 #endif // CAMERA_H
 
 /* End of camera.h */
-
-/* Merge OpenNeL SVN
- */

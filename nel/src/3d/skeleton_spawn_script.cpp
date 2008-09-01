@@ -290,6 +290,3 @@ void		CSSSModelRequest::execute()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

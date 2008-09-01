@@ -402,6 +402,3 @@ void				CQuadGridClipManager::profile() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

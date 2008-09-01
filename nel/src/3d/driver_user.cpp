@@ -1898,6 +1898,3 @@ bool CDriverUser::setRenderTarget(class UTexture & uTex, uint32 x, uint32 y, uin
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

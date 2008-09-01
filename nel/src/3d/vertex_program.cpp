@@ -64,6 +64,3 @@ CVertexProgram::~CVertexProgram ()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

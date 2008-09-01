@@ -231,6 +231,3 @@ private:
 #endif // NL_U_INSTANCE_MATERIAL_H
 
 /* End of u_instance_material.h */
-
-/* Merge OpenNeL SVN
- */

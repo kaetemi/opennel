@@ -537,6 +537,3 @@ public:
 #endif // NL_HIERARCHICAL_TIMER_H
 
 /* End of hierarchical_timer.h */
-
-/* Merge OpenNeL SVN
- */

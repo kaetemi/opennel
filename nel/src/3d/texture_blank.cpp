@@ -38,6 +38,3 @@ void CTextureBlank::doGenerate(bool async)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

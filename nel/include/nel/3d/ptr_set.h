@@ -102,6 +102,3 @@ public:
 #endif // NL_PTR_SET_H
 
 /* End of ptr_set.h */
-
-/* Merge OpenNeL SVN
- */

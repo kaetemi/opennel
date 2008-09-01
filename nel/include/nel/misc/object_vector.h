@@ -470,6 +470,3 @@ template<> class CObjectVector<double, true> : public CObjectVector<double, fals
 #endif // NL_OBJECT_VECTOR_H
 
 /* End of object_vector.h */
-
-/* Merge OpenNeL SVN
- */

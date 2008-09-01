@@ -124,6 +124,3 @@ public:
 // using the naming service. the third one is the port where the listen socket will
 // be created. If you put 0, the system automatically finds a port.
 NLNET_SERVICE_MAIN (CChatService, "CS", "chat_service", 0, EmptyCallbackArray, "", "");
-
-/* Merge OpenNeL SVN
- */

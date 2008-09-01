@@ -124,6 +124,3 @@ public:
 #endif // NL_TESS_LIST_H
 
 /* End of tess_list.h */
-
-/* Merge OpenNeL SVN
- */

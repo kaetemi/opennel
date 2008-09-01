@@ -211,6 +211,3 @@ int main (int argc, char **argv)
 	delete cnx;
 	return 0;
 }
-
-/* Merge OpenNeL SVN
- */

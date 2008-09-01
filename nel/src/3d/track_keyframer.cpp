@@ -95,6 +95,3 @@ UTrackKeyframer	*UTrackKeyframer::createTCBFloatTrack()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

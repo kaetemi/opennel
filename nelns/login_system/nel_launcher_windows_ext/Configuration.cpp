@@ -198,6 +198,3 @@ BOOL CConfiguration::GetValue(CString& csBuffer, CString csKey, CString& csValue
 	}
 	return FALSE;
 }
-
-/* Merge OpenNeL SVN
- */

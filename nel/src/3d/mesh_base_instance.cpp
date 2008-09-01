@@ -570,6 +570,3 @@ sint			CMeshBaseInstance::getAsyncTextureId(uint matId, uint stage) const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

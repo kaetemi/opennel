@@ -81,6 +81,3 @@ public:
 #endif // NL_VEGETABLE_LIGHT_EX_H
 
 /* End of vegetable_light_ex.h */
-
-/* Merge OpenNeL SVN
- */

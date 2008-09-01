@@ -357,6 +357,3 @@ private:
 #endif // NL_TEXT_CONTEXT_H
 
 /* End of text_context.h */
-
-/* Merge OpenNeL SVN
- */

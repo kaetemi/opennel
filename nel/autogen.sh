@@ -30,6 +30,3 @@ autoconf && \
 echo "" && \
 echo "Run: ./configure; make; make install" && \
 echo ""
-
-# Merge OpenNeL SVN
-

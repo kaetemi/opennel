@@ -1040,6 +1040,3 @@ private:
 #endif // NL_LANDSCAPE_H
 
 /* End of landscape.h */
-
-/* Merge OpenNeL SVN
- */

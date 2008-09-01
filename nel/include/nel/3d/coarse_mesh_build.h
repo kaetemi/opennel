@@ -144,6 +144,3 @@ private:
 #endif // NL_COARSE_MESH_BUILD_H
 
 /* End of coarse_mesh_build.h */
-
-/* Merge OpenNeL SVN
- */

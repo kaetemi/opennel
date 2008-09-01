@@ -874,6 +874,3 @@ NLMISC_CATEGORISED_COMMAND(nel,playerInfo,"Get informations about a player or al
 }
 
 }
-
-/* Merge OpenNeL SVN
- */

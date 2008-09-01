@@ -477,6 +477,3 @@ uint32 CNoise3d::getDepth ()
 
 } // namespace NL3D
 
-
-/* Merge OpenNeL SVN
- */

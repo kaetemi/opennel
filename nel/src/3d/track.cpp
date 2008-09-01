@@ -213,6 +213,3 @@ bool ITrack::interpolate (TAnimationTime time, bool& res)
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

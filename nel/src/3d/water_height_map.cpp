@@ -767,6 +767,3 @@ float	CWaterHeightMap::getHeight(const NLMISC::CVector2f &pos)
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

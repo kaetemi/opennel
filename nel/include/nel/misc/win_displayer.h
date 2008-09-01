@@ -104,6 +104,3 @@ private:
 #endif // NL_WIN_DISPLAYER_H
 
 /* End of win_displayer.h */
-
-/* Merge OpenNeL SVN
- */

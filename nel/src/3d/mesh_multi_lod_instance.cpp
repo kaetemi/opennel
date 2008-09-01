@@ -340,6 +340,3 @@ void		CMeshMultiLodInstance::setColorCoarseMesh( CRGBA color, uint vtDstSize, ui
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

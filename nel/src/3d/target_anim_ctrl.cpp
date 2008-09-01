@@ -234,6 +234,3 @@ CQuat	CTargetAnimCtrl::getCurrentLSRotationFromBone(CSkeletonModel *model, CBone
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

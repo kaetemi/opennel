@@ -1278,6 +1278,3 @@ void		CPatchDLMContext::blendTileToTexture(const CRGBA *srcPixel, sint srcDeltaX
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

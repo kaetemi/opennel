@@ -159,6 +159,3 @@ namespace NLMISC
 #endif // NL_PS_FACE_H
 
 /* End of ps_face.h */
-
-/* Merge OpenNeL SVN
- */

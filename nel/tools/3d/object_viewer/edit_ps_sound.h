@@ -147,6 +147,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_EDIT_PS_SOUND_H__E11AAB2A_04BB_453A_B722_AA47DB840D5A__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

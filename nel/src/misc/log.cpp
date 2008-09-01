@@ -637,6 +637,3 @@ void CLog::resetFilters()
 
 } // NLMISC
 
-
-/* Merge OpenNeL SVN
- */

@@ -57,6 +57,3 @@ static	CVegetableQuadrant		InitVegetableQuadrant;
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -160,6 +160,3 @@ void	releasePACS()
 }
 
 
-
-/* Merge OpenNeL SVN
- */

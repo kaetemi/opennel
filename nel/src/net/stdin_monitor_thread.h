@@ -53,6 +53,3 @@ namespace NLNET
 } // NLMISC
 
 #endif
-
-/* Merge OpenNeL SVN
- */

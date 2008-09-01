@@ -267,6 +267,3 @@ private:
 #endif // NL_MRM_BUILDER_H
 
 /* End of mrm_builder.h */
-
-/* Merge OpenNeL SVN
- */

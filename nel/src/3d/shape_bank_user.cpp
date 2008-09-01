@@ -116,6 +116,3 @@ void	CShapeBankUser::buildSystemGeometryForshape(const std::string &shapeName)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

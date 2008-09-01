@@ -8,6 +8,3 @@ int getch(void);
 
 #endif // NL_KBHIT_H
 
-
-/* Merge OpenNeL SVN
- */

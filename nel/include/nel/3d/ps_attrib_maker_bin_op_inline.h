@@ -795,6 +795,3 @@ inline void	CPSAttribMakerBinOp<T>::resize		  (uint32 capacity, uint32 nbPresent
 #endif // NL_PS_ATTRIB_MAKER_BIN_OP_INLINE_H
 
 /* End of ps_attrib_maker_bin_op.h */
-
-/* Merge OpenNeL SVN
- */

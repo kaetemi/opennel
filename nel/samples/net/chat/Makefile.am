@@ -25,6 +25,3 @@ chatclient_LDADD   = ../../../src/misc/libnelmisc.la \
                      ../../../src/net/libnelnet.la 
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

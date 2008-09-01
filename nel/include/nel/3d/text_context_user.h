@@ -147,6 +147,3 @@ public:
 #endif // NL_TEXT_CONTEXT_USER_H
 
 /* End of text_context_user.h */
-
-/* Merge OpenNeL SVN
- */

@@ -140,6 +140,3 @@ private:
 #endif // NL_LANDSCAPEIG_MANAGER_H
 
 /* End of landscapeig_manager.h */
-
-/* Merge OpenNeL SVN
- */

@@ -235,6 +235,3 @@ void			CLodCharacterBuilder::applySkin(CSkeletonModel *skeleton, CVector	*dstVer
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

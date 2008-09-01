@@ -163,6 +163,3 @@ bool CCpuInfo___::hasMMX() { return HasMMX; }
 bool CCpuInfo___::hasSSE() { return HasSSE; }
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

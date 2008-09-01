@@ -74,6 +74,3 @@ private:
 #endif // NL_LANDSCAPE_FACE_VECTOR_MANAGER_H
 
 /* End of landscape_face_vector_manager.h */
-
-/* Merge OpenNeL SVN
- */

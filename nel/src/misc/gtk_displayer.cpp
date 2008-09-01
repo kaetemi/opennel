@@ -446,6 +446,3 @@ void CGtkDisplayer::getWindowPos (uint32 &x, uint32 &y, uint32 &w, uint32 &h)
 void foo_gtk_displayer_cpp() {}
 
 #endif // NL_USE_GTK
-
-/* Merge OpenNeL SVN
- */

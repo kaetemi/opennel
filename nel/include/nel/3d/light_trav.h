@@ -117,6 +117,3 @@ private:
 #endif // NL_LIGHT_TRAV_H
 
 /* End of light_trav.h */
-
-/* Merge OpenNeL SVN
- */

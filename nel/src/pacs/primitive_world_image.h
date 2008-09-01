@@ -505,6 +505,3 @@ private:
 #endif // NL_PRIMITIVE_WORLD_IMAGE_H
 
 /* End of primitive_world_image.h */
-
-/* Merge OpenNeL SVN
- */

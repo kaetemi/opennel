@@ -179,6 +179,3 @@ private:
 #endif // NL_PS_RIBBON_LOOK_AT_H
 
 /* End of ps_ribbon_look_at.h */
-
-/* Merge OpenNeL SVN
- */

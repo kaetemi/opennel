@@ -1247,6 +1247,3 @@ void			CShadowMapManager::garbageShadowTextures(CScene *scene)
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

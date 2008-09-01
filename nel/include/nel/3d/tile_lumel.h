@@ -253,6 +253,3 @@ inline void CTileLumel::skip (CStreamBit& stream)
 #endif // NL_TILE_LUMEL_H
 
 /* End of tile_lumel.h */
-
-/* Merge OpenNeL SVN
- */

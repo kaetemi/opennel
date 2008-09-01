@@ -194,6 +194,3 @@ private:
 #endif // NL_LIGO_CONFIG_H
 
 /* End of ligo_config.h */
-
-/* Merge OpenNeL SVN
- */

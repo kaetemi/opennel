@@ -135,6 +135,3 @@ struct CAIService : public IService
  * The port is automatically allocated (0) and the main callback array is empty.
  */
 NLNET_SERVICE_MAIN( CAIService, "AIS", "ai_service", 0, EmptyCallbackArray, "", "" )
-
-/* Merge OpenNeL SVN
- */

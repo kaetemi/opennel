@@ -678,6 +678,3 @@ inline bool CFormElm::convertValue (NLMISC::CRGBA &result, const char *value) co
 } // NLGEORGES
 
 #endif // NL_FORM_ELM_H
-
-/* Merge OpenNeL SVN
- */

@@ -292,6 +292,3 @@ private:
 #endif // NL_EVENT_MOUSE_LISTENER_H
 
 /* End of event_mouse_listener.h */
-
-/* Merge OpenNeL SVN
- */

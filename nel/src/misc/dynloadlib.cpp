@@ -351,6 +351,3 @@ uint32	INelLibrary::getLoadingCounter()
 
 
 }	// namespace NLMISC
-
-/* Merge OpenNeL SVN
- */

@@ -197,6 +197,3 @@ private:
 #endif // NL_NET_MANAGER_H
 
 /* End of net_manager.h */
-
-/* Merge OpenNeL SVN
- */

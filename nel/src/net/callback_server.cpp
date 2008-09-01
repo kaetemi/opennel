@@ -388,6 +388,3 @@ void CCallbackServer::noticeConnection( TSockId hostid )
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

@@ -31,6 +31,3 @@ login_service_SOURCES = mysql_helper.cpp		\
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

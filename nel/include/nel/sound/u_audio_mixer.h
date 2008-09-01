@@ -412,6 +412,3 @@ public:
 #endif // NL_U_AUDIO_MIXER_H
 
 /* End of u_audio_mixer.h */
-
-/* Merge OpenNeL SVN
- */

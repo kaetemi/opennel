@@ -136,6 +136,3 @@ void		CLightTrav::reserveLightedList(uint numModels)
 
 
 }
-
-/* Merge OpenNeL SVN
- */

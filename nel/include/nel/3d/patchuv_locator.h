@@ -96,6 +96,3 @@ private:
 #endif // NL_PATCHUV_LOCATOR_H
 
 /* End of patchuv_locator.h */
-
-/* Merge OpenNeL SVN
- */

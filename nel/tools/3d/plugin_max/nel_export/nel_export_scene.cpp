@@ -81,6 +81,3 @@ bool CNelExport::exportInstanceGroup(string filename, vector<INode*>& vectNode)
 	}
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

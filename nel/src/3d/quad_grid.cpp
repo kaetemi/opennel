@@ -33,6 +33,3 @@ namespace NL3D
 	std::vector<uint> CQuadGridBase::_AlreadySelected;
 	uint CQuadGridBase::_SelectStamp = 0;
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

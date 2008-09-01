@@ -1578,6 +1578,3 @@ void			CInstanceGroup::displayDebugClusters(IDriver *drv, class CTextContext *tx
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

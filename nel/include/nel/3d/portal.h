@@ -151,6 +151,3 @@ private:
 #endif // NL_PORTAL_H
 
 /* End of portal.h */
-
-/* Merge OpenNeL SVN
- */

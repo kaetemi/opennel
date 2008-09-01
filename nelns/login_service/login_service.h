@@ -97,6 +97,3 @@ void beep (uint freq = 400, uint nb = 2, uint beepDuration = 100, uint pauseDura
 #endif // NL_LOGIN_SERVICE_H
 
 /* End of login_service.h */
-
-/* Merge OpenNeL SVN
- */

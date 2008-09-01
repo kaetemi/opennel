@@ -58,6 +58,3 @@ public:
 #endif // NL_TEXTURE_BLANK_H
 
 /* End of texture_blank.h */
-
-/* Merge OpenNeL SVN
- */

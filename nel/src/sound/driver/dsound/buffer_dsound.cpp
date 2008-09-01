@@ -495,6 +495,3 @@ uint32 CBufferDSound::getBufferMono16(std::vector<sint16> &result)
 
 
 
-
-/* Merge OpenNeL SVN
- */

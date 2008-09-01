@@ -216,6 +216,3 @@ ITexture *CTextureCube::buildNonSelectableVersion(uint index)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -174,6 +174,3 @@ public:
 #endif // NL_TILE_FAR_BANK_H
 
 /* End of tile_far_bank.h */
-
-/* Merge OpenNeL SVN
- */

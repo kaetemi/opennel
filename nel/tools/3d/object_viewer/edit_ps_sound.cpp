@@ -240,6 +240,3 @@ void CEditPSSound::OnKeepOriginalPitch()
 	_PitchDlg->EnableWindow(!m_KeepOriginalPitch);
 	updateModifiedFlag();
 }
-
-/* Merge OpenNeL SVN
- */

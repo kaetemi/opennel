@@ -63,6 +63,3 @@ public:
 #endif // NL_STRIPIFIER_H
 
 /* End of stripifier.h */
-
-/* Merge OpenNeL SVN
- */

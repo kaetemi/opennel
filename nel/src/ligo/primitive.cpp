@@ -2757,6 +2757,3 @@ void Register ()
 } // namespace NLLIGO
 
 
-
-/* Merge OpenNeL SVN
- */

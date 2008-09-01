@@ -161,6 +161,3 @@ void CConstraintMeshGlobalTexAnimDlg::editExValueChanged(CEditEx *ctrl)
 	_CM->setGlobalTexAnim(_Stage, gta);
 
 }
-
-/* Merge OpenNeL SVN
- */

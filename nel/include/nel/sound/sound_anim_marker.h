@@ -83,6 +83,3 @@ protected:
 } // namespace NLSOUND
 
 #endif // NL_SOUND_ANIM_MARKER_H
-
-/* Merge OpenNeL SVN
- */

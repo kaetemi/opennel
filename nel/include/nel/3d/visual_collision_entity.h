@@ -212,6 +212,3 @@ private:
 #endif // NL_VISUAL_COLLISION_ENTITY_H
 
 /* End of visual_collision_entity.h */
-
-/* Merge OpenNeL SVN
- */

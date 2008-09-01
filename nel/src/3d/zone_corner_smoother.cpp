@@ -238,6 +238,3 @@ void	CZoneCornerSmoother::computeAllCornerSmoothFlags(CZone *zone, std::vector<C
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

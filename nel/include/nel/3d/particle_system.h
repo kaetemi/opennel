@@ -1334,6 +1334,3 @@ class CPSCopyHelper
 #endif // NL_PARTICLE_SYSTEM_H
 
 /* End of particle_system.h */
-
-/* Merge OpenNeL SVN
- */

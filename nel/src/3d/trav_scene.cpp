@@ -40,6 +40,3 @@ namespace	NL3D
 
 
 /* End of trav_scene.cpp */
-
-/* Merge OpenNeL SVN
- */

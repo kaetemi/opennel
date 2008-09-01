@@ -2316,6 +2316,3 @@ bool	NLPACS::CLocalRetriever::checkSurfaceIntegrity(uint surf, NLMISC::CVector t
 
 	return success;
 }
-
-/* Merge OpenNeL SVN
- */

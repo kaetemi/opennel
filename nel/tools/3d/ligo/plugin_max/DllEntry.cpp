@@ -80,6 +80,3 @@ TCHAR *GetString(int id)
 	return NULL;
 }
 
-
-/* Merge OpenNeL SVN
- */

@@ -1488,6 +1488,3 @@ void CPSRibbon::enumTexs(std::vector<NLMISC::CSmartPtr<ITexture> > &dest, IDrive
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -276,6 +276,3 @@ public:
 #endif // NL_TEXTURE_USER_H
 
 /* End of texture_user.h */
-
-/* Merge OpenNeL SVN
- */

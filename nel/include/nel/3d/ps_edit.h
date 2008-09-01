@@ -108,6 +108,3 @@ struct IPSMover
 #endif // NL_PS_EDIT_H
 
 /* End of ps_edit.h */
-
-/* Merge OpenNeL SVN
- */

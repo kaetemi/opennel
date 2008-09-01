@@ -919,6 +919,3 @@ void CShapeBank::buildSystemGeometryForshape(const std::string &shapeName)
 
 
 }
-
-/* Merge OpenNeL SVN
- */

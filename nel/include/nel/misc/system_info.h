@@ -115,6 +115,3 @@ private:
 #endif // NL_SYSTEM_INFO_H
 
 /* End of system_info.h */
-
-/* Merge OpenNeL SVN
- */

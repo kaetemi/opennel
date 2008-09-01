@@ -713,6 +713,3 @@ NLNET_SERVICE_MAIN (CFrontEndService, "FS", "frontend_service", 0, CallbackArray
 
 
 /* end of file */
-
-/* Merge OpenNeL SVN
- */

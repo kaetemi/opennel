@@ -587,6 +587,3 @@ protected:
 #endif // NL_SURFACE_SPLITTER_H
 
 /* End of surface_splitter.h */
-
-/* Merge OpenNeL SVN
- */

@@ -170,6 +170,3 @@ public:
  * The port is automatically allocated (0) and the main callback array is CallbackArray.
  */
 NLNET_SERVICE_MAIN( CPlayerService, "PLS", "player_service", 0, CallbackArray, "", "" )
-
-/* Merge OpenNeL SVN
- */

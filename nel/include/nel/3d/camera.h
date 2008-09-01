@@ -270,6 +270,3 @@ private:
 #endif // NL_CAMERA_H
 
 /* End of camera.h */
-
-/* Merge OpenNeL SVN
- */

@@ -433,6 +433,3 @@ float	CMeshVPWindTree::getMaxVertexMove()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

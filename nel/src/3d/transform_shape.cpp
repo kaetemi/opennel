@@ -356,6 +356,3 @@ void	CTransformShape::getLightHotSpotInWorld(CVector &modelPos, float &modelRadi
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

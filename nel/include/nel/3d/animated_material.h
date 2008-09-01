@@ -288,6 +288,3 @@ private:
 #endif // NL_ANIMATED_MATERIAL_H
 
 /* End of animated_material.h */
-
-/* Merge OpenNeL SVN
- */

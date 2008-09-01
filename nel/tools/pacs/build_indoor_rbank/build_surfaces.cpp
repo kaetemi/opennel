@@ -355,6 +355,3 @@ void	buildSnapping(CCollisionMeshBuild &cmb, CLocalRetriever &lr)
 	lr.initFaceGrid();
 }
 
-
-/* Merge OpenNeL SVN
- */

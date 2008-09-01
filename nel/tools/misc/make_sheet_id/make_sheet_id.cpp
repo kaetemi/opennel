@@ -627,6 +627,3 @@ int main( int argc, char ** argv )
 	return EXIT_SUCCESS;
 
 } // main //
-
-/* Merge OpenNeL SVN
- */

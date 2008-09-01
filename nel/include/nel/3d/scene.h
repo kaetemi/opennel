@@ -847,6 +847,3 @@ private:
 #endif // NL_SCENE_H
 
 /* End of scene.h */
-
-/* Merge OpenNeL SVN
- */

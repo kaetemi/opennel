@@ -97,6 +97,3 @@ public:
 #endif // NL_P_THREAD_H
 
 /* End of p_thread.h */
-
-/* Merge OpenNeL SVN
- */

@@ -2430,6 +2430,3 @@ bool	CAudioMixerUser::isEventMusicEnded()
 } // NLSOUND
 
 
-
-/* Merge OpenNeL SVN
- */

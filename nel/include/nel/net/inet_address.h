@@ -176,6 +176,3 @@ std::string vectorCInetAddressToString(const std::vector<CInetAddress> &addrs);
 #endif // NL_INET_ADDRESS_H
 
 /* End of inet_address.h */
-
-/* Merge OpenNeL SVN
- */

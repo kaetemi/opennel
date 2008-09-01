@@ -759,6 +759,3 @@ void CPSQuad::updateTexWrapMode(IDriver &drv)
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

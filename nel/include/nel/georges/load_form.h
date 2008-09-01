@@ -1419,6 +1419,3 @@ void loadFormNoPackedSheet2 (const std::vector<std::string> &sheetFilters, std::
 #endif // NL_LOAD_FORM_H
 
 /* End of load_form.h */
-
-/* Merge OpenNeL SVN
- */

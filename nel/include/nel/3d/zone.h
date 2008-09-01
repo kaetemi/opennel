@@ -643,6 +643,3 @@ private:
 #endif // NL_ZONE_H
 
 /* End of zone.h */
-
-/* Merge OpenNeL SVN
- */

@@ -583,6 +583,3 @@ NLMISC_CATEGORISED_DYNVARIABLE(nel, string, LSListenAddress, "the listen address
 NLMISC_CATEGORISED_VARIABLE(nel, string, DefaultUserPriv, "Default User priv for people who don't use the login system");
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

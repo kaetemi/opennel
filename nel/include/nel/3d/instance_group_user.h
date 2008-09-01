@@ -157,6 +157,3 @@ public:
 #endif // NL_INSTANCE_GROUP_USER_H
 
 /* End of instance_group_user.h */
-
-/* Merge OpenNeL SVN
- */

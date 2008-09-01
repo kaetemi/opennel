@@ -331,6 +331,3 @@ protected:
 #endif // NL_FLARE_SHAPE_H
 
 /* End of flare_shape.h */
-
-/* Merge OpenNeL SVN
- */

@@ -362,6 +362,3 @@ void CDriverD3D::displayBench (class NLMISC::CLog *log)
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

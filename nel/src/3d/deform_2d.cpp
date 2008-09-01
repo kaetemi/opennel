@@ -186,6 +186,3 @@ void CDeform2d::doDeform(const TPoint2DVect &surf, IDriver *drv, IPerturbUV *uvp
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

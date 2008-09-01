@@ -332,6 +332,3 @@ void CFormLoader::warning (bool exception, const char *function, const char *for
 // ***************************************************************************
 
 } // NLGEORGES
-
-/* Merge OpenNeL SVN
- */

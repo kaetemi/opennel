@@ -2067,6 +2067,3 @@ bool CMoveContainer::evalNCPrimitiveCollision (double deltaTime, UMovePrimitive 
 
 
 } // NLPACS
-
-/* Merge OpenNeL SVN
- */

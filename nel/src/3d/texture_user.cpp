@@ -38,6 +38,3 @@ void	dummyToAvoidStupidCompilerWarning_texture_user_cpp()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

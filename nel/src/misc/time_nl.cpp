@@ -364,6 +364,3 @@ std::string	CTime::getHumanRelativeTime(sint32 nbSeconds)
 
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

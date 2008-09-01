@@ -91,6 +91,3 @@ protected:
 #endif // NL_TRACK_SAMPLED_VECTOR_H
 
 /* End of track_sampled_vector.h */
-
-/* Merge OpenNeL SVN
- */

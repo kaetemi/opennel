@@ -88,6 +88,3 @@ private:
 }
 
 #endif
-
-/* Merge OpenNeL SVN
- */

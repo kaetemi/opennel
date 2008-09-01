@@ -409,6 +409,3 @@ UForm *CForm::getParentForm (uint parent) const
 
 } // NLGEORGES
 
-
-/* Merge OpenNeL SVN
- */

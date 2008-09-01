@@ -159,6 +159,3 @@ private:
 #endif // NL_LANDSCAPE_VEGETABLE_BLOCK_H
 
 /* End of landscape_vegetable_block.h */
-
-/* Merge OpenNeL SVN
- */

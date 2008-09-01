@@ -315,6 +315,3 @@ void connectionWebRelease ()
 	delete WebServer;
 	WebServer = 0;
 }
-
-/* Merge OpenNeL SVN
- */

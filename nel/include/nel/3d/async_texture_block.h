@@ -78,6 +78,3 @@ private:
 #endif // NL_ASYNC_TEXTURE_BLOCK_H
 
 /* End of async_texture_block.h */
-
-/* Merge OpenNeL SVN
- */

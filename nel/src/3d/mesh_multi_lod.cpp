@@ -952,6 +952,3 @@ void	CMeshMultiLod::buildSystemGeometry()
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

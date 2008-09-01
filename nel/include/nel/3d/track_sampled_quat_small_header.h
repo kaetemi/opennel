@@ -134,6 +134,3 @@ protected:
 #endif // NL_TRACK_SAMPLED_QUAT_SMALL_HEADER_H
 
 /* End of track_sampled_quat_small_header.h */
-
-/* Merge OpenNeL SVN
- */

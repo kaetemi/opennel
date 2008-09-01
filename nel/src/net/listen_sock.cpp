@@ -181,6 +181,3 @@ void CListenSock::setBacklog( sint backlog )
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

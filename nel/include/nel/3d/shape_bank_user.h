@@ -73,6 +73,3 @@ public:
 #endif // NL_SHAPE_BANK_USER_H
 
 /* End of shape_bank_user.h */
-
-/* Merge OpenNeL SVN
- */

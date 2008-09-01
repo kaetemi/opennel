@@ -247,6 +247,3 @@ std::string standardizeShapeName(const std::string &name)
 
 
 
-
-/* Merge OpenNeL SVN
- */

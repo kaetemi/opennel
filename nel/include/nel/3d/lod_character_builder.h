@@ -97,6 +97,3 @@ private:
 #endif // NL_LOD_CHARACTER_BUILDER_H
 
 /* End of lod_character_builder.h */
-
-/* Merge OpenNeL SVN
- */

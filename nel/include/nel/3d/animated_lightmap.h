@@ -114,6 +114,3 @@ private:
 #endif // NL_ANIMATED_LIGHTMAP_H
 
 /* End of animated_lightmap.h */
-
-/* Merge OpenNeL SVN
- */

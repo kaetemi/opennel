@@ -412,6 +412,3 @@ void CLandscapeIGManager::getAllIGWithNames(std::vector<std::pair<UInstanceGroup
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

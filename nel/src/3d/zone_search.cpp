@@ -231,6 +231,3 @@ std::string CZoneSearch::getZoneNameFromId (uint16 zoneid)
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

@@ -1108,6 +1108,3 @@ void	updateRetrieverBank()
 }
 
 
-
-/* Merge OpenNeL SVN
- */

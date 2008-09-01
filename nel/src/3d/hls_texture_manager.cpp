@@ -121,6 +121,3 @@ const char		*CHLSTextureManager::getTextureName(uint i) const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

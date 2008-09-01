@@ -475,6 +475,3 @@ void IDriver::profileTextureUsage(std::vector<std::string> &result)
 // ***************************************************************************
 
 }
-
-/* Merge OpenNeL SVN
- */

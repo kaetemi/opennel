@@ -417,6 +417,3 @@ void CSourceAL::setEAXProperty( uint prop, void *value, uint valuesize )
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

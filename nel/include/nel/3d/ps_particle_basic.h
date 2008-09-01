@@ -875,6 +875,3 @@ inline void SetupModulatedStage(CMaterial &m, uint stage, CMaterial::TTexSource 
 #endif // NL_PS_PARTICLE_BASIC_H
 
 /* End of ps_particle_basic.h */
-
-/* Merge OpenNeL SVN
- */

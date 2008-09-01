@@ -1162,6 +1162,3 @@ NLMISC_COMMAND( killAllServices, "SIM: Make all the controlled services quit", "
 	SIMInstance->killAllServices();
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

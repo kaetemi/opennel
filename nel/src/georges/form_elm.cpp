@@ -3076,6 +3076,3 @@ void CFormElmAtom::warning (bool exception, const char *function, const char *fo
 // ***************************************************************************
 
 } // NLGEORGES
-
-/* Merge OpenNeL SVN
- */

@@ -342,6 +342,3 @@ zone_symmetrisation.h \
 zone_tgt_smoother.h
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

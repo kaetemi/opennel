@@ -238,6 +238,3 @@ private:
 #endif // NL_NAMING_CLIENT_H
 
 /* End of naming_client.h */
-
-/* Merge OpenNeL SVN
- */

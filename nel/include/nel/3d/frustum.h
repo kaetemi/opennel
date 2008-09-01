@@ -116,6 +116,3 @@ public:
 #endif // NL_FRUSTUM_H
 
 /* End of frustum.h */
-
-/* Merge OpenNeL SVN
- */

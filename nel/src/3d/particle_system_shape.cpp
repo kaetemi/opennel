@@ -460,6 +460,3 @@ void CParticleSystemShape::flushTextures(IDriver &driver, uint selectedTexture)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -228,6 +228,3 @@ private:
 #endif // NL_CALLBACK_NET_BASE_H
 
 /* End of callback_net_base.h */
-
-/* Merge OpenNeL SVN
- */

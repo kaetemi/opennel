@@ -257,6 +257,3 @@ public:
 #endif // NL_STL_BLOCK_ALLOCATOR_H
 
 /* End of stl_block_allocator.h */
-
-/* Merge OpenNeL SVN
- */

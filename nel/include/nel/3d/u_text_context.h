@@ -331,6 +331,3 @@ public:
 #endif // NL_U_TEXT_CONTEXT_H
 
 /* End of u_text_context.h */
-
-/* Merge OpenNeL SVN
- */

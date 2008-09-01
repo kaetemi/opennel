@@ -1130,6 +1130,3 @@ void	CMeshMRMSkinnedGeom::applyRawSkinWithNormal(CLod &lod, CRawSkinnedNormalCac
 
 #endif // ADD_MESH_MRM_SKINNED_TEMPLATE
 
-
-/* Merge OpenNeL SVN
- */

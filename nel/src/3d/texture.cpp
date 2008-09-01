@@ -174,6 +174,3 @@ void ITexture::setRenderTarget (bool enable)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

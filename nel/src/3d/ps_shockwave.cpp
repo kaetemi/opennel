@@ -584,6 +584,3 @@ void CPSShockWave::enumTexs(std::vector<NLMISC::CSmartPtr<ITexture> > &dest, IDr
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

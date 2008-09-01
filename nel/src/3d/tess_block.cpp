@@ -402,6 +402,3 @@ void			CTessBlock::removeFromModifyList()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

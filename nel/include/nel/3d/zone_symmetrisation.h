@@ -165,6 +165,3 @@ private:
 #endif // NL_ZONE_SYMMETRISATION_H
 
 /* End of zone_symmetrisation.h */
-
-/* Merge OpenNeL SVN
- */

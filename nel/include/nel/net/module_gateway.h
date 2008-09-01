@@ -555,6 +555,3 @@ namespace NLNET
 
 #endif // NL_FILE_MODULE_GATEWAY_H
 
-
-/* Merge OpenNeL SVN
- */

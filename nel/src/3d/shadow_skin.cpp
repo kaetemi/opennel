@@ -98,6 +98,3 @@ bool	CShadowSkin::getRayIntersection(const CMatrix &toRaySpace, CSkeletonModel &
 
 	
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

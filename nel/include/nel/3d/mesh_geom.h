@@ -246,6 +246,3 @@ private:
 #endif // NL_MESH_GEOM_H
 
 /* End of mesh_geom.h */
-
-/* Merge OpenNeL SVN
- */

@@ -805,6 +805,3 @@ void CSnapshotToolDlg::OnPostFixViewName()
 {
 	toRegistry();
 }
-
-/* Merge OpenNeL SVN
- */

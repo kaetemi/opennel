@@ -424,6 +424,3 @@ private:
 #endif // NL_MATRIX_H
 
 /* End of matrix.h */
-
-/* Merge OpenNeL SVN
- */

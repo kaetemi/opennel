@@ -3284,6 +3284,3 @@ void comment ()
 	if (c == '\n')
 		cf_CurrentLine++;
 }
-
-/* Merge OpenNeL SVN
- */

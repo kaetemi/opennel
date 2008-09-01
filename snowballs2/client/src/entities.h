@@ -217,6 +217,3 @@ void	renderEntitiesNames ();
 #endif // ENTITIES_H
 
 /* End of entities.h */
-
-/* Merge OpenNeL SVN
- */

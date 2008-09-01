@@ -58,6 +58,3 @@ bool	interfaceOpen ();
 #endif // INTERFACE_H
 
 /* End of interface.h */
-
-/* Merge OpenNeL SVN
- */

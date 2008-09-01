@@ -86,6 +86,3 @@ public:
 #endif // NL_QUAD_EFFECT_H
 
 /* End of quad_effect.h */
-
-/* Merge OpenNeL SVN
- */

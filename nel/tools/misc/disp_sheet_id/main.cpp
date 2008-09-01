@@ -105,6 +105,3 @@ int		main(int argc, const char *argv[])
 		fclose(out);
 	}
 }
-
-/* Merge OpenNeL SVN
- */

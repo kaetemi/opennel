@@ -232,6 +232,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_EMITTER_DLG_H__7D6DB229_8E72_4A60_BD03_8A3EF3F506CF__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

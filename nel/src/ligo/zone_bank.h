@@ -139,6 +139,3 @@ public:
 #endif // NL_ZONE_BANK_H
 
 /* End of zone_bank.h */
-
-/* Merge OpenNeL SVN
- */

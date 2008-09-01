@@ -99,6 +99,3 @@ struct IOcclusionQuery
 } // NL3D
 
 #endif
-
-/* Merge OpenNeL SVN
- */

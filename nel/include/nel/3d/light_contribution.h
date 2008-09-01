@@ -140,6 +140,3 @@ public:
 #endif // NL_LIGHT_CONTRIBUTION_H
 
 /* End of light_contribution.h */
-
-/* Merge OpenNeL SVN
- */

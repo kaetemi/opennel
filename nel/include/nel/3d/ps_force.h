@@ -824,6 +824,3 @@ class CPSMagneticForce : public CPSDirectionnalForce
 #endif // NL_PS_FORCE_H
 
 /* End of ps_force.h */
-
-/* Merge OpenNeL SVN
- */

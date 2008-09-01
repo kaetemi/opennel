@@ -3981,6 +3981,3 @@ void CBitmap::getDibData(uint8*& extractData)
 
 } // NLMISC
 
-
-/* Merge OpenNeL SVN
- */

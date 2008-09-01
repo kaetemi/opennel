@@ -192,6 +192,3 @@ Test::Suite *createPureNelLibTS(const std::string &workingPath)
 {
 	return new CPureNelLibTS(workingPath);
 }
-
-/* Merge OpenNeL SVN
- */

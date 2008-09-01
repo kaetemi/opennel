@@ -321,6 +321,3 @@ int main(void)
 	
 	
 }
-
-/* Merge OpenNeL SVN
- */

@@ -2352,6 +2352,3 @@ void		CSkeletonModel::renderIntoSkeletonShadowMap(CSkeletonModel *rootSkeleton, 
 
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -422,6 +422,3 @@ public:
 #endif // NL_U_MOVE_PRIMITIVE_H
 
 /* End of u_move_primitive.h */
-
-/* Merge OpenNeL SVN
- */

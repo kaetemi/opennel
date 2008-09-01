@@ -443,6 +443,3 @@ void			CPointLight::setAddAmbientWithSun(bool state)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

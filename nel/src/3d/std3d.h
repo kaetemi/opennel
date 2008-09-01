@@ -29,6 +29,3 @@
 #include "nel/3d/transform.h"
 #include "nel/3d/quad_grid.h"
 
-
-/* Merge OpenNeL SVN
- */

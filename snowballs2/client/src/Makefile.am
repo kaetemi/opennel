@@ -54,6 +54,3 @@ AM_CXXFLAGS          = -DSNOWBALLS_CONFIG="\"${pkgsysconfdir}/\"" @FREETYPE_CFLA
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

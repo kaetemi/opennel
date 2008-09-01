@@ -109,6 +109,3 @@ void			CFastPtrListBase::erase(CFastPtrListNode *node)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

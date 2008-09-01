@@ -1831,6 +1831,3 @@ void		CPatch::fillVBFarsDLMUvOnly()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

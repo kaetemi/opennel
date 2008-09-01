@@ -169,6 +169,3 @@ CTextureCube *BuildCubeMap(sint mapSize, ICubeMapFunctor &f, bool luminanceOnly 
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

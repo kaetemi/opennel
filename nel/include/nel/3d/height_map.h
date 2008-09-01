@@ -91,6 +91,3 @@ private:
 #endif // NL_HEIGHT_MAP_H
 
 /* End of height_map.h */
-
-/* Merge OpenNeL SVN
- */

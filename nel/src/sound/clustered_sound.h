@@ -279,6 +279,3 @@ private:
 } // NLSOUND
 
 #endif // NL_CLUSTERED_SOUND_H
-
-/* Merge OpenNeL SVN
- */

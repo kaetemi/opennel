@@ -705,6 +705,3 @@ void CZoneBank::getSelection (std::vector<CZoneBankElement*> &SelectedElements)
 } // namespace NLLIGO
 
 #endif // NL_OS_WINDOWS
-
-/* Merge OpenNeL SVN
- */

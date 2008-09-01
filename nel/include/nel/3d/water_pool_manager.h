@@ -135,6 +135,3 @@ CWaterPoolManager &GetWaterPoolManager();
 #endif // NL_WATER_POOL_MANAGER_H
 
 /* End of water_pool_manager.h */
-
-/* Merge OpenNeL SVN
- */

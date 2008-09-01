@@ -426,6 +426,3 @@ void			CTextureDLM::releaseLightMap(uint x, uint y)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

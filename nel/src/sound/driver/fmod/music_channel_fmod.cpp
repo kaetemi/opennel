@@ -435,6 +435,3 @@ void	CMusicChannelFMod::markMusicFaderEnded(void *stream, void *fader)
 
 }
 
-
-/* Merge OpenNeL SVN
- */

@@ -604,6 +604,3 @@ void CPSFanLight::enumTexs(std::vector<NLMISC::CSmartPtr<ITexture> > &dest, IDri
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

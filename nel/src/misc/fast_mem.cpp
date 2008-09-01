@@ -256,6 +256,3 @@ static memcpyPtr findBestmemcpy ()
 void  *(*CFastMem::memcpy)(void *dts, const void *src, size_t nbytes) = findBestmemcpy ();
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

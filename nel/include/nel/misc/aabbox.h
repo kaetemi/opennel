@@ -238,6 +238,3 @@ public:
 #endif // NL_AABBOX_H
 
 /* End of aabbox.h */
-
-/* Merge OpenNeL SVN
- */

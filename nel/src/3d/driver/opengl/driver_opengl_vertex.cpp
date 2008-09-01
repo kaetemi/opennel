@@ -1799,6 +1799,3 @@ void CIndexBufferInfo::setupIndexBuffer(CIndexBuffer &ib)
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

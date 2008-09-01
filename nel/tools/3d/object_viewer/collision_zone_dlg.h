@@ -97,6 +97,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_COLLISION_ZONE_DLG_H__45AFAC35_D67B_40AB_85B6_7A472B7C4B30__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

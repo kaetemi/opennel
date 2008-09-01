@@ -188,6 +188,3 @@ private:
 #endif // NL_PS_TAIL_DOT_H
 
 /* End of ps_taildot.h */
-
-/* Merge OpenNeL SVN
- */

@@ -94,6 +94,3 @@ void	CTileElement::setVegetableState(TVegetableInfo state)
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

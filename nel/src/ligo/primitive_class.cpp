@@ -817,6 +817,3 @@ bool CPrimitiveClass::CParameter::getDefaultValue (std::vector<std::string> &res
 // ***************************************************************************
 
 
-
-/* Merge OpenNeL SVN
- */

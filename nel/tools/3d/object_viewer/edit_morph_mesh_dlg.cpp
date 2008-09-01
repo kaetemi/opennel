@@ -317,6 +317,3 @@ std::string CEditMorphMeshDlg::getShapeDescStr(uint shapeIndex, sint numVerts) c
 }
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -92,6 +92,3 @@ void CTileLumel::pack (CStreamBit& stream) const
 
 
 /* End of tile_lumel.h */
-
-/* Merge OpenNeL SVN
- */

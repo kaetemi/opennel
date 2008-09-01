@@ -143,6 +143,3 @@ bool			UShape::getDefaultTransparency() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

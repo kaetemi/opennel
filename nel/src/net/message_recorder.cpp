@@ -409,6 +409,3 @@ void CMessageRecorder::stopReplay()
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

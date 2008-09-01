@@ -478,6 +478,3 @@ void CurveEdit::invalidate()
 	}
 	Invalidate();
 }
-
-/* Merge OpenNeL SVN
- */

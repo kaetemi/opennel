@@ -390,6 +390,3 @@ void CVisualCollisionManager::getMeshs(const NLMISC::CAABBox &aabbox, std::vecto
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

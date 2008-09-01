@@ -99,6 +99,3 @@ public:
 #endif // NL_HRC_TRAV_H
 
 /* End of hrc_trav.h */
-
-/* Merge OpenNeL SVN
- */

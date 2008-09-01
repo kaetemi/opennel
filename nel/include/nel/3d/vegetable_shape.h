@@ -162,6 +162,3 @@ private:
 #endif // NL_VEGETABLE_SHAPE_H
 
 /* End of vegetable_shape.h */
-
-/* Merge OpenNeL SVN
- */

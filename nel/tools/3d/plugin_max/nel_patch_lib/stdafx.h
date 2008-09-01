@@ -41,6 +41,3 @@
 
 #undef min
 #undef max
-
-/* Merge OpenNeL SVN
- */

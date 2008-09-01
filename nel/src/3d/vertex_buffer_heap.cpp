@@ -193,6 +193,3 @@ void			CVertexBufferHeap::activate()
 } // NL3D
 
 #endif // 0
-
-/* Merge OpenNeL SVN
- */

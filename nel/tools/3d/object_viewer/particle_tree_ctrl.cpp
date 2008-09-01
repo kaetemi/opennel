@@ -1902,6 +1902,3 @@ void CParticleTreeCtrl::removeAllPS(CParticleWorkspace &ws)
 
 
 
-
-/* Merge OpenNeL SVN
- */

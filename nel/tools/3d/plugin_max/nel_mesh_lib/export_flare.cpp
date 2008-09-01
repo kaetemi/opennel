@@ -161,6 +161,3 @@ IShape* CExportNel::buildFlare(INode& node, TimeValue time)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

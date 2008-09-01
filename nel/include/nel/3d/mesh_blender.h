@@ -82,6 +82,3 @@ private:
 #endif // NL_MESH_BLENDER_H
 
 /* End of mesh_blender.h */
-
-/* Merge OpenNeL SVN
- */

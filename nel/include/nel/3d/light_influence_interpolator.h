@@ -93,6 +93,3 @@ public:
 #endif // NL_LIGHT_INFLUENCE_INTERPOLATOR_H
 
 /* End of light_influence_interpolator.h */
-
-/* Merge OpenNeL SVN
- */

@@ -544,6 +544,3 @@ std::string internalIPAddressToString (uint32 addr)
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

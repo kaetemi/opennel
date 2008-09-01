@@ -1438,6 +1438,3 @@ void CPackedZone32::appendSelection(const NLMISC::CPolygon2D &poly, std::vector<
 
 
 
-
-/* Merge OpenNeL SVN
- */

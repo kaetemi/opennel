@@ -1146,6 +1146,3 @@ void	CSoundDriverDSound::setMusicVolume(uint channel, float gain)
 	
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

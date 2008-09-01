@@ -653,6 +653,3 @@ sint32 CSock::getSendBufferSize()
 }
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

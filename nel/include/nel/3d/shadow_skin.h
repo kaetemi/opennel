@@ -106,6 +106,3 @@ private:
 #endif // NL_SHADOW_SKIN_H
 
 /* End of shadow_skin.h */
-
-/* Merge OpenNeL SVN
- */

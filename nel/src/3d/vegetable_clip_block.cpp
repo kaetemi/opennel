@@ -99,6 +99,3 @@ bool			CVegetableClipBlock::clip(const std::vector<CPlane>	&pyramid)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

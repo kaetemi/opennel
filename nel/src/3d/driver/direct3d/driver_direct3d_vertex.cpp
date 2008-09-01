@@ -949,6 +949,3 @@ void CVolatileVertexBuffer::reset ()
 
 
 
-
-/* Merge OpenNeL SVN
- */

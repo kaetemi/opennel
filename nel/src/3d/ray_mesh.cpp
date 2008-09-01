@@ -285,6 +285,3 @@ bool		CRayMesh::fastIntersect(const NLMISC::CMatrix &worldMatrix, const NLMISC::
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

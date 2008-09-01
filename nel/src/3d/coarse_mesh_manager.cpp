@@ -188,6 +188,3 @@ void CCoarseMeshManager::flushRender (IDriver *drv)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -210,6 +210,3 @@ bool CPProcess::setCPUMask(uint64 mask)
 void foo_p_thread_cpp() {}
 
 #endif // NL_OS_UNIX
-
-/* Merge OpenNeL SVN
- */

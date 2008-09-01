@@ -587,6 +587,3 @@ void CSegRemanence::setSliceTime(float duration)
 }
 
 }
-
-/* Merge OpenNeL SVN
- */

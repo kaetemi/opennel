@@ -924,6 +924,3 @@ static void computeIGBBoxFromContinent(NLMISC::CConfigFile &parameter,
 		nlinfo(e.what());
 	}
 }
-
-/* Merge OpenNeL SVN
- */

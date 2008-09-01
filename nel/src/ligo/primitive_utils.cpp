@@ -164,6 +164,3 @@ void selectPrimByPath(IPrimitive *rootNode, const std::string &path, TPrimitiveS
 
 
 
-
-/* Merge OpenNeL SVN
- */

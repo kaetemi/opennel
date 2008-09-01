@@ -103,6 +103,3 @@ private:
 #endif // NL_TEXTURE_NEAR_H
 
 /* End of texture_near.h */
-
-/* Merge OpenNeL SVN
- */

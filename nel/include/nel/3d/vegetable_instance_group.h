@@ -217,6 +217,3 @@ private:
 #endif // NL_VEGETABLE_INSTANCE_GROUP_H
 
 /* End of vegetable_instance_group.h */
-
-/* Merge OpenNeL SVN
- */

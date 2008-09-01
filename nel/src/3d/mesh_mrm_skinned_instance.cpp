@@ -305,6 +305,3 @@ bool			CMeshMRMSkinnedInstance::intersectSkin(const CMatrix &toRaySpace, float &
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

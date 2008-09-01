@@ -1035,6 +1035,3 @@ NLMISC_COMMAND(test_cls, "test the collision service, disables collision test on
 	_TestCLS = !_TestCLS;
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

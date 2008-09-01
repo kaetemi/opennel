@@ -96,6 +96,3 @@ void nlCheckIBA(CIndexBufferRead &iba, const uint8 *ptStart)
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -47,6 +47,3 @@ include_HEADERS      =	admin.h			\
 			varpath.h
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

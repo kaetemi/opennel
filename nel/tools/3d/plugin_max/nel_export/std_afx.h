@@ -60,6 +60,3 @@
 
 
 #include "nel/misc/bsphere.h"
-
-/* Merge OpenNeL SVN
- */

@@ -622,6 +622,3 @@ private:
 #endif // NL_PS_MESH_H
 
 /* End of ps_mesh.h */
-
-/* Merge OpenNeL SVN
- */

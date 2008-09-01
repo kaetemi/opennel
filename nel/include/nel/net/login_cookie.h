@@ -150,6 +150,3 @@ bool operator!= (const CLoginCookie &c1, const CLoginCookie &c2);
 #endif // NL_LOGIN_COOKIE_H
 
 /* End of login_cookie.h */
-
-/* Merge OpenNeL SVN
- */

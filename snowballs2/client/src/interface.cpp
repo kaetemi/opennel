@@ -274,6 +274,3 @@ bool	interfaceOpen ()
 {
 	return !QueryString.empty();
 }
-
-/* Merge OpenNeL SVN
- */

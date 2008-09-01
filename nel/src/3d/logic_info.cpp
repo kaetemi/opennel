@@ -40,6 +40,3 @@ ILogicInfo::~ILogicInfo()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

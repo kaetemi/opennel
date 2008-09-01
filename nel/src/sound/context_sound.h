@@ -333,6 +333,3 @@ private:
 } // NLSOUND
 
 #endif //NL_CONTEXT_SOUND_H
-
-/* Merge OpenNeL SVN
- */

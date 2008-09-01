@@ -163,6 +163,3 @@ void CTextureEmboss::doGenerate(bool async)
 
 
 }
-
-/* Merge OpenNeL SVN
- */

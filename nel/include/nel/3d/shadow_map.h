@@ -183,6 +183,3 @@ private:
 #endif // NL_SHADOW_MAP_H
 
 /* End of shadow_map.h */
-
-/* Merge OpenNeL SVN
- */

@@ -215,6 +215,3 @@ private:
 #endif // NL_LOAD_BALANCING_TRAV_H
 
 /* End of load_balancing_trav.h */
-
-/* Merge OpenNeL SVN
- */

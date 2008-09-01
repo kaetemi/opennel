@@ -522,6 +522,3 @@ inline void	ITexture::setWrapT(TWrapMode mode)
 #endif // NL_TEXTURE_H
 
 /* End of texture.h */
-
-/* Merge OpenNeL SVN
- */

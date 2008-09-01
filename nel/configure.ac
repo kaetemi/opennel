@@ -587,6 +587,3 @@ AC_OUTPUT
 #           tools/nel_unit_test/net_ut/net_service_lib_test/Makefile \
 #           tools/nel_unit_test/net_ut/net_module_lib_test/Makefile  \
 # End of configure.in
-
-# Merge OpenNeL SVN
-

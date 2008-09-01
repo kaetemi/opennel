@@ -451,6 +451,3 @@ void	CIgLighterLib::lightIg(CInstanceLighter &instanceLighter,
 
 
 
-
-/* Merge OpenNeL SVN
- */

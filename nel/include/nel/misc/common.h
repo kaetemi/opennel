@@ -648,6 +648,3 @@ inline T		iavoid0(T x)
 } // NLMISC
 
 #endif	// NL_COMMON_H
-
-/* Merge OpenNeL SVN
- */

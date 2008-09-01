@@ -111,6 +111,3 @@ void computeGradient(const NLMISC::CRGBA *valueTab, uint32 numValues, uint32 nbS
 #endif
 
 }
-
-/* Merge OpenNeL SVN
- */

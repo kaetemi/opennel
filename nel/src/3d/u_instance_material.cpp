@@ -506,6 +506,3 @@ UInstanceMaterial::TWrapMode			UInstanceMaterial::getWrapT(uint stage) const
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

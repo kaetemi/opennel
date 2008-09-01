@@ -273,6 +273,3 @@ void			CDriverUser::profileTextureUsage(std::vector<std::string> &result)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

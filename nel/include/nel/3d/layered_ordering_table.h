@@ -339,6 +339,3 @@ inline void CLayeredOrderingTable<T>::next()
 #endif // NL_LAYERED_ORDERING_TABLE_H
 
 /* End of layered_ordering_table.h */
-
-/* Merge OpenNeL SVN
- */

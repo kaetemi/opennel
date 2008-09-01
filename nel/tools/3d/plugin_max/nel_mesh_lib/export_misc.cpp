@@ -1253,6 +1253,3 @@ bool		CExportNel::isErrorInDialog () const
 }
 
 
-
-/* Merge OpenNeL SVN
- */

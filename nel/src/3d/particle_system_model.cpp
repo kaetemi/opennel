@@ -1138,6 +1138,3 @@ void CParticleSystemModel::update()
 
  
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

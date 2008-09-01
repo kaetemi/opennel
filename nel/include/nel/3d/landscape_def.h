@@ -180,6 +180,3 @@ extern  CIndexBuffer::TFormat	NL3D_LandscapeGlobals_PassTriFormat;
 #endif // NL_LANDSCAPE_DEF_H
 
 /* End of landscape_def.h */
-
-/* Merge OpenNeL SVN
- */

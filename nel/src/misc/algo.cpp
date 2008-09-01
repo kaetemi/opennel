@@ -315,6 +315,3 @@ void drawLine (float x0, float y0, float x1, float y1, vector<pair<sint, sint> >
 // ***************************************************************************
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

@@ -98,6 +98,3 @@ private:
 #endif // NL_TEXTURE_BLEND_H
 
 /* End of texture_blend.h */
-
-/* Merge OpenNeL SVN
- */

@@ -913,6 +913,3 @@ void CParticleSystemEdit::OnLockFrameDelay()
 	buttonStr.LoadString(locked ? IDS_UNLOCK_PS : IDS_LOCK_PS);
 	GetDlgItem(IDC_LOCK_FRAME_DELAY)->SetWindowText(buttonStr);	
 }
-
-/* Merge OpenNeL SVN
- */

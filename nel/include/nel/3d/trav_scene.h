@@ -136,6 +136,3 @@ protected:
 #endif // NL_TRAV_SCENE_H
 
 /* End of trav_scene.h */
-
-/* Merge OpenNeL SVN
- */

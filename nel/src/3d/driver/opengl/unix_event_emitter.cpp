@@ -319,6 +319,3 @@ void CUnixEventEmitter::processMessage (XEvent &event, CEventServer &server)
 } // NLMISC
 
 #endif // NL_OS_UNIX
-
-/* Merge OpenNeL SVN
- */

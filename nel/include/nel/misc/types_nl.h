@@ -376,6 +376,3 @@ typedef	uint16	ucchar;
 #endif
 
 #endif // NL_TYPES_H
-
-/* Merge OpenNeL SVN
- */

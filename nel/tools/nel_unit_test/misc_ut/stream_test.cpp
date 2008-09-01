@@ -179,6 +179,3 @@ Test::Suite *createCStreamTS()
 	return new CStreamTS;
 }
 
-
-/* Merge OpenNeL SVN
- */

@@ -14,6 +14,3 @@ include_HEADERS      =	load_form.h		\
 			u_type.h
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

@@ -705,6 +705,3 @@ inline CRGBAF operator* (float f, const CRGBAF& c)
 #endif // NL_RGBA_H
 
 /* End of rgba.h */
-
-/* Merge OpenNeL SVN
- */

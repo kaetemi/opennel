@@ -202,6 +202,3 @@ extern uint8 *waterVBEnd;
 #endif // NL_WATER_MODEL_H
 
 /* End of water_model.h */
-
-/* Merge OpenNeL SVN
- */

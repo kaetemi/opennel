@@ -211,6 +211,3 @@ void		ITransformable::lookAt (const CVector& eye, const CVector& target, float r
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

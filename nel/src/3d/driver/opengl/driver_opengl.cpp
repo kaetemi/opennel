@@ -4307,6 +4307,3 @@ void displayGLError(GLenum error)
 		break;
 	}
 }
-
-/* Merge OpenNeL SVN
- */

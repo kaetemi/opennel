@@ -184,6 +184,3 @@ protected:
 #endif // NL_U_TRANSFORMABLE_H
 
 /* End of u_transformable.h */
-
-/* Merge OpenNeL SVN
- */

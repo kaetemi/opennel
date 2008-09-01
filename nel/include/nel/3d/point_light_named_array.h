@@ -139,6 +139,3 @@ private:
 #endif // NL_POINT_LIGHT_NAMED_ARRAY_H
 
 /* End of point_light_named_array.h */
-
-/* Merge OpenNeL SVN
- */

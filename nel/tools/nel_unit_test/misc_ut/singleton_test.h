@@ -136,6 +136,3 @@ public:
 
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -19,6 +19,3 @@
 #include "nel/misc/fast_mem.h"
 #include "nel/misc/system_info.h"
 #include "nel/misc/mem_displayer.h"
-
-/* Merge OpenNeL SVN
- */

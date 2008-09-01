@@ -317,6 +317,3 @@ void releaseLensFlare ()
 	Driver->deleteTextureFile(flareTexture6); flareTexture6 = NULL;
 	Driver->deleteTextureFile(flareTexture7); flareTexture7 = NULL;
 }
-
-/* Merge OpenNeL SVN
- */

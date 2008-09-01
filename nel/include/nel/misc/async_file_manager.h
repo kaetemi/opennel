@@ -131,6 +131,3 @@ private:
 #endif // NL_ASYNC_FILE_MANAGER_H
 
 /* End of async_file_manager.h */
-
-/* Merge OpenNeL SVN
- */

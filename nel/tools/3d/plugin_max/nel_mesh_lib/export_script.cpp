@@ -278,6 +278,3 @@ void CExportNel::setScriptAppDataVPWT (Animatable *node, const CVPWindTreeAppDat
 
 
 
-
-/* Merge OpenNeL SVN
- */

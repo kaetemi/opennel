@@ -329,6 +329,3 @@ void	CAnimationSet::preloadSSSShapes(IDriver &drv, CShapeBank &shapeBank)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

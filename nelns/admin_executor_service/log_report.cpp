@@ -587,6 +587,3 @@ void	CLogReportNode::reportPage( uint pageNum, NLMISC::CLog *targetLog )
 		}
 	}	
 }
-
-/* Merge OpenNeL SVN
- */

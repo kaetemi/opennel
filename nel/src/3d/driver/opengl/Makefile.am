@@ -46,6 +46,3 @@ pkgconfig_DATA = nel-driverogl.pc
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

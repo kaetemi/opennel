@@ -239,6 +239,3 @@ void UTransformable::lookAt (const CVector& eye, const CVector& target, float ro
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

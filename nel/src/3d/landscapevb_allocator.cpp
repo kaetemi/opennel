@@ -620,6 +620,3 @@ void			CLandscapeVBAllocator::setupVBFormatAndVertexProgram(bool withVertexProgr
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

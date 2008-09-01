@@ -320,6 +320,3 @@ std::string		CTextureFile::getShareName() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

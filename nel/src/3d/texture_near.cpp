@@ -115,6 +115,3 @@ void			CTextureNear::releaseTile(uint id)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

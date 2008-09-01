@@ -598,6 +598,3 @@ void CParticleWorkspace::restickAllObjects(CObjectViewer *ov)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

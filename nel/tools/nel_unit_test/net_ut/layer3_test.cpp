@@ -210,6 +210,3 @@ Test::Suite *createLayer3TS(const std::string &workingPath)
 {
 	return new CLayer3TS;
 }
-
-/* Merge OpenNeL SVN
- */

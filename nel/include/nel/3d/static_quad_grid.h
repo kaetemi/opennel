@@ -288,6 +288,3 @@ const T			*CStaticQuadGrid<T>::select(const NLMISC::CVector &pointIn, uint &numE
 #endif // NL_STATIC_QUAD_GRID_H
 
 /* End of static_quad_grid.h */
-
-/* Merge OpenNeL SVN
- */

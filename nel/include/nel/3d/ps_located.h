@@ -1079,6 +1079,3 @@ inline const NLMISC::CMatrix &CPSLocatedBindable::getLocalToWorldMatrix() const
 #endif // NL_PARTICLE_SYSTEM_LOCATED_H
 
 /* End of particle_system_located.h */
-
-/* Merge OpenNeL SVN
- */

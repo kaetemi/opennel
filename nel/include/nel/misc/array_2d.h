@@ -492,6 +492,3 @@ void CArray2D<T>::init(uint width,uint height, const T &defaultValue)
 
 
 #endif
-
-/* Merge OpenNeL SVN
- */

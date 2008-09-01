@@ -182,6 +182,3 @@ public:
 #endif
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -60,6 +60,3 @@ float			CMRMLevelDetail::getLevelDetailFromDist(float dist)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

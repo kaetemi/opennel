@@ -59,6 +59,3 @@ private:
 #endif // NL_TEXTURE_BLOOM_H
 
 /* End of texture_bloom.h */
-
-/* Merge OpenNeL SVN
- */

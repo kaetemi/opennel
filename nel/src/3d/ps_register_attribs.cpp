@@ -45,6 +45,3 @@ namespace NL3D
 		PSRegisterPlaneBasisAttribs();
 	}
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

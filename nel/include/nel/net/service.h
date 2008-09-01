@@ -581,6 +581,3 @@ inline IService *IService::getInstance()
 #endif // NL_SERVICE_H
 
 /* End of service.h */
-
-/* Merge OpenNeL SVN
- */

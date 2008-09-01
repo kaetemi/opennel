@@ -148,6 +148,3 @@ private:
 
 #endif // NL_LISTENER_FMOD_H
 
-
-/* Merge OpenNeL SVN
- */

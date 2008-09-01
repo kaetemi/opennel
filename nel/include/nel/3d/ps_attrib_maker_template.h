@@ -551,6 +551,3 @@ void CPSValueGradientFunc<T>::serial(NLMISC::IStream &f) throw(NLMISC::EStream)
 #endif // NL_PS_ATTRIB_MAKER_TEMPLATE_H
 
 /* End of ps_attrib_maker_template.h */
-
-/* Merge OpenNeL SVN
- */

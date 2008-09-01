@@ -294,6 +294,3 @@ class RPO : public PatchObject
 };
 
 #endif // __RYKOL_PATCH_OBJ_H
-
-/* Merge OpenNeL SVN
- */

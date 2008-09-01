@@ -741,6 +741,3 @@ inline bool CBitmap::writeJPG( NLMISC::IStream &f, uint8 quality)
 #endif // NL_BITMAP_H
 
 /* End of bitmap.h */
-
-/* Merge OpenNeL SVN
- */

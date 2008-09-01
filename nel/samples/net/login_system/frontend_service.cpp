@@ -209,6 +209,3 @@ public:
  * The port is dynamically find and there s no callback array.
  */
 NLNET_SERVICE_MAIN (CFrontEndService, "FS", "frontend_service", 0, EmptyCallbackArray, "", "")
-
-/* Merge OpenNeL SVN
- */

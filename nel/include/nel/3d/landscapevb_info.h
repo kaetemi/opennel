@@ -111,6 +111,3 @@ private:
 #endif // NL_LANDSCAPEVB_INFO_H
 
 /* End of landscapevb_info.h */
-
-/* Merge OpenNeL SVN
- */

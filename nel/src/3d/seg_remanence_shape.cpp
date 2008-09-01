@@ -299,6 +299,3 @@ bool CSegRemanenceShape::clip(const std::vector<CPlane>	&pyramid, const CMatrix 
 }
 
 }
-
-/* Merge OpenNeL SVN
- */

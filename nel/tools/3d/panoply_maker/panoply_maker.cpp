@@ -847,6 +847,3 @@ static void BuildColoredVersionForOneBitmap(const CBuildInfo &bi, const std::str
 
 }
 
-
-/* Merge OpenNeL SVN
- */

@@ -208,6 +208,3 @@ private:
 #endif // NL_DX_EVENT_EMITTER_H
 
 /* End of dx_event_emitter.h */
-
-/* Merge OpenNeL SVN
- */

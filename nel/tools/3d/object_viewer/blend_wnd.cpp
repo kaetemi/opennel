@@ -163,6 +163,3 @@ void CBlendWnd::OnPaint (const RECT& client, CDC* pDc, float StartBlend, float E
 }
 
 // ***************************************************************************
-
-/* Merge OpenNeL SVN
- */

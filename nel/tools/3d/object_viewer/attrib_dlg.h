@@ -471,6 +471,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_ATTRIB_DLG_H__DF35743E_C8B4_4218_9C42_A3DF4126BEF2__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

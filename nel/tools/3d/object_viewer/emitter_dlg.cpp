@@ -392,6 +392,3 @@ void CEmitterDlg::OnSelchangeDirectionMode()
 	updateModifiedFlag();
 	UpdateData(FALSE);
 }
-
-/* Merge OpenNeL SVN
- */

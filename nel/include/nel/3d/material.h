@@ -747,6 +747,3 @@ public:
 #endif // NL_MATERIAL_H
 
 /* End of material.h */
-
-/* Merge OpenNeL SVN
- */

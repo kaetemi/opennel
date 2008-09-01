@@ -2066,6 +2066,3 @@ static const unsigned char medium[] =
 
 static const unsigned int mediumSize = 16428;
 
-
-/* Merge OpenNeL SVN
- */

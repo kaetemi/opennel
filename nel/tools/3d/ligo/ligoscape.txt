@@ -41,5 +41,3 @@ WorldEditor <- nel_misc
 WorldEditor <- nel_driver_opengl
 
 WorldEditor_Exe <- WorldEditor
-# Merge OpenNeL SVN
-

@@ -765,6 +765,3 @@ void CParticleDlg::updateMenu()
 }
 
  
-
-/* Merge OpenNeL SVN
- */

@@ -167,6 +167,3 @@ Test::Suite *createCConfigFileTS(const std::string &workingPath)
 {
 	return new CConfigFileTS(workingPath);
 }
-
-/* Merge OpenNeL SVN
- */

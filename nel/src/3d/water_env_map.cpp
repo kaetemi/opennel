@@ -402,6 +402,3 @@ void CWaterEnvMap::initTestVB()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

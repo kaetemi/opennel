@@ -530,6 +530,3 @@ void LoadVarCfg ()
 		}
 	}
 }
-
-/* Merge OpenNeL SVN
- */

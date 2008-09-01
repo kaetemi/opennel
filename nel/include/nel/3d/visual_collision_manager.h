@@ -246,6 +246,3 @@ private:
 #endif // NL_VISUAL_COLLISION_MANAGER_H
 
 /* End of visual_collision_manager.h */
-
-/* Merge OpenNeL SVN
- */

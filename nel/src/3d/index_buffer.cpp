@@ -438,6 +438,3 @@ void CIndexBuffer::fillBuffer ()
 // ***************************************************************************
 
 } // namespace NL3D
-
-/* Merge OpenNeL SVN
- */

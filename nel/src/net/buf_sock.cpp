@@ -492,6 +492,3 @@ bool CNonBlockingBufSock::receivePart( uint32 nbExtraBytes )
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

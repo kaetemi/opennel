@@ -477,6 +477,3 @@ NLMISC_CATEGORISED_VARIABLE(nel, uint32, NbClientReceiveTask, "Number of client 
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

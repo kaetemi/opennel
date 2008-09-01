@@ -335,6 +335,3 @@ public:
 #endif // NL_U_LANDSCAPE_H
 
 /* End of u_landscape.h */
-
-/* Merge OpenNeL SVN
- */

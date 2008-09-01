@@ -493,6 +493,3 @@ NLMISC::CRGBA	USkeleton::getLodEmit() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

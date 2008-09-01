@@ -324,6 +324,3 @@ void CFillPatch::fillDisplace (int mesh, int patch, std::vector<EPM_Mesh> &vectM
 /*-------------------------------------------------------------------*/
 
 
-
-/* Merge OpenNeL SVN
- */

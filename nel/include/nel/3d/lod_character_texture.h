@@ -95,6 +95,3 @@ private:
 #endif // NL_LOD_CHARACTER_TEXTURE_H
 
 /* End of lod_character_texture.h */
-
-/* Merge OpenNeL SVN
- */

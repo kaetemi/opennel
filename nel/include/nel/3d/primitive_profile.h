@@ -66,6 +66,3 @@ public:
 #endif // NL_PRIMITIVE_PROFILE_H
 
 /* End of primitive_profile.h */
-
-/* Merge OpenNeL SVN
- */

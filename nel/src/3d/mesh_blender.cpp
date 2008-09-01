@@ -204,6 +204,3 @@ void		CMeshBlender::restoreRenderCoarseMesh(CMaterial &material, IDriver *drv, b
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

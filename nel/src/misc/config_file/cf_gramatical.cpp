@@ -1531,6 +1531,3 @@ int yyerror (const char *s)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

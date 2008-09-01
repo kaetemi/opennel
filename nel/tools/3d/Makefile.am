@@ -30,6 +30,3 @@ SUBDIRS              = build_coarse_mesh                   \
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

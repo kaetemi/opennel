@@ -3613,6 +3613,3 @@ bool		CMeshMRMGeom::intersectSkin(CMeshMRMInstance	*mi, const CMatrix &toRaySpac
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

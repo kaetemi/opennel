@@ -194,6 +194,3 @@ private:
 #endif // NL_ANIMATION_OPTIMIZER_H
 
 /* End of animation_optimizer.h */
-
-/* Merge OpenNeL SVN
- */

@@ -1013,6 +1013,3 @@ bool openDoc (const char *document)
 }
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

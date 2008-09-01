@@ -168,6 +168,3 @@ void updateSky()
 
 	Clouds->render ();
 }
-
-/* Merge OpenNeL SVN
- */

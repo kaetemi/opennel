@@ -170,6 +170,3 @@ private:
 #endif // NL_SHADOW_POLY_RECEIVER_H
 
 /* End of shadow_poly_receiver.h */
-
-/* Merge OpenNeL SVN
- */

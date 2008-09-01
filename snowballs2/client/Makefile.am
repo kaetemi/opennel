@@ -15,6 +15,3 @@ client_DATA		=	client.cfg
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

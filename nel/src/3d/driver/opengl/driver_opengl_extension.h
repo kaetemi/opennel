@@ -680,6 +680,3 @@ extern NEL_PFNGLDELETEFRAMEBUFFERSEXTPROC		nglDeleteFramebuffersEXT;
 
 #endif // NL_OPENGL_EXTENSION_H
 
-
-/* Merge OpenNeL SVN
- */

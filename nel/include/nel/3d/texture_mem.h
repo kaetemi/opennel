@@ -190,6 +190,3 @@ public:
 #endif // NL_TEXTURE_MEM_H
 
 /* End of texture_mem.h */
-
-/* Merge OpenNeL SVN
- */

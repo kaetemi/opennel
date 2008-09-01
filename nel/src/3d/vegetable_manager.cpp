@@ -2621,6 +2621,3 @@ uint		CVegetableManager::updateInstanceLighting(CVegetableInstanceGroup *ig, uin
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -451,6 +451,3 @@ void CDriverD3D::getViewport(CViewport &viewport)
 
 
 
-
-/* Merge OpenNeL SVN
- */

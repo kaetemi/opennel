@@ -143,6 +143,3 @@ include_HEADERS      =	aabbox.h			\
 			xml_pack.h
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

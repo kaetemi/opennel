@@ -378,6 +378,3 @@ ucchar		toUpper (ucchar c);
 };
 
 #endif // NL_UCSTRING_H
-
-/* Merge OpenNeL SVN
- */

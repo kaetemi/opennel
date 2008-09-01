@@ -210,6 +210,3 @@ public:
 } // NL3D
 
 #endif
-
-/* Merge OpenNeL SVN
- */

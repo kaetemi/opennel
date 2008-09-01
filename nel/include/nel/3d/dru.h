@@ -203,6 +203,3 @@ public:
 #endif // NL_DRU_H
 
 /* End of dru.h */
-
-/* Merge OpenNeL SVN
- */

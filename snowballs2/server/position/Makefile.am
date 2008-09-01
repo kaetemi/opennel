@@ -13,6 +13,3 @@ sno_pos_DATA		= position_service.cfg
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

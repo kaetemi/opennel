@@ -550,6 +550,3 @@ bool			CInstanceGroupUser::dontCastShadowForExterior(uint instance) const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

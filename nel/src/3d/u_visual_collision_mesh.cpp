@@ -58,6 +58,3 @@ const std::vector<uint16> &UVisualCollisionMesh::getTriangles() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

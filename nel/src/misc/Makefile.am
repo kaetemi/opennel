@@ -140,6 +140,3 @@ pkgconfig_DATA = nel-misc.pc
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

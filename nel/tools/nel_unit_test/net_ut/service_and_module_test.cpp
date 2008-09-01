@@ -294,6 +294,3 @@ Test::Suite *createServiceAndModuleTS(const std::string &workingPath)
 	return new CServiceAndModuleTS(workingPath);
 }
 
-
-/* Merge OpenNeL SVN
- */

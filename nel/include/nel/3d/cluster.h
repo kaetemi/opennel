@@ -225,6 +225,3 @@ private:
 #endif // NL_CLUSTER_H
 
 /* End of cluster.h */
-
-/* Merge OpenNeL SVN
- */

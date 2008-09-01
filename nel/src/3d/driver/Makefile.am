@@ -9,6 +9,3 @@ EXTRA_DIST		= direct3d
 SUBDIRS			= opengl
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

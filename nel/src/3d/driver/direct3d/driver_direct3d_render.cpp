@@ -474,6 +474,3 @@ bool CDriverD3D::renderRawQuads(CMaterial& mat, uint32 startIndex, uint32 numQua
 
 
 
-
-/* Merge OpenNeL SVN
- */

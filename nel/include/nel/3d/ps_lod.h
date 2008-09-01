@@ -52,6 +52,3 @@ enum TPSLod
 #endif // NL_PS_LOD_H
 
 /* End of ps_lod.h */
-
-/* Merge OpenNeL SVN
- */

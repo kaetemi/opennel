@@ -670,6 +670,3 @@ exit24:;
 	if (weldCount)
 		printf ("Internal tangents welded: %d\n", weldCount);
 }
-
-/* Merge OpenNeL SVN
- */

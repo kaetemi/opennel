@@ -61,6 +61,3 @@ public:
 #endif // NL_COLLISION_CALLBACK_H
 
 /* End of collision_callback.h */
-
-/* Merge OpenNeL SVN
- */

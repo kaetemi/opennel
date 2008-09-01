@@ -1209,6 +1209,3 @@ void CFXCache::reset()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

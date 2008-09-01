@@ -13,6 +13,3 @@ include_HEADERS      =	ligo_config.h			\
 			primitive_utils.h
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

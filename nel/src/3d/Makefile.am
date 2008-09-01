@@ -615,6 +615,3 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = nel-3d.pc
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

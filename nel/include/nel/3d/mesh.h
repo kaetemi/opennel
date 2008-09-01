@@ -872,6 +872,3 @@ private:
 #endif // NL_MESH_H
             
 /* End of mesh.h */
-
-/* Merge OpenNeL SVN
- */

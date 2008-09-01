@@ -311,6 +311,3 @@ private:
 #endif // NL_LOD_CHARACTER_SHAPE_H
 
 /* End of lod_character_shape.h */
-
-/* Merge OpenNeL SVN
- */

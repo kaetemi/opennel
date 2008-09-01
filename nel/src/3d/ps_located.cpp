@@ -3161,6 +3161,3 @@ void CPSLocated::onShow(bool shown)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

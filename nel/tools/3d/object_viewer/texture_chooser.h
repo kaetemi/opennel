@@ -129,6 +129,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_TEXTURE_CHOOSER_H__FE10F78E_0B69_4EB0_8FC7_A48FAEB904FD__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

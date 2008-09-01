@@ -137,6 +137,3 @@ protected:
 
 
 #endif // !defined(AFX_VALUE_FROM_EMITTER_DLG_H__D3416DBF_1735_4FBB_A1FD_7E8DCC133825__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

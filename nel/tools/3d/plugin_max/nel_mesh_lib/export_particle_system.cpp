@@ -91,6 +91,3 @@ IShape* CExportNel::buildParticleSystem(INode& node, TimeValue time)
 	}
 	return NULL;
 }
-
-/* Merge OpenNeL SVN
- */

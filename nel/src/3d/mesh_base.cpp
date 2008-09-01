@@ -514,6 +514,3 @@ void	CMeshBase::compileRunTime()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

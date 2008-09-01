@@ -99,6 +99,3 @@ void	NLPACS::CRetrievableSurface::TLoop::serial(NLMISC::IStream &f)
 	f.serialCont(*this); 
 	f.serial(Length); 
 }
-
-/* Merge OpenNeL SVN
- */

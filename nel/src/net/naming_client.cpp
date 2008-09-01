@@ -547,6 +547,3 @@ NLMISC_CATEGORISED_COMMAND(nel, services, "displays registered services", "")
 }
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

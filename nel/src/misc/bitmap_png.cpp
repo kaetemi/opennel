@@ -941,6 +941,3 @@ void setPNGError(png_struct *png_ptr, const char* message)
 }//namespace
 
 #endif // NL_OS_WINDOWS
-
-/* Merge OpenNeL SVN
- */

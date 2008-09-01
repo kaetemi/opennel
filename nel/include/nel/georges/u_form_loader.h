@@ -80,6 +80,3 @@ public:
 #endif // NL_U_FORM_LOADER_H
 
 /* End of u_form_loader.h */
-
-/* Merge OpenNeL SVN
- */

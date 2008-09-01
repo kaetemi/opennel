@@ -2527,6 +2527,3 @@ extern HINSTANCE HInstDLL;
 #endif
 
 #endif // NL_DRIVER_DIRECT3D_H
-
-/* Merge OpenNeL SVN
- */

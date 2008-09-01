@@ -109,6 +109,3 @@ private:
 	CSmartPtr<CTextureFile>	_BrushTexture;
 	CBitmap					_BrushBitmap;
 };
-
-/* Merge OpenNeL SVN
- */

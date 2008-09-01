@@ -1655,6 +1655,3 @@ END_MESSAGE_MAP()
 	{	
 		CDialog::OnClose();
 	}
-
-/* Merge OpenNeL SVN
- */

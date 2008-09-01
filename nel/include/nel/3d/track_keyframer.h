@@ -837,6 +837,3 @@ public:
 #endif // NL_TRACK_KEYFRAMER_H
 
 /* End of track_keyframer.h */
-
-/* Merge OpenNeL SVN
- */

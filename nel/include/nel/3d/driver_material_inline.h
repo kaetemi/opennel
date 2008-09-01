@@ -438,6 +438,3 @@ inline void	CMaterial::setTexCoordGenMode(uint stage, TTexCoordGenMode mode)
 
 #endif
 
-
-/* Merge OpenNeL SVN
- */

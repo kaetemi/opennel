@@ -120,6 +120,3 @@ private:
 #endif // NL_ZONE_TGT_SMOOTHER_H
 
 /* End of zone_tgt_smoother.h */
-
-/* Merge OpenNeL SVN
- */

@@ -134,6 +134,3 @@ class PO2RPOClassDesc:public ClassDesc2 {
 extern PO2RPOClassDesc PO2RPODesc;
 
 #endif // __PMESH2RKLPMESH__H
-
-/* Merge OpenNeL SVN
- */

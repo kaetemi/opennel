@@ -142,6 +142,3 @@ UPrimitiveBlock *UPrimitiveBlock::createPrimitiveBlockFromFile(const std::string
 
 
 } // NLPACS
-
-/* Merge OpenNeL SVN
- */

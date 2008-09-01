@@ -187,6 +187,3 @@ private:
 #endif // NL_SHADOW_MAP_MANAGER_H
 
 /* End of shadow_map_manager.h */
-
-/* Merge OpenNeL SVN
- */

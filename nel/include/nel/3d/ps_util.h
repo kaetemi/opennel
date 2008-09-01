@@ -261,6 +261,3 @@ inline float CPSUtil::buildPerlinNoise(NLMISC::CVector &pos, uint numOctaves)
 #endif // NL_PS_UTIL_H
 
 /* End of ps_util.h */
-
-/* Merge OpenNeL SVN
- */

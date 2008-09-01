@@ -276,6 +276,3 @@ CSString CWordsDictionary::getWordsKey( const CSString& resultStr )
 
 
 
-
-/* Merge OpenNeL SVN
- */

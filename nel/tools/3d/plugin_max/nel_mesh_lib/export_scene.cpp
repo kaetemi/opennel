@@ -985,6 +985,3 @@ void CExportNel::buildScene (NL3D::CScene &scene, NL3D::CShapeBank &shapeBank, I
 
 	_Options.FeedBack = NULL;
 }
-
-/* Merge OpenNeL SVN
- */

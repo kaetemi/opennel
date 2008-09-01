@@ -84,6 +84,3 @@ public:
 #endif // NL_SHIFTED_TRIANGLE_CACHE_H
 
 /* End of shifted_triangle_cache.h */
-
-/* Merge OpenNeL SVN
- */

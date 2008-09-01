@@ -85,6 +85,3 @@ BOOL CAboutDialog::OnInitDialog()
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
 
-
-/* Merge OpenNeL SVN
- */

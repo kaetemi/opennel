@@ -199,6 +199,3 @@ public:
 #endif // NL_U_GLOBAL_RETRIEVER_H
 
 /* End of u_global_retriever.h */
-
-/* Merge OpenNeL SVN
- */

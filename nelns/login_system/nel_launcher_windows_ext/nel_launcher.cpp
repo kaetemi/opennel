@@ -352,6 +352,3 @@ void CNel_launcherApp::LoadVersion()
 //	else
 //		AfxMessageBox("Cannot access/create to log file");*/
 //}
-
-/* Merge OpenNeL SVN
- */

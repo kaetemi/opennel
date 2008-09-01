@@ -530,6 +530,3 @@ bool Tile_utility::SetupMaterial () const
 		delete multi;
 	return bSet;
 }
-
-/* Merge OpenNeL SVN
- */

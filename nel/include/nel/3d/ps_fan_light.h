@@ -186,6 +186,3 @@ private:
 #endif // NL_PS_FAN_LIGHT_H
 
 /* End of ps_fan_light.h */
-
-/* Merge OpenNeL SVN
- */

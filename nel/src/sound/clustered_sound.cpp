@@ -1166,6 +1166,3 @@ float CClusteredSound::getAABoxNearestPos(const CAABBox &box, const CVector &pos
 }
 
 }
-
-/* Merge OpenNeL SVN
- */

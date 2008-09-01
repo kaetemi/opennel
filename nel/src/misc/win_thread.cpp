@@ -602,6 +602,3 @@ bool CProcessWatch::isRunning() const
 } // NLMISC
 
 #endif // NL_OS_WINDOWS
-
-/* Merge OpenNeL SVN
- */

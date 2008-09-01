@@ -690,6 +690,3 @@ void CDIKeyboard::getDisabledRepetitions(TKey *destTab) const
 } // NLMISC
 
 #endif // NL_OS_WINDOWS
-
-/* Merge OpenNeL SVN
- */

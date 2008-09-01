@@ -521,6 +521,3 @@ void	CAnimation::addSSSShape(const std::string &shape)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

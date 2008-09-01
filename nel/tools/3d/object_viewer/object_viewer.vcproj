@@ -4071,6 +4071,3 @@ rc /l 0x40c /fo&quot;Release/object_viewer.res&quot; /d &quot;NDEBUG&quot; /d &q
 	<Globals>
 	</Globals>
 </VisualStudioProject>
-
-<!-- Merge OpenNeL SVN
- -->

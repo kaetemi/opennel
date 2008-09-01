@@ -1875,6 +1875,3 @@ void			CInstanceLighter::dilateLightingOnSurfaceCells()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

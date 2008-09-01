@@ -294,6 +294,3 @@ CString CMeshDlg::getShapeErrorString(sint errorCode)
 
 
 
-
-/* Merge OpenNeL SVN
- */

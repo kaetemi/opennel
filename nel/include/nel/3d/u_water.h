@@ -146,6 +146,3 @@ public:
 #endif // NL_U_WATER_INSTANCE_H
 
 /* End of u_water_instance.h */
-
-/* Merge OpenNeL SVN
- */

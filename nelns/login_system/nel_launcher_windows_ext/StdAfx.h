@@ -43,6 +43,3 @@
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_STDAFX_H__3553FEAD_1991_4F77_91FE_541702A9DEB5__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

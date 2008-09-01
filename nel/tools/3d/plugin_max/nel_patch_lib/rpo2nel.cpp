@@ -779,6 +779,3 @@ void RPatchMesh::importZone (PatchMesh* pPM, NL3D::CZone& zone, int &zoneId)
 // ***************************************************************************
 
 
-
-/* Merge OpenNeL SVN
- */

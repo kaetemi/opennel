@@ -187,6 +187,3 @@ public:
 } // namespace NLSOUND
 
 #endif // NL_SOUND_ANIM_MANAGER_H
-
-/* Merge OpenNeL SVN
- */

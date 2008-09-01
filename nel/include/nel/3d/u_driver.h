@@ -832,6 +832,3 @@ public:
 #endif // NL_U_DRIVER_H
 
 /* End of u_driver.h */
-
-/* Merge OpenNeL SVN
- */

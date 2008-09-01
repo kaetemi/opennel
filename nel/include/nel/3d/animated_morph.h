@@ -123,6 +123,3 @@ private:
 #endif // NL_ANIMATED_MORPH_H
 
 /* End of animated_morph.h */
-
-/* Merge OpenNeL SVN
- */

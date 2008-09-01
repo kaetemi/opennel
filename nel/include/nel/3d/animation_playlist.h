@@ -311,6 +311,3 @@ private:
 #endif // NL_ANIMATION_PLAYLIST_H
 
 /* End of animation_playlist.h */
-
-/* Merge OpenNeL SVN
- */

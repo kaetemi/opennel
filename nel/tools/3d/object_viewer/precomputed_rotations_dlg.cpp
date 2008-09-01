@@ -216,6 +216,3 @@ void CPrecomputedRotationsDlg::OnHintPrecomputedRotations()
 	updateFromReader();
 	UpdateData(FALSE);	
 }
-
-/* Merge OpenNeL SVN
- */

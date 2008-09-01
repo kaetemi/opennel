@@ -88,6 +88,3 @@ private:
 #endif // NL_HLS_TEXTURE_MANAGER_H
 
 /* End of hls_texture_manager.h */
-
-/* Merge OpenNeL SVN
- */

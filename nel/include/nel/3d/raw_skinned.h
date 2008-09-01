@@ -129,6 +129,3 @@ public:
 #endif // NL_RAW_SKINNED_H
 
 /* End of raw_skinned.h */
-
-/* Merge OpenNeL SVN
- */

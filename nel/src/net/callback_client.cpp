@@ -403,6 +403,3 @@ bool CCallbackClient::replaySystemCallbacks()
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

@@ -1017,6 +1017,3 @@ protected:
 #endif // NL_TRANSFORM_H
 
 /* End of transform.h */
-
-/* Merge OpenNeL SVN
- */

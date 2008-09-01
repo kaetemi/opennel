@@ -287,6 +287,3 @@ CZoneLoadingTask::~CZoneLoadingTask()
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

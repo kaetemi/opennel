@@ -446,6 +446,3 @@ public:
 #endif // NL_TESSELLATION_H
 
 /* End of tessellation.h */
-
-/* Merge OpenNeL SVN
- */

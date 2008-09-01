@@ -343,6 +343,3 @@ CTextureBump::~CTextureBump()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

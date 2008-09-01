@@ -258,6 +258,3 @@ private:
 #endif // NL_I18N_H
 
 /* End of i18n.h */
-
-/* Merge OpenNeL SVN
- */

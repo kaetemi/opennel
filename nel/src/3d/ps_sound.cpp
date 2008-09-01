@@ -473,6 +473,3 @@ void	CPSSound::setUseOriginalPitchFlag(bool useOriginalPitch)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

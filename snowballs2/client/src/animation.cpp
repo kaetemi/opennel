@@ -287,6 +287,3 @@ void	releaseAnimation()
 // The next line doesn t work (say that AnimationSet is not a valid AnimationSet Ptr) so we comment it.
 //	Scene->deleteAnimationSet (AnimationSet);
 }
-
-/* Merge OpenNeL SVN
- */

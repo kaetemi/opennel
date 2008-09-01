@@ -105,6 +105,3 @@ void CCloudScapeUser::setDebugQuad (bool b)
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

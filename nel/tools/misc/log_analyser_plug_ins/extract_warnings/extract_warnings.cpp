@@ -128,6 +128,3 @@ LOG_ANALYSER_PLUGIN_API bool doAnalyse( const std::vector<const char *>& vec, st
 
 
 
-
-/* Merge OpenNeL SVN
- */

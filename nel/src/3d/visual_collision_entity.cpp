@@ -660,6 +660,3 @@ void		CVisualCollisionEntity::displayDebugGrid(IDriver &drv) const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

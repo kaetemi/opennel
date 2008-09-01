@@ -154,6 +154,3 @@ public:
 #endif // NL_NELU_H
 
 /* End of nelu.h */
-
-/* Merge OpenNeL SVN
- */

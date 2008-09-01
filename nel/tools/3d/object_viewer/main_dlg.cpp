@@ -129,6 +129,3 @@ void CMainDlg::refresh (BOOL update)
 	for (uint s=0; s<CChannelMixer::NumAnimationSlot; s++)
 		Slots[s].refresh (update);
 }
-
-/* Merge OpenNeL SVN
- */

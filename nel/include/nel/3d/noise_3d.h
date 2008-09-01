@@ -94,6 +94,3 @@ private:
 
 #endif // NL_NOISE_3D_H
 
-
-/* Merge OpenNeL SVN
- */

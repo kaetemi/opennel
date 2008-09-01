@@ -2090,6 +2090,3 @@ bool CExportNel::buildMeshAABBox(INode &node, NLMISC::CAABBox &dest, TimeValue t
 }
 
 
-
-/* Merge OpenNeL SVN
- */

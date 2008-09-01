@@ -788,6 +788,3 @@ public:
 
 #endif // __PRIMITIVE_H__
 
-
-/* Merge OpenNeL SVN
- */

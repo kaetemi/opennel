@@ -40,6 +40,3 @@ extern TCHAR *GetString(int id);
 extern HINSTANCE hInstance;
 
 #endif // __PLUGIN_MAX__H
-
-/* Merge OpenNeL SVN
- */

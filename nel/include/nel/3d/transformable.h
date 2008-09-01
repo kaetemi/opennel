@@ -345,6 +345,3 @@ private:
 #endif // NL_TRANSFORMABLE_H
 
 /* End of transformable.h */
-
-/* Merge OpenNeL SVN
- */

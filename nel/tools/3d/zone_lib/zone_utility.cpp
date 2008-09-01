@@ -280,6 +280,3 @@ uint16 createZoneId(std::string zoneName)
 	getZoneCoordByName(zoneName.c_str(), x, y);
 	return ((y-1)<<8) + x;
 }
-
-/* Merge OpenNeL SVN
- */

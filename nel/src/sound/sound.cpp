@@ -232,6 +232,3 @@ void				CSound::importForm(const std::string& filename, NLGEORGES::UFormElm& roo
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

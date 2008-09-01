@@ -437,6 +437,3 @@ CLoginClient::CShardEntry *CLoginClient::getShard (sint32 shardId)
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

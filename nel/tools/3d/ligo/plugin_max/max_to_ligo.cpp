@@ -192,5 +192,3 @@ void CMaxToLigo::errorMessage (const char *msg, const char *title, Interface& it
 // ***************************************************************************
 
 }
-/* Merge OpenNeL SVN
- */

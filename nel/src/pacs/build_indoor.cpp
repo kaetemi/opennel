@@ -714,6 +714,3 @@ bool	computeRetriever(CCollisionMeshBuild &cmb, CLocalRetriever &lr, CVector &tr
 
 } // NLPACS
 
-
-/* Merge OpenNeL SVN
- */

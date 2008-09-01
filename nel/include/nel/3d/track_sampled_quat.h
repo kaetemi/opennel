@@ -143,6 +143,3 @@ protected:
 #endif // NL_TRACK_SAMPLED_QUAT_H
 
 /* End of track_sampled_quat.h */
-
-/* Merge OpenNeL SVN
- */

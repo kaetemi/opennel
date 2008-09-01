@@ -2339,6 +2339,3 @@ void CParticleSystem::onShow(bool shown)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

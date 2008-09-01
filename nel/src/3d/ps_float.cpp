@@ -210,6 +210,3 @@ void PSRegisterFloatAttribs()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

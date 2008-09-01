@@ -197,6 +197,3 @@ private:
 #endif // NL_LIGHTING_MANAGER_H
 
 /* End of lighting_manager.h */
-
-/* Merge OpenNeL SVN
- */

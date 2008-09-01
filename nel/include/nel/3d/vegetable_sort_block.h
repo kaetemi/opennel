@@ -131,6 +131,3 @@ private:
 #endif // NL_VEGETABLE_SORT_BLOCK_H
 
 /* End of vegetable_sort_block.h */
-
-/* Merge OpenNeL SVN
- */

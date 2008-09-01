@@ -251,6 +251,3 @@ void			CIGSurfaceLightBuild::addDebugMeshFaces(CMesh::CMeshBuild &meshBuild, CSu
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

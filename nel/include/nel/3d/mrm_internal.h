@@ -360,6 +360,3 @@ public:
 #endif // NL_MRM_INTERNAL_H
 
 /* End of mrm_internal.h */
-
-/* Merge OpenNeL SVN
- */

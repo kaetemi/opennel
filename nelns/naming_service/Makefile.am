@@ -20,6 +20,3 @@ AM_CXXFLAGS			= -DNELNS_CONFIG="\"${pkgsysconfdir}\"" -DNELNS_STATE="\"${pkgloca
 naming_service_SOURCES = naming_service.cpp
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

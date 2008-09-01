@@ -170,6 +170,3 @@ private:
 #endif // NL_TASK_MANAGER_H
 
 /* End of task_manager.h */
-
-/* Merge OpenNeL SVN
- */

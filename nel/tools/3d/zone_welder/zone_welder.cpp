@@ -1008,6 +1008,3 @@ int main(sint argc, char **argv)
 
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -83,6 +83,3 @@ CMRMMeshFinal::CWedge::CWedge()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

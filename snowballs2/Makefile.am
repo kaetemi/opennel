@@ -23,6 +23,3 @@ SUBDIRS              = @SNO_SUBDIRS@
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

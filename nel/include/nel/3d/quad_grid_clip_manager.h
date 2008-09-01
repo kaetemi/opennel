@@ -135,6 +135,3 @@ private:
 #endif // NL_QUAD_GRID_CLIP_MANAGER_H
 
 /* End of quad_grid_clip_manager.h */
-
-/* Merge OpenNeL SVN
- */

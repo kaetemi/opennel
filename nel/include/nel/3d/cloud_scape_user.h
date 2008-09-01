@@ -65,6 +65,3 @@ public:
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

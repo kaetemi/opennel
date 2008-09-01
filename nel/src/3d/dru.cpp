@@ -614,6 +614,3 @@ void			CDRU::drawWiredBox(const CVector &corner, const CVector &vi, const CVecto
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

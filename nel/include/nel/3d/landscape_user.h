@@ -232,6 +232,3 @@ public:
 #endif // NL_LANDSCAPE_USER_H
 
 /* End of landscape_user.h */
-
-/* Merge OpenNeL SVN
- */

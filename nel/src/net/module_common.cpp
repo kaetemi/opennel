@@ -259,6 +259,3 @@ namespace NLNET
 
 
 } // namespace NLMISC
-
-/* Merge OpenNeL SVN
- */

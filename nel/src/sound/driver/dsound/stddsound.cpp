@@ -28,5 +28,3 @@
 
 // Foo function to remove disabled warning
 void foo_stddsound() {}
-/* Merge OpenNeL SVN
- */

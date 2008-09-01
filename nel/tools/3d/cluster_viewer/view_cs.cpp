@@ -429,6 +429,3 @@ int main(int argc, char **argv)
 	while (!CNELU::AsyncListener.isKeyPushed (KeyESCAPE));
 	return 0;
 }
-
-/* Merge OpenNeL SVN
- */

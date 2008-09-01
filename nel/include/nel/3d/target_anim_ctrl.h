@@ -108,6 +108,3 @@ private:
 #endif // NL_TARGET_ANIM_CTRL_H
 
 /* End of target_anim_ctrl.h */
-
-/* Merge OpenNeL SVN
- */

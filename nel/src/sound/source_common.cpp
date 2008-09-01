@@ -229,6 +229,3 @@ uint32					CSourceCommon::getTime()
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

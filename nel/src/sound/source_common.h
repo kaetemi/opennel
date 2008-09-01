@@ -140,6 +140,3 @@ protected:
 
 
 #endif //NL_SOURCE_COMMON_H
-
-/* Merge OpenNeL SVN
- */

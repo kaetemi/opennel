@@ -530,6 +530,3 @@ static const unsigned char regular[] =
 
 static const unsigned int regularSize = 4140;
 
-
-/* Merge OpenNeL SVN
- */

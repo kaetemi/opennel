@@ -81,6 +81,3 @@ public:
 #endif // NL_LOGIC_INFO_H
 
 /* End of logic_info.h */
-
-/* Merge OpenNeL SVN
- */

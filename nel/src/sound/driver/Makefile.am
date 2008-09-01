@@ -25,6 +25,3 @@ AM_CXXFLAGS                   = -I$(top_srcdir)/src
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

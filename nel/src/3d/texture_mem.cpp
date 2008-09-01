@@ -104,6 +104,3 @@ uint32 CTextureMem::getImageHeight() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

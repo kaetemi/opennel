@@ -147,6 +147,3 @@ public:
 #endif // NL_FAST_PTR_LIST_H
 
 /* End of fast_ptr_list.h */
-
-/* Merge OpenNeL SVN
- */

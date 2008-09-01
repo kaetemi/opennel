@@ -1351,6 +1351,3 @@ void CSkeletonScaleDlg::OnClose()
 {
 	_ObjViewer->getMainFrame()->OnWindowSkeletonScale();
 }
-
-/* Merge OpenNeL SVN
- */

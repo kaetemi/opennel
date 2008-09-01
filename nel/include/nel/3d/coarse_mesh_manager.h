@@ -155,6 +155,3 @@ private:
 #endif // NL_COARSE_MESH_MANAGER_H
 
 /* End of coarse_mesh_manager.h */
-
-/* Merge OpenNeL SVN
- */

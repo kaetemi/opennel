@@ -2408,6 +2408,3 @@ void CDriverGL::endWaterMultiPass()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -370,6 +370,3 @@ void PSRegisterPlaneBasisAttribs()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

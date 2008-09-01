@@ -368,6 +368,3 @@ struct EFileNotFound : public EConfigFile
 #endif // NL_CONFIG_FILE_H
 
 /* End of config_file.h */
-
-/* Merge OpenNeL SVN
- */

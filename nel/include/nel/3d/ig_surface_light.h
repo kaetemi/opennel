@@ -125,6 +125,3 @@ private:
 #endif // NL_IG_SURFACE_LIGHT_H
 
 /* End of ig_surface_light.h */
-
-/* Merge OpenNeL SVN
- */

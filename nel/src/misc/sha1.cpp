@@ -597,6 +597,3 @@ void SHA1PadMessage(SHA1Context *context)
 #ifdef _MFC_VER
 	#pragma runtime_checks( "", restore )
 #endif
-
-/* Merge OpenNeL SVN
- */

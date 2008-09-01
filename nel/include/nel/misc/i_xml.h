@@ -251,6 +251,3 @@ private:
 #endif // NL_I_XML_H
 
 /* End of o_xml.h */
-
-/* Merge OpenNeL SVN
- */

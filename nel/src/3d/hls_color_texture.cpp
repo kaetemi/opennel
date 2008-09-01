@@ -892,6 +892,3 @@ void			CHLSColorTexture::compressBlockRGB(CRGBA *srcRGBA, uint8* dstDXTC)
 #endif
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

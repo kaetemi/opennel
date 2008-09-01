@@ -86,6 +86,3 @@ inline NLMISC::CVector *FillBufUsingSubdiv(const	NLMISC::CVector &value,
 } // NL3D
 
 #endif
-
-/* Merge OpenNeL SVN
- */

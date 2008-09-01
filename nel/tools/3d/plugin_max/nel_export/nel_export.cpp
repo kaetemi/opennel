@@ -872,6 +872,3 @@ void CNelExport::init (bool view, bool errorInDialog, Interface *ip, bool loadSt
 	// Create the CExportNel class
 	_ExportNel = new CExportNel (errorInDialog, view, view, ip, "NeL Export", &theExportSceneStruct);
 }
-
-/* Merge OpenNeL SVN
- */

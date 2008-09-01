@@ -242,6 +242,3 @@ class	CPatchDLMContextList : public CTessList<CPatchDLMContext>
 #endif // NL_PATCHDLM_CONTEXT_H
 
 /* End of patchdlm_context.h */
-
-/* Merge OpenNeL SVN
- */

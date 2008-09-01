@@ -21,6 +21,3 @@ welcome_service_SOURCES		= welcome_service.cpp \
 			  	  welcome_service_itf.cpp
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

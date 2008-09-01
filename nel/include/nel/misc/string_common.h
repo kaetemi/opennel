@@ -255,6 +255,3 @@ inline void fromString(const std::string &str, sint &val) { sscanf(str.c_str(), 
 } // NLMISC
 
 #endif	// NL_STRING_COMMON_H
-
-/* Merge OpenNeL SVN
- */

@@ -753,6 +753,3 @@ NLMISC_COMMAND(go,"change position of the player with a player name or location"
 
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

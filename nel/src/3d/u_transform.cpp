@@ -417,6 +417,3 @@ bool	UTransform::fastIntersect(const NLMISC::CVector &p0, const NLMISC::CVector 
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

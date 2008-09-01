@@ -540,6 +540,3 @@ public:
 #endif // NL_EVENTS_H
 
 /* End of events.h */
-
-/* Merge OpenNeL SVN
- */

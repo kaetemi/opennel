@@ -257,6 +257,3 @@ private:
 #endif // NL_ASYNC_TEXTURE_MANAGER_H
 
 /* End of async_texture_manager.h */
-
-/* Merge OpenNeL SVN
- */

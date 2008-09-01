@@ -40,6 +40,3 @@ ULight *ULight::createLight ()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

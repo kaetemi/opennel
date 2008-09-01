@@ -127,6 +127,3 @@ protected:
 #endif // NL_TRACK_SAMPLED_COMMON_H
 
 /* End of track_sampled_common.h */
-
-/* Merge OpenNeL SVN
- */

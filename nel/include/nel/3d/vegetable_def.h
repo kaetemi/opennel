@@ -67,6 +67,3 @@ namespace NL3D
 #endif // NL_VEGETABLE_DEF_H
 
 /* End of vegetable_def.h */
-
-/* Merge OpenNeL SVN
- */

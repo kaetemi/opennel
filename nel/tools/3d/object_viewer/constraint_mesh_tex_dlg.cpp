@@ -160,6 +160,3 @@ void CConstraintMeshTexDlg::OnReinitWhenNewElementIsCreated()
 {
 	_CM->forceGlobalAnimTimeResetOnNewElement(((CButton *) GetDlgItem(IDC_REINIT_WHEN_NEW_ELEMENT_IS_CREATED))->GetCheck() ? true : false);
 }
-
-/* Merge OpenNeL SVN
- */

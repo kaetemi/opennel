@@ -2446,6 +2446,3 @@ void CPSMesh::onShow(bool shown)
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

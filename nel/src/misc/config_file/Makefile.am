@@ -20,6 +20,3 @@ libconfig_la_SOURCES    = cf_lexical.lpp             \
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

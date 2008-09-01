@@ -133,6 +133,3 @@ extern CNelExport theCNelExport;
 
 
 #endif // __NEL_EXPORT__H
-
-/* Merge OpenNeL SVN
- */

@@ -12,6 +12,3 @@
 #include "nel/misc/vector.h"
 
 #include "../sound_driver.h"
-
-/* Merge OpenNeL SVN
- */

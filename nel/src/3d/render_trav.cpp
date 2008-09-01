@@ -1375,6 +1375,3 @@ void CRenderTrav::debugWaterModelMemory(const char *tag, bool dumpList)
 
 
 
-
-/* Merge OpenNeL SVN
- */

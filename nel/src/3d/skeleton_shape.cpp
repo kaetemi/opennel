@@ -264,6 +264,3 @@ uint		CSkeletonShape::getLodForDistance(float dist) const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

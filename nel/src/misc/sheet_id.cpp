@@ -644,6 +644,3 @@ void	CSheetId::buildSheetId(uint32 shortId, uint32 type)
 }
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

@@ -43,6 +43,3 @@ void	CPrimitiveProfile::reset()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

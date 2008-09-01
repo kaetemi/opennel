@@ -99,6 +99,3 @@ private:
 #endif // NL_RAY_MESH_H
 
 /* End of ray_mesh.h */
-
-/* Merge OpenNeL SVN
- */

@@ -130,6 +130,3 @@ protected:
 #endif // NL_MESH_INSTANCE_H
 
 /* End of mesh_instance.h */
-
-/* Merge OpenNeL SVN
- */

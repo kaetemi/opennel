@@ -1269,6 +1269,3 @@ uint64 CSystemInfo::virtualMemory ()
 }
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

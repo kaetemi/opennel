@@ -167,6 +167,3 @@ void	CCPUTimeStat::peekMeasures()
 
 
 }
-
-/* Merge OpenNeL SVN
- */

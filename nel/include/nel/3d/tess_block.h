@@ -174,6 +174,3 @@ private:
 #endif // NL_TESS_BLOCK_H
 
 /* End of tess_block.h */
-
-/* Merge OpenNeL SVN
- */

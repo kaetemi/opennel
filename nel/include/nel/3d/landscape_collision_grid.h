@@ -98,6 +98,3 @@ private:
 #endif // NL_LANDSCAPE_COLLISION_GRID_H
 
 /* End of landscape_collision_grid.h */
-
-/* Merge OpenNeL SVN
- */

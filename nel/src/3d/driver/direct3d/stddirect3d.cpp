@@ -5,6 +5,3 @@
 void	dummyToAvoidStupidCompilerWarning_std_direct3d_cpp()
 {
 }
-
-/* Merge OpenNeL SVN
- */

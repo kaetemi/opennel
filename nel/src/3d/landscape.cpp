@@ -3956,6 +3956,3 @@ void CLandscape::removeTileCallback(ULandscapeTileCallback *cb)
 
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -104,6 +104,3 @@ namespace NLMISC
 #endif // NL_PS_PLANE_BASIS_H
 
 /* End of ps_plane_basis.h */
-
-/* Merge OpenNeL SVN
- */

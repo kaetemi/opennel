@@ -179,6 +179,3 @@ private:
 #endif // NL_VISUAL_COLLISION_MESH_H
 
 /* End of visual_collision_mesh.h */
-
-/* Merge OpenNeL SVN
- */

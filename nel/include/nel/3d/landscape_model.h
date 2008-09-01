@@ -161,6 +161,3 @@ private:
 #endif // NL_LANDSCAPE_MODEL_H
 
 /* End of landscape_model.h */
-
-/* Merge OpenNeL SVN
- */

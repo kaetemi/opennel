@@ -2790,6 +2790,3 @@ void	CMesh::buildSystemGeometry()
 
 
 
-
-/* Merge OpenNeL SVN
- */

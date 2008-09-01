@@ -276,6 +276,3 @@ void				CLoadBalancingTrav::reserveVisibleList(uint numModels)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

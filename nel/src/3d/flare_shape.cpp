@@ -228,6 +228,3 @@ CMesh *CFlareShape::getOcclusionTestMesh(CShapeBank &sb)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

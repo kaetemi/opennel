@@ -304,6 +304,3 @@ public:
 #endif // NL_ANIMATED_VALUE_H
 
 /* End of animated_value.h */
-
-/* Merge OpenNeL SVN
- */

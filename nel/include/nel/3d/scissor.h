@@ -98,6 +98,3 @@ public:
 #endif // NL_SCISSOR_H
 
 /* End of scissor.h */
-
-/* Merge OpenNeL SVN
- */

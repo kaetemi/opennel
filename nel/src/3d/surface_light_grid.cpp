@@ -196,6 +196,3 @@ void		CSurfaceLightGrid::getStaticLightSetup(NLMISC::CRGBA sunAmbient, const CVe
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

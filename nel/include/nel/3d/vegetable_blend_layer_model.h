@@ -111,6 +111,3 @@ private:
 #endif // NL_VEGETABLE_BLEND_LAYER_MODEL_H
 
 /* End of vegetable_blend_layer_model.h */
-
-/* Merge OpenNeL SVN
- */

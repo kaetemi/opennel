@@ -508,6 +508,3 @@ extern uint64 PSStatRender;
 
 
 
-
-/* Merge OpenNeL SVN
- */

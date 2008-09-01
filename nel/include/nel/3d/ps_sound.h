@@ -190,6 +190,3 @@ protected:
 #endif // NL_PS_SOUND_H
 
 /* End of ps_sound.h */
-
-/* Merge OpenNeL SVN
- */

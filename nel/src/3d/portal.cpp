@@ -330,6 +330,3 @@ bool CPortal::clipRay(const NLMISC::CVector &startWorld, const NLMISC::CVector &
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

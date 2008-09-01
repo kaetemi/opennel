@@ -72,6 +72,3 @@ public:
 #endif // PHYSICS_H
 
 /* End of physics.h */
-
-/* Merge OpenNeL SVN
- */

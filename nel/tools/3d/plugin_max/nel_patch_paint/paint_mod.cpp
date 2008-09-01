@@ -160,6 +160,3 @@ void PaintPatchMod::CreatePatchDataTempData()
 	}
 	nodes.DisposeTemporary();
 }
-
-/* Merge OpenNeL SVN
- */

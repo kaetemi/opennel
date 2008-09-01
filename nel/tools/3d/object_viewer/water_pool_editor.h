@@ -202,6 +202,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_WATER_POOL_EDITOR_H__E6DAABC1_AD21_42EB_9DA4_A0AFBAE7C47C__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

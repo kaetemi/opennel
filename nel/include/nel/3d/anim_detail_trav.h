@@ -109,6 +109,3 @@ private:
 #endif // NL_ANIM_DETAIL_TRAV_H
 
 /* End of anim_detail_trav.h */
-
-/* Merge OpenNeL SVN
- */

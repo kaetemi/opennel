@@ -29,6 +29,3 @@ libnel_drv_openal_la_LDFLAGS = -version-info @LIBTOOL_VERSION@
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

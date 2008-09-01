@@ -155,6 +155,3 @@ public:
 #endif // NL_PS_INT_H
 
 /* End of ps_int.h */
-
-/* Merge OpenNeL SVN
- */

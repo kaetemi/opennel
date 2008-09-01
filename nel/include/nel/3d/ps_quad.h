@@ -184,6 +184,3 @@ public:
 #endif // NL_PS_QUAD_H
 
 /* End of ps_quad.h */
-
-/* Merge OpenNeL SVN
- */

@@ -592,6 +592,3 @@ public:
 
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -115,6 +115,3 @@ private:
 } // NLMISC
 
 #endif
-
-/* Merge OpenNeL SVN
- */

@@ -105,6 +105,3 @@ private:
 #endif // NL_LOGIN_CLIENT_H
 
 /* End of login_client.h */
-
-/* Merge OpenNeL SVN
- */

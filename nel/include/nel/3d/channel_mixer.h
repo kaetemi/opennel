@@ -491,6 +491,3 @@ inline void	CChannelMixer::evalSingleChannel(sint channelId)
 #endif // NL_CHANNEL_MIXER_H
 
 /* End of channel_mixer.h */
-
-/* Merge OpenNeL SVN
- */

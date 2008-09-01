@@ -13,6 +13,3 @@ automake --gnu --add-missing && \
 echo "Creating 'configure'..." && \
 autoconf && \
 echo -e "\nRun: ./configure; make; make install\n"
-
-# Merge OpenNeL SVN
-

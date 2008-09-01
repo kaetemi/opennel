@@ -323,6 +323,3 @@ void CSoundAnimManager::update(float lastTime, float curTime)
 } // namespace NLSOUND 
 
 
-
-/* Merge OpenNeL SVN
- */

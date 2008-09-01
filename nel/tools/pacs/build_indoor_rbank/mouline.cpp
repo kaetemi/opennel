@@ -492,5 +492,3 @@ void	computeRetriever(CCollisionMeshBuild &cmb, CLocalRetriever &lr, CVector &tr
 
 	lr.setBBox(bbox);
 }
-/* Merge OpenNeL SVN
- */

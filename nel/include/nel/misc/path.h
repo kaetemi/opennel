@@ -824,6 +824,3 @@ struct CFile
 #endif // NL_PATH_H
 
 /* End of path.h */
-
-/* Merge OpenNeL SVN
- */

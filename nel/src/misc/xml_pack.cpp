@@ -256,6 +256,3 @@ namespace NLMISC
 
 } // namespace NLMISC
 
-
-/* Merge OpenNeL SVN
- */

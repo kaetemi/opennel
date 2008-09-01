@@ -56,6 +56,3 @@ void				CHrcTrav::traverse()
 
 
 }
-
-/* Merge OpenNeL SVN
- */

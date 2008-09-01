@@ -158,6 +158,3 @@ private:
 #endif // NL_POINT_LIGHT_MODEL_H
 
 /* End of point_light_model.h */
-
-/* Merge OpenNeL SVN
- */

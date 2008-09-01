@@ -1111,6 +1111,3 @@ NLMISC_CATEGORISED_COMMAND(nel,displayMeasures, "display hierarchical timer", "[
 
 } // NLMISC
 
-
-/* Merge OpenNeL SVN
- */

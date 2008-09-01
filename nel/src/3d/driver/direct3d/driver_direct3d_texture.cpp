@@ -1190,6 +1190,3 @@ bool CDriverD3D::getRenderTargetSize (uint32 &width, uint32 &height)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

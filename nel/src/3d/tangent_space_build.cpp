@@ -260,6 +260,3 @@ bool	BuildTangentSpace(CMesh::CMeshBuild &outMeshBuild, const CMesh::CMeshBuild 
 
 
 }
-
-/* Merge OpenNeL SVN
- */

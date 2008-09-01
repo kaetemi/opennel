@@ -357,6 +357,3 @@ void CMultiTexDlg::OnUseParticleDateAlt()
 	_MTP->setUseLocalDateAlt(m_UseParticleDateAlt ? true : false /* VC WARNING */);	
 	updateModifiedFlag();
 }
-
-/* Merge OpenNeL SVN
- */

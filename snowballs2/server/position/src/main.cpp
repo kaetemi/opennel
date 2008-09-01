@@ -620,6 +620,3 @@ NLNET_SERVICE_MAIN( CPositionService, "POS", "position_service", 0, CallbackArra
 
 
 /* end of file */
-
-/* Merge OpenNeL SVN
- */

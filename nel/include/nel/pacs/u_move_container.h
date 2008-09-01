@@ -250,6 +250,3 @@ public:
 #endif // NL_U_MOVE_CONTAINER_H
 
 /* End of u_move_container.h */
-
-/* Merge OpenNeL SVN
- */

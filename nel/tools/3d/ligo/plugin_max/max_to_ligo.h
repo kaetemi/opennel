@@ -90,6 +90,3 @@ public:
 #endif // NL_MAX_TO_LIGO_H
 
 /* End of max_to_ligo.h */
-
-/* Merge OpenNeL SVN
- */

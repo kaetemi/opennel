@@ -76,6 +76,3 @@ void	NLPACS::CRetrieverBank::clean()
 }
 
 // end of CRetrieverBank methods implementation
-
-/* Merge OpenNeL SVN
- */

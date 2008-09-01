@@ -51,6 +51,3 @@ Test::Suite *createCSStringTS()
 {
 	return new CSStringTS;
 }
-
-/* Merge OpenNeL SVN
- */

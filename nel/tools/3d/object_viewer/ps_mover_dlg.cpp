@@ -347,6 +347,3 @@ NL3D::CPSLocatedBindable *CPSMoverDlg::getLocatedBindable(void)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -261,6 +261,3 @@ private:
 #endif // NL_DRIVER_OPENGL_STATES_H
 
 /* End of driver_opengl_states.h */
-
-/* Merge OpenNeL SVN
- */

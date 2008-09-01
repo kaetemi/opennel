@@ -923,6 +923,3 @@ namespace NLNET
 } // namespace NLNET
 
 #endif // NL_FILE_MODULE_H
-
-/* Merge OpenNeL SVN
- */

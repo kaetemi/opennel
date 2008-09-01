@@ -92,6 +92,3 @@ void CTDS::setPointer (void* pointer)
 // *********************************************************
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

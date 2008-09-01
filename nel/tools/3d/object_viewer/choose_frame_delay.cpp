@@ -112,6 +112,3 @@ void CChooseFrameDelay::goPreRender()
 		}		
 	}
 }
-
-/* Merge OpenNeL SVN
- */

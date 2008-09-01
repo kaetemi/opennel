@@ -633,6 +633,3 @@ uint32	 CFontGenerator::getCharIndex (ucchar c)
 
 #endif // NL_DONT_USE_EXTERNAL_CODE
 
-
-/* Merge OpenNeL SVN
- */

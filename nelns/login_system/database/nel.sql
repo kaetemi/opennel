@@ -60,6 +60,3 @@ CREATE TABLE `user` (
   PRIMARY KEY  (`UId`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci COMMENT='contains all users informations for login system';
 
-
-# Merge OpenNeL SVN
-

@@ -451,6 +451,3 @@ void		CBezierPatch::subdivideT(CBezierPatch &top, CBezierPatch &bottom, float t)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

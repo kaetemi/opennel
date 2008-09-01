@@ -1258,6 +1258,3 @@ NLMISC_COMMAND (generateAlert, "generate an alert", "<text>")
 
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

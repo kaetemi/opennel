@@ -1148,6 +1148,3 @@ void CVPParser::dump(const TProgram &prg, std::string &dest)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

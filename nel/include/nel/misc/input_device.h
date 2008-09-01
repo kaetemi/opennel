@@ -91,6 +91,3 @@ struct IInputDevice
 #endif // NL_INPUT_DEVICE_H
 
 /* End of input_device.h */
-
-/* Merge OpenNeL SVN
- */

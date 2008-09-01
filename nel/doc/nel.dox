@@ -241,6 +241,3 @@ DOT_CLEANUP            = YES
 # Configuration::additions related to the search engine   
 #---------------------------------------------------------------------------
 SEARCHENGINE           = YES
-
-<!-- Merge OpenNeL SVN
- -->

@@ -3166,6 +3166,3 @@ void RPatchMesh::operator= (const RPatchMesh& fromOb)
 #endif // USE_CACHE
 
 CBankManager RPatchMesh::manager;
-
-/* Merge OpenNeL SVN
- */

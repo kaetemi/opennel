@@ -1640,6 +1640,3 @@ void CScene::flushSSSModelRequests()
 
 
 
-
-/* Merge OpenNeL SVN
- */

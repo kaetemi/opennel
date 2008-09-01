@@ -55,6 +55,3 @@ IMeshGeom::~IMeshGeom()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

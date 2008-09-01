@@ -146,6 +146,3 @@ private:
 
 #endif // NL_LISTENER_DSOUND_H
 
-
-/* Merge OpenNeL SVN
- */

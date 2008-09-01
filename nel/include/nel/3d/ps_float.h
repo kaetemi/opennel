@@ -220,6 +220,3 @@ public:
 #endif // NL_PS_FLOAT_H
 
 /* End of ps_size.h */
-
-/* Merge OpenNeL SVN
- */

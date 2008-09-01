@@ -96,6 +96,3 @@ int main(int argc, char **argv)
 		printf(e.what());
 	}
 }
-
-/* Merge OpenNeL SVN
- */

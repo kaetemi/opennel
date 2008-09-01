@@ -430,6 +430,3 @@ bool			CMeshBlockManager::addVBHeap(IDriver *drv, uint vertexFormat, uint maxVer
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

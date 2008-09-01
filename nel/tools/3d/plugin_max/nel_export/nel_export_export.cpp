@@ -335,6 +335,3 @@ bool CNelExport::exportLodCharacter (const char *sPath, INode& node, TimeValue t
 	}
 	return bRet;
 }
-
-/* Merge OpenNeL SVN
- */

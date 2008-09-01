@@ -466,6 +466,3 @@ sint		CQuadGridClipCluster::profileNumChildren(uint distLevel) const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

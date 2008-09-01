@@ -323,6 +323,3 @@ private:
 #endif // NL_BLOCK_MEMORY_H
 
 /* End of block_memory.h */
-
-/* Merge OpenNeL SVN
- */

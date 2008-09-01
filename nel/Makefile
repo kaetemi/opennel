@@ -58,6 +58,3 @@ touch:
 	for f in $(SRC_DIRS); do make -C $$f touch ; done
 
 .NOTPARALLEL:
-
-# Merge OpenNeL SVN
-

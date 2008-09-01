@@ -2339,6 +2339,3 @@ uint32	CPatch::countNumTriFar1() const
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

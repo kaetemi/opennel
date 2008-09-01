@@ -122,6 +122,3 @@ private:
 #endif // NL_CALLBACK_CLIENT_H
 
 /* End of callback_client.h */
-
-/* Merge OpenNeL SVN
- */

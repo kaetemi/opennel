@@ -590,6 +590,3 @@ bool RPO::isZone (INode& node, TimeValue time)
 
 // --------------------------------------------------
 
-
-/* Merge OpenNeL SVN
- */

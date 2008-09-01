@@ -74,6 +74,3 @@ void CAnimationSetUser::build ()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

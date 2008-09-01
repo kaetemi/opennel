@@ -23,6 +23,3 @@ admin_executor_service_SOURCES = admin_executor_service.cpp \
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

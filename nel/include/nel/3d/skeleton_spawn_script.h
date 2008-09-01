@@ -119,6 +119,3 @@ public:
 #endif // NL_SKELETON_SPAWN_SCRIPT_H
 
 /* End of skeleton_spawn_script.h */
-
-/* Merge OpenNeL SVN
- */

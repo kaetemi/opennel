@@ -2048,6 +2048,3 @@ void		CPatch::endDLMLighting()
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

@@ -636,6 +636,3 @@ bool CMaterial::isSupportedByDriver(IDriver &drv, bool forceBaseCaps) const
 
 }
 
-
-/* Merge OpenNeL SVN
- */

@@ -1896,6 +1896,3 @@ bool CDriverGL::supportVertexProgramDoubleSidedColor() const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

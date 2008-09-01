@@ -995,6 +995,3 @@ struct CUnsensitiveSStringLessPred : public std::less<NLMISC::CSString>
 #endif // NL_SSTRING_H
 
 /* End of sstring.h */
-
-/* Merge OpenNeL SVN
- */

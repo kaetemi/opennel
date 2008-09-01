@@ -1159,6 +1159,3 @@ bool CIXml::getContentString (std::string &result, xmlNodePtr node)
 } // NLMISC
 
 #endif // NL_DONT_USE_EXTERNAL_CODE
-
-/* Merge OpenNeL SVN
- */

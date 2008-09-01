@@ -254,6 +254,3 @@ void CVegetableApperancePage::OnDblclkListVegetableColor()
 		}
 	}
 }
-
-/* Merge OpenNeL SVN
- */

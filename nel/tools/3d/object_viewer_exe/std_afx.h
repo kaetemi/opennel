@@ -47,6 +47,3 @@
 
 
 #endif
-
-/* Merge OpenNeL SVN
- */

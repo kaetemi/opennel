@@ -1162,6 +1162,3 @@ void CSceneUser::updateWaterEnvMaps(TGlobalAnimationTime time)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

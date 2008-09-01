@@ -377,6 +377,3 @@ NLMISC_COMMAND(add_ig, "add instance group", "name")
 	return true;
 }
 
-
-/* Merge OpenNeL SVN
- */

@@ -298,6 +298,3 @@ void CParticleSystemManager::reactivateSoundForAllManagers()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

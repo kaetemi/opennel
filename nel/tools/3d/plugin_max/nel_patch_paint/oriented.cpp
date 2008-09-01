@@ -530,6 +530,3 @@ static const unsigned char oriented[] =
 
 static const unsigned int orientedSize = 4140;
 
-
-/* Merge OpenNeL SVN
- */

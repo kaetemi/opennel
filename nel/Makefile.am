@@ -45,6 +45,3 @@ m4data_DATA = nel.m4
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

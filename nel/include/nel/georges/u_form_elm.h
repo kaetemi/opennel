@@ -261,6 +261,3 @@ public:
 } // NLGEORGES
 
 #endif // NL_U_FORM_ELM_H
-
-/* Merge OpenNeL SVN
- */

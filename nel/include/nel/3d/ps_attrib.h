@@ -584,6 +584,3 @@ typedef CPSAttrib<TAnimationTime>  TPSAttribTime;
 #endif // NL_PS_ATTRIB_H
 
 /* End of ps_attrib.h */
-
-/* Merge OpenNeL SVN
- */

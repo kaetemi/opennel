@@ -217,6 +217,3 @@ uint32 CTcpSock::getWindowSize()
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

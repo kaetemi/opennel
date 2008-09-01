@@ -194,6 +194,3 @@ void		CNearVertexBufferInfo::setupVertexBuffer(CVertexBuffer &vb, bool forVertex
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

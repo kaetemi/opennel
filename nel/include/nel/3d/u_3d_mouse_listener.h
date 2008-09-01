@@ -146,6 +146,3 @@ public:
 #endif // NL_U_3D_MOUSE_LISTENER_H
 
 /* End of u_3d_mouse_listener.h */
-
-/* Merge OpenNeL SVN
- */

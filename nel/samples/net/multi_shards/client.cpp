@@ -126,6 +126,3 @@ void main (int argc, char **argv)
 
 	delete cnx;
 }
-
-/* Merge OpenNeL SVN
- */

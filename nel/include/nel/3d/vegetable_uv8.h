@@ -54,6 +54,3 @@ public:
 #endif // NL_VEGETABLE_UV8_H
 
 /* End of vegetable_uv8.h */
-
-/* Merge OpenNeL SVN
- */

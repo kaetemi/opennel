@@ -13,6 +13,3 @@ sno_frontend_DATA	= frontend_service.cfg
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

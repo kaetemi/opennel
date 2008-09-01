@@ -156,6 +156,3 @@ template <class T> struct TFrameStereo
 #endif // NL_BUFFER_AL_H
 
 /* End of buffer_al.h */
-
-/* Merge OpenNeL SVN
- */

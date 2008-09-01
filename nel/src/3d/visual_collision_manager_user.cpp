@@ -79,6 +79,3 @@ void CVisualCollisionManagerUser::getMeshs(const NLMISC::CAABBox &aabbox, std::v
 
 
 
-
-/* Merge OpenNeL SVN
- */

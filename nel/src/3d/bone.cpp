@@ -306,6 +306,3 @@ void	CBone::setSkinScale(CVector &skinScale)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

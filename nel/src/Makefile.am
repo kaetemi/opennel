@@ -34,6 +34,3 @@ EXTRA_DIST           =	3d.dsp		\
 			sound_8.vcproj
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

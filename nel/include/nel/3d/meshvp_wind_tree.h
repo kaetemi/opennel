@@ -150,6 +150,3 @@ private:
 #endif // NL_MESHVP_WIND_TREE_H
 
 /* End of meshvp_wind_tree.h */
-
-/* Merge OpenNeL SVN
- */

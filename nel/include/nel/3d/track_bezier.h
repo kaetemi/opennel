@@ -221,6 +221,3 @@ protected:
 	// @}
 
 };
-
-/* Merge OpenNeL SVN
- */

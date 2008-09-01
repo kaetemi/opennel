@@ -258,6 +258,3 @@ public:
 #endif // NL_U_LIGHT_H
 
 /* End of u_light.h */
-
-/* Merge OpenNeL SVN
- */

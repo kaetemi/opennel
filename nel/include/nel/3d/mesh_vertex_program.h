@@ -134,6 +134,3 @@ public:
 #endif // NL_MESH_VERTEX_PROGRAM_H
 
 /* End of mesh_vertex_program.h */
-
-/* Merge OpenNeL SVN
- */

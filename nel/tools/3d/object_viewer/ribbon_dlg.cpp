@@ -171,6 +171,3 @@ void CRibbonDlg::OnSelchangeTrailCoordSystem()
 	_Ribbon->setMatrixMode((NL3D::CPSRibbonBase::TMatrixMode) ((CComboBox *) GetDlgItem(IDC_TRAIL_COORD_SYSTEM))->GetCurSel());
 	_Node->setModified(true);
 }
-
-/* Merge OpenNeL SVN
- */

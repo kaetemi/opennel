@@ -532,6 +532,3 @@ void CVegetableDensityPage::OnButtonVegetableBrowse()
 		}
 	}
 }
-
-/* Merge OpenNeL SVN
- */

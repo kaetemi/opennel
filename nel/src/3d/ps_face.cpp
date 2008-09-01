@@ -424,6 +424,3 @@ void CPSFace::resize(uint32 size)
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

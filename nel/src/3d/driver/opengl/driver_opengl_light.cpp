@@ -365,6 +365,3 @@ void			CDriverGL::setupLightMapDynamicLighting(bool enable)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

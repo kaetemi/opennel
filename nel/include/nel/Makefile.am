@@ -12,6 +12,3 @@ includedir           = ${prefix}/include/nel
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

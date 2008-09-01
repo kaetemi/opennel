@@ -253,6 +253,3 @@ NLMISC_COMMAND(music_login,"login screen music","")
 
 #endif 
 
-
-/* Merge OpenNeL SVN
- */

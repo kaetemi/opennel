@@ -273,6 +273,3 @@ uint32 CBufferAL::getBufferADPCMEncoded(std::vector<uint8> &result)
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

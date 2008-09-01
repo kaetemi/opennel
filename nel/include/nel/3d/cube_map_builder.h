@@ -62,6 +62,3 @@ CTextureCube *BuildCubeMap(sint mapSize, ICubeMapFunctor &f, bool luminanceOnly 
 
 #endif
 
-
-/* Merge OpenNeL SVN
- */

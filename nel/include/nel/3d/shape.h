@@ -221,6 +221,3 @@ private:
 #endif // NL_SHAPE_H
 
 /* End of shape.h */
-
-/* Merge OpenNeL SVN
- */

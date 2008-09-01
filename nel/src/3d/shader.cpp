@@ -118,6 +118,3 @@ IShaderDrvInfos::~IShaderDrvInfos()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

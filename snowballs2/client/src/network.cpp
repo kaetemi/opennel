@@ -421,6 +421,3 @@ void	releaseNetwork()
 		Connection = NULL;
 	}
 }
-
-/* Merge OpenNeL SVN
- */

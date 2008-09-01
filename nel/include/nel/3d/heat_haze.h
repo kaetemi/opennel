@@ -58,6 +58,3 @@ public:
 #endif // NL_HEAT_HAZE_H
 
 /* End of heat_haze.h */
-
-/* Merge OpenNeL SVN
- */

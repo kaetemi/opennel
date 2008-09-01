@@ -110,6 +110,3 @@ void	CAnimatedMorph::registerToChannelMixer(CChannelMixer *chanMixer, const std:
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

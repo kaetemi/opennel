@@ -450,6 +450,3 @@ private:
 #endif // NL_SCENE_GROUP_H
 
 /* End of scene_group.h */
-
-/* Merge OpenNeL SVN
- */

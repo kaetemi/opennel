@@ -181,6 +181,3 @@ inline uint32 OptFastFloor24(float x)
 #endif // NL_FAST_FLOOR_H
 
 /* End of fast_floor.h */
-
-/* Merge OpenNeL SVN
- */

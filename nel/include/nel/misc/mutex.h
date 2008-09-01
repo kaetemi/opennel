@@ -737,6 +737,3 @@ public:
 #endif // NL_MUTEX_H
 
 /* End of mutex.h */
-
-/* Merge OpenNeL SVN
- */

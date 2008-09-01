@@ -275,6 +275,3 @@ void CTextureChooser::OnEnableMultitexturing()
 }
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -119,6 +119,3 @@ void UCamera::buildCameraPyramidCorners(std::vector<NLMISC::CVector>	&pyramidCor
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

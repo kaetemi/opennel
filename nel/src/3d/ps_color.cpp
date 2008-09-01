@@ -179,6 +179,3 @@ void PSRegisterColorAttribs()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

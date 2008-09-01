@@ -21,6 +21,3 @@ typedef union	{
 
 
 extern YYSTYPE cflval;
-
-/* Merge OpenNeL SVN
- */

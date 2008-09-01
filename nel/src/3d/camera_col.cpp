@@ -596,6 +596,3 @@ for(uint i=0;i<=numSubdiv;i++)
 */
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

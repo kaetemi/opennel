@@ -2066,6 +2066,3 @@ static const unsigned char _9[] =
 
 static const unsigned int _9Size = 16428;
 
-
-/* Merge OpenNeL SVN
- */

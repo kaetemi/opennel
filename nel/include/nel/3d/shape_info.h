@@ -64,6 +64,3 @@ std::string standardizeShapeName(const std::string &name);
 
 
 #endif
-
-/* Merge OpenNeL SVN
- */

@@ -1816,6 +1816,3 @@ private:
 #endif // NL_PS_ATTRIB_MAKER_HELPER_H
 
 /* End of ps_attrib_maker_helper.h */
-
-/* Merge OpenNeL SVN
- */

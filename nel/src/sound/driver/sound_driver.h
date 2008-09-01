@@ -342,6 +342,3 @@ public:
 #endif // NL_SOUND_DRIVER_H
 
 /* End of sound_driver.h */
-
-/* Merge OpenNeL SVN
- */

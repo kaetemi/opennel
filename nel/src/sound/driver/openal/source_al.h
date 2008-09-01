@@ -166,6 +166,3 @@ private:
 #endif // NL_SOURCE_AL_H
 
 /* End of source_al.h */
-
-/* Merge OpenNeL SVN
- */

@@ -198,6 +198,3 @@ private:
 #endif // NL_RADIX_SORT_H
 
 /* End of radix_sort.h */
-
-/* Merge OpenNeL SVN
- */

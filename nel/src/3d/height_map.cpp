@@ -82,6 +82,3 @@ float			CHeightMap::getZ(uint x, uint y) const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

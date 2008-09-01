@@ -230,6 +230,3 @@ void CListenerFMod::updateFModPos()
 
 
 } // NLSOUND
-
-/* Merge OpenNeL SVN
- */

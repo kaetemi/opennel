@@ -150,6 +150,3 @@ void		CTileVegetableDesc::compileRunTime()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

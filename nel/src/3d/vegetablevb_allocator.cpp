@@ -420,6 +420,3 @@ void				CVegetableVBAllocator::setupVBFormat()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

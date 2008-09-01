@@ -264,6 +264,3 @@ NLMISC_COMMAND (wait, "", "<time>")
 
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

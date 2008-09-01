@@ -198,6 +198,3 @@ auto_ptr<Test::Suite> intRegisterTestSuite(const std::string &workingPath)
 }
 
 NL_LIB_EXPORT_SYMBOL(registerTestSuite, void, intRegisterTestSuite);
-
-/* Merge OpenNeL SVN
- */

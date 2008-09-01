@@ -401,6 +401,3 @@ class CPSZoneRectangle : public CPSZone, public IPSMover
 #endif // NL_PS_ZONE_H
 
 /* End of ps_zone.h */
-
-/* Merge OpenNeL SVN
- */

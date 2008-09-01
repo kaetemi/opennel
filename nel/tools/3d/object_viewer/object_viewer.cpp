@@ -3936,6 +3936,3 @@ bool browseFolder(const CString &caption, CString &destFolder, HWND parent)
 }
 
 
-
-/* Merge OpenNeL SVN
- */

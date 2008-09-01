@@ -231,6 +231,3 @@ void			CNELU::swapBuffers()
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

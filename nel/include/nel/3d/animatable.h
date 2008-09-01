@@ -249,6 +249,3 @@ protected:
 #endif // NL_ANIMATABLE_H
 
 /* End of animatable.h */
-
-/* Merge OpenNeL SVN
- */

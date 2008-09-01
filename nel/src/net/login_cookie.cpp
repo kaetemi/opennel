@@ -94,6 +94,3 @@ void main()
 */
 
 } // NL.
-
-/* Merge OpenNeL SVN
- */

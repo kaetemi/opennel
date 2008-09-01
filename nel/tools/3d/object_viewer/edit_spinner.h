@@ -105,6 +105,3 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_EDIT_SPINNER_H__CFDBE30D_F8C9_432E_9F17_0AFACE143BB0__INCLUDED_)
-
-/* Merge OpenNeL SVN
- */

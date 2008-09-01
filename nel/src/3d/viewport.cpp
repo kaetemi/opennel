@@ -105,6 +105,3 @@ void CViewport::getRayWithPoint (float x, float y, CVector& pos, CVector& dir, c
 
 } // NL3D
 
-
-/* Merge OpenNeL SVN
- */

@@ -285,6 +285,3 @@ void CObjectDyn::remove (NLPACS::UMoveContainer &container, UScene &scene)
 
 // ***************************************************************************
 
-
-/* Merge OpenNeL SVN
- */

@@ -55,6 +55,3 @@ sint		ProfNPatchRdrFar0=0;
 sint		ProfNPatchRdrFar1=0;
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

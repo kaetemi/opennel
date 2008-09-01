@@ -506,6 +506,3 @@ void CCallbackNetBase::noticeDisconnection( TSockId hostid )
 
 } // NLNET
 
-
-/* Merge OpenNeL SVN
- */

@@ -2531,6 +2531,3 @@ NLMISC_CLASS_COMMAND_IMPL(CUnifiedNetwork, addService)
 
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

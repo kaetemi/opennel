@@ -246,6 +246,3 @@ inline void setFlags(T &dest, U mask, bool on)
 #endif // NL_ALGO_H
 
 /* End of algo.h */
-
-/* Merge OpenNeL SVN
- */

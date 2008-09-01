@@ -236,6 +236,3 @@ Test::Suite *createCCoTaskTS()
 	return new CCoTaskTS;
 }
 
-
-/* Merge OpenNeL SVN
- */

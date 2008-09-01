@@ -480,6 +480,3 @@ void CAsyncFileManager3D::CTextureLoad::getName (std::string &result) const
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

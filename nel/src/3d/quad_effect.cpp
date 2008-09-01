@@ -258,6 +258,3 @@ void CQuadEffect::processPoly(const TPoint2DVect &poly
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

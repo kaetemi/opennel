@@ -95,6 +95,3 @@ void CSkeletonWeight::CNode::serial (NLMISC::IStream& f)
 // ***************************************************************************
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

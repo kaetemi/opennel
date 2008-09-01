@@ -520,6 +520,3 @@ uint64 CNetManager::getReceiveQueueSize ()
 }
 
 } // NLNET
-
-/* Merge OpenNeL SVN
- */

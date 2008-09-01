@@ -674,6 +674,3 @@ inline bool EPM_PaintMouseProc::isLocked (PaintPatchMod *pobj, EPM_PaintTile* pT
 
 
 #endif // __EDITPATCH_H__
-
-/* Merge OpenNeL SVN
- */

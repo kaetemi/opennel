@@ -159,6 +159,3 @@ void CTrackSampledVector::applySampleDivisor(uint sampleDivisor)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -363,6 +363,3 @@ void	CMeshInstance::renderIntoSkeletonShadowMap(CSkeletonModel *rootSkeleton, CM
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

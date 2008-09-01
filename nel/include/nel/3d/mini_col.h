@@ -157,6 +157,3 @@ private:
 #endif // NL_MINI_COL_H
 
 /* End of mini_col.h */
-
-/* Merge OpenNeL SVN
- */

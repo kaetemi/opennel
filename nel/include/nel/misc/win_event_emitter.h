@@ -131,6 +131,3 @@ private:
 #endif // NL_WIN_EVENT_EMITTER_H
 
 /* End of win_event_emitter.h */
-
-/* Merge OpenNeL SVN
- */

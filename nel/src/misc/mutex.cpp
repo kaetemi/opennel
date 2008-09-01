@@ -722,6 +722,3 @@ void CFairMutex::debugLeave()
 #endif // MUTEX_DEBUG
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

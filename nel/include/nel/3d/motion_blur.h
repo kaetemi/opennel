@@ -80,6 +80,3 @@ protected:
 #endif // NL_MOTION_BLUR_H
 
 /* End of motion_blur.h */
-
-/* Merge OpenNeL SVN
- */

@@ -44,6 +44,3 @@ void init3d ()
 }
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

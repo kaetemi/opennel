@@ -130,6 +130,3 @@ void CPSAttribMakerMemory<float>::newElement(const CPSEmitterInfo &info)
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

@@ -161,6 +161,3 @@ protected:
 #endif // NL_QUAD_GRID_CLIP_CLUSTER_H
 
 /* End of quad_grid_clip_cluster.h */
-
-/* Merge OpenNeL SVN
- */

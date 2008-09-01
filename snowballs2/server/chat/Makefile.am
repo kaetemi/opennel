@@ -13,6 +13,3 @@ sno_chat_DATA		= chat_service.cfg
 
 # End of Makefile.am
 
-
-# Merge OpenNeL SVN
-

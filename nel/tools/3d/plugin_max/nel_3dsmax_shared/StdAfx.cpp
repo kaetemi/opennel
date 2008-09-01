@@ -29,6 +29,3 @@
 // and not in this file
 
 #include "stdafx.h"
-
-/* Merge OpenNeL SVN
- */

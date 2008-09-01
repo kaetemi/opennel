@@ -968,6 +968,3 @@ bool			CPatch::getCornerSmoothFlag(uint corner) const
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

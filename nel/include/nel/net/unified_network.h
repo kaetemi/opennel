@@ -764,6 +764,3 @@ private:
 #endif // NL_UNIFIED_NETWORK_H
 
 /* End of unified_network.h */
-
-/* Merge OpenNeL SVN
- */

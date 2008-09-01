@@ -176,6 +176,3 @@ private:
 #endif // NL_LANDSCAPEVB_ALLOCATOR_H
 
 /* End of landscapevb_allocator.h */
-
-/* Merge OpenNeL SVN
- */

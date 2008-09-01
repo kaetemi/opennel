@@ -168,6 +168,3 @@ bool  CExportNel::buildVegetableShape (NL3D::CVegetableShape& skeletonShape, INo
 }
 
 // ***************************************************************************
-
-/* Merge OpenNeL SVN
- */

@@ -2927,6 +2927,3 @@ std::string toString(NL3D::CPSEmitter::TEmissionType type)
 
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

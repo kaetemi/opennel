@@ -555,6 +555,3 @@ namespace STRING_MANAGER
 }	// namespace STRING_MANAGER
 
 #endif // DIFF_TOOL_H
-
-/* Merge OpenNeL SVN
- */

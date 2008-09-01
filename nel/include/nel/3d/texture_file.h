@@ -171,6 +171,3 @@ private:
 #endif // NL_TEXTURE_FILE_H
 
 /* End of texture_file.h */
-
-/* Merge OpenNeL SVN
- */

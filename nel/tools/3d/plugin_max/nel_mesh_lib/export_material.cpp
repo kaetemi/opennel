@@ -1404,6 +1404,3 @@ ITexture* CExportNel::buildATexture (Texmap& texmap, CMaterialDesc &remap3dsTexC
 }
 
 #pragma optimize("", on)
-
-/* Merge OpenNeL SVN
- */

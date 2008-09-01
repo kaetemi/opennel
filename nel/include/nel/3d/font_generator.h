@@ -105,6 +105,3 @@ private:
 #endif // NL_FONT_GENERATOR_H
 
 /* End of font_generator.h */
-
-/* Merge OpenNeL SVN
- */

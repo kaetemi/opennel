@@ -710,6 +710,3 @@ int		main(int argc, const char *argv[])
 	puts("Press any key");
 	_getch();
 }
-
-/* Merge OpenNeL SVN
- */

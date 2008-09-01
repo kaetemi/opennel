@@ -253,6 +253,3 @@ public:
 
 #endif // NL_DYNLIBLOAD_H
 
-
-/* Merge OpenNeL SVN
- */

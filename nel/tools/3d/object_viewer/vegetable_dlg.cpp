@@ -942,6 +942,3 @@ bool CVegetableDlg::isVegetableVisible (uint id)
 
 	return _Vegetables[id].Visible;
 }
-
-/* Merge OpenNeL SVN
- */

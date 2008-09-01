@@ -3885,6 +3885,3 @@ float CZoneLighter::attenuation (const CVector &pos, const CZoneLighter::CLightD
 // ***********************************************************
 
  
-
-/* Merge OpenNeL SVN
- */

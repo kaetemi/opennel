@@ -156,6 +156,3 @@ bool			CIGSurfaceLight::getStaticLightSetup(NLMISC::CRGBA sunAmbient, uint retri
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

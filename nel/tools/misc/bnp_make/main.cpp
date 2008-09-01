@@ -456,6 +456,3 @@ int main (int nNbArg, char **ppArgs)
 	usage ();
 	return -1;
 }
-
-/* Merge OpenNeL SVN
- */

@@ -185,6 +185,3 @@ private:
 #endif // NL_VEGETABLEVB_ALLOCATOR_H
 
 /* End of vegetablevb_allocator.h */
-
-/* Merge OpenNeL SVN
- */

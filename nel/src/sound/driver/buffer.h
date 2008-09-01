@@ -132,6 +132,3 @@ public:
 #endif // NL_BUFFER_H
 
 /* End of buffer.h */
-
-/* Merge OpenNeL SVN
- */

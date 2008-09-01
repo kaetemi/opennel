@@ -109,6 +109,3 @@ protected:
 #endif // NL_PS_DOT_H
 
 /* End of ps_dot.h */
-
-/* Merge OpenNeL SVN
- */

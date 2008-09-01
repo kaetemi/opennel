@@ -76,6 +76,3 @@ void deleteSound(CEntity &entity);
 #endif // SBCLIENT_SOUND_H
 
 /* End of sound.h */ // duh
-
-/* Merge OpenNeL SVN
- */

@@ -355,6 +355,3 @@ class CPSColorBinOp : public CPSAttribMakerBinOp<NLMISC::CRGBA>
 #endif // NL_PS_COLOR_H
 
 /* End of ps_color.h */
-
-/* Merge OpenNeL SVN
- */

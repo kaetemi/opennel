@@ -361,6 +361,3 @@ float CAnimationPlaylist::getLocalWeight (uint8 slot, TGlobalAnimationTime globa
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

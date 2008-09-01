@@ -599,6 +599,3 @@ float			CShadowPolyReceiver::getCameraCollision(const CVector &start, const CVec
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

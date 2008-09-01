@@ -538,6 +538,3 @@ void CPaintColor::forceFrozen (const std::vector<CVertexColorFrozed> &frozenVert
 /*-------------------------------------------------------------------*/
 
 
-
-/* Merge OpenNeL SVN
- */

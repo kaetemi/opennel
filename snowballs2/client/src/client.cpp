@@ -962,6 +962,3 @@ NLMISC_COMMAND(sb_login, "go to the login screen", "")
 	NextGameState = GameStateLogin;
 	return true;
 }
-
-/* Merge OpenNeL SVN
- */

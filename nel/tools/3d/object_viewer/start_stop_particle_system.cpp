@@ -1060,6 +1060,3 @@ void CStartStopParticleSystem::OnRestickAll()
 		_ParticleDlg->getParticleWorkspace()->restickAllObjects(_ParticleDlg->getObjectViewer());
 	}
 }
-
-/* Merge OpenNeL SVN
- */

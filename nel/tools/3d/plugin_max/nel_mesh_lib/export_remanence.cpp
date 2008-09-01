@@ -177,6 +177,3 @@ NL3D::IShape *CExportNel::buildRemanence(INode& node, TimeValue time)
 
 
 
-
-/* Merge OpenNeL SVN
- */

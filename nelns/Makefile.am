@@ -21,6 +21,3 @@ dist-hook:
 	find $(distdir) -name .svn -print | xargs rm -fr
 
 # End of Makefile.am
-
-# Merge OpenNeL SVN
-

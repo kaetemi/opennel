@@ -452,6 +452,3 @@ void CPSLight::show()
 }
 
 } // namespace NL3D
-
-/* Merge OpenNeL SVN
- */

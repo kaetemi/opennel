@@ -187,6 +187,3 @@ int main(int nNbArg, char**ppArgs)
 // strange because the instance of the instance group are not relinked to
 // all the clusters... But this is not a big deal because we just want to
 // add group of instances without any cluster system
-
-/* Merge OpenNeL SVN
- */

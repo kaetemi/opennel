@@ -2435,6 +2435,3 @@ uint	CMeshMRMSkinnedGeom::NumCacheVertexNormal4= NL_BlockByteL1 / sizeof(CRawVer
 
 
 
-
-/* Merge OpenNeL SVN
- */

@@ -240,6 +240,3 @@ inline TPSMatrixMode CPSRibbonBase::convertMatrixMode() const
 #endif // NL_PS_RIBBON_BASE_H
 
 /* End of ps_ribbon_base.h */
-
-/* Merge OpenNeL SVN
- */

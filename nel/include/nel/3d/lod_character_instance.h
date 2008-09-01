@@ -105,6 +105,3 @@ private:
 #endif // NL_LOD_CHARACTER_INSTANCE_H
 
 /* End of lod_character_instance.h */
-
-/* Merge OpenNeL SVN
- */

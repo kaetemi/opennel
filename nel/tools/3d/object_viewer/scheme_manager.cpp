@@ -126,6 +126,3 @@ void  CSchemeManager::rename(NL3D::CPSAttribMakerBase *am, const std::string &ne
 		smIt->second.first = newName;		
 	}
 }
-
-/* Merge OpenNeL SVN
- */

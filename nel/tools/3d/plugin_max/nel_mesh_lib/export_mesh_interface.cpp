@@ -792,6 +792,3 @@ bool	CExportNel::selectInterfaceVertices(INode &node, TimeValue time)
 
 
 
-
-/* Merge OpenNeL SVN
- */

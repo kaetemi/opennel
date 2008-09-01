@@ -2066,6 +2066,3 @@ static const unsigned char all[] =
 
 static const unsigned int allSize = 16428;
 
-
-/* Merge OpenNeL SVN
- */

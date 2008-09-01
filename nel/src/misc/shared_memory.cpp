@@ -209,6 +209,3 @@ void        CSharedMemory::destroySharedMemory( TSharedMemId sharedMemId, bool f
 
 
 } // NLMISC
-
-/* Merge OpenNeL SVN
- */

@@ -294,6 +294,3 @@ private:
 #endif // NL_ANIMATION_SET_H
 
 /* End of animation_set.h */
-
-/* Merge OpenNeL SVN
- */

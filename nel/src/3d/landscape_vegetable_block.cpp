@@ -345,6 +345,3 @@ void			CLandscapeVegetableBlockCreateContext::eval(uint ts, uint tt, float x, fl
 
 
 } // NL3D
-
-/* Merge OpenNeL SVN
- */

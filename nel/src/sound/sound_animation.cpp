@@ -218,6 +218,3 @@ void CSoundAnimation::load()
 }
 
 } //namespace NLSOUND 
-
-/* Merge OpenNeL SVN
- */
