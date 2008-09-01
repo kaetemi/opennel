@@ -23,7 +23,7 @@
  * MA 02111-1307, USA.
  */
 
-
+#include "nel/misc/types_nl.h"
 #ifdef NL_OS_WINDOWS
 #include <conio.h>
 #else
@@ -80,6 +80,8 @@ int		main(int argc, const char *argv[])
 		_getch();
 		return -1;
 	}
+
+	NLMISC::CApplicationContext appContext;
 
 	CPath::addSearchPath(argv[1]);
 

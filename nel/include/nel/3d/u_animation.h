@@ -50,7 +50,7 @@ class UTrack;
 class UAnimation
 {
 public:
-	virtual ~UAnimation() {};
+	virtual ~UAnimation() {}
 
 	/// \name Create / delete animations
 	// @{

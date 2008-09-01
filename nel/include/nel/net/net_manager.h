@@ -30,8 +30,11 @@
 ********************* THIS CLASS IS DEPRECATED ****************************
 **************************************************************************/
 
-
-#pragma message(NL_LOC_WRN "You are using a deprecated feature of NeL, consider rewriting your code with replacement feature")
+#ifdef NL_OS_WINDOWS
+#	pragma message(NL_LOC_WRN "You are using a deprecated feature of NeL, consider rewriting your code with replacement feature")
+#else // NL_OS_UNIX
+#	warning "You are using a deprecated feature of NeL, consider rewriting your code with replacement feature"
+#endif
 
 #ifndef NL_NET_MANAGER_H
 #define NL_NET_MANAGER_H

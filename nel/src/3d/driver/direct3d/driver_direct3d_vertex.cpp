@@ -26,9 +26,9 @@
 
 #include "stddirect3d.h"
 
-#include "../../vertex_buffer.h"
-#include "../../light.h"
-#include "../../index_buffer.h"
+#include "nel/3d/vertex_buffer.h"
+#include "nel/3d/light.h"
+#include "nel/3d/index_buffer.h"
 #include "nel/misc/rect.h"
 #include "nel/misc/di_event_emitter.h"
 #include "nel/misc/mouse_device.h"
@@ -711,8 +711,8 @@ bool CDriverD3D::initVertexBufferHard(uint agpMem, uint vramMem)
 				if (((desc.Usage&(D3DUSAGE_WRITEONLY|D3DUSAGE_DYNAMIC)) == (D3DUSAGE_WRITEONLY|D3DUSAGE_DYNAMIC)) &&
 					(desc.Pool == D3DPOOL_DEFAULT))
 				{
-					nlinfo("VAR: %.d vertices supported", _MaxVerticesByVertexBufferHard);
-					nlinfo("VAR: Success to allocate %.1f Mo of AGP VAR Ram", _AGPMemoryAllocated / 1000000.f);
+					nlinfo("%.d vertices supported", _MaxVerticesByVertexBufferHard);
+					nlinfo("Success to allocate %.1f Mo of AGP VAR Ram", _AGPMemoryAllocated / 1000000.f);
 					vb->Release();
 					break;
 				}
@@ -728,8 +728,8 @@ bool CDriverD3D::initVertexBufferHard(uint agpMem, uint vramMem)
 
 		if(_AGPMemoryAllocated< NL3D_DRV_VERTEXARRAY_MINIMUM_SIZE)
 		{
-			nlinfo("VAR: %.d vertices supported", _MaxVerticesByVertexBufferHard);
-			nlinfo("VAR: Failed to allocate %.1f Mo of AGP VAR Ram", NL3D_DRV_VERTEXARRAY_MINIMUM_SIZE / 1000000.f);
+			nlwarning("%.d vertices supported", _MaxVerticesByVertexBufferHard);
+			nlwarning("Failed to allocate %.1f Mo of AGP VAR Ram", NL3D_DRV_VERTEXARRAY_MINIMUM_SIZE / 1000000.f);
 			ok= false;
 		}
 	}

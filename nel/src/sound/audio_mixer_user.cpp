@@ -40,7 +40,7 @@
 #include "nel/georges/load_form.h"
 #include "nel/georges/u_form.h"
 
-#include "../3d/scene_user.h"
+#include "nel/3d/scene_user.h"
 #include "driver/sound_driver.h"
 #include "driver/buffer.h"
 
@@ -1577,7 +1577,7 @@ bool CAudioMixerUser::tryToLoadSoundBank(const std::string &sampleName)
 		// extract samplebank name
 		path = NLMISC::CFile::getPath(path);
 		vector<string> rep;
-		explode(path, "/", rep, true);
+		explode(path, string("/"), rep, true);
 
 		loadSampleBank(false, rep.back());
 

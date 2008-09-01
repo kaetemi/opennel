@@ -36,6 +36,9 @@ namespace NLMISC
 
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		*CFastMem::memcpySSE(void *dest, const void *src, size_t nbytes)
 {
 	_asm 
@@ -121,8 +124,14 @@ void		*CFastMem::memcpySSE(void *dest, const void *src, size_t nbytes)
 	}
 	return dest;
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CFastMem::precacheSSE(const void *src, uint nbytes)
 {
 	_asm 
@@ -155,8 +164,14 @@ void		CFastMem::precacheSSE(const void *src, uint nbytes)
 	endLabel:
 	}
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CFastMem::precacheMMX(const void *src, uint nbytes)
 {
 	_asm 
@@ -186,7 +201,9 @@ void		CFastMem::precacheMMX(const void *src, uint nbytes)
 	endLabel:
 	}
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 void		CFastMem::precache(const void *src, uint nbytes)

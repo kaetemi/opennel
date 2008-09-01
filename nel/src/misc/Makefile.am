@@ -122,8 +122,7 @@ libnelmisc_la_SOURCES = \
 	co_task.cpp \
 	xml_pack.cpp \
 	inter_window_msg_queue.cpp \
-	win32_util.cpp \
-	win_tray.cpp
+	win32_util.cpp
 
 
 noinst_HEADERS        = di_game_device.h \

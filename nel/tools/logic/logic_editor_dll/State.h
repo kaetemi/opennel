@@ -62,8 +62,7 @@ public:
 	/// temp string used to store the event as a string when requested
 	mutable CString eventString;
 
-
-	friend operator==( const CEvent &ev1, const CEvent &ev2);
+	friend bool operator==( const CEvent &ev1, const CEvent &ev2);
 };
 
 

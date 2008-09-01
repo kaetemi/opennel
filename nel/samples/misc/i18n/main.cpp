@@ -34,21 +34,19 @@ using namespace NLMISC;
 
 int main (int argc, char **argv)
 {
-
-	nlinfo ("Please, choose 'en', 'fr' or 'de' and press <return>");
+	createDebug();
+	InfoLog->displayRawNL("Please, choose 'en', 'fr' or 'de' and press <return>");
 
 	std::string langName;
 	std::getline(std::cin, langName);
 
 	// load the language
-	CI18N::load (langName);
+	CI18N::load(langName);
 
-	nlinfo (CI18N::get("hi").toString().c_str ());
-
-	nlinfo (CI18N::get("PresentI18N").toString().c_str (), "Ace");
-
-	nlinfo (CI18N::get("ExitStr").toString().c_str ());
-	getchar ();
+	InfoLog->displayRawNL(CI18N::get("Hi").toString().c_str());
+	InfoLog->displayRawNL(CI18N::get("PresentI18N").toString().c_str(), "Nevrax");
+	InfoLog->displayRawNL(CI18N::get("ExitStr").toString().c_str());
+	getchar();
 
 	return EXIT_SUCCESS;
 }

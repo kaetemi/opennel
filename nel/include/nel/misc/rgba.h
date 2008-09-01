@@ -48,7 +48,7 @@ class CRGBA
 public:
 
 	/// Default constructor. do nothing
-	CRGBA() {};
+	CRGBA() {}
 
 	/** 
 	 * Constructor.
@@ -371,7 +371,7 @@ class CBGRA
 public:
 
 	/// Default constructor. do nothing
-	CBGRA() {};
+	CBGRA() {}
 
 	/**
 	 * Constructor from a CRGBA

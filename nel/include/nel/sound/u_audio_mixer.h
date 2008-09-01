@@ -86,10 +86,11 @@ public:
 	/// Driver Creation Choice
 	enum	TDriver
 	{
-		DriverAuto = 0,
-		DriverFMod,
-		DriverOpenAl,
-		DriverDSound,
+		DriverAuto = 0, 
+		DriverFMod, 
+		DriverOpenAl, 
+		DriverDSound, 
+		DriverXAudio2, 
 		NumDrivers
 	};
 	

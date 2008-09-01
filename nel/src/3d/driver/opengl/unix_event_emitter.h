@@ -1,5 +1,5 @@
 /** \file unix_event_emitter.h
- * TODO: File description
+ * Manage event using X11
  *
  * $Id$
  */
@@ -30,7 +30,6 @@
 #include "nel/misc/event_emitter.h"
 
 #ifdef NL_OS_UNIX
-
 
 #include <GL/gl.h>
 #include <GL/glx.h>

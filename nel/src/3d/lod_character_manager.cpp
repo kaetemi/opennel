@@ -26,14 +26,14 @@
 #include "std3d.h"
 
 #include "nel/misc/common.h"
-#include "lod_character_manager.h"
-#include "lod_character_shape.h"
-#include "lod_character_shape_bank.h"
-#include "lod_character_instance.h"
+#include "nel/3d/lod_character_manager.h"
+#include "nel/3d/lod_character_shape.h"
+#include "nel/3d/lod_character_shape_bank.h"
+#include "nel/3d/lod_character_instance.h"
 #include "nel/misc/hierarchical_timer.h"
 #include "nel/misc/fast_floor.h"
-#include "lod_character_texture.h"
-#include "ray_mesh.h"
+#include "nel/3d/lod_character_texture.h"
+#include "nel/3d/ray_mesh.h"
 #include "nel/misc/file.h"
 #include "nel/misc/algo.h"
 #include "nel/misc/fast_mem.h"
@@ -361,6 +361,9 @@ static inline void	computeLodLighting(CRGBA &lightRes, const CVector &lightObjec
 
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 bool			CLodCharacterManager::addRenderCharacterKey(CLodCharacterInstance &instance, const CMatrix &worldMatrix, 
 	CRGBA paramAmbient, CRGBA paramDiffuse, const CVector &lightDir)
 {
@@ -749,10 +752,12 @@ bool			CLodCharacterManager::addRenderCharacterKey(CLodCharacterInstance &instan
 	// Inc Prim count.
 	_CurrentTriId+= clod->getNumTriangles() * 3;
 
-
 	// key added
 	return true;
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 void			CLodCharacterManager::endRender()

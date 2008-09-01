@@ -150,7 +150,7 @@ void CVegetableWindDlg::OnReleasedcaptureSliderVegetableWindPower(NMHDR* pNMHDR,
 	a= (float)SliderPower.GetPos() * NL_VEGETABLE_EDIT_WIND_MAX_POWER / NL_VEGETABLE_EDIT_WIND_SLIDER_RANGE;
 	_ObjViewer->setVegetableWindPower(a);
 
-	// refersh.
+	// refresh.
 	updateView();
 	
 	*pResult = 0;
@@ -163,7 +163,7 @@ void CVegetableWindDlg::OnReleasedcaptureSliderVegetableWindBendstart(NMHDR* pNM
 	a= (float)SliderBendStart.GetPos() * NL_VEGETABLE_EDIT_WIND_MAX_BENDSTART / NL_VEGETABLE_EDIT_WIND_SLIDER_RANGE;
 	_ObjViewer->setVegetableWindBendStart(a);
 
-	// refersh.
+	// refresh.
 	updateView();
 
 	*pResult = 0;
@@ -176,7 +176,7 @@ void CVegetableWindDlg::OnReleasedcaptureSliderVegetableWindFrequency(NMHDR* pNM
 	a= (float)SliderFrequency.GetPos() * NL_VEGETABLE_EDIT_WIND_MAX_FREQUENCY / NL_VEGETABLE_EDIT_WIND_SLIDER_RANGE;
 	_ObjViewer->setVegetableWindFrequency(a);
 
-	// refersh.
+	// refresh.
 	updateView();
 	
 	*pResult = 0;
@@ -190,4 +190,5 @@ void CVegetableWindDlg::OnButtonClose()
 	// hide the window
 	ShowWindow(false);
 }
+
 

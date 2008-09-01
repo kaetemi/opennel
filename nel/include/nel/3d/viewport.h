@@ -29,7 +29,7 @@
 #include "nel/misc/types_nl.h"
 #include "nel/misc/vector.h"
 #include "nel/misc/matrix.h"
-#include "frustum.h"
+#include "nel/3d/frustum.h"
 
 
 namespace NL3D

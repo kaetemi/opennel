@@ -69,7 +69,7 @@ public:
 	class ICancelCallback
 	{
 	public:
-		virtual ~ICancelCallback() {};
+		virtual ~ICancelCallback() {}
 		virtual bool callback(const IRunnable *prunnable) const =0;
 	};
 

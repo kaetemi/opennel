@@ -111,7 +111,7 @@ void CSoundAnimView::Create(CObjectViewer* objView, CAnimationDlg* animDlg, CSou
 	_SelectedMarker = 0;
 
 	// Find the zoom index dynamically so we can change the _ZoomValue array
-	// withou risk of using a bad _ZoomIndex
+	// without risk of using a bad _ZoomIndex
 	for (uint i = 0; i < _ZoomCount; i++)
 	{
 		if (_ZoomValue[i] == 1.0f)
@@ -618,6 +618,7 @@ void CSoundAnimView::Dump(CDumpContext& dc) const
 }
 
 #endif //_DEBUG
+
 
 
 

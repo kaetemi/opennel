@@ -902,7 +902,8 @@ void cbLSChooseShard (CMessage &msgin, const std::string &serviceName, TServiceI
 
 	CLoginCookie cookie;
 	msgin.serial (cookie);
-	string userName, userPriv, userExtended;
+	ucstring userName;
+	string userPriv, userExtended;
 	msgin.serial (userName);
 
 	try
@@ -911,7 +912,7 @@ void cbLSChooseShard (CMessage &msgin, const std::string &serviceName, TServiceI
 	}
 	catch (Exception &)
 	{
-		nlwarning ("LS didn't give me the user privilege for user '%s', set to empty", userName.c_str());
+		nlwarning ("LS didn't give me the user privilege for user '%s', set to empty", userName.toUtf8().c_str());
 	}
 
 	try
@@ -920,10 +921,10 @@ void cbLSChooseShard (CMessage &msgin, const std::string &serviceName, TServiceI
 	}
 	catch (Exception &)
 	{
-		nlwarning ("LS didn't give me the extended data for user '%s', set to empty", userName.c_str());
+		nlwarning ("LS didn't give me the extended data for user '%s', set to empty", userName.toUtf8().c_str());
 	}
 
-	string ret = lsChooseShard(userName, cookie, userPriv, userExtended, WS::TUserRole::ur_player, 0xffffffff, ~0);
+	string ret = lsChooseShard(userName.toUtf8(), cookie, userPriv, userExtended, WS::TUserRole::ur_player, 0xffffffff, ~0);
 
 	if (!ret.empty())
 	{

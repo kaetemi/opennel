@@ -50,7 +50,7 @@ const CString & CEvent::getEventAsString() const
 
 
 
-operator==( const CEvent &ev1, const CEvent &ev2)
+bool operator==( const CEvent &ev1, const CEvent &ev2)
 {
 	return ( (ev1.m_sConditionName == ev2.m_sConditionName) 
 			&& (ev1.m_bActionIsMessage == ev2.m_bActionIsMessage )

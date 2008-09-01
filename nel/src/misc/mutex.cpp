@@ -23,13 +23,13 @@
  * MA 02111-1307, USA.
  */
 
-#include "nel/misc/mutex.h"
 #include "stdmisc.h"
 
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
 #endif // _GNU_SOURCE
 
+#include "nel/misc/mutex.h"
 #include "nel/misc/time_nl.h"
 
 #ifdef MUTEX_DEBUG
@@ -332,10 +332,10 @@ namespace NLMISC {
 
 CUnfairMutex::CUnfairMutex()
 {
-	pthread_mutexattr_t attr;
+    pthread_mutexattr_t attr;
 	pthread_mutexattr_init( &attr );
 	// Fast mutex. Note: on Windows all mutexes are recursive
-	pthread_mutexattr_setkind_np( &attr, PTHREAD_MUTEX_RECURSIVE_NP ); //PTHREAD_MUTEX_ERRORCHECK_NP );//PTHREAD_MUTEX_ADAPTIVE_NP );
+	pthread_mutexattr_settype( &attr, PTHREAD_MUTEX_RECURSIVE );
 	pthread_mutex_init( &mutex, &attr );
 	pthread_mutexattr_destroy( &attr );
 }
@@ -349,7 +349,7 @@ CUnfairMutex::CUnfairMutex(const std::string &name)
 	pthread_mutexattr_t attr;
 	pthread_mutexattr_init( &attr );
 	// Fast mutex. Note: on Windows all mutexes are recursive
-	pthread_mutexattr_setkind_np( &attr, PTHREAD_MUTEX_RECURSIVE_NP ); //PTHREAD_MUTEX_ERRORCHECK_NP );//PTHREAD_MUTEX_ADAPTIVE_NP );
+	pthread_mutexattr_settype( &attr, PTHREAD_MUTEX_RECURSIVE );
 	pthread_mutex_init( &mutex, &attr );
 	pthread_mutexattr_destroy( &attr );
 }

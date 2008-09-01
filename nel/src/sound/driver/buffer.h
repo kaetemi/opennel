@@ -116,7 +116,7 @@ private:
 protected:
 
 	/// Constructor
-	IBuffer() {};
+	IBuffer() {}
 
 public:
 

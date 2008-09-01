@@ -44,7 +44,7 @@
 class ILogicEditor
 {
 public:
-	virtual ~ILogicEditor () {};
+	virtual ~ILogicEditor () {}
 
 	// Init the UI
 	virtual void initUI (HWND parent=NULL)=0;

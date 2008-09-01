@@ -216,7 +216,7 @@ struct TCommandHandlerClassInfo
 	/// Constructor.
 	TCommandHandlerClassInfo()
 		: InstanceCount(0)
-	{};
+	{}
 };
 
 

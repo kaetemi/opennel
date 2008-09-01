@@ -26,7 +26,7 @@
 #include "std3d.h"
 
 #include "nel/3d/u_transformable.h"
-#include "transformable.h"
+#include "nel/3d/transformable.h"
 
 
 namespace NL3D 

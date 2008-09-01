@@ -23,9 +23,9 @@
  * MA 02111-1307, USA.
  */
 
-#include "nel/../../src/3d/coarse_mesh_build.h"
-#include "nel/../../src/3d/mesh_multi_lod.h"
-#include "nel/../../src/3d/register_3d.h"
+#include "nel/3d/coarse_mesh_build.h"
+#include "nel/3d/mesh_multi_lod.h"
+#include "nel/3d/register_3d.h"
 
 #include "nel/misc/time_nl.h"
 #include "nel/misc/config_file.h"
@@ -278,4 +278,5 @@ int main(int argc, char* argv[])
 	
 	return 0;
 }
+
 

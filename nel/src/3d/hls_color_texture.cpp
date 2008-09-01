@@ -24,9 +24,9 @@
  */
 
 #include "std3d.h"
-#include "hls_color_texture.h"
+#include "nel/3d/hls_color_texture.h"
 #include "nel/misc/fast_floor.h"
-#include "fasthls_modifier.h"
+#include "nel/3d/fasthls_modifier.h"
 #include "nel/misc/stream.h"
 #include "nel/misc/bitmap.h"
 #include "nel/misc/system_info.h"
@@ -334,6 +334,9 @@ static inline	void	getBitPack(uint32 *bitPtr, uint32 &bitMask)
 }
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void			CHLSColorTexture::buildColorVersion(const CHLSColorDelta *colDeltaList, NLMISC::CBitmap &out)
 {
 	// static to avoid realloc
@@ -539,6 +542,9 @@ void			CHLSColorTexture::buildColorVersion(const CHLSColorDelta *colDeltaList, N
 	// set the correct num of mipmap
 	out.setMipMapCount(_NumMipMap);
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 
 // ***************************************************************************
@@ -625,6 +631,9 @@ void		CHLSColorTexture::computeMinMax(sint *diffBlock, CVectorInt &v, sint mean[
 
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void			CHLSColorTexture::compressBlockRGB(CRGBA *srcRGBA, uint8* dstDXTC)
 {
 	// skip alpha part.
@@ -878,6 +887,8 @@ void			CHLSColorTexture::compressBlockRGB(CRGBA *srcRGBA, uint8* dstDXTC)
 	// copy
 	((uint32*)dstBlock)[1]= bits;
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 } // NL3D

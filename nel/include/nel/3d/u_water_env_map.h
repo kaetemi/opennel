@@ -46,7 +46,7 @@ struct IWaterEnvMapRender
 	  */
 	virtual void render(TFace face, TGlobalAnimationTime time, UDriver &drv) = 0;
 	
-	virtual ~IWaterEnvMapRender() {};
+	virtual ~IWaterEnvMapRender() {}
 };
 
 /** An environment map that can be rendered by user.
@@ -61,7 +61,7 @@ struct IWaterEnvMapRender
 class UWaterEnvMap
 {
 public:
-	virtual ~UWaterEnvMap() {};
+	virtual ~UWaterEnvMap() {}
 
 	/** Init the envmap
 	  * \param cubeMapSize Size of environment cube map 
@@ -128,8 +128,8 @@ public:
 	  * Solutions include hidding such objects or making sure that they don't overlap several faces of the cube, using replacement shapes etc.
 	  * Default implementation does nothing.
 	  */
-	virtual void preRender(TGlobalAnimationTime time, UDriver &drv) {};
-	virtual void postRender(TGlobalAnimationTime time, UDriver &drv) {};
+	virtual void preRender(TGlobalAnimationTime time, UDriver &drv) {}
+	virtual void postRender(TGlobalAnimationTime time, UDriver &drv) {}
 private:
 	UCamera				_Cam;
 	UScene				*_Scene;

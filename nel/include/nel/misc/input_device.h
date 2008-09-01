@@ -82,7 +82,7 @@ struct IInputDevice
 	//@}
 
 	// dtor
-	virtual ~IInputDevice() {}; 
+	virtual ~IInputDevice() {}
 };
 
 } // NLMISC

@@ -52,7 +52,7 @@ namespace NL3D
   */
 struct IIGAddBegin
 {
-	virtual ~IIGAddBegin() {};
+	virtual ~IIGAddBegin() {}
 	virtual void startAddingIG(uint numInstances) = 0;
 };
 
@@ -61,7 +61,7 @@ struct IIGAddBegin
   */
 struct IAddRemoveInstance
 {
-	virtual ~IAddRemoveInstance() {};
+	virtual ~IAddRemoveInstance() {}
 	// All instances have been been added to the scene
 	virtual void instanceGroupAdded() = 0;
 	// All instances have been removed from the scene
@@ -80,7 +80,7 @@ class ITransformName
 {
 
 public:
-	virtual ~ITransformName() {};
+	virtual ~ITransformName() {}
 	/**
 	 * transformName is called at the addToScene(Async) moment to transform the name of an
 	 * instance to another name. This should be useful to replace various shapes by others 
@@ -114,7 +114,7 @@ public:
 	/**
 	 * Instance group
 	 */
-	virtual ~UInstanceGroup () {};
+	virtual ~UInstanceGroup () {}
 
 
 	/**

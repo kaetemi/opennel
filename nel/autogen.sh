@@ -2,14 +2,31 @@
 
 WANT_AUTOMAKE="1.6"
 
+case `uname -s` in
+Darwin)
+	LIBTOOLIZE=glibtoolize
+	;;
+*)
+	LIBTOOLIZE=libtoolize
+	;;
+esac
+
+# be able to customize the aclocal (for example to add extra param)
+if test "x$ACLOCAL" = "x"
+then
+	ACLOCAL=aclocal
+fi
+
 echo "Creating macros..." && \
-aclocal -I automacros/ && \
+$ACLOCAL -I automacros/ && \
 echo "Creating library tools..." && \
-libtoolize --force && \
+$LIBTOOLIZE --force && \
 echo "Creating header templates..." && \
 autoheader && \
 echo "Creating Makefile templates..." && \
 automake --gnu --add-missing && \
 echo "Creating 'configure'..." && \
 autoconf && \
-echo -e "\nRun: ./configure; make; make install\n"
+echo "" && \
+echo "Run: ./configure; make; make install" && \
+echo ""

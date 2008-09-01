@@ -8,7 +8,7 @@
 #include "nsclip.h"
 #include "sbmtlapi.h"
 #include "../nel_patch_lib/rpo.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 #include "nel/3d/quad_tree.h"
 #include "nel/misc/rgba.h"
 #include <list>

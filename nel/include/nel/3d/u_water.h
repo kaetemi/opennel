@@ -112,7 +112,7 @@ public:
 class UWaterHeightMap
 {
 public:
-	virtual ~UWaterHeightMap() {};
+	virtual ~UWaterHeightMap() {}
 
 	/// get the size in meter of a heightmap texel
 	virtual float	getUnitSize() const =0;

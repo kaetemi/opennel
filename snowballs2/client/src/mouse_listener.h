@@ -40,6 +40,8 @@
 #include <nel/3d/u_3d_mouse_listener.h>
 #include <nel/3d/u_instance.h>
 
+#include "camera.h"
+
 //
 // External definitions
 //
@@ -303,7 +305,8 @@ private:
 // External functions
 //
 
-void	initMouseListenerConfig();
+void initMouseListenerConfig();
+void releaseMouseListenerConfig();
 
 #endif // MOUSE_LISTENER_H
 

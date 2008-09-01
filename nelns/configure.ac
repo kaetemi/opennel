@@ -13,7 +13,7 @@
 # *and* AC_SUBST(LIBTOOL_VERSION)
 
 AC_PREREQ(2.57)
-AC_INIT([nelns],[0.4.0],[nel-all@nevrax.org])
+AC_INIT([nelns],[0.5.0],[nel-all@nevrax.org])
 
 AC_CANONICAL_TARGET
 
@@ -21,7 +21,7 @@ AM_INIT_AUTOMAKE([tar-ustar])
 
 AM_CONFIG_HEADER(config.h)
 
-AC_SUBST(LIBTOOL_VERSION, [0:4:0])
+AC_SUBST(LIBTOOL_VERSION, [0:5:0])
 
 # ====================================================================
 # Checks for programs.
@@ -51,10 +51,6 @@ CXXFLAGS="$CXXFLAGS "
 #AH_TEMPLATE([NELNS_LOGS],[Log files directory path])
 #AH_TEMPLATE([NELNS_STATE],[Local state files directory path])
 AH_TEMPLATE([HAVE_MYSQL],[Define to 1 if mysql was found])
-
-
-
-
 
 
 AX_LIB_MYSQL([3.23.40])
@@ -121,14 +117,6 @@ AC_CHECK_HEADERS(fcntl.h unistd.h)
 # ====================================================================
 
 AC_CHECK_LIB(crypt, crypt)
-
-# ====================================================================
-# STLPort
-
-AM_PATH_STLPORT('/usr/local /usr')
-LIBS="$LIBS $STLPORT_LIBS"
-CPPFLAGS="$CPPFLAGS $STLPORT_INCLUDES"
-LDFLAGS="$LDFLAGS $STLPORT_LDFLAGS"
 
 
 # ====================================================================

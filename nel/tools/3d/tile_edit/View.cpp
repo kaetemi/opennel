@@ -10,7 +10,7 @@
 #include "popup.h"
 #include <direct.h>
 //#include "ListGroup.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 //#include "ViewPopup.h"
 #include "pic\readpic.h"
 
@@ -1661,4 +1661,5 @@ void CTView::OnLButtonDblClk(UINT nFlags, CPoint point)
 {
 	// TODO: Add your message handler code here and/or call default
 }
+
 

@@ -88,9 +88,10 @@ public:
 	enum	TDriver
 	{
 		DriverAuto = 0,
-		DriverFMod,
-		DriverOpenAl,
-		DriverDSound,
+		DriverFMod, 
+		DriverOpenAl, 
+		DriverDSound, 
+		DriverXAudio2, 
 		NumDrivers
 	};
 

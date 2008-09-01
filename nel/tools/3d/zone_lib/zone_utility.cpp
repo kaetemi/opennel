@@ -27,7 +27,7 @@
 #include "nel/misc/types_nl.h"
 #include "nel/misc/file.h"
 #include "nel/3d/quad_tree.h"
-#include "nel/../../src/3d/zone.h"
+#include "nel/3d/zone.h"
 #include <vector>
 #include <set>
 #include <iostream>

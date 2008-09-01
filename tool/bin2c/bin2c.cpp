@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
 						size++;
 					}
 					fprintf (pOut, "\n");
-					if (i!=8)
+					if (size!=8)
 						break;
 				}
 				fprintf (pOut, "};\n\n");

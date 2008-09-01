@@ -325,8 +325,8 @@ private:// Classes.
 			CBaseNode	*p;
 			while( (p=RootNode.QuadNexts[ListIndex]) )
 			{
-				p->clear();	// On clear les links. => RootNode.QuadNexts[ListIndex] modifié implicitement.
-				delete p;	// On delete cet element!!
+				p->clear();	// we are clearing links. => RootNode.QuadNexts[ListIndex] is modified.
+				delete p;	// we are deleting this element!!
 			}
 
 			// Deletons les quad fils.
@@ -444,7 +444,7 @@ private:// Classes.
 		{
 			if(Level==0)
 			{
-				// Tous les elements qui sortent du quadtree sont forcément dans le noeud root.
+				// all elements which leave nt du quadtree sont forcément dans le noeud root.
 				if(!includeBoxQuad(boxmin, boxmax))
 				{
 					// Il faut agrandir la BBox en Y du quadnode.
@@ -481,18 +481,18 @@ private:// Classes.
 				BBoxMax.y= std::max(boxmax.y, BBoxMax.y);
 			}
 
-			// Si on est au bon, niveau, on a plus qu'à l'insérer dans ce node.
+			// if we are at the right level, we just need to insert it in this node.
 			if(wantdepth==Level)
 			{
 					addElement(newNode);
 			}
 			else
 			{
-				// Si le quad est une feuille, il faut le splitter (car on est pas encore arrivé au bon niveau).
+				// if the quad is a leaf, we have to split it (because we are not yet to the right level).
 				if(isLeaf())
 					split();
 
-				// Et on cherche à mettre l'élément dans un de ces noeuds.
+				// and we are putting the element into one of these nodes.
 				Sons[0]->insert(boxmin, boxmax, wantdepth, newNode);
 				Sons[1]->insert(boxmin, boxmax, wantdepth, newNode);
 				Sons[2]->insert(boxmin, boxmax, wantdepth, newNode);
@@ -552,7 +552,7 @@ private:// Classes.
 		void		select(CBaseNode &selroot, std::vector<NLMISC::CPlane> &BVolume)
 		{
 			// TODO:
-			// ya un bug avec le level0: en effet la bbox n'a pas été agrandie pour contenir les elements.
+			// there is a bug with level0: bbox hasn't be increased to e pour contenir les elements.
 			if(!intersectBox(BVolume))
 				return;
 			selectLocalNodes(selroot);

@@ -25,26 +25,20 @@
 
 #include "std3d.h"
 
-#include "text_context_user.h"
+#include "nel/3d/text_context_user.h"
 #include "nel/misc/hierarchical_timer.h"
 
 
 namespace NL3D 
 {
 
-H_AUTO_DECL( NL3D_UI_TextContext )
-H_AUTO_DECL( NL3D_Render_TextContext_2D )
 H_AUTO_DECL( NL3D_Render_TextContext_3D )
-
-#define	NL3D_HAUTO_UI_TEXTCONTEXT						H_AUTO_USE( NL3D_UI_TextContext )
-#define	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT				H_AUTO_USE( NL3D_Render_TextContext_2D )
 #define	NL3D_HAUTO_RENDER_3D_TEXTCONTEXT				H_AUTO_USE( NL3D_Render_TextContext_3D )
-
 
 // ***************************************************************************
 NLMISC::CVector UTextContext::CStringInfo::getHotSpotVector(UTextContext::THotSpot hotspot)
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	NLMISC::CVector hotspotVector(0,0,0);
 
@@ -99,106 +93,105 @@ void		UTextContext::CStringInfo::convertToPixelSize(UDriver *drv)
 // ***************************************************************************
 void CTextContextUser::setColor(NLMISC::CRGBA color)
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setColor(color);
 }
 void CTextContextUser::setFontSize(uint32 fontSize) 
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setFontSize(fontSize);
 }
 uint32 CTextContextUser::getFontSize() const  
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	return _TextContext.getFontSize();
 }
 void CTextContextUser::setHotSpot(THotSpot hotSpot)  
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setHotSpot((CComputedString::THotSpot)(uint32)hotSpot) ;
 }
 UTextContext::THotSpot CTextContextUser::getHotSpot() const 
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	return (THotSpot)(uint32)_TextContext.getHotSpot();
 }
 void CTextContextUser::setScaleX(float scaleX)  
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setScaleX(scaleX);
 }
 void CTextContextUser::setScaleY(float scaleY)  
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setScaleZ(scaleY);
 }
 float CTextContextUser::getScaleX() const 
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	return _TextContext.getScaleX();
 }
 float CTextContextUser::getScaleY() const 
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	return _TextContext.getScaleZ();
 }
 void CTextContextUser::setShaded(bool b) 
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setShaded(b);
 }
 bool CTextContextUser::getShaded() const  
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	return _TextContext.getShaded();
 }
 void CTextContextUser::setShadeExtent(float shext) 
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setShadeExtent(shext);
 }
 void CTextContextUser::setShadeColor (NLMISC::CRGBA sc)
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setShadeColor (sc);
 }
 NLMISC::CRGBA CTextContextUser::getShadeColor () const
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	return _TextContext.getShadeColor();
 }
 void			CTextContextUser::setKeep800x600Ratio(bool keep)
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setKeep800x600Ratio(keep);
 }
 bool			CTextContextUser::getKeep800x600Ratio() const
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	return _TextContext.getKeep800x600Ratio();
 }
 
-
 // ***************************************************************************
 uint32 CTextContextUser::textPush(const char *format, ...)  
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	char *str;
 	NLMISC_CONVERT_VARGS (str, format, NLMISC::MaxCStringSize);
@@ -207,7 +200,7 @@ uint32 CTextContextUser::textPush(const char *format, ...)
 }
 uint32 CTextContextUser::textPush(const ucstring &str)  
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	return _TextContext.textPush(str) ;
 }
@@ -239,13 +232,13 @@ void CTextContextUser::resetStringSelection(uint32 i)
 }
 void CTextContextUser::erase(uint32 i)  
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.erase(i);
 }
 UTextContext::CStringInfo		CTextContextUser::getStringInfo(uint32 i)
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	CComputedString		*cstr= _TextContext.getComputedString(i);
 	if(!cstr)
@@ -255,34 +248,34 @@ UTextContext::CStringInfo		CTextContextUser::getStringInfo(uint32 i)
 }
 UTextContext::CStringInfo		CTextContextUser::getStringInfo(const ucstring &str)
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.computeStringInfo(str, _CacheString);
 	return CStringInfo (_CacheString.StringWidth, _CacheString.StringHeight, _CacheString.StringLine);
 }
 void CTextContextUser::clear()  
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.clear();
 }
 void CTextContextUser::printAt(float x, float y, uint32 i) 
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.printAt(x, y, i);
 	_DriverUser->restoreMatrixContext();
 }
 void CTextContextUser::printClipAt(URenderStringBuffer &renderBuffer, float x, float y, uint32 i, float xmin, float ymin, float xmax, float ymax)
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.printClipAt(static_cast<CRenderStringBuffer&>(renderBuffer), x, y, i, xmin, ymin, xmax, ymax);
 	// Don't need to restore Matrix context here since no driver change
 }
 void CTextContextUser::printClipAtUnProjected(URenderStringBuffer &renderBuffer, class NL3D::CFrustum &frustum, const NLMISC::CMatrix &scaleMatrix, float x, float y, float depth, uint32 i, float xmin, float ymin, float xmax, float ymax)
 {
-		NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 	
 	_TextContext.printClipAtUnProjected(static_cast<CRenderStringBuffer&>(renderBuffer), frustum, scaleMatrix, x, y, depth, i, xmin, ymin, xmax, ymax);
 	// Don't need to restore Matrix context here since no driver change
@@ -295,14 +288,14 @@ void CTextContextUser::printClipAtOld (float x, float y, uint32 i, float xmin, f
 }
 void CTextContextUser::printAt(float x, float y, const ucstring &ucstr) 
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.printAt(x, y, ucstr);
 	_DriverUser->restoreMatrixContext();
 }
 void CTextContextUser::printfAt(float x, float y, const char * format, ...) 
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	char *str;
 	NLMISC_CONVERT_VARGS (str, format, NLMISC::MaxCStringSize);
@@ -337,7 +330,7 @@ void CTextContextUser::render3D(const CMatrix &mat, const char *format, ...)
 
 float CTextContextUser::getLastXBound() const 
 {
-	NL3D_HAUTO_RENDER_2D_TEXTCONTEXT;
+	H_AUTO2;
 
 	return 0.0f;
 }
@@ -390,7 +383,7 @@ void					CTextContextUser::flushRenderBufferUnProjected(URenderStringBuffer *buf
 // ***************************************************************************
 void CTextContextUser::setLetterColors(ULetterColors * letterColors, uint index)
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	_TextContext.setLetterColors(static_cast<CLetterColors*>(letterColors), index);	
 }
@@ -398,7 +391,7 @@ void CTextContextUser::setLetterColors(ULetterColors * letterColors, uint index)
 // ***************************************************************************
 ULetterColors * CTextContextUser::createLetterColors()
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
+	H_AUTO2;
 
 	ULetterColors * uLetterColors = new CLetterColors();	
 	return uLetterColors;
@@ -406,8 +399,7 @@ ULetterColors * CTextContextUser::createLetterColors()
 
 bool CTextContextUser::isSameLetterColors(ULetterColors * letterColors, uint index) 
 {
-	NL3D_HAUTO_UI_TEXTCONTEXT;
-
+	H_AUTO2;
 	
 	return _TextContext.isSameLetterColors(static_cast<CLetterColors*>(letterColors), index);
 }

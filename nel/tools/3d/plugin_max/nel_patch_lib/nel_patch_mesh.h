@@ -35,7 +35,7 @@
 #include <string>
 
 #include "nel/misc/debug.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 #include "nel/misc/file.h"
 #include "nel/misc/rgba.h"
 #include "path_mesh_alloc.h"

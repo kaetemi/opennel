@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioUserFile
+	ProjectType="Visual C++"
+	Version="9,00"
+	>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			>
+			<DebugSettings
+				WorkingDirectory="$(ProjectDir)/../../bin/"
+			/>
+		</Configuration>
+		<Configuration
+			Name="DebugFast|Win32"
+			>
+			<DebugSettings
+				WorkingDirectory="$(ProjectDir)/../../bin/"
+			/>
+		</Configuration>
+		<Configuration
+			Name="DebugStatic|Win32"
+			>
+			<DebugSettings
+				WorkingDirectory="$(ProjectDir)/../../bin/"
+			/>
+		</Configuration>
+	</Configurations>
+</VisualStudioUserFile>

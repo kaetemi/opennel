@@ -28,12 +28,13 @@
 
 #include <tchar.h>
 
-#include "../../vertex_buffer.h"
-#include "../../light.h"
-#include "../../index_buffer.h"
+#include "nel/3d/vertex_buffer.h"
+#include "nel/3d/light.h"
+#include "nel/3d/index_buffer.h"
 #include "nel/misc/rect.h"
 #include "nel/misc/di_event_emitter.h"
 #include "nel/misc/mouse_device.h"
+#include "nel/misc/dynloadlib.h"
 #include "nel/3d/viewport.h"
 #include "nel/3d/scissor.h"
 #include "nel/3d/u_driver.h"
@@ -81,7 +82,13 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL,ULONG fdwReason,LPVOID lpvReserved)
 	return true;
 }
 
-#endif
+class CDriverD3DNelLibrary : public INelLibrary { 
+	void onLibraryLoaded(bool firstTime) { } 
+	void onLibraryUnloaded(bool lastTime) { }  
+};
+NLMISC_DECL_PURE_LIB(CDriverD3DNelLibrary)
+
+#endif /* #ifndef NL_STATIC */
 
 // ***************************************************************************
 
@@ -101,7 +108,7 @@ const uint32		CDriverD3D::ReleaseVersion = 0xc; // nico
 
 #	pragma comment(lib, "d3dx9")
 #	pragma comment(lib, "d3d9")
-#	pragma comment(lib, "dinput")
+#	pragma comment(lib, "dinput8")
 #	pragma comment(lib, "dxguid")
 
 IDriver* createIDriverInstance ()
@@ -109,7 +116,7 @@ IDriver* createIDriverInstance ()
 	return new CDriverD3D;
 }
 
-#endif
+#else
 
 __declspec(dllexport) IDriver* NL3D_createIDriverInstance ()
 {
@@ -121,7 +128,7 @@ __declspec(dllexport) uint32 NL3D_interfaceVersion ()
 	return IDriver::InterfaceVersion;
 }
 
-
+#endif
 
 /*static*/ bool CDriverD3D::_CacheTest[CacheTest_Count] = 
 {
@@ -225,7 +232,7 @@ CDriverD3D::CDriverD3D()
 
 	}
 	_DepthRangeNear = 0.f;
-	_DepthRangeNear = 1.f;
+	_DepthRangeFar = 1.f;
 	// default for lightmap
 	_LightMapDynamicLightDirty= false;
 	_LightMapDynamicLightEnabled= false;
@@ -1204,6 +1211,9 @@ static LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM l
 bool CDriverD3D::init (uint windowIcon, emptyProc exitFunc)
 {
 	H_AUTO_D3D(CDriver3D_init );
+
+	ExitFunc = exitFunc;
+
 	// Register a window class
 	WNDCLASSW		wc;
 
@@ -1220,10 +1230,16 @@ bool CDriverD3D::init (uint windowIcon, emptyProc exitFunc)
 	ucstring us = _WindowClass;
 	wc.lpszClassName	= (LPCWSTR)us.c_str();
 	wc.lpszMenuName		= NULL;
-	if ( !RegisterClassW(&wc) )
-		nlwarning ("CDriverD3D::init: Can't register windows class %s", wc.lpszClassName);
-
-	ExitFunc = exitFunc;
+	if (!RegisterClassW(&wc))
+	{
+		DWORD error = GetLastError();
+		if (error != ERROR_CLASS_ALREADY_EXISTS)
+		{
+			nlwarning("CDriverD3D::init: Can't register window class %s (error code %i)", _WindowClass.c_str(), (sint)error);
+			_WindowClass = "";
+			return false;
+		}
+	}
 
 	return true;
 }
@@ -1347,6 +1363,7 @@ bool CDriverD3D::setDisplay(void* wnd, const GfxMode& mode, bool show, bool resi
 		else
 		{
 			WndFlags = D3D_FULLSCREEN_STYLE;
+			findNearestFullscreenVideoMode();
 		}
 
 		WndFlags &= ~WS_VISIBLE;
@@ -1394,7 +1411,7 @@ bool CDriverD3D::setDisplay(void* wnd, const GfxMode& mode, bool show, bool resi
 	// Set default settings
 	_Rasterizer = RASTERIZER;
 #ifdef NL_D3D_USE_NV_PERF_HUD
-/*		// Look for 'NVIDIA NVPerfHUD' adapter
+		// Look for 'NVIDIA NVPerfHUD' adapter
 		// If it is present, override default settings
 		for (UINT adapterIndex = 0; adapterIndex < _D3D->GetAdapterCount(); adapterIndex++)
 		{
@@ -1408,7 +1425,7 @@ bool CDriverD3D::setDisplay(void* wnd, const GfxMode& mode, bool show, bool resi
 				nlinfo("Using NVIDIA NVPerfHUD adapter");
 				break;
 			}
-		}*/
+		}
 #endif
 
 	// Create device options
@@ -1424,19 +1441,19 @@ bool CDriverD3D::setDisplay(void* wnd, const GfxMode& mode, bool show, bool resi
 	HRESULT result = _D3D->CreateDevice (adapter, _Rasterizer, (HWND)_HWnd, D3DCREATE_HARDWARE_VERTEXPROCESSING|D3DCREATE_PUREDEVICE, &parameters, &_DeviceInterface);
 	if (result != D3D_OK)
 	{
-		nlwarning ("Can't create device hr:0x%x adap:0x%x rast:0x%x ", result, adapter, _Rasterizer);
+		nlwarning ("Can't create device hr:0x%x adap:0x%x rast:0x%x", result, adapter, _Rasterizer);
 
 		// Create the D3D device without puredevice
 		HRESULT result = _D3D->CreateDevice (adapter, _Rasterizer, (HWND)_HWnd, D3DCREATE_HARDWARE_VERTEXPROCESSING, &parameters, &_DeviceInterface);
 		if (result != D3D_OK)
 		{
-			nlwarning ("Can't create device without puredevice hr:0x%x adap:0x%x rast:0x%x ", result, adapter, _Rasterizer);
+			nlwarning ("Can't create device without puredevice hr:0x%x adap:0x%x rast:0x%x", result, adapter, _Rasterizer);
 
 			// Create the D3D device without puredevice and hardware
 			HRESULT result = _D3D->CreateDevice (adapter, _Rasterizer, (HWND)_HWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &parameters, &_DeviceInterface);
 			if (result != D3D_OK)
 			{
-				nlwarning ("Can't create device without puredevice and hardware hr:0x%x adap:0x%x rast:0x%x ", result, adapter, _Rasterizer);
+				nlwarning ("Can't create device without puredevice and hardware hr:0x%x adap:0x%x rast:0x%x", result, adapter, _Rasterizer);
 				release();
 				return false;
 			}
@@ -2093,7 +2110,7 @@ CVertexBuffer::TVertexColorType CDriverD3D::getVertexColorFormat() const
 
 // ***************************************************************************
 
-sint CDriverD3D::getNbTextureStages() const
+uint CDriverD3D::getNbTextureStages() const
 {
 	return _NbNeLTextureStages;
 }
@@ -2157,6 +2174,12 @@ bool CDriverD3D::getCurrentScreenMode(GfxMode &gfxMode)
 	gfxMode.Frequency = (uint8)mode.RefreshRate;
 
 	return true;
+}
+
+// ***************************************************************************
+void CDriverD3D::setWindowTitle(const std::string &title)
+{
+	SetWindowTextA(_HWnd,title.c_str());
 }
 
 // ***************************************************************************
@@ -3037,14 +3060,14 @@ bool CDriverD3D::isEMBMSupportedAtStage(uint stage) const
 {
 	H_AUTO_D3D(CDriverD3D_isEMBMSupportedAtStage);	
 	// we assume EMBM is supported at all stages except the last one
-	return stage < (uint) _NbNeLTextureStages - 1;
+	return stage < _NbNeLTextureStages - 1;
 }
 
 //****************************************************************************
 void CDriverD3D::setEMBMMatrix(const uint stage, const float mat[4])
 {
 	H_AUTO_D3D(CDriverD3D_setEMBMMatrix);
-	nlassert(stage < (uint) _NbNeLTextureStages - 1);
+	nlassert(stage < _NbNeLTextureStages - 1);
 	SetTextureStageState(stage, D3DTSS_BUMPENVMAT00, (DWORD &) mat[0]);
 	SetTextureStageState(stage, D3DTSS_BUMPENVMAT01, (DWORD &) mat[1]);
 	SetTextureStageState(stage, D3DTSS_BUMPENVMAT10, (DWORD &) mat[2]);
@@ -3682,3 +3705,41 @@ void CDriverD3D::getZBufferPart (std::vector<float>  &zbuffer, NLMISC::CRect &re
 
 
 } // NL3D
+
+void NL3D::CDriverD3D::findNearestFullscreenVideoMode() 
+{
+	if(_CurrentMode.Windowed)
+		return;
+
+	std::vector<GfxMode> modes;
+	if(getModes(modes))
+	{
+		sint32 nbPixels = _CurrentMode.Width * _CurrentMode.Height;
+		sint32 minError = nbPixels;
+		uint bestMode = modes.size();
+		for(uint i=0; i < modes.size(); i++)
+		{
+			if(!modes[i].Windowed)
+			{
+				if(modes[i].Width==_CurrentMode.Width && modes[i].Height==_CurrentMode.Height)
+				{
+					// ok we found the perfect mode
+					return;
+				}
+				sint32 currentPixels = modes[i].Width * modes[i].Height;
+				sint32 currentError = abs(nbPixels - currentPixels);
+				if(currentError < minError)
+				{
+					minError = currentError;
+					bestMode = i;
+				}
+			}
+		}
+		if(bestMode != modes.size())
+		{
+			nlwarning("The video mode %dx%d doesn't exist, use the nearest mode %dx%d", _CurrentMode.Width, _CurrentMode.Height, modes[bestMode].Width, modes[bestMode].Height);
+			_CurrentMode.Width = modes[bestMode].Width;
+			_CurrentMode.Height = modes[bestMode].Height;
+		}
+	}
+}

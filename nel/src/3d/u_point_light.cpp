@@ -27,7 +27,7 @@
 
 #include "nel/misc/debug.h"
 #include "nel/3d/u_point_light.h"
-#include "point_light_model.h"
+#include "nel/3d/point_light_model.h"
 
 
 using namespace NLMISC;

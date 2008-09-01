@@ -194,6 +194,14 @@ test_again:
  * \author Nevrax France
  * \date 2002, 2003
  */
+#ifdef __ppc__
+// on ppc, use fait mutex because we don't have ppc implementation of fast mutex
+#   define CFastMutex CFairMutex
+#else
+
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 class CFastMutex
 {
 public:
@@ -213,14 +221,14 @@ public:
 		// Workaround for dumb inlining bug (returning of function goes into the choux): push/pop registers
 		__asm
 		{
-				push eax
-				push ecx
+			push eax
+			push ecx
 			mov ecx,lockPtr
 			mov eax,1
 			xchg [ecx],eax
 			mov [result],eax
-				pop ecx
-				pop eax
+			pop ecx
+			pop eax
 		}
 #else
 		__asm
@@ -240,7 +248,7 @@ public:
 	// Enter critical section
 	__forceinline void enter () volatile
 	{
-	  //std::cout << "Entering, Lock=" << _Lock << std::endl; 
+	  //std::cout << "Entering, Lock=" << _Lock << std::endl;
 		if (atomic_swap (&_Lock))
 		{
 			// First test
@@ -250,11 +258,11 @@ public:
 				uint wait_time = i + 6;
 
 				// Increment wait time with a log function
-				if (wait_time > 27) 
+				if (wait_time > 27)
 					wait_time = 27;
 
 				// Sleep
-				if (wait_time <= 20) 
+				if (wait_time <= 20)
 					wait_time = 0;
 				else
 					wait_time = 1 << (wait_time - 20);
@@ -276,22 +284,24 @@ public:
 	__forceinline void leave () volatile
 	{
 		_Lock = 0;
-		//std::cout << "Leave" << std::endl;		
+		//std::cout << "Leave" << std::endl;
 	}
 
 private:
 	volatile uint32	_Lock;
 };
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
-
-
+#endif
 
 /**
  * Fast mutex for multiprocessor implementation (not fairly).
  * Used for multiprocessor critical section synchronisation.
  * The mutex ARE NOT recursive (ie don't call enter() several times
  * on the same mutex from the same thread without having called leave()) ;
- * The threads use a spin system to wait a little time before be put to sleep. 
+ * The threads use a spin system to wait a little time before be put to sleep.
  * It waits using CPU time.
  *
  * Implementation notes:
@@ -309,6 +319,7 @@ private:
  * \author Nevrax France
  * \date 2002, 2003
  */
+#ifndef __ppc__
 class CFastMutexMP
 {
 public:
@@ -322,7 +333,7 @@ public:
 	// Enter critical section
 	__forceinline void enter () volatile
 	{
-	  //std::cout << "Entering, Lock=" << _Lock << std::endl; 
+	  //std::cout << "Entering, Lock=" << _Lock << std::endl;
 		while (CFastMutex::atomic_swap (&_Lock))
 		{
 			static uint last = 0;
@@ -330,19 +341,19 @@ public:
 			uint spinMax = _max;
 			uint lastSpins = last;
 			volatile uint temp = 17;
-			uint i;			
-			for (i = 0; i < spinMax; ++i) 
+			uint i;
+			for (i = 0; i < spinMax; ++i)
 			{
-				if (i < lastSpins/2 || _Lock) 
+				if (i < lastSpins/2 || _Lock)
 				{
-					temp *= temp; 
 					temp *= temp;
-					temp *= temp; 
+					temp *= temp;
+					temp *= temp;
 					temp *= temp;
 				}
-				else 
+				else
 				{
-					if (!CFastMutex::atomic_swap(&_Lock)) 
+					if (!CFastMutex::atomic_swap(&_Lock))
 					{
 						last = i;
 						_max = 1000;
@@ -352,22 +363,22 @@ public:
 			}
 
 			_max = 30;
-			
+
 			// First test
 			for (i = 0 ;; ++i)
 			{
 				uint wait_time = i + 6;
-				
+
 				// Increment wait time with a log function
-				if (wait_time > 27) 
+				if (wait_time > 27)
 					wait_time = 27;
-				
+
 				// Sleep
-				if (wait_time <= 20) 
+				if (wait_time <= 20)
 					wait_time = 0;
 				else
 					wait_time = 1 << (wait_time - 20);
-				
+
 				if (!CFastMutex::atomic_swap (&_Lock))
 					break;
 
@@ -376,7 +387,7 @@ public:
 #else
 				//std::cout <<  "Sleeping i=" << i << std::endl;
 				usleep( wait_time*1000 );
-#endif				
+#endif
 			}
 		}
 	}
@@ -391,7 +402,7 @@ public:
 private:
 	volatile uint32	_Lock;
 };
-
+#endif
 
 
 /**
@@ -533,7 +544,7 @@ private:
 struct TMutexLocks
 {
 	TMutexLocks(uint32 m=0) : TimeToEnter(0), TimeInMutex(0), Nb(0), WaitingMutex(0), MutexNum(m), ThreadHavingTheMutex(0xFFFFFFFF), Dead(false) {}
-	
+
 	uint32		TimeToEnter;			// cumulated time blocking on enter
 	uint32		TimeInMutex;			// cumulated time between enter and leave
 	uint32		Nb;						// number of calls of enter

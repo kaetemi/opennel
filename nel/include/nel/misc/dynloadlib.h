@@ -247,7 +247,7 @@ public:
 
 #define NLMISC_DECL_PURE_LIB(className)			\
 	className	_PureLibraryEntryInstance;	\
-	NL_LIB_EXPORT_SYMBOL( NLMISC_PURE_LIB_ENTRY_POINT, INelLibrary, &_PureLibraryEntryInstance)
+	NL_LIB_EXPORT_SYMBOL( NLMISC_PURE_LIB_ENTRY_POINT, NLMISC::INelLibrary, &_PureLibraryEntryInstance)
 
 } // NLMISC
 

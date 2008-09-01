@@ -371,7 +371,7 @@ void CWinDisplayer::setTitleBar (const string &titleBar)
 #endif
 	wn += "Nel Service Console (compiled " __DATE__ " " __TIME__ " in " + mode + " mode)";
 
-	nldebug("set title bar to '%s'", wn.c_str());
+	nldebug("SERVICE: Set title bar to '%s'", wn.c_str());
 
 	SetWindowTextW (_HWnd, (LPWSTR)ucstring::makeFromUtf8(wn).c_str());
 }
@@ -672,8 +672,6 @@ void CWinDisplayer::display_main ()
 		// http://support.microsoft.com/support/kb/articles/q173/2/60.asp
 		nlSleep (1);
 	}
-
-	nlinfo ("CWinDisplayer::display_main(): releasing...");
 
 	DeleteObject (_HFont);
 	_HFont = NULL;

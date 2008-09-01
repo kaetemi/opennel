@@ -68,8 +68,18 @@ void Init()
 		AudioMixer->setSamplePath("data/samplebank");
 		// Packed sheet option, this mean we want packed sheet generated in 'data' folder
 		AudioMixer->setPackedSheetOption("data", true);
+		
+		printf("Select NLSOUND Driver:\n");
+		printf(" [1] FMod\n");
+		printf(" [2] OpenAl\n");
+		printf(" [3] DSound\n");
+		printf(" [4] XAudio2\n");
+		printf("> ");
+		int selection = getchar();
+		printf("\n");
+		
 		// init with 32 tracks, EAX enabled, no ADPCM, and activate automatic sample bank loading
-		AudioMixer->init(32, true, false, NULL, true, UAudioMixer::DriverFMod);
+		AudioMixer->init(32, true, false, NULL, true, (UAudioMixer::TDriver)(selection - '0')/*UAudioMixer::DriverFMod*/);
 
 		/*
 		 * 2. Initialize listener's position and orientation (in NeL coordinate system).
@@ -133,7 +143,6 @@ void OnMove( const CVector& listenerpos )
 	 */
 }
 
-
 /*
  * main
  *
@@ -148,7 +157,7 @@ void OnMove( const CVector& listenerpos )
  */
 int main()
 {
-	CApplicationContext myApplicationContext;
+	new CApplicationContext(); // crash at end if on stack ...
 
 	// Initialization
 	Init();

@@ -28,7 +28,6 @@
 
 #include <cstdio>
 #include <cstdlib>
-#include <malloc.h>
 #include "nel/misc/common.h"
 #include "nel/misc/ucstring.h"
 
@@ -313,7 +312,7 @@ TReportResult report (const std::string &title, const std::string &header, const
 	IgnoreNextTime = ignoreNextTime;
 
 	// show until the cursor really show :)
-	while (ShowCursor(TRUE) < 0) {};
+	while (ShowCursor(TRUE) < 0) {}
 
 	SetWindowPos (dialog, HWND_TOPMOST, 0, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE | SWP_SHOWWINDOW);
 	

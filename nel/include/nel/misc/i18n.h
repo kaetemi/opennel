@@ -41,23 +41,18 @@ namespace NLMISC {
 /**
  * Class for the internationalization. It's a singleton pattern.
  * 
- * This class provide an easy way to localize all string. First you have to get all available language with \c getLanguageNames().
- * If you already know the number of the language (that is the index in the vector returns by \c getLanguagesNames()), you can
- * load the language file with \c load(). Now, you can get a localized string with his association with \c get().
+ * This class provide an easy way to localize all string.
+ * First you load the language file with \c load().
+ * Now, you can get a localized string with his association with \c get().
  *
  *\code
-	// get all language names (you must call this before calling load())
-	CI18N::getLanguageNames ();
 	// load the language French
 	CI18N::load ("fr");
 	// display "Salut" that is the "hi" string in the selected language (French).
-	nlinfo (CI18N::get("hi").c_str ());
+	nlinfo (CI18N::get("Hi").c_str ());
 	// display "rms est un master", the French version of the string
-	nlinfo (CI18N::get("%s is a master").c_str (), "mrs");
+	nlinfo ("rms"+CI18N::get("Master").c_str ());
  *\endcode
- *
- * If the string doesn't exist, it will be automatically added in all language files with a <Not Translated> mention.
- * If the language file doesn't exist, it'll be automatically create.
  *
  *	Update 26-02-2002 Boris Boucher
  *
@@ -98,7 +93,7 @@ public:
 	 */
 	struct ILoadProxy
 	{
-		virtual ~ILoadProxy() {};
+		virtual ~ILoadProxy() {}
 		virtual void loadStringFile(const std::string &filename, ucstring &text) =0;
 	};
 
@@ -108,18 +103,8 @@ public:
 	// Get the current load proxy
 	static ILoadProxy *getLoadProxy() { return _LoadProxy; }
 
-	/// Return a vector with all language available. The vector contains the name of the language.
-	/// The index in the vector is used in \c load() function
-	//static const std::vector<ucstring> &getLanguageNames();
-
-	/** Return a vector with all language code available.
-	 *	Code are ISO 639-2 compliant.
-	 *	As in getLanguageNames(), the index in the vector can be used to call load()
-	 */
-	//static const std::vector<std::string> &getLanguageCodes();
-
-	/// Load a language file depending of the language
-	static void load (const std::string &languageCode);
+	/// Load a language file depending of the language code ("en", "fr", ...)
+	static void load (const std::string &languageCode, const std::string &fallbackLanguageCode="");
 
 	/** Load a language file from its filename
 	  * \param filename name of the language file to load, with its extension	  
@@ -127,8 +112,11 @@ public:
 	  */
 	static void loadFromFilename (const std::string &filename, bool reload);
 
-	/// Returns the name of the language in English (French, English...)
+	/// Returns the name of the language in the language name (English, Français, ...)
 	static ucstring getCurrentLanguageName ();
+
+	/// Returns the code of the language ("fr", "en", ...)
+	static std::string getCurrentLanguageCode ();
 
 	/// Find a string in the selected language and return his association.
 	static const ucstring &get (const std::string &label);
@@ -136,10 +124,6 @@ public:
 	// Test if a string has a translation in the selected language. 
 	// NB : The empty string is considered to have a translation
 	static bool			   hasTranslation(const std::string &label);
-
-
-	/// Temporary, we don't have file system for now, so we do a tricky cheat. there s not check so be careful!
-//	static void setPath (const char* str);
 
 	/** Read the content of a file as a Unicode text.
 	 *	The method support 16 bits or 8bits utf-8 tagged files.
@@ -225,17 +209,20 @@ private:
 
 	typedef std::map<std::string, ucstring>						StrMapContainer;
 
-	static ILoadProxy							*_LoadProxy;
+	static ILoadProxy											*_LoadProxy;
 
-	static StrMapContainer										 _StrMap;
-	static bool													 _StrMapLoaded;
+	static StrMapContainer										_StrMap;
+	static bool													_StrMapLoaded;
 
-	static const std::string									 _LanguageCodes[];
+	// the alternative language that will be used if the sentence is not found in the original language
+	static StrMapContainer										_StrMapFallback;
+
+	static const std::string									_LanguageCodes[];
 	static const uint											_NbLanguages;
 
 	static bool													 _LanguagesNamesLoaded;
 
-	static sint32												 _SelectedLanguage;
+	static std::string											_SelectedLanguageCode;
 	static const ucstring										_NotTranslatedValue;
 
 	/** Structure to hold contextual info during
@@ -248,7 +235,7 @@ private:
 
 		/// The if stack (push true until a bad test is found, push false for
 		/// all subsequent if imbrication)
-		std::vector<bool>		IfStack;
+		std::vector<bool>			IfStack;
 	};
 
 private:
@@ -263,8 +250,6 @@ private:
 								TLineFormat lineFmt,
 							    bool warnIfIncludesNotFound,
 								TReadContext &readContext);
-
-
 };
 
 } // NLMISC

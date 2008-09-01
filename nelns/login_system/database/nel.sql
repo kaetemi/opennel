@@ -37,8 +37,8 @@ CREATE TABLE `shard` (
   `Name` varchar(64) collate latin1_general_ci NOT NULL default 'unknown shard',
   `Online` tinyint(1) unsigned NOT NULL default '0',
   `ClientApplication` varchar(64) collate latin1_general_ci NOT NULL,
-  `Version` varchar(64) collate latin1_general_ci NOT NULL,
-  `DynPatchURL` varchar(255) collate latin1_general_ci NOT NULL,
+  `Version` varchar(64) collate latin1_general_ci NOT NULL default '',
+  `DynPatchURL` varchar(255) collate latin1_general_ci NOT NULL default '',
   PRIMARY KEY  (`ShardId`)
 ) ENGINE=MyISAM AUTO_INCREMENT=301 DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci COMMENT='contains all shards informations for login system';
 

@@ -44,6 +44,7 @@ CXXFLAGS="$CXXFLAGS -ftemplate-depth-24"
 
 AC_CHECK_LIB([pthread], [pthread_create])
 AC_CHECK_LIB([dl], [dlopen])
+AC_CHECK_LIB([rt], [clock_gettime])
 
 dnl ====================================================================
 dnl Checks Snowballs modules (Client / Server) to install / Disable
@@ -164,15 +165,6 @@ fi
 dnl ====================================================================
 dnl Checks for libraries.
 dnl ====================================================================
-
-dnl ====================================================================
-dnl STLPort
-
-AM_PATH_STLPORT('/usr/local /usr')
-LIBS="$LIBS $STLPORT_LIBS"
-CPPFLAGS="$CPPFLAGS $STLPORT_INCLUDES"
-LDFLAGS="$LDFLAGS $STLPORT_LDFLAGS"
-
 
 dnl ====================================================================
 dnl OpenAL

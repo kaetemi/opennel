@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioUserFile
+	ProjectType="Visual C++"
+	Version="9,00"
+	ShowAllFiles="false"
+	>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			>
+			<DebugSettings
+				CommandArguments="--html"
+			/>
+		</Configuration>
+		<Configuration
+			Name="DebugFast|Win32"
+			>
+			<DebugSettings
+				CommandArguments="--html"
+			/>
+		</Configuration>
+		<Configuration
+			Name="DebugStatic|Win32"
+			>
+			<DebugSettings
+				CommandArguments="--html"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<DebugSettings
+				CommandArguments="--html"
+			/>
+		</Configuration>
+		<Configuration
+			Name="ReleaseDebug|Win32"
+			>
+			<DebugSettings
+				CommandArguments="--html"
+			/>
+		</Configuration>
+		<Configuration
+			Name="ReleaseDebugStatic|Win32"
+			>
+			<DebugSettings
+				CommandArguments="--html"
+			/>
+		</Configuration>
+	</Configurations>
+</VisualStudioUserFile>

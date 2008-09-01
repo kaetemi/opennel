@@ -36,15 +36,15 @@
 #include "nel/georges/u_form_loader.h"
 
 
-#include "nel/../../src/3d/zone.h"
-#include "nel/../../src/3d/zone_lighter.h"
-#include "nel/../../src/3d/quad_grid.h"
-#include "nel/../../src/3d/landscape.h"
-#include "nel/../../src/3d/scene_group.h"
-#include "nel/../../src/3d/shape.h"
-#include "nel/../../src/3d/transform_shape.h"
-#include "nel/../../src/3d/register_3d.h"
-#include "nel/../../src/3d/water_shape.h"
+#include "nel/3d/zone.h"
+#include "nel/3d/zone_lighter.h"
+#include "nel/3d/quad_grid.h"
+#include "nel/3d/landscape.h"
+#include "nel/3d/scene_group.h"
+#include "nel/3d/shape.h"
+#include "nel/3d/transform_shape.h"
+#include "nel/3d/register_3d.h"
+#include "nel/3d/water_shape.h"
 
 #include "../zone_lib/zone_utility.h"
 

@@ -23,14 +23,16 @@
  */
 
 #include "std3d.h"
-#include "ps_attrib_maker_template.h"
+#include "nel/3d/ps_attrib_maker_template.h"
 #include "nel/misc/system_info.h"
 
 
 namespace NL3D
 {
 
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void computeGradient(const NLMISC::CRGBA *valueTab, uint32 numValues, uint32 nbStages, CPSVector<NLMISC::CRGBA>::V &grad, NLMISC::CRGBA &minValue, NLMISC::CRGBA &maxValue)
 {	
 	nlassert(numValues > 1);
@@ -45,7 +47,7 @@ void computeGradient(const NLMISC::CRGBA *valueTab, uint32 numValues, uint32 nbS
 	float alpha; 
 	
 	NLMISC::CRGBA *dest = &grad[0];
-	#ifdef NL_OS_WINDOWS	
+#ifdef NL_OS_WINDOWS	
 	float stepX127 = 127.f * step;
 	if (NLMISC::CSystemInfo::hasMMX())
 	{
@@ -86,7 +88,7 @@ void computeGradient(const NLMISC::CRGBA *valueTab, uint32 numValues, uint32 nbS
 		}	
 	}
 	else
-	#endif
+#endif
 	{	
 		// copy the tab performing linear interpolation between values given in parameter
 		for (uint32 k = 0; k  < (numValues - 1); ++k)
@@ -104,5 +106,8 @@ void computeGradient(const NLMISC::CRGBA *valueTab, uint32 numValues, uint32 nbS
 	}
 	*dest = valueTab[numValues - 1];
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 }

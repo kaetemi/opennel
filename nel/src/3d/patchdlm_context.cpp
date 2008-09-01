@@ -25,14 +25,14 @@
 
 #include "std3d.h"
 
-#include "patchdlm_context.h"
-#include "patch.h"
-#include "bezier_patch.h"
-#include "point_light.h"
-#include "texture_dlm.h"
+#include "nel/3d/patchdlm_context.h"
+#include "nel/3d/patch.h"
+#include "nel/3d/bezier_patch.h"
+#include "nel/3d/point_light.h"
+#include "nel/3d/texture_dlm.h"
 #include "nel/misc/fast_floor.h"
-#include "tile_far_bank.h"
-#include "landscape.h"
+#include "nel/3d/tile_far_bank.h"
+#include "nel/3d/landscape.h"
 #include "nel/misc/system_info.h"
 #include "nel/misc/fast_mem.h"
 
@@ -40,7 +40,7 @@
 using namespace std;
 using namespace NLMISC;
 
-namespace NL3D 
+namespace NL3D
 {
 
 // ***************************************************************************
@@ -61,7 +61,7 @@ void		CPatchDLMPointLight::compile(const CPointLight &pl, NLMISC::CRGBA landDiff
 	IsSpot= pl.getType() == CPointLight::SpotLight;
 	Pos= pl.getPosition();
 	Dir= pl.getSpotDirection();
-	
+
 	// compute spot params
 	if(IsSpot)
 	{
@@ -153,7 +153,7 @@ void		CPatchDLMPointLight::compile(const CPointLight &pl, NLMISC::CRGBA landDiff
 
 		// Compute BBox.
 		//==============
-		
+
 		// just take bbox of the sphere, even if not optimal.
 		BBox.setCenter(BSphere.Center);
 		float	rad= BSphere.Radius;
@@ -224,7 +224,7 @@ bool			CPatchDLMContext::generate(CPatch *patch, CTextureDLM *textureDLM, CPatch
 	_DLMContextList= ctxList;
 	_DLMContextList->append(this);
 
-	// Get Texture Size info; 
+	// Get Texture Size info;
 #ifdef NL_DLM_TILE_RES
 	// get coord at cornes of tiles
 	Width= (_Patch->getOrderS())+1;
@@ -486,8 +486,8 @@ bool			CPatchDLMContext::generate(CPatch *patch, CTextureDLM *textureDLM, CPatch
 		// get the bbox from current position.
 		CAABBox	bbox= tmpBBoxes[curLevel][ tmpClusterY[curLevel] * tmpClusterWidth[curLevel] + tmpClusterX[curLevel] ];
 		// Fill _Clusters for this square.
-		_Clusters[iDstCluster].BSphere.Center= bbox.getCenter(); 
-		_Clusters[iDstCluster].BSphere.Radius= bbox.getRadius(); 
+		_Clusters[iDstCluster].BSphere.Center= bbox.getCenter();
+		_Clusters[iDstCluster].BSphere.Radius= bbox.getRadius();
 		// If leaf level, fill special info
 		if(curLevel == 0)
 		{
@@ -645,9 +645,13 @@ inline void	fastClamp01(float &x)
 
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 {
-	uint		nverts= _Vertices.size();
+
+    uint		nverts= _Vertices.size();
 	nlassert(nverts==_LightMap.size());
 
 	if(nverts==0)
@@ -665,7 +669,7 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 	endY= 0;
 	for(i=0;i<_Clusters.size();)
 	{
-		// If the sphere intersect pl, 
+		// If the sphere intersect pl,
 		if(_Clusters[i].BSphere.intersect(pl.BSphere) )
 		{
 			// if this cluster is a leaf, extend start/end
@@ -702,9 +706,9 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 	endY= min(endY*NL_DLM_CLIP_FACTOR+1, Height);
 
 	// TestYoyo only.
-	/*extern uint YOYO_LandDLCount;
-	YOYO_LandDLCount+= (endX - startX) * (endY - startY);*/
-	
+	//extern uint YOYO_LandDLCount;
+	//YOYO_LandDLCount+= (endX - startX) * (endY - startY);
+
 	// process all vertices
 	//================
 	float	r,g,b;
@@ -715,14 +719,14 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 	// TestYoyo: finally, precache does not seems to impact final result.
 	// precache loading, for better cache use. NB: precache the entire line, ignoring clip result.
 	// Precache only if interesting.
-	/*if( (endX - startX)*4>=Width && (endY-startY)>=2)
-	{
-		vert= originVert + startY*Width;
-		dst= originDst + startY*Width;
-		uint	nPixelLine= (endY-startY)*Width;
-		CFastMem::precacheBest(vert, nPixelLine * sizeof(CVertex));
-		CFastMem::precacheBest(dst, nPixelLine * sizeof(CRGBA));
-	}*/
+	//if( (endX - startX)*4>=Width && (endY-startY)>=2)
+	//{
+		//vert= originVert + startY*Width;
+		//dst= originDst + startY*Width;
+		//uint	nPixelLine= (endY-startY)*Width;
+		//CFastMem::precacheBest(vert, nPixelLine * sizeof(CVertex));
+		//CFastMem::precacheBest(dst, nPixelLine * sizeof(CRGBA));
+	//}
 
 	// Start 24 precision, for faster compute.
 	OptFastFloorBegin24();
@@ -754,7 +758,7 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 				// compute diffuse lighting
 				float	diff= -(vert->Normal * dirToP);
 				fastClamp01(diff);
-				
+
 				// compute colors.
 				diff*= attSpot * attDist;
 				r= pl.R*diff;
@@ -762,9 +766,16 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 				b= pl.B*diff;
 
 				CRGBA	col;
+#ifdef NL_OS_MAC
+				// OptFastFloor24 should compiles but it generates an internal compiler error
+				col.R= (uint8)floor(r);
+				col.G= (uint8)floor(g);
+				col.B= (uint8)floor(b);
+#else
 				col.R= (uint8)OptFastFloor24(r);
 				col.G= (uint8)OptFastFloor24(g);
 				col.B= (uint8)OptFastFloor24(b);
+#endif
 
 				// add to map.
 #ifdef NL_OS_WINDOWS
@@ -802,10 +813,10 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 	else
 	{
 		// TestYoyo
-		/*extern	void	YOYO_startDLMItCount();
-		YOYO_startDLMItCount();*/
+		//extern	void	YOYO_startDLMItCount();
+		//YOYO_startDLMItCount();
 
-		// Compute lightmap pixels of interest 
+		// Compute lightmap pixels of interest
 		for(y=startY; y<endY; y++)
 		{
 			nverts= endX - startX;
@@ -826,7 +837,7 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 				// compute diffuse lighting
 				float	diff= -(vert->Normal * dirToP);
 				fastClamp01(diff);
-				
+
 				// compute colors.
 				diff*= attDist;
 				r= pl.R*diff;
@@ -834,10 +845,16 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 				b= pl.B*diff;
 
 				CRGBA	col;
+#ifdef NL_OS_MAC
+				// OptFastFloor24 should compiles but it generates an internal compiler error
+				col.R= (uint8)floor(r);
+				col.G= (uint8)floor(g);
+				col.B= (uint8)floor(b);
+#else
 				col.R= (uint8)OptFastFloor24(r);
 				col.G= (uint8)OptFastFloor24(g);
 				col.B= (uint8)OptFastFloor24(b);
-
+#endif
 				// add to map.
 #ifdef NL_OS_WINDOWS
 				// Fast AddClamp.
@@ -871,8 +888,8 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 		}
 
 		// TestYoyo
-		/*extern	void	YOYO_endDLMItCount();
-		YOYO_endDLMItCount();*/
+		//extern	void	YOYO_endDLMItCount();
+		//YOYO_endDLMItCount();
 	}
 
 	// Stop 24 bit precision
@@ -882,7 +899,9 @@ void			CPatchDLMContext::addPointLightInfluence(const CPatchDLMPointLight &pl)
 	//==============
 	_IsSrcTextureFullBlack= false;
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 void			CPatchDLMContext::compileLighting(TCompileType compType, CRGBA modulateCte)
@@ -893,13 +912,13 @@ void			CPatchDLMContext::compileLighting(TCompileType compType, CRGBA modulateCt
 		// if lightMap allocated
 		if(_LightMap.size()>0 && _DLMTexture)
 		{
-			// If the srcTexture is full black (ie no pointLight influence touch it), 
+			// If the srcTexture is full black (ie no pointLight influence touch it),
 			if(_IsSrcTextureFullBlack)
 			{
 				// reset the texture to full black.
 				_DLMTexture->fillRect(TextPosX, TextPosY, Width, Height, 0);
 			}
-			// else the srcTexture is not full black (ie some pointLight influence touch it), 
+			// else the srcTexture is not full black (ie some pointLight influence touch it),
 			else
 			{
 				// if must modulate with tileColor
@@ -1102,9 +1121,9 @@ void			CPatchDLMContext::computeTextureFar()
 #endif
 
 			// Average the 4 pixels around this tile corner
-			dst->avg4RGBOnly(src[y2*tfWidth + x2], 
-				src[y2*tfWidth + x2+1], 
-				src[(y2+1)*tfWidth + x2], 
+			dst->avg4RGBOnly(src[y2*tfWidth + x2],
+				src[y2*tfWidth + x2+1],
+				src[(y2+1)*tfWidth + x2],
 				src[(y2+1)*tfWidth + x2+1]);
 		}
 	}

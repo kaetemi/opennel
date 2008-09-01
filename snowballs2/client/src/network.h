@@ -65,7 +65,7 @@ extern NLNET::CCallbackClient	*Connection;
 bool	isOnline ();
 
 // Send the new entity (the player)
-void	sendAddEntity (uint32 id, std::string &name, uint8 race, NLMISC::CVector &startPosition);
+void	sendAddEntity (uint32 id, std::string &name, uint8 race);
 
 // Send a chat line to the server
 void	sendChatLine (std::string Line);

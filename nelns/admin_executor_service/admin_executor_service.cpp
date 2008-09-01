@@ -275,7 +275,7 @@ static void cbGraphUpdate(CMessage &msgin, const std::string &serviceName, TServ
 // decode a service in a form 'alias/shortname-sid'
 void decodeUnifiedName(const string &unifiedName, string &alias, string &shortName, TServiceId &sid)
 {
-	uint pos1 = 0, pos2 = 0;
+	size_t pos1 = 0, pos2 = 0;
 	pos1 = unifiedName.find("/");
 	if (pos1 != string::npos)
 	{
@@ -961,7 +961,7 @@ void treatRequestForOfflineService(uint32 rid, const string& serviceName, const 
 	
 	for (uint k = 0; k < subvarpath.Destination.size(); k++)
 	{
-		uint pos = subvarpath.Destination[k].first.find("=");
+		size_t pos = subvarpath.Destination[k].first.find("=");
 		if (pos != string::npos)
 			varNames.push_back(subvarpath.Destination[k].first.substr(0, pos));
 		else

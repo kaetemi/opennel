@@ -142,6 +142,9 @@ COXml::COXml () : IStream (false /* Output mode */)
 
 // ***************************************************************************
 
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void xmlGenericErrorFuncWrite (void *ctx, const char *msg, ...)
 {
 	// Get the error string
@@ -149,6 +152,9 @@ void xmlGenericErrorFuncWrite (void *ctx, const char *msg, ...)
 	NLMISC_CONVERT_VARGS (str, msg, NLMISC::MaxCStringSize);
 	((COXml*)ctx)->_ErrorString += str;
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 

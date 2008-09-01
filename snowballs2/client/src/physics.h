@@ -30,6 +30,8 @@
 // Includes
 //
 
+#include <nel/misc/types_nl.h>
+
 #include <nel/misc/vector.h>
 #include <nel/misc/time_nl.h>
 

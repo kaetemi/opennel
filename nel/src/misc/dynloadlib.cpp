@@ -318,8 +318,11 @@ void INelLibrary::_onLibraryLoaded(INelContext &nelContext)
 
 	if (_LoadingCounter == 1)
 	{
+		// Linux relocates all symbols, so this is unnecessary.
+#ifdef NL_OS_WINDOWS
 		// initialise Nel context
 		nlassert(!NLMISC::INelContext::isContextInitialised());
+#endif // NL_OS_WINDOWS
 
 		_LibContext = new CLibraryContext(nelContext);
 	}

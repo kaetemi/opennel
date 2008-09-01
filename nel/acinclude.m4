@@ -77,8 +77,6 @@ AC_DEFUN([AM_NEL_DEBUG],
 
 MAX_C_OPTIMIZE="-O6"
 
-STL_DEBUG="-D__STL_DEBUG"
-
 NL_DEBUG="-DNL_DEBUG"
 NL_DEBUG_FAST="-DNL_DEBUG_FAST"
 NL_RELEASE_DEBUG="-DNL_RELEASE_DEBUG"
@@ -87,7 +85,7 @@ NL_RELEASE="-DNL_RELEASE_DEBUG"
 AC_ARG_WITH(debug,
     [  --with-debug[=full|medium|fast]
                           Build a debug version (huge libraries).
-                          Full mode set only NeL and STL debug flags.
+                          Full mode set no optimization.
                           Medium mode set NeL debug flags with inline
                           optimization (default mode).
                           Fast mode is like the Medium mode with some basic
@@ -100,23 +98,23 @@ AC_ARG_WITH(debug,
 # First check for gcc and g++
 if test "$ac_cv_prog_gcc" = "yes"
 then
-    DEBUG_CFLAGS="-g"
+    DEBUG_CFLAGS="-g -O0"
     DEBUG_OPTIMIZE_CC="-O"
     OPTIMIZE_CFLAGS="$MAX_C_OPTIMIZE"
 else
-    DEBUG_CFLAGS="-g"
+    DEBUG_CFLAGS=""
     DEBUG_OPTIMIZE_CC=""
     OPTIMIZE_CFLAGS=""
 fi
 
 if test "$ac_cv_prog_cxx_g" = "yes"
 then
-    DEBUG_CXXFLAGS="-g"
+    DEBUG_CXXFLAGS="-g -O0"
     DEBUG_OPTIMIZE_CXX="-O"
     OPTIMIZE_CXXFLAGS="-O3"
     OPTIMIZE_INLINE_CXXFLAGS="-finline-functions"
 else
-    DEBUG_CXXFLAGS="-g"
+    DEBUG_CXXFLAGS=""
     DEBUG_OPTIMIZE_CXX=""
     OPTIMIZE_CXXFLAGS=""
     OPTIMIZE_INLINE_CXXFLAGS=""
@@ -131,8 +129,8 @@ else
     if test "$with_debug" = "full"
     then
         # Full debug. Very slow in some cases
-        CFLAGS="$DEBUG_CFLAGS $NL_DEBUG $STL_DEBUG $CFLAGS"
-        CXXFLAGS="$DEBUG_CXXFLAGS $NL_DEBUG $STL_DEBUG $CXXFLAGS"
+        CFLAGS="$DEBUG_CFLAGS $NL_DEBUG $CFLAGS"
+        CXXFLAGS="$DEBUG_CXXFLAGS $NL_DEBUG $CXXFLAGS"
     else
         if test "$with_debug" = "fast"
         then

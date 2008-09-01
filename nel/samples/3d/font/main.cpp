@@ -31,13 +31,13 @@
 #include "nel/misc/path.h"
 
 // look at 3dinit example
-#include "3d/nelu.h"
+#include "nel/3d/nelu.h"
 
 // used for font management
-#include "3d/font_manager.h"
-#include "3d/computed_string.h"
-#include "3d/text_context.h"
-#include "3d/driver_user.h"
+#include "nel/3d/font_manager.h"
+#include "nel/3d/computed_string.h"
+#include "nel/3d/text_context.h"
+#include "nel/3d/driver_user.h"
 
 #ifndef FONT_DIR
 #	define FONT_DIR "."

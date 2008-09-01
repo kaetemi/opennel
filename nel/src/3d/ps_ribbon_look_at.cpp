@@ -25,10 +25,10 @@
 
 #include "std3d.h"
 
-#include "ps_ribbon_look_at.h"
-#include "particle_system.h"
-#include "ps_macro.h"
-#include "driver.h"
+#include "nel/3d/ps_ribbon_look_at.h"
+#include "nel/3d/particle_system.h"
+#include "nel/3d/ps_macro.h"
+#include "nel/3d/driver.h"
 
 namespace NL3D 
 {
@@ -263,7 +263,7 @@ static inline void BuildSlice(const NLMISC::CMatrix &mat, CVertexBuffer &vb, uin
 	{
 		// compute intersection point
 		NLMISC::CVector inter;
-		NLMISC::CVector tInter;		
+		NLMISC::CVector tInter = CVector::Null;		
 		if (fabsf(prev->Proj.y - next->Proj.y) > NormEpsilon)
 		{
 				float lambda = (next->Proj.y - ZEpsilon) / (next->Proj.y - prev->Proj.y);

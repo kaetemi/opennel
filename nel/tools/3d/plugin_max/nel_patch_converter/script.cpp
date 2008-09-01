@@ -64,9 +64,9 @@
 #include "..\nel_mesh_lib\export_nel.h"
 #include "..\nel_mesh_lib\export_appdata.h"
 
-#include "nel/../../src/3d/zone.h"
-#include "nel/../../src/3d/zone_symmetrisation.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/zone.h"
+#include "nel/3d/zone_symmetrisation.h"
+#include "nel/3d/tile_bank.h"
 
 
 using namespace NLMISC;
@@ -2012,4 +2012,5 @@ weld_cf (Value** arg_list, int count)
 __declspec( dllexport ) void
 LibInit() { 
 }
+
 

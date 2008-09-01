@@ -35,6 +35,11 @@
 #	include <unistd.h>
 #endif
 
+#ifdef NL_OS_MAC
+#include <mach/mach.h>
+#include <mach/mach_time.h>
+#endif
+
 #include "nel/misc/time_nl.h"
 #include "nel/misc/sstring.h"
 
@@ -52,7 +57,7 @@ uint32 CTime::getSecondsSince1970 ()
 
 /** Return the number of second since midnight (00:00:00), January 1, 1970,
  * coordinated universal time, according to the system clock.
- * The time returned is UTC (aka GMT+0), ie it does not have the local time ajustement 
+ * The time returned is UTC (aka GMT+0), ie it does not have the local time ajustement
  * nor it have the daylight saving ajustement.
  * This values is the same on all computer if computers are synchronized (with NTP for example).
  */
@@ -113,8 +118,8 @@ TTime CTime::getLocalTime ()
 	if ( ! initdone )
 	{
 
-#ifdef _POSIX_TIMERS
-#ifdef _POSIX_MONOTONIC_CLOCK
+#if defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)
+#if defined(_POSIX_MONOTONIC_CLOCK) && (_POSIX_MONOTONIC_CLOCK >= 0)
 
 		/* Initialize the local time engine.
 		* On Unix, this method will find out if the Monotonic Clock is supported
@@ -124,7 +129,7 @@ TTime CTime::getLocalTime ()
 		if ( (clock_gettime( CLOCK_MONOTONIC, &tv ) == 0) &&
 			 (clock_getres( CLOCK_MONOTONIC, &tv ) == 0) )
 		{
-			nldebug( "Monotonic local time supported (resolution %.6f ms)", ((float)tv.tv_sec)*1000.0f + ((float)tv.tv_nsec)/1000000.0f );
+//			nldebug( "Monotonic local time supported (resolution %.6f ms)", ((float)tv.tv_sec)*1000.0f + ((float)tv.tv_nsec)/1000000.0f );
 			isMonotonicClockSupported = true;
 		}
 		else
@@ -132,14 +137,14 @@ TTime CTime::getLocalTime ()
 #endif
 #endif
 		{
-			nlwarning( "Monotonic local time not supported, caution with time sync" );
+//			nlwarning( "Monotonic local time not supported, caution with time sync" );
 		}
 
 		initdone = true;
 	}
 
-#ifdef _POSIX_TIMERS
-#ifdef _POSIX_MONOTONIC_CLOCK
+#if defined(_POSIX_TIMERS) && (_POSIX_TIMERS > 0)
+#if defined(_POSIX_MONOTONIC_CLOCK) && (_POSIX_MONOTONIC_CLOCK >= 0)
 
 	if ( isMonotonicClockSupported )
 	{
@@ -180,13 +185,14 @@ TTicks CTime::getPerformanceTime ()
 		return ret.QuadPart;
 	else
 		return 0;
-#else // NL_OS_WINDOWS
-
+#elif defined(NL_OS_MAC)
+	return mach_absolute_time();
+#else
 #if defined(HAVE_X86_64)
 	unsigned long long int hi, lo;
 	__asm__ volatile (".byte 0x0f, 0x31" : "=a" (lo), "=d" (hi));
 	return (hi << 32) | (lo & 0xffffffff);
-#elif defined(HAVE_X86)
+#elif defined(HAVE_X86) and !defined(NL_OS_MAC)
 	unsigned long long int x;
 	__asm__ volatile (".byte 0x0f, 0x31" : "=A" (x));
 	return x;
@@ -207,7 +213,7 @@ TTicks CTime::getPerformanceTime ()
                       asm volatile ("push %eax\n\t" "push %edx"); \
                       asm volatile ("rdtsc"); \
                       asm volatile ("movl %eax, (%esi)\n\t" "movl %edx, 4(%esi)"); \
-                      asm volatile ("pop %edx\n\t" "pop %eax\n\t" "pop %esi"); 
+                      asm volatile ("pop %edx\n\t" "pop %eax\n\t" "pop %esi");
 */
 
 
@@ -223,6 +229,12 @@ double CTime::ticksToSecond (TTicks ticks)
 		return (double)(sint64)ticks/(double)ret.QuadPart;
 	}
 	else
+#elif defined(NL_OS_MAC)
+	{
+		static mach_timebase_info_data_t tbInfo;
+		if(tbInfo.denom == 0) mach_timebase_info(&tbInfo);
+		return double(ticks * tbInfo.numer / tbInfo.denom)/1000000.0;
+	}
 #endif // NL_OS_WINDOWS
 	{
 		static bool benchFrequency = true;
@@ -278,7 +290,7 @@ std::string	CTime::getHumanRelativeTime(sint32 nbSeconds)
 
 	month = delta / oneMonth;
 	delta %= oneMonth;
-	
+
 	week = delta / oneWeek;
 	delta %= oneWeek;
 

@@ -31,13 +31,13 @@
 #include "nel/misc/debug.h"
 #include "nel/misc/file.h"
 
-#include "nel/../../src/3d/zone.h"
-#include "nel/../../src/3d/patch.h"
-#include "nel/../../src/3d/mesh.h"
-#include "nel/../../src/3d/landscape.h"
+#include "nel/3d/zone.h"
+#include "nel/3d/patch.h"
+#include "nel/3d/mesh.h"
+#include "nel/3d/landscape.h"
 
 #include "nel/3d/quad_tree.h"
-#include "nel/../../src/3d/quad_grid.h"
+#include "nel/3d/quad_grid.h"
 
 #include "nel/misc/vector.h"
 #include "nel/misc/aabbox.h"

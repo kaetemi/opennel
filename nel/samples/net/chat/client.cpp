@@ -40,12 +40,6 @@
 
 #include <string>
 
-#ifdef NL_OS_WINDOWS
-#include <conio.h>
-#else
-#include "kbhit.h"
-#endif
-
 #include "nel/misc/types_nl.h"
 #include "nel/misc/debug.h"
 #include "nel/misc/config_file.h"
@@ -53,6 +47,12 @@
 #include "nel/misc/path.h"
 
 #include "nel/net/callback_client.h"
+
+#ifdef NL_OS_WINDOWS
+#include <conio.h>
+#else
+#include "kbhit.h"
+#endif
 
 using namespace std;
 using namespace NLMISC;

@@ -38,6 +38,7 @@
 #pragma warning (disable : 4786)
 #endif // NL_OS_WINDOWS
 
+
 #include "nel/misc/config_file.h"
 #include "nel/misc/common.h"
 #include "nel/misc/debug.h"

@@ -23,6 +23,8 @@
  * MA 02111-1307, USA.
  */
 
+#include "std3d.h"
+
 // ***************************************************************************
 // ***************************************************************************
 // Raw "Vertex/Normal only" ApplySkin methods.
@@ -53,6 +55,9 @@
 
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal1(CRawVertexNormalSkinned1 *src, uint8 *destVertexPtr, 
 	CMatrix3x4 *boneMat3x4, uint nInf)
 {
@@ -96,7 +101,7 @@ void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal1(CRawVertexNormalSkinned1 *sr
 			*(CUV*)(destVertexPtr + NL3D_RAWSKIN_UV_OFF)= src->UV;
 		}
 #else
-		// ASM harcoded for 36
+		// ASM hard coded for 36
 		nlctassert(sizeof(CRawVertexNormalSkinned1)==36);
 
 		/*  116 cycles / loop typical
@@ -227,11 +232,15 @@ void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal1(CRawVertexNormalSkinned1 *sr
 		}
 #endif
 	}
-
-
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal2(CRawVertexNormalSkinned2 *src, uint8 *destVertexPtr, 
 	CMatrix3x4 *boneMat3x4, uint nInf)
 {
@@ -531,10 +540,15 @@ void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal2(CRawVertexNormalSkinned2 *sr
 		}
 #endif
 	}
-
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal3(CRawVertexNormalSkinned3 *src, uint8 *destVertexPtr, 
 	CMatrix3x4 *boneMat3x4, uint nInf)
 {
@@ -564,7 +578,6 @@ void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal3(CRawVertexNormalSkinned3 *sr
 		uint	nBlockInf= nInf;
 #endif
 
-
 #ifndef NL3D_RAWSKIN_ASM
 		//  for all InfluencedVertices only.
 		for(;nBlockInf>0;nBlockInf--, src++, destVertexPtr+=NL3D_RAWSKIN_VERTEX_SIZE)
@@ -583,7 +596,7 @@ void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal3(CRawVertexNormalSkinned3 *sr
 			*(CUV*)(destVertexPtr + NL3D_RAWSKIN_UV_OFF)= src->UV;
 		}
 #else
-		// ASM harcoded for 56
+		// ASM hard coded for 56
 		nlctassert(sizeof(CRawVertexNormalSkinned3)==56);
 		
 		
@@ -924,9 +937,11 @@ void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal3(CRawVertexNormalSkinned3 *sr
 			mov		destVertexPtr, edi
 		}
 #endif
-
 	}
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 void		CMeshMRMSkinnedGeom::applyArrayRawSkinNormal4(CRawVertexNormalSkinned4 *src, uint8 *destVertexPtr, 
@@ -1114,3 +1129,4 @@ void	CMeshMRMSkinnedGeom::applyRawSkinWithNormal(CLod &lod, CRawSkinnedNormalCac
 }
 
 #endif // ADD_MESH_MRM_SKINNED_TEMPLATE
+

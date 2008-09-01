@@ -129,17 +129,26 @@ static TCallbackItem LSCallbackArray[] =
 	{ "SCS", cbShardChooseShard },
 };
 
-string CLoginClient::authenticate (const string &loginServiceAddr, const ucstring &login, const string &cpassword, const string &application)
+string CLoginClient::authenticate(const string &loginServiceAddr, const ucstring &login, const string &cpassword, const string &application)
 {
-	//
+	string result = authenticateBegin(loginServiceAddr, login, cpassword, application);
+	if (!result.empty()) return result;
+	while (CLoginClient::authenticateUpdate(result)) nlSleep(10);
+	return result;	
+}
+
+string CLoginClient::authenticateBegin(const string &loginServiceAddr, const ucstring &login, const string &cpassword, const string &application)
+{
+	VerifyLoginPasswordReason = "";
+	VerifyLoginPassword = false;
+
 	// S01: connect to the LS
-	//
 	try
 	{
 		if(_LSCallbackClient == 0)
 		{
 			_LSCallbackClient = new CCallbackClient();
-			_LSCallbackClient->addCallbackArray (LSCallbackArray, sizeof(LSCallbackArray)/sizeof(LSCallbackArray[0]));
+			_LSCallbackClient->addCallbackArray(LSCallbackArray, sizeof(LSCallbackArray) / sizeof(LSCallbackArray[0]));
 		}
 
 		string addr = loginServiceAddr;
@@ -153,47 +162,55 @@ string CLoginClient::authenticate (const string &loginServiceAddr, const ucstrin
 	{
 		delete _LSCallbackClient;
 		_LSCallbackClient = 0;
-		nlwarning ("Connection refused to LS (addr:%s): %s", loginServiceAddr.c_str(), e.what ());
-		return toString("Connection refused to LS (addr:%s): %s", loginServiceAddr.c_str(), e.what ());
+		nlwarning("Connection refused to LS (addr:%s): %s", loginServiceAddr.c_str(), e.what());
+		return toString("Connection refused to LS (addr:%s): %s", loginServiceAddr.c_str(), e.what());
 	}
-
-	//
+	
 	// S02: create and send the "VLP" message
-	//
-	CMessage msgout ("VLP");
-	msgout.serial (const_cast<ucstring&>(login));
-	msgout.serial (const_cast<string&>(cpassword));
-	msgout.serial (const_cast<string&>(application));
+	CMessage msgout("VLP");
+	msgout.serial(const_cast<ucstring&>(login));
+	msgout.serial(const_cast<string&>(cpassword));
+	msgout.serial(const_cast<string&>(application));
+	_LSCallbackClient->send(msgout);
 
-	_LSCallbackClient->send (msgout);
-
-	// wait the answer from the LS
-	VerifyLoginPassword = false;
-	while (_LSCallbackClient->connected() && !VerifyLoginPassword)
-	{
-		_LSCallbackClient->update ();
-		nlSleep(10);
-	}
-
-	// have we received the answer?
-	if (!VerifyLoginPassword)
-	{
-		delete _LSCallbackClient;
-		_LSCallbackClient = 0;
-		return "CLoginClient::authenticate(): LS disconnects me";
-	}
-
-	if (!VerifyLoginPasswordReason.empty())
-	{
-		_LSCallbackClient->disconnect ();
-		delete _LSCallbackClient;
-		_LSCallbackClient = 0;
-	}
-
-	return VerifyLoginPasswordReason;
+	return "";
 }
 
-string CLoginClient::connectToShard (CLoginCookie &lc, const std::string &addr, CCallbackClient &cnx)
+// returns true if it needs to be called again
+// error not empty if something went wrong
+bool CLoginClient::authenticateUpdate(string &error)
+{
+	if (!_LSCallbackClient)
+	{
+		error = "CLoginClient::authenticateBegin() must be called first";
+		nlwarning("CLoginClient::authenticateUpdate(): %s", error.c_str());
+		return false;
+	}
+	if (!_LSCallbackClient->connected())
+	{
+		error = "Disconnected from LS";
+		nlwarning("CLoginClient::authenticateUpdate(): %s", error.c_str());
+		delete _LSCallbackClient;
+		_LSCallbackClient = 0;
+		return false;
+	}
+	_LSCallbackClient->update();
+	if (VerifyLoginPassword)
+	{
+		error = VerifyLoginPasswordReason;
+		if (!error.empty())
+		{
+			nlwarning("CLoginClient::authenticateUpdate(): %s", error.c_str());
+			_LSCallbackClient->disconnect ();
+			delete _LSCallbackClient;
+			_LSCallbackClient = 0;
+		}
+		return false;
+	}
+	return true; // no news, try again
+}
+
+string CLoginClient::connectToShard(CLoginCookie &lc, const std::string &addr, CCallbackClient &cnx)
 {
 	nlassert (!cnx.connected());
 
@@ -229,7 +246,7 @@ string CLoginClient::connectToShard (CLoginCookie &lc, const std::string &addr, 
 	return ShardValidateReason;
 }
 
-string CLoginClient::connectToShard (const std::string &addr, CUdpSock &cnx)
+string CLoginClient::connectToShard(const std::string &addr, CUdpSock &cnx)
 {
 	nlassert (!cnx.connected());
 	
@@ -253,7 +270,7 @@ string CLoginClient::connectToShard (const std::string &addr, CUdpSock &cnx)
 	return ShardValidateReason;
 }
 
-string CLoginClient::connectToShard (const std::string &addr, CUdpSimSock &cnx)
+string CLoginClient::connectToShard(const std::string &addr, CUdpSimSock &cnx)
 {
 	nlassert (!cnx.connected());
 	
@@ -274,16 +291,26 @@ string CLoginClient::connectToShard (const std::string &addr, CUdpSimSock &cnx)
 	return ShardValidateReason;
 }
 
-string CLoginClient::confirmConnection (sint32 shardId)
+string CLoginClient::confirmConnection(sint32 shardId)
 {
-	nlassert (_LSCallbackClient != 0 && _LSCallbackClient->connected());
+	nlassert(_LSCallbackClient != 0 && _LSCallbackClient->connected());
 
 	//
 	// S05: create and send the "CS" message with the shardid choice to the LS
 	//
-
+	
+	if (!ShardList.size())
+	{
+		_LSCallbackClient->disconnect();
+		return "No shard available";
+	}
+	
 	CLoginClient::CShardEntry *s = getShard(shardId);
-	nlassert(s);
+	if (!s)
+	{
+		_LSCallbackClient->disconnect();
+		return "Invalid shard selected";
+	}
 
 	// send CS
 	CMessage msgout ("CS");
@@ -324,15 +351,78 @@ string CLoginClient::confirmConnection (sint32 shardId)
 	return "";
 }
 
-string CLoginClient::wantToConnectToShard (sint32 shardId, string &ip, string &cookie)
+string CLoginClient::wantToConnectToShard(sint32 shardId, string &ip, string &cookie)
 {
-	string res = confirmConnection (shardId);
+	string res = confirmConnection(shardId);
 	if (!res.empty()) return res;
 
 	ip = ShardChooseShardAddr;
 	cookie = ShardChooseShardCookie;
 
 	return "";
+}
+
+string CLoginClient::selectShardBegin(sint32 shardId)
+{
+	nlassert(_LSCallbackClient != 0 && _LSCallbackClient->connected());
+	
+	ShardChooseShardReason = "";
+	ShardChooseShard = false;
+
+	if (!ShardList.size())
+	{
+		_LSCallbackClient->disconnect();
+		delete _LSCallbackClient;
+		_LSCallbackClient = 0;
+		return "No shard available";
+	}	
+	CLoginClient::CShardEntry *s = getShard(shardId);
+	if (!s)
+	{
+		_LSCallbackClient->disconnect();
+		delete _LSCallbackClient;
+		_LSCallbackClient = 0;
+		return "Invalid shard selected";
+	}
+
+	// S05: create and send the "CS" message with the shardid choice to the LS
+	CMessage msgout ("CS");
+	msgout.serial (s->Id);
+	_LSCallbackClient->send (msgout);
+
+	return "";
+}
+
+bool CLoginClient::selectShardUpdate(string &error, string &ip, string &cookie)
+{
+	if (!_LSCallbackClient)
+	{
+		error = "CLoginClient::selectShardBegin() must be called first";
+		nlwarning("CLoginClient::selectShardUpdate(): %s", error.c_str());
+		return false;
+	}
+	if (!_LSCallbackClient->connected())
+	{
+		error = "Disconnected from LS";
+		nlwarning("CLoginClient::selectShardUpdate(): %s", error.c_str());
+		delete _LSCallbackClient;
+		_LSCallbackClient = 0;
+		return false;
+	}
+	_LSCallbackClient->update();
+	if (ShardChooseShard)
+	{
+		error = ShardChooseShardReason;
+		ip = ShardChooseShardAddr;
+		cookie = ShardChooseShardCookie;
+		if (!error.empty()) nlwarning("CLoginClient::selectShardUpdate(): %s", error.c_str());
+		else nlinfo("addr: '%s' cookie: %s", ShardChooseShardAddr.c_str(), ShardChooseShardCookie.c_str());
+		_LSCallbackClient->disconnect ();
+		delete _LSCallbackClient;
+		_LSCallbackClient = 0;
+		return false;
+	}
+	return true;
 }
 
 CLoginClient::CShardEntry *CLoginClient::getShard (sint32 shardId)

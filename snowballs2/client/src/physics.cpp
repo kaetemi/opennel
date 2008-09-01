@@ -27,6 +27,8 @@
 // Includes
 //
 
+#include <nel/misc/types_nl.h>
+
 #include "physics.h"
 
 //
@@ -35,6 +37,8 @@
 
 using namespace std;
 using namespace NLMISC;
+
+// -- -- this file exists twice
 
 CVector	CTrajectory::eval(NLMISC::TTime t) const
 {

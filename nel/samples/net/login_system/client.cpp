@@ -88,6 +88,7 @@ int main (int argc, char **argv)
 	{
 		char buf[256];
 		printf("Login: ");
+		// gcc says: warning: the `gets' function is dangerous and should not be used.
 		Login = gets(buf);
 	}
 
@@ -96,6 +97,7 @@ int main (int argc, char **argv)
 	{
 		char buf[256];
 		printf("Password: ");
+		// gcc says: warning: the `gets' function is dangerous and should not be used.
 		Password = gets(buf);
 	}
 	// crypt with md5 the password

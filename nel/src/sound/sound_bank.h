@@ -95,7 +95,7 @@ public:
 
 private:
 	/// Constructor
-	CSoundBank() : _Loaded(false) {};
+	CSoundBank() : _Loaded(false) {}
 
 
 	/// CSoundBank singleton instance.
