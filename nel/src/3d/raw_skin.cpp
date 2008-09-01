@@ -24,7 +24,7 @@
  */
 
 #include "std3d.h"
-#include "raw_skin.h"
+#include "nel/3d/raw_skin.h"
 
 
 using namespace NLMISC;
@@ -46,3 +46,6 @@ void		CRawSkinNormalCache::clearArrays()
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

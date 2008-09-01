@@ -1,8 +1,8 @@
 #include "stdafx.h"
 
-#include "nel/../../src/3d/tile_bank.h"
-#include "nel/../../src/3d/texture_mem.h"
-#include "nel/../../src/3d/texture_file.h"
+#include "nel/3d/tile_bank.h"
+#include "nel/3d/texture_mem.h"
+#include "nel/3d/texture_file.h"
 #include "nel/misc/events.h"
 #include "paint_undo.h"
 
@@ -145,3 +145,6 @@ extern const char* PainterKeysName[KeyCounter];
 
 void LoadKeyCfg ();
 void LoadVarCfg ();
+
+/* Merge OpenNeL SVN
+ */

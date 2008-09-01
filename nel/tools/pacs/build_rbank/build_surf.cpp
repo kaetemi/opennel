@@ -35,10 +35,10 @@
 #include "nel/misc/triangle.h"
 #include "nel/misc/polygon.h"
 
-#include "nel/../../src/3d/landscape.h"
-#include "nel/../../src/3d/zone.h"
-#include "nel/../../src/3d/mesh.h"
-#include "nel/../../src/3d/quad_grid.h"
+#include "nel/3d/landscape.h"
+#include "nel/3d/zone.h"
+#include "nel/3d/mesh.h"
+#include "nel/3d/quad_grid.h"
 
 #include "nel/../../src/pacs/vector_2s.h"
 
@@ -210,10 +210,18 @@ template<class A>
 class CHashPtr
 {
 public:
+	static const size_t bucket_size = 4;
+	static const size_t min_buckets = 8;
+
 	typedef	A	*ptrA;
 	size_t	operator() (const ptrA &a) const
 	{
 		return ((uintptr_t)a)/sizeof(A);
+	}
+
+	bool operator() (const ptrA &a, const ptrA &b) const
+	{
+		return (uintptr_t)a < (uintptr_t)b;
 	}
 };
 
@@ -1741,5 +1749,5 @@ CAABBox	NLPACS::CZoneTessellation::computeBBox() const
 	return zbox;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

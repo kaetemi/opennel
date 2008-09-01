@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "patchuv_locator.h"
+#include "nel/3d/patchuv_locator.h"
 
 using namespace std;
 using namespace NLMISC;
@@ -218,3 +218,6 @@ void	CPatchUVLocator::locateUV(const CVector2f &uvIn, uint patch, CPatch *&patch
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

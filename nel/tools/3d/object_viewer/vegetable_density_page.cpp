@@ -8,7 +8,7 @@
 #include "vegetable_noise_value_dlg.h"
 #include "vegetable_dlg.h"
 #include "nel/misc/noise_value.h"
-#include "nel/../../src/3d/vegetable.h"
+#include "nel/3d/vegetable.h"
 
 
 
@@ -532,3 +532,6 @@ void CVegetableDensityPage::OnButtonVegetableBrowse()
 		}
 	}
 }
+
+/* Merge OpenNeL SVN
+ */

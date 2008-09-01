@@ -28,7 +28,7 @@
 
 #include "nel/misc/types_nl.h"
 #include "nel/sound/u_source.h"
-#include "../3d/cluster.h"
+#include "nel/3d/cluster.h"
 #include "sound.h"
 
 
@@ -101,7 +101,7 @@ public:
 	/** This method is called from backgroup sound to check if
 	 *	subsound need to be restarted (ie subsound in loop mode).
 	 */
-	virtual void					checkup() {};
+	virtual void					checkup() {}
 
 protected:
 	// Dynamic properties
@@ -140,3 +140,6 @@ protected:
 
 
 #endif //NL_SOURCE_COMMON_H
+
+/* Merge OpenNeL SVN
+ */

@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "radix_sort.h"
+#include "nel/3d/radix_sort.h"
 
 
 namespace NL3D {
@@ -48,3 +48,6 @@ static void	pipo()
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

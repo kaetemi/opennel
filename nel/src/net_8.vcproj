@@ -317,7 +317,7 @@
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="2"
+			CharacterSet="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -338,9 +338,14 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\include"
-				PreprocessorDefinitions="NL_STATIC;_LIB;__STL_DEBUG;_DEBUG;WIN32;LIBXML_STATIC"
+				PreprocessorDefinitions="NL_STATIC;_LIB;_DEBUG;WIN32;LIBXML_STATIC"
+				StringPooling="false"
+				MinimalRebuild="true"
+				ExceptionHandling="2"
 				BasicRuntimeChecks="3"
+				SmallerTypeCheck="true"
 				RuntimeLibrary="1"
+				EnableFunctionLevelLinking="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdnet.h"
@@ -388,7 +393,9 @@
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
-			CharacterSet="2"
+			CharacterSet="0"
+			ManagedExtensions="0"
+			WholeProgramOptimization="0"
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
@@ -407,13 +414,20 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="2"
+				Optimization="3"
 				InlineFunctionExpansion="2"
+				EnableIntrinsicFunctions="true"
+				FavorSizeOrSpeed="1"
+				OmitFramePointers="true"
 				AdditionalIncludeDirectories="..\include"
-				PreprocessorDefinitions="NL_STATIC;_LIB;NL_RELEASE_DEBUG;LIBXML_STATIC;WIN32;NDEBUG;ASSERT_THROW_EXCEPTION;$(NOINHERIT)"
+				PreprocessorDefinitions="NL_STATIC;_LIB;NL_RELEASE_DEBUG;LIBXML_STATIC;WIN32;NDEBUG;ASSERT_THROW_EXCEPTION"
 				StringPooling="true"
+				MinimalRebuild="true"
 				ExceptionHandling="2"
+				BasicRuntimeChecks="0"
 				RuntimeLibrary="0"
+				BufferSecurityCheck="false"
+				EnableFunctionLevelLinking="false"
 				RuntimeTypeInfo="true"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderThrough="stdnet.h"
@@ -2424,5 +2438,5 @@
 	</Globals>
 </VisualStudioProject>
 
-<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+<!-- Merge OpenNeL SVN
  -->

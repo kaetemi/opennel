@@ -56,5 +56,5 @@ extern HINSTANCE hInstance;
 
 #endif // __TILE_UTILITY__H
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

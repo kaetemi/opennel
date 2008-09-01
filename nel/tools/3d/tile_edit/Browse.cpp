@@ -9,7 +9,7 @@
 #include "custom.h"
 #include "getval.h"
 
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 
 #include "nel/misc/bitmap.h"
 #include "nel/misc/file.h"
@@ -1495,3 +1495,6 @@ void Browse::OnImportBorder()
 		MessageBox ("The border has been changed.", "Import border", MB_OK|MB_ICONINFORMATION);
 	}
 }
+
+/* Merge OpenNeL SVN
+ */

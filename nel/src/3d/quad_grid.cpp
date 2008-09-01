@@ -24,7 +24,7 @@
  */
 
 #include "std3d.h"
-#include "quad_grid.h"
+#include "nel/3d/quad_grid.h"
 
 namespace NL3D
 {
@@ -33,3 +33,6 @@ namespace NL3D
 	std::vector<uint> CQuadGridBase::_AlreadySelected;
 	uint CQuadGridBase::_SelectStamp = 0;
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

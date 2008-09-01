@@ -24,8 +24,8 @@
  */
 
 #include "std3d.h"
-#include "noise_3d.h"
-#include "driver.h"
+#include "nel/3d/noise_3d.h"
+#include "nel/3d/driver.h"
 
 using namespace NLMISC;
 
@@ -477,3 +477,6 @@ uint32 CNoise3d::getDepth ()
 
 } // namespace NL3D
 
+
+/* Merge OpenNeL SVN
+ */

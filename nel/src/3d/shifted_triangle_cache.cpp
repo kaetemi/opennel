@@ -24,7 +24,7 @@
  */
 
 #include "std3d.h"
-#include "shifted_triangle_cache.h"
+#include "nel/3d/shifted_triangle_cache.h"
 
 
 namespace NL3D 
@@ -40,3 +40,6 @@ void				CShiftedTriangleCache::clearArrays()
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

@@ -30,7 +30,7 @@
 #pragma once
 #endif 
 
-#include "nel/../../src/3d/ps_plane_basis.h"
+#include "nel/3d/ps_plane_basis.h"
 #include "ps_wrapper.h"
 #include "edit_attrib_dlg.h"
 
@@ -98,3 +98,6 @@ void DrawBasisInDC(const CPoint &center, float size, const NLMISC::CMatrix &m, C
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_BASIS_EDIT_H__7EBC9DBD_5DDD_44F6_8C3D_6F8FB0A1FFCD__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "track_keyframer.h"
+#include "nel/3d/track_keyframer.h"
 
 
 namespace NL3D
@@ -95,3 +95,6 @@ UTrackKeyframer	*UTrackKeyframer::createTCBFloatTrack()
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

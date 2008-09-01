@@ -32,7 +32,7 @@
 #include "nel/misc/common.h"
 #include "nel/misc/path.h"
 
-#include "font_generator.h"
+#include "nel/3d/font_generator.h"
 
 using namespace std;
 
@@ -634,5 +634,5 @@ uint32	 CFontGenerator::getCharIndex (ucchar c)
 #endif // NL_DONT_USE_EXTERNAL_CODE
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

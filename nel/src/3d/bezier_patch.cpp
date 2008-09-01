@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "bezier_patch.h"
+#include "nel/3d/bezier_patch.h"
 using namespace NLMISC;
 
 
@@ -451,3 +451,6 @@ void		CBezierPatch::subdivideT(CBezierPatch &top, CBezierPatch &bottom, float t)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

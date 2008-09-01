@@ -26,7 +26,7 @@
 #include "std3d.h"
 
 #include "nel/3d/u_visual_collision_mesh.h"
-#include "visual_collision_mesh.h"
+#include "nel/3d/visual_collision_mesh.h"
 
 
 namespace NL3D 
@@ -58,3 +58,6 @@ const std::vector<uint16> &UVisualCollisionMesh::getTriangles() const
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

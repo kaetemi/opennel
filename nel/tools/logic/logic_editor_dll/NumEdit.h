@@ -37,7 +37,7 @@ protected:
 	afx_msg void OnChar(UINT nChar, UINT nRepCnt, UINT nFlags);
 	//}}AFX_MSG
 
-	void OnPaste(WPARAM wParam = 0, LPARAM lParam = 0);
+	LRESULT OnPaste(WPARAM wParam = 0, LPARAM lParam = 0);
 
 	DECLARE_MESSAGE_MAP()
 };

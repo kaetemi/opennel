@@ -399,6 +399,30 @@ NLMISC_COMMAND (shards, "displays the list of all registered shards", "")
 	return true;
 }
 
+NLMISC_COMMAND (shardDatabase, "displays the list of all shards in the database", "")
+{
+	if(args.size() != 0) return false;
+
+	CMysqlResult result;
+	MYSQL_ROW row;
+	sint32 nbrow;
+
+	string reason = sqlQuery("select ShardId, WsAddr, NbPlayers, Name, Online, ClientApplication, Version, DynPatchURL from shard", nbrow, row, result);
+	if(!reason.empty()) { log.displayNL("Display registered users failed; '%s'", reason.c_str()); return true; }
+
+	log.displayNL("Display the %d shards in the database :", nbrow);
+	log.displayNL(" > ShardId, WsAddr, NbPlayers, Name, Online, ClientApplication, Version, DynPatchURL");
+
+	if (nbrow != 0) while(row != 0)
+	{
+		log.displayNL(" > '%s' '%s' '%s' '%s' '%s' '%s' '%s' '%s'", row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]);
+		row = mysql_fetch_row(result);
+	}
+
+	log.displayNL("End of the list");
+
+	return true;
+}
 
 NLMISC_COMMAND (registeredUsers, "displays the list of all registered users", "")
 {
@@ -468,5 +492,5 @@ NLMISC_COMMAND (onlineUsers, "displays the list of online users", "")
 }
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

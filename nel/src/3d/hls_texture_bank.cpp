@@ -24,7 +24,7 @@
  */
 
 #include "std3d.h"
-#include "hls_texture_bank.h"
+#include "nel/3d/hls_texture_bank.h"
 
 
 using	namespace std;
@@ -194,3 +194,6 @@ void			CHLSTextureBank::CTextureInstance::buildColorVersion(NLMISC::CBitmap &out
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

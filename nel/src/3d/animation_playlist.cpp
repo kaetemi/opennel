@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "animation_playlist.h"
+#include "nel/3d/animation_playlist.h"
 #include "nel/misc/common.h"
 #include "nel/misc/stream.h"
 #include <cmath>
@@ -361,3 +361,6 @@ float CAnimationPlaylist::getLocalWeight (uint8 slot, TGlobalAnimationTime globa
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

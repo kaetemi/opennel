@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "bone.h"
+#include "nel/3d/bone.h"
 #include "nel/3d/u_bone.h"
 
 
@@ -52,5 +52,5 @@ const CVector	&UBone::getSkinScale() const
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

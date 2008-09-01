@@ -25,7 +25,7 @@
 
 #include "StdAfx.h"
 #include "export_nel.h"
-#include "nel/../../src/3d/seg_remanence_shape.h"
+#include "nel/3d/seg_remanence_shape.h"
 #include "nel/misc/common.h"
 #include "export_appdata.h"
 
@@ -176,3 +176,7 @@ NL3D::IShape *CExportNel::buildRemanence(INode& node, TimeValue time)
 }
 
 
+
+
+/* Merge OpenNeL SVN
+ */

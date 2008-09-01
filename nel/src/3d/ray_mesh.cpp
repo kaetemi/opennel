@@ -25,10 +25,10 @@
 
 #include "std3d.h"
 
-#include "ray_mesh.h"
+#include "nel/3d/ray_mesh.h"
 #include "nel/misc/vector_2f.h"
 #include "nel/misc/fast_mem.h"
-#include "matrix_3x4.h"
+#include "nel/3d/matrix_3x4.h"
 
 using namespace NLMISC;
 using namespace std;
@@ -285,3 +285,6 @@ bool		CRayMesh::fastIntersect(const NLMISC::CMatrix &worldMatrix, const NLMISC::
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

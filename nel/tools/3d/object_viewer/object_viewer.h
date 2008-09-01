@@ -58,13 +58,13 @@
 #include "animation_set_dlg.h"
 #include "animation_dlg.h"
 
-#include "nel/../../src/3d/animation_set.h"
-#include "nel/../../src/3d/channel_mixer.h"
-#include "nel/../../src/3d/shape.h"
-#include "nel/../../src/3d/event_mouse_listener.h"
-#include "nel/../../src/3d/light.h"
-#include "nel/../../src/3d/font_manager.h"
-#include "nel/../../src/3d/cloud_scape.h"
+#include "nel/3d/animation_set.h"
+#include "nel/3d/channel_mixer.h"
+#include "nel/3d/shape.h"
+#include "nel/3d/event_mouse_listener.h"
+#include "nel/3d/light.h"
+#include "nel/3d/font_manager.h"
+#include "nel/3d/cloud_scape.h"
 #include "nel/misc/event_listener.h"
 #include "nel/misc/stream.h"
 
@@ -683,3 +683,6 @@ bool browseFolder(const CString &caption, CString &destFolder, HWND parent);
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_OBJECT_VIEWER_H__9B22CB84_1929_11D5_9CD4_0050DAC3A412__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

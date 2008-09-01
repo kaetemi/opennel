@@ -20,7 +20,14 @@
 #endif // _AFX_NO_AFXCMN_SUPPORT
 
 
+#undef min
+#undef max
+
+
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_STDAFX_H__02061484_8AF3_406E_BB90_5FE982F95E8A__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

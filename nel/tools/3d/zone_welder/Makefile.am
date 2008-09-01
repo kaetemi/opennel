@@ -21,5 +21,5 @@ zone_welder_LDADD         = ../../../src/misc/libnelmisc.la \
 # End of Makefile.am
 
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

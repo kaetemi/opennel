@@ -27,7 +27,7 @@
 #include "nel/misc/path.h"
 #include "nel/../../src/pacs/retriever_bank.h"
 #include "nel/../../src/pacs/global_retriever.h"
-#include "nel/../../src/3d/scene_group.h"
+#include "nel/3d/scene_group.h"
 
 
 
@@ -450,3 +450,7 @@ void	CIgLighterLib::lightIg(CInstanceLighter &instanceLighter,
 }
 
 
+
+
+/* Merge OpenNeL SVN
+ */

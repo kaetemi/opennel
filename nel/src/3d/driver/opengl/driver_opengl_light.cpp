@@ -26,7 +26,7 @@
 #include "stdopengl.h"
 
 #include "driver_opengl.h"
-#include "../../light.h"
+#include "nel/3d/light.h"
 
 namespace NL3D 
 {
@@ -365,3 +365,6 @@ void			CDriverGL::setupLightMapDynamicLighting(bool enable)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

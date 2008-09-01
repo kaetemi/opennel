@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "texture_file.h"
+#include "nel/3d/texture_file.h"
 #include "nel/misc/file.h"
 #include "nel/misc/path.h"
 #include "nel/misc/debug.h"
@@ -320,3 +320,6 @@ std::string		CTextureFile::getShareName() const
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

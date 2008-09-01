@@ -32,7 +32,7 @@
 // animation_set_dlg.h : header file
 //
 
-#include <nel/../../src/3d/animation_set.h>
+#include <nel/3d/animation_set.h>
 
 /////////////////////////////////////////////////////////////////////////////
 // CAnimationSetDlg dialog
@@ -93,3 +93,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_ANIMATION_SET_DLG_H__AA6100E2_19FA_11D5_9CD4_0050DAC3A412__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

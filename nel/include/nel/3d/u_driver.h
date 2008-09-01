@@ -192,6 +192,9 @@ public:
 	virtual bool			getModes(std::vector<CMode> &modes)=0;
 	virtual bool			getCurrentScreenMode(CMode &mode)=0;
 
+	/// Set the title of the NeL window
+	virtual void			setWindowTitle(const std::string &title)=0;
+
 	/* Pass in dialog box mode. After having called this method, you can use normal GUI. 
 	 * In fullscreen under direct3d, the main 3d window is minimized.
 	 *
@@ -488,8 +491,8 @@ public:
 	  */
 	virtual const char*		getVideocardInformation () = 0;
 
-	/// Get the number of texture stage avaliable, for multitexturing (Normal material shaders). Valid only after setDisplay().
-	virtual	sint			getNbTextureStages()=0;
+	/// Get the number of texture stage available, for multitexturing (Normal material shaders). Valid only after setDisplay().
+	virtual	uint			getNbTextureStages() = 0;
 
 	/// Get the width and the height of the window
 	virtual void			getWindowSize (uint32 &width, uint32 &height) = 0;
@@ -642,6 +645,13 @@ public:
 	 *	NB: this is done only on TextureFile
 	 */
 	virtual void			forceTextureResize(uint divisor)=0;
+	
+	/** Sets enforcement of native fragment programs. This is by default enabled.
+	 * 
+	 * \param nativeOnly If set to false, fragment programs don't need to be native to stay loaded,
+	 * 	                 otherwise (aka if true) they will be purged.
+	 */
+	virtual void			forceNativeFragmentPrograms(bool nativeOnly) = 0;
 
 	/** Setup monitor color properties. 
 	  * 
@@ -823,5 +833,5 @@ public:
 
 /* End of u_driver.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

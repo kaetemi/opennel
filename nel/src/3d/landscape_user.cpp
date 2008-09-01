@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "landscape_user.h"
+#include "nel/3d/landscape_user.h"
 #include "nel/misc/file.h"
 #include "nel/misc/path.h"
 #include "nel/misc/hierarchical_timer.h"
@@ -624,5 +624,5 @@ float CLandscapeUser::getRayCollision(const NLMISC::CVector &start, const NLMISC
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

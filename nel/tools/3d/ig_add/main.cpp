@@ -28,7 +28,7 @@
 
 #include "nel/misc/file.h"
 
-#include "nel/../../src/3d/scene_group.h"
+#include "nel/3d/scene_group.h"
 
 using namespace NLMISC;
 using namespace NL3D;
@@ -187,3 +187,6 @@ int main(int nNbArg, char**ppArgs)
 // strange because the instance of the instance group are not relinked to
 // all the clusters... But this is not a big deal because we just want to
 // add group of instances without any cluster system
+
+/* Merge OpenNeL SVN
+ */

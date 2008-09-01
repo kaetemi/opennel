@@ -59,6 +59,7 @@ void	releaseCamera();
 
 
 void	initSky ();
+void releaseSky();
 
 // Update the sky for this frame, and render it.
 // Must be called before ANY rendering
@@ -66,9 +67,10 @@ void	updateSky ();
 
 void	animateSky (NLMISC::TTime dt);
 
-void	update3dLogo ();
-
 
 #endif // CAMERA_H
 
 /* End of camera.h */
+
+/* Merge OpenNeL SVN
+ */

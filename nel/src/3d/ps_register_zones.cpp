@@ -25,8 +25,8 @@
 #include "std3d.h"
 
 
-#include "ps_util.h"
-#include "ps_zone.h"
+#include "nel/3d/ps_util.h"
+#include "nel/3d/ps_zone.h"
 
 
 
@@ -41,3 +41,6 @@ namespace NL3D
 		NLMISC_REGISTER_CLASS(CPSZoneCylinder);
 	}
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

@@ -25,7 +25,7 @@
 
 
 #include "std3d.h"
-#include "lod_character_texture.h"
+#include "nel/3d/lod_character_texture.h"
 
 
 namespace NL3D {
@@ -50,3 +50,6 @@ void		CLodCharacterTexture::serial(NLMISC::IStream &f)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

@@ -53,7 +53,7 @@
 #include "nel/3d/u_play_list_manager.h"
 #include "nel/3d/u_text_context.h"
 #include "nel/3d/u_texture.h"
-#include "3d/event_mouse_listener.h"
+#include "nel/3d/event_mouse_listener.h"
 
 using namespace NL3D;
 #endif
@@ -422,5 +422,5 @@ int main( int argc, char **argv )
 	return EXIT_SUCCESS;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

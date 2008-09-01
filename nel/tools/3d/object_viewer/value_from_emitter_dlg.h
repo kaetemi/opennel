@@ -37,7 +37,7 @@ namespace NL3D
 
 #include "attrib_dlg.h"
 #include "ps_wrapper.h"
-#include "nel/../../src/3d/ps_attrib_maker.h"
+#include "nel/3d/ps_attrib_maker.h"
 
 
 struct IPopupNotify;
@@ -137,3 +137,6 @@ protected:
 
 
 #endif // !defined(AFX_VALUE_FROM_EMITTER_DLG_H__D3416DBF_1735_4FBB_A1FD_7E8DCC133825__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

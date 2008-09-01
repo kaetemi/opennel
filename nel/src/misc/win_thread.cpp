@@ -191,7 +191,7 @@ void CWinThread::start ()
 //	ThreadHandle = (void *) ::CreateThread (NULL, _StackSize, ProxyFunc, this, 0, (DWORD *)&ThreadId);
 	ThreadHandle = (void *) ::CreateThread (NULL, 0, ProxyFunc, this, 0, (DWORD *)&ThreadId);
 //	nldebug("NLMISC: thread %x started for runnable '%x'", typeid( Runnable ).name());
-	OutputDebugString(toString(NL_LOC_MSG " NLMISC: thread %x started for runnable '%s'\n", ThreadId, typeid( *Runnable ).name()).c_str());
+//	OutputDebugString(toString(NL_LOC_MSG " NLMISC: thread %x started for runnable '%s'\n", ThreadId, typeid( *Runnable ).name()).c_str());
 	SetThreadPriorityBoost (ThreadHandle, TRUE); // FALSE == Enable Priority Boost
 	if (ThreadHandle == NULL)
 	{
@@ -603,5 +603,5 @@ bool CProcessWatch::isRunning() const
 
 #endif // NL_OS_WINDOWS
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

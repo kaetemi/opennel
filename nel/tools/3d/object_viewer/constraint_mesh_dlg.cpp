@@ -28,7 +28,7 @@
 #include "object_viewer.h"
 #include "constraint_mesh_dlg.h"
 
-#include "nel/../../src/3d/ps_mesh.h"
+#include "nel/3d/ps_mesh.h"
 
 
 //============================================================================================
@@ -118,3 +118,6 @@ void CConstraintMeshDlg::OnForceVertexColorLighting()
 	UpdateData();
 	_CM->forceVertexColorLighting(m_ForceVertexColorLighting ? true : false /* VC  WARNING */);			
 }
+
+/* Merge OpenNeL SVN
+ */

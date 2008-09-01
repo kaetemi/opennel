@@ -41,5 +41,5 @@ ILogicInfo::~ILogicInfo()
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -31,33 +31,41 @@
 namespace NLMISC 
 {
 
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 static bool DetectMMX(void)
 {		
-	#ifdef NL_OS_WINDOWS		
-		if (!CCpuInfo___::hasCPUID()) return false; // cpuid not supported ...
+#ifdef NL_OS_WINDOWS		
+	if (!CCpuInfo___::hasCPUID()) return false; // cpuid not supported ...
 
-		uint32 result = 0;
-		__asm
-		{
-			 mov  eax,1
-			 cpuid
-			 test edx,0x800000  // bit 23 = MMX instruction set
-			 je   noMMX
-			 mov result, 1	
-			noMMX:
-		}
+	uint32 result = 0;
+	__asm
+	{
+		 mov  eax,1
+		 cpuid
+		 test edx,0x800000  // bit 23 = MMX instruction set
+		 je   noMMX
+		 mov result, 1	
+		noMMX:
+	}
 
-		return result == 1;
- 
-		// printf("mmx detected\n");
+	return result == 1;
 
-	#else
-		return false;
-	#endif
+	// printf("mmx detected\n");
+
+#else
+	return false;
+#endif
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
-
-static bool DetectSSE(void)
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
+static bool DetectSSE()
 {	
 	#ifdef NL_OS_WINDOWS
 		if (!CCpuInfo___::hasCPUID()) return false; // cpuid not supported ...
@@ -101,47 +109,60 @@ static bool DetectSSE(void)
 		return false;
 	#endif
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 bool HasMMX = DetectMMX();
 bool HasSSE = DetectSSE();
 
-bool CCpuInfo___::hasCPUID(void)
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
+bool CCpuInfo___::hasCPUID()
 {
-	#ifdef NL_OS_WINDOWS
-		 uint32 result;
-		 __asm
-		 {
-			 pushad
-			 pushfd						
-			 //	 If ID bit of EFLAGS can change, then cpuid is available
-			 pushfd
-			 pop  eax					// Get EFLAG
-			 mov  ecx,eax
-			 xor  eax,0x200000			// Flip ID bit
-			 push eax
-			 popfd						// Write EFLAGS
-			 pushfd      
-			 pop  eax					// read back EFLAG
-			 xor  eax,ecx				
-			 je   noCpuid				// no flip -> no CPUID instr.
-			 
-			 popfd						// restore state
-			 popad
-			 mov  result, 1
-			 jmp  CPUIDPresent
-		
-			noCpuid:
-			 popfd					    // restore state
-			 popad
-			 mov result, 0
-			CPUIDPresent:	 
-		 }
-		 return result == 1;
-	#else
-		 return false;
-	#endif
+#ifdef NL_OS_WINDOWS
+	 uint32 result;
+	 __asm
+	 {
+		 pushad
+		 pushfd						
+		 //	 If ID bit of EFLAGS can change, then cpuid is available
+		 pushfd
+		 pop  eax					// Get EFLAG
+		 mov  ecx,eax
+		 xor  eax,0x200000			// Flip ID bit
+		 push eax
+		 popfd						// Write EFLAGS
+		 pushfd      
+		 pop  eax					// read back EFLAG
+		 xor  eax,ecx				
+		 je   noCpuid				// no flip -> no CPUID instr.
+		 
+		 popfd						// restore state
+		 popad
+		 mov  result, 1
+		 jmp  CPUIDPresent
+	
+		noCpuid:
+		 popfd					    // restore state
+		 popad
+		 mov result, 0
+		CPUIDPresent:	 
+	 }
+	 return result == 1;
+#else
+	 return false;
+#endif
 }
-bool CCpuInfo___::hasMMX(void) { return HasMMX; }
-bool CCpuInfo___::hasSSE(void) { return HasSSE; }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
+
+bool CCpuInfo___::hasMMX() { return HasMMX; }
+bool CCpuInfo___::hasSSE() { return HasSSE; }
 
 } // NLMISC
+
+/* Merge OpenNeL SVN
+ */

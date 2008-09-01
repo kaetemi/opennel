@@ -35,7 +35,7 @@
 #include <string>
 
 #include "nel/misc/debug.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 #include "nel/misc/file.h"
 #include "nel/misc/rgba.h"
 #include "path_mesh_alloc.h"
@@ -792,5 +792,5 @@ public:
 
 #endif // __RYKOL_PATCH_MESH_H
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

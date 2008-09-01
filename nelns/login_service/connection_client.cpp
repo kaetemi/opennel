@@ -160,7 +160,7 @@ retry:
 		}
 
 		CLoginCookie c;
-		c.set((uint32)from, rand(), uid);
+		c.set((uint32)(uintptr_t)from, rand(), uid);
 
 		reason = sqlQuery("update user set state='Authorized', Cookie='"+c.setToString()+"' where UId="+uid);
 		if(!reason.empty()) break;
@@ -227,7 +227,7 @@ static void cbClientChooseShard(CMessage &msgin, TSockId from, CCallbackNetBase 
 		{
 			CLoginCookie lc;
 			lc.setFromString(row[1]);
-			if(lc.getUserAddr() == (uint32)from)
+			if(lc.getUserAddr() == (uint32)(uintptr_t)from)
 			{
 				ok = true;
 				break;
@@ -336,7 +336,7 @@ static void cbClientDisconnection (TSockId from, void *arg)
 		if(!str.empty())
 		{
 			lc.setFromString(str);
-			if(lc.getUserAddr() == (uint32)from)
+			if(lc.getUserAddr() == (uint32)(uintptr_t)from)
 			{
 				// got it, if he is not in waiting state, it s not normal, remove all
 				if(row[1] == string("Authorized"))
@@ -371,7 +371,12 @@ static void cbWSShardChooseShard (CMessage &msgin, const std::string &serviceNam
 		msgin.serial (reason);
 		msgin.serial (cookie);
 
-		if(!reason.empty()) break;
+		if(!reason.empty())
+		{
+			nldebug("SCS from WS failed: %s", reason.c_str());
+			sqlQuery("update user set state='Offline', ShardId=-1, Cookie='' where Cookie='" + cookie.setToString() + "'");
+			break;
+		}
 
 		CMysqlResult result;
 		MYSQL_ROW row;
@@ -381,6 +386,16 @@ static void cbWSShardChooseShard (CMessage &msgin, const std::string &serviceNam
 		if(nbrow != 1)
 		{
 			reason = "More than one row was found";
+			nldebug("SCS from WS failed with duplicate cookies, sending disconnect messages.");
+			// disconnect them all
+			while(row != 0)
+			{
+				CMessage msgout("DC");
+				uint32 uid = atoui(row[0]);
+				msgout.serial(uid);
+				CUnifiedNetwork::getInstance()->send("WS", msgout);
+				row = mysql_fetch_row(result);
+			}
 			break;
 		}
 

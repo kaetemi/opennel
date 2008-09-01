@@ -28,7 +28,7 @@
 #include "nel/net/module_message.h"
 
 // a stupid function to remove some more stupid visual warnings
-void foo_module_message() {};
+void foo_module_message() {}
 
 namespace NLNET
 {
@@ -55,3 +55,6 @@ namespace NLNET
 
 
 } // namespace NLNET
+
+/* Merge OpenNeL SVN
+ */

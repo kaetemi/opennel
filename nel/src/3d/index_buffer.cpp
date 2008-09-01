@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "index_buffer.h"
-#include "driver.h"
+#include "nel/3d/index_buffer.h"
+#include "nel/3d/driver.h"
 #include "nel/misc/stream.h"
 #include "nel/misc/fast_mem.h"
 
@@ -439,5 +439,5 @@ void CIndexBuffer::fillBuffer ()
 
 } // namespace NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

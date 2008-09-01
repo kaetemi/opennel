@@ -27,7 +27,7 @@
 #include "nel/misc/types_nl.h"
 #include "nel/misc/file.h"
 #include "nel/3d/quad_tree.h"
-#include "nel/../../src/3d/zone.h"
+#include "nel/3d/zone.h"
 #include <vector>
 #include <set>
 #include <iostream>
@@ -281,5 +281,5 @@ uint16 createZoneId(std::string zoneName)
 	return ((y-1)<<8) + x;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

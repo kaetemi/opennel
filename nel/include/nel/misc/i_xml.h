@@ -42,7 +42,7 @@ namespace NLMISC {
 
 struct EXmlParsingError : public EStream
 {
-	EXmlParsingError ( const std::string& str ) : EStream( str ) {};
+	EXmlParsingError ( const std::string& str ) : EStream( str ) {}
 };
 
 /**
@@ -251,3 +251,6 @@ private:
 #endif // NL_I_XML_H
 
 /* End of o_xml.h */
+
+/* Merge OpenNeL SVN
+ */

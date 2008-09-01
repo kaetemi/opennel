@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "zone_smoother.h"
+#include "nel/3d/zone_smoother.h"
 
 
 namespace NL3D 
@@ -148,3 +148,6 @@ void			CZoneSmoother::smoothTangents(CZoneInfo zones[5], float angleThreshold, b
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

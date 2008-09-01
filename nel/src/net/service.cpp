@@ -209,7 +209,7 @@ static void sigHandler(int Sig)
 				  if (IService::getInstance()->haveLongArg("nobreak"))
 				    {
 				      // ignore ctrl-c
-				      nlinfo("Ignoring ctrl-c");
+				      nlinfo("SERVICE: Ignoring ctrl-c");
 				      return;
 				    }
 				case SIGABRT :
@@ -336,7 +336,7 @@ void IService::anticipateShardId( uint32 shardId )
 void IService::setShardId( uint32 shardId )
 {
 	if ( ! ((_ShardId == DEFAULT_SHARD_ID) || (shardId == _ShardId)) )
-		nlwarning( "The shardId from the WS (%u) is different from the anticipated shardId (%u)", shardId, _ShardId );
+		nlwarning( "SERVICE: The shardId from the WS (%u) is different from the anticipated shardId (%u)", shardId, _ShardId );
 	_ShardId = shardId;
 }
 
@@ -595,7 +595,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 
 	try
 	{
-		nlinfo("Just in case");
+		createDebug();
 		// init the module manager
 		IModuleManager::getInstance();
 		//
@@ -632,7 +632,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		ListeningPort = servicePort;
 
 		setReportEmailFunction ((void*)sendEmail);
-		setDefaultEmailParams ("gw.nevrax.com", "", "cado@nevrax.com");
+		// setDefaultEmailParams ("gw.nevrax.com", "", "cado@nevrax.com");
 
 
 		//
@@ -669,7 +669,15 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		
 		// setup variable with config file variable
 		IVariable::init (ConfigFile);
-
+		
+		if (ConfigFile.exists("DefaultEmailSMTP") && ConfigFile.exists("DefaultEmailTo"))
+			NLNET::setDefaultEmailParams(
+				ConfigFile.getVar("DefaultEmailSMTP").asString(),
+				ConfigFile.exists("DefaultEmailFrom")
+				? ConfigFile.getVar("DefaultEmailFrom").asString()
+				: "service@opennel.org",
+				ConfigFile.getVar("DefaultEmailTo").asString());
+		
 		//
 		// Set the shard Id
 		//
@@ -957,14 +965,14 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		if (varAliasName != NULL)
 		{
 			_AliasName = varAliasName->asString();
-			nlinfo("Setting alias name to: '%s'",_AliasName.c_str());
+			nlinfo("SERVICE: Setting alias name to: '%s'",_AliasName.c_str());
 		}
 
 		// set the aes aliasname if is present in the command line
 		if (haveArg('N'))
 		{
 			_AliasName = getArg('N');
-			nlinfo("Setting alias name to: '%s'",_AliasName.c_str());
+			nlinfo("SERVICE: Setting alias name to: '%s'",_AliasName.c_str());
 		}
 
 		// Load the recording state from the config file
@@ -1088,6 +1096,8 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 				CInetAddress loc(LSAddr);
 				try
 				{
+					// todo: check if app not closed by user, or you get stuck here
+
 					if ( CUnifiedNetwork::getInstance()->init (&loc, _RecordingState, _ShortName, ListeningPort, _SId) )
 					{
 						ok = true;
@@ -1244,7 +1254,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 
 		_Initialized = true;
 
-		nlinfo ("SERVICE: Service initialised, executing StartCommands");
+		nlinfo ("SERVICE: Service initialized, executing StartCommands");
 
 		//
 		// Call the user command from the config file if any
@@ -1553,7 +1563,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		//
 
 		std::vector<std::string> namesOfOnlyServiceToFlushSendingV;
-		explode( NamesOfOnlyServiceToFlushSending, ":", namesOfOnlyServiceToFlushSendingV, true );
+		explode( NamesOfOnlyServiceToFlushSending.get(), string(":"), namesOfOnlyServiceToFlushSendingV, true );
 		CUnifiedNetwork::getInstance()->release (FlushSendingQueuesOnExit.get(), namesOfOnlyServiceToFlushSendingV);
 
 		// warn the module layer that the application is about to close
@@ -2072,5 +2082,5 @@ NLMISC_CATEGORISED_DYNVARIABLE(cpu, float, PeakProcessSystemLoad, "Get instant C
 
 } //NLNET
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -40,7 +40,7 @@
 #include "nel/../../src/pacs/build_indoor.h"
 #include "nel/../../src/pacs/primitive_block.h"
 
-#include "nel/../../src/3d/quad_grid.h"
+#include "nel/3d/quad_grid.h"
 
 using namespace std;
 using namespace NLMISC;
@@ -646,3 +646,7 @@ bool	CExportNel::buildPrimitiveBlock (TimeValue time, std::vector<INode*> object
 	return ok;
 }
 
+
+
+/* Merge OpenNeL SVN
+ */

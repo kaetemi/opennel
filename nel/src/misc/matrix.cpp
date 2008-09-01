@@ -892,7 +892,7 @@ void		CMatrix::setMulMatrix(const CMatrix &m1, const CMatrix &m2)
 	//=================
 	if( StateBit & MAT_PROJ )
 	{
-		// optimise nothing... (projection matrix are rare).
+		// optimize nothing... (projection matrix are rare).
 		m1.testExpandRot();
 		m1.testExpandProj();
 		m2.testExpandRot();
@@ -1040,7 +1040,7 @@ bool	CMatrix::slowInvert44(CMatrix &ret) const
 	{
 		for(j=0;j<=3;j++)
 		{
-			sint	l1,l2,l3;
+			sint	l1=0,l2=0,l3=0;
 			sint	c1,c2,c3;
 			getCofactIndex(i,l1,l2,l3);
 			getCofactIndex(j,c1,c2,c3);
@@ -1573,5 +1573,5 @@ void		CMatrix::setArbitraryRotK(const CVector &kdir)
 }
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

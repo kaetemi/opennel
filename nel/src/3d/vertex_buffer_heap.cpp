@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "vertex_buffer_heap.h"
+#include "nel/3d/vertex_buffer_heap.h"
 #include "nel/misc/common.h"
 
 using namespace NLMISC;
@@ -193,3 +193,6 @@ void			CVertexBufferHeap::activate()
 } // NL3D
 
 #endif // 0
+
+/* Merge OpenNeL SVN
+ */

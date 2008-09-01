@@ -45,6 +45,7 @@
 #include <winsock.h>
 #endif
 #include <mysql.h>
+#include <mysql_version.h>
 
 #include "nel/misc/debug.h"
 #include "nel/misc/config_file.h"
@@ -331,7 +332,8 @@ void updateSendAdminAlert ()
 	if(!Email.empty() && FirstEmailTime != 0 && AdminAlertAccumlationTime >=0 && CTime::getSecondsSince1970() > FirstEmailTime + AdminAlertAccumlationTime)
 	{
 		vector<string> lines;
-		explode (Email, "\n", lines, true);
+		explode (Email, string("\n"), lines, true);
+
 		if (!lines.empty())
 		{
 
@@ -361,10 +363,13 @@ void updateSendAdminAlert ()
 					subject = "Multiple problems";
 				}
 				
+				std::string from("");
+				if(IService::getInstance()->ConfigFile.exists("AdminEmailFrom"))
+					from = IService::getInstance()->ConfigFile.getVar("AdminEmailFrom").asString();
 				CConfigFile::CVar &var = IService::getInstance()->ConfigFile.getVar("AdminEmail");
 				for (uint i = 0; i < var.size(); i++)
 				{
-					if (!sendEmail ("", CInetAddress::localHost().hostName()+"@admin.org", var.asString(i), subject, Email))
+					if (!sendEmail ("", from, var.asString(i), subject, Email))
 					{
 						nlwarning ("Can't send email to '%s'", var.asString(i).c_str());
 					}
@@ -628,6 +633,15 @@ void sqlInit ()
 		nlerror ("mysql_init() failed");
 	}
 
+	my_bool opt = true;
+	if (mysql_options (DatabaseConnection, MYSQL_OPT_RECONNECT, &opt))
+	{
+		mysql_close(db);
+		DatabaseConnection = 0;
+		nlerror("mysql_options() failed for database connection to '%s'", IService::getInstance()->ConfigFile.getVar("DatabaseHost").asString().c_str());
+ 		return;
+	}
+
 	DatabaseConnection = mysql_real_connect(db,
 		IService::getInstance()->ConfigFile.getVar("DatabaseHost").asString().c_str(),
 		IService::getInstance()->ConfigFile.getVar("DatabaseLogin").asString().c_str(),
@@ -643,6 +657,17 @@ void sqlInit ()
 			(IService::getInstance()->ConfigFile.getVar("DatabasePassword").asString().empty()?"empty password":"password")
 			);
 	}
+
+#if MYSQL_VERSION_ID < 50019
+	opt = true;
+	if (mysql_options (DatabaseConnection, MYSQL_OPT_RECONNECT, &opt))
+	{
+		mysql_close(db);
+		DatabaseConnection = 0;
+		nlerror("mysql_options() failed for database connection to '%s'", IService::getInstance()->ConfigFile.getVar("DatabaseHost").asString().c_str());
+ 		return;
+	}
+#endif
 }
 
 
@@ -1136,7 +1161,7 @@ public:
 	/// Init the service, load the universal time.
 	void init ()
 	{
-		setDefaultEmailParams (ConfigFile.getVar ("SMTPServer").asString (), "", "");
+		setDefaultEmailParams (ConfigFile.getVar ("SMTPServer").asString (), ConfigFile.getVar("DefaultEmailFrom").asString(), "");
 
 		sqlInit ();
 
@@ -1234,5 +1259,5 @@ NLMISC_COMMAND (generateAlert, "generate an alert", "<text>")
 	return true;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "matrix_3x4.h"
+#include "nel/3d/matrix_3x4.h"
 
 
 namespace NL3D 
@@ -33,3 +33,6 @@ namespace NL3D
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

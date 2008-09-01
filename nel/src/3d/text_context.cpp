@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "text_context.h"
-#include "font_generator.h"
+#include "nel/3d/text_context.h"
+#include "nel/3d/font_generator.h"
 
 namespace NL3D {
 
@@ -180,5 +180,5 @@ bool CTextContext::isSameLetterColors(CLetterColors * letterColors, uint index)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

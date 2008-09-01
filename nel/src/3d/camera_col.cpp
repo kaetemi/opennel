@@ -24,7 +24,7 @@
  */
 
 #include "std3d.h"
-#include "camera_col.h"
+#include "nel/3d/camera_col.h"
 #include "nel/misc/matrix.h"
 #include "nel/misc/triangle.h"
 
@@ -596,3 +596,6 @@ for(uint i=0;i<=numSubdiv;i++)
 */
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

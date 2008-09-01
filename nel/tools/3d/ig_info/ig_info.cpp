@@ -23,7 +23,7 @@
  */
 
 
-#include "nel/../../src/3d/scene_group.h"
+#include "nel/3d/scene_group.h"
 #include "nel/misc/file.h"
 #include "nel/misc/common.h"
 #include <string>
@@ -96,3 +96,6 @@ int main(int argc, char **argv)
 		printf(e.what());
 	}
 }
+
+/* Merge OpenNeL SVN
+ */

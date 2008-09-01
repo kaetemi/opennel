@@ -6,7 +6,7 @@
 #endif // _MSC_VER > 1000
 // edit_ps_light.h : header file
 //
-#include "nel/../../src/3d/ps_light.h"
+#include "nel/3d/ps_light.h"
 //
 #include "ps_wrapper.h"
 #include "particle_workspace.h"
@@ -96,3 +96,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_EDIT_PS_LIGHT_H__6F00004D_F2A5_452E_9FC2_8188F9164613__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

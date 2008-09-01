@@ -38,8 +38,6 @@ public:
 	CString GetRegKeyValue(const char* lpszEntry);
 	void	ResetConnection();
 	BOOL	GetWindowsVersion();
-	void	EnableLog(BOOL bEnable = TRUE);
-	void	Log(CString cs);
 
 public:	
 	CString	m_csLogin;
@@ -80,3 +78,6 @@ private:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_NEL_LAUNCHER_H__C45E038E_0266_4168_98C0_57A9FD49B3B7__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

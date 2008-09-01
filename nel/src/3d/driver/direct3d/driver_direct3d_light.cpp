@@ -26,9 +26,9 @@
 
 #include "stddirect3d.h"
 
-#include "../../vertex_buffer.h"
-#include "../../light.h"
-#include "../../index_buffer.h"
+#include "nel/3d/vertex_buffer.h"
+#include "nel/3d/light.h"
+#include "nel/3d/index_buffer.h"
 #include "nel/misc/rect.h"
 #include "nel/misc/di_event_emitter.h"
 #include "nel/misc/mouse_device.h"
@@ -220,5 +220,5 @@ void			CDriverD3D::setupLightMapDynamicLighting(bool enable)
 } // NL3D
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "landscape_profile.h"
+#include "nel/3d/landscape_profile.h"
 
 
 namespace NL3D 
@@ -55,3 +55,6 @@ sint		ProfNPatchRdrFar0=0;
 sint		ProfNPatchRdrFar1=0;
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

@@ -25,9 +25,9 @@
 
 #include "std3d.h"
 
-#include "shadow_skin.h"
-#include "skeleton_model.h"
-#include "ray_mesh.h"
+#include "nel/3d/shadow_skin.h"
+#include "nel/3d/skeleton_model.h"
+#include "nel/3d/ray_mesh.h"
 #include "nel/misc/fast_mem.h"
 #include "nel/misc/vector_2f.h"
 
@@ -98,3 +98,6 @@ bool	CShadowSkin::getRayIntersection(const CMatrix &toRaySpace, CSkeletonModel &
 
 	
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

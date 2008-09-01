@@ -25,9 +25,9 @@
 
 #include "std3d.h"
 
-#include "vegetable.h"
+#include "nel/3d/vegetable.h"
 #include "nel/misc/common.h"
-#include "vegetable_manager.h"
+#include "nel/3d/vegetable_manager.h"
 #include "nel/misc/fast_floor.h"
 
 
@@ -406,3 +406,6 @@ void	CVegetable::serial(NLMISC::IStream &f)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

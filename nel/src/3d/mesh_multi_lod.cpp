@@ -25,16 +25,16 @@
 
 #include "std3d.h"
 
-#include "mesh_multi_lod.h"
-#include "mesh_multi_lod_instance.h"
-#include "mesh_instance.h"
-#include "mesh_mrm.h"
-#include "scene.h"
-#include "coarse_mesh_manager.h"
-#include "skeleton_model.h"
+#include "nel/3d/mesh_multi_lod.h"
+#include "nel/3d/mesh_multi_lod_instance.h"
+#include "nel/3d/mesh_instance.h"
+#include "nel/3d/mesh_mrm.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/coarse_mesh_manager.h"
+#include "nel/3d/skeleton_model.h"
 #include "nel/misc/fast_floor.h"
-#include "mesh_blender.h"
-#include "visual_collision_mesh.h"
+#include "nel/3d/mesh_blender.h"
+#include "nel/3d/visual_collision_mesh.h"
 
 #include "nel/misc/debug.h"
 #include "nel/misc/hierarchical_timer.h"
@@ -953,5 +953,5 @@ void	CMeshMultiLod::buildSystemGeometry()
 } // NL3D
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

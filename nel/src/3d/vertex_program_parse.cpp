@@ -23,7 +23,7 @@
  */
 
 #include "std3d.h"
-#include "vertex_program_parse.h"
+#include "nel/3d/vertex_program_parse.h"
 
 
 
@@ -1148,3 +1148,6 @@ void CVPParser::dump(const TProgram &prg, std::string &dest)
 }
 
 
+
+/* Merge OpenNeL SVN
+ */

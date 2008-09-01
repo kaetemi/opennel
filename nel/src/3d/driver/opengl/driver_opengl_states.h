@@ -27,7 +27,7 @@
 #define NL_DRIVER_OPENGL_STATES_H
 
 #include "nel/misc/types_nl.h"
-#include "../../vertex_buffer.h"
+#include "nel/3d/vertex_buffer.h"
 #include <GL/gl.h>
 
 
@@ -261,3 +261,6 @@ private:
 #endif // NL_DRIVER_OPENGL_STATES_H
 
 /* End of driver_opengl_states.h */
+
+/* Merge OpenNeL SVN
+ */

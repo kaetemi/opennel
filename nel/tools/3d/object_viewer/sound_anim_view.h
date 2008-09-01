@@ -89,7 +89,7 @@ class CSoundAnimView : public CWnd
 public:
 
 	CSoundAnimView() : CWnd() {}
-	virtual ~CSoundAnimView() {};
+	virtual ~CSoundAnimView() {}
 
 	virtual void			Create(CObjectViewer* objView, CAnimationDlg* animDlg, CSoundAnimDlg* parent, const RECT& rect);  
 
@@ -186,3 +186,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // NL_SOUND_ANIM_VIEW
+
+/* Merge OpenNeL SVN
+ */

@@ -355,7 +355,7 @@ void CResizableSheet::LoadWindowRect()
 
 	RECT& rc = wp.rcNormalPosition;	// alias
 
-	if (_stscanf(data, PROFILE_FMT, &rc.left, &rc.top,
+	if (_stscanf_s(data, PROFILE_FMT, &rc.left, &rc.top,
 		&rc.right, &rc.bottom, &wp.showCmd, &wp.flags, &page) == 7)
 	{
 		SetWindowPlacement(&wp);

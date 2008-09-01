@@ -32,8 +32,8 @@
 
 
 
-#include "nel/../../src/3d/ps_located.h"
-#include "nel/../../src/3d/ps_force.h"
+#include "nel/3d/ps_located.h"
+#include "nel/3d/ps_force.h"
 #include "dialog_stack.h"
 #include "ps_wrapper.h"
 #include "particle_workspace.h"
@@ -152,3 +152,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_LOCATED_TARGET_DLG_H__FA197835_AE71_4057_88A4_48F28A01E367__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

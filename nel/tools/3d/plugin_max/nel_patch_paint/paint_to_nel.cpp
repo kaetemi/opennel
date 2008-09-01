@@ -2,7 +2,7 @@
 #include "nel_patch_paint.h"
 
 #include "paint_to_nel.h"
-#include "nel/../../src/3d/landscape.h"
+#include "nel/3d/landscape.h"
 
 /*-------------------------------------------------------------------*/
 
@@ -182,3 +182,6 @@ CNelPatchValue::~CNelPatchValue ()
 	if (TileColors)
 		delete TileColors;
 }
+
+/* Merge OpenNeL SVN
+ */

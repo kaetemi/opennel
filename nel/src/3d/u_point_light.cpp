@@ -27,7 +27,7 @@
 
 #include "nel/misc/debug.h"
 #include "nel/3d/u_point_light.h"
-#include "point_light_model.h"
+#include "nel/3d/point_light_model.h"
 
 
 using namespace NLMISC;
@@ -191,5 +191,5 @@ bool			UPointLight::getInfluenceLightMap() const
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

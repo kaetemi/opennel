@@ -32,7 +32,7 @@
 
 #include "ps_wrapper.h"
 #include "dialog_stack.h"
-#include "nel/../../src/3d/particle_system.h"
+#include "nel/3d/particle_system.h"
 #include "particle_workspace.h"
 
 namespace NL3D
@@ -98,3 +98,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_AUTO_LOD_DLG_H__BCD6DB9A_FA8A_47AD_9E95_317A8B94047A__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

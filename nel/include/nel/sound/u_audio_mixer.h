@@ -86,10 +86,11 @@ public:
 	/// Driver Creation Choice
 	enum	TDriver
 	{
-		DriverAuto = 0,
-		DriverFMod,
-		DriverOpenAl,
-		DriverDSound,
+		DriverAuto = 0, 
+		DriverFMod, 
+		DriverOpenAl, 
+		DriverDSound, 
+		DriverXAudio2, 
 		NumDrivers
 	};
 	
@@ -412,5 +413,5 @@ public:
 
 /* End of u_audio_mixer.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

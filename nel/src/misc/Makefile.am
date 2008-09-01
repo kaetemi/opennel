@@ -122,8 +122,7 @@ libnelmisc_la_SOURCES = \
 	co_task.cpp \
 	xml_pack.cpp \
 	inter_window_msg_queue.cpp \
-	win32_util.cpp \
-	win_tray.cpp
+	win32_util.cpp
 
 
 noinst_HEADERS        = di_game_device.h \
@@ -142,5 +141,5 @@ pkgconfig_DATA = nel-misc.pc
 # End of Makefile.am
 
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

@@ -25,12 +25,12 @@
 
 #include "std3d.h"
 
-#include "flare_shape.h"
-#include "flare_model.h"
-#include "scene.h"
-#include "driver.h"
-#include "mesh.h"
-#include "shape_bank.h"
+#include "nel/3d/flare_shape.h"
+#include "nel/3d/flare_model.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/mesh.h"
+#include "nel/3d/shape_bank.h"
 
 
 
@@ -228,3 +228,6 @@ CMesh *CFlareShape::getOcclusionTestMesh(CShapeBank &sb)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

@@ -116,7 +116,7 @@ private:
 protected:
 
 	/// Constructor
-	IBuffer() {};
+	IBuffer() {}
 
 public:
 
@@ -132,3 +132,6 @@ public:
 #endif // NL_BUFFER_H
 
 /* End of buffer.h */
+
+/* Merge OpenNeL SVN
+ */

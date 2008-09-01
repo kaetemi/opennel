@@ -28,7 +28,7 @@
 #include <cstdio>
 #include <iostream>
 
-#include "zone_search.h"
+#include "nel/3d/zone_search.h"
 
 using namespace std;
 
@@ -231,3 +231,6 @@ std::string CZoneSearch::getZoneNameFromId (uint16 zoneid)
 
 } // NL3D
 
+
+/* Merge OpenNeL SVN
+ */

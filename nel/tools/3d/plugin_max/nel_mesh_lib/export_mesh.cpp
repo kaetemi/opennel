@@ -33,14 +33,14 @@
 #include "../nel_export/nel_export_scene.h"
 
 
-#include "nel/../../src/3d/texture_file.h"
-#include "nel/../../src/3d/texture_blend.h"
-#include "nel/../../src/3d/mesh_mrm.h"
-#include "nel/../../src/3d/mesh_mrm_skinned.h"
-#include "nel/../../src/3d/mesh_multi_lod.h"
-#include "nel/../../src/3d/coarse_mesh_manager.h"
-#include "nel/../../src/3d/water_shape.h"
-#include "nel/../../src/3d/meshvp_wind_tree.h"
+#include "nel/3d/texture_file.h"
+#include "nel/3d/texture_blend.h"
+#include "nel/3d/mesh_mrm.h"
+#include "nel/3d/mesh_mrm_skinned.h"
+#include "nel/3d/mesh_multi_lod.h"
+#include "nel/3d/coarse_mesh_manager.h"
+#include "nel/3d/water_shape.h"
+#include "nel/3d/meshvp_wind_tree.h"
 
 
 #include <nel/misc/polygon.h>
@@ -2090,5 +2090,6 @@ bool CExportNel::buildMeshAABBox(INode &node, NLMISC::CAABBox &dest, TimeValue t
 }
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+
+/* Merge OpenNeL SVN
  */

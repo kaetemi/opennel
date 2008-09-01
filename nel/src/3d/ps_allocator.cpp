@@ -23,8 +23,8 @@
  */
 
 #include "std3d.h"
-#include "particle_system_process.h"
-#include "ps_allocator.h"
+#include "nel/3d/particle_system_process.h"
+#include "nel/3d/ps_allocator.h"
 
 namespace NL3D
 {
@@ -79,3 +79,6 @@ namespace NL3D
 		}
 	#endif
 }
+
+/* Merge OpenNeL SVN
+ */

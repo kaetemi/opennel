@@ -46,7 +46,7 @@ class UFormDfn;
 class UFormLoader
 {
 public:
-	virtual ~UFormLoader() {};
+	virtual ~UFormLoader() {}
 
 	/** Load a form, use NMISC::CPath to find the file.
 	  * 
@@ -81,5 +81,5 @@ public:
 
 /* End of u_form_loader.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

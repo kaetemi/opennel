@@ -54,7 +54,7 @@ public:
 	struct CShardEntry
 	{
 		CShardEntry() { NbPlayers = 0; Id = -1; }
-		CShardEntry(const ucstring &name, uint8 nbp, sint32 sid) : Name(name), NbPlayers(nbp), Id(sid) { }
+		CShardEntry(const ucstring &name, uint8 nbp, sint32 sid) : Id(sid), Name(name), NbPlayers(nbp) { }
 		sint32		Id;
 		ucstring	Name;
 		uint8		NbPlayers;
@@ -69,11 +69,14 @@ public:
 	* application is the name of the application. the LS will return all shards that is available for this application (sample, snowballs, ...)
 	* If the authentication is ok, the function return an empty string else it returns the reason of the failure.
 	*/
-	static std::string authenticate (const std::string &loginServiceAddr, const ucstring &login, const std::string &cpassword, const std::string &application);
-
-	/** Try to connect to the shard and return a TCP connection to the shard.
+	static std::string authenticate(const std::string &loginServiceAddr, const ucstring &login, const std::string &cpassword, const std::string &application);
+	static std::string authenticateBegin(const std::string &loginServiceAddr, const ucstring &login, const std::string &cpassword, const std::string &application);
+	static bool authenticateUpdate(std::string &error);
+	/** Todo: fix comment.
 	*/
 	static std::string wantToConnectToShard (sint32 shardId, std::string &ip, std::string &cookie);
+	static std::string selectShardBegin(sint32 shardId);
+	static bool selectShardUpdate(std::string &error, std::string &ip, std::string &cookie);
 
 	/** Try to connect to the shard and return a TCP connection to the shard.
 	 */
@@ -103,5 +106,5 @@ private:
 
 /* End of login_client.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

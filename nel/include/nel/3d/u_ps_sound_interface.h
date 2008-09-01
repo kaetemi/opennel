@@ -51,7 +51,7 @@ struct UPSSoundInstance;
  */
 struct UPSSoundServer
 {
-	virtual ~UPSSoundServer() {};
+	virtual ~UPSSoundServer() {}
 	
 	/** Querry the implementer to create a sound instance, and retrieve an interface to it.
 	  * NULL means that the server can't create the sound, so it is ignored
@@ -70,7 +70,7 @@ struct UPSSoundServer
 
 struct UPSSoundInstance
 {
-	virtual ~UPSSoundInstance() {};
+	virtual ~UPSSoundInstance() {}
 	
 	/** The system will call this method to set the parameters of the sound	  
 	  * Values are clamped
@@ -112,5 +112,5 @@ struct UPSSoundInstance
 
 /* End of ps_sound_interface.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

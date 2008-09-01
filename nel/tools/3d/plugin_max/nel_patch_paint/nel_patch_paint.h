@@ -8,7 +8,7 @@
 #include "nsclip.h"
 #include "sbmtlapi.h"
 #include "../nel_patch_lib/rpo.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 #include "nel/3d/quad_tree.h"
 #include "nel/misc/rgba.h"
 #include <list>
@@ -675,5 +675,5 @@ inline bool EPM_PaintMouseProc::isLocked (PaintPatchMod *pobj, EPM_PaintTile* pT
 
 #endif // __EDITPATCH_H__
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

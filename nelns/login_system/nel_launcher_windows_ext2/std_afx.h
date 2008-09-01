@@ -47,6 +47,8 @@
 #include <sys/stat.h>
 #include <errno.h>
 
+#include <nel/misc/types_nl.h>
+
 #include <queue>
 #include <string>
 
@@ -63,3 +65,6 @@
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_STDAFX_H__0B961212_9577_4F64_A497_B29F1567876C__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "skeleton_weight.h"
+#include "nel/3d/skeleton_weight.h"
 #include "nel/misc/stream.h"
 
 
@@ -95,3 +95,6 @@ void CSkeletonWeight::CNode::serial (NLMISC::IStream& f)
 // ***************************************************************************
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

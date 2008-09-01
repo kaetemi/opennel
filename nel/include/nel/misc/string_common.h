@@ -156,6 +156,9 @@ template<class A, class B, class C, class D, class E, class F, class G, class H,
 #endif
 	
 #ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
+#ifdef NL_OS_WINDOWS
 	inline std::string _toString(const char *format, ...)
 #else
 	inline std::string toString(const char *format, ...)
@@ -165,6 +168,9 @@ template<class A, class B, class C, class D, class E, class F, class G, class H,
 	NLMISC_CONVERT_VARGS(Result, format, NLMISC::MaxCStringSize);
 	return Result;
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 #ifdef NL_OS_WINDOWS
 	CHECK_TYPES(std::string toString, return _toString)
@@ -250,5 +256,5 @@ inline void fromString(const std::string &str, sint &val) { sscanf(str.c_str(), 
 
 #endif	// NL_STRING_COMMON_H
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

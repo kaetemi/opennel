@@ -25,15 +25,15 @@
 
 #include "std3d.h"
 
-#include "flare_model.h"
-#include "flare_shape.h"
-#include "driver.h"
-#include "material.h"
-#include "dru.h"
-#include "scene.h"
-#include "render_trav.h"
-#include "occlusion_query.h"
-#include "mesh.h"
+#include "nel/3d/flare_model.h"
+#include "nel/3d/flare_shape.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/material.h"
+#include "nel/3d/dru.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/render_trav.h"
+#include "nel/3d/occlusion_query.h"
+#include "nel/3d/mesh.h"
 #include "nel/3d/viewport.h"
 #include "nel/misc/common.h"
 
@@ -727,5 +727,5 @@ void CFlareModel::renderOcclusionTestMesh(IDriver &drv)
 
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

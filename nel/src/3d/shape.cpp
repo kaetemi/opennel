@@ -25,9 +25,9 @@
 
 #include "std3d.h"
 
-#include "shape.h"
-#include "transform_shape.h"
-#include "scene.h"
+#include "nel/3d/shape.h"
+#include "nel/3d/transform_shape.h"
+#include "nel/3d/scene.h"
 
 #include <string>
 
@@ -134,3 +134,6 @@ void CShapeStream::serial(NLMISC::IStream &f) throw(NLMISC::EStream)
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

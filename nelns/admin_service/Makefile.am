@@ -23,5 +23,5 @@ admin_service_SOURCES = admin_service.cpp connection_web.cpp
 # End of Makefile.am
 
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

@@ -39,11 +39,11 @@ namespace NL3D
 
 #include "nel/misc/rgba.h"
 //
-#include "nel/../../src/3d/texture.h"
-#include "nel/../../src/3d/ps_plane_basis.h"
-#include "nel/../../src/3d/particle_system.h"
-#include "nel/../../src/3d/ps_particle.h"
-#include "nel/../../src/3d/ps_particle2.h"
+#include "nel/3d/texture.h"
+#include "nel/3d/ps_plane_basis.h"
+#include "nel/3d/particle_system.h"
+#include "nel/3d/ps_particle.h"
+#include "nel/3d/ps_particle2.h"
 //
 #include "ps_wrapper.h"
 #include "dialog_stack.h"
@@ -315,3 +315,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_LOCATED_BINDABLE_DIALOG_H__C715DCAB_3F07_4777_96DA_61AE2E420B09__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

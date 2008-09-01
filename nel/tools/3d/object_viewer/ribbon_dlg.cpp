@@ -6,7 +6,7 @@
 #include "ribbon_dlg.h"
 #include "editable_range.h"
 
-#include "nel/../../src/3d/ps_particle2.h"
+#include "nel/3d/ps_particle2.h"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -171,3 +171,6 @@ void CRibbonDlg::OnSelchangeTrailCoordSystem()
 	_Ribbon->setMatrixMode((NL3D::CPSRibbonBase::TMatrixMode) ((CComboBox *) GetDlgItem(IDC_TRAIL_COORD_SYSTEM))->GetCurSel());
 	_Node->setModified(true);
 }
+
+/* Merge OpenNeL SVN
+ */

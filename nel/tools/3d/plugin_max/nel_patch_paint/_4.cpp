@@ -2067,5 +2067,5 @@ static const unsigned char _4[] =
 static const unsigned int _4Size = 16428;
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

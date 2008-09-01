@@ -277,15 +277,18 @@ int main ()
 				// Remove a primitive if DELETE pressed
 				if (pDriver->AsyncListener.isKeyDown (KeyDELETE))
 				{
-					arrayObj[arrayObj.size()-1]->remove (*container, *pScene);
-					arrayObj.resize (arrayObj.size()-1);
+					// remove all but one
+					if (arrayObj.size() > 1) {
+						arrayObj[arrayObj.size()-1]->remove (*container, *pScene);
+						arrayObj.resize (arrayObj.size()-1);
+					}
 				}
 
 				// Check selected
 				if (selected>=arrayObj.size())
 					selected=arrayObj.size()-1;
-				if (selected<0)
-					selected=0;
+				//if (selected<0)
+				//	selected=0;
 
 				// Change selected object if TAB pressed
 				if (pDriver->AsyncListener.isKeyPushed (KeyTAB))
@@ -385,5 +388,5 @@ int main ()
 	return 0;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

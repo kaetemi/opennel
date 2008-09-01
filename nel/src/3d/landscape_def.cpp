@@ -26,7 +26,7 @@
 #include "std3d.h"
 
 
-#include "landscape_def.h"
+#include "nel/3d/landscape_def.h"
 #include "nel/misc/common.h"
 
 
@@ -85,3 +85,6 @@ CIndexBuffer::TFormat	NL3D_LandscapeGlobals_PassTriFormat= CIndexBuffer::Indices
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

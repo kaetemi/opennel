@@ -74,7 +74,7 @@ public:
 	  */
 	enum TMouseMode { nelStyle, edit3d, firstPerson };
 
-	virtual ~U3dMouseListener() {};
+	virtual ~U3dMouseListener() {}
 
 	/// \name Setup
 
@@ -147,5 +147,5 @@ public:
 
 /* End of u_3d_mouse_listener.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

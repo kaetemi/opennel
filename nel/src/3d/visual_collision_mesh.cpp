@@ -25,11 +25,11 @@
 
 #include "std3d.h"
 
-#include "visual_collision_mesh.h"
-#include "quad_grid.h"
-#include "camera_col.h"
-#include "driver.h"
-#include "shadow_map.h"
+#include "nel/3d/visual_collision_mesh.h"
+#include "nel/3d/quad_grid.h"
+#include "nel/3d/camera_col.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/shadow_map.h"
 
 
 using namespace std;
@@ -564,3 +564,6 @@ void		CVisualCollisionMesh::receiveShadowMap(const NLMISC::CMatrix &instanceMatr
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

@@ -36,8 +36,8 @@
 #include "nel/misc/rgba.h"
 #include "nel/misc/vector.h"
 //
-#include "nel/../../src/3d/ps_attrib_maker.h"
-#include "nel/../../src/3d/texture.h"
+#include "nel/3d/ps_attrib_maker.h"
+#include "nel/3d/texture.h"
 //
 #include "particle_workspace.h"
 
@@ -122,3 +122,6 @@ protected:
 };
 
 #endif
+
+/* Merge OpenNeL SVN
+ */

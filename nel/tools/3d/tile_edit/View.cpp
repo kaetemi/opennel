@@ -10,7 +10,7 @@
 #include "popup.h"
 #include <direct.h>
 //#include "ListGroup.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 //#include "ViewPopup.h"
 #include "pic\readpic.h"
 
@@ -1663,5 +1663,6 @@ void CTView::OnLButtonDblClk(UINT nFlags, CPoint point)
 }
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+
+/* Merge OpenNeL SVN
  */

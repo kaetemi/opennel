@@ -23,6 +23,8 @@
  * MA 02111-1307, USA.
  */
 
+#include "std3d.h"
+
 // ace: before including this, #define this define to use it
 //      the goal is to be able to compile every .cpp file with no
 //      special case (GNU/Linux needs)
@@ -36,6 +38,9 @@
 
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 static void	applyArraySkinNormalT(uint numMatrixes, uint32 *infPtr, CMesh::CSkinWeight *srcSkinPtr, 
 	CVector *srcVertexPtr, CVector *srcNormalPtr, uint normalOff,
 	uint8 *destVertexPtr, vector<CMatrix3x4> &boneMat3x4, uint vertexSize, uint nInf)
@@ -169,10 +174,14 @@ static void	applyArraySkinNormalT(uint numMatrixes, uint32 *infPtr, CMesh::CSkin
 
 	}
 }
-
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 static void	applyArraySkinTangentSpaceT(uint numMatrixes, uint32 *infPtr, CMesh::CSkinWeight *srcSkinPtr, 
 	CVector *srcVertexPtr, CVector *srcNormalPtr, CVector *tgSpacePtr, uint normalOff, uint tgSpaceOff,
 	uint8 *destVertexPtr, vector<CMatrix3x4> &boneMat3x4, uint vertexSize, uint nInf)
@@ -331,11 +340,11 @@ static void	applyArraySkinTangentSpaceT(uint numMatrixes, uint32 *infPtr, CMesh:
 			boneMat3x4[ srcSkin->MatrixId[3] ].mulAddVector( *srcTgSpace, srcSkin->Weights[3], *dstTgSpace);								
 		}
 		break;
-
 	}
-
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 
 // ***************************************************************************
@@ -504,6 +513,9 @@ void	CMeshMRMGeom::applySkinWithTangentSpace(CLod &lod, const CSkeletonModel *sk
 
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CMeshMRMGeom::applyArrayRawSkinNormal1(CRawVertexNormalSkin1 *src, uint8 *destVertexPtr, 
 	CMatrix3x4 *boneMat3x4, uint nInf)
 {
@@ -678,11 +690,15 @@ void		CMeshMRMGeom::applyArrayRawSkinNormal1(CRawVertexNormalSkin1 *src, uint8 *
 		}
 #endif
 	}
-
-
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CMeshMRMGeom::applyArrayRawSkinNormal2(CRawVertexNormalSkin2 *src, uint8 *destVertexPtr, 
 	CMatrix3x4 *boneMat3x4, uint nInf)
 {
@@ -982,10 +998,15 @@ void		CMeshMRMGeom::applyArrayRawSkinNormal2(CRawVertexNormalSkin2 *src, uint8 *
 		}
 #endif
 	}
-
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CMeshMRMGeom::applyArrayRawSkinNormal3(CRawVertexNormalSkin3 *src, uint8 *destVertexPtr, 
 	CMatrix3x4 *boneMat3x4, uint nInf)
 {
@@ -1375,9 +1396,11 @@ void		CMeshMRMGeom::applyArrayRawSkinNormal3(CRawVertexNormalSkin3 *src, uint8 *
 			mov		destVertexPtr, edi
 		}
 #endif
-
 	}
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 void		CMeshMRMGeom::applyArrayRawSkinNormal4(CRawVertexNormalSkin4 *src, uint8 *destVertexPtr, 
@@ -1575,3 +1598,7 @@ void	CMeshMRMGeom::applyRawSkinWithNormal(CLod &lod, CRawSkinNormalCache &rawSki
 }
 
 #endif // ADD_MESH_MRM_SKIN_TEMPLATE
+
+
+/* Merge OpenNeL SVN
+ */

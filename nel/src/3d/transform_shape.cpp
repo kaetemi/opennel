@@ -27,15 +27,15 @@
 
 #include "nel/misc/hierarchical_timer.h"
 #include "nel/misc/debug.h"
-#include "driver.h"
-#include "transform_shape.h"
-#include "skeleton_model.h"
-#include "mesh_base_instance.h"
-#include "clip_trav.h"
-#include "render_trav.h"
-#include "load_balancing_trav.h"
-#include "quad_grid_clip_cluster.h"
-#include "scene.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/transform_shape.h"
+#include "nel/3d/skeleton_model.h"
+#include "nel/3d/mesh_base_instance.h"
+#include "nel/3d/clip_trav.h"
+#include "nel/3d/render_trav.h"
+#include "nel/3d/load_balancing_trav.h"
+#include "nel/3d/quad_grid_clip_cluster.h"
+#include "nel/3d/scene.h"
 
 
 using namespace NLMISC;
@@ -357,5 +357,5 @@ void	CTransformShape::getLightHotSpotInWorld(CVector &modelPos, float &modelRadi
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

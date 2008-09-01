@@ -478,5 +478,5 @@ NLMISC_CATEGORISED_VARIABLE(nel, uint32, NbClientReceiveTask, "Number of client 
 
 } // NLNET
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

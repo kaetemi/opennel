@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "vegetable_clip_block.h"
+#include "nel/3d/vegetable_clip_block.h"
 
 
 namespace NL3D 
@@ -99,3 +99,6 @@ bool			CVegetableClipBlock::clip(const std::vector<CPlane>	&pyramid)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

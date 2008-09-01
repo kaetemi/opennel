@@ -27,6 +27,8 @@
 // Includes
 //
 
+#include <nel/misc/types_nl.h>
+
 #include "physics.h"
 
 //
@@ -35,6 +37,8 @@
 
 using namespace std;
 using namespace NLMISC;
+
+// -- -- this file exists twice
 
 CVector	CTrajectory::eval(NLMISC::TTime t) const
 {
@@ -57,3 +61,6 @@ CVector	CTrajectory::evalSpeed(NLMISC::TTime t) const
 	res.z += 0.3f*_Distance*_Distance/90.0f*(float)Pi*(float)cos(Pi*ft);
 	return res;
 }
+
+/* Merge OpenNeL SVN
+ */

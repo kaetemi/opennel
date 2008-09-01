@@ -26,9 +26,9 @@
 
 #include "stddirect3d.h"
 
-#include "../../vertex_buffer.h"
-#include "../../light.h"
-#include "../../index_buffer.h"
+#include "nel/3d/vertex_buffer.h"
+#include "nel/3d/light.h"
+#include "nel/3d/index_buffer.h"
 #include "nel/misc/rect.h"
 #include "nel/misc/di_event_emitter.h"
 #include "nel/misc/mouse_device.h"
@@ -1029,7 +1029,7 @@ void CDriverD3D::swapTextureHandle(ITexture &tex0, ITexture &tex1)
 	setupTexture(tex1);
 
 	// avoid any problem, disable all textures
-	for(sint stage=0; stage<inlGetNumTextStages() ; stage++)
+	for(uint stage=0; stage<inlGetNumTextStages() ; stage++)
 	{
 		setTexture (stage, (LPDIRECT3DBASETEXTURE9)NULL);
 	}
@@ -1191,5 +1191,5 @@ bool CDriverD3D::getRenderTargetSize (uint32 &width, uint32 &height)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

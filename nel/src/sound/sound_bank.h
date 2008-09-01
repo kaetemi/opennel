@@ -95,7 +95,7 @@ public:
 
 private:
 	/// Constructor
-	CSoundBank() : _Loaded(false) {};
+	CSoundBank() : _Loaded(false) {}
 
 
 	/// CSoundBank singleton instance.
@@ -138,3 +138,6 @@ public:
 
 /* End of sound.h */
 
+
+/* Merge OpenNeL SVN
+ */

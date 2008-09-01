@@ -2317,5 +2317,5 @@ bool	NLPACS::CLocalRetriever::checkSurfaceIntegrity(uint surf, NLMISC::CVector t
 	return success;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

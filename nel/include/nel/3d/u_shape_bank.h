@@ -48,7 +48,7 @@ namespace NL3D
 class UShapeBank
 {
 public:
-	virtual ~UShapeBank() {};
+	virtual ~UShapeBank() {}
 
 	/**
 	  * Add a new ShapeCache. If already exist do nothing.
@@ -117,5 +117,5 @@ public:
 
 /* End of u_shape_bank.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

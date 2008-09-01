@@ -98,5 +98,5 @@ void beep (uint freq = 400, uint nb = 2, uint beepDuration = 100, uint pauseDura
 
 /* End of login_service.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

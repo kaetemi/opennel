@@ -26,13 +26,14 @@
 #include "tile_utility.h"
 
 #include "nel/misc/types_nl.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 #include "nel/misc/file.h"
 #include "../nel_patch_lib/rpo.h"
 
 #define TILE_UTILITY_CLASS_ID	Class_ID(0x2301c0, 0x4c156b46)
 
 extern ClassDesc* GetRGBAddDesc();
+extern HINSTANCE hInstance;
 
 using namespace NLMISC;
 using namespace NL3D;
@@ -100,7 +101,7 @@ static BOOL CALLBACK Tile_utilityDlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPA
 			//  load the sampler dropdown
 
 			// Get the module path
-			HMODULE hModule = GetModuleHandle("neltileutility.dlu");
+			HMODULE hModule = hInstance;
 			if (hModule)
 			{
 				// Get module file name
@@ -154,7 +155,7 @@ static BOOL CALLBACK Tile_utilityDlgProc(HWND hWnd, UINT msg, WPARAM wParam, LPA
 					SetWindowText (GetDlgItem (hWnd, IDC_VERSION), "GetModuleFileName failed");
 			}
 			else
-				SetWindowText (GetDlgItem (hWnd, IDC_VERSION), "GetModuleHandle failed");
+				SetWindowText (GetDlgItem (hWnd, IDC_VERSION), "hInstance NULL");
 
 
 			theTile_utility.Init(hWnd);
@@ -530,5 +531,5 @@ bool Tile_utility::SetupMaterial () const
 	return bSet;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -59,7 +59,7 @@ public:
 	virtual ~CFormElm ();
 
 	/// Reset contents
-	virtual void	clean() {};
+	virtual void	clean() {}
 
 	// Get the form pointer
 	CForm			*getForm () const;
@@ -678,3 +678,6 @@ inline bool CFormElm::convertValue (NLMISC::CRGBA &result, const char *value) co
 } // NLGEORGES
 
 #endif // NL_FORM_ELM_H
+
+/* Merge OpenNeL SVN
+ */

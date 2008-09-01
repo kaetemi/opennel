@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "texture_cube.h"
+#include "nel/3d/texture_cube.h"
 #include "nel/misc/file.h"
 #include "nel/misc/path.h"
 #include "nel/misc/debug.h"
@@ -216,3 +216,6 @@ ITexture *CTextureCube::buildNonSelectableVersion(uint index)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

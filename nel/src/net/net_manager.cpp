@@ -23,16 +23,16 @@
  * MA 02111-1307, USA.
  */
 
-
-
+#include "stdnet.h"
 
 /**************************************************************************
 ********************* THIS CLASS IS DEPRECATED ****************************
 **************************************************************************/
-
-#pragma message(NL_LOC_WRN "You are using a deprecated feature of NeL, consider rewriting your code with replacement feature")
-
-#include "stdnet.h"
+#ifdef NL_OS_WINDOWS
+#	pragma message(NL_LOC_WRN "You are using a deprecated feature of NeL, consider rewriting your code with replacement feature")
+#else // NL_OS_UNIX
+#	warning "You are using a deprecated feature of NeL, consider rewriting your code with replacement feature"
+#endif
 
 #include "nel/misc/time_nl.h"
 
@@ -521,5 +521,5 @@ uint64 CNetManager::getReceiveQueueSize ()
 
 } // NLNET
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

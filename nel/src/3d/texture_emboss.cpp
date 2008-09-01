@@ -23,7 +23,7 @@
  */
 
 #include "std3d.h"
-#include "texture_emboss.h"
+#include "nel/3d/texture_emboss.h"
 
 namespace NL3D {
 
@@ -164,5 +164,5 @@ void CTextureEmboss::doGenerate(bool async)
 
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

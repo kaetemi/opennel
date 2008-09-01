@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "trav_scene.h"
-#include "scene.h"
+#include "nel/3d/trav_scene.h"
+#include "nel/3d/scene.h"
 
 
 
@@ -40,3 +40,6 @@ namespace	NL3D
 
 
 /* End of trav_scene.cpp */
+
+/* Merge OpenNeL SVN
+ */

@@ -34,9 +34,9 @@
 
 #include "nel/misc/matrix.h"
 //
-#include "nel/../../src/3d/ps_particle.h"
-#include "nel/../../src/3d/ps_edit.h"
-#include "nel/../../src/3d/ps_located.h"
+#include "nel/3d/ps_particle.h"
+#include "nel/3d/ps_edit.h"
+#include "nel/3d/ps_located.h"
 //
 #include "particle_workspace.h"
 //
@@ -223,3 +223,6 @@ public:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_PARTICLE_TREE_CTRL_H__9A55D046_3E95_49CC_99AC_8A4F268EDD33__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

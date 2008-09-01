@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "shape_bank_user.h"
-#include "driver_user.h"
+#include "nel/3d/shape_bank_user.h"
+#include "nel/3d/driver_user.h"
 #include "nel/misc/file.h"
 #include "nel/misc/path.h"
 #include "nel/misc/big_file.h"
@@ -117,5 +117,5 @@ void	CShapeBankUser::buildSystemGeometryForshape(const std::string &shapeName)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

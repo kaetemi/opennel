@@ -38,7 +38,7 @@ namespace NL3D
 	class CWaterPoolManager;
 }
 
-#include "nel/../../src/3d/water_height_map.h"
+#include "nel/3d/water_height_map.h"
 #include "ps_wrapper.h"
 #include "editable_range.h"
 
@@ -202,3 +202,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_WATER_POOL_EDITOR_H__E6DAABC1_AD21_42EB_9DA4_A0AFBAE7C47C__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

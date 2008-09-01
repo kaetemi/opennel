@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "track.h"
+#include "nel/3d/track.h"
 
 #include "nel/misc/rgba.h"
 #include "nel/misc/hierarchical_timer.h"
@@ -213,3 +213,6 @@ bool ITrack::interpolate (TAnimationTime time, bool& res)
 // ***************************************************************************
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

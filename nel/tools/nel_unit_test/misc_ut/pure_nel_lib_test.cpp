@@ -1,7 +1,7 @@
 
 #include "nel/misc/common.h"
 #include "nel/misc/path.h"
-#include "src/cpptest.h"
+#include "cpptest.h"
 #include "dyn_lib_test.h"
 
 using namespace std;
@@ -192,3 +192,6 @@ Test::Suite *createPureNelLibTS(const std::string &workingPath)
 {
 	return new CPureNelLibTS(workingPath);
 }
+
+/* Merge OpenNeL SVN
+ */

@@ -25,9 +25,9 @@
 
 #include "std3d.h"
 
-#include "light_influence_interpolator.h"
+#include "nel/3d/light_influence_interpolator.h"
 #include "nel/misc/debug.h"
-#include "point_light_named.h"
+#include "nel/3d/point_light_named.h"
 
 
 namespace NL3D 
@@ -111,3 +111,6 @@ void		CLightInfluenceInterpolator::interpolate(std::vector<CPointLightInfluence>
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

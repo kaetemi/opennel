@@ -28,7 +28,7 @@
 #include "object_viewer.h"
 #include "constraint_mesh_tex_dlg.h"
 #include "constraint_mesh_global_tex_anim_dlg.h"
-#include "nel/../../src/3d/ps_mesh.h"
+#include "nel/3d/ps_mesh.h"
 
 
 
@@ -160,3 +160,6 @@ void CConstraintMeshTexDlg::OnReinitWhenNewElementIsCreated()
 {
 	_CM->forceGlobalAnimTimeResetOnNewElement(((CButton *) GetDlgItem(IDC_REINIT_WHEN_NEW_ELEMENT_IS_CREATED))->GetCheck() ? true : false);
 }
+
+/* Merge OpenNeL SVN
+ */

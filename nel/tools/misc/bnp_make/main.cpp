@@ -273,6 +273,8 @@ uint readOptions (int nNbArg, char **ppArgs)
 // ---------------------------------------------------------------------------
 int main (int nNbArg, char **ppArgs)
 {
+	NLMISC::CApplicationContext myApplicationContext;
+
 	if (nNbArg < 3)
 	{
 		usage();
@@ -454,3 +456,6 @@ int main (int nNbArg, char **ppArgs)
 	usage ();
 	return -1;
 }
+
+/* Merge OpenNeL SVN
+ */

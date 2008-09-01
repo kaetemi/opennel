@@ -188,5 +188,5 @@ public:
 
 #endif // NL_SOUND_ANIM_MANAGER_H
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

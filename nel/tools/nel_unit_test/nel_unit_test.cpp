@@ -11,7 +11,7 @@
 #include <streambuf>
 #include <fstream>
 
-#include "src/cpptest.h"
+#include "cpptest.h"
 
 
 
@@ -41,8 +41,8 @@ class CDebugOutput : public streambuf
 // The instance of the streambug
 ostream msvDebug(new CDebugOutput);
 
-FILE *logFile;
 #endif
+FILE *logFile;
 
 enum OutputType
 {
@@ -223,3 +223,6 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
+
+/* Merge OpenNeL SVN
+ */

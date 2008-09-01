@@ -26,7 +26,7 @@
 #include "std_afx.h"
 #include "object_viewer.h"
 #include "main_dlg.h"
-#include "nel/../../src/3d/channel_mixer.h"
+#include "nel/3d/channel_mixer.h"
 
 using namespace NLMISC;
 using namespace NL3D;
@@ -129,3 +129,6 @@ void CMainDlg::refresh (BOOL update)
 	for (uint s=0; s<CChannelMixer::NumAnimationSlot; s++)
 		Slots[s].refresh (update);
 }
+
+/* Merge OpenNeL SVN
+ */

@@ -5,7 +5,7 @@
 #include "object_viewer.h"
 #include "edit_follow_path.h"
 #include "popup_notify.h"
-#include "nel/../../src/3d/ps_plane_basis_maker.h"
+#include "nel/3d/ps_plane_basis_maker.h"
 
 
 
@@ -71,3 +71,6 @@ void CEditFollowPath::OnSelchangeProjectionMode()
 	_FollowPath->setProjectionPlane((NL3D::CPSPlaneBasisFollowSpeed::TProjectionPlane) index);	
 	if (_Node) _Node->setModified(true);
 }
+
+/* Merge OpenNeL SVN
+ */

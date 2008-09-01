@@ -26,8 +26,8 @@
 #include "std3d.h"
 #include <map>
 
-#include "texture_font.h"
-#include "font_generator.h"
+#include "nel/3d/texture_font.h"
+#include "nel/3d/font_generator.h"
 
 #include "nel/misc/common.h"
 #include "nel/misc/rect.h"
@@ -382,5 +382,5 @@ CTextureFont::SLetterInfo* CTextureFont::getLetterInfo (SLetterKey& k)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

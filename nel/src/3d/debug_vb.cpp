@@ -23,9 +23,9 @@
  */
 
 #include "std3d.h"
-#include "debug_vb.h"
-#include "vertex_buffer.h"
-#include "index_buffer.h"
+#include "nel/3d/debug_vb.h"
+#include "nel/3d/vertex_buffer.h"
+#include "nel/3d/index_buffer.h"
 
 namespace NL3D
 {
@@ -97,5 +97,5 @@ void nlCheckIBA(CIndexBufferRead &iba, const uint8 *ptStart)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

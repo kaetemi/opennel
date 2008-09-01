@@ -23,7 +23,7 @@
  */
 
 #include "std3d.h"
-#include "water_env_map_user.h"
+#include "nel/3d/water_env_map_user.h"
 #include "nel/3d/u_scene.h"
 #include "nel/3d/u_camera.h"
 
@@ -123,3 +123,6 @@ void CWaterEnvMapUser::invalidate()
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

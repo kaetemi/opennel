@@ -26,11 +26,11 @@
 #include "std3d.h"
 
 #include "nel/misc/debug.h"
-#include "instance_group_user.h"
-#include "scene_user.h"
-#include "mesh_multi_lod_instance.h"
-#include "text_context_user.h"
-#include "particle_system_model.h"
+#include "nel/3d/instance_group_user.h"
+#include "nel/3d/scene_user.h"
+#include "nel/3d/mesh_multi_lod_instance.h"
+#include "nel/3d/text_context_user.h"
+#include "nel/3d/particle_system_model.h"
 #include "nel/misc/path.h"
 #include "nel/misc/file.h"
 #include "nel/3d/u_instance.h"
@@ -551,5 +551,5 @@ bool			CInstanceGroupUser::dontCastShadowForExterior(uint instance) const
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

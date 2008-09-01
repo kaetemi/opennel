@@ -96,7 +96,7 @@ void CNumEdit::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 
 
-void CNumEdit::OnPaste(WPARAM /*wParam*/, LPARAM /*lParam*/)
+LRESULT CNumEdit::OnPaste(WPARAM /*wParam*/, LPARAM /*lParam*/)
 {
 	static BOOL called = FALSE;
 
@@ -121,6 +121,7 @@ void CNumEdit::OnPaste(WPARAM /*wParam*/, LPARAM /*lParam*/)
 		SetWindowText(old);
 	}
 */
+	return 0;
 }
 
 
@@ -158,4 +159,5 @@ BOOL CNumEdit::checkValidity()
 
 	return TRUE;
 }
+
 

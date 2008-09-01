@@ -108,7 +108,7 @@ struct CContextMatcher
 class IContextSoundContainer
 {
 public:
-	virtual				~IContextSoundContainer() {};
+	virtual				~IContextSoundContainer() {}
 	virtual void		init(uint *contextArgsIndex) =0;
 	virtual void		addSound(CSound *sound, const std::string &baseName) =0;
 	virtual CSound		*getSound(const CSoundContext &context, uint32 randomValue) =0;
@@ -334,5 +334,5 @@ private:
 
 #endif //NL_CONTEXT_SOUND_H
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

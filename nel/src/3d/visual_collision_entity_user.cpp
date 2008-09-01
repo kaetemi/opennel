@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "visual_collision_entity_user.h"
-#include "driver_user.h"
+#include "nel/3d/visual_collision_entity_user.h"
+#include "nel/3d/driver_user.h"
 #include "nel/misc/hierarchical_timer.h"
 
 
@@ -120,5 +120,5 @@ bool	CVisualCollisionEntityUser::getSurfaceInfo(const CVector &pos, CSurfaceInfo
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

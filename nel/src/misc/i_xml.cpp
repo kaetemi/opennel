@@ -128,6 +128,9 @@ void CIXml::release ()
 
 // ***************************************************************************
 
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void xmlGenericErrorFuncRead (void *ctx, const char *msg, ...)
 {
 	// Get the error string
@@ -135,6 +138,9 @@ void xmlGenericErrorFuncRead (void *ctx, const char *msg, ...)
 	NLMISC_CONVERT_VARGS (str, msg, NLMISC::MaxCStringSize);
 	((CIXml*)ctx)->_ErrorString += str;
 }
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 
@@ -1154,5 +1160,5 @@ bool CIXml::getContentString (std::string &result, xmlNodePtr node)
 
 #endif // NL_DONT_USE_EXTERNAL_CODE
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

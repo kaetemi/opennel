@@ -34,7 +34,7 @@
 struct IPopupNotify;
 
 #include "ps_wrapper.h"
-#include "nel/../../src/3d/ps_plane_basis_maker.h"
+#include "nel/3d/ps_plane_basis_maker.h"
 #include "editable_range.h"
 #include "particle_workspace.h"
 
@@ -105,3 +105,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_EDIT_SPINNER_H__CFDBE30D_F8C9_432E_9F17_0AFACE143BB0__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

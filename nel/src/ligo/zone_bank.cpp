@@ -706,5 +706,5 @@ void CZoneBank::getSelection (std::vector<CZoneBankElement*> &SelectedElements)
 
 #endif // NL_OS_WINDOWS
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "animated_material.h"
+#include "nel/3d/animated_material.h"
 #include "nel/misc/common.h"
 
 using namespace NLMISC;
@@ -485,3 +485,6 @@ const char *CAnimatedMaterial::getTexMatWRotName(uint stage)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

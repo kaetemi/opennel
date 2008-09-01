@@ -38,6 +38,7 @@
 #pragma warning (disable : 4786)
 #endif // NL_OS_WINDOWS
 
+
 #include "nel/misc/config_file.h"
 #include "nel/misc/common.h"
 #include "nel/misc/debug.h"
@@ -1531,5 +1532,5 @@ int yyerror (const char *s)
 
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

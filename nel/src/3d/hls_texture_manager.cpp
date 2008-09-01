@@ -24,7 +24,7 @@
  */
 
 #include "std3d.h"
-#include "hls_texture_manager.h"
+#include "nel/3d/hls_texture_manager.h"
 #include "nel/misc/common.h"
 #include "nel/misc/algo.h"
 
@@ -121,3 +121,6 @@ const char		*CHLSTextureManager::getTextureName(uint i) const
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

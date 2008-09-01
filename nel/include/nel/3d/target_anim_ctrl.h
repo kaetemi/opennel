@@ -29,7 +29,7 @@
 #include "nel/misc/types_nl.h"
 #include "nel/misc/matrix.h"
 #include "nel/misc/quat.h"
-#include "anim_ctrl.h"
+#include "nel/3d/anim_ctrl.h"
 
 
 namespace NL3D {
@@ -108,3 +108,6 @@ private:
 #endif // NL_TARGET_ANIM_CTRL_H
 
 /* End of target_anim_ctrl.h */
+
+/* Merge OpenNeL SVN
+ */

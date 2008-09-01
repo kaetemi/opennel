@@ -62,5 +62,5 @@
 
 #endif // !defined(AFX_STDAFX_H__2A07BE63_0E2F_11D5_9CD4_0050DAC3A412__INCLUDED_)
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

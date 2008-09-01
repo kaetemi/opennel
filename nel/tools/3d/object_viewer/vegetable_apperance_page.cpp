@@ -9,7 +9,7 @@
 #include "vegetable_select_dlg.h"
 #include "vegetable_dlg.h"
 #include "nel/misc/noise_value.h"
-#include "nel/../../src/3d/vegetable.h"
+#include "nel/3d/vegetable.h"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -254,3 +254,6 @@ void CVegetableApperancePage::OnDblclkListVegetableColor()
 		}
 	}
 }
+
+/* Merge OpenNeL SVN
+ */

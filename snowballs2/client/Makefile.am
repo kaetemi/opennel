@@ -16,5 +16,5 @@ client_DATA		=	client.cfg
 # End of Makefile.am
 
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

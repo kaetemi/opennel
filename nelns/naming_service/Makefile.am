@@ -21,5 +21,5 @@ naming_service_SOURCES = naming_service.cpp
 
 # End of Makefile.am
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

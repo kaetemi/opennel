@@ -65,15 +65,15 @@
 #include "nel/misc/triangle.h"
 #include "nel/misc/bsphere.h"
 #include "nel/3d/quad_tree.h"
-#include "nel/../../src/3d/scene_group.h"
-#include "nel/../../src/3d/skeleton_shape.h"
-#include "nel/../../src/3d/texture_file.h"
-#include "nel/../../src/3d/light.h"
+#include "nel/3d/scene_group.h"
+#include "nel/3d/skeleton_shape.h"
+#include "nel/3d/texture_file.h"
+#include "nel/3d/light.h"
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_STDAFX_H__7B19FB21_D10C_11D4_9CD4_0050DAC3A412__INCLUDED_)
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

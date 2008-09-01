@@ -61,5 +61,5 @@
 
 #include "nel/misc/bsphere.h"
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,10 +25,10 @@
 
 #include "std3d.h"
 
-#include "computed_string.h"
-#include "texture.h"
-#include "index_buffer.h"
-#include "material.h"
+#include "nel/3d/computed_string.h"
+#include "nel/3d/texture.h"
+#include "nel/3d/index_buffer.h"
+#include "nel/3d/material.h"
 #include "nel/3d/frustum.h"
 
 #include "nel/misc/smart_ptr.h"
@@ -88,6 +88,7 @@ void CComputedString::render2D (IDriver& driver,
 								bool useScreenAR43, bool roundToNearestPixel
 								)
 {
+	H_AUTO2;
 	if (Vertices.getNumVertices() == 0)
 		return;
 
@@ -103,7 +104,7 @@ void CComputedString::render2D (IDriver& driver,
 	// Computing hotspot translation vector
 	CVector hotspotVector = getHotSpotVector(hotspot);
 
-	// tansformation matrix initialized to identity
+	// transformation matrix initialized to identity
 	CMatrix matrix;
 	matrix.identity();
 		
@@ -149,6 +150,7 @@ void CComputedString::render2D (IDriver& driver,
 \*------------------------------------------------------------------*/
 void CComputedString::render3D (IDriver& driver,CMatrix matrix,THotSpot hotspot)
 {
+	H_AUTO2;
 	if (Vertices.getNumVertices() == 0)
 		return;
 
@@ -183,6 +185,7 @@ void CComputedString::render2DClip (IDriver& driver, CRenderStringBuffer &rdrBuf
 					float x, float z,
 					float xmin, float zmin, float xmax, float zmax)
 {
+	H_AUTO2;
 	if (Vertices.getNumVertices() == 0)
 		return;
 	if(SelectSize==0)
@@ -297,7 +300,7 @@ void CComputedString::render2DClip (IDriver& driver, CRenderStringBuffer &rdrBuf
 	{
 		uint	nNumQuadClipped= 0;
 
-		// the real number of vertices to comute (with selection)
+		// the real number of vertices to compute (with selection)
 		uint	numVerts= nNumQuadSrc*4;
 
 		// clip into VerticesClipped
@@ -440,6 +443,7 @@ void CComputedString::render2DClip (IDriver& driver, CRenderStringBuffer &rdrBuf
 void CComputedString::render2DUnProjected (IDriver& driver, CRenderStringBuffer &rdrBuffer, class NL3D::CFrustum &frustum,
 	const NLMISC::CMatrix &scaleMatrix, float x, float z, float depth, float xmin, float zmin, float xmax, float zmax)
 {
+	H_AUTO2;
 	if (Vertices.getNumVertices() == 0)
 		return;
 	if(SelectSize==0)
@@ -466,7 +470,6 @@ void CComputedString::render2DUnProjected (IDriver& driver, CRenderStringBuffer 
 	bool	allIn;
 	allIn=	((x+XMin) >= (xmin-0.001f)) && ((x+XMax) <= (xmax+0.001f)) &&
 			((z+ZMin) >= (zmin-0.001f)) && ((z+ZMax) <= (zmax+0.001f));
-
 
 	// How many quad to render?
 	uint	nNumQuadSrc= Vertices.getNumVertices()/4;
@@ -532,7 +535,7 @@ void CComputedString::render2DUnProjected (IDriver& driver, CRenderStringBuffer 
 	{
 		uint	nNumQuadClipped= 0;
 
-		// the real number of vertices to comute (with selection)
+		// the real number of vertices to compute (with selection)
 		uint	numVerts= nNumQuadSrc*4;
 
 		// clip into VerticesClipped
@@ -743,3 +746,6 @@ void	CRenderStringBuffer::flushUnProjected(IDriver& driver, CMaterial *fontMat, 
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

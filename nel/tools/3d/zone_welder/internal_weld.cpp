@@ -30,9 +30,9 @@
 #include "nel/misc/file.h"
 #include "nel/misc/aabbox.h"
 //
-#include "nel/../../src/3d/quad_grid.h"
-#include "nel/../../src/3d/bezier_patch.h"
-#include "nel/../../src/3d/zone.h"
+#include "nel/3d/quad_grid.h"
+#include "nel/3d/bezier_patch.h"
+#include "nel/3d/zone.h"
 
 //
 #include <vector>
@@ -670,3 +670,6 @@ exit24:;
 	if (weldCount)
 		printf ("Internal tangents welded: %d\n", weldCount);
 }
+
+/* Merge OpenNeL SVN
+ */

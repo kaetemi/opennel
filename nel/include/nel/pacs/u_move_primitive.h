@@ -130,7 +130,7 @@ public:
 	  */
 	TUserData		UserData;
 
-	virtual ~UMovePrimitive() {};
+	virtual ~UMovePrimitive() {}
 
 	/// \name Setup the primitive static parts.
 
@@ -423,5 +423,5 @@ public:
 
 /* End of u_move_primitive.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "shader.h"
-#include "driver.h"
+#include "nel/3d/shader.h"
+#include "nel/3d/driver.h"
 #include "nel/misc/path.h"
 #include "nel/misc/file.h"
 
@@ -118,3 +118,6 @@ IShaderDrvInfos::~IShaderDrvInfos()
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

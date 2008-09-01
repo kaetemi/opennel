@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "point_light_named_array.h"
-#include "scene.h"
+#include "nel/3d/point_light_named_array.h"
+#include "nel/3d/scene.h"
 #include <algorithm>
 
 
@@ -203,3 +203,6 @@ void			CPointLightNamedArray::initAnimatedLightIndex (const CScene &scene)
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

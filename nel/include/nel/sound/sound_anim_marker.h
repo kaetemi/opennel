@@ -27,7 +27,7 @@
 #define NL_SOUND_ANIM_MARKER_H
 
 #include "nel/misc/string_mapper.h"
-#include "../../src/3d/cluster.h"
+#include "nel/3d/cluster.h"
 #include "u_source.h"
 
 
@@ -83,3 +83,6 @@ protected:
 } // namespace NLSOUND
 
 #endif // NL_SOUND_ANIM_MARKER_H
+
+/* Merge OpenNeL SVN
+ */

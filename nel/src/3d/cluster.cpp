@@ -25,14 +25,14 @@
 
 #include "std3d.h"
 
-#include "cluster.h"
-#include "portal.h"
+#include "nel/3d/cluster.h"
+#include "nel/3d/portal.h"
 #include "nel/misc/stream.h"
 #include "nel/misc/string_mapper.h"
-#include "scene.h"
-#include "transform_shape.h"
-//#include "mesh_instance.h"
-#include "scene_group.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/transform_shape.h"
+//#include "nel/3d/mesh_instance.h"
+#include "nel/3d/scene_group.h"
 
 using namespace NLMISC;
 using namespace std;
@@ -605,5 +605,5 @@ void CCluster::cameraRayClip(const CVector &start, const CVector &end, std::vect
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -29,18 +29,18 @@
 #include "nel/misc/vector_h.h"
 #include "nel/misc/hierarchical_timer.h"
 #include "nel/3d/animation_time.h"
-#include "water_model.h"
-#include "water_shape.h"
-#include "water_pool_manager.h"
-#include "water_height_map.h"
-#include "dru.h"
-#include "scene.h"
-#include "driver.h"
-#include "render_trav.h"
-#include "anim_detail_trav.h"
-#include "texture_emboss.h"
-#include "texture_bump.h"
-#include "water_env_map.h"
+#include "nel/3d/water_model.h"
+#include "nel/3d/water_shape.h"
+#include "nel/3d/water_pool_manager.h"
+#include "nel/3d/water_height_map.h"
+#include "nel/3d/dru.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/render_trav.h"
+#include "nel/3d/anim_detail_trav.h"
+#include "nel/3d/texture_emboss.h"
+#include "nel/3d/texture_bump.h"
+#include "nel/3d/water_env_map.h"
 
 
 using NLMISC::CVector2f;
@@ -71,7 +71,7 @@ void CWaterModel::setupVertexBuffer(CVertexBuffer &vb, uint numWantedVertices, I
 		vb.setName("Water");
 		vb.setPreferredMemory(CVertexBuffer::AGPPreferred, false);
 		if (drv->isWaterShaderSupported())
-		{		
+		{
 			vb.setVertexFormat(CVertexBuffer::PositionFlag);
 		}
 		else
@@ -2032,5 +2032,5 @@ void	CWaveMakerModel::traverseAnimDetail()
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

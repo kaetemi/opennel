@@ -26,10 +26,10 @@
 #include "std3d.h"
 
 #include "nel/3d/u_water.h"
-#include "water_pool_manager.h"
-#include "water_height_map.h"
-#include "water_model.h"
-#include "driver_user.h"
+#include "nel/3d/water_pool_manager.h"
+#include "nel/3d/water_height_map.h"
+#include "nel/3d/water_model.h"
+#include "nel/3d/driver_user.h"
 
 
 namespace NL3D 
@@ -87,5 +87,5 @@ float   UWaterInstance::getAttenuatedHeight(const NLMISC::CVector2f &pos, const 
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

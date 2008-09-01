@@ -25,9 +25,9 @@
 
 #include "std3d.h"
 
-#include "landscapevb_info.h"
-#include "vertex_buffer.h"
-#include "landscapevb_allocator.h"
+#include "nel/3d/landscapevb_info.h"
+#include "nel/3d/vertex_buffer.h"
+#include "nel/3d/landscapevb_allocator.h"
 
 
 namespace NL3D 
@@ -194,3 +194,6 @@ void		CNearVertexBufferInfo::setupVertexBuffer(CVertexBuffer &vb, bool forVertex
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

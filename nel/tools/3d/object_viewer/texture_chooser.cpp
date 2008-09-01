@@ -27,9 +27,9 @@
 #include "texture_chooser.h"
 #include "multi_tex_dlg.h"
 
-#include "nel/../../src/3d/texture_file.h"
-#include "nel/../../src/3d/texture_bump.h"
-#include "nel/../../src/3d/ps_particle_basic.h"
+#include "nel/3d/texture_file.h"
+#include "nel/3d/texture_bump.h"
+#include "nel/3d/ps_particle_basic.h"
 
 #include "nel/misc/path.h"
 
@@ -274,3 +274,7 @@ void CTextureChooser::OnEnableMultitexturing()
 	updateMultiTexCtrl();	
 }
 
+
+
+/* Merge OpenNeL SVN
+ */

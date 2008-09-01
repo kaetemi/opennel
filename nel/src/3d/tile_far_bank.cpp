@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "tile_far_bank.h"
+#include "nel/3d/tile_far_bank.h"
 
 using namespace NLMISC;
 
@@ -126,5 +126,5 @@ void CTileFarBank::serial(NLMISC::IStream &f) throw(NLMISC::EStream)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

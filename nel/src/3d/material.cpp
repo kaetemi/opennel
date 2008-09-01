@@ -25,10 +25,10 @@
 
 #include "std3d.h"
 
-#include "material.h"
-#include "texture.h"
-#include "shader.h"
-#include "driver.h"
+#include "nel/3d/material.h"
+#include "nel/3d/texture.h"
+#include "nel/3d/shader.h"
+#include "nel/3d/driver.h"
 #include "nel/misc/stream.h"
 
 using namespace std;
@@ -115,12 +115,13 @@ CMaterial		&CMaterial::operator=(const CMaterial &mat)
 	// copy texture matrix if there.
 	if (mat._TexUserMat.get())
 	{
-		std::auto_ptr<CUserTexMat> texMatClone( new CUserTexMat(*(mat._TexUserMat))); // make cpy
-		std::swap(texMatClone, _TexUserMat); // swap with old
+	    std::auto_ptr<CUserTexMat> texMatClone( new CUserTexMat(*(mat._TexUserMat))); // make cpy
+	    //std::swap(texMatClone, _TexUserMat); // swap with old
+	    _TexUserMat = texMatClone;
 	}
 	else
 	{
-		_TexUserMat.reset();	
+		_TexUserMat.reset();
 	}
 
 	// Must do not copy drv info.
@@ -274,8 +275,9 @@ void		CMaterial::serial(NLMISC::IStream &f)
 
 		if ((_Flags & IDRV_MAT_USER_TEX_MAT_ALL)) // are there user textrue coordinates matrix ?
 		{
-			std::auto_ptr<CUserTexMat> newPtr(new CUserTexMat); // create new			
-			std::swap(_TexUserMat, newPtr); // replace old
+			std::auto_ptr<CUserTexMat> newPtr(new CUserTexMat); // create new
+			//std::swap(_TexUserMat, newPtr); // replace old
+			_TexUserMat = newPtr;
 		}
 	}
 
@@ -284,9 +286,9 @@ void		CMaterial::serial(NLMISC::IStream &f)
 		for(uint i=0; i < IDRV_MAT_MAXTEXTURES; ++i)
 		{
 			if (isUserTexMatEnabled(i))
-			{				
-				f.serial(_TexUserMat->TexMat[i]);				
-			}			
+			{
+				f.serial(_TexUserMat->TexMat[i]);
+			}
 		}
 	}
 
@@ -634,3 +636,6 @@ bool CMaterial::isSupportedByDriver(IDriver &drv, bool forceBaseCaps) const
 
 }
 
+
+/* Merge OpenNeL SVN
+ */

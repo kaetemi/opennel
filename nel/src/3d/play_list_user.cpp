@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "play_list_user.h"
-#include "animation_set_user.h"
+#include "nel/3d/play_list_user.h"
+#include "nel/3d/animation_set_user.h"
 #include "nel/3d/u_transform.h"
 #include "nel/misc/hierarchical_timer.h"
 
@@ -248,5 +248,5 @@ void CPlayListUser::evalPlayList(double playTime)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

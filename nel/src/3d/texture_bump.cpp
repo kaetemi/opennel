@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "texture_bump.h"
+#include "nel/3d/texture_bump.h"
 
 
 
@@ -343,3 +343,6 @@ CTextureBump::~CTextureBump()
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

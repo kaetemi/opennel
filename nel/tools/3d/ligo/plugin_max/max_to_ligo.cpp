@@ -50,6 +50,7 @@
 
 using namespace std;
 using namespace NLMISC;
+extern HINSTANCE hInstance;
 
 #define NEL3D_APPDATA_ZONE_SYMMETRY		1266703979
 
@@ -127,11 +128,10 @@ bool CMaxToLigo::buildZoneTemplate (INode* pNode, const PatchMesh &patchMesh, CZ
 }
 
 // ***************************************************************************
-
 bool CMaxToLigo::loadLigoConfigFile (CLigoConfig& config, Interface& it, bool dialog)
 {
 	// Get the module path
-	HMODULE hModule = GetModuleHandle("nelligo.dlx");
+	HMODULE hModule = hInstance;
 	if (hModule)
 	{
 		// Get the path
@@ -192,5 +192,5 @@ void CMaxToLigo::errorMessage (const char *msg, const char *title, Interface& it
 // ***************************************************************************
 
 }
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

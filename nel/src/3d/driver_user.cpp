@@ -30,16 +30,16 @@
 // fatal error C1076: compiler limit : internal heap limit reached; use /Zm to specify a higher limit
 // ***************************************************************************
 
-#include "driver_user.h"
+#include "nel/3d/driver_user.h"
 #include "nel/3d/u_driver.h"
-#include "dru.h"
-#include "scene.h"
-#include "text_context_user.h"
-#include "texture_user.h"
-#include "scene_user.h"
-#include "init_3d.h"
-#include "water_env_map_user.h"
-#include "water_pool_manager.h"
+#include "nel/3d/dru.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/text_context_user.h"
+#include "nel/3d/texture_user.h"
+#include "nel/3d/scene_user.h"
+#include "nel/3d/init_3d.h"
+#include "nel/3d/water_env_map_user.h"
+#include "nel/3d/water_pool_manager.h"
 #include "nel/3d/u_camera.h"
 #include "nel/misc/hierarchical_timer.h"
 
@@ -53,13 +53,11 @@ namespace NL3D
 H_AUTO_DECL( NL3D_UI_Driver )
 H_AUTO_DECL( NL3D_Render_DriverClearBuffer )
 H_AUTO_DECL( NL3D_Render_DriverSwapBuffer )
-H_AUTO_DECL( NL3D_Render_DriverDrawELT )
 H_AUTO_DECL( NL3D_Texture_Driver )
 
 #define	NL3D_HAUTO_UI_DRIVER				H_AUTO_USE( NL3D_UI_Driver )
 #define	NL3D_HAUTO_CLEAR_DRIVER				H_AUTO_USE( NL3D_Render_DriverClearBuffer )
 #define	NL3D_HAUTO_SWAP_DRIVER				H_AUTO_USE( NL3D_Render_DriverSwapBuffer )
-#define	NL3D_HAUTO_DRAW_DRIVER				H_AUTO_USE( NL3D_Render_DriverDrawELT )
 #define	NL3D_HAUTO_TEX_DRIVER				H_AUTO_USE( NL3D_Texture_Driver )
 
 // ***************************************************************************
@@ -312,6 +310,13 @@ bool CDriverUser::getCurrentScreenMode(CMode &mode)
 }
 
 // ***************************************************************************
+void CDriverUser::setWindowTitle(const std::string &title)
+{
+	NL3D_HAUTO_UI_DRIVER;
+	_Driver->setWindowTitle(title);
+}
+
+// ***************************************************************************
 void			CDriverUser::release() 
 {
 	NL3D_HAUTO_UI_DRIVER;
@@ -555,7 +560,7 @@ void CDriverUser::setColorMask (bool bRed, bool bGreen, bool bBlue, bool bAlpha)
 // ***************************************************************************
 void			CDriverUser::drawLine(const NLMISC::CLine &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBFlat;
 	CIndexBuffer		&pb= _PBLine;
@@ -574,7 +579,7 @@ void			CDriverUser::drawLine(const NLMISC::CLine &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawLine(const NLMISC::CLineColor &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBColor;
 	CIndexBuffer		&pb= _PBLine;
@@ -595,7 +600,7 @@ void			CDriverUser::drawLine(const NLMISC::CLineColor &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawLine(const NLMISC::CLineUV &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBUv;
 	CIndexBuffer		&pb= _PBLine;
@@ -616,7 +621,7 @@ void			CDriverUser::drawLine(const NLMISC::CLineUV &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawLine(const NLMISC::CLineColorUV &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBColorUv;
 	CIndexBuffer		&pb= _PBLine;
@@ -642,7 +647,7 @@ void			CDriverUser::drawLine(const NLMISC::CLineColorUV &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawTriangle(const NLMISC::CTriangle &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBFlat;
 	CIndexBuffer		&pb= _PBTri;
@@ -662,7 +667,7 @@ void			CDriverUser::drawTriangle(const NLMISC::CTriangle &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawTriangle(const NLMISC::CTriangleColor &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBColor;
 	CIndexBuffer		&pb= _PBTri;
@@ -685,7 +690,7 @@ void			CDriverUser::drawTriangle(const NLMISC::CTriangleColor &shp, UMaterial &m
 // ***************************************************************************
 void			CDriverUser::drawTriangle(const NLMISC::CTriangleUV &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBUv;
 	CIndexBuffer		&pb= _PBTri;
@@ -708,7 +713,7 @@ void			CDriverUser::drawTriangle(const NLMISC::CTriangleUV &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawTriangle(const NLMISC::CTriangleColorUV &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBColorUv;
 	CIndexBuffer		&pb= _PBTri;
@@ -737,7 +742,7 @@ void			CDriverUser::drawTriangle(const NLMISC::CTriangleColorUV &shp, UMaterial 
 // ***************************************************************************
 void			CDriverUser::drawQuad(const NLMISC::CQuad &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBFlat;
 
@@ -756,7 +761,7 @@ void			CDriverUser::drawQuad(const NLMISC::CQuad &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawQuad(const NLMISC::CQuadColor &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBColor;
 
@@ -779,7 +784,7 @@ void			CDriverUser::drawQuad(const NLMISC::CQuadColor &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawQuad(const NLMISC::CQuadUV &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBUv;
 
@@ -802,7 +807,7 @@ void			CDriverUser::drawQuad(const NLMISC::CQuadUV &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawQuad(const NLMISC::CQuadColorUV &shp, UMaterial &mat) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb= _VBColorUv;
 
@@ -829,7 +834,7 @@ void			CDriverUser::drawQuad(const NLMISC::CQuadColorUV &shp, UMaterial &mat)
 // ***************************************************************************
 void			CDriverUser::drawQuads(const std::vector<NLMISC::CQuadColorUV> &q, UMaterial &mat)
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 	
 	const CQuadColorUV *qptr = &(q[0]);
 	drawQuads(qptr , q.size(), mat);
@@ -838,7 +843,7 @@ void			CDriverUser::drawQuads(const std::vector<NLMISC::CQuadColorUV> &q, UMater
 // ***************************************************************************
 void			CDriverUser::drawQuads(const std::vector<NLMISC::CQuadColorUV2> &q, UMaterial &mat)
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 	
 	const CQuadColorUV2 *qptr = &(q[0]);
 	drawQuads(qptr , q.size(), mat);
@@ -847,7 +852,7 @@ void			CDriverUser::drawQuads(const std::vector<NLMISC::CQuadColorUV2> &q, UMate
 // ***************************************************************************
 void			CDriverUser::drawQuads(const NLMISC::CQuadColorUV *quads, uint32 nbQuads, UMaterial &mat)
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb = _VBQuadsColUv;
 
@@ -941,7 +946,7 @@ void			CDriverUser::drawQuads(const NLMISC::CQuadColorUV *quads, uint32 nbQuads,
 // ***************************************************************************
 void			CDriverUser::drawQuads(const NLMISC::CQuadColorUV2 *quads, uint32 nbQuads, UMaterial &mat)
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	CVertexBuffer		&vb = _VBQuadsColUv2;
 
@@ -1148,7 +1153,7 @@ void CDriverUser::drawTriangles(const NLMISC::CTriangleColorUV *tris, uint32 nbT
 // ***************************************************************************
 void			CDriverUser::drawBitmap (float x, float y, float width, float height, class UTexture& texture, bool blend, CRGBA col) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	_MatText.setTexture(0, &texture);
 	_MatText.setColor(col);
@@ -1173,7 +1178,7 @@ void			CDriverUser::drawBitmap (float x, float y, float width, float height, cla
 // ***************************************************************************
 void			CDriverUser::drawLine (float x0, float y0, float x1, float y1, CRGBA col) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	_MatFlat.setColor(col);
 	_MatFlat.setBlend(true);
@@ -1187,7 +1192,7 @@ void			CDriverUser::drawLine (float x0, float y0, float x1, float y1, CRGBA col)
 // ***************************************************************************
 void			CDriverUser::drawTriangle (float x0, float y0, float x1, float y1, float x2, float y2, CRGBA col) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	_MatFlat.setColor(col);
 	_MatFlat.setBlend(true);
@@ -1202,10 +1207,11 @@ void			CDriverUser::drawTriangle (float x0, float y0, float x1, float y1, float 
 // ***************************************************************************
 void			CDriverUser::drawQuad (float x0, float y0, float x1, float y1, CRGBA col) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	_MatFlat.setColor(col);
 	_MatFlat.setBlend(true);
+	_MatFlat.setBlendFunc(UMaterial::srcalpha, UMaterial::invsrcalpha);
 
 	CQuad		quad;
 	quad.V0.set(x0,y0,0);
@@ -1218,14 +1224,14 @@ void			CDriverUser::drawQuad (float x0, float y0, float x1, float y1, CRGBA col)
 // ***************************************************************************
 void			CDriverUser::drawQuad (float xcenter, float ycenter, float radius, CRGBA col) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 
 	drawQuad(xcenter-radius, ycenter-radius, xcenter+radius, ycenter+radius, col);
 }
 // ***************************************************************************
 void			CDriverUser::drawWiredQuad (float x0, float y0, float x1, float y1, CRGBA col) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 	
 	// v-left
 	drawLine(x0,y0,x0,y1,col);	
@@ -1239,7 +1245,7 @@ void			CDriverUser::drawWiredQuad (float x0, float y0, float x1, float y1, CRGBA
 // ***************************************************************************
 void			CDriverUser::drawWiredQuad (float xcenter, float ycenter, float radius, CRGBA col) 
 {
-	NL3D_HAUTO_DRAW_DRIVER;
+	H_AUTO2;
 	
 	drawWiredQuad(xcenter-radius, ycenter-radius, xcenter+radius, ycenter+radius, col);
 }
@@ -1432,6 +1438,12 @@ void			CDriverUser::forceTextureResize(uint divisor)
 
 	_Driver->forceTextureResize(divisor);
 }
+void			CDriverUser::forceNativeFragmentPrograms(bool nativeOnly)
+{
+	NL3D_HAUTO_UI_DRIVER;
+	
+	_Driver->forceNativeFragmentPrograms(nativeOnly);
+}
 bool			CDriverUser::setMonitorColorProperties (const CMonitorColorProperties &properties)
 {
 	NL3D_HAUTO_UI_DRIVER;
@@ -1465,7 +1477,7 @@ const char*		CDriverUser::getVideocardInformation ()
 
 	return _Driver->getVideocardInformation ();
 }
-sint			CDriverUser::getNbTextureStages()
+uint			CDriverUser::getNbTextureStages()
 {
 	NL3D_HAUTO_UI_DRIVER;
 
@@ -1887,5 +1899,5 @@ bool CDriverUser::setRenderTarget(class UTexture & uTex, uint32 x, uint32 y, uin
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -31,11 +31,11 @@
 #include "nel/3d/u_camera.h"
 
 //3D
-#include "driver_user.h"
-#include "texture_bloom.h"
-#include "texture_user.h"
+#include "nel/3d/driver_user.h"
+#include "nel/3d/texture_bloom.h"
+#include "nel/3d/texture_user.h"
 
-#include "bloom_effect.h"
+#include "nel/3d/bloom_effect.h"
 
 
 using namespace NLMISC;

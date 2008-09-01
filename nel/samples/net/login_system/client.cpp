@@ -88,6 +88,7 @@ int main (int argc, char **argv)
 	{
 		char buf[256];
 		printf("Login: ");
+		// gcc says: warning: the `gets' function is dangerous and should not be used.
 		Login = gets(buf);
 	}
 
@@ -96,6 +97,7 @@ int main (int argc, char **argv)
 	{
 		char buf[256];
 		printf("Password: ");
+		// gcc says: warning: the `gets' function is dangerous and should not be used.
 		Password = gets(buf);
 	}
 	// crypt with md5 the password
@@ -210,5 +212,5 @@ int main (int argc, char **argv)
 	return 0;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

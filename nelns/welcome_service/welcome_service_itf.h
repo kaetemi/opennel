@@ -1,541 +1,487 @@
+/**
+ * \file welcome_service_itf.h
+ * \brief WARNING : this is a generated file, don't change it !
+ * \date 2005-10-03 05:15GMT
+ * \author Nevrax Ltd. (Nevrax Ltd.)
+ * Collection of the interfaces used by the welcome service module.
+ * 
+ * $Id$
+ */
+
+/* 
+ * Copyright (C) 2005  Nevrax Ltd. (Nevrax Ltd.)
+ * 
+ * This file is part of NEVRAX NeL Network Services.
+ * NEVRAX NeL Network Services is free software: you can redistribute
+ * it and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation, either
+ * version 2 of the License, or (at your option) any later version.
+ * 
+ * NEVRAX NeL Network Services is distributed in the hope that it will
+ * be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with NEVRAX NeL Network Services; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301 USA.
+ */
 
 /////////////////////////////////////////////////////////////////
-// WARNING : this is a generated file, don't change it !
+// WARNING : this is a generated file, don't change it !         
 /////////////////////////////////////////////////////////////////
+#ifndef WS_WELCOME_SERVICE_ITF_H
+#define WS_WELCOME_SERVICE_ITF_H
+#include <nel/misc/types_nl.h>
 
-#ifndef WELCOME_SERVICE_ITF
-#define WELCOME_SERVICE_ITF
-#include "nel/misc/types_nl.h"
-#ifdef NL_COMP_VC8
-  #include <memory>
-#endif
-#include "nel/misc/hierarchical_timer.h"
-#include "nel/misc/string_conversion.h"
-#include "nel/net/message.h"
-#include "nel/net/module.h"
-#include "nel/net/module_builder_parts.h"
-#include "nel/net/module_message.h"
-#include "nel/net/module_gateway.h"
+// User header
+#include "user_role.h"
+#include <nel/net/login_cookie.h>
 
-#include "nel/net/login_cookie.h"
-	
-namespace WS
+// NeL includes
+#include <nel/misc/debug.h>
+#include <nel/misc/log.h>
+#include <nel/net/message.h>
+#include <nel/net/module.h>
+#include <nel/net/module_builder_parts.h>
+#include <nel/net/module_message.h>
+#include <nel/net/module_gateway.h>
+
+// STL includes
+#include <string>
+
+namespace WS {
+
+/////////////////////////////////////////////////////////////////
+// WARNING : this is a generated file, don't change it !         
+/////////////////////////////////////////////////////////////////
+/* 
+ * \brief CWelcomeServiceSkel
+ * \date 2005-10-03 05:15GMT
+ * \author Nevrax Ltd. (Nevrax Ltd.)
+ * Interface for messages going from the global ring session manager
+ * and login service to the shard's welcome service. This is a
+ * subsection of the WelcomeService module (CWelcomeServiceMod).
+ * Skeleton for implementing the receiving end of this interface into
+ * a module.
+ */
+class CWelcomeServiceSkel
 {
+public:
+	// The interceptor type.
+	typedef NLNET::CInterceptorForwarder<CWelcomeServiceSkel> TInterceptor;
 	
-
-
-	struct TUserRole
+protected:
+	CWelcomeServiceSkel()
 	{
-		enum TValues
-		{
-			ur_player,
-			ur_editor,
-			ur_animator,
-			/// the highest valid value in the enum
-			last_enum_item = ur_animator,
-			/// a value equal to the last enum item +1
-			end_of_enum,
-
-			invalid_val,
-			
-			/// Number of enumerated values
-			nb_enum_items = 3
-		};
-		
-		/// Index table to convert enum value to linear index table
-		const std::map<TValues, uint32> &getIndexTable() const
-		{
-			static std::map<TValues, uint32> indexTable;
-			static bool init = false;
-			if (!init)
-			{
-				// fill the index table
-				indexTable.insert(std::make_pair(ur_player, 0));
-				indexTable.insert(std::make_pair(ur_editor, 1));
-				indexTable.insert(std::make_pair(ur_animator, 2));
-			
-				init = true;
-			}
-
-			return indexTable;
-		}
-		
-
-		static const NLMISC::CStringConversion<TValues> &getConversionTable()
-		{
-			NL_BEGIN_STRING_CONVERSION_TABLE(TValues)
-				NL_STRING_CONVERSION_TABLE_ENTRY(ur_player)
-				NL_STRING_CONVERSION_TABLE_ENTRY(ur_editor)
-				NL_STRING_CONVERSION_TABLE_ENTRY(ur_animator)
-				NL_STRING_CONVERSION_TABLE_ENTRY(invalid_val)
-			};                                                                                             
-			static NLMISC::CStringConversion<TValues>                                                                
-			conversionTable(TValues_nl_string_conversion_table, sizeof(TValues_nl_string_conversion_table)   
-			/ sizeof(TValues_nl_string_conversion_table[0]),  invalid_val);
-
-			return conversionTable;
-		}
-
-		TValues	_Value;
-
-	public:
-		TUserRole()
-			: _Value(invalid_val)
-		{
-		}
-		TUserRole(TValues value)
-			: _Value(value)
-		{
-		}
-
-		TUserRole(const std::string &str)
-		{
-			_Value = getConversionTable().fromString(str);
-		}
-
-		void serial(NLMISC::IStream &s)
-		{
-			s.serialEnum(_Value);
-		}
-
-		bool operator == (const TUserRole &other) const
-		{
-			return _Value == other._Value;
-		}
-		bool operator != (const TUserRole &other) const
-		{
-			return ! (_Value == other._Value);
-		}
-		bool operator < (const TUserRole &other) const
-		{
-			return _Value < other._Value;
-		}
-
-		bool operator <= (const TUserRole &other) const
-		{
-			return _Value <= other._Value;
-		}
-
-		bool operator > (const TUserRole &other) const
-		{
-			return !(_Value <= other._Value);
-		}
-		bool operator >= (const TUserRole &other) const
-		{
-			return !(_Value < other._Value);
-		}
-
-		const std::string &toString() const
-		{
-			return getConversionTable().toString(_Value);
-		}
-		static const std::string &toString(TValues value)
-		{
-			return getConversionTable().toString(value);
-		}
-
-		TValues getValue() const
-		{
-			return _Value;
-		}
-
-		// return true if the actual value of the enum is valid, otherwise false
-		bool isValid()
-		{
-			if (_Value == invalid_val)
-				return false;
-
-			// not invalid, check other enum value
-			return getConversionTable().isValid(_Value);
-		}
-
-		
-		uint32 asIndex()
-		{
-			std::map<TValues, uint32>::const_iterator it(getIndexTable().find(_Value));
-			nlassert(it != getIndexTable().end());
-			return it->second;
-		}
-		
-	};
+		// Do early run time check for message table.
+		getMessageHandlers();
+	}
+	virtual ~CWelcomeServiceSkel() { }
 	
-	/////////////////////////////////////////////////////////////////
-	// WARNING : this is a generated file, don't change it !
-	/////////////////////////////////////////////////////////////////
-	class CWelcomeServiceSkel
+	void init(NLNET::IModule *module)
 	{
-	public:
-		/// the interceptor type
-		typedef NLNET::CInterceptorForwarder < CWelcomeServiceSkel>	TInterceptor;
-	protected:
-		CWelcomeServiceSkel()
-		{
-			// do early run time check for message table
-			getMessageHandlers();
-		}
-		virtual ~CWelcomeServiceSkel()
-		{
-		}
-
-		void init(NLNET::IModule *module)
-		{
-			_Interceptor.init(this, module);
-		}
-
-		// unused interceptors 
-		std::string			fwdBuildModuleManifest() const	{ return std::string(); }
-		void				fwdOnModuleUp(NLNET::IModuleProxy *moduleProxy)  {};
-		void				fwdOnModuleDown(NLNET::IModuleProxy *moduleProxy) {};
-		void				fwdOnModuleSecurityChange(NLNET::IModuleProxy *moduleProxy) {};
+		_Interceptor.init(this, module);
+	}
 	
-		// process module message interceptor
-		bool fwdOnProcessModuleMessage(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
-	private:
-
-		typedef void (CWelcomeServiceSkel::*TMessageHandler)(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
-		typedef std::map<std::string, TMessageHandler>	TMessageHandlerMap;
-
-		const TMessageHandlerMap &getMessageHandlers() const;
-
-		
-		void welcomeUser_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
-
-		void disconnectUser_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
-
-		// declare one interceptor member of the skeleton
-		TInterceptor	_Interceptor;
-
-		// declare the interceptor forwarder as friend of this class
-		friend 		class NLNET::CInterceptorForwarder < CWelcomeServiceSkel>;
-	public:
-		/////////////////////////////////////////////////////////////////
-		// WARNING : this is a generated file, don't change it !
-		/////////////////////////////////////////////////////////////////
-
-		// ask the welcome service to welcome a character
-		virtual void welcomeUser(NLNET::IModuleProxy *sender, uint32 charId, const std::string &userName, const NLNET::CLoginCookie &cookie, const std::string &priviledge, const std::string &exPriviledge, WS::TUserRole mode, uint32 instanceId) =0;
-		// ask the welcome service to disconnect a user
-		virtual void disconnectUser(NLNET::IModuleProxy *sender, uint32 userId) =0;
-
-
-	};
-
+	// Unused interceptors.
+	std::string fwdBuildModuleManifest() const { return std::string(); }
+	void fwdOnModuleUp(NLNET::IModuleProxy *moduleProxy) { };
+	void fwdOnModuleDown(NLNET::IModuleProxy *moduleProxy) { };
+	void fwdOnModuleSecurityChange(NLNET::IModuleProxy *moduleProxy) { };
+	
+	// Process module message interceptor.
+	bool fwdOnProcessModuleMessage(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
+	
+private:
+	typedef void (CWelcomeServiceSkel::*TMessageHandler)(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
+	typedef std::map<std::string, TMessageHandler> TMessageHandlerMap;
+	
+	const TMessageHandlerMap &getMessageHandlers() const;
+	
 	/////////////////////////////////////////////////////////////////
-	// WARNING : this is a generated file, don't change it !
+	// WARNING : this is a generated file, don't change it !         
 	/////////////////////////////////////////////////////////////////
-	class CWelcomeServiceProxy
+	void welcomeUser_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
+	void disconnectUser_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
+	
+	// Declare one interceptor member of the skeleton.
+	TInterceptor _Interceptor;
+	
+	// Declare the interceptor forwarder as friend of this class.
+	friend class NLNET::CInterceptorForwarder<CWelcomeServiceSkel>;
+	
+public:
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	/// Ask the welcome service to welcome a character.
+	virtual void welcomeUser(NLNET::IModuleProxy *sender, uint32 charId, const std::string &userName, const NLNET::CLoginCookie &cookie, const std::string &priviledge, const std::string &exPriviledge, TUserRole mode, uint32 instanceId) =0;
+	/// Ask the welcome service to disconnect a user.
+	virtual void disconnectUser(NLNET::IModuleProxy *sender, uint32 userId) =0;
+	
+}; /* class CWelcomeServiceSkel */
+
+/////////////////////////////////////////////////////////////////
+// WARNING : this is a generated file, don't change it !         
+/////////////////////////////////////////////////////////////////
+/* 
+ * \brief CWelcomeServiceProxy
+ * \date 2005-10-03 05:15GMT
+ * \author Nevrax Ltd. (Nevrax Ltd.)
+ * Interface for messages going from the global ring session manager
+ * and login service to the shard's welcome service. This is a
+ * subsection of the WelcomeService module (CWelcomeServiceMod).
+ * Proxy for sending messages trough the proxy of a module that
+ * implemented this interface. If the target module is local, the
+ * messages will be relayed synchronously to the local module.
+ */
+class CWelcomeServiceProxy
+{
+	/// Smart pointer on the module proxy
+	NLNET::TModuleProxyPtr _ModuleProxy;
+	
+	// Pointer on the local module that implement the interface (if the proxy is for a local module)
+	NLNET::TModulePtr _LocalModule;
+	// Direct pointer on the server implementation interface for collocated module
+	CWelcomeServiceSkel *_LocalModuleSkel;
+	
+public:
+	CWelcomeServiceProxy(NLNET::IModuleProxy *proxy)
 	{
-		/// Smart pointer on the module proxy
-		NLNET::TModuleProxyPtr	_ModuleProxy;
-
-		// Pointer on the local module that implement the interface (if the proxy is for a local module)
-		NLNET::TModulePtr					_LocalModule;
-		// Direct pointer on the server implementation interface for collocated module
-		CWelcomeServiceSkel	*_LocalModuleSkel;
-
-
-	public:
-		CWelcomeServiceProxy(NLNET::IModuleProxy *proxy)
+		_ModuleProxy = proxy;
+		// Initialize collocated servant interface.
+		if (proxy->getModuleDistance() == 0)
 		{
-			nlassert(proxy->getModuleClassName() == "WelcomeService");
-			_ModuleProxy = proxy;
-
-			// initialize collocated servant interface
-			if (proxy->getModuleDistance() == 0)
-			{
-				_LocalModule = proxy->getLocalModule();
-				nlassert(_LocalModule != NULL);
-				CWelcomeServiceSkel::TInterceptor *interceptor = NULL;
-				interceptor = static_cast < NLNET::CModuleBase* >(_LocalModule.getPtr())->getInterceptor(interceptor);
-				nlassert(interceptor != NULL);
-
-				_LocalModuleSkel = interceptor->getParent();
-				nlassert(_LocalModuleSkel != NULL);
-			}
-			else
-				_LocalModuleSkel = 0;
-
+			_LocalModule = proxy->getLocalModule();
+			nlassert(_LocalModule != NULL);
+			CWelcomeServiceSkel::TInterceptor *interceptor = NULL;
+			interceptor = static_cast<NLNET::CModuleBase *>(_LocalModule.getPtr())->getInterceptor(interceptor);
+			nlassert(interceptor != NULL);
+			_LocalModuleSkel = interceptor->getParent();
+			nlassert(_LocalModuleSkel != NULL);
 		}
-		virtual ~CWelcomeServiceProxy()
-		{
-		}
-
-		NLNET::IModuleProxy *getModuleProxy()
-		{
-			return _ModuleProxy;
-		}
-
-		// ask the welcome service to welcome a character
-		void welcomeUser(NLNET::IModule *sender, uint32 charId, const std::string &userName, const NLNET::CLoginCookie &cookie, const std::string &priviledge, const std::string &exPriviledge, WS::TUserRole mode, uint32 instanceId);
-		// ask the welcome service to disconnect a user
-		void disconnectUser(NLNET::IModule *sender, uint32 userId);
-
-		// Message serializer. Return the message received in reference for easier integration
-		static const NLNET::CMessage &buildMessageFor_welcomeUser(NLNET::CMessage &__message, uint32 charId, const std::string &userName, const NLNET::CLoginCookie &cookie, const std::string &priviledge, const std::string &exPriviledge, WS::TUserRole mode, uint32 instanceId);
+		else _LocalModuleSkel = 0;
+	}
+	virtual ~CWelcomeServiceProxy() { }
 	
-		// Message serializer. Return the message received in reference for easier integration
-		static const NLNET::CMessage &buildMessageFor_disconnectUser(NLNET::CMessage &__message, uint32 userId);
-	
-
-
-
-	};
-
-	/////////////////////////////////////////////////////////////////
-	// WARNING : this is a generated file, don't change it !
-	/////////////////////////////////////////////////////////////////
-	class CLoginServiceSkel
+	NLNET::IModuleProxy *getModuleProxy()
 	{
-	public:
-		/// the interceptor type
-		typedef NLNET::CInterceptorForwarder < CLoginServiceSkel>	TInterceptor;
-	protected:
-		CLoginServiceSkel()
-		{
-			// do early run time check for message table
-			getMessageHandlers();
-		}
-		virtual ~CLoginServiceSkel()
-		{
-		}
-
-		void init(NLNET::IModule *module)
-		{
-			_Interceptor.init(this, module);
-		}
-
-		// unused interceptors 
-		std::string			fwdBuildModuleManifest() const	{ return std::string(); }
-		void				fwdOnModuleUp(NLNET::IModuleProxy *moduleProxy)  {};
-		void				fwdOnModuleDown(NLNET::IModuleProxy *moduleProxy) {};
-		void				fwdOnModuleSecurityChange(NLNET::IModuleProxy *moduleProxy) {};
+		return _ModuleProxy;
+	}
 	
-		// process module message interceptor
-		bool fwdOnProcessModuleMessage(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
-	private:
-
-		typedef void (CLoginServiceSkel::*TMessageHandler)(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
-		typedef std::map<std::string, TMessageHandler>	TMessageHandlerMap;
-
-		const TMessageHandlerMap &getMessageHandlers() const;
-
-		
-		void pendingUserLost_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
-
-		// declare one interceptor member of the skeleton
-		TInterceptor	_Interceptor;
-
-		// declare the interceptor forwarder as friend of this class
-		friend 		class NLNET::CInterceptorForwarder < CLoginServiceSkel>;
-	public:
-		/////////////////////////////////////////////////////////////////
-		// WARNING : this is a generated file, don't change it !
-		/////////////////////////////////////////////////////////////////
-
-		// An awaited user did not connect before the allowed timeout expire
-		virtual void pendingUserLost(NLNET::IModuleProxy *sender, const NLNET::CLoginCookie &cookie) =0;
-
-
-	};
-
 	/////////////////////////////////////////////////////////////////
-	// WARNING : this is a generated file, don't change it !
+	// WARNING : this is a generated file, don't change it !         
 	/////////////////////////////////////////////////////////////////
-	class CLoginServiceProxy
+	/// Ask the welcome service to welcome a character.
+	void welcomeUser(NLNET::IModule *sender, uint32 charId, const std::string &userName, const NLNET::CLoginCookie &cookie, const std::string &priviledge, const std::string &exPriviledge, TUserRole mode, uint32 instanceId);
+	/// Ask the welcome service to disconnect a user.
+	void disconnectUser(NLNET::IModule *sender, uint32 userId);
+	
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	/// Ask the welcome service to welcome a character.
+	/// Message serializer. Return the message received in reference for easier integration.
+	static const NLNET::CMessage &buildMessageFor_welcomeUser(NLNET::CMessage &__message, uint32 charId, const std::string &userName, const NLNET::CLoginCookie &cookie, const std::string &priviledge, const std::string &exPriviledge, TUserRole mode, uint32 instanceId);
+	/// Ask the welcome service to disconnect a user.
+	/// Message serializer. Return the message received in reference for easier integration.
+	static const NLNET::CMessage &buildMessageFor_disconnectUser(NLNET::CMessage &__message, uint32 userId);
+	
+}; /* class CWelcomeServiceProxy */
+
+/////////////////////////////////////////////////////////////////
+// WARNING : this is a generated file, don't change it !         
+/////////////////////////////////////////////////////////////////
+/* 
+ * \brief CLoginServiceSkel
+ * \date 2005-10-03 05:15GMT
+ * \author Nevrax Ltd. (Nevrax Ltd.)
+ * Interface for messages going from the shard's welcome service to
+ * the global login service. This is a subsection of the LoginService
+ * module (CLoginServiceMod).
+ * Skeleton for implementing the receiving end of this interface into
+ * a module.
+ */
+class CLoginServiceSkel
+{
+public:
+	// The interceptor type.
+	typedef NLNET::CInterceptorForwarder<CLoginServiceSkel> TInterceptor;
+	
+protected:
+	CLoginServiceSkel()
 	{
-		/// Smart pointer on the module proxy
-		NLNET::TModuleProxyPtr	_ModuleProxy;
-
-		// Pointer on the local module that implement the interface (if the proxy is for a local module)
-		NLNET::TModulePtr					_LocalModule;
-		// Direct pointer on the server implementation interface for collocated module
-		CLoginServiceSkel	*_LocalModuleSkel;
-
-
-	public:
-		CLoginServiceProxy(NLNET::IModuleProxy *proxy)
-		{
-
-			_ModuleProxy = proxy;
-
-			// initialize collocated servant interface
-			if (proxy->getModuleDistance() == 0)
-			{
-				_LocalModule = proxy->getLocalModule();
-				nlassert(_LocalModule != NULL);
-				CLoginServiceSkel::TInterceptor *interceptor = NULL;
-				interceptor = static_cast < NLNET::CModuleBase* >(_LocalModule.getPtr())->getInterceptor(interceptor);
-				nlassert(interceptor != NULL);
-
-				_LocalModuleSkel = interceptor->getParent();
-				nlassert(_LocalModuleSkel != NULL);
-			}
-			else
-				_LocalModuleSkel = 0;
-
-		}
-		virtual ~CLoginServiceProxy()
-		{
-		}
-
-		NLNET::IModuleProxy *getModuleProxy()
-		{
-			return _ModuleProxy;
-		}
-
-		// An awaited user did not connect before the allowed timeout expire
-		void pendingUserLost(NLNET::IModule *sender, const NLNET::CLoginCookie &cookie);
-
-		// Message serializer. Return the message received in reference for easier integration
-		static const NLNET::CMessage &buildMessageFor_pendingUserLost(NLNET::CMessage &__message, const NLNET::CLoginCookie &cookie);
+		// Do early run time check for message table.
+		getMessageHandlers();
+	}
+	virtual ~CLoginServiceSkel() { }
 	
-
-
-
-	};
-
-	/////////////////////////////////////////////////////////////////
-	// WARNING : this is a generated file, don't change it !
-	/////////////////////////////////////////////////////////////////
-	class CWelcomeServiceClientSkel
+	void init(NLNET::IModule *module)
 	{
-	public:
-		/// the interceptor type
-		typedef NLNET::CInterceptorForwarder < CWelcomeServiceClientSkel>	TInterceptor;
-	protected:
-		CWelcomeServiceClientSkel()
-		{
-			// do early run time check for message table
-			getMessageHandlers();
-		}
-		virtual ~CWelcomeServiceClientSkel()
-		{
-		}
-
-		void init(NLNET::IModule *module)
-		{
-			_Interceptor.init(this, module);
-		}
-
-		// unused interceptors 
-		std::string			fwdBuildModuleManifest() const	{ return std::string(); }
-		void				fwdOnModuleUp(NLNET::IModuleProxy *moduleProxy)  {};
-		void				fwdOnModuleDown(NLNET::IModuleProxy *moduleProxy) {};
-		void				fwdOnModuleSecurityChange(NLNET::IModuleProxy *moduleProxy) {};
+		_Interceptor.init(this, module);
+	}
 	
-		// process module message interceptor
-		bool fwdOnProcessModuleMessage(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
-	private:
-
-		typedef void (CWelcomeServiceClientSkel::*TMessageHandler)(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
-		typedef std::map<std::string, TMessageHandler>	TMessageHandlerMap;
-
-		const TMessageHandlerMap &getMessageHandlers() const;
-
-		
-		void registerWS_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
-
-		void reportWSOpenState_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
-
-		void welcomeUserResult_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
-
-		void updateConnectedPlayerCount_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
-
-		// declare one interceptor member of the skeleton
-		TInterceptor	_Interceptor;
-
-		// declare the interceptor forwarder as friend of this class
-		friend 		class NLNET::CInterceptorForwarder < CWelcomeServiceClientSkel>;
-	public:
-		/////////////////////////////////////////////////////////////////
-		// WARNING : this is a generated file, don't change it !
-		/////////////////////////////////////////////////////////////////
-
-		// Register the welcome service in the ring session manager
-		// The provided sessionId will be non-zero only for a shard with a fixed sessionId
-		virtual void registerWS(NLNET::IModuleProxy *sender, uint32 shardId, uint32 fixedSessionId, bool isOnline) =0;
-		// WS report it's current open state
-		virtual void reportWSOpenState(NLNET::IModuleProxy *sender, bool isOnline) =0;
-		// return for welcome user
-		virtual void welcomeUserResult(NLNET::IModuleProxy *sender, uint32 userId, bool ok, const std::string &shardAddr, const std::string &errorMsg) =0;
-		// transmits the current player counts
-		virtual void updateConnectedPlayerCount(NLNET::IModuleProxy *sender, uint32 nbOnlinePlayers, uint32 nbPendingPlayers) =0;
-
-
-	};
-
+	// Unused interceptors.
+	std::string fwdBuildModuleManifest() const { return std::string(); }
+	void fwdOnModuleUp(NLNET::IModuleProxy *moduleProxy) { };
+	void fwdOnModuleDown(NLNET::IModuleProxy *moduleProxy) { };
+	void fwdOnModuleSecurityChange(NLNET::IModuleProxy *moduleProxy) { };
+	
+	// Process module message interceptor.
+	bool fwdOnProcessModuleMessage(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
+	
+private:
+	typedef void (CLoginServiceSkel::*TMessageHandler)(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
+	typedef std::map<std::string, TMessageHandler> TMessageHandlerMap;
+	
+	const TMessageHandlerMap &getMessageHandlers() const;
+	
 	/////////////////////////////////////////////////////////////////
-	// WARNING : this is a generated file, don't change it !
+	// WARNING : this is a generated file, don't change it !         
 	/////////////////////////////////////////////////////////////////
-	class CWelcomeServiceClientProxy
+	void pendingUserLost_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
+	
+	// Declare one interceptor member of the skeleton.
+	TInterceptor _Interceptor;
+	
+	// Declare the interceptor forwarder as friend of this class.
+	friend class NLNET::CInterceptorForwarder<CLoginServiceSkel>;
+	
+public:
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	/// An awaited user did not connect before the allowed timeout expire.
+	virtual void pendingUserLost(NLNET::IModuleProxy *sender, const NLNET::CLoginCookie &cookie) =0;
+	
+}; /* class CLoginServiceSkel */
+
+/////////////////////////////////////////////////////////////////
+// WARNING : this is a generated file, don't change it !         
+/////////////////////////////////////////////////////////////////
+/* 
+ * \brief CLoginServiceProxy
+ * \date 2005-10-03 05:15GMT
+ * \author Nevrax Ltd. (Nevrax Ltd.)
+ * Interface for messages going from the shard's welcome service to
+ * the global login service. This is a subsection of the LoginService
+ * module (CLoginServiceMod).
+ * Proxy for sending messages trough the proxy of a module that
+ * implemented this interface. If the target module is local, the
+ * messages will be relayed synchronously to the local module.
+ */
+class CLoginServiceProxy
+{
+	/// Smart pointer on the module proxy
+	NLNET::TModuleProxyPtr _ModuleProxy;
+	
+	// Pointer on the local module that implement the interface (if the proxy is for a local module)
+	NLNET::TModulePtr _LocalModule;
+	// Direct pointer on the server implementation interface for collocated module
+	CLoginServiceSkel *_LocalModuleSkel;
+	
+public:
+	CLoginServiceProxy(NLNET::IModuleProxy *proxy)
 	{
-		/// Smart pointer on the module proxy
-		NLNET::TModuleProxyPtr	_ModuleProxy;
-
-		// Pointer on the local module that implement the interface (if the proxy is for a local module)
-		NLNET::TModulePtr					_LocalModule;
-		// Direct pointer on the server implementation interface for collocated module
-		CWelcomeServiceClientSkel	*_LocalModuleSkel;
-
-
-	public:
-		CWelcomeServiceClientProxy(NLNET::IModuleProxy *proxy)
+		_ModuleProxy = proxy;
+		// Initialize collocated servant interface.
+		if (proxy->getModuleDistance() == 0)
 		{
-
-			_ModuleProxy = proxy;
-
-			// initialize collocated servant interface
-			if (proxy->getModuleDistance() == 0)
-			{
-				_LocalModule = proxy->getLocalModule();
-				nlassert(_LocalModule != NULL);
-				CWelcomeServiceClientSkel::TInterceptor *interceptor = NULL;
-				interceptor = static_cast < NLNET::CModuleBase* >(_LocalModule.getPtr())->getInterceptor(interceptor);
-				nlassert(interceptor != NULL);
-
-				_LocalModuleSkel = interceptor->getParent();
-				nlassert(_LocalModuleSkel != NULL);
-			}
-			else
-				_LocalModuleSkel = 0;
-
+			_LocalModule = proxy->getLocalModule();
+			nlassert(_LocalModule != NULL);
+			CLoginServiceSkel::TInterceptor *interceptor = NULL;
+			interceptor = static_cast<NLNET::CModuleBase *>(_LocalModule.getPtr())->getInterceptor(interceptor);
+			nlassert(interceptor != NULL);
+			_LocalModuleSkel = interceptor->getParent();
+			nlassert(_LocalModuleSkel != NULL);
 		}
-		virtual ~CWelcomeServiceClientProxy()
+		else _LocalModuleSkel = 0;
+	}
+	virtual ~CLoginServiceProxy() { }
+	
+	NLNET::IModuleProxy *getModuleProxy()
+	{
+		return _ModuleProxy;
+	}
+	
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	/// An awaited user did not connect before the allowed timeout expire.
+	void pendingUserLost(NLNET::IModule *sender, const NLNET::CLoginCookie &cookie);
+	
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	/// An awaited user did not connect before the allowed timeout expire.
+	/// Message serializer. Return the message received in reference for easier integration.
+	static const NLNET::CMessage &buildMessageFor_pendingUserLost(NLNET::CMessage &__message, const NLNET::CLoginCookie &cookie);
+	
+}; /* class CLoginServiceProxy */
+
+/////////////////////////////////////////////////////////////////
+// WARNING : this is a generated file, don't change it !         
+/////////////////////////////////////////////////////////////////
+/* 
+ * \brief CWelcomeServiceClientSkel
+ * \date 2005-10-03 05:15GMT
+ * \author Nevrax Ltd. (Nevrax Ltd.)
+ * Interface for messages going from the shard's welcome service to
+ * the global ring session manager. This is a subsection of the
+ * RingSessionManager module (CRingSessionManagerMod) as well as the
+ * LoginService module (CLoginServiceMod).
+ * Skeleton for implementing the receiving end of this interface into
+ * a module.
+ */
+class CWelcomeServiceClientSkel
+{
+public:
+	// The interceptor type.
+	typedef NLNET::CInterceptorForwarder<CWelcomeServiceClientSkel> TInterceptor;
+	
+protected:
+	CWelcomeServiceClientSkel()
+	{
+		// Do early run time check for message table.
+		getMessageHandlers();
+	}
+	virtual ~CWelcomeServiceClientSkel() { }
+	
+	void init(NLNET::IModule *module)
+	{
+		_Interceptor.init(this, module);
+	}
+	
+	// Unused interceptors.
+	std::string fwdBuildModuleManifest() const { return std::string(); }
+	void fwdOnModuleUp(NLNET::IModuleProxy *moduleProxy) { };
+	void fwdOnModuleDown(NLNET::IModuleProxy *moduleProxy) { };
+	void fwdOnModuleSecurityChange(NLNET::IModuleProxy *moduleProxy) { };
+	
+	// Process module message interceptor.
+	bool fwdOnProcessModuleMessage(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
+	
+private:
+	typedef void (CWelcomeServiceClientSkel::*TMessageHandler)(NLNET::IModuleProxy *sender, const NLNET::CMessage &message);
+	typedef std::map<std::string, TMessageHandler> TMessageHandlerMap;
+	
+	const TMessageHandlerMap &getMessageHandlers() const;
+	
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	void registerWS_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
+	void reportWSOpenState_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
+	void welcomeUserResult_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
+	void updateConnectedPlayerCount_skel(NLNET::IModuleProxy *sender, const NLNET::CMessage &__message);
+	
+	// Declare one interceptor member of the skeleton.
+	TInterceptor _Interceptor;
+	
+	// Declare the interceptor forwarder as friend of this class.
+	friend class NLNET::CInterceptorForwarder<CWelcomeServiceClientSkel>;
+	
+public:
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	/// Register the welcome service in the ring session manager. The provided sessionId will be non-zero only for a shard with a fixed sessionId.
+	virtual void registerWS(NLNET::IModuleProxy *sender, uint32 shardId, uint32 fixedSessionId, bool isOnline) =0;
+	/// WS report it's current open state.
+	virtual void reportWSOpenState(NLNET::IModuleProxy *sender, bool isOnline) =0;
+	/// Return for welcome user.
+	virtual void welcomeUserResult(NLNET::IModuleProxy *sender, uint32 userId, bool ok, const std::string &shardAddr, const std::string &errorMsg) =0;
+	/// Transmits the current player counts.
+	virtual void updateConnectedPlayerCount(NLNET::IModuleProxy *sender, uint32 nbOnlinePlayers, uint32 nbPendingPlayers) =0;
+	
+}; /* class CWelcomeServiceClientSkel */
+
+/////////////////////////////////////////////////////////////////
+// WARNING : this is a generated file, don't change it !         
+/////////////////////////////////////////////////////////////////
+/* 
+ * \brief CWelcomeServiceClientProxy
+ * \date 2005-10-03 05:15GMT
+ * \author Nevrax Ltd. (Nevrax Ltd.)
+ * Interface for messages going from the shard's welcome service to
+ * the global ring session manager. This is a subsection of the
+ * RingSessionManager module (CRingSessionManagerMod) as well as the
+ * LoginService module (CLoginServiceMod).
+ * Proxy for sending messages trough the proxy of a module that
+ * implemented this interface. If the target module is local, the
+ * messages will be relayed synchronously to the local module.
+ */
+class CWelcomeServiceClientProxy
+{
+	/// Smart pointer on the module proxy
+	NLNET::TModuleProxyPtr _ModuleProxy;
+	
+	// Pointer on the local module that implement the interface (if the proxy is for a local module)
+	NLNET::TModulePtr _LocalModule;
+	// Direct pointer on the server implementation interface for collocated module
+	CWelcomeServiceClientSkel *_LocalModuleSkel;
+	
+public:
+	CWelcomeServiceClientProxy(NLNET::IModuleProxy *proxy)
+	{
+		_ModuleProxy = proxy;
+		// Initialize collocated servant interface.
+		if (proxy->getModuleDistance() == 0)
 		{
+			_LocalModule = proxy->getLocalModule();
+			nlassert(_LocalModule != NULL);
+			CWelcomeServiceClientSkel::TInterceptor *interceptor = NULL;
+			interceptor = static_cast<NLNET::CModuleBase *>(_LocalModule.getPtr())->getInterceptor(interceptor);
+			nlassert(interceptor != NULL);
+			_LocalModuleSkel = interceptor->getParent();
+			nlassert(_LocalModuleSkel != NULL);
 		}
-
-		NLNET::IModuleProxy *getModuleProxy()
-		{
-			return _ModuleProxy;
-		}
-
-		// Register the welcome service in the ring session manager
-		// The provided sessionId will be non-zero only for a shard with a fixed sessionId
-		void registerWS(NLNET::IModule *sender, uint32 shardId, uint32 fixedSessionId, bool isOnline);
-		// WS report it's current open state
-		void reportWSOpenState(NLNET::IModule *sender, bool isOnline);
-		// return for welcome user
-		void welcomeUserResult(NLNET::IModule *sender, uint32 userId, bool ok, const std::string &shardAddr, const std::string &errorMsg);
-		// transmits the current player counts
-		void updateConnectedPlayerCount(NLNET::IModule *sender, uint32 nbOnlinePlayers, uint32 nbPendingPlayers);
-
-		// Message serializer. Return the message received in reference for easier integration
-		static const NLNET::CMessage &buildMessageFor_registerWS(NLNET::CMessage &__message, uint32 shardId, uint32 fixedSessionId, bool isOnline);
+		else _LocalModuleSkel = 0;
+	}
+	virtual ~CWelcomeServiceClientProxy() { }
 	
-		// Message serializer. Return the message received in reference for easier integration
-		static const NLNET::CMessage &buildMessageFor_reportWSOpenState(NLNET::CMessage &__message, bool isOnline);
+	NLNET::IModuleProxy *getModuleProxy()
+	{
+		return _ModuleProxy;
+	}
 	
-		// Message serializer. Return the message received in reference for easier integration
-		static const NLNET::CMessage &buildMessageFor_welcomeUserResult(NLNET::CMessage &__message, uint32 userId, bool ok, const std::string &shardAddr, const std::string &errorMsg);
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	/// Register the welcome service in the ring session manager. The provided sessionId will be non-zero only for a shard with a fixed sessionId.
+	void registerWS(NLNET::IModule *sender, uint32 shardId, uint32 fixedSessionId, bool isOnline);
+	/// WS report it's current open state.
+	void reportWSOpenState(NLNET::IModule *sender, bool isOnline);
+	/// Return for welcome user.
+	void welcomeUserResult(NLNET::IModule *sender, uint32 userId, bool ok, const std::string &shardAddr, const std::string &errorMsg);
+	/// Transmits the current player counts.
+	void updateConnectedPlayerCount(NLNET::IModule *sender, uint32 nbOnlinePlayers, uint32 nbPendingPlayers);
 	
-		// Message serializer. Return the message received in reference for easier integration
-		static const NLNET::CMessage &buildMessageFor_updateConnectedPlayerCount(NLNET::CMessage &__message, uint32 nbOnlinePlayers, uint32 nbPendingPlayers);
+	/////////////////////////////////////////////////////////////////
+	// WARNING : this is a generated file, don't change it !         
+	/////////////////////////////////////////////////////////////////
+	/// Register the welcome service in the ring session manager. The provided sessionId will be non-zero only for a shard with a fixed sessionId.
+	/// Message serializer. Return the message received in reference for easier integration.
+	static const NLNET::CMessage &buildMessageFor_registerWS(NLNET::CMessage &__message, uint32 shardId, uint32 fixedSessionId, bool isOnline);
+	/// WS report it's current open state.
+	/// Message serializer. Return the message received in reference for easier integration.
+	static const NLNET::CMessage &buildMessageFor_reportWSOpenState(NLNET::CMessage &__message, bool isOnline);
+	/// Return for welcome user.
+	/// Message serializer. Return the message received in reference for easier integration.
+	static const NLNET::CMessage &buildMessageFor_welcomeUserResult(NLNET::CMessage &__message, uint32 userId, bool ok, const std::string &shardAddr, const std::string &errorMsg);
+	/// Transmits the current player counts.
+	/// Message serializer. Return the message received in reference for easier integration.
+	static const NLNET::CMessage &buildMessageFor_updateConnectedPlayerCount(NLNET::CMessage &__message, uint32 nbOnlinePlayers, uint32 nbPendingPlayers);
 	
+}; /* class CWelcomeServiceClientProxy */
 
+} /* namespace WS */
 
+#endif /* #ifndef WS_WELCOME_SERVICE_ITF_H */
 
-	};
+/* end of file */
 
-}
-	
-#endif
+/* Merge OpenNeL SVN
+ */

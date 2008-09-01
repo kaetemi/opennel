@@ -316,5 +316,5 @@ void drawLine (float x0, float y0, float x1, float y1, vector<pair<sint, sint> >
 
 } // NLMISC
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

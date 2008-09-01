@@ -52,7 +52,6 @@ class CTrajectory;
 // External variables
 //
 
-extern NL3D::ULandscape						*Landscape;
 extern std::vector<NL3D::UInstanceGroup*>	 InstanceGroups;
 extern NLMISC::CVector						 SunDirection;
 
@@ -61,12 +60,14 @@ extern NLMISC::CVector						 SunDirection;
 // External functions
 //
 
-void			initLandscape();
-void			updateLandscape();
-void			releaseLandscape();
+void initLight();
+void releaseLight();
 
-void			initAiming();
-void			releaseAiming();
+void initLandscape();
+void releaseLandscape();
+
+void initAiming();
+void releaseAiming();
 
 // Compute the collision with the landscape from the start position, using the given step,
 // at maximum numSteps steps from the start. It uses full (!) physics computation, and should be
@@ -76,3 +77,6 @@ NLMISC::CVector	getTarget(const NLMISC::CVector &start, const NLMISC::CVector &s
 #endif // LANDSCAPE_H
 
 /* End of landscape.h */
+
+/* Merge OpenNeL SVN
+ */

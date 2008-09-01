@@ -27,8 +27,12 @@
 #define YY_FLEX_MAJOR_VERSION 2
 #define YY_FLEX_MINOR_VERSION 5
 
-// Manualy added for complient with NL memory, must be added each time source are re-generated.
+/*
+ * START MANUAL ADDITION:
+ *   Manualy added for complient with NL memory, must be added each time source are re-generated.
+ */
 #include "nel/misc/types_nl.h"
+/* END MANUAL ADDITION */
 
 #include <cstdio>
 
@@ -3281,5 +3285,5 @@ void comment ()
 		cf_CurrentLine++;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

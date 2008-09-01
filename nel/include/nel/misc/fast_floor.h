@@ -74,6 +74,9 @@ inline void  OptFastFloorEnd()
 }
 
 // Force __stdcall to not pass parameters in registers.
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 inline sint32 __stdcall OptFastFloor(float x)
 {	
 	static __int64	res;
@@ -86,9 +89,14 @@ inline sint32 __stdcall OptFastFloor(float x)
 
 	return (sint32) (res&0xFFFFFFFF);
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // Force __stdcall to not pass parameters in registers.
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 inline float __stdcall OptFastFractionnalPart(float x)
 {
 	static double res;
@@ -101,10 +109,11 @@ inline float __stdcall OptFastFractionnalPart(float x)
 		fisub   dword ptr res		
 		fstp    dword ptr res
 	}
-
 	return * (float *) &res;
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // The magic constant value, for 24 bits precision support positive numbers only
 extern float	OptFastFloorMagicConst24 ; 
@@ -122,6 +131,9 @@ inline void  OptFastFloorEnd24()
 
 // Force __stdcall to not pass parameters in registers.
 /// Same method as OptFastFloor, but result are always positive and should never be bigger than 2^23-1
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 inline uint32 __stdcall OptFastFloor24(float x)
 {	
 	static uint32	res;
@@ -131,11 +143,11 @@ inline uint32 __stdcall OptFastFloor24(float x)
 		fadd	dword ptr OptFastFloorMagicConst24
 		fstp	dword ptr res		
 	}
-
 	return res;
 }
-
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 #else
 inline void  OptFastFloorBegin() {}
@@ -169,3 +181,6 @@ inline uint32 OptFastFloor24(float x)
 #endif // NL_FAST_FLOOR_H
 
 /* End of fast_floor.h */
+
+/* Merge OpenNeL SVN
+ */

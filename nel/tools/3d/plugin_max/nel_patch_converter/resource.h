@@ -1,5 +1,5 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Developer Studio generated include file.
+// Microsoft Visual C++ generated include file.
 // Used by nel_patch_converter.rc
 //
 #define IDS_LIBDESCRIPTION              1
@@ -27,3 +27,6 @@
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
+
+/* Merge OpenNeL SVN
+ */

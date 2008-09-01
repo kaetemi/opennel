@@ -26,9 +26,9 @@
 #include "std3d.h"
 
 
-#include "heat_haze.h"
-#include "scene.h"
-#include "deform_2d.h"
+#include "nel/3d/heat_haze.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/deform_2d.h"
 #include "nel/misc/vector_2f.h"
 
 namespace NL3D
@@ -123,5 +123,5 @@ namespace NL3D
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

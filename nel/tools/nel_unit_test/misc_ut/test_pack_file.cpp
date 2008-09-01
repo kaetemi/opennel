@@ -3,7 +3,7 @@
 #include "nel/misc/sstring.h"
 #include "nel/misc/file.h"
 
-#include "src/cpptest.h"
+#include "cpptest.h"
 
 using namespace std;
 using namespace NLMISC;
@@ -231,3 +231,6 @@ Test::Suite *createCPackFileTS(const std::string &workingPath)
 {
 	return new CPackFileTS(workingPath);
 }
+
+/* Merge OpenNeL SVN
+ */

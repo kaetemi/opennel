@@ -31,7 +31,7 @@
 #include "nel/misc/hierarchical_timer.h"
 
 #ifdef NL_OS_WINDOWS
-# if defined(NL_COMP_VC7) || defined(NL_COMP_VC71) || defined(NL_COMP_VC8)
+# if defined(NL_COMP_VC7) || defined(NL_COMP_VC71) || defined(NL_COMP_VC8) || defined(NL_COMP_VC9)
 #	include <winsock2.h>
 # endif
 #	define NOMINMAX
@@ -654,5 +654,5 @@ sint32 CSock::getSendBufferSize()
 
 } // NLNET
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

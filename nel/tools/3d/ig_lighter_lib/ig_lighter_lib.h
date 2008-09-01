@@ -27,7 +27,7 @@
 #define NL_IG_LIGHTER_LIB_H
 
 #include "nel/misc/types_nl.h"
-#include "nel/../../src/3d/instance_lighter.h"
+#include "nel/3d/instance_lighter.h"
 
 namespace NLPACS
 {
@@ -101,3 +101,6 @@ private:
 #endif // NL_IG_LIGHTER_LIB_H
 
 /* End of ig_lighter_lib.h */
+
+/* Merge OpenNeL SVN
+ */

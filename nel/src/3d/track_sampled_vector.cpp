@@ -26,7 +26,7 @@
 #include "std3d.h"
 
 #include "nel/misc/common.h"
-#include "track_sampled_vector.h"
+#include "nel/3d/track_sampled_vector.h"
 
 using namespace NLMISC;
 using namespace std;
@@ -159,3 +159,6 @@ void CTrackSampledVector::applySampleDivisor(uint sampleDivisor)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

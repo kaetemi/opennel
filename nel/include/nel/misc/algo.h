@@ -147,6 +147,9 @@ uint		searchLowerBound(const std::vector<T> &array, const T &key)
 // ***************************************************************************
 /** Clamp a sint in 0..255. Avoid cond jump.
  */
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 static inline	void fastClamp8(sint &v)
 {
 #ifdef NL_OS_WINDOWS
@@ -173,7 +176,9 @@ static inline	void fastClamp8(sint &v)
 	clamp(v, 0, 255);
 #endif
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 /** return true if the string strIn verify the wildcard string wildCard.
@@ -242,5 +247,5 @@ inline void setFlags(T &dest, U mask, bool on)
 
 /* End of algo.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -198,11 +198,15 @@
 	</References>
 	<Files>
 		<File
-			RelativePath=".\english.uxt"
+			RelativePath=".\de.uxt"
 			>
 		</File>
 		<File
-			RelativePath=".\french.uxt"
+			RelativePath=".\en.uxt"
+			>
+		</File>
+		<File
+			RelativePath=".\fr.uxt"
 			>
 		</File>
 		<File

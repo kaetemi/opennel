@@ -42,16 +42,16 @@
 #include "nel/misc/win_event_emitter.h"
 #include "nel/3d/viewport.h"
 #include "nel/3d/scissor.h"
-#include "../../driver.h"
-#include "../../material.h"
-#include "../../shader.h"
-#include "../../vertex_buffer.h"
-#include "../../index_buffer.h"
-#include "../../ptr_set.h"
-#include "../../texture_cube.h"
-#include "../../occlusion_query.h"
-#include "../../vertex_program_parse.h"
-#include "../../light.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/material.h"
+#include "nel/3d/shader.h"
+#include "nel/3d/vertex_buffer.h"
+#include "nel/3d/index_buffer.h"
+#include "nel/3d/ptr_set.h"
+#include "nel/3d/texture_cube.h"
+#include "nel/3d/occlusion_query.h"
+#include "nel/3d/vertex_program_parse.h"
+#include "nel/3d/light.h"
 //
 #include <algorithm>
 
@@ -89,7 +89,7 @@
 //#define NL_FORCE_PIXEL_SHADER_USE_FOR_NORMAL_SHADERS
 
 // Define this to enable profiling by the NV Perf HUD tool (default is undefined)
-#define NL_D3D_USE_NV_PERF_HUD
+//#define NL_D3D_USE_NV_PERF_HUD
 
 // Define this to enable profiling of driver functions (default is undefined).
 //#define NL_PROFILE_DRIVER_D3D
@@ -386,7 +386,7 @@ public:
 	virtual ~CStateRecord() {}
 	// use STL allocator for fast alloc. this works because objects are small ( < 128 bytes)
 	void *operator new(size_t size) { return CStateRecord::Allocator.allocate(size); }
-	void operator delete(void *block) { CStateRecord::Allocator.deallocate((uint8 *) block); }
+	void operator delete(void *block) { CStateRecord::Allocator.deallocate((uint8 *) block, 1); }
 
 	static std::allocator<uint8> Allocator;
 };
@@ -764,6 +764,8 @@ public:
 	virtual void			getWindowSize (uint32 &width, uint32 &height);
 	virtual void			getWindowPos (uint32 &x, uint32 &y);
 	virtual uint8			getBitPerPixel ();
+	/// Set the title of the NeL window
+	virtual void			setWindowTitle(const std::string &title);
 
 	// Driver parameters
 	virtual void			disableHardwareVertexProgram();
@@ -772,6 +774,7 @@ public:
 	virtual void			disableHardwareTextureShader();
 	virtual void			forceDXTCCompression(bool dxtcComp);
 	virtual void			forceTextureResize(uint divisor);
+	virtual void			forceNativeFragmentPrograms(bool nativeOnly) {} // ignored
 
 	// Driver informations
 	virtual uint			getNumAdapter() const;
@@ -779,7 +782,7 @@ public:
 	virtual bool			setAdapter(uint adapter);
 	virtual uint32			getAvailableVertexAGPMemory ();
 	virtual uint32			getAvailableVertexVRAMMemory ();
-	virtual	sint			getNbTextureStages() const;
+	virtual	uint			getNbTextureStages() const;
 	virtual void			getNumPerStageConstant(uint &lightedMaterial, uint &unlightedMaterial) const;
 	virtual	bool			supportVertexBufferHard() const;
 	virtual bool			supportVolatileVertexBuffer() const;
@@ -816,7 +819,7 @@ public:
 	virtual	void			getDepthRange(float &znear, float &zfar) const;
 	
 	// todo hulud d3d buffers
-	virtual void			getZBuffer (std::vector<float>  &zbuffer) {};
+	virtual void			getZBuffer (std::vector<float>  &zbuffer) {}
 	virtual void			getBufferPart (CBitmap &bitmap, NLMISC::CRect &rect);	// Only 32 bits back buffer supported
 	
 	// return true if driver support Bloom effect.
@@ -920,7 +923,7 @@ public:
 	virtual void			enableLight (uint8 num, bool enable=true);
 	virtual void			setLightMapDynamicLight (bool enable, const CLight& light);
 	// todo hulud d3d light
-	virtual void			setPerPixelLightingLight(CRGBA diffuse, CRGBA specular, float shininess) {};
+	virtual void			setPerPixelLightingLight(CRGBA diffuse, CRGBA specular, float shininess) {}
 	virtual void			setAmbientColor (CRGBA color);
 
 	// Fog
@@ -940,7 +943,7 @@ public:
 	// todo hulud d3d adressing mode
 	virtual bool			isTextureAddrModeSupported(CMaterial::TTexAddressingMode mode) const {return false;};
 	// todo hulud d3d adressing mode
-	virtual void			setMatrix2DForTextureOffsetAddrMode(const uint stage, const float mat[4]) {};
+	virtual void			setMatrix2DForTextureOffsetAddrMode(const uint stage, const float mat[4]) {}
 
 	// EMBM support	
 	virtual bool			supportEMBM() const;	
@@ -1020,7 +1023,7 @@ public:
 	bool					supportPixelShaders() const { return _PixelShader; }
 
 		// *** Inline info
-	sint			inlGetNumTextStages() const {return _NbNeLTextureStages;}
+	uint					inlGetNumTextStages() const { return _NbNeLTextureStages; }
 
 //private:
 public:
@@ -2054,6 +2057,8 @@ public:
 	HRESULT STDMETHODCALLTYPE SetVertexShaderConstantI(UINT StartRegister, CONST INT* pConstantData, UINT RegisterCount);
 private:
 
+	void findNearestFullscreenVideoMode();
+
 	// Windows
 	std::string				_WindowClass;
 	HWND					_HWnd;	
@@ -2128,7 +2133,7 @@ private:
 	bool					_EMBMSupported;
 	bool					_CubbedMipMapSupported;
 	bool					_IsGeforce;
-	sint					_NbNeLTextureStages;			// Number of texture stage for NeL (max IDRV_MAT_MAXTEXTURES)
+	uint					_NbNeLTextureStages;			// Number of texture stage for NeL (max IDRV_MAT_MAXTEXTURES)
 	uint					_MaxVerticesByVertexBufferHard;
 	uint					_MaxLight;
 	uint32					_PixelShaderVersion;
@@ -2523,5 +2528,5 @@ extern HINSTANCE HInstDLL;
 
 #endif // NL_DRIVER_DIRECT3D_H
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -32,7 +32,7 @@
 #include "nel/misc/hierarchical_timer.h"
 
 #include "nel/ligo/primitive.h"
-#include "../3d/cluster.h"
+#include "nel/3d/cluster.h"
 
 #include "nel/sound/u_source.h"
 #include "clustered_sound.h"
@@ -1545,5 +1545,5 @@ void CBackgroundSoundManager::TFxZone::serial(NLMISC::IStream &s)
 } // NLSOUND
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

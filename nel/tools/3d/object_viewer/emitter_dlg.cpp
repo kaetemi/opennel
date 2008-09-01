@@ -30,7 +30,7 @@
 #include "particle_tree_ctrl.h"
 #include "particle_dlg.h"
 
-#include "nel/../../src/3d/particle_system.h"
+#include "nel/3d/particle_system.h"
 
 
 
@@ -392,3 +392,6 @@ void CEmitterDlg::OnSelchangeDirectionMode()
 	updateModifiedFlag();
 	UpdateData(FALSE);
 }
+
+/* Merge OpenNeL SVN
+ */

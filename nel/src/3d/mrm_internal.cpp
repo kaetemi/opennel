@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "mrm_internal.h"
+#include "nel/3d/mrm_internal.h"
 #include "nel/misc/common.h"
 
 
@@ -147,3 +147,6 @@ void	CMRMSewingMesh::build(const CMesh::CInterface &meshInt, uint nWantedLods, u
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

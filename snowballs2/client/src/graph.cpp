@@ -27,9 +27,10 @@
 // Includes
 //
 
+#include <nel/misc/types_nl.h>
+
 #include <deque>
 
-#include <nel/misc/types_nl.h>
 #include <nel/misc/vector.h>
 #include <nel/misc/matrix.h>
 #include <nel/misc/command.h>
@@ -139,9 +140,9 @@ void cbUpdateGraph (CConfigFile::CVar &var)
 
 void initGraph ()
 {
-	ConfigFile.setCallback ("ShowGraph", cbUpdateGraph);
+	ConfigFile->setCallback ("ShowGraph", cbUpdateGraph);
 
-	cbUpdateGraph (ConfigFile.getVar ("ShowGraph"));
+	cbUpdateGraph (ConfigFile->getVar ("ShowGraph"));
 }
 
 void updateGraph ()
@@ -157,6 +158,7 @@ void updateGraph ()
 
 void releaseGraph ()
 {
+	ConfigFile->setCallback("ShowGraph", NULL);
 }
 
 NLMISC_COMMAND(graph,"swith on/off graphs","")
@@ -167,3 +169,6 @@ NLMISC_COMMAND(graph,"swith on/off graphs","")
 	ShowGraph = !ShowGraph;
 	return true;
 }
+
+/* Merge OpenNeL SVN
+ */

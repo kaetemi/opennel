@@ -50,7 +50,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="../../../../include"
-				PreprocessorDefinitions="NL_RELEASE_DEBUG;NDEBUG;WIN32;_WINDOWS;NL_NO_DEFINE_NEW"
+				PreprocessorDefinitions="_WINDOWS;NL_RELEASE_DEBUG;WIN32;NDEBUG"
 				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
@@ -80,7 +80,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="maxscrpt.lib odbc32.lib odbccp32.lib comctl32.lib bmm.lib core.lib geom.lib gfx.lib mesh.lib paramblk2.lib maxutil.lib version.lib freetype.lib"
-				OutputFile="$(OutDir)\$(ProjectName).dlm"
+				OutputFile="$(OutDir)\nelconvertpatch.dlm"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				AdditionalLibraryDirectories=""
@@ -738,5 +738,5 @@
 	</Globals>
 </VisualStudioProject>
 
-<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+<!-- Merge OpenNeL SVN
  -->

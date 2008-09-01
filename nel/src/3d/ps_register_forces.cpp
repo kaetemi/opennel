@@ -25,8 +25,8 @@
 #include "std3d.h"
 
 
-#include "ps_util.h"
-#include "ps_force.h"
+#include "nel/3d/ps_util.h"
+#include "nel/3d/ps_force.h"
 
 
 
@@ -46,3 +46,6 @@ namespace NL3D
 		CPSBrownianForce::initPrecalc();
 	}
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

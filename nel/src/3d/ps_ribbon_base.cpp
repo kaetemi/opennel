@@ -26,8 +26,8 @@
 #include "std3d.h"
 
 #include "nel/misc/common.h"
-#include "ps_ribbon_base.h"
-#include "particle_system.h"
+#include "nel/3d/ps_ribbon_base.h"
+#include "nel/3d/particle_system.h"
 
 namespace NL3D 
 {
@@ -822,3 +822,6 @@ void CPSRibbonBase::systemDateChanged()
 
 } // NL3D
 
+
+/* Merge OpenNeL SVN
+ */

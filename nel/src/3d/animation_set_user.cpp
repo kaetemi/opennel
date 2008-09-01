@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "animation_set_user.h"
-#include "driver_user.h"
+#include "nel/3d/animation_set_user.h"
+#include "nel/3d/driver_user.h"
 
 
 namespace NL3D 
@@ -75,5 +75,5 @@ void CAnimationSetUser::build ()
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "stripifier.h"
+#include "nel/3d/stripifier.h"
 // For now, don't use NVidia stripifier.
 //#include "nv_tri_strip_objects.h"
 #include <vector>
@@ -408,3 +408,6 @@ void		CStripifier::optimizeTriangles(const CIndexBuffer &in, CIndexBuffer &out, 
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

@@ -26,7 +26,7 @@
 #include "std3d.h"
 
 #include "nel/3d/u_transformable.h"
-#include "transformable.h"
+#include "nel/3d/transformable.h"
 
 
 namespace NL3D 
@@ -240,5 +240,5 @@ void UTransformable::lookAt (const CVector& eye, const CVector& target, float ro
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,11 +25,11 @@
 
 #include "std3d.h"
 
-#include "ps_face.h"
-#include "ps_macro.h"
-#include "driver.h"
-#include "ps_iterator.h"
-#include "particle_system.h"
+#include "nel/3d/ps_face.h"
+#include "nel/3d/ps_macro.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/ps_iterator.h"
+#include "nel/3d/particle_system.h"
 #include "nel/misc/quat.h"
 
 
@@ -424,3 +424,6 @@ void CPSFace::resize(uint32 size)
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

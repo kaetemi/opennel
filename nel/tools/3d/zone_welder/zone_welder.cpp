@@ -30,11 +30,11 @@
 #include "nel/misc/types_nl.h"
 #include "nel/misc/file.h"
 #include "nel/3d/quad_tree.h"
-#include "nel/../../src/3d/zone.h"
-#include "nel/../../src/3d/landscape.h"
-#include "nel/../../src/3d/zone_smoother.h"
-#include "nel/../../src/3d/zone_tgt_smoother.h"
-#include "nel/../../src/3d/zone_corner_smoother.h"
+#include "nel/3d/zone.h"
+#include "nel/3d/landscape.h"
+#include "nel/3d/zone_smoother.h"
+#include "nel/3d/zone_tgt_smoother.h"
+#include "nel/3d/zone_corner_smoother.h"
 #include <vector>
 #include <set>
 
@@ -1008,5 +1008,6 @@ int main(sint argc, char **argv)
 
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+
+/* Merge OpenNeL SVN
  */

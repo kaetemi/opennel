@@ -26,9 +26,9 @@
 
 #include "std3d.h"
 
-#include "tangent_space_build.h"
-#include "index_buffer.h"
-#include "vertex_buffer.h"
+#include "nel/3d/tangent_space_build.h"
+#include "nel/3d/index_buffer.h"
+#include "nel/3d/vertex_buffer.h"
 #include "nel/misc/triangle.h"
 
 
@@ -260,3 +260,6 @@ bool	BuildTangentSpace(CMesh::CMeshBuild &outMeshBuild, const CMesh::CMeshBuild 
 
 
 }
+
+/* Merge OpenNeL SVN
+ */

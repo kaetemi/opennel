@@ -3,7 +3,7 @@
 #include "nel/misc/debug.h"
 #include "nel/misc/sstring.h"
 
-#include "src/cpptest.h"
+#include "cpptest.h"
 
 using namespace std;
 using namespace NLMISC;
@@ -51,3 +51,6 @@ Test::Suite *createCSStringTS()
 {
 	return new CSStringTS;
 }
+
+/* Merge OpenNeL SVN
+ */

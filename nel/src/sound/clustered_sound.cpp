@@ -29,11 +29,11 @@
 #include "nel/georges/u_form.h"
 #include "nel/georges/u_form_elm.h"
 #include "nel/georges/load_form.h"
-#include "../3d/std3d.h"
-#include "../3d/scene.h"
-#include "../3d/scene_user.h"
-#include "../3d/cluster.h"
-#include "../3d/portal.h"
+//#include "nel/3d/std3d.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/scene_user.h"
+#include "nel/3d/cluster.h"
+#include "nel/3d/portal.h"
 #include "driver/listener.h"
 #include "audio_mixer_user.h"
 #include "driver/sound_driver.h"
@@ -1167,5 +1167,5 @@ float CClusteredSound::getAABoxNearestPos(const CAABBox &box, const CVector &pos
 
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

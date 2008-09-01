@@ -616,5 +616,5 @@ pkgconfig_DATA = nel-3d.pc
 
 # End of Makefile.am
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

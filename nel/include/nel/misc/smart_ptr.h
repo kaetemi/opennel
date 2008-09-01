@@ -361,7 +361,7 @@ public:
 	}
 };
 
-#ifdef NL_COMP_VC8
+#if defined(NL_COMP_VC8) || defined(NL_COMP_VC9)
 
 // This operator only purpose is to compare with NULL value
 template <class T>
@@ -929,3 +929,6 @@ bool CstCDbgPtr<T>::operator <(const CstCDbgPtr& p) const
 #endif // NL_SMART_PTR_H
 
 /* End of smart_ptr.h */
+
+/* Merge OpenNeL SVN
+ */

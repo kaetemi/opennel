@@ -27,18 +27,18 @@
 #include "std3d.h"
 
 
-#include "patch.h"
-#include "tessellation.h"
-#include "bezier_patch.h"
-#include "zone.h"
-#include "landscape.h"
+#include "nel/3d/patch.h"
+#include "nel/3d/tessellation.h"
+#include "nel/3d/bezier_patch.h"
+#include "nel/3d/zone.h"
+#include "nel/3d/landscape.h"
 #include "nel/misc/vector.h"
 #include "nel/misc/common.h"
-#include "patchuv_locator.h"
-#include "vegetable_manager.h"
+#include "nel/3d/patchuv_locator.h"
+#include "nel/3d/vegetable_manager.h"
 #include "nel/misc/fast_floor.h"
-#include "light_influence_interpolator.h"
-#include "patchdlm_context.h"
+#include "nel/3d/light_influence_interpolator.h"
+#include "nel/3d/patchdlm_context.h"
 using	namespace	std;
 using	namespace	NLMISC;
 
@@ -597,6 +597,9 @@ void		CPatch::computeTileLightmapEdgeAutomatic(uint ts, uint tt, uint edge, CRGB
 }
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 void		CPatch::computeTileLightmapPixelAutomatic(uint ts, uint tt, uint s, uint t, CRGBA *dest)
 {
 	float		u,v;
@@ -643,7 +646,9 @@ void		CPatch::computeTileLightmapPixelAutomatic(uint ts, uint tt, uint s, uint t
 	// ambiant/diffuse lighting.
 	*dest= getLandscape()->getStaticLight()[ic];
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 void		CPatch::getTileLumelmapPrecomputed(uint ts, uint tt, uint8 *dest, uint stride)
@@ -2044,5 +2049,5 @@ void		CPatch::endDLMLighting()
 } // NL3D
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

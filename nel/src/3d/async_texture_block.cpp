@@ -25,7 +25,7 @@
 
 
 #include "std3d.h"
-#include "async_texture_block.h"
+#include "nel/3d/async_texture_block.h"
 
 
 namespace NL3D 
@@ -34,3 +34,6 @@ namespace NL3D
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

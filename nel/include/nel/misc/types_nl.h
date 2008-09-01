@@ -76,13 +76,15 @@
 #   ifdef __SGI_STL_STLPORT
 #       define NL_COMP_STLPORT
 #   endif
-#	if _MSC_VER >= 1400
+#	if _MSC_VER >= 1500
+#		define NL_COMP_VC9
+#		include <string> // This way we know about _HAS_TR1 :O
+#		if defined(_HAS_TR1) && (_HAS_TR1 + 0) // VC9 TR1 feature pack
+#			define NL_ISO_STDTR1_AVAILABLE
+#			define NL_ISO_STDTR1_HEADER(header) <header>
+#		endif
+#	elif _MSC_VER >= 1400
 #		define NL_COMP_VC8
-// #		define time _time32		// use the old 32 bit time function
-// #		define mktime _mktime32	// use the old 32 bit time function
-// #		define gmtime _gmtime32	// use the old 32 bit time function
-// #		define localtime _localtime32	// use the old 32 bit time function
-// #		define difftime _difftime32	// use the old 32 bit time function
 #	elif _MSC_VER >= 1310
 #		define NL_COMP_VC71
 #	elif _MSC_VER >= 1300
@@ -104,13 +106,25 @@
 	// define NOMINMAX to be sure that windows includes will not define min max macros, but instead, use the stl template
 #	define NOMINMAX
 #else
+#	ifdef __APPLE__
+#		define NL_OS_MAC
+#		ifdef __BIG_ENDIAN__
+#			define NL_BIG_ENDIAN
+#		elif defined(__LITTLE_ENDIAN__)
+#			define NL_LITTLE_ENDIAN
+#		else
+#			error "Cannot detect the endianness of this Mac"
+#		endif
+#	else
+#		ifdef WORDS_BIGENDIAN
+#			define NL_BIG_ENDIAN
+#		else
+#			define NL_LITTLE_ENDIAN
+#		endif
+#	endif
+// these define are set the linux and mac os
 #	define NL_OS_UNIX
 #	define NL_COMP_GCC
-#	ifdef WORDS_BIGENDIAN
-#		define NL_BIG_ENDIAN
-#	else
-#		define NL_LITTLE_ENDIAN
-#	endif
 #endif
 
 // Mode checks: NL_DEBUG and NL_DEBUG_FAST are allowed at the same time, but not with any release mode
@@ -135,6 +149,12 @@
 #	define NL_ISO_TEMPLATE_SPEC template <>
 #endif
 
+// gcc 4.1+ provides std::tr1
+#if defined(__GNUC__) && ((__GNUC__ > 4) || (__GNUC__ == 4) && (__GNUC_MINOR__ > 1))
+#	define NL_ISO_STDTR1_AVAILABLE
+#	define NL_ISO_STDTR1_HEADER(header) <tr1/header>
+#endif
+
 // Remove stupid Visual C++ warnings
 
 #ifdef NL_OS_WINDOWS
@@ -144,10 +164,10 @@
 #	pragma warning (disable : 4250)			// inherits via dominance (informational warning).
 #	pragma warning (disable : 4390)			// don't warn in empty block "if(exp) ;"
 // Debug : Sept 01 2006
-#	ifdef NL_COMP_VC8
+#	if defined(NL_COMP_VC8) || defined(NL_COMP_VC9)
 #		pragma warning (disable : 4005)			// don't warn on redefinitions caused by xp platform sdk
 #		pragma warning (disable : 4996)			// don't warn for deprecated function (sprintf, sscanf in VS8)
-#	endif // NL_COMP_VC8 
+#	endif // NL_COMP_VC8 || NL_COMP_VC9 
 #endif // NL_OS_WINDOWS
 
 
@@ -248,22 +268,25 @@ typedef	unsigned	int			uint;			// at least 32bits (depend of processor)
 
 #define	NL_I64 "I64"
 
-#include <hash_map>
-#include <hash_set>
-#if defined(NL_COMP_VC7) || defined(NL_COMP_VC71) || defined(NL_COMP_VC8) // VC7 through 8
-#	define CHashMap stdext::hash_map
-#	define CHashSet stdext::hash_set
-#	define CHashMultiMap stdext::hash_multimap
-#else // MSVC6
-#	define CHashMap ::std::hash_map
-#	define CHashSet ::std::hash_set
-#	define CHashMultiMap ::std::hash_multimap
-#endif
+#ifndef NL_ISO_STDTR1_AVAILABLE
+#	include <hash_map>
+#	include <hash_set>
+#	if defined(NL_COMP_VC7) || defined(NL_COMP_VC71) || defined(NL_COMP_VC8) || defined(NL_COMP_VC9) // VC7 through 9
+#		define CHashMap stdext::hash_map
+#		define CHashSet stdext::hash_set
+#		define CHashMultiMap stdext::hash_multimap
+#	else // MSVC6
+#		define CHashMap ::std::hash_map
+#		define CHashSet ::std::hash_set
+#		define CHashMultiMap ::std::hash_multimap
+#	endif
+#endif // NL_ISO_STDTR1_AVAILABLE
 
 #elif defined (NL_OS_UNIX)
 
 #include <sys/types.h>
 #include <stdint.h>
+#include <climits>
 
 typedef	int8_t		sint8;
 typedef	u_int8_t	uint8;
@@ -279,7 +302,7 @@ typedef	unsigned	int			uint;			// at least 32bits (depend of processor)
 
 #define	NL_I64 "ll"
 
-#if defined(NL_COMP_GCC) // GCC4
+#if defined(NL_COMP_GCC) && !defined(NL_ISO_STDTR1_AVAILABLE) // GCC4
 #	include <ext/hash_map>
 #	include <ext/hash_set>
 #	define CHashMap ::__gnu_cxx::hash_map
@@ -306,10 +329,18 @@ template<> struct hash<uint64>
 
 } // END NAMESPACE __GNU_CXX
 
-#endif
+#endif // NL_COMP_GCC && !NL_ISO_STDTR1_AVAILABLE
 
 #endif // NL_OS_UNIX
 
+// use std::tr1 for CHash* classes, if available (gcc 4.1+ and VC9 with TR1 feature pack)
+#ifdef NL_ISO_STDTR1_AVAILABLE
+#	include NL_ISO_STDTR1_HEADER(unordered_map)
+#	include NL_ISO_STDTR1_HEADER(unordered_set)
+#	define CHashMap std::tr1::unordered_map
+#	define CHashSet std::tr1::unordered_set
+#	define CHashMultiMap std::tr1::unordered_multimap
+#endif
 
 /**
  * \typedef ucchar
@@ -320,7 +351,7 @@ typedef	uint16	ucchar;
 
 // To define a 64bits constant; ie: UINT64_CONSTANT(0x123456781234)
 #ifdef NL_OS_WINDOWS
-#  ifdef NL_COMP_VC8
+#  if defined(NL_COMP_VC8) || defined(NL_COMP_VC9)
 #    define INT64_CONSTANT(c)	(c##LL)
 #    define SINT64_CONSTANT(c)	(c##LL)
 #    define UINT64_CONSTANT(c)	(c##LL)
@@ -335,18 +366,6 @@ typedef	uint16	ucchar;
 #  define UINT64_CONSTANT(c)	(c##ULL)
 #endif
 
-#if (_MSC_VER >= 1200) && (_MSC_VER < 1400) && (WINVER < 0x0500)
-//Using VC7 and later lib, need this to compile on VC6
-extern "C" long _ftol( double ); //defined by VC6 C libs
-extern "C" long _ftol2( double dblSource );
-#endif
-
-// Fake "for" to be conform with ANSI "for scope" on Windows compiler older than Visual Studio 8
-// On Visual Studio 8, the for is conform with ANSI, no need to define this macro in this case
-#if defined(NL_OS_WINDOWS) && !defined(NL_EXTENDED_FOR_SCOPE) && !defined(NL_COMP_VC8)
-#  define for if(false) {} else for
-#endif
-
 // Define a macro to write template function according to compiler weakness
 #ifdef NL_COMP_NEED_PARAM_ON_METHOD
  #define NL_TMPL_PARAM_ON_METHOD_1(p1)	<p1>
@@ -358,5 +377,5 @@ extern "C" long _ftol2( double dblSource );
 
 #endif // NL_TYPES_H
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

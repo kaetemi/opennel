@@ -1,13 +1,13 @@
-#ifndef WW_KBHIT_H
-#define WW_KBHIT_H
+#ifndef NL_KBHIT_H
+#define NL_KBHIT_H
 
 void init_keyboard(void);
 void close_keyboard(void);
 int kbhit(void);
 int getch(void);
 
-#endif
+#endif // NL_KBHIT_H
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,9 +25,9 @@
 
 #include "std3d.h"
 
-#include "vertex_program.h"
+#include "nel/3d/vertex_program.h"
 
-#include "driver.h"
+#include "nel/3d/driver.h"
 
 
 namespace NL3D 
@@ -64,3 +64,6 @@ CVertexProgram::~CVertexProgram ()
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

@@ -94,10 +94,18 @@ struct CClient
 	void updateFullStat ();
 };
 
-struct TInetAddressHash : public std::hash<NLNET::CInetAddress>
+struct TInetAddressHash
 {
+	static const size_t bucket_size = 4;
+	static const size_t min_buckets = 8;
+
+	inline bool operator() (const NLNET::CInetAddress &x1, const NLNET::CInetAddress &x2) const
+	{
+		return x1 == x2;
+	}
+
 	/// Hash function
-	size_t operator() ( const NLNET::CInetAddress& x ) const
+	inline size_t operator() ( const NLNET::CInetAddress& x ) const
 	{
 		return x.port();
 		//return x.internalIPAddress();
@@ -108,7 +116,7 @@ struct TInetAddressHash : public std::hash<NLNET::CInetAddress>
 // Types
 //
 
-typedef std::hash_map<NLNET::CInetAddress,CClient*,TInetAddressHash> TClientMap;
+typedef CHashMap<NLNET::CInetAddress,CClient*,TInetAddressHash> TClientMap;
 #define GETCLIENTA(it) (*it).second
 
 //
@@ -772,5 +780,5 @@ public:
  
 NLNET_SERVICE_MAIN (CBenchService, "BS", "bench_service", 45459, EmptyCallbackArray, "", "")
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

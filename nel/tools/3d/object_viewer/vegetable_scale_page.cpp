@@ -8,7 +8,7 @@
 #include "vegetable_noise_value_dlg.h"
 #include "vegetable_dlg.h"
 #include "nel/misc/noise_value.h"
-#include "nel/../../src/3d/vegetable.h"
+#include "nel/3d/vegetable.h"
 
 
 
@@ -124,3 +124,6 @@ BOOL CVegetableScalePage::OnInitDialog()
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
+
+/* Merge OpenNeL SVN
+ */

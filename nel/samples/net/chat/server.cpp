@@ -125,5 +125,5 @@ public:
 // be created. If you put 0, the system automatically finds a port.
 NLNET_SERVICE_MAIN (CChatService, "CS", "chat_service", 0, EmptyCallbackArray, "", "");
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

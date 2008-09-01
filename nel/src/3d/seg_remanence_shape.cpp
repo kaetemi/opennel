@@ -24,10 +24,10 @@
 
 #include "std3d.h"
 
-#include "seg_remanence_shape.h"
-#include "seg_remanence.h"
-#include "driver.h"
-#include "scene.h"
+#include "nel/3d/seg_remanence_shape.h"
+#include "nel/3d/seg_remanence.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/scene.h"
 //
 #include "nel/misc/bsphere.h"
 
@@ -300,5 +300,5 @@ bool CSegRemanenceShape::clip(const std::vector<CPlane>	&pyramid, const CMatrix 
 
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

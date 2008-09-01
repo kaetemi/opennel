@@ -26,7 +26,7 @@
 #include "s3tc_compressor.h"
 #include "s3_intrf.h"
 #include "ddraw.h"
-#include "nel/../../src/3d/hls_color_texture.h"
+#include "nel/3d/hls_color_texture.h"
 
 
 using namespace std;
@@ -271,3 +271,6 @@ void		CS3TCCompressor::compress(const NLMISC::CBitmap &bmpSrc, bool optMipMap, u
 	output.serialBuffer((uint8*) &dest2, sizeof(dest2));
 	output.serialBuffer(&(*CompressedMipMaps.begin()), CompressedMipMaps.size());
 }
+
+/* Merge OpenNeL SVN
+ */

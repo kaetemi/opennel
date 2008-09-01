@@ -25,7 +25,10 @@
 #include "nel/misc/matrix.h"
 #include "nel/misc/time_nl.h"
 
-#include "debug_vb.h"
-#include "transform.h"
-#include "quad_grid.h"
+#include "nel/3d/debug_vb.h"
+#include "nel/3d/transform.h"
+#include "nel/3d/quad_grid.h"
 
+
+/* Merge OpenNeL SVN
+ */

@@ -15,7 +15,7 @@
 
 extern ClassDesc2* GetLigoscapeDesc();
 
-HINSTANCE hInstance;
+HINSTANCE hInstance = NULL;
 int controlsInit = FALSE;
 
 // This function is called by Windows when the DLL is loaded.  This 
@@ -81,5 +81,5 @@ TCHAR *GetString(int id)
 }
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

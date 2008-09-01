@@ -48,7 +48,7 @@ class CBigFile
 	NLMISC_SAFE_SINGLETON_DECL(CBigFile);
 
 	CBigFile() {}
-	~CBigFile() {};
+	~CBigFile() {}
 
 public:
 	// release memory
@@ -85,7 +85,7 @@ public:
 	FILE* getFile (const std::string &sFileName, uint32 &rFileSize, uint32 &rBigFileOffset, 
 					bool &rCacheFileOnOpen, bool &rAlwaysOpened);
 
-	// Used by Sound to get information for async loading of mp3 in .bnp. return false if file not found in registered bnps
+	// Used by Sound to get information for async loading of mp3 in .bnp. Return false if file not found in registered bnps
 	bool getFileInfo (const std::string &sFileName, uint32 &rFileSize, uint32 &rBigFileOffset);
 	
 	// Used for CPath only for the moment !
@@ -100,10 +100,7 @@ private:
 	struct	CHandleFile
 	{
 		FILE		*File;
-		CHandleFile()
-		{
-			File= NULL;
-		}
+		CHandleFile() : File(NULL) { }
 	};
 
 	// A class which return a FILE * handle per Thread.
@@ -129,26 +126,26 @@ private:
 	// A BNPFile header
 	struct BNPFile
 	{
+		BNPFile() : Name(NULL), Size(0), Pos(0) { }
 		char		*Name;
 		uint32		Size;
 		uint32		Pos;
 	};
 
-	class CBNPFileComp
+	struct  CBNPFileComp
 	{
-	public:
-
 		// Debug : Sept 01 2006
 		bool operator()(const BNPFile &f, const BNPFile &s )
 		{
 			return strcmp( f.Name, s.Name ) < 0;
 		}
-
 	};
 
 	// A BNP structure
 	struct BNP
 	{
+		BNP() : FileNames(NULL) { }
+
 		// FileName of the BNP. important to open it in getFile() (for other threads or if not always opened).
 		std::string						BigFileName;
 		// map of files in the BNP.
@@ -158,11 +155,6 @@ private:
 		uint32							ThreadFileId;
 		bool							CacheFileOnOpen;
 		bool							AlwaysOpened;
-
-		BNP()
-		{
-			FileNames = NULL;
-		}
 	};
 private:
 
@@ -186,5 +178,5 @@ private:
 
 /* End of big_file.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

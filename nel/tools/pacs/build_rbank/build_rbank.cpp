@@ -33,11 +33,11 @@
 #include "nel/misc/polygon.h"
 #include "nel/misc/smart_ptr.h"
 
-#include "nel/../../src/3d/scene_group.h"
-#include "nel/../../src/3d/transform_shape.h"
-#include "nel/../../src/3d/water_model.h"
-#include "nel/../../src/3d/water_shape.h"
-#include "nel/../../src/3d/quad_grid.h"
+#include "nel/3d/scene_group.h"
+#include "nel/3d/transform_shape.h"
+#include "nel/3d/water_model.h"
+#include "nel/3d/water_shape.h"
+#include "nel/3d/quad_grid.h"
 
 #include "build_rbank.h"
 #include "build_surf.h"
@@ -68,7 +68,7 @@ public:
 	CIGBox(const string &name, const CAABBox &bbox) : Name(name), BBox(bbox) {}
 	string			Name;
 	CAABBox			BBox;
-	void			serial(IStream &f) { f.serial(Name, BBox); }
+	void			serial(NLMISC::IStream &f) { f.serial(Name, BBox); }
 };
 
 /*
@@ -1108,5 +1108,6 @@ void	updateRetrieverBank()
 }
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+
+/* Merge OpenNeL SVN
  */

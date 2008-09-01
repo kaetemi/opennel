@@ -27,9 +27,9 @@
 #include "std_afx.h"
 #include "object_viewer.h"
 #include "particle_system_edit.h"
-#include "nel/../../src/3d/particle_system.h"
-#include "nel/../../src/3d/particle_system_model.h"
-#include "nel/../../src/3d/ps_color.h"
+#include "nel/3d/particle_system.h"
+#include "nel/3d/particle_system_model.h"
+#include "nel/3d/ps_color.h"
 #include "editable_range.h"
 #include "auto_lod_dlg.h"
 #include "ps_global_color_dlg.h"
@@ -913,3 +913,6 @@ void CParticleSystemEdit::OnLockFrameDelay()
 	buttonStr.LoadString(locked ? IDS_UNLOCK_PS : IDS_LOCK_PS);
 	GetDlgItem(IDC_LOCK_FRAME_DELAY)->SetWindowText(buttonStr);	
 }
+
+/* Merge OpenNeL SVN
+ */

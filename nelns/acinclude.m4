@@ -1218,5 +1218,5 @@ AC_SUBST([have_fmod])
 # End of file
 
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

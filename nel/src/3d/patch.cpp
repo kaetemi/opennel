@@ -26,18 +26,18 @@
 #include "std3d.h"
 
 
-#include "patch.h"
-#include "tessellation.h"
-#include "bezier_patch.h"
-#include "zone.h"
-#include "landscape.h"
+#include "nel/3d/patch.h"
+#include "nel/3d/tessellation.h"
+#include "nel/3d/bezier_patch.h"
+#include "nel/3d/zone.h"
+#include "nel/3d/landscape.h"
 #include "nel/misc/vector.h"
 #include "nel/misc/common.h"
-#include "patchuv_locator.h"
-#include "vegetable_manager.h"
+#include "nel/3d/patchuv_locator.h"
+#include "nel/3d/vegetable_manager.h"
 #include "nel/misc/fast_floor.h"
-#include "light_influence_interpolator.h"
-#include "patchdlm_context.h"
+#include "nel/3d/light_influence_interpolator.h"
+#include "nel/3d/patchdlm_context.h"
 #include "nel/misc/hierarchical_timer.h"
 #include "nel/3d/u_landscape.h"
 
@@ -2340,5 +2340,5 @@ uint32	CPatch::countNumTriFar1() const
 } // NL3D
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "tile_element.h"
+#include "nel/3d/tile_element.h"
 #include "nel/misc/debug.h"
 
 
@@ -94,3 +94,6 @@ void	CTileElement::setVegetableState(TVegetableInfo state)
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

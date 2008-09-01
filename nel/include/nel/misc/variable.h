@@ -503,7 +503,7 @@ private:
 class IVariableChangedCallback
 {
 public:
-	virtual ~IVariableChangedCallback() {};
+	virtual ~IVariableChangedCallback() {}
 	virtual void onVariableChanged(NLMISC::IVariable& var) = 0;
 };
 
@@ -515,5 +515,5 @@ public:
 
 /* End of variable.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

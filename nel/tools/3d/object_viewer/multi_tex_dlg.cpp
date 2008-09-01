@@ -28,8 +28,8 @@
 #include "std_afx.h"
 #include "object_viewer.h"
 #include "multi_tex_dlg.h"
-#include "nel/../../src/3d/ps_particle_basic.h"
-#include "nel/../../src/3d/texture_bump.h"
+#include "nel/3d/ps_particle_basic.h"
+#include "nel/3d/texture_bump.h"
 #include "popup_notify.h"
 
 #include "texture_chooser.h"
@@ -357,3 +357,6 @@ void CMultiTexDlg::OnUseParticleDateAlt()
 	_MTP->setUseLocalDateAlt(m_UseParticleDateAlt ? true : false /* VC WARNING */);	
 	updateModifiedFlag();
 }
+
+/* Merge OpenNeL SVN
+ */

@@ -27,9 +27,9 @@
 
 
 
-#include "cube_map_builder.h"
-#include "texture_cube.h"
-#include "texture_mem.h"
+#include "nel/3d/cube_map_builder.h"
+#include "nel/3d/texture_cube.h"
+#include "nel/3d/texture_mem.h"
 #include "nel/misc/vector.h"
 #include "nel/misc/rgba.h"
 
@@ -169,3 +169,6 @@ CTextureCube *BuildCubeMap(sint mapSize, ICubeMapFunctor &f, bool luminanceOnly 
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

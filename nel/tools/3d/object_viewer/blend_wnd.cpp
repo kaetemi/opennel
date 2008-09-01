@@ -26,7 +26,7 @@
 #include "std_afx.h"
 #include "blend_wnd.h"
 #include <nel/misc/common.h>
-#include <nel/../../src/3d/animation_playlist.h>
+#include <nel/3d/animation_playlist.h>
 
 using namespace NL3D;
 using namespace NLMISC;
@@ -163,3 +163,6 @@ void CBlendWnd::OnPaint (const RECT& client, CDC* pDc, float StartBlend, float E
 }
 
 // ***************************************************************************
+
+/* Merge OpenNeL SVN
+ */

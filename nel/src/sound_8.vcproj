@@ -474,10 +474,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\include\nel\sound\u_env_sound.h"
-				>
-			</File>
-			<File
 				RelativePath="..\include\nel\sound\u_listener.h"
 				>
 			</File>
@@ -553,73 +549,6 @@
 			<File
 				RelativePath="sound\audio_mixer_user.h"
 				>
-			</File>
-			<File
-				RelativePath="sound\env_sound_user.cpp"
-				>
-				<FileConfiguration
-					Name="DebugFast|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseDebug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Debug|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="DebugStatic|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="0"
-						PreprocessorDefinitions=""
-						BasicRuntimeChecks="3"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="ReleaseDebugStatic|Win32"
-					ExcludedFromBuild="true"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						Optimization="2"
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath="sound\env_sound_user.h"
@@ -2117,10 +2046,6 @@
 			>
 		</File>
 		<File
-			RelativePath="sound\sound_controller.h"
-			>
-		</File>
-		<File
 			RelativePath="sound\stdsound.cpp"
 			>
 			<FileConfiguration
@@ -2196,5 +2121,5 @@
 	</Globals>
 </VisualStudioProject>
 
-<!-- MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+<!-- Merge OpenNeL SVN
  -->

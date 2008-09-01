@@ -531,5 +531,5 @@ static const unsigned char regular[] =
 static const unsigned int regularSize = 4140;
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

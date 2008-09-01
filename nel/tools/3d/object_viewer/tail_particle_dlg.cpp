@@ -24,7 +24,7 @@
 
 #include "std_afx.h"
 #include "object_viewer.h"
-#include "nel/../../src/3d/ps_particle.h"
+#include "nel/3d/ps_particle.h"
 #include "tail_particle_dlg.h"
 
 
@@ -208,3 +208,6 @@ void CTailParticleDlg::OnSelchangeRibbonOrientation()
 	r->setOrientation((NL3D::CPSRibbon::TOrientation) ((CComboBox *) GetDlgItem(IDC_RIBBON_ORIENTATION))->GetCurSel());
 	_Node->setModified(true);
 }
+
+/* Merge OpenNeL SVN
+ */

@@ -25,10 +25,13 @@
 
 #include "std3d.h"
 
-#include "ps_particle.h"
+#include "nel/3d/ps_particle.h"
 
 namespace NL3D 
 {
 	/// NOTE : implementation of particles rendering has now been split accross vrious files...
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

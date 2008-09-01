@@ -3,7 +3,7 @@
 
 // NeL include
 #include "nel/misc/file.h"
-#include "nel/../../src/3d/tile_bank.h"
+#include "nel/3d/tile_bank.h"
 
 using namespace NL3D;
 using namespace NLMISC;
@@ -65,3 +65,6 @@ int main(int argc, char* argv[])
 	}
 	return 0;
 }
+
+/* Merge OpenNeL SVN
+ */

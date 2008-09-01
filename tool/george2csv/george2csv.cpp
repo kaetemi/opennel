@@ -19,7 +19,7 @@
 #include "nel/misc/smart_ptr.h"
 #include "nel/misc/command.h"
 #include "nel/misc/path.h"
-#include "nel/memory/memory_manager.h"
+//#include "nel/memory/memory_manager.h"
 #include "nel/misc/i18n.h"
 #include "nel/misc/sstring.h"
 #include "nel/misc/algo.h"
@@ -34,7 +34,7 @@
 #include "georges/form.h"
 
 // Basic C++
-#include <iostream.h>
+#include <iostream>
 #include <conio.h>
 #include <stdio.h>
 #include <io.h>
@@ -80,8 +80,8 @@ vector<string>		inputSheetPaths;
 bool				inputSheetPathLoaded = false;
 map<string, string>	inputSheetPathContent;
 
-const char	*SEPARATOR = ";";
-const char	*ARRAY_SEPARATOR = "|";
+string SEPARATOR = ";";
+const string ARRAY_SEPARATOR = "|";
 
 
 class	CDfnField
@@ -471,7 +471,7 @@ void executeScriptBuf(const string &text)
 	CVectorSString	lines;
 
 	vector<string>	tmpLines;
-	NLMISC::explode(buf, "\n", tmpLines, true);
+	NLMISC::explode(string(buf), string("\n"), tmpLines, true);
 	lines.resize(tmpLines.size());
 	for (uint i=0; i<tmpLines.size();i++)
 	{
@@ -558,7 +558,7 @@ void	loadSheetPath()
 	vector<string> pathsToAdd;
 	for (uint i=0; i<inputSheetPaths.size(); ++i)
 	{
-		explode( inputSheetPaths[i], "*", pathsToAdd );
+		explode( inputSheetPaths[i], string("*"), pathsToAdd );
 		for ( vector<string>::const_iterator ip=pathsToAdd.begin(); ip!=pathsToAdd.end(); ++ip )
 		{
 			CPath::addSearchPath( *ip, true, false );
@@ -689,7 +689,7 @@ void	convertCsvFile( const string &file, bool generate, const string& sheetType 
 
 
 	fgets(lineBuffer, BUFFER_SIZE, s);
-	explode(lineBuffer, SEPARATOR, fields);
+	explode(string(lineBuffer), SEPARATOR, fields);
 
 	vector<bool> activeFields( fields.size(), true );
 
@@ -836,7 +836,7 @@ void	convertCsvFile( const string &file, bool generate, const string& sheetType 
 	{
 		lineBuffer[0] = '\0';
 		fgets(lineBuffer, BUFFER_SIZE, s);
-		explode(lineBuffer, SEPARATOR, args);
+		explode(string(lineBuffer), SEPARATOR, args);
 
 		if (args.size() < 1)
 			continue;
@@ -1301,3 +1301,7 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
+
+
+/* Merge OpenNeL SVN
+ */

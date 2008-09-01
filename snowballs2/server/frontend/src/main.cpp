@@ -63,9 +63,15 @@ CCallbackServer *Clients = 0;
 
 struct CPlayer
 {
-	CPlayer(uint32 Id, TSockId Con) : id(Id), con(Con) { }
+	enum PlayerState
+	{
+		IDENTIFYING,
+		ONLINE
+	};
+	CPlayer(uint32 Id, TSockId Con) : id(Id), con(Con), State(IDENTIFYING) { }
 	uint32   id;
 	TSockId  con;
+	PlayerState State;
 };
 
 typedef map<uint32, CPlayer> _pmap;
@@ -158,7 +164,7 @@ void cbPosClient ( CMessage& msgin, TSockId from, CCallbackNetBase& clientcb )
 
 
 /****************************************************************************
- * cdPosService
+ * cbPosService
  *
  * Receive position messages from the Position Service to send it to all the
  * clients.
@@ -189,6 +195,24 @@ void cbPosService (CMessage &msgin, const std::string &serviceName, TServiceId s
 	//nldebug( "SB: Sent ENTITY_POS message to all the connected clients");
 }
 
+/****************************************************************************
+ * cbTeleportService
+ *
+ * Test
+ ****************************************************************************/
+void cbTeleportService (CMessage &msgin, const std::string &serviceName, TServiceId sid)
+{
+	uint32 id;
+	CVector position;
+	msgin.serial(id);
+	msgin.serial(position);
+	CMessage msgout("ENTITY_TP");
+	msgout.serial(id);
+	msgout.serial(position);
+	Clients->send(msgout, InvalidSockId);
+	nldebug("SB: Sent ENTITY_TP message to all the connected clients");
+}
+
 
 /****************************************************************************
  * cbAddClient
@@ -198,31 +222,44 @@ void cbPosService (CMessage &msgin, const std::string &serviceName, TServiceId s
  ****************************************************************************/
 void cbAddClient ( CMessage& msgin, TSockId from, CCallbackNetBase& clientcb )
 {
-	uint32  id;
-	string  name;
-	uint8   race;
-	CVector start;
+	uint32 id;
+	string name;
+	uint8 race;
+	CVector start(1840.0f + ((float)(rand() % 100) / 10.0f), -970.0f + ((float)(rand() % 100) / 10.0f), -23.0f); // kaetemi_todo: from config
 
 	// Input from the client is stored.
-	msgin.serial( id );
-	msgin.serial( name );
-	msgin.serial( race );
-	msgin.serial( start );
+	msgin.serial(id);
+	msgin.serial(name);
+	msgin.serial(race);
+
+
+        if(from->appId() != 0)
+	{
+        	CPlayer *p = (CPlayer *)(uint)from->appId();
+		if(id == p->id)
+			p->State = CPlayer::ONLINE;
+	}
 
 	// Prepare the message to send to the Position service
-	CMessage msgout( "ADD_ENTITY" );
-	msgout.serial( id );
-	msgout.serial( name );
-	msgout.serial( race );
-	msgout.serial( start );
+	CMessage msgout("ADD_ENTITY");
+	msgout.serial(id);
+	msgout.serial(name);
+	msgout.serial(race);
+	msgout.serial(start);
 
 	/*
 	 * The incoming message from the client is sent to the Position service
 	 * under the "POS" identification.
 	 */
-	CUnifiedNetwork::getInstance ()->send( "POS", msgout );
+	CUnifiedNetwork::getInstance()->send("POS", msgout);
 
-	nldebug( "SB: Received ADD_ENTITY from the client");
+	nldebug("SB: Received ADD_ENTITY from the client");
+
+	// kaetemi_todo: from config
+	msgout = CMessage("CHAT");
+	std::string chat_msg(std::string(">>>> Welcome to Snowballs, ") + name + std::string("!"));
+	msgout.serial(chat_msg);
+	Clients->send(msgout, from);
 }
 
 
@@ -464,6 +501,7 @@ TUnifiedCallbackItem CallbackArray[] =
 	{ "CHAT",			cbChatService		},
 	{ "ADD_ENTITY",		cbAddService		},
 	{ "ENTITY_POS",		cbPosService		},
+	{ "ENTITY_TP",		cbTeleportService	},
 	{ "REMOVE_ENTITY",	cbRemoveService		},
 	{ "SNOWBALL",		cbSnowballService	},
 	{ "HIT",			cbHitService		},
@@ -574,14 +612,18 @@ void onDisconnectClient ( TSockId from, void *arg )
 	// remove the player from the local player list
 	localPlayers.erase( id );
 
-	// Output: send the REMOVE_ENTITY to the position manager.
-	CMessage msgout( "REMOVE_ENTITY" );
-	msgout.serial( id );
+	// don't send remove messages for entities that haven't been created.
+	if(p->State == CPlayer::ONLINE)
+	{
+		// Output: send the REMOVE_ENTITY to the position manager.
+		CMessage msgout( "REMOVE_ENTITY" );
+		msgout.serial( id );
 
-	// Send the message to the position manager
-	CUnifiedNetwork::getInstance ()->send( "POS", msgout);
+		// Send the message to the position manager
+		CUnifiedNetwork::getInstance ()->send( "POS", msgout);
+		nldebug( "SB: Sent REMOVE_ENTITY message to the position manager.");
+	}
 
-	nldebug( "SB: Sent REMOVE_ENTITY message to the position manager.");
 }
 
 
@@ -638,13 +680,19 @@ public:
 		CUnifiedNetwork::getInstance ()->setServiceDownCallback ("POS", onDisconnectPosition, 0);
 	}
 
-	bool update ()
+	bool update()
 	{
 		// Manage messages from clients
 		Clients->update ();
 
 		// we want to continue
 		return true;
+	}
+
+	void release()
+	{
+		delete Clients;
+		Clients = NULL;
 	}
 };
 
@@ -666,5 +714,5 @@ NLNET_SERVICE_MAIN (CFrontEndService, "FS", "frontend_service", 0, CallbackArray
 
 /* end of file */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -25,14 +25,14 @@
 
 #include "std3d.h"
 
-#include "mesh_base_instance.h"
-#include "mesh_base.h"
-#include "scene.h"
-#include "animation.h"
+#include "nel/3d/mesh_base_instance.h"
+#include "nel/3d/mesh_base.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/animation.h"
 #include "nel/misc/debug.h"
-#include "anim_detail_trav.h"
-#include "texture_file.h"
-#include "async_texture_manager.h"
+#include "nel/3d/anim_detail_trav.h"
+#include "nel/3d/texture_file.h"
+#include "nel/3d/async_texture_manager.h"
 
 
 using namespace NLMISC;
@@ -571,5 +571,5 @@ sint			CMeshBaseInstance::getAsyncTextureId(uint matId, uint stage) const
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

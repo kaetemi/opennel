@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "vegetable_def.h"
+#include "nel/3d/vegetable_def.h"
 
 
 namespace NL3D 
@@ -34,3 +34,6 @@ namespace NL3D
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

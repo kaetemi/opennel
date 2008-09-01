@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "visual_collision_manager_user.h"
+#include "nel/3d/visual_collision_manager_user.h"
 #include "nel/3d/u_visual_collision_mesh.h"
 
 
@@ -80,5 +80,5 @@ void CVisualCollisionManagerUser::getMeshs(const NLMISC::CAABBox &aabbox, std::v
 
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -29,7 +29,7 @@
 #include "nel/misc/types_nl.h"
 #include "nel/misc/vector.h"
 #include "nel/misc/matrix.h"
-#include "frustum.h"
+#include "nel/3d/frustum.h"
 
 
 namespace NL3D
@@ -118,5 +118,5 @@ private:
 
 /* End of viewport.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

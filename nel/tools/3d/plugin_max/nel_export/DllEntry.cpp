@@ -25,7 +25,7 @@
 
 #include "std_afx.h"
 #include "nel_export.h"
-#include "nel/../../src/3d/register_3d.h"
+#include "nel/3d/register_3d.h"
 #include "nel/misc/app_context.h"
 
 
@@ -87,3 +87,7 @@ TCHAR *GetString(int id)
 	return NULL;
 }
 
+
+
+/* Merge OpenNeL SVN
+ */

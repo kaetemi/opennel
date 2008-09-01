@@ -44,6 +44,7 @@ CXXFLAGS="$CXXFLAGS -ftemplate-depth-24"
 
 AC_CHECK_LIB([pthread], [pthread_create])
 AC_CHECK_LIB([dl], [dlopen])
+AC_CHECK_LIB([rt], [clock_gettime])
 
 dnl ====================================================================
 dnl Checks Snowballs modules (Client / Server) to install / Disable
@@ -166,15 +167,6 @@ dnl Checks for libraries.
 dnl ====================================================================
 
 dnl ====================================================================
-dnl STLPort
-
-AM_PATH_STLPORT('/usr/local /usr')
-LIBS="$LIBS $STLPORT_LIBS"
-CPPFLAGS="$CPPFLAGS $STLPORT_INCLUDES"
-LDFLAGS="$LDFLAGS $STLPORT_LDFLAGS"
-
-
-dnl ====================================================================
 dnl OpenAL
 
 AM_PATH_OPENAL($enable_client)
@@ -262,5 +254,5 @@ AC_OUTPUT
 dnl End of configure.in
 
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

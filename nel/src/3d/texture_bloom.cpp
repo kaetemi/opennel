@@ -24,10 +24,13 @@
 
 #include "std3d.h"
 
-#include "texture_bloom.h"
+#include "nel/3d/texture_bloom.h"
 
 
 namespace NL3D {
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

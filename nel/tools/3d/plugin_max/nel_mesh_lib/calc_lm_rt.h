@@ -30,8 +30,8 @@
 
 #include "calc_lm.h"
 
-#include "nel/../../src/3d/mesh.h"
-#include "nel/../../src/3d/quad_grid.h"
+#include "nel/3d/mesh.h"
+#include "nel/3d/quad_grid.h"
 
 #include "nel/misc/vector.h"
 #include "nel/misc/triangle.h"
@@ -284,3 +284,7 @@ private:
 
 /* End of calc_lm_rt.h */
 
+
+
+/* Merge OpenNeL SVN
+ */

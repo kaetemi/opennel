@@ -40,7 +40,7 @@ namespace NLMISC
 	class CVector ;
 }
 
-#include "nel/../../src/3d/ps_edit.h"
+#include "nel/3d/ps_edit.h"
 #include "ps_wrapper.h"
 #include "editable_range.h"
 #include "particle_workspace.h"
@@ -203,3 +203,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_PS_MOVER_DLG_H__C1C4348E_3384_4557_B99E_CBE4E5492C0C__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

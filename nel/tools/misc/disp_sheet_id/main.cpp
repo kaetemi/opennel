@@ -23,7 +23,7 @@
  * MA 02111-1307, USA.
  */
 
-
+#include "nel/misc/types_nl.h"
 #ifdef NL_OS_WINDOWS
 #include <conio.h>
 #else
@@ -81,6 +81,8 @@ int		main(int argc, const char *argv[])
 		return -1;
 	}
 
+	NLMISC::CApplicationContext appContext;
+
 	CPath::addSearchPath(argv[1]);
 
 	CSheetId::init(false);
@@ -104,5 +106,5 @@ int		main(int argc, const char *argv[])
 	}
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

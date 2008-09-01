@@ -25,13 +25,13 @@
 
 #include "std3d.h"
 
-#include "meshvp_wind_tree.h"
-#include "mesh_base_instance.h"
-#include "scene.h"
-#include "driver.h"
+#include "nel/3d/meshvp_wind_tree.h"
+#include "nel/3d/mesh_base_instance.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/driver.h"
 #include <cmath>
 #include "nel/misc/common.h"
-#include "render_trav.h"
+#include "nel/3d/render_trav.h"
 
 
 using namespace NLMISC;
@@ -434,5 +434,5 @@ float	CMeshVPWindTree::getMaxVertexMove()
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

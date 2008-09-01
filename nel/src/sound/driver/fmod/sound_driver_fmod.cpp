@@ -36,6 +36,7 @@
 #include "nel/misc/hierarchical_timer.h"
 #include "nel/misc/path.h"
 #include "nel/misc/file.h"
+#include "nel/misc/dynloadlib.h"
 #include "sound_driver_fmod.h"
 #include "listener_fmod.h"
 
@@ -48,44 +49,80 @@ using namespace NLMISC;
 
 namespace NLSOUND {
 
+#ifndef NL_STATIC
+
+class CSoundDriverFModNelLibrary : public NLMISC::INelLibrary { 
+	void onLibraryLoaded(bool firstTime) { } 
+	void onLibraryUnloaded(bool lastTime) { }  
+};
+NLMISC_DECL_PURE_LIB(CSoundDriverFModNelLibrary)
+
+#endif /* #ifndef NL_STATIC */
+
 CSoundDriverFMod* CSoundDriverFMod::_Instance = NULL;
 
 #ifdef NL_OS_WINDOWS
+#ifndef NL_STATIC
+
 HINSTANCE CSoundDriverDllHandle = 0;
 
 // ******************************************************************
 // The main entry of the DLL. It's used to get a hold of the hModule handle.
-
 BOOL WINAPI DllMain(HANDLE hModule, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
   CSoundDriverDllHandle = (HINSTANCE) hModule;
   return TRUE;
 }
 
+#endif /* #ifndef NL_STATIC */
 
-// ******************************************************************
+// ***************************************************************************
 
-__declspec(dllexport) ISoundDriver *NLSOUND_createISoundDriverInstance(bool useEax, ISoundDriver::IStringMapperProvider *stringMapper, bool forceSoftwareBuffer)
+#ifdef NL_STATIC
+ISoundDriver* createISoundDriverInstance
+#else
+__declspec(dllexport) ISoundDriver *NLSOUND_createISoundDriverInstance
+#endif
+	(bool useEax, ISoundDriver::IStringMapperProvider *stringMapper, bool forceSoftwareBuffer)
 {
 
 	CSoundDriverFMod *driver = new CSoundDriverFMod();
 	driver->init(stringMapper, forceSoftwareBuffer);
-
 	return driver;
 }
 
 // ******************************************************************
 
+#ifdef NL_STATIC
+uint32 interfaceVersion()
+#else
 __declspec(dllexport) uint32 NLSOUND_interfaceVersion()
+#endif
 {
 	return ISoundDriver::InterfaceVersion;
 }
 
 // ******************************************************************
 
-__declspec(dllexport) void NLSOUND_outputProfile(string &out)
+#ifdef NL_STATIC
+void outputProfile
+#else
+__declspec(dllexport) void NLSOUND_outputProfile
+#endif
+	(string &out)
 {
 	CSoundDriverFMod::instance()->writeProfile(out);
+}
+
+// ******************************************************************
+
+#ifdef NL_STATIC
+ISoundDriver::TDriver getDriverType()
+#else
+__declspec(dllexport) ISoundDriver::TDriver NLSOUND_getDriverType()
+#endif
+{
+	return ISoundDriver::DriverFMod;
 }
 
 #elif defined (NL_OS_UNIX)
@@ -535,7 +572,7 @@ bool getTag (std::string &result, const char *tag, FSOUND_STREAM *stream)
 		if (FSOUND_Stream_FindTagField(stream, types[i], tag, &name, &size))
 		{
 			strncpy (tmp, (const char*)name, min((int)sizeof(tmp),size));
-			result = trim(tmp);
+			result = trim(string(tmp));
 			return true;
 		}
 	}
@@ -597,5 +634,5 @@ void	CSoundDriverFMod::markMusicFaderEnded(void *stream, void *fader)
 
 } // NLSOUND
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

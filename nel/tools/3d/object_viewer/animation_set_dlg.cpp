@@ -28,7 +28,7 @@
 #include "animation_set_dlg.h"
 
 #include "nel/misc/file.h"
-#include "nel/../../src/3d/track_keyframer.h"
+#include "nel/3d/track_keyframer.h"
 
 
 using namespace NLMISC;
@@ -564,3 +564,6 @@ void CAnimationSetDlg::OnSelchangeEditedObject()
 	refresh (TRUE);
 	_ObjView->getSlotDlg ()->refresh (TRUE);
 }
+
+/* Merge OpenNeL SVN
+ */

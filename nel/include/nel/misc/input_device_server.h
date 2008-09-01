@@ -81,7 +81,7 @@ struct IInputDeviceEvent
 	IInputDevice    *Emitter;	// the input device that emitted that event
 	// Used to sort events by time stamp.
 	virtual bool	operator < (const IInputDeviceEvent &IInputDeviceEvent) const = 0;
-	virtual ~IInputDeviceEvent() {};
+	virtual ~IInputDeviceEvent() {}
 };
 
 
@@ -91,3 +91,6 @@ struct IInputDeviceEvent
 #endif // NL_INPUT_DEVICE_SERVER_H
 
 /* End of input_device_server.h */
+
+/* Merge OpenNeL SVN
+ */

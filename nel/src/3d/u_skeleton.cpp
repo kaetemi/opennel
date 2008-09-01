@@ -28,13 +28,13 @@
 #include "nel/3d/u_skeleton.h"
 #include "nel/3d/u_instance.h"
 #include "nel/3d/u_bone.h"
-#include "play_list_user.h"
-#include "skeleton_model.h"
-#include "skeleton_model.h"
-#include "mesh_base_instance.h"
+#include "nel/3d/play_list_user.h"
+#include "nel/3d/skeleton_model.h"
+#include "nel/3d/skeleton_model.h"
+#include "nel/3d/mesh_base_instance.h"
 #include "nel/misc/hierarchical_timer.h"
-#include "scene.h"
-#include "shape_bank.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/shape_bank.h"
 
 
 namespace NL3D
@@ -494,5 +494,5 @@ NLMISC::CRGBA	USkeleton::getLodEmit() const
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

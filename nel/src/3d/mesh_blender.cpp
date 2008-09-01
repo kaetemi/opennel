@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "mesh_blender.h"
-#include "driver.h"
+#include "nel/3d/mesh_blender.h"
+#include "nel/3d/driver.h"
 #include "nel/misc/fast_floor.h"
 
 
@@ -204,3 +204,6 @@ void		CMeshBlender::restoreRenderCoarseMesh(CMaterial &material, IDriver *drv, b
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

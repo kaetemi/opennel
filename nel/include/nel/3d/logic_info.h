@@ -28,7 +28,7 @@
 
 #include "nel/misc/types_nl.h"
 #include "nel/misc/rgba.h"
-#include "point_light_influence.h"
+#include "nel/3d/point_light_influence.h"
 #include <vector>
 
 
@@ -82,5 +82,5 @@ public:
 
 /* End of logic_info.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

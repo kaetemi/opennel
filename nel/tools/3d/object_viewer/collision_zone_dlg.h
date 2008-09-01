@@ -39,7 +39,7 @@ namespace NL3D
 #include "editable_range.h"
 #include "particle_workspace.h"
 //
-#include "nel/../../src/3d/ps_zone.h"
+#include "nel/3d/ps_zone.h"
 
 
 class CParticleDlg;
@@ -97,3 +97,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_COLLISION_ZONE_DLG_H__45AFAC35_D67B_40AB_85B6_7A472B7C4B30__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

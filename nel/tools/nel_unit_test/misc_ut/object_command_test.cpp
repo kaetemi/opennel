@@ -1,7 +1,7 @@
 
 
 #include "nel/misc/command.h"
-#include "src/cpptest.h"
+#include "cpptest.h"
 
 using namespace std;
 using namespace NLMISC;
@@ -241,3 +241,6 @@ Test::Suite *createObjectCommandTS()
 {
 	return new CObjectCommandTS;
 }
+
+/* Merge OpenNeL SVN
+ */

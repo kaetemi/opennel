@@ -26,7 +26,7 @@
 #include "std3d.h"
 
 
-#include "init_3d.h"
+#include "nel/3d/init_3d.h"
 #include <cfloat>
 
 namespace NL3D 
@@ -44,3 +44,6 @@ void init3d ()
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

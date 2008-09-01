@@ -31,5 +31,5 @@ cloud                   FX      DISCARDABLE     "cloud.fx"
 water_no_diffuse        FX      DISCARDABLE     "water_no_diffuse.fx"
 water_diffuse           FX      DISCARDABLE     "water_diffuse.fx"
 
-// MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+// Merge OpenNeL SVN
 

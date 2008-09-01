@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "zone_tgt_smoother.h"
+#include "nel/3d/zone_tgt_smoother.h"
 #include "nel/misc/plane.h"
 using namespace std;
 using namespace NLMISC;
@@ -317,5 +317,5 @@ void		CZoneTgtSmoother::makeVerticesCoplanar(std::vector<CZoneInfo>  &zones)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

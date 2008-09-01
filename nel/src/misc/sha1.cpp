@@ -598,5 +598,5 @@ void SHA1PadMessage(SHA1Context *context)
 	#pragma runtime_checks( "", restore )
 #endif
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -20,5 +20,5 @@
 #include "nel/misc/system_info.h"
 #include "nel/misc/mem_displayer.h"
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

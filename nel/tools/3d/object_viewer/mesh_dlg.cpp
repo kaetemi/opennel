@@ -27,9 +27,9 @@
 #include "mesh_dlg.h"
 #include "edit_morph_mesh_dlg.h"
 //
-#include "nel/../../src/3d/ps_particle.h"
-#include "nel/../../src/3d/ps_mesh.h"
-#include "nel/../../src/3d/particle_system_model.h"
+#include "nel/3d/ps_particle.h"
+#include "nel/3d/ps_mesh.h"
+#include "nel/3d/particle_system_model.h"
 //
 #include "nel/misc/path.h"
 
@@ -293,3 +293,7 @@ CString CMeshDlg::getShapeErrorString(sint errorCode)
 }
 
 
+
+
+/* Merge OpenNeL SVN
+ */

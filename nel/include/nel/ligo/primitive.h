@@ -86,11 +86,11 @@ public:
 class CPropertyString : public IProperty
 {
 public:
-	CPropertyString () {};
+	CPropertyString () {}
 	CPropertyString (const char *str);
 	CPropertyString (const std::string &str);
 	CPropertyString (const char *str, bool _default);
-	virtual ~CPropertyString () {};
+	virtual ~CPropertyString () {}
 	std::string			String;
 
 	NLMISC_DECLARE_CLASS (CPropertyString)
@@ -102,7 +102,7 @@ public:
 	}
 
 	// Force class to be polymorphic
-	virtual void foo () const {};
+	virtual void foo () const {}
 };
 
 // ***************************************************************************
@@ -114,7 +114,7 @@ public:
 class CPropertyStringArray : public IProperty
 {
 public:
-	CPropertyStringArray () {};
+	CPropertyStringArray () {}
 	virtual ~CPropertyStringArray () {}
 	CPropertyStringArray (const std::vector<std::string> &stringArray);
 	CPropertyStringArray (const std::vector<std::string> &stringArray, bool _default);
@@ -128,7 +128,7 @@ public:
 		f.serialCont(StringArray);
 	}
 	// Force class to be polymorphic
-	virtual void foo () const {};
+	virtual void foo () const {}
 };
 
 // ***************************************************************************
@@ -150,7 +150,7 @@ public:
 		f.serial(Color);
 	}
 	// Force class to be polymorphic
-	virtual void foo () const {};
+	virtual void foo () const {}
 
 	// ctors
 	CPropertyColor() {}
@@ -788,3 +788,6 @@ public:
 
 #endif // __PRIMITIVE_H__
 
+
+/* Merge OpenNeL SVN
+ */

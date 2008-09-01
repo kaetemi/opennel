@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "texture_grouped.h"
-#include "texture_file.h"
+#include "nel/3d/texture_grouped.h"
+#include "nel/3d/texture_file.h"
 #include "nel/misc/common.h"
 #include "nel/misc/path.h"
 
@@ -395,3 +395,6 @@ void CTextureGrouped::displayIncompatibleTextureWarning(CSmartPtr<ITexture> *tex
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

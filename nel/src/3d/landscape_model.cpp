@@ -27,11 +27,11 @@
 
 #include <vector>
 #include "nel/misc/hierarchical_timer.h"
-#include "landscape_model.h"
-#include "landscape.h"
-#include "cluster.h"
-#include "scene.h"
-#include "light_trav.h"
+#include "nel/3d/landscape_model.h"
+#include "nel/3d/landscape.h"
+#include "nel/3d/cluster.h"
+#include "nel/3d/scene.h"
+#include "nel/3d/light_trav.h"
 using namespace std;
 using namespace NLMISC;
 
@@ -309,5 +309,5 @@ void		CLandscapeModel::receiveShadowMap(CShadowMap *shadowMap, const CVector &ca
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

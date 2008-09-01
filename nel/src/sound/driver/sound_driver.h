@@ -88,9 +88,10 @@ public:
 	enum	TDriver
 	{
 		DriverAuto = 0,
-		DriverFMod,
-		DriverOpenAl,
-		DriverDSound,
+		DriverFMod, 
+		DriverOpenAl, 
+		DriverDSound, 
+		DriverXAudio2, 
 		NumDrivers
 	};
 
@@ -342,5 +343,5 @@ public:
 
 /* End of sound_driver.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -563,5 +563,5 @@ inline bool CTransportClass::read (const std::string &name, NLNET::TServiceId si
 
 /* End of transport_class.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

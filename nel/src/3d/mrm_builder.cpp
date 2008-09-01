@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "mrm_builder.h"
-#include "mrm_parameters.h"
+#include "nel/3d/mrm_builder.h"
+#include "nel/3d/mrm_parameters.h"
 using namespace NLMISC;
 using namespace std;
 
@@ -3145,5 +3145,5 @@ bool	CMRMBuilder::buildMRMSewingMeshes(const CMesh::CMeshBuild &mbuild, uint nWa
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

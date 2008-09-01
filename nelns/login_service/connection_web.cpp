@@ -137,7 +137,7 @@ static const TUnifiedCallbackItem WSCallbackArray[] =
 
 void cbAskClientConnection (CMemStream &msgin, TSockId host)
 {
-	uint32 shardId;
+	sint32 shardId;
 	uint32 userId;
 	string userName, userPriv, userExtended;
 	msgin.serial (shardId);
@@ -170,7 +170,7 @@ void cbAskClientConnection (CMemStream &msgin, TSockId host)
 		if (Shards[i].ShardId == shardId)
 		{
 			// generate a cookie
-			CLoginCookie Cookie ((uint32)host, userId);
+			CLoginCookie Cookie ((uint32)(uintptr_t)host, userId);
 
 			// send message to the welcome service to see if it s ok and know the front end ip
 			CMessage msgout ("CS");
@@ -199,7 +199,7 @@ void cbAskClientConnection (CMemStream &msgin, TSockId host)
 
 void cbDisconnectClient (CMemStream &msgin, TSockId host)
 {
-	uint32 shardId;
+	sint32 shardId;
 	sint32 userId;
 	msgin.serial (shardId);
 	msgin.serial (userId);
@@ -316,5 +316,5 @@ void connectionWebRelease ()
 	WebServer = 0;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

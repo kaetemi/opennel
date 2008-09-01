@@ -30,6 +30,8 @@
 
 #include "mysql_helper.h"
 
+#include "mysql_version.h"
+
 
 //
 // Namespaces
@@ -64,7 +66,7 @@ string sqlQuery(const string &query)
 string sqlQuery(const string &query, sint32 &nbRow, MYSQL_ROW &firstRow, CMysqlResult &result)
 {
 	nlassert(DatabaseConnection);
-	nlinfo("sqlQuery: '%s'", query.c_str());
+	//nlinfo("sqlQuery: '%s'", query.c_str());
 	sint ret = mysql_query(DatabaseConnection, query.c_str());
 	if(ret != 0)
 	{
@@ -134,6 +136,16 @@ static void cbDatabaseVar(CConfigFile::CVar &var)
 		return;
 	}
 
+	my_bool opt = true;
+	if (mysql_options (db, MYSQL_OPT_RECONNECT, &opt))
+	{
+		mysql_close(db);
+		DatabaseConnection = 0;
+		nlerror("mysql_options() failed for database connection to '%s'", DatabaseHost.c_str());
+		return;
+	}
+
+
 	DatabaseConnection = mysql_real_connect(db, DatabaseHost.c_str(), DatabaseLogin.c_str(), DatabasePassword.c_str(), DatabaseName.c_str(),0,0,0);
 	if (DatabaseConnection == 0 || DatabaseConnection != db)
 	{
@@ -142,6 +154,18 @@ static void cbDatabaseVar(CConfigFile::CVar &var)
 		nlerror("mysql_real_connect() failed to '%s' with login '%s' and database name '%s'", DatabaseHost.c_str(), DatabaseLogin.c_str(), DatabaseName.c_str());
 		return;
 	}
+
+#if MYSQL_VERSION_ID < 50019
+	opt = true;
+	if (mysql_options (DatabaseConnection, MYSQL_OPT_RECONNECT, &opt))
+	{
+		mysql_close(db);
+		DatabaseConnection = 0;
+		nlerror("mysql_options() failed for database connection to '%s'", DatabaseHost.c_str());
+		return;
+	}
+#endif
+
 
 	sqlQuery("set names utf8");
 }

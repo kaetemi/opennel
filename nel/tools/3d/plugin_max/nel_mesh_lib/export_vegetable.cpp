@@ -30,7 +30,7 @@
 #include "../nel_export/std_afx.h"
 #include "../nel_export/nel_export.h"
 
-#include "nel/../../src/3d/vegetable_shape.h"
+#include "nel/3d/vegetable_shape.h"
 
 using namespace NLMISC;
 using namespace NL3D;
@@ -168,3 +168,6 @@ bool  CExportNel::buildVegetableShape (NL3D::CVegetableShape& skeletonShape, INo
 }
 
 // ***************************************************************************
+
+/* Merge OpenNeL SVN
+ */

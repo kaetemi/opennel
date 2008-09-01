@@ -508,5 +508,5 @@ uninstall-am: uninstall-binPROGRAMS
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

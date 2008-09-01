@@ -29,6 +29,8 @@
 #include <sys/stat.h>
 #include <errno.h>
 
+#include <nel/misc/types_nl.h>
+
 #include <queue>
 #include <string>
 
@@ -37,9 +39,10 @@
 #undef min
 #undef max
 
-#include "nel/misc/types_nl.h"
-
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_STDAFX_H__3553FEAD_1991_4F77_91FE_541702A9DEB5__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

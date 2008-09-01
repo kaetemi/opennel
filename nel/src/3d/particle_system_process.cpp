@@ -25,8 +25,8 @@
 
 #include "std3d.h"
 
-#include "particle_system_process.h"
-#include "particle_system.h"
+#include "nel/3d/particle_system_process.h"
+#include "nel/3d/particle_system.h"
 
 uint PSEnterLeaveDepth = 0;
 uint PSEnterLeaveMaxDepth = 1;
@@ -155,3 +155,6 @@ void CParticleSystemProcess::serial(NLMISC::IStream &f) throw(NLMISC::EStream)
 }
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

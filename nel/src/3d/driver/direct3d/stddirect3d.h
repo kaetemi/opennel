@@ -66,5 +66,5 @@
 #include "nel/misc/time_nl.h"
 #include "nel/misc/command.h"
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

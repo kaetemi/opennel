@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "play_list_manager_user.h"
+#include "nel/3d/play_list_manager_user.h"
 #include "nel/misc/hierarchical_timer.h"
 
 using namespace NLMISC;
@@ -80,5 +80,5 @@ void		CPlayListManagerUser::setup(TGlobalAnimationTime	time)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

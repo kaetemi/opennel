@@ -28,7 +28,7 @@
 #include "ps_global_color_dlg.h"
 #include "popup_notify.h"
 #include "attrib_dlg.h"
-#include "nel/../../src/3d/particle_system.h"
+#include "nel/3d/particle_system.h"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -115,3 +115,6 @@ BOOL CPSGlobalColorDlg::OnInitDialog()
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE
 }
+
+/* Merge OpenNeL SVN
+ */

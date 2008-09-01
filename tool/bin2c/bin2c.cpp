@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
 						size++;
 					}
 					fprintf (pOut, "\n");
-					if (i!=8)
+					if (size!=8)
 						break;
 				}
 				fprintf (pOut, "};\n\n");
@@ -79,5 +79,5 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

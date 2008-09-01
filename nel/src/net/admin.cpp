@@ -594,7 +594,7 @@ void serviceGetView (uint32 rid, const string &rawvarpath, TAdminViewResult &ans
 // Alarms functions
 //
 
-void sendAdminEmail (char *format, ...)
+void sendAdminEmail (const char *format, ...)
 {
 	char *text;
 	NLMISC_CONVERT_VARGS (text, format, 4096);
@@ -904,5 +904,5 @@ NLMISC_CATEGORISED_COMMAND(nel, getView, "send a view and receive an array as re
 
 } // NLNET
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

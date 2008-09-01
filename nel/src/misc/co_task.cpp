@@ -357,6 +357,18 @@ namespace NLMISC
 			// we need to convert this thread to a fiber
 			mainFiber = ConvertThreadToFiber(NULL);
 
+			if (mainFiber == NULL)
+			{
+				DWORD dw = GetLastError();
+#if defined(ERROR_ALREADY_FIBER)
+				if (dw == ERROR_ALREADY_FIBER) nlerror("ConvertThreadToFiber ERROR_ALREADY_FIBER: "
+					"If you are using nel in dynamic libraries, you should have a 'pure "
+					"nel library' entry point, see definition of NLMISC_DECL_PURE_LIB");
+				else
+#endif
+				nlerror("ConvertThreadToFiber error %u", dw);
+			}
+
 			CCurrentCoTask::getInstance().setMainFiber(mainFiber);
 		}
 
@@ -562,5 +574,5 @@ namespace NLMISC
 } // namespace NLMISC
 
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

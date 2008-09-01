@@ -47,7 +47,7 @@ struct IValueBlenderDlgClient
 	virtual CEditAttribDlg *createDialog(uint index, CParticleWorkspace::CNode *ownerNode) = 0;
 
 	/// dtor
-	virtual ~IValueBlenderDlgClient() {};
+	virtual ~IValueBlenderDlgClient() {}
 } ;
 
 class CValueBlenderDlg : public CDialog
@@ -106,3 +106,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_VALUEBLENDERDLG_H__4242C860_C538_45BD_8348_C6DF314D688A__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

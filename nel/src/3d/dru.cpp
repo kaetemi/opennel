@@ -28,11 +28,11 @@
 #include "nel/misc/types_nl.h"
 #include "nel/misc/dynloadlib.h"
 
-#include "dru.h"
-#include "driver.h"
-#include "material.h"
-#include "vertex_buffer.h"
-#include "index_buffer.h"
+#include "nel/3d/dru.h"
+#include "nel/3d/driver.h"
+#include "nel/3d/material.h"
+#include "nel/3d/vertex_buffer.h"
+#include "nel/3d/index_buffer.h"
 
 
 #ifdef NL_OS_WINDOWS
@@ -615,5 +615,5 @@ void			CDRU::drawWiredBox(const CVector &corner, const CVector &vi, const CVecto
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

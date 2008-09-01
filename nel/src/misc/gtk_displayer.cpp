@@ -447,5 +447,5 @@ void foo_gtk_displayer_cpp() {}
 
 #endif // NL_USE_GTK
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

@@ -28,6 +28,7 @@
 #include "buffer_al.h"
 #include "listener_al.h"
 #include "nel/misc/path.h"
+#include "nel/misc/dynloadlib.h"
 #include "../sound_driver.h"
 
 using namespace std;
@@ -80,22 +81,70 @@ void TestALError()
 
 #define ROLLOFF_FACTOR_DEFAULT 1.0f
 
+#ifndef NL_STATIC
+
+class CSoundDriverALNelLibrary : public NLMISC::INelLibrary { 
+	void onLibraryLoaded(bool firstTime) { } 
+	void onLibraryUnloaded(bool lastTime) { }  
+};
+NLMISC_DECL_PURE_LIB(CSoundDriverALNelLibrary)
+
+#endif /* #ifndef NL_STATIC */
+
 /*
  * Sound driver instance creation
  */
 #ifdef NL_OS_WINDOWS
+
+// ******************************************************************
 	
-__declspec(dllexport) ISoundDriver *NLSOUND_createISoundDriverInstance(bool useEax)
+#ifdef NL_STATIC
+ISoundDriver* createISoundDriverInstance
+#else
+__declspec(dllexport) ISoundDriver *NLSOUND_createISoundDriverInstance
+#endif
+	(bool useEax, ISoundDriver::IStringMapperProvider *stringMapper, bool forceSoftwareBuffer)
 {
 	CSoundDriverAL *driver = new CSoundDriverAL();
 	driver->init();
 	return driver;
 }
 
-__declspec(dllexport) uint32 NLSOUND_interfaceVersion ()
+// ******************************************************************
+
+#ifdef NL_STATIC
+uint32 interfaceVersion()
+#else
+__declspec(dllexport) uint32 NLSOUND_interfaceVersion()
+#endif
 {
 	return ISoundDriver::InterfaceVersion;
 }
+
+// ******************************************************************
+
+#ifdef NL_STATIC
+void outputProfile
+#else
+__declspec(dllexport) void NLSOUND_outputProfile
+#endif
+	(string &out)
+{
+	CSoundDriverAL::instance()->writeProfile(out);
+}
+
+// ******************************************************************
+
+#ifdef NL_STATIC
+ISoundDriver::TDriver getDriverType()
+#else
+__declspec(dllexport) ISoundDriver::TDriver NLSOUND_getDriverType()
+#endif
+{
+	return ISoundDriver::DriverOpenAl;
+}
+
+// ******************************************************************
 
 #elif defined (NL_OS_UNIX)
 
@@ -174,11 +223,11 @@ bool CSoundDriverAL::init()
 
 #if EAX_AVAILABLE == 1
     // Set EAX environment if EAX is available
-	if ( alIsExtensionPresent((ALubyte *)"EAX") == AL_TRUE ) // or EAX2.0
+	if ( alIsExtensionPresent((ALchar *)"EAX") == AL_TRUE ) // or EAX2.0
 	{
 		nlinfo( "Initializing EAX" );
-	    EAXSetProp = (EAXSet)alGetProcAddress((ALubyte*)"EAXSet");
-		EAXGetProp = (EAXGet)alGetProcAddress((ALubyte*)"EAXGet");
+	    EAXSetProp = (EAXSet)alGetProcAddress((ALchar*)"EAXSet");
+		EAXGetProp = (EAXGet)alGetProcAddress((ALchar*)"EAXGet");
 		if ( EAXSetProp != NULL )
 		{
 			unsigned long ulEAXVal;
@@ -523,5 +572,5 @@ void CSoundDriverAL::setMusicVolume(uint channel, float gain) {
 
 } // NLSOUND
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

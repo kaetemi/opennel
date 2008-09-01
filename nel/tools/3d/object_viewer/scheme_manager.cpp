@@ -25,7 +25,7 @@
 
 #include "std_afx.h"
 #include "scheme_manager.h"
-#include "nel/../../src/3d/ps_attrib_maker.h"
+#include "nel/3d/ps_attrib_maker.h"
 
 CSchemeManager SchemeManager;
 
@@ -126,3 +126,6 @@ void  CSchemeManager::rename(NL3D::CPSAttribMakerBase *am, const std::string &ne
 		smIt->second.first = newName;		
 	}
 }
+
+/* Merge OpenNeL SVN
+ */

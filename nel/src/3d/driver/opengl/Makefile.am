@@ -17,6 +17,7 @@ libnel_drv_opengl_la_SOURCES = driver_opengl.cpp                 \
                                driver_opengl_extension.h         \
                                driver_opengl_extension_def.h     \
                                driver_opengl_light.cpp           \
+							   driver_opengl_mac.cpp             \
                                driver_opengl_material.cpp        \
                                driver_opengl_matrix.cpp          \
                                driver_opengl_states.cpp          \
@@ -46,5 +47,5 @@ pkgconfig_DATA = nel-driverogl.pc
 # End of Makefile.am
 
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

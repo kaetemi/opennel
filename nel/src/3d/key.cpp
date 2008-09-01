@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "key.h"
+#include "nel/3d/key.h"
 
 
 namespace NL3D 
@@ -47,3 +47,6 @@ CKeyVector			ktoto11;
 CKeyQuat			ktoto12;
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

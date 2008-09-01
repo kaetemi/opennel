@@ -26,7 +26,7 @@
 #include "stdafx.h"
 #include "export_nel.h"
 #include "export_appdata.h"
-#include "nel/../../src/3d/skeleton_shape.h"
+#include "nel/3d/skeleton_shape.h"
 
 using namespace NLMISC;
 using namespace NL3D;
@@ -1707,3 +1707,7 @@ bool CExportNel::mirrorPhysiqueSelection(INode &node, TimeValue tvTime, const st
 	return ok;
 }
 
+
+
+/* Merge OpenNeL SVN
+ */

@@ -46,14 +46,14 @@ namespace	NLMISC
  */
 struct ERegistry : public Exception
 {
-	ERegistry() : Exception( "Registry error" ) {};
+	ERegistry() : Exception( "Registry error" ) {}
 
-	ERegistry( const std::string& str ) : Exception( str ) {};
+	ERegistry( const std::string& str ) : Exception( str ) {}
 };
 
 struct ERegisteredClass : public ERegistry
 {
-	ERegisteredClass() : ERegistry( "Class already registered" ) {};
+	ERegisteredClass() : ERegistry( "Class already registered" ) {}
 };
 
 struct EUnregisteredClass : public ERegistry
@@ -131,5 +131,5 @@ private:
 
 /* End of stream.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

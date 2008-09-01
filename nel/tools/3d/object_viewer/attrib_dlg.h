@@ -32,8 +32,8 @@
 
 
 #include "nel/misc/rgba.h"
-#include "nel/../../src/3d/ps_plane_basis.h"
-#include "nel/../../src/3d/ps_attrib_maker.h"
+#include "nel/3d/ps_plane_basis.h"
+#include "nel/3d/ps_attrib_maker.h"
 #include "editable_range.h"
 #include "popup_notify.h"
 #include "particle_workspace.h"
@@ -471,3 +471,6 @@ protected:
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
 
 #endif // !defined(AFX_ATTRIB_DLG_H__DF35743E_C8B4_4218_9C42_A3DF4126BEF2__INCLUDED_)
+
+/* Merge OpenNeL SVN
+ */

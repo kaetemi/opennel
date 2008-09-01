@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="login_service"
-	ProjectGUID="{002C429C-2959-40DB-902E-BB2F807C99AA}"
+	ProjectGUID="{46F19C57-A609-4E14-BD14-B0C9615C1D03}"
 	RootNamespace="login_service"
 	>
 	<Platforms>

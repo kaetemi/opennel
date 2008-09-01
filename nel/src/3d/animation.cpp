@@ -25,10 +25,10 @@
 
 #include "std3d.h"
 
-#include "animation.h"
-#include "animation_set.h"
-#include "track.h"
-#include "track_sampled_quat_small_header.h"
+#include "nel/3d/animation.h"
+#include "nel/3d/animation_set.h"
+#include "nel/3d/track.h"
+#include "nel/3d/track_sampled_quat_small_header.h"
 
 #include "nel/misc/file.h"
 #include "nel/misc/path.h"
@@ -522,5 +522,5 @@ void	CAnimation::addSSSShape(const std::string &shape)
 
 } // NL3D
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

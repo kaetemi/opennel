@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "mesh_block_manager.h"
+#include "nel/3d/mesh_block_manager.h"
 #include "nel/misc/hierarchical_timer.h"
 
 using namespace NLMISC;
@@ -430,3 +430,6 @@ bool			CMeshBlockManager::addVBHeap(IDriver *drv, uint vertexFormat, uint maxVer
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

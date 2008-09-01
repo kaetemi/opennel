@@ -91,5 +91,5 @@ public:
 
 /* End of max_to_ligo.h */
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

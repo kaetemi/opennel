@@ -64,7 +64,7 @@ public:
 	ucstring &operator= (const char *str)
 	{
 		resize (strlen (str));
-		for (sint i = 0; i < (sint) strlen (str); i++)
+		for (uint i = 0; i < strlen (str); i++)
 		{
 			operator[](i) = uint8(str[i]);
 		}
@@ -74,7 +74,7 @@ public:
 	ucstring &operator= (const std::string &str)
 	{
 		resize (str.size ());
-		for (sint i = 0; i < (sint) str.size (); i++)
+		for (uint i = 0; i < str.size (); i++)
 		{
 			operator[](i) = uint8(str[i]);
 		}
@@ -138,7 +138,7 @@ public:
 	void toString (std::string &str) const
 	{
 		str.resize (size ());
-		for (sint i = 0; i < (sint) str.size (); i++)
+		for (uint i = 0; i < str.size (); i++)
 		{
 			if (operator[](i) > 255)
 				str[i] = '?';
@@ -379,5 +379,5 @@ ucchar		toUpper (ucchar c);
 
 #endif // NL_UCSTRING_H
 
-/* MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+/* Merge OpenNeL SVN
  */

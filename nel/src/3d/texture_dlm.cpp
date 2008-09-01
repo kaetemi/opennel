@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "texture_dlm.h"
+#include "nel/3d/texture_dlm.h"
 #include "nel/misc/common.h"
 #include "nel/misc/fast_mem.h"
 
@@ -65,29 +65,29 @@ CTextureDLM::CTextureDLM(uint width, uint height)
 	// Fill the array of blocks.
 	_Blocks.resize(nBlocks);
 	_EmptyBlocks.resize(nBlocks);
-	sint i;
-	for(i=0;i<(sint)_Blocks.size();i++)
+	uint i;
+	for(i = 0; i < _Blocks.size(); i++)
 	{
 		// compute position of the block in the texture
-		_Blocks[i].PosX= (i%_WBlock) * NL_DLM_BLOCK_SIZE;
-		_Blocks[i].PosY= (i/_WBlock) * NL_DLM_BLOCK_SIZE;
+		_Blocks[i].PosX = (i%_WBlock) * NL_DLM_BLOCK_SIZE;
+		_Blocks[i].PosY = (i/_WBlock) * NL_DLM_BLOCK_SIZE;
 
 		// This block is free!!
-		_EmptyBlocks[i]=i;
+		_EmptyBlocks[i] = i;
 	}
 
 	// init list to NULL.
-	for(i=0;i<(sint)NL_DLM_LIGHTMAP_TYPE_SIZE;i++)
+	for(i = 0; i < NL_DLM_LIGHTMAP_TYPE_SIZE; i++)
 	{
-		_FreeBlocks[i]= NULL;
+		_FreeBlocks[i] = NULL;
 	}
 
 	// Since NL_DLM_BLOCK_SIZE is 10 or 18 (a factor of prime number 5 or 3 respectively), we are sure there is 
 	// at least one pixel which is not used by blcks. The last pixel is filled with black (see CTextureDLm doc)
 	nlassert(NL_DLM_BLOCK_SIZE==10 || NL_DLM_BLOCK_SIZE==18);
-	CRGBA	*ptr= (CRGBA*)(&CBitmap::getPixels(0)[0]);
+	CRGBA *ptr = (CRGBA*)(&CBitmap::getPixels(0)[0]);
 	// fill last pixel with black.
-	ptr[width*height-1]= CRGBA::Black;
+	ptr[width*height-1] = CRGBA::Black;
 	// Also, to ensure the texture do not wrap around, disable Tiling.
 	ITexture::setWrapS(ITexture::Clamp);
 	ITexture::setWrapT(ITexture::Clamp);
@@ -426,3 +426,6 @@ void			CTextureDLM::releaseLightMap(uint x, uint y)
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

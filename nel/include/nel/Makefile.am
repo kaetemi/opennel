@@ -4,17 +4,14 @@
 
 MAINTAINERCLEANFILES = Makefile.in
 
-DIST_SUBDIRS      = net 3d pacs sound misc georges ligo
+DIST_SUBDIRS      = net 3d pacs sound misc georges ligo cegui
 
 SUBDIRS              = @NEL_SUBDIRS@
 
 includedir           = ${prefix}/include/nel
 
-#include_HEADERS      = $(wildcard *.h)
-
-
 # End of Makefile.am
 
 
-# MERGE: this is the result of merging branch_mtr_nostlport with trunk (NEL-16)
+# Merge OpenNeL SVN
 

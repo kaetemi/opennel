@@ -25,10 +25,13 @@
 
 #include "std3d.h"
 
-#include "cube_grid.h"
+#include "nel/3d/cube_grid.h"
 
 
 namespace NL3D 
 {
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

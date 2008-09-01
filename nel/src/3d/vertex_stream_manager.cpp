@@ -25,7 +25,7 @@
 
 #include "std3d.h"
 
-#include "vertex_stream_manager.h"
+#include "nel/3d/vertex_stream_manager.h"
 #include "nel/misc/hierarchical_timer.h"
 
 
@@ -191,3 +191,6 @@ bool			CVertexStreamManager::isBRGA() const
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

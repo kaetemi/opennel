@@ -213,7 +213,7 @@ namespace NLMISC
 	private:\
 		/* declare private constructors*/ \
 		/*className () {}*/\
-		className (const className &) {}\
+		/*className (const className &) {}*/\
 		/* the local static pointer to the singleton instance */ \
 		static className	*_Instance; \
 	public:\
@@ -246,7 +246,7 @@ namespace NLMISC
 	private:\
 		/* declare private constructors*/ \
 		/*className () {}*/\
-		className (const className &) {}\
+		/*className (const className &) {}*/\
 		/* the local static pointer to the singleton instance */ \
 		static className	*_Instance; \
 	public:\
@@ -308,3 +308,6 @@ void initNelLibrary(CLibrary &lib);
 
 
 #endif //APP_CONTEXT_H
+
+/* Merge OpenNeL SVN
+ */

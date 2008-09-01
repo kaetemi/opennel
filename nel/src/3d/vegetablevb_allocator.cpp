@@ -26,8 +26,8 @@
 #include "std3d.h"
 
 
-#include "vegetablevb_allocator.h"
-#include "vegetable_def.h"
+#include "nel/3d/vegetablevb_allocator.h"
+#include "nel/3d/vegetable_def.h"
 
 
 using namespace std;
@@ -420,3 +420,6 @@ void				CVegetableVBAllocator::setupVBFormat()
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

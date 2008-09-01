@@ -25,10 +25,10 @@
 
 #include "std3d.h"
 
-#include "tess_face_priority_list.h"
+#include "nel/3d/tess_face_priority_list.h"
 #include "nel/misc/debug.h"
 #include <cmath>
-#include "tessellation.h"
+#include "nel/3d/tessellation.h"
 #include "nel/misc/fast_floor.h"
 
 
@@ -206,6 +206,9 @@ void		CTessFacePriorityList::clear()
 
 
 // ***************************************************************************
+#ifdef NL_OS_WINDOWS
+#pragma managed(push, off)
+#endif
 uint		CTessFacePriorityList::selectQuadrant(const CVector &direction)
 {
 	// if numQuadrants=0, ret 0.
@@ -264,10 +267,11 @@ uint		CTessFacePriorityList::selectQuadrant(const CVector &direction)
 			bestQuadrant= i;
 		}
 	}
-
 	return bestQuadrant;
 }
-
+#ifdef NL_OS_WINDOWS
+#pragma managed(pop)
+#endif
 
 // ***************************************************************************
 void		CTessFacePriorityList::insert(uint quadrantId, float distance, CTessFace *value)
@@ -494,3 +498,6 @@ void		CTessFacePriorityList::CRollingTable::shiftEntries(uint entryShift, CTessF
 
 
 } // NL3D
+
+/* Merge OpenNeL SVN
+ */

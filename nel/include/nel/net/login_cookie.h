@@ -89,7 +89,7 @@ public:
 		else
 			_Valid = 1;
 
-		nlinfo ("LC: setFromString %s -> %s, isValid: %d", str.c_str (), toString().c_str (), _Valid);
+		//nlinfo ("LC: setFromString %s -> %s, isValid: %d", str.c_str (), toString().c_str (), _Valid);
 	}
 
 	std::string toString () const
@@ -150,3 +150,6 @@ bool operator!= (const CLoginCookie &c1, const CLoginCookie &c2);
 #endif // NL_LOGIN_COOKIE_H
 
 /* End of login_cookie.h */
+
+/* Merge OpenNeL SVN
+ */
